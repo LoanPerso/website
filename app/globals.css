@@ -4,45 +4,86 @@
 
 @layer base {
   :root {
-    --background: 40 33% 95%;
-    --foreground: 215 25% 17%;
-    --primary: 215 28% 17%;
-    --primary-foreground: 40 33% 97%;
-    --secondary: 35 20% 88%;
-    --secondary-foreground: 215 25% 17%;
-    --accent: 24 30% 84%;
-    --accent-foreground: 215 25% 17%;
-    --muted: 30 20% 90%;
-    --muted-foreground: 220 9% 46%;
-    --border: 30 20% 83%;
-    --ring: 215 20% 30%;
-    --radius: 16px;
-    --font-sans: "General Sans";
-    --font-display: "Clash Display";
+    /* Ivory Background */
+    --background: 38 44% 94%;
+    /* Anthracite Foreground */
+    --foreground: 30 5% 9%;
+
+    /* Primary: Anthracite */
+    --primary: 30 5% 9%;
+    --primary-foreground: 38 44% 94%;
+
+    /* Secondary: Warm Beige */
+    --secondary: 34 38% 86%;
+    --secondary-foreground: 30 5% 9%;
+
+    /* Accent: Champagne Gold */
+    --accent: 40 48% 60%;
+    --accent-foreground: 30 5% 9%;
+
+    /* Muted: Lighter Beige/Grey */
+    --muted: 38 20% 90%;
+    --muted-foreground: 30 8% 51%;
+
+    /* Border: Light Warm Grey */
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    
+    /* Ring: Champagne Gold */
+    --ring: 40 48% 60%;
+
+    /* Radius: Small, tailored */
+    --radius: 0.25rem; /* 4px */
+
+    /* Custom colors for cinematic usage */
+    --deep-black: 240 4% 5%;
+    --dark-gold: 40 39% 47%;
+    --success: 157 55% 27%;
+    --alert: 32 59% 40%;
+    --error: 0 51% 37%;
   }
 
+  .dark {
+    /* Inverted scheme if needed, or keeping minimal luxury dark mode */
+    --background: 240 4% 5%;
+    --foreground: 38 44% 94%;
+    --primary: 38 44% 94%;
+    --primary-foreground: 30 5% 9%;
+    --secondary: 30 5% 15%;
+    --secondary-foreground: 38 44% 94%;
+    --accent: 40 48% 60%;
+    --accent-foreground: 240 4% 5%;
+    --muted: 240 4% 15%;
+    --muted-foreground: 30 8% 60%;
+    --border: 240 4% 20%;
+    --input: 240 4% 20%;
+    --ring: 40 48% 60%;
+  }
+}
+
+@layer base {
   * {
-    box-sizing: border-box;
-    border-color: hsl(var(--border));
+    @apply border-border;
   }
-
   body {
-    margin: 0;
-    padding: 0;
-    background: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
-      "Segoe UI", Arial, sans-serif;
+    @apply bg-background text-foreground;
   }
+}
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+/* Utilities for Cinematic/Luxury touches */
+.text-balance {
+  text-wrap: balance;
+}
 
-  ul {
-    margin: 0.5rem 0 0;
-    padding-left: 1.2rem;
-    color: hsl(var(--muted-foreground));
-  }
+.bg-cinematic {
+  background-color: hsl(var(--deep-black));
+  color: white;
+}
+
+.text-gold {
+  color: hsl(var(--accent));
+}
+
+.border-gold {
+  border-color: hsl(var(--accent));
 }

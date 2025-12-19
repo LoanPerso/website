@@ -32,6 +32,11 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))"
         },
         border: "hsl(var(--border))",
+        "deep-black": "hsl(var(--deep-black))",
+        "dark-gold": "hsl(var(--dark-gold))",
+        success: "hsl(var(--success))",
+        alert: "hsl(var(--alert))",
+        error: "hsl(var(--error))",
         ring: "hsl(var(--ring))"
       },
       borderRadius: {
@@ -45,7 +50,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui"],
-        display: ["var(--font-display)", "ui-sans-serif", "system-ui"]
+        serif: ["var(--font-serif)", "ui-serif", "Georgia"],
+        display: ["var(--font-serif)", "ui-serif", "Georgia"]
       }
     }
   },
