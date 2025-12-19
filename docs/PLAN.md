@@ -4,6 +4,7 @@
 - [ ] Confirm route map (public/admin) and page list.
 - [ ] Define UI tokens (colors, typography, radius, shadows, density).
 - [ ] Establish design system rules for components.
+- [ ] Refresh public landing with Tailwind/Radix/shadcn (pending validation).
 
 ## Data & Auth
 - [ ] Define Supabase schema for dynamic data.

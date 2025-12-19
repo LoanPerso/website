@@ -12,4 +12,4 @@
 ## External Services
 - Supabase for dynamic data.
 - Firebase for long-term data.
-- Optional Three.js / Spline for interactive visuals.
+- Optional Three.js for interactive visuals.

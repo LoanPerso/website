@@ -2,6 +2,7 @@
 
 ## Current Phase
 - Bootstrap: base Next.js structure, routing groups, and initial docs.
+- Public landing refreshed with Tailwind tokens, Radix tabs, and shadcn button.
 
 ## Stack
 - Next.js App Router
@@ -10,7 +11,7 @@
 - shadcn/ui as a customizable base
 - Supabase for dynamic data
 - Firebase for long-term data
-- Three.js and Spline for 3D/interactive visuals
+- Three.js for 3D/interactive visuals
 
 ## Immediate Focus
 - Finalize design system tokens and component guidelines.

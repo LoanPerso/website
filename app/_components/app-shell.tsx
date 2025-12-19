@@ -8,18 +8,20 @@ type AppShellProps = {
 
 export function AppShell({ children }: AppShellProps) {
   return (
-    <div className="app-shell">
-      <aside className="app-sidebar">
-        <Link className="logo" href="/">
+    <div className="min-h-screen bg-background">
+      <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[240px,1fr]">
+        <aside className="border-border bg-secondary/40 p-6 lg:border-r">
+          <Link className="font-display text-lg font-semibold" href="/">
           website
         </Link>
-        <div className="app-sidebar-links">
-          {appNav.map((item) => (
-            <NavLink key={item.href} href={item.href} label={item.label} />
-          ))}
-        </div>
-      </aside>
-      <main className="app-main">{children}</main>
+          <div className="mt-6 flex flex-col gap-3">
+            {appNav.map((item) => (
+              <NavLink key={item.href} href={item.href} label={item.label} />
+            ))}
+          </div>
+        </aside>
+        <main className="px-6 py-10 lg:px-10">{children}</main>
+      </div>
     </div>
   );
 }

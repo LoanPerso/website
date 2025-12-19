@@ -8,9 +8,9 @@ type CardProps = {
 
 export function Card({ title, body, children }: CardProps) {
   return (
-    <article className="card">
-      <h3>{title}</h3>
-      <p>{body}</p>
+    <article className="rounded-2xl border border-border bg-white/90 p-5 shadow-soft">
+      <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
+      <p className="text-sm text-muted-foreground">{body}</p>
       {children}
     </article>
   );
