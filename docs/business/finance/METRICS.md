@@ -1,345 +1,212 @@
-# KPIs & Métriques - Quickfund
+# KPIs & Metriques - Quickfund
 
-> **Statut :** 🔄 À compléter
-> **Dernière mise à jour :** Décembre 2025
-
----
-
-## 1. North Star Metric
-
-**Questions à répondre :**
-
-- [ ] **Quelle est votre "North Star Metric" ?** (La métrique qui capture le mieux la valeur créée)
-- [ ] **Pourquoi cette métrique ?**
-- [ ] **Quelle est la valeur actuelle ?**
-- [ ] **Quel est l'objectif ?**
-- [ ] **Comment la trackez-vous ?**
-
-### Réponses
-```
-North Star Metric : [À compléter]
-Raison : [À compléter]
-Valeur actuelle : [X]
-Objectif : [X]
-Outil de tracking : [À compléter]
-```
+> **Derniere mise a jour :** Decembre 2025
 
 ---
 
-## 2. Métriques SaaS fondamentales
+## North Star Metric
 
-**Questions à répondre :**
+*Quelle est la metrique la plus importante ?*
 
-### Revenus
-- [ ] **MRR (Monthly Recurring Revenue)**
-- [ ] **ARR (Annual Recurring Revenue)**
-- [ ] **ARPU (Average Revenue Per User)**
-- [ ] **ACV (Annual Contract Value)**
-- [ ] **TCV (Total Contract Value)**
-- [ ] **Net Revenue Retention (NRR)**
-- [ ] **Gross Revenue Retention (GRR)**
+| Element | Valeur |
+|---------|--------|
+| North Star Metric | Nombre de clients actifs |
+| Definition | Clients avec un pret en cours |
+| Valeur actuelle | A calculer |
+| Objectif | A definir Q1 2026 |
+| Tracking | Non structure |
 
-### Croissance
-- [ ] **MRR Growth Rate (MoM)**
-- [ ] **ARR Growth Rate (YoY)**
-- [ ] **New MRR**
-- [ ] **Expansion MRR**
-- [ ] **Churn MRR**
-- [ ] **Net New MRR**
-- [ ] **Quick Ratio** (New + Expansion) / (Churn + Contraction)
-
-### Clients
-- [ ] **Nombre de clients total**
-- [ ] **Nombre de clients actifs**
-- [ ] **Logo churn rate (% clients perdus)**
-- [ ] **Revenue churn rate (% MRR perdu)**
-- [ ] **Net churn rate**
-
-### Tableau des métriques SaaS
-| Métrique | Valeur actuelle | Mois dernier | Δ | Objectif |
-|----------|-----------------|--------------|---|----------|
-| **Revenus** | | | | |
-| MRR | [€] | [€] | [+X%] | [€] |
-| ARR | [€] | [€] | [+X%] | [€] |
-| ARPU | [€] | [€] | [+X%] | [€] |
-| ACV moyen | [€] | [€] | [+X%] | [€] |
-| NRR | [X%] | [X%] | [+X pts] | [X%] |
-| GRR | [X%] | [X%] | [+X pts] | [X%] |
-| **Croissance** | | | | |
-| MRR Growth (MoM) | [X%] | [X%] | [+X pts] | [X%] |
-| New MRR | [€] | [€] | [+X%] | [€] |
-| Expansion MRR | [€] | [€] | [+X%] | [€] |
-| Churn MRR | [€] | [€] | [-X%] | [€] |
-| Quick Ratio | [X] | [X] | [+X] | [X] |
-| **Clients** | | | | |
-| Clients totaux | [X] | [X] | [+X] | [X] |
-| Clients actifs | [X] | [X] | [+X] | [X] |
-| Logo churn | [X%] | [X%] | [-X pts] | [X%] |
-| Revenue churn | [X%] | [X%] | [-X pts] | [X%] |
+*Pourquoi cette metrique ?* Un client actif genere des interets mensuels recurrents. Plus de clients actifs = plus de revenus = plus de valeur creee.
 
 ---
 
-## 3. Métriques d'acquisition
+## Etat du tracking
 
-**Questions à répondre :**
+*Quickfund suit-il ses metriques ?*
 
-- [ ] **CAC (Customer Acquisition Cost)** - Global et par canal
-- [ ] **CAC Payback Period** (Mois pour récupérer le CAC)
-- [ ] **LTV (Lifetime Value)**
-- [ ] **LTV/CAC Ratio**
-- [ ] **CPL (Cost Per Lead)**
-- [ ] **Taux de conversion par étape du funnel**
-- [ ] **Cycle de vente moyen**
+**Situation actuelle :** Tracking minimal
 
-### Métriques d'acquisition
-| Métrique | Global | Canal 1 | Canal 2 | Canal 3 | Objectif |
-|----------|--------|---------|---------|---------|----------|
-| CAC | [€] | [€] | [€] | [€] | [€] |
-| Payback | [X mois] | [X mois] | [X mois] | [X mois] | [X mois] |
-| LTV | [€] | [€] | [€] | [€] | [€] |
-| LTV/CAC | [X] | [X] | [X] | [X] | [X] |
-| CPL | [€] | [€] | [€] | [€] | [€] |
+| Element | Valeur |
+|---------|--------|
+| Dashboard | Non |
+| Alertes | Non |
+| Reporting automatise | Non |
+| Priorite Q1 2026 | Mettre en place le suivi |
+
+*Probleme identifie :* ~50K EUR perdus en 2 ans par manque de suivi des metriques (cf OPERATIONS.md).
+
+---
+
+## Metriques business (credit)
+
+*Quelles metriques sont pertinentes pour Quickfund ?*
+
+### Metriques de volume
+
+| Metrique | Definition | Trackee ? | Cible |
+|----------|------------|:---------:|:-----:|
+| Demandes recues | Nombre de demandes/mois | Non | A definir |
+| Taux d'acceptation | % de demandes acceptees | Non | A calculer |
+| Taux de signature | % d'offres signees | Non | A calculer |
+| Prets actifs | Nombre de prets en cours | Non | A calculer |
+| Volume debloque | EUR verses/mois | Non | A calculer |
+
+### Metriques financieres
+
+| Metrique | Definition | Trackee ? | Valeur |
+|----------|------------|:---------:|:------:|
+| Encours total | Capital prete non rembourse | Non | A calculer |
+| CA mensuel | Interets + frais percus | Partiel | A calculer |
+| Marge brute | CA - cout du capital | Non | A calculer |
+| Taux d'impaye | % de prets en defaut | Partiel | A calculer |
+
+### Metriques client
+
+| Metrique | Definition | Trackee ? | Valeur |
+|----------|------------|:---------:|:------:|
+| Clients totaux | Clients ayant eu au moins 1 pret | Non | A calculer |
+| Clients actifs | Clients avec pret en cours | Non | A calculer |
+| Clients recurrents | Clients avec 2+ prets | Non | A calculer |
+| Taux de recurrence | % de clients qui reviennent | Non | A calculer |
+
+---
+
+## Metriques d'acquisition
+
+*Comment mesure-t-on l'acquisition ?*
+
+| Metrique | Definition | Trackee ? | Valeur |
+|----------|------------|:---------:|:------:|
+| Visiteurs site | Sessions/mois | Non | A calculer |
+| Simulations | Personnes ayant simule | Non | A calculer |
+| Demandes | Dossiers soumis | Non | A calculer |
+| CAC | Cout d'acquisition client | Non | A calculer |
+| LTV | Valeur vie client | Non | A calculer |
+| LTV/CAC | Ratio rentabilite acquisition | Non | A calculer |
 
 ### Funnel de conversion
-| Étape | Volume | Conversion vers suivant | Benchmark |
-|-------|--------|-------------------------|-----------|
-| Visiteurs | [X/mois] | [X%] | [X%] |
-| Leads | [X/mois] | [X%] | [X%] |
-| MQL | [X/mois] | [X%] | [X%] |
-| SQL | [X/mois] | [X%] | [X%] |
-| Opportunities | [X/mois] | [X%] | [X%] |
-| Closed Won | [X/mois] | - | - |
+
+| Etape | Definition | Conversion vers suivant |
+|-------|------------|:-----------------------:|
+| Visiteurs | Visites site | A calculer |
+| Simulations | Utilisation simulateur | A calculer |
+| Demandes | Dossier soumis | A calculer |
+| Acceptes | Dossier approuve | A calculer |
+| Signes | Offre acceptee | A calculer |
+| Actifs | Pret en cours | - |
 
 ---
 
-## 4. Métriques produit / Engagement
+## Metriques de risque
 
-**Questions à répondre :**
+*Comment mesure-t-on le risque credit ?*
 
-- [ ] **DAU (Daily Active Users)**
-- [ ] **WAU (Weekly Active Users)**
-- [ ] **MAU (Monthly Active Users)**
-- [ ] **DAU/MAU Ratio** (Stickiness)
-- [ ] **Taux d'activation** (% qui atteignent le "aha moment")
-- [ ] **Time to Value** (Temps avant premier succès)
-- [ ] **Feature adoption rate** (% qui utilisent chaque feature)
-- [ ] **NPS (Net Promoter Score)**
-- [ ] **CSAT (Customer Satisfaction Score)**
+| Metrique | Definition | Trackee ? | Cible |
+|----------|------------|:---------:|:-----:|
+| Taux de defaut | % prets non rembourses | Partiel | <5% |
+| Jours d'impaye moyen | Retard moyen | Non | A calculer |
+| Provision pour creances | Reserve pour impayes | Non | A definir |
+| Taux de recouvrement | % recupere apres defaut | Non | A calculer |
 
-### Métriques d'engagement
-| Métrique | Valeur actuelle | Mois dernier | Objectif |
-|----------|-----------------|--------------|----------|
-| DAU | [X] | [X] | [X] |
-| WAU | [X] | [X] | [X] |
-| MAU | [X] | [X] | [X] |
-| DAU/MAU | [X%] | [X%] | [X%] |
-| Activation rate | [X%] | [X%] | [X%] |
-| Time to Value | [X jours] | [X jours] | [X jours] |
-| NPS | [X] | [X] | [X] |
-| CSAT | [X/5] | [X/5] | [X/5] |
-
-### Feature adoption
-| Feature | % clients qui l'utilisent | Fréquence utilisation |
-|---------|---------------------------|----------------------|
-| [Feature 1] | [X%] | [X/semaine] |
-| [Feature 2] | [X%] | [X/semaine] |
-| [Feature 3] | [X%] | [X/semaine] |
-| [Feature 4] | [X%] | [X/semaine] |
-| [Feature 5] | [X%] | [X/semaine] |
+*Probleme identifie :* Impayes detectes trop tard (cf OPERATIONS.md). Priorite Q1 2026 : alertes automatiques.
 
 ---
 
-## 5. Métriques financières
+## Metriques operationnelles
 
-**Questions à répondre :**
+*Comment mesure-t-on l'efficacite operationnelle ?*
 
-- [ ] **Marge brute**
-- [ ] **Burn rate mensuel**
-- [ ] **Runway** (Mois de cash restant)
-- [ ] **Rule of 40** (Growth % + Profit %)
-- [ ] **Magic Number** (Net New ARR / S&M spend)
-- [ ] **Burn Multiple** (Net Burn / Net New ARR)
-- [ ] **CAC Efficiency**
-
-### Métriques financières
-| Métrique | Valeur actuelle | Benchmark SaaS | Objectif |
-|----------|-----------------|----------------|----------|
-| Marge brute | [X%] | 70-85% | [X%] |
-| Burn rate | [€/mois] | - | [€/mois] |
-| Runway | [X mois] | >18 mois | [X mois] |
-| Rule of 40 | [X%] | >40% | [X%] |
-| Magic Number | [X] | >0.75 | [X] |
-| Burn Multiple | [X] | <2x | [X] |
-
-### Calculs
-```
-Rule of 40 = Growth Rate + Profit Margin = [X%] + [X%] = [X%]
-Magic Number = (QoQ New ARR × 4) / Previous Q S&M = [€] / [€] = [X]
-Burn Multiple = Net Burn / Net New ARR = [€] / [€] = [X]
-```
+| Metrique | Definition | Trackee ? | Cible |
+|----------|------------|:---------:|:-----:|
+| Temps traitement | Demande -> Versement | Non | <48h |
+| Tickets support | Demandes support/mois | Non | A mesurer |
+| Temps reponse support | Delai reponse support | Non | <48h |
+| Taux d'automatisation | % process automatises | Estime | ~80% |
 
 ---
 
-## 6. Métriques opérationnelles
+## Metriques financieres globales
 
-**Questions à répondre :**
+*Situation financiere de l'entreprise.*
 
-- [ ] **Uptime / SLA**
-- [ ] **Temps de réponse moyen**
-- [ ] **Temps de résolution des tickets**
-- [ ] **First Contact Resolution Rate**
-- [ ] **Tickets par client par mois**
-- [ ] **Délai moyen d'onboarding**
-
-### Métriques ops
-| Métrique | Valeur actuelle | SLA | Objectif |
-|----------|-----------------|-----|----------|
-| Uptime | [X%] | [X%] | [X%] |
-| Temps réponse support | [X heures] | [X heures] | [X heures] |
-| Temps résolution | [X heures] | [X heures] | [X heures] |
-| FCR rate | [X%] | - | [X%] |
-| Tickets/client/mois | [X] | - | [X] |
-| Délai onboarding | [X jours] | - | [X jours] |
+| Metrique | Definition | Valeur |
+|----------|------------|:------:|
+| CA cumule 2 ans | Total revenus | 80-120K EUR |
+| Rentable | Resultat positif | Oui |
+| Burn rate | Depenses - Revenus | Negatif (profitable) |
+| Runway | Mois de tresorerie | Illimite (profitable) |
+| Dette | Total emprunts | 0 EUR |
 
 ---
 
-## 7. OKRs du trimestre
+## Outils de tracking
 
-**Questions à répondre :**
+*Quels outils sont utilises ?*
 
-- [ ] **Quels sont vos OKRs pour le trimestre ?**
-- [ ] **Quel est le progress de chaque KR ?**
-- [ ] **Qui est owner de chaque objectif ?**
+| Fonction | Outil actuel | Outil ideal |
+|----------|--------------|-------------|
+| Dashboard | Aucun | A mettre en place |
+| Analytics site | A verifier | Google Analytics |
+| Metriques business | Extraction manuelle | Dashboard custom |
+| Alertes | Aucune | A configurer |
 
-### OKRs Q[X] [Année]
-| Objectif | Owner | Key Result 1 | Progress KR1 | Key Result 2 | Progress KR2 | Key Result 3 | Progress KR3 |
-|----------|-------|--------------|--------------|--------------|--------------|--------------|--------------|
-| [Objectif 1] | [Nom] | [KR] | [X/100] | [KR] | [X/100] | [KR] | [X/100] |
-| [Objectif 2] | [Nom] | [KR] | [X/100] | [KR] | [X/100] | [KR] | [X/100] |
-| [Objectif 3] | [Nom] | [KR] | [X/100] | [KR] | [X/100] | [KR] | [X/100] |
+### Priorites Q1 2026
 
----
-
-## 8. Dashboard et outils
-
-**Questions à répondre :**
-
-- [ ] **Où centralisez-vous vos métriques ?** (Dashboard principal)
-- [ ] **Quels outils utilisez-vous pour le tracking ?**
-- [ ] **À quelle fréquence mettez-vous à jour les métriques ?**
-- [ ] **Qui a accès aux dashboards ?**
-- [ ] **Avez-vous des alertes automatiques ?**
-
-### Réponses
-```
-Dashboard principal : [Outil - URL]
-
-Outils par catégorie :
-- Revenue/Finance : [Outil]
-- Produit/Engagement : [Outil]
-- Marketing : [Outil]
-- Sales : [Outil]
-
-Fréquence mise à jour :
-- Temps réel : [Quelles métriques]
-- Quotidien : [Quelles métriques]
-- Hebdomadaire : [Quelles métriques]
-- Mensuel : [Quelles métriques]
-
-Accès : [Qui a accès]
-Alertes : [Quelles alertes sont configurées]
-```
+| Action | Impact | Priorite |
+|--------|--------|:--------:|
+| Creer dashboard operationnel | Critique | P1 |
+| Configurer alertes impayes | Haute | P1 |
+| Tracker le funnel acquisition | Moyenne | P2 |
+| Mesurer NPS/satisfaction | Basse | P3 |
 
 ---
 
-## 9. Benchmarks et comparaisons
+## OKRs
 
-**Questions à répondre :**
+*Quickfund a-t-il des OKRs ?*
 
-- [ ] **Comment vous comparez-vous aux benchmarks du secteur ?**
-- [ ] **Quelles sources de benchmarks utilisez-vous ?**
-- [ ] **Sur quelles métriques êtes-vous au-dessus/en-dessous ?**
+| Element | Valeur |
+|---------|--------|
+| OKRs formalises | Non |
+| Planning strategique | Informel |
+| Revue de performance | Non structuree |
 
-### Comparaison aux benchmarks
-| Métrique | Quickfund | Benchmark médian | Benchmark top quartile | Position |
-|----------|-----------|------------------|------------------------|----------|
-| MRR Growth (MoM) | [X%] | [X%] | [X%] | [Au-dessus/En-dessous] |
-| Net churn | [X%] | [X%] | [X%] | [Au-dessus/En-dessous] |
-| NRR | [X%] | [X%] | [X%] | [Au-dessus/En-dessous] |
-| LTV/CAC | [X] | [X] | [X] | [Au-dessus/En-dessous] |
-| CAC Payback | [X mois] | [X mois] | [X mois] | [Au-dessus/En-dessous] |
-| Marge brute | [X%] | [X%] | [X%] | [Au-dessus/En-dessous] |
-| Rule of 40 | [X%] | [X%] | [X%] | [Au-dessus/En-dessous] |
-
-### Sources de benchmark
-```
-1. [Source 1 - URL]
-2. [Source 2 - URL]
-3. [Source 3 - URL]
-```
+*Pourquoi pas d'OKRs ?* Equipe d'1 personne. Le fondateur connait ses priorites sans formalisme. A reconsiderer si l'equipe grandit.
 
 ---
 
-## 10. Historique et tendances
+## Benchmarks
 
-**Questions à répondre :**
+*Comment Quickfund se compare-t-il ?*
 
-- [ ] **Quelles sont les tendances sur les 12 derniers mois ?**
-- [ ] **Y a-t-il des saisonnalités ?**
-- [ ] **Quels événements ont impacté les métriques ?**
+| Metrique | Quickfund | Benchmark secteur |
+|----------|:---------:|:-----------------:|
+| Taux d'acceptation | A calculer | 30-50% |
+| Taux de defaut | A calculer | 3-8% |
+| CAC | A calculer | 50-200 EUR |
+| LTV/CAC | A calculer | >3 |
 
-### Évolution 12 mois
-| Mois | MRR | Clients | Churn | NPS | Note/Événement |
-|------|-----|---------|-------|-----|----------------|
-| M-12 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-11 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-10 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-9 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-8 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-7 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-6 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-5 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-4 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-3 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-2 | [€] | [X] | [X%] | [X] | [À compléter] |
-| M-1 | [€] | [X] | [X%] | [X] | [À compléter] |
+*Note :* Benchmarks approximatifs pour le credit a la consommation en ligne.
 
 ---
 
-## 11. Alertes et seuils critiques
+## Resume
 
-**Questions à répondre :**
-
-- [ ] **Quels seuils déclenchent une alerte ?**
-- [ ] **Qui est notifié pour chaque alerte ?**
-- [ ] **Quelle est la procédure en cas d'alerte ?**
-
-### Alertes configurées
-| Métrique | Seuil d'alerte | Niveau | Notifié | Action |
-|----------|----------------|--------|---------|--------|
-| Churn mensuel | > [X%] | 🔴 Critique | [Qui] | [À compléter] |
-| MRR Growth | < [X%] | 🟡 Warning | [Qui] | [À compléter] |
-| Uptime | < [X%] | 🔴 Critique | [Qui] | [À compléter] |
-| NPS | < [X] | 🟡 Warning | [Qui] | [À compléter] |
-| Runway | < [X mois] | 🔴 Critique | [Qui] | [À compléter] |
-| LTV/CAC | < [X] | 🟡 Warning | [Qui] | [À compléter] |
+| Element | Valeur |
+|---------|--------|
+| North Star | Clients actifs |
+| Dashboard | Non (priorite Q1 2026) |
+| Metriques trackees | Minimal |
+| Alertes | Non |
+| Perte estimee (manque suivi) | ~50K EUR |
+| Priorite | Mettre en place le tracking |
 
 ---
 
-## Résumé exécutif
+## Actions prioritaires
 
-*(À générer automatiquement une fois les questions répondues)*
-
-| Métrique clé | Valeur |
-|--------------|--------|
-| North Star | [À compléter] |
-| MRR | [€] |
-| ARR | [€] |
-| NRR | [X%] |
-| LTV/CAC | [X] |
-| Rule of 40 | [X%] |
-
----
-
-**Total questions : 48**
-**Répondues : 0/48**
+- [ ] Definir les 5 metriques cles a suivre
+- [ ] Creer un dashboard operationnel
+- [ ] Configurer des alertes (impayes, anomalies)
+- [ ] Calculer les metriques historiques
+- [ ] Definir des objectifs chiffres

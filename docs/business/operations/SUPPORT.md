@@ -1,358 +1,265 @@
 # Support Client - Quickfund
 
-> **Statut :** 🔄 À compléter
 > **Dernière mise à jour :** Décembre 2025
 
 ---
 
-## 1. Organisation du support
+## Organisation du support
 
-**Questions à répondre :**
+*Comment le support client est-il géré ?*
 
-- [ ] **Avez-vous une équipe support dédiée ?** (Nombre de personnes)
-- [ ] **Qui gère le support ?** (Manager, département)
-- [ ] **Le support est-il internalisé ou externalisé ?**
-- [ ] **Quels sont les niveaux de support ?** (L1, L2, L3)
-- [ ] **Comment est organisée l'équipe ?** (Par produit, par région, etc.)
+**Philosophie :** Self-service maximum, intervention humaine sur exception.
 
-### Réponses
-```
-Équipe support : [X personnes]
-Manager : [Nom]
-Interne/Externe : [Interne/Externe/Hybride]
+| Élément | Valeur |
+|---------|--------|
+| Équipe support dédiée | ❌ Non |
+| Responsable support | Fondateur |
+| Volume estimé | ~8% des clients |
+| Modèle | Réactif (pas de support proactif) |
 
-Organisation :
-- L1 (First line) : [X personnes] - [Périmètre]
-- L2 (Technical) : [X personnes] - [Périmètre]
-- L3 (Engineering) : [X personnes] - [Périmètre]
-
-Répartition : [Par produit/Par région/Généraliste]
-```
+*Pourquoi pas d'équipe support ?* Structure lean, automatisation maximale, modèle self-service. Le fondateur gère les questions directement.
 
 ---
 
-## 2. Canaux de support
+## Canaux de support
 
-**Questions à répondre :**
-
-- [ ] **Quels canaux de support proposez-vous ?**
-  - [ ] Email
-  - [ ] Chat en direct
-  - [ ] Téléphone
-  - [ ] Centre d'aide / FAQ
-  - [ ] Communauté/Forum
-  - [ ] Réseaux sociaux
-  - [ ] In-app
-- [ ] **Quel canal est le plus utilisé ?**
-- [ ] **Quel canal a le meilleur CSAT ?**
+*Comment les clients peuvent-ils nous contacter ?*
 
 ### Canaux disponibles
-| Canal | Disponible | Volume/mois | Temps réponse moyen | CSAT |
-|-------|------------|-------------|---------------------|------|
-| Email | [Oui/Non] | [X tickets] | [X heures] | [X/5] |
-| Chat | [Oui/Non] | [X conversations] | [X min] | [X/5] |
-| Téléphone | [Oui/Non] | [X appels] | [X min attente] | [X/5] |
-| Centre d'aide | [Oui/Non] | [X vues/mois] | N/A | N/A |
-| Communauté | [Oui/Non] | [X posts] | [X heures] | [X/5] |
-| Social | [Oui/Non] | [X messages] | [X heures] | [X/5] |
-| In-app | [Oui/Non] | [X messages] | [X min] | [X/5] |
+
+| Canal | Disponible | Commentaire |
+|-------|:----------:|-------------|
+| Email | ✅ Oui | Canal principal |
+| Chat en direct | ❌ Non | Pas de ressources |
+| Téléphone | ❌ Non | Pas de ressources |
+| Centre d'aide/FAQ | ⚠️ Partiel | À développer |
+| Réseaux sociaux | ❌ Non | Pas de présence active |
+| In-app | ⚠️ Partiel | Via espace client |
+
+### Utilisation des canaux
+
+| Canal | % estimé des demandes |
+|-------|:---------------------:|
+| Email | ~80% |
+| Espace client | ~15% |
+| Autre | ~5% |
 
 ---
 
-## 3. Horaires et disponibilité
+## Horaires et disponibilité
 
-**Questions à répondre :**
+*Quand le support est-il disponible ?*
 
-- [ ] **Quels sont vos horaires de support ?**
-- [ ] **Proposez-vous un support 24/7 ?**
-- [ ] **Quelles langues sont supportées ?**
-- [ ] **Avez-vous des fuseaux horaires différents couverts ?**
-- [ ] **Y a-t-il un support premium (hors horaires) ?**
+| Élément | Valeur |
+|---------|--------|
+| Horaires | Jours ouvrables |
+| Réponse estimée | Quelques heures (jours ouvrables) |
+| Weekend | Réponse le lundi |
+| Jours fériés | Réponse le jour ouvrable suivant |
+| Langues | Estonien, Anglais, Français |
 
-### Réponses
-```
-Horaires standard :
-- Lundi-Vendredi : [Xh-Xh]
-- Samedi : [Fermé/Xh-Xh]
-- Dimanche : [Fermé/Xh-Xh]
-- Jours fériés : [Fermé/Réduit]
-
-Fuseau horaire : [UTC+X]
-Support 24/7 : [Oui/Non - Pour quels plans]
-
-Langues :
-- Français : [Oui/Non]
-- Anglais : [Oui/Non]
-- Autre : [À compléter]
-
-Support premium : [Oui/Non - Conditions]
-```
+*Pourquoi pas de SLA formel ?* Équipe de 1 personne. Le support n'est pas le cœur de métier. Le produit est conçu pour minimiser le besoin de support.
 
 ---
 
-## 4. SLA (Service Level Agreements)
+## Types de demandes
 
-**Questions à répondre :**
+*Quelles questions reçoit-on ?*
 
-- [ ] **Avez-vous des SLA formalisés ?**
-- [ ] **Quels sont vos engagements par priorité ?**
-- [ ] **Les SLA varient-ils selon les plans ?**
-- [ ] **Comment trackez-vous le respect des SLA ?**
-- [ ] **Y a-t-il des pénalités en cas de non-respect ?**
+### Catégories estimées
 
-### SLA par priorité
-| Priorité | Définition | Temps de première réponse | Temps de résolution |
-|----------|------------|--------------------------|---------------------|
-| P1 - Critique | [Système down] | [X min] | [X heures] |
-| P2 - Haute | [Feature majeure KO] | [X heures] | [X heures] |
-| P3 - Moyenne | [Bug impactant] | [X heures] | [X jours] |
-| P4 - Basse | [Question, amélioration] | [X heures] | [Best effort] |
+| Type | Fréquence | Complexité |
+|------|:---------:|:----------:|
+| Statut de demande | Fréquent | Faible |
+| Documents manquants | Fréquent | Faible |
+| Questions sur l'offre | Occasionnel | Faible |
+| Problème de paiement | Occasionnel | Moyenne |
+| Modification contrat | Rare | Élevée |
+| Réclamation | Rare | Élevée |
+| Technique (connexion, etc.) | Rare | Faible |
 
-### SLA par plan
-| Plan | Temps de réponse | Support dédié | Canaux |
-|------|------------------|---------------|--------|
-| Free | [X heures] | Non | Email |
-| Pro | [X heures] | Non | Email, Chat |
-| Enterprise | [X min] | Oui | Tous + Téléphone |
+### Résolution
 
-### Réponses
-```
-SLA formalisés : [Oui/Non - Document]
-Tracking SLA : [Outil]
-Pénalités : [Oui/Non - Détails]
-Taux de respect SLA : [X%]
-```
+| Type | Résolution |
+|------|------------|
+| Questions simples | Réponse email |
+| Documents | Relance + instructions |
+| Paiement | Investigation + action |
+| Réclamation | Traitement au cas par cas |
 
 ---
 
-## 5. Outils de support
+## Self-service
 
-**Questions à répondre :**
+*Comment réduire le besoin de support humain ?*
 
-- [ ] **Quel outil de ticketing utilisez-vous ?**
-- [ ] **Quel outil de chat utilisez-vous ?**
-- [ ] **Quel outil de knowledge base utilisez-vous ?**
-- [ ] **Avez-vous des intégrations avec votre CRM ?**
-- [ ] **Utilisez-vous des chatbots/IA ?**
+### Éléments en place
 
-### Stack support
-| Fonction | Outil | Coût/mois | Notes |
-|----------|-------|-----------|-------|
-| Ticketing | [Zendesk/Intercom/etc.] | [€] | [À compléter] |
-| Chat | [Intercom/Crisp/etc.] | [€] | [À compléter] |
-| Knowledge base | [Notion/GitBook/etc.] | [€] | [À compléter] |
-| Téléphone | [Aircall/Ringover/etc.] | [€] | [À compléter] |
-| Chatbot/IA | [Oui/Non - Outil] | [€] | [À compléter] |
-| **Total** | - | **[€/mois]** | - |
+| Élément | Disponible | Efficacité |
+|---------|:----------:|:----------:|
+| Espace client | ✅ Oui | Haute |
+| Suivi demande en ligne | ✅ Oui | Haute |
+| Historique prêts | ✅ Oui | Haute |
+| Téléchargement documents | ✅ Oui | Haute |
+| FAQ | ⚠️ Partiel | Moyenne |
+| Chatbot | ❌ Non | - |
 
----
+### À développer
 
-## 6. Self-service et documentation
-
-**Questions à répondre :**
-
-- [ ] **Avez-vous un centre d'aide ?** (URL)
-- [ ] **Combien d'articles dans le centre d'aide ?**
-- [ ] **Quel % des clients consulte le centre d'aide avant de contacter le support ?**
-- [ ] **Avez-vous des tutoriels vidéo ?**
-- [ ] **Avez-vous des FAQ ?**
-- [ ] **Le contenu est-il traduit ?**
-- [ ] **Quel est le taux de résolution via self-service ?**
-
-### Réponses
-```
-Centre d'aide : [URL]
-Nombre d'articles : [X]
-Consultation avant contact : [X%]
-
-Contenus :
-- Articles : [X]
-- Vidéos : [X]
-- FAQ : [Oui/Non]
-
-Langues : [À compléter]
-Taux self-service : [X%]
-```
+| Élément | Priorité | Impact attendu |
+|---------|:--------:|:--------------:|
+| FAQ complète | Moyenne | Réduire questions simples |
+| Tutoriels | Basse | Améliorer onboarding |
+| Vidéos explicatives | Basse | Réduire questions |
 
 ---
 
-## 7. Métriques support
+## Processus de traitement
 
-**Questions à répondre :**
+*Comment sont traitées les demandes ?*
 
-- [ ] **Quelles métriques support suivez-vous ?**
-- [ ] **Quel est votre volume de tickets mensuel ?**
-- [ ] **Quel est votre CSAT ?**
-- [ ] **Quel est votre NPS support ?**
-- [ ] **Quel est votre First Response Time (FRT) ?**
-- [ ] **Quel est votre Resolution Time ?**
-- [ ] **Quel est votre First Contact Resolution (FCR) rate ?**
-- [ ] **Quel est le ratio tickets/client ?**
+### Flux actuel
 
-### Métriques actuelles
-| Métrique | Valeur actuelle | Objectif | Trend |
-|----------|-----------------|----------|-------|
-| Tickets/mois | [X] | [X] | [↑↓→] |
-| CSAT | [X/5] | [X/5] | [↑↓→] |
-| NPS support | [X] | [X] | [↑↓→] |
-| First Response Time | [X heures] | [X heures] | [↑↓→] |
-| Resolution Time | [X heures] | [X heures] | [↑↓→] |
-| FCR rate | [X%] | [X%] | [↑↓→] |
-| Tickets/client/mois | [X] | [X] | [↑↓→] |
-| Taux SLA respecté | [X%] | [X%] | [↑↓→] |
-| Taux self-service | [X%] | [X%] | [↑↓→] |
+```
+Client envoie email
+       ↓
+Fondateur lit (quand disponible)
+       ↓
+Réponse ou action
+       ↓
+Suivi si nécessaire
+```
+
+### Pas de priorisation formelle
+
+| Élément | Statut |
+|---------|:------:|
+| Ticketing | ❌ Non (email direct) |
+| Priorisation | ❌ Informelle |
+| SLA | ❌ Non |
+| Escalation | ❌ Non applicable (1 personne) |
 
 ---
 
-## 8. Catégorisation des tickets
+## Métriques support
 
-**Questions à répondre :**
+*Que devrait-on mesurer ?*
 
-- [ ] **Comment catégorisez-vous les tickets ?**
-- [ ] **Quelles sont les catégories principales ?**
-- [ ] **Quelle catégorie représente le plus de volume ?**
-- [ ] **Utilisez-vous le feedback pour améliorer le produit ?**
+| Métrique | Trackée ? | Cible |
+|----------|:---------:|:-----:|
+| Volume tickets/mois | ❌ Non | À mesurer |
+| Temps de réponse | ❌ Non | <48h idéalement |
+| Temps de résolution | ❌ Non | Variable |
+| CSAT | ❌ Non | À implémenter |
+| FCR (First Contact Resolution) | ❌ Non | À mesurer |
 
-### Top catégories
-| Catégorie | % des tickets | Temps résolution moyen | Action produit |
-|-----------|---------------|------------------------|----------------|
-| [Catégorie 1] | [X%] | [X heures] | [À compléter] |
-| [Catégorie 2] | [X%] | [X heures] | [À compléter] |
-| [Catégorie 3] | [X%] | [X heures] | [À compléter] |
-| [Catégorie 4] | [X%] | [X heures] | [À compléter] |
-| [Catégorie 5] | [X%] | [X heures] | [À compléter] |
+*Pourquoi pas de métriques ?* Pas de volume suffisant ni d'outils pour tracker. À considérer si le volume augmente.
 
 ---
 
-## 9. Escalation et feedback loop
+## Onboarding client
 
-**Questions à répondre :**
+*Comment accompagne-t-on les nouveaux clients ?*
 
-- [ ] **Comment fonctionnent les escalations vers l'engineering ?**
-- [ ] **Comment le feedback support remonte-t-il au produit ?**
-- [ ] **Participez-vous aux roadmap reviews ?**
-- [ ] **Trackez-vous les feature requests via le support ?**
+### Parcours actuel
 
-### Réponses
-```
-Process escalation :
-1. [Étape 1]
-2. [Étape 2]
-3. [Étape 3]
+| Étape | Automatisé ? | Description |
+|-------|:------------:|-------------|
+| Bienvenue | ✅ Oui | Email automatique |
+| Instructions | ✅ Oui | Inclus dans email |
+| Accès espace client | ✅ Oui | Création compte auto |
+| Premier prêt | ✅ Oui | Process guidé |
+| Suivi post-signature | ⚠️ Partiel | À améliorer |
 
-Feedback loop :
-- Fréquence : [À compléter]
-- Format : [À compléter]
-- Participants : [À compléter]
+### Pas d'onboarding dédié
 
-Feature requests : [Outil de tracking]
-```
+| Raison | Impact |
+|--------|--------|
+| Volume faible | Pas rentable |
+| Produit simple | Pas nécessaire |
+| Self-service | Le client se débrouille |
 
 ---
 
-## 10. Customer Success
+## Gestion des réclamations
 
-**Questions à répondre :**
+*Comment gère-t-on les clients mécontents ?*
 
-- [ ] **Avez-vous une équipe Customer Success distincte du support ?**
-- [ ] **Comment est défini le rôle CS vs Support ?**
-- [ ] **Y a-t-il des CSM dédiés par compte ?** (À partir de quel ARR)
-- [ ] **Quels sont les objectifs des CSM ?** (Rétention, upsell)
-- [ ] **Comment mesurez-vous le succès client ?**
+### Process actuel
 
-### Réponses
-```
-Équipe CS : [X personnes]
-CS Manager : [Nom]
+| Étape | Action |
+|-------|--------|
+| Réception réclamation | Email lu par fondateur |
+| Analyse | Compréhension du problème |
+| Réponse | Traitement au cas par cas |
+| Résolution | Solution adaptée |
+| Suivi | Si nécessaire |
 
-Différence Support vs CS :
-- Support : [Réactif, résolution problèmes]
-- CS : [Proactif, adoption, rétention, upsell]
+### Valeurs appliquées (cf VISION.md)
 
-CSM dédié : À partir de [€ ARR]
-Ratio CSM/clients : [1:X]
-
-Objectifs CS :
-- Rétention : [X%]
-- Upsell : [€/client]
-- NPS : [X]
-
-Health Score : [Oui/Non - Méthode]
-```
+| Valeur | Application |
+|--------|-------------|
+| Transparence | Expliquer clairement la situation |
+| Respect | Traiter avec considération |
+| Rapidité | Répondre vite même si pas de solution immédiate |
 
 ---
 
-## 11. Onboarding client
+## Outils support
 
-**Questions à répondre :**
+*Quels outils sont utilisés ?*
 
-- [ ] **Comment onboardez-vous les nouveaux clients ?**
-- [ ] **Proposez-vous un onboarding dédié ?** (À partir de quel plan)
-- [ ] **Quelle est la durée moyenne de l'onboarding ?**
-- [ ] **Quel est le taux de complétion de l'onboarding ?**
-- [ ] **Quels sont les critères de succès de l'onboarding ?**
+| Fonction | Outil | Coût |
+|----------|-------|:----:|
+| Email | Email standard | ~0€ |
+| Ticketing | ❌ Non | - |
+| Chat | ❌ Non | - |
+| FAQ/Centre d'aide | ⚠️ Basique | ~0€ |
+| CRM | ❌ Non | - |
 
-### Process onboarding
-| Étape | Description | Durée | Responsable | Taux complétion |
-|-------|-------------|-------|-------------|-----------------|
-| 1. Welcome | [À compléter] | [X jours] | [Qui] | [X%] |
-| 2. Setup | [À compléter] | [X jours] | [Qui] | [X%] |
-| 3. Training | [À compléter] | [X jours] | [Qui] | [X%] |
-| 4. First value | [À compléter] | [X jours] | [Qui] | [X%] |
-| 5. Handoff | [À compléter] | [X jours] | [Qui] | [X%] |
+### Besoins potentiels (si volume augmente)
 
-### Réponses
-```
-Onboarding dédié : À partir de [Plan/€]
-Durée moyenne : [X jours]
-Taux complétion global : [X%]
-
-Critères de succès :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-```
+| Outil | Quand ? | Pourquoi |
+|-------|---------|----------|
+| Ticketing simple | Si >50 tickets/mois | Organiser les demandes |
+| FAQ/Help center | Dès que possible | Réduire les demandes |
+| Templates email | Dès que possible | Gagner du temps |
 
 ---
 
-## 12. Formation de l'équipe support
+## Limites actuelles
 
-**Questions à répondre :**
+*Quels sont les risques du modèle actuel ?*
 
-- [ ] **Comment formez-vous l'équipe support ?**
-- [ ] **Quelle est la durée de la formation initiale ?**
-- [ ] **Avez-vous des certifications internes ?**
-- [ ] **Comment maintenez-vous les compétences à jour ?** (Nouvelles features)
-
-### Réponses
-```
-Formation initiale : [X semaines]
-Contenu :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Certifications : [Oui/Non]
-Mise à jour compétences : [À compléter]
-Shadowing : [Oui/Non - Durée]
-```
+| Limite | Impact | Mitigation |
+|--------|--------|------------|
+| Fondateur = seul support | Goulot d'étranglement | Automatiser plus |
+| Pas de SLA | Temps de réponse variable | Communiquer les délais |
+| Pas de métriques | Pas de visibilité | Tracker basiquement |
+| Pas de nuit/weekend | Clients insatisfaits potentiels | Réponse auto |
 
 ---
 
-## Résumé exécutif
+## Résumé
 
-*(À générer automatiquement une fois les questions répondues)*
-
-| Élément | Contenu |
-|---------|---------|
-| Équipe support | [X personnes] |
-| Tickets/mois | [X] |
-| CSAT | [X/5] |
-| FRT | [X heures] |
-| FCR rate | [X%] |
-| Canaux | [À compléter] |
+| Élément | Valeur |
+|---------|--------|
+| Équipe support | 1 personne (fondateur) |
+| Canal principal | Email |
+| Volume | ~8% des clients |
+| SLA | Aucun formel |
+| Temps de réponse | Quelques heures (jours ouvrables) |
+| Self-service | Espace client + FAQ partielle |
+| Outils | Email basique |
+| Priorité | Automatiser pour réduire le besoin |
 
 ---
 
-**Total questions : 55**
-**Répondues : 0/55**
+## Actions potentielles
+
+- [x] ~~Mesurer le volume de demandes support~~ → ~8% des clients
+- [ ] Créer une FAQ complète
+- [ ] Mettre en place des templates de réponse
+- [ ] Ajouter un message auto de confirmation de réception
+- [ ] Définir des SLA internes (même non communiqués)
+- [ ] Évaluer un outil de ticketing si volume > 50/mois

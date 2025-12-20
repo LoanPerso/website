@@ -6,170 +6,208 @@
 
 ## Contexte actuel
 
-**Phase :** PMF atteint, rentable, mais gestion "pilote automatique" sans suivi.
+*Où en est l'entreprise aujourd'hui ?*
+
+**Phase :** PMF (Product-Market Fit) atteint. L'entreprise fonctionne, génère du CA et du bénéfice depuis 2 ans. Mais elle a tourné en "pilote automatique" sans suivi structuré.
 
 **Dates clés :**
 - Création : 20 novembre 2023
-- Durée : 2 ans
+- Aujourd'hui : 2 ans d'activité
 
 **Accomplissements :**
-- CA 80-120K€ sur 2 ans
+- CA de 80-120K€ sur les 2 premières années
 - Rentable dès le départ
 - Aucune dette
 - PMF validé (clients qui reviennent)
+- Fonctionnement automatisé (1 personne + freelance saisie)
 
-**Échecs :**
+**Échecs et leçons :**
 
-| Problème | Impact | Leçon |
-|----------|--------|-------|
-| Mauvais suivi | ~50K€ perdus | Suivi rigoureux + alertes |
-| Pas de métriques | Aveugle | Dashboard avec KPIs |
-| Gestion au feeling | Temps perdu | Données avant décisions |
+| Problème | Impact | Leçon apprise |
+|----------|--------|---------------|
+| Mauvais suivi clients | ~50K€ perdus (impayés, opportunités ratées) | Mettre en place un suivi rigoureux + alertes |
+| Pas de métriques trackées | Impossible de savoir où on en est | Dashboard avec KPIs clés |
+| Gestion au feeling | Décisions sans données | Prioriser la structuration avant le scale |
+| Temps non consacré | 2 ans de croissance "molle" | 2026 = focus total sur Quickfund |
 
-**2026 = Changement :** De passif à actif. Structuration puis scale.
+**2026 = Année charnière :** Passer de PMF à Scale, mais d'abord structurer pour rattraper 2 ans de retard.
 
 ---
 
 ## Objectifs 2026
 
-### Q1 : STRUCTURATION
+*Quelles sont les priorités pour cette année ?*
 
-| Priorité | Objectif | Résultat |
-|----------|----------|----------|
-| #1 | Structurer data | Dashboard complet |
-| #2 | Calculer métriques | CAC, LTV, marges |
-| #3 | Suivi clients | Plus de 50K€ perdus |
+### Q1 2026 : STRUCTURATION
 
-### Q2-Q4 : SCALE
+| Priorité | Objectif | Résultat attendu |
+|----------|----------|------------------|
+| #1 | Structurer toute la data | Dashboard avec tous les chiffres à la demande |
+| #2 | Calculer CAC, LTV, métriques clés | Savoir exactement où on en est |
+| #3 | Mettre en place le suivi clients | Plus jamais 50K€ perdus par manque de suivi |
+
+### Q2-Q4 2026 : SCALE
 
 | Priorité | Objectif |
 |----------|----------|
-| #1 | Doubler le CA en 1 an |
-| #2 | Croissance rapide structurée |
-| #3 | Renforcer présence UE |
+| #1 | Doubler le CA des 2 ans en 1 an (100K€ → 200K€) |
+| #2 | Croissance rapide et structurée |
+| #3 | Renforcer la présence européenne (réduire dépendance Estonie) |
 
 ### Chiffres cibles
 
-| Métrique | Actuel | Cible fin 2026 |
-|----------|--------|----------------|
-| CA annuel | ~50-60K€ | ~150-200K€ |
-| Clients actifs | À calculer | x2 |
-| Dashboard | Inexistant | Opérationnel |
+| Métrique | Actuel (Déc 2025) | Cible (Déc 2026) |
+|----------|-------------------|------------------|
+| CA annuel | ~50-60K€/an | ~150-200K€ |
+| Clients actifs | À calculer | x2 minimum |
+| Dashboard métriques | Inexistant | Opérationnel |
 | CAC/LTV connus | Non | Oui |
 
-**Levée de fonds :** Non. Autofinancement.
+**Levée de fonds :** Non prévue. Objectif = rester indépendant et autofinancé.
 
 ---
 
 ## Vision 3 ans (2028)
 
+*Où veut-on être dans 3 ans ?*
+
 | Élément | Cible |
 |---------|-------|
-| Position | Acteur établi crédit digital UE |
-| Géographie | 60% Estonie max, 40% reste UE |
-| Équipe | 3-5 personnes + automatisation |
+| Position | Acteur établi du crédit digital transparent en Europe |
+| Géographie | Estonie 60% max, France et autres UE 40%+ |
+| Équipe | Petite équipe structurée (3-5 personnes) + automatisation |
+| Levée de fonds | Non - rester indépendant |
 | Rentabilité | Maintenue et amplifiée |
-| Indépendance | Totale |
+
+**Critères de succès :**
+- Acquisition client majoritairement organique (réputation)
+- Moins dépendant de l'acquisition active
+- Plusieurs pôles produits avec objectifs propres
+- Indépendance financière totale
 
 ---
 
 ## Stratégie de croissance
 
-**Modèle :** Product-led. Le produit se vend via qualité et réputation.
+*Comment va-t-on grandir ?*
 
-**Canaux d'acquisition :**
+**Modèle :** Product-led. Le produit doit se vendre via la qualité du service et la réputation (bouche-à-oreille).
 
-| Canal | Priorité |
-|-------|----------|
-| SEO | #1 |
-| Bouche-à-oreille | #2 |
-| Ads locaux | #3 |
+**3 canaux d'acquisition principaux :**
 
-**Métriques :** CAC, LTV, conversion → Tous à calculer Q1 2026.
+| Canal | Description | Priorité |
+|-------|-------------|----------|
+| SEO | Référencement naturel sur "crédit rapide", "refusé banque" | #1 |
+| Bouche-à-oreille | Clients satisfaits qui recommandent | #2 |
+| Ads locaux | Google Ads dans les pays cibles | #3 |
 
-**International :**
-- Actuel : 90% Estonie
-- Objectif : 60% max Estonie, focus France
+**Métriques d'acquisition :** CAC, LTV, LTV/CAC, conversion → Tous à calculer en Q1 2026.
+
+**Développement international :**
+- Actuellement : ~90% Estonie
+- Objectif : Max 60% Estonie, 40%+ autres pays UE
+- Priorité : France (via passeport européen estonien)
 
 ---
 
 ## Stratégie financière
 
+*Quelle approche pour le financement et la rentabilité ?*
+
 | Question | Réponse |
 |----------|---------|
 | Rentable ? | Oui, depuis le début |
 | Dettes ? | Aucune |
-| Levée prévue ? | Non |
-| Plan de sortie | Rester indépendant |
+| Levée de fonds prévue ? | Non - objectif autofinancement |
+| Marge brute cible | À calculer précisément en Q1 2026 |
+| Plan de sortie | Rester indépendant et profitable |
 
 ---
 
-## Risques
+## Risques stratégiques
 
-| Risque | Score | Mitigation |
-|--------|:-----:|------------|
-| Dépendance banque liquidité | 20 | Diversifier sources, réserves |
-| Manque liquidités | 15 | Croître progressivement |
-| Régulation défavorable | 12 | Veille, structure estonienne |
-| Impayés clients | 9 | Meilleur scoring, relances |
-| Concurrent copie | 4 | Différenciation par exécution |
+*Quels sont les plus grands dangers pour l'entreprise ?*
 
-**Risque #1 :** Dépendance à une banque pour la liquidité. *"Ça me terrifie."*
+| Risque | Probabilité | Impact | Score | Mitigation |
+|--------|:-----------:|:------:|:-----:|------------|
+| Dépendance banque liquidité | 4 | 5 | 20 | Diversifier sources, constituer réserves |
+| Manque de liquidités pour prêter | 3 | 5 | 15 | Croître progressivement |
+| Nouvelles régulations défavorables | 3 | 4 | 12 | Veille réglementaire, structure estonienne flexible |
+| Impayés / défauts clients | 3 | 3 | 9 | Meilleur scoring, relances précoces |
+| Concurrent qui copie le modèle | 2 | 2 | 4 | Différenciation par l'exécution |
 
-**Plan B :**
-- Réduire voilure, rester profitable petit
-- Pivoter vers courtage pur
-- Chercher partenaires institutionnels
+**Le risque #1 (le plus terrifiant) :** Dépendance à une banque pour la liquidité. Sans ligne de crédit, impossible de prêter.
+
+**Plan B si la stratégie échoue :**
+- Réduire la voilure et rester profitable à petite échelle
+- Pivoter vers du courtage pur (sans porter le risque)
+- Chercher des partenaires institutionnels
+
+**Dépendances critiques :**
+- Accès aux liquidités pour financer les prêts
+- Régulation estonienne / passeport européen
+- Fondateur (personne clé unique)
 
 ---
 
 ## Avantages concurrentiels
 
-| Avantage | Défendabilité |
-|----------|---------------|
-| Transparence | Moyenne (culturel) |
-| Rapidité | Moyenne (process) |
-| Micro-montants | Forte (peu rentable pour gros) |
-| Profils atypiques | Forte (rapport au risque différent) |
-| Structure estonienne | Forte (réglementaire) |
+*Qu'est-ce qui nous protège de la concurrence ?*
 
-**Effets de réseau :** Faibles (potentiel parrainage).
-**Switching costs :** Faibles (levier = qualité service).
-**Économies d'échelle :** Oui (automatisation).
+| Avantage | Défendabilité | Comment le renforcer |
+|----------|---------------|----------------------|
+| Transparence (on dit pourquoi) | Moyenne - copiable mais culturel | En faire un standard |
+| Rapidité extrême | Moyenne - process automatisés | Améliorer continuellement |
+| Micro-montants (dès 10€) | Forte - peu rentable pour les gros | Devenir LA référence |
+| Profils atypiques acceptés | Forte - nécessite rapport au risque différent | Affiner le scoring |
+| Structure estonienne agile | Forte - réglementaire | Exploiter le passeport UE |
+
+**Effets de réseau :** Faibles pour l'instant. Potentiel si on développe parrainage/communauté.
+
+**Switching costs :** Faibles. Les clients peuvent aller ailleurs. Levier = qualité de service.
+
+**Économies d'échelle :** Oui. L'automatisation permet de gérer plus de clients sans proportionnellement plus de coûts.
 
 ---
 
 ## North Star & Métriques
 
-**North Star :** Nombre de clients actifs
+*Quel indicateur reflète le mieux notre succès ?*
 
-**Top 5 métriques :**
+**North Star Metric :** Nombre de clients actifs (prêt en cours ou emprunt <12 mois).
 
-| Métrique | Statut |
-|----------|--------|
-| Clients actifs | À calculer |
-| Volume prêts mensuels | À calculer |
-| Taux remboursement | À calculer |
-| CAC | À calculer |
-| LTV | À calculer |
+*Pourquoi ?* C'est l'indicateur qui reflète le mieux la traction. Plus de clients actifs = plus de prêts = plus de revenus = plus d'impact.
 
-**Dashboard :** Inexistant → À créer Q1 2026
+**Top 5 métriques à tracker :**
+
+| Métrique | Pourquoi c'est important | Statut |
+|----------|-------------------------|--------|
+| Clients actifs | North Star, traction | À calculer |
+| Volume prêts mensuels (€) | Revenus, croissance | À calculer |
+| Taux de remboursement | Qualité portefeuille, risque | À calculer |
+| CAC | Efficacité marketing | À calculer |
+| LTV | Valeur long terme | À calculer |
+
+**Outil de tracking :** Aucun actuellement. À mettre en place Q1 2026.
 
 ---
 
 ## Pivots potentiels
 
-| Scénario | Pivot |
-|----------|-------|
-| Pas de liquidités | Courtier pur |
-| Régulation bloque | Adapter ou changer juridiction |
-| Marché estonien saturé | Focus 100% expansion UE |
-| Impayés trop élevés | Resserrer scoring |
+*Que faire si la stratégie actuelle ne marche pas ?*
 
-**Signaux déclencheurs :**
-- Impayés > 15-20%
-- 6+ mois sans lignes de liquidité
-- CAC > LTV durablement
+| Scénario | Pivot envisageable |
+|----------|-------------------|
+| Impossible de trouver des liquidités | Devenir courtier pur (sans porter le risque) |
+| Régulation bloque le modèle | Adapter l'offre ou changer de juridiction |
+| Marché estonien saturé | Focus 100% expansion européenne |
+| Impayés trop élevés | Resserrer le scoring, profils moins risqués |
+
+**Signaux qui déclencheraient un pivot :**
+- Taux d'impayés > 15-20%
+- 6+ mois sans sécuriser de lignes de liquidité
+- CAC > LTV de manière durable
+- Changement réglementaire rendant le modèle non viable
 
 ---
 
@@ -177,22 +215,23 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Phase | PMF atteint, rentable, gestion au feeling |
+| Phase actuelle | PMF atteint, rentable, mais gestion au feeling |
 | Problème #1 | Pas de métriques → 50K€ perdus |
-| Priorité Q1 2026 | STRUCTURER |
-| Objectif 2026 | x2 CA en 1 an |
+| Priorité Q1 2026 | STRUCTURER (data, métriques, suivi) |
+| Objectif 2026 | Doubler le CA en 1 an |
 | Modèle croissance | Product-led (SEO, bouche-à-oreille) |
-| Équipe | 1 + freelance + auto |
-| Rentable | Oui |
-| Dettes | Non |
-| Levée | Non |
-| Risque principal | Dépendance liquidités |
-| North Star | Clients actifs |
+| Équipe | 1 personne + freelance + automatisation |
+| Rentable | Oui, depuis le début |
+| Dettes | Aucune |
+| Levée prévue | Non - rester indépendant |
+| Risque principal | Dépendance à une banque pour les liquidités |
+| North Star | Nombre de clients actifs |
 
-### À faire Q1 2026
+### À faire en Q1 2026
 
-- [ ] Reconstituer historique 2 ans
-- [ ] Calculer clients actifs exacts
-- [ ] Calculer CAC, LTV
-- [ ] Dashboard de suivi
-- [ ] Définir OKRs trimestriels
+- [ ] Reconstituer l'historique des 2 ans
+- [ ] Calculer le nombre exact de clients actifs
+- [ ] Calculer CAC, LTV, LTV/CAC
+- [ ] Calculer le taux de remboursement réel
+- [ ] Mettre en place un dashboard de suivi
+- [ ] Définir les OKRs trimestriels

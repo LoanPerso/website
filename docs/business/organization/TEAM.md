@@ -1,349 +1,266 @@
-# Équipe - Quickfund
+# Equipe - Quickfund
 
-> **Statut :** 🔄 À compléter
-> **Dernière mise à jour :** Décembre 2025
-
----
-
-## 1. Vue d'ensemble de l'équipe
-
-**Questions à répondre :**
-
-- [ ] **Combien de personnes dans l'équipe au total ?**
-- [ ] **Combien de personnes à temps plein (FTE) ?**
-- [ ] **Combien de personnes à temps partiel ?**
-- [ ] **Combien de freelances/contractors réguliers ?**
-- [ ] **Combien de stagiaires/alternants ?**
-- [ ] **Dans combien de pays l'équipe est-elle répartie ?**
-- [ ] **Quel est le ratio remote/présentiel ?**
-
-### Réponses
-```
-Total équipe : [X personnes]
-- FTE : [X]
-- Temps partiel : [X]
-- Freelances réguliers : [X]
-- Stagiaires/alternants : [X]
-
-Pays : [X pays]
-Remote : [X%] / Présentiel : [X%]
-```
+> **Derniere mise a jour :** Decembre 2025
 
 ---
 
-## 2. Fondateurs
+## Vue d'ensemble
 
-**Questions à répondre :**
+*Quelle est la taille de l'equipe Quickfund ?*
 
-Pour chaque fondateur :
-- [ ] **Nom complet**
-- [ ] **Rôle/Titre**
-- [ ] **% de capital détenu**
-- [ ] **Background/Expérience précédente**
-- [ ] **Expertises clés**
-- [ ] **LinkedIn/Email**
-- [ ] **Temps dédié à l'entreprise** (100%, autre activité)
-- [ ] **Vesting en cours ?**
+**Modele :** Ultra-lean (1 personne + 1 freelance)
 
-### Fondateur 1
-```
-Nom : [À compléter]
-Rôle : [CEO/CTO/CPO/etc.]
-% capital : [X%]
+| Element | Valeur |
+|---------|--------|
+| Effectif total | 1.5 ETP |
+| FTE (temps plein) | 1 (fondateur) |
+| Freelances | 1 (saisie) |
+| Salaries | 0 |
+| Pays | 1 |
+| Mode de travail | 100% Remote |
 
-Background :
-- [Entreprise précédente] - [Rôle] - [Années]
-- [Formation]
-- [Accomplissements notables]
-
-Expertises : [À compléter]
-LinkedIn : [URL]
-Email : [email]
-Temps dédié : [X%]
-Vesting : [Oui/Non - Détails]
-```
-
-### Fondateur 2
-*(Même structure)*
-
-### Fondateur 3
-*(Même structure)*
+*Pourquoi si petit ?* L'entreprise a ete concue pour fonctionner en "pilote automatique". L'automatisation maximale permet d'operer avec un effectif minimal.
 
 ---
 
-## 3. Équipe de direction (Leadership)
+## Fondateur
 
-**Questions à répondre :**
+*Qui dirige Quickfund ?*
 
-- [ ] **Qui compose le comité de direction (Comex) ?**
-- [ ] **Y a-t-il un COO ?**
-- [ ] **Y a-t-il un CFO ?**
-- [ ] **Y a-t-il un VP Sales/CRO ?**
-- [ ] **Y a-t-il un VP Engineering/CTO ?**
-- [ ] **Y a-t-il un VP Product/CPO ?**
-- [ ] **Y a-t-il un VP Marketing/CMO ?**
-- [ ] **Y a-t-il un VP People/HR ?**
+| Element | Valeur |
+|---------|--------|
+| Role | Fondateur / CEO / CTO / tout |
+| % capital | 100% |
+| Temps dedie | Variable (pilote automatique) |
+| Localisation | A preciser |
 
-### Comex
-| Rôle | Nom | Arrivée | Expérience clé | Salaire brut/an | Equity |
-|------|-----|---------|----------------|-----------------|--------|
-| CEO | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| CTO | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| COO | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| CFO | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| VP Sales | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| VP Product | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| VP Engineering | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| VP Marketing | [Nom] | [Date] | [À compléter] | [€] | [X%] |
-| VP People | [Nom] | [Date] | [À compléter] | [€] | [X%] |
+### Responsabilites
+
+| Domaine | Responsable |
+|---------|:-----------:|
+| Strategie | Fondateur |
+| Developpement | Fondateur |
+| Operations | Fondateur |
+| Finance | Fondateur |
+| Support | Fondateur |
+| Compliance | Fondateur |
+
+*Multi-casquettes :* Le fondateur cumule tous les roles. Avantage : decisions rapides. Risque : personne cle unique.
 
 ---
 
-## 4. Organigramme par département
+## Freelance
 
-**Questions à répondre :**
+*Qui est le freelance ?*
 
-- [ ] **Combien de personnes par département ?**
-- [ ] **Qui manage chaque département ?**
-- [ ] **Y a-t-il des équipes sous-dotées ?**
-- [ ] **Y a-t-il des personnes qui cumulent plusieurs rôles ?**
+| Element | Valeur |
+|---------|--------|
+| Mission | Saisie de donnees |
+| Frequence | A preciser |
+| Cout | A preciser |
+| Depuis | A preciser |
 
-### Répartition par département
-| Département | Effectif | Manager | % de l'équipe |
-|-------------|----------|---------|---------------|
-| Engineering/Tech | [X] | [Nom] | [X%] |
-| Product | [X] | [Nom] | [X%] |
-| Design | [X] | [Nom] | [X%] |
-| Sales | [X] | [Nom] | [X%] |
-| Marketing | [X] | [Nom] | [X%] |
-| Customer Success | [X] | [Nom] | [X%] |
-| Support | [X] | [Nom] | [X%] |
-| Finance | [X] | [Nom] | [X%] |
-| HR/People | [X] | [Nom] | [X%] |
-| Ops/Admin | [X] | [Nom] | [X%] |
-| **Total** | **[X]** | - | **100%** |
+### Taches
+
+| Tache | Frequence |
+|-------|:---------:|
+| Documents illisibles | Occasionnel |
+| Saisie manuelle | A la demande |
 
 ---
 
-## 5. Liste complète de l'équipe
+## Equipe de direction
 
-**Questions à répondre :**
+*Y a-t-il un comite de direction ?*
 
-Pour chaque membre de l'équipe :
-- [ ] **Nom**
-- [ ] **Rôle/Titre**
-- [ ] **Département**
-- [ ] **Manager**
-- [ ] **Date d'arrivée**
-- [ ] **Type de contrat** (CDI, CDD, freelance)
-- [ ] **Temps de travail** (100%, 80%, etc.)
-- [ ] **Localisation** (Ville/Pays)
-- [ ] **Salaire brut annuel**
-- [ ] **BSPCE/Equity**
+| Element | Valeur |
+|---------|--------|
+| Comex | Non (1 personne) |
+| COO | Non |
+| CFO | Non |
+| CTO | Fondateur (de facto) |
+| CMO | Non |
+| VP | Aucun |
 
-### Équipe complète
-| Nom | Rôle | Département | Manager | Arrivée | Contrat | Temps | Lieu | Salaire brut/an | BSPCE |
-|-----|------|-------------|---------|---------|---------|-------|------|-----------------|-------|
-| [Nom 1] | [Rôle] | [Dept] | [Manager] | [Date] | [CDI] | [100%] | [Ville] | [€] | [X] |
-| [Nom 2] | [Rôle] | [Dept] | [Manager] | [Date] | [CDI] | [100%] | [Ville] | [€] | [X] |
-| [Nom 3] | [Rôle] | [Dept] | [Manager] | [Date] | [CDI] | [100%] | [Ville] | [€] | [X] |
-| [Nom 4] | [Rôle] | [Dept] | [Manager] | [Date] | [CDI] | [100%] | [Ville] | [€] | [X] |
-| [Nom 5] | [Rôle] | [Dept] | [Manager] | [Date] | [CDI] | [100%] | [Ville] | [€] | [X] |
+*Pourquoi pas de direction ?* Taille de l'entreprise ne le justifie pas. Le fondateur gere tout.
 
 ---
 
-## 6. Freelances et contractors
+## Organigramme
 
-**Questions à répondre :**
+*Comment est structuree l'equipe ?*
 
-- [ ] **Combien de freelances travaillent régulièrement avec vous ?**
-- [ ] **Pour quelles missions ?**
-- [ ] **Quel budget mensuel/annuel ?**
-- [ ] **Sont-ils en contrat cadre ?**
-
-### Freelances réguliers
-| Nom/Société | Mission | Département | Fréquence | TJM/Mensuel | Depuis |
-|-------------|---------|-------------|-----------|-------------|--------|
-| [Nom 1] | [Mission] | [Dept] | [X jours/mois] | [€] | [Date] |
-| [Nom 2] | [Mission] | [Dept] | [X jours/mois] | [€] | [Date] |
-| [Nom 3] | [Mission] | [Dept] | [X jours/mois] | [€] | [Date] |
-| **Total** | - | - | - | **[€/mois]** | - |
-
----
-
-## 7. Advisors et mentors
-
-**Questions à répondre :**
-
-- [ ] **Avez-vous des advisors formels ?**
-- [ ] **Pour quelles expertises ?**
-- [ ] **Sont-ils rémunérés ?** (Cash, equity)
-- [ ] **À quelle fréquence les consultez-vous ?**
-
-### Advisors
-| Nom | Expertise | Background | Rémunération | Fréquence | Depuis |
-|-----|-----------|------------|--------------|-----------|--------|
-| [Nom 1] | [Expertise] | [Entreprises/Rôles] | [€/mois ou X% equity] | [X/mois] | [Date] |
-| [Nom 2] | [Expertise] | [Entreprises/Rôles] | [€/mois ou X% equity] | [X/mois] | [Date] |
-
----
-
-## 8. Masse salariale et coûts RH
-
-**Questions à répondre :**
-
-- [ ] **Quelle est la masse salariale mensuelle totale ?** (Brut + charges)
-- [ ] **Quel est le coût moyen par employé ?**
-- [ ] **Quelle part du budget total représentent les salaires ?**
-- [ ] **Avez-vous des avantages en nature ?** (Mutuelle, tickets resto, etc.)
-- [ ] **Quel est le coût total RH ?** (Salaires + avantages + formation + recrutement)
-
-### Réponses
 ```
-Masse salariale mensuelle : [€]
-Charges patronales mensuelles : [€]
-Coût total salaires : [€/mois]
-
-Coût moyen par employé : [€/mois]
-
-Avantages :
-- Mutuelle : [€/personne/mois]
-- Tickets resto : [€/personne/mois]
-- Transport : [€/personne/mois]
-- Autre : [€/personne/mois]
-
-Coût avantages total : [€/mois]
-
-Budget formation : [€/an]
-Budget recrutement : [€/an]
-
-Coût RH total : [€/mois]
-% du budget total : [X%]
+┌─────────────────────────────────────┐
+│           Fondateur                 │
+│   (CEO, CTO, COO, CFO, tout)        │
+└─────────────────┬───────────────────┘
+                  │
+┌─────────────────▼───────────────────┐
+│        Freelance (saisie)           │
+└─────────────────────────────────────┘
 ```
 
----
-
-## 9. Ancienneté et turnover
-
-**Questions à répondre :**
-
-- [ ] **Quelle est l'ancienneté moyenne ?**
-- [ ] **Quel est le taux de turnover annuel ?**
-- [ ] **Combien de départs dans les 12 derniers mois ?**
-- [ ] **Quelles étaient les raisons des départs ?**
-- [ ] **Y a-t-il eu des licenciements ?**
-
-### Réponses
-```
-Ancienneté moyenne : [X mois]
-Turnover annuel : [X%]
-
-Départs (12 derniers mois) : [X]
-- Démissions : [X]
-- Licenciements : [X]
-- Fins de contrat : [X]
-
-Raisons des démissions :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-```
+*Simplicite :* Pas de hierarchie, pas de departements, pas de managers.
 
 ---
 
-## 10. Compétences clés et gaps
+## Repartition par fonction
 
-**Questions à répondre :**
+*Comment se repartit le travail ?*
 
-- [ ] **Quelles sont les compétences clés de l'équipe ?**
-- [ ] **Quelles compétences manquent-elles ?**
-- [ ] **Y a-t-il des personnes "key-man" ?** (Risque si départ)
-- [ ] **Comment gérez-vous la documentation/knowledge transfer ?**
-
-### Réponses
-```
-Compétences clés :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Compétences manquantes :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Key-man risks :
-- [Nom] : [Risque si départ]
-- [Nom] : [Risque si départ]
-
-Knowledge management : [À compléter]
-```
+| Fonction | Effectif | Responsable |
+|----------|:--------:|:-----------:|
+| Direction | 1 | Fondateur |
+| Tech/Dev | 0 | Fondateur |
+| Ops | 0 | Fondateur + Freelance |
+| Finance | 0 | Fondateur + Comptable |
+| Support | 0 | Fondateur |
+| Marketing | 0 | Fondateur |
+| **Total** | **1.5** | - |
 
 ---
 
-## 11. Diversité et inclusion
+## Masse salariale
 
-**Questions à répondre :**
+*Quel est le cout RH ?*
 
-- [ ] **Quelle est la répartition H/F ?**
-- [ ] **Quelle est la diversité d'âge ?**
-- [ ] **Avez-vous une politique D&I formalisée ?**
-- [ ] **Faites-vous des efforts spécifiques pour la diversité ?**
+| Element | Valeur |
+|---------|--------|
+| Salaires | 0 EUR (pas de salaries) |
+| Freelance | A preciser |
+| Comptable externe | A preciser |
+| **Total RH** | **Faible** |
 
-### Réponses
-```
-Répartition H/F : [X% H / X% F / X% autre]
-Âge moyen : [X ans]
-Tranche d'âge : [X-X ans]
-
-Politique D&I : [Oui/Non]
-Actions D&I :
-1. [À compléter]
-2. [À compléter]
-```
+*Avantage structure OU :* Le fondateur se remunere via dividendes, pas de salaire fixe. Fiscalite optimisee.
 
 ---
 
-## 12. Équipement et outils
+## Anciennete
 
-**Questions à répondre :**
+*Quelle est l'anciennete de l'equipe ?*
 
-- [ ] **Quel équipement fournissez-vous aux employés ?** (Laptop, écran, etc.)
-- [ ] **Quel est le budget équipement par personne ?**
-- [ ] **Quels outils collaboratifs utilisez-vous ?** (Slack, Notion, etc.)
+| Personne | Role | Depuis |
+|----------|------|:------:|
+| Fondateur | Fondateur | Novembre 2023 |
+| Freelance | Saisie | A preciser |
 
-### Réponses
-```
-Équipement standard :
-- Laptop : [Modèle - Budget €]
-- Écran : [Oui/Non]
-- Autre : [À compléter]
+### Turnover
 
-Budget équipement : [€/personne]
-
-Outils collaboratifs :
-- Communication : [Slack/Teams/etc.]
-- Documentation : [Notion/Confluence/etc.]
-- Project management : [Linear/Jira/etc.]
-- Email : [Gmail/Outlook/etc.]
-- Visio : [Meet/Zoom/etc.]
-```
+| Element | Valeur |
+|---------|--------|
+| Turnover | 0% (1 personne) |
+| Departs | 0 |
+| Recrutements | 0 |
 
 ---
 
-## Résumé exécutif
+## Competences
 
-*(À générer automatiquement une fois les questions répondues)*
+*Quelles competences sont presentes ?*
 
-| Élément | Contenu |
-|---------|---------|
-| Effectif total | [X] |
-| Masse salariale | [€/mois] |
-| Ancienneté moyenne | [X mois] |
-| Turnover | [X%] |
-| Ratio H/F | [X%/X%] |
+### Competences du fondateur
+
+| Domaine | Niveau |
+|---------|:------:|
+| Developpement | Eleve |
+| Finance/Credit | Eleve |
+| Operations | Eleve |
+| Marketing | Moyen |
+| Legal/Compliance | Moyen |
+
+### Competences manquantes
+
+| Domaine | Impact | Priorite |
+|---------|:------:|:--------:|
+| Marketing avance | Moyen | Basse |
+| Sales | Faible (self-service) | Basse |
+| Support dedie | Moyen | Basse |
 
 ---
 
-**Total questions : 52**
-**Répondues : 0/52**
+## Risque personne cle
+
+*Quel est le risque si le fondateur est indisponible ?*
+
+| Element | Valeur |
+|---------|--------|
+| Key-man | Fondateur (critique) |
+| Impact indisponibilite | Elevee |
+| Documentation | Limitee |
+| Backup | Aucun |
+
+### Mitigation
+
+| Action | Statut | Priorite |
+|--------|:------:|:--------:|
+| Documenter les process | A faire | Haute |
+| Automatiser encore plus | En cours | Haute |
+| Prevoir un backup | Non fait | Moyenne |
+
+*Risque #1 de l'entreprise :* Le fondateur est la seule personne capable d'operer. Cf STRATEGY.md.
+
+---
+
+## Outils et equipement
+
+*Quels outils utilise l'equipe ?*
+
+| Fonction | Outil |
+|----------|-------|
+| Communication | A preciser |
+| Documentation | A preciser |
+| Code | Git (probable) |
+| Cloud | GCP -> VMCloud |
+| Paiements | Stripe |
+
+### Equipement
+
+| Element | Valeur |
+|---------|--------|
+| Equipement fourni | N/A (fondateur) |
+| Budget equipement | 0 EUR |
+
+---
+
+## Mode de travail
+
+*Comment travaille l'equipe ?*
+
+| Element | Valeur |
+|---------|--------|
+| Remote | 100% |
+| Bureaux | Non |
+| Core hours | Non |
+| Fuseaux horaires | N/A |
+
+*Avantage full remote :* Pas de couts de bureaux, flexibilite totale.
+
+---
+
+## Resume
+
+| Element | Valeur |
+|---------|--------|
+| Effectif | 1.5 ETP |
+| Salaries | 0 |
+| Freelances | 1 |
+| Fondateur | 100% des roles |
+| Mode de travail | 100% Remote |
+| Turnover | 0% |
+| Risque cle | Fondateur = personne unique |
+
+---
+
+## Non applicable
+
+*Sections non pertinentes pour Quickfund :*
+
+| Section | Raison |
+|---------|--------|
+| Organigramme complexe | 1.5 personne |
+| Masse salariale | Pas de salaries |
+| Departements | Pas de structure |
+| Managers | 1 seule personne |
+| D&I | 1 personne |
+| eNPS | 1 personne |

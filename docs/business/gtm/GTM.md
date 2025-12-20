@@ -1,440 +1,356 @@
 # Go-to-Market & Acquisition - Quickfund
 
-> **Statut :** 🔄 À compléter
 > **Dernière mise à jour :** Décembre 2025
 
 ---
 
-## 1. Stratégie GTM globale
+## Stratégie GTM globale
 
-**Questions à répondre :**
+*Quel modèle utilise-t-on pour acquérir et convertir des clients ?*
 
-- [ ] **Quel est votre modèle GTM principal ?**
-  - Product-Led Growth (PLG)
-  - Sales-Led Growth (SLG)
-  - Marketing-Led Growth
-  - Partnership-Led Growth
-  - Hybride (décrivez)
+**Modèle :** Product-Led Growth (PLG)
 
-- [ ] **Pourquoi avez-vous choisi ce modèle ?**
-- [ ] **Ce modèle fonctionne-t-il ?** (Métriques à l'appui)
-- [ ] **Envisagez-vous de changer de modèle ?**
-- [ ] **Comment s'articule marketing/sales/product dans votre GTM ?**
+| Élément | Valeur |
+|---------|--------|
+| Modèle principal | Product-Led Growth (100% self-service) |
+| Raison | Structure légère (1 personne), produit digital, pas besoin de sales |
+| Marketing/Sales/Product | Marketing = SEO + ads, Sales = inexistant, Product = le convertisseur |
 
-### Réponses
-```
-Modèle GTM : [À compléter]
-Raison : [À compléter]
-Performance : [À compléter]
-Évolution prévue : [À compléter]
-Articulation équipes : [À compléter]
-```
+*Pourquoi PLG ?* Quickfund est 100% digital, le produit se vend tout seul via la qualité de l'expérience. Pas de sales team, pas de démos. Le client fait sa demande en ligne, obtient une réponse en 24h.
 
 ---
 
-## 2. Canaux d'acquisition
+## Canaux d'acquisition
 
-**Questions à répondre :**
+*D'où viennent les clients et quels canaux prioriser ?*
 
-- [ ] **Quels sont tous vos canaux d'acquisition ?** (Listez-les tous)
-- [ ] **Quel % de nouveaux clients vient de chaque canal ?**
-- [ ] **Quel est le CAC par canal ?**
-- [ ] **Quel canal a le meilleur ROI ?**
-- [ ] **Quel canal voulez-vous développer ?**
-- [ ] **Quel canal abandonnez-vous ou réduisez-vous ?**
+### Canaux actifs
 
-### Performance par canal
-| Canal | % nouveaux clients | CAC | LTV | LTV/CAC | Tendance |
-|-------|-------------------|-----|-----|---------|----------|
-| Organic Search (SEO) | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Paid Search (SEA) | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Social organique | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Social paid | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Content marketing | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Referral / Bouche à oreille | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Partenariats | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Outbound (cold) | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Events | [X%] | [€] | [€] | [X] | [↑↓→] |
-| PR / Media | [X%] | [€] | [€] | [X] | [↑↓→] |
-| Autre : [À préciser] | [X%] | [€] | [€] | [X] | [↑↓→] |
+| Canal | Priorité | Description |
+|-------|:--------:|-------------|
+| **SEO** | #1 | Référencement naturel sur "crédit rapide", "refusé banque", "micro-crédit" |
+| **Bouche-à-oreille** | #2 | Clients satisfaits qui recommandent (naturel) |
+| **Google Ads** | #3 | Ads ciblés dans les pays cibles (Estonie, France) |
 
----
+### Canaux non utilisés
 
-## 3. Funnel de conversion
+| Canal | Statut | Raison |
+|-------|--------|--------|
+| Social organique | ❌ | Pas de ressources pour alimenter |
+| Social paid | ❌ | Priorité au SEO/SEA |
+| Content marketing | ❌ | À développer plus tard |
+| Outbound (cold) | ❌ | Modèle PLG, pas de prospection |
+| Events | ❌ | Trop petit pour l'instant |
+| PR | ❌ | Pas encore de budget |
+| Partenariats | ⏳ | Prévu (programme parrainage) |
 
-**Questions à répondre :**
+### Métriques par canal (à calculer Q1 2026)
 
-- [ ] **Quelles sont les étapes de votre funnel ?** (De visiteur à client payant)
-- [ ] **Quel est le taux de conversion à chaque étape ?**
-- [ ] **Où perdez-vous le plus de prospects ?**
-- [ ] **Quelles actions améliorent les conversions ?**
-- [ ] **Avez-vous un scoring de leads ?**
+| Canal | % clients | CAC | LTV/CAC |
+|-------|:---------:|:---:|:-------:|
+| SEO | À calculer | À calculer | À calculer |
+| Bouche-à-oreille | À calculer | ~0€ | Très élevé |
+| Google Ads | À calculer | À calculer | À calculer |
 
-### Funnel détaillé
-| Étape | Volume/mois | Taux conversion vers suivante | Drop-off |
-|-------|-------------|------------------------------|----------|
-| Visiteurs site | [X] | [X%] → Leads | [X%] |
-| Leads (formulaire) | [X] | [X%] → MQL | [X%] |
-| MQL (Marketing Qualified) | [X] | [X%] → SQL | [X%] |
-| SQL (Sales Qualified) | [X] | [X%] → Opportunity | [X%] |
-| Opportunity | [X] | [X%] → Client | [X%] |
-| Client | [X] | - | - |
-
-### Réponses
-```
-Plus gros drop-off : [À compléter]
-Actions correctives : [À compléter]
-Lead scoring : [Oui/Non - Détails]
-```
+*Pourquoi pas de données ?* Les métriques n'ont jamais été trackées. C'est la priorité #1 du Q1 2026.
 
 ---
 
-## 4. Marketing digital
+## Funnel de conversion
 
-**Questions à répondre :**
+*Comment le visiteur devient-il client ?*
 
-### SEO
-- [ ] **Quels sont vos mots-clés principaux ciblés ?**
-- [ ] **Quel est votre trafic organique mensuel ?**
-- [ ] **Quelles sont vos pages les plus visitées ?**
-- [ ] **Avez-vous une stratégie de contenu SEO ?**
-- [ ] **Qui s'occupe du SEO ?** (Interne, agence)
+### Étapes du funnel
 
-### SEA / Paid Ads
-- [ ] **Quel est votre budget ads mensuel ?**
-- [ ] **Quelles plateformes utilisez-vous ?** (Google, Facebook, LinkedIn, etc.)
-- [ ] **Quel est votre CPC moyen ?**
-- [ ] **Quel est votre ROAS ?** (Return on Ad Spend)
-- [ ] **Qui gère les campagnes ?** (Interne, agence)
+| Étape | Description | Conversion (estimée) |
+|-------|-------------|:--------------------:|
+| Visiteur site | Arrive via SEO/Ads | 100% |
+| Simulateur | Fait une simulation de crédit | ~30-40% |
+| Demande | Soumet une demande complète | ~50% des simulations |
+| Analyse | Quickfund évalue le dossier | ~60-70% acceptés |
+| Signature | Client accepte l'offre | ~80-90% |
+| Client actif | Prêt versé | Conversion finale |
 
-### Social Media
-- [ ] **Sur quels réseaux êtes-vous présents ?**
-- [ ] **Combien de followers par réseau ?**
-- [ ] **Quelle est votre fréquence de publication ?**
-- [ ] **Quel type de contenu publiez-vous ?**
-- [ ] **Quel réseau performe le mieux ?**
+*Pourquoi pas de chiffres précis ?* Pas de tracking analytics structuré. À mettre en place Q1 2026.
 
-### Réponses SEO
-```
-Mots-clés principaux :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
+### Points de drop-off identifiés (hypothèses)
 
-Trafic organique : [X/mois]
-Pages top :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Stratégie contenu : [À compléter]
-Responsable SEO : [Interne/Agence - Nom]
-```
-
-### Réponses SEA
-```
-Budget ads : [€/mois]
-Plateformes :
-- Google Ads : [€/mois]
-- Facebook/Instagram : [€/mois]
-- LinkedIn : [€/mois]
-- Autre : [€/mois]
-
-CPC moyen : [€]
-ROAS : [X]
-Responsable : [Interne/Agence - Nom]
-```
-
-### Réponses Social
-| Réseau | Followers | Fréquence | Engagement rate |
-|--------|-----------|-----------|-----------------|
-| LinkedIn | [X] | [X/semaine] | [X%] |
-| Twitter/X | [X] | [X/semaine] | [X%] |
-| Facebook | [X] | [X/semaine] | [X%] |
-| Instagram | [X] | [X/semaine] | [X%] |
-| YouTube | [X] | [X/mois] | [X%] |
-| TikTok | [X] | [X/semaine] | [X%] |
+| Étape | Drop-off probable | Action envisagée |
+|-------|-------------------|------------------|
+| Visiteur → Simulateur | Élevé | Améliorer la landing page |
+| Demande → Acceptation | Moyen | Affiner le scoring pour accepter plus |
+| Acceptation → Signature | Faible | Réduire les frictions (signature électronique) |
 
 ---
 
-## 5. Content marketing
+## SEO
 
-**Questions à répondre :**
+*Comment acquiert-on du trafic organique ?*
 
-- [ ] **Avez-vous un blog ?** (URL, fréquence)
-- [ ] **Quels types de contenus produisez-vous ?** (Articles, vidéos, podcasts, ebooks, webinars)
-- [ ] **Combien de contenus par mois ?**
-- [ ] **Quels contenus performent le mieux ?**
-- [ ] **Avez-vous une newsletter ?** (Nombre d'abonnés, taux d'ouverture)
-- [ ] **Qui produit le contenu ?** (Interne, freelance, agence)
+### Stratégie actuelle
 
-### Réponses
-```
-Blog : [URL]
-Fréquence blog : [X articles/mois]
+| Élément | Valeur |
+|---------|--------|
+| Responsable | Fondateur |
+| Agence | Non |
+| Budget dédié | 0€ (effort interne) |
 
-Types de contenu :
-- Articles : [X/mois]
-- Vidéos : [X/mois]
-- Podcasts : [X/mois]
-- Ebooks/Whitepapers : [X/trimestre]
-- Webinars : [X/trimestre]
-- Case studies : [X/trimestre]
+### Mots-clés ciblés
 
-Top contenu :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
+| Mot-clé | Marché | Priorité |
+|---------|--------|:--------:|
+| crédit rapide | France | Haute |
+| micro-crédit | France | Haute |
+| prêt refusé banque | France | Haute |
+| alternative Younited | France | Moyenne |
+| kiirlaen (prêt rapide) | Estonie | Haute |
+| laen (prêt) | Estonie | Haute |
+| väikelaen (petit prêt) | Estonie | Moyenne |
 
-Newsletter :
-- Abonnés : [X]
-- Taux ouverture : [X%]
-- Taux clic : [X%]
-- Fréquence : [X/semaine]
+### État actuel
 
-Production : [Interne/Freelance/Agence]
-```
+| Métrique | Valeur |
+|----------|--------|
+| Trafic organique | À mesurer |
+| Pages indexées | À vérifier |
+| Domain Authority | À vérifier |
+| Stratégie contenu | Inexistante (à développer) |
 
 ---
 
-## 6. Email marketing
+## SEA / Paid Acquisition
 
-**Questions à répondre :**
+*Comment utilise-t-on la publicité payante ?*
 
-- [ ] **Quelle est la taille de votre base email ?**
-- [ ] **Comment segmentez-vous vos emails ?**
-- [ ] **Quels types d'emails envoyez-vous ?** (Newsletter, nurturing, transactionnel)
-- [ ] **Quels sont vos taux d'ouverture/clic moyens ?**
-- [ ] **Quel outil utilisez-vous ?** (Mailchimp, HubSpot, etc.)
-- [ ] **Avez-vous des séquences automatisées ?** (Lesquelles)
+### Configuration actuelle
 
-### Réponses
-```
-Base email : [X contacts]
+| Élément | Valeur |
+|---------|--------|
+| Plateformes | Google Ads |
+| Budget | Variable selon mois |
+| Gestion | Fondateur (interne) |
 
-Segmentation :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
+### Campagnes
 
-Types emails :
-- Newsletter : [X/mois]
-- Nurturing : [Oui/Non - Détails]
-- Transactionnel : [Oui/Non]
-- Promotionnel : [X/mois]
+| Pays | Budget approx. | CPC estimé | ROAS |
+|------|:--------------:|:----------:|:----:|
+| Estonie | Variable | À mesurer | À mesurer |
+| France | À lancer | - | - |
 
-Performance :
-- Taux ouverture : [X%]
-- Taux clic : [X%]
-- Taux désabonnement : [X%]
-
-Outil : [À compléter]
-
-Séquences automatisées :
-1. [À compléter]
-2. [À compléter]
-```
+*Pourquoi peu de données ?* Les campagnes sont gérées de manière opportuniste, pas de suivi structuré.
 
 ---
 
-## 7. Referral et bouche-à-oreille
+## Referral et bouche-à-oreille
 
-**Questions à répondre :**
+*Comment les clients existants amènent-ils de nouveaux clients ?*
 
-- [ ] **Quel % de vos clients vient du referral ?**
-- [ ] **Avez-vous un programme de parrainage ?** (Détails)
-- [ ] **Quelle récompense offrez-vous au parrain ?**
-- [ ] **Quelle récompense offrez-vous au filleul ?**
-- [ ] **Quel est le taux de participation au programme ?**
-- [ ] **Demandez-vous activement des recommandations ?** (Quand, comment)
-- [ ] **Avez-vous des témoignages clients ?** (Où les affichez-vous)
-- [ ] **Avez-vous un programme d'ambassadeurs ?**
+### État actuel
 
-### Réponses
-```
-% clients via referral : [X%]
+| Élément | Valeur |
+|---------|--------|
+| % clients via referral | Inconnu (pas tracké) |
+| Programme parrainage | ❌ Non (prévu) |
+| Demande active de recommandations | Non |
+| Témoignages clients | Quelques avis |
 
-Programme parrainage :
-- Récompense parrain : [À compléter]
-- Récompense filleul : [À compléter]
-- Taux participation : [X%]
-- Nombre de parrainages/mois : [X]
+### Programme parrainage (à développer)
 
-Témoignages : [Nombre] affichés sur [À compléter]
-Programme ambassadeurs : [Oui/Non - Détails]
-```
+| Élément | Prévu |
+|---------|-------|
+| Récompense parrain | À définir |
+| Récompense filleul | À définir |
+| Tracking | À mettre en place |
+
+*Pourquoi pas encore de programme ?* Priorité à la structuration des métriques d'abord.
 
 ---
 
-## 8. Events et PR
+## Content marketing
 
-**Questions à répondre :**
+*Produit-on du contenu pour attirer et éduquer ?*
 
-### Events
-- [ ] **Participez-vous à des salons/conférences ?** (Lesquels)
-- [ ] **Organisez-vous vos propres events ?** (Webinars, meetups, conférences)
-- [ ] **Quel est le budget events annuel ?**
-- [ ] **Quel ROI tirez-vous des events ?**
+### État actuel
 
-### PR et Media
-- [ ] **Avez-vous une stratégie PR ?**
-- [ ] **Travaillez-vous avec une agence PR ?**
-- [ ] **Dans quels médias avez-vous été mentionnés ?**
-- [ ] **Combien de mentions presse par an ?**
-- [ ] **Avez-vous des relations presse récurrentes ?**
+| Élément | Valeur |
+|---------|--------|
+| Blog | ❌ Non |
+| Newsletter | ❌ Non |
+| Vidéos | ❌ Non |
+| Guides/Ebooks | ❌ Non |
+| Webinars | ❌ Non |
 
-### Réponses Events
-```
-Salons/conférences (liste) :
-1. [Nom] - [Date] - [Budget] - [Résultat]
-2. [Nom] - [Date] - [Budget] - [Résultat]
-3. [Nom] - [Date] - [Budget] - [Résultat]
+*Pourquoi rien ?* Équipe de 1 personne, priorité au produit et à la structuration.
 
-Events organisés :
-- Webinars : [X/an]
-- Meetups : [X/an]
-- Conférence propre : [Oui/Non]
+### Potentiel (pour plus tard)
 
-Budget events : [€/an]
-ROI events : [À compléter]
-```
-
-### Réponses PR
-```
-Stratégie PR : [Oui/Non - Détails]
-Agence PR : [Oui/Non - Nom]
-
-Mentions presse :
-1. [Média] - [Date] - [Sujet]
-2. [Média] - [Date] - [Sujet]
-3. [Média] - [Date] - [Sujet]
-
-Mentions/an : [X]
-```
+| Type de contenu | Valeur potentielle |
+|-----------------|-------------------|
+| Articles "refusé par ma banque" | SEO + conversion |
+| Guide "comprendre son score de crédit" | Éducation + confiance |
+| Témoignages clients | Social proof |
+| Comparatifs (vs Younited, vs banques) | SEO concurrentiel |
 
 ---
 
-## 9. Outils marketing
+## Email marketing
 
-**Questions à répondre :**
+*Comment communique-t-on par email avec les prospects et clients ?*
 
-- [ ] **Quels outils marketing utilisez-vous ?** (CRM, automation, analytics, etc.)
-- [ ] **Combien dépensez-vous en outils marketing ?** (€/mois)
-- [ ] **Ces outils sont-ils bien intégrés entre eux ?**
-- [ ] **Y a-t-il des outils manquants ?**
+### État actuel
 
-### Stack marketing
-| Catégorie | Outil | Prix/mois | Usage |
-|-----------|-------|-----------|-------|
-| CRM | [À compléter] | [€] | [À compléter] |
-| Marketing automation | [À compléter] | [€] | [À compléter] |
-| Email | [À compléter] | [€] | [À compléter] |
-| Analytics | [À compléter] | [€] | [À compléter] |
-| SEO | [À compléter] | [€] | [À compléter] |
-| Social | [À compléter] | [€] | [À compléter] |
-| Chat/Bot | [À compléter] | [€] | [À compléter] |
-| Ads | [À compléter] | [€] | [À compléter] |
-| Autre | [À compléter] | [€] | [À compléter] |
-| **Total** | - | **[€/mois]** | - |
+| Élément | Valeur |
+|---------|--------|
+| Base email | À déterminer |
+| Outil | À définir |
+| Newsletter | ❌ Non |
+| Séquences automatisées | ❌ Non |
+| Emails transactionnels | ✅ Oui (confirmations, rappels) |
 
----
+### Séquences à développer
 
-## 10. Métriques marketing clés
-
-**Questions à répondre :**
-
-- [ ] **Quelles métriques trackez-vous ?**
-- [ ] **Quel est votre CAC global ?**
-- [ ] **Quel est votre CPL (Cost Per Lead) ?**
-- [ ] **Quel est votre taux de conversion global ?** (Visiteur → Client)
-- [ ] **Quel est le délai moyen entre premier contact et achat ?**
-- [ ] **Quel est votre MQL-to-SQL ratio ?**
-- [ ] **Avez-vous un dashboard marketing ?** (Outil)
-
-### Métriques actuelles
-| Métrique | Valeur actuelle | Objectif | Trend |
-|----------|-----------------|----------|-------|
-| CAC | [€] | [€] | [↑↓→] |
-| CPL | [€] | [€] | [↑↓→] |
-| Conversion rate | [X%] | [X%] | [↑↓→] |
-| Time to conversion | [X jours] | [X jours] | [↑↓→] |
-| MQL → SQL | [X%] | [X%] | [↑↓→] |
-| SQL → Client | [X%] | [X%] | [↑↓→] |
-| ROAS | [X] | [X] | [↑↓→] |
+| Séquence | Description | Priorité |
+|----------|-------------|:--------:|
+| Bienvenue | Après inscription | Haute |
+| Nurturing refusés | Conseils pour améliorer son profil | Moyenne |
+| Relance abandon | Demande non finalisée | Haute |
+| Post-prêt | Suivi et recommandation | Moyenne |
 
 ---
 
-## 11. Budget marketing
+## Events et PR
 
-**Questions à répondre :**
+*Participe-t-on à des événements ou fait-on des relations presse ?*
 
-- [ ] **Quel est votre budget marketing total annuel ?**
-- [ ] **Comment est-il réparti ?** (Par canal, par type de dépense)
-- [ ] **Quel % du CA est investi en marketing ?**
-- [ ] **Prévoyez-vous d'augmenter ou réduire ce budget ?**
+| Élément | Valeur |
+|---------|--------|
+| Salons/Conférences | ❌ Non |
+| Events organisés | ❌ Non |
+| Relations presse | ❌ Non |
+| Mentions médias | Aucune connue |
+| Budget PR | 0€ |
 
-### Répartition budget
-| Poste | Budget annuel | % du total |
-|-------|---------------|------------|
-| Paid acquisition | [€] | [X%] |
-| Content production | [€] | [X%] |
-| Outils/SaaS | [€] | [X%] |
-| Events | [€] | [X%] |
-| Agences/Freelances | [€] | [X%] |
-| PR | [€] | [X%] |
-| Autre | [€] | [X%] |
-| **Total** | **[€]** | **100%** |
-
-```
-Budget total : [€/an]
-% du CA : [X%]
-Évolution prévue : [+X% / -X% / stable]
-```
+*Pourquoi ?* Trop petit, pas de ressources. Potentiel pour plus tard quand la base sera solide.
 
 ---
 
-## 12. Équipe marketing
+## Outils marketing
 
-**Questions à répondre :**
+*Quels outils utilise-t-on pour le marketing ?*
 
-- [ ] **Combien de personnes dans l'équipe marketing ?**
-- [ ] **Quels sont leurs rôles ?**
-- [ ] **Utilisez-vous des agences/freelances ?** (Pour quoi)
-- [ ] **Quels recrutements marketing prévoyez-vous ?**
+### Stack actuelle
 
-### Réponses
-```
-Taille équipe : [X personnes]
+| Catégorie | Outil | Coût |
+|-----------|-------|:----:|
+| Analytics | Google Analytics | Gratuit |
+| SEO | À définir | - |
+| Email | À définir | - |
+| CRM | À définir | - |
+| Ads | Google Ads | Variable |
+| Social | Aucun | - |
+| Automation | Aucun | - |
 
-Composition :
-- [Rôle 1] : [Nom]
-- [Rôle 2] : [Nom]
-- [Rôle 3] : [Nom]
+### Besoins identifiés
 
-Agences/Freelances :
-- [Mission 1] : [Agence/Freelance]
-- [Mission 2] : [Agence/Freelance]
-
-Recrutements prévus :
-1. [Rôle] - [Timing]
-2. [Rôle] - [Timing]
-```
+| Catégorie | Besoin | Priorité |
+|-----------|--------|:--------:|
+| Analytics | Dashboard métriques | Haute (Q1 2026) |
+| CRM | Suivi clients/leads | Haute (Q1 2026) |
+| Email | Automation basique | Moyenne |
 
 ---
 
-## Résumé exécutif
+## Métriques marketing
 
-*(À générer automatiquement une fois les questions répondues)*
+*Que mesure-t-on et que devrait-on mesurer ?*
 
-| Élément | Contenu |
-|---------|---------|
-| Modèle GTM | [À compléter] |
-| Canal #1 | [À compléter] |
-| CAC global | [€] |
-| Taux conversion | [X%] |
-| Budget marketing | [€/an] |
+### État actuel
+
+| Métrique | Trackée ? | Valeur |
+|----------|:---------:|--------|
+| CAC | ❌ | À calculer |
+| CPL | ❌ | À calculer |
+| Conversion rate | ❌ | À calculer |
+| Time to conversion | ❌ | À calculer |
+| Trafic par source | ⚠️ Partiel | Google Analytics |
+
+### Objectifs Q1 2026
+
+| Métrique | Action |
+|----------|--------|
+| CAC par canal | Mettre en place le tracking |
+| LTV | Calculer sur base historique |
+| LTV/CAC | Calculer et optimiser |
+| Conversion par étape | Implémenter funnel analytics |
 
 ---
 
-**Total questions : 85**
-**Répondues : 0/85**
+## Budget marketing
+
+*Combien investit-on en marketing ?*
+
+### État actuel
+
+| Poste | Budget |
+|-------|:------:|
+| Paid acquisition (Ads) | Variable |
+| SEO/Content | 0€ (temps interne) |
+| Outils | ~0€ |
+| Events | 0€ |
+| PR | 0€ |
+| **Total** | **Minimal** |
+
+### Stratégie budget
+
+| Élément | Valeur |
+|---------|--------|
+| % CA en marketing | Non défini |
+| Approche | ROI-driven, pas de dépense non trackée |
+| Évolution prévue | Augmenter après structuration métriques |
+
+---
+
+## Équipe marketing
+
+*Qui fait le marketing ?*
+
+| Rôle | Personne | Temps consacré |
+|------|----------|:--------------:|
+| Head of Marketing | Fondateur | Partiel |
+| SEO | Fondateur | Partiel |
+| Ads | Fondateur | Partiel |
+| Content | Aucun | - |
+| Social | Aucun | - |
+
+### Recrutements prévus
+
+| Rôle | Timing | Priorité |
+|------|--------|:--------:|
+| Aucun prévu | - | - |
+
+*Pourquoi pas de recrutement ?* Objectif = rester lean et automatisé. Le fondateur gère le marketing. Freelances ponctuels si besoin.
+
+---
+
+## Résumé
+
+| Élément | Valeur |
+|---------|--------|
+| Modèle GTM | Product-Led Growth (100% self-service) |
+| Canal #1 | SEO |
+| Canal #2 | Bouche-à-oreille |
+| Canal #3 | Google Ads |
+| CAC | À calculer (Q1 2026) |
+| Budget marketing | Minimal |
+| Équipe | 1 personne (fondateur) |
+| Priorité 2026 | Structurer les métriques avant d'investir plus |
+
+---
+
+## Actions Q1 2026
+
+- [ ] Mettre en place le tracking analytics complet
+- [ ] Calculer CAC, LTV, LTV/CAC par canal
+- [ ] Définir un budget marketing basé sur les données
+- [ ] Évaluer le lancement d'un programme parrainage
+- [ ] Améliorer le SEO avec une stratégie contenu basique

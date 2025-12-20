@@ -1,436 +1,164 @@
 # Organisation Commerciale - Quickfund
 
-> **Statut :** 🔄 À compléter
 > **Dernière mise à jour :** Décembre 2025
 
 ---
 
-## 1. Stratégie commerciale
+## Stratégie commerciale
 
-**Questions à répondre :**
+*Quel modèle de vente utilise-t-on ?*
 
-- [ ] **Quel est votre modèle de vente ?**
-  - Self-service (client s'inscrit seul)
-  - Inside sales (vente à distance)
-  - Field sales (terrain)
-  - Channel (via partenaires)
-  - Hybride (décrivez)
+**Modèle :** 100% Self-Service (pas d'équipe commerciale)
 
-- [ ] **Pourquoi ce modèle ?**
-- [ ] **Ce modèle évolue-t-il selon les segments ?** (Ex: self-service pour PME, field pour grands comptes)
-- [ ] **Quel est le ticket moyen par type de vente ?**
-- [ ] **Quelle est votre approche : hunter (conquête) ou farmer (développement) ?**
+| Élément | Valeur |
+|---------|--------|
+| Modèle de vente | Self-service uniquement |
+| Équipe commerciale | Aucune |
+| Raison | Product-Led Growth, crédit B2C digital |
+| Prospection | Aucune (inbound uniquement) |
 
-### Réponses
-```
-Modèle de vente : [À compléter]
-Raison : [À compléter]
-Variation par segment : [À compléter]
-
-Ticket moyen :
-- Self-service : [€/an]
-- Inside sales : [€/an]
-- Field sales : [€/an]
-- Channel : [€/an]
-
-Approche : [Hunter/Farmer/Mixte]
-```
+*Pourquoi pas de sales ?* Quickfund vend du crédit aux particuliers via une plateforme 100% digitale. Le client fait sa demande en ligne, l'algorithme analyse, et la réponse est automatique. Pas besoin de commercial.
 
 ---
 
-## 2. Équipe commerciale
+## Parcours client (sans intervention humaine)
 
-**Questions à répondre :**
+*Comment le client achète-t-il sans sales ?*
 
-- [ ] **Combien de commerciaux avez-vous ?**
-- [ ] **Quelle est l'organisation de l'équipe ?** (Par segment, géographie, produit)
-- [ ] **Quels sont les rôles dans l'équipe ?** (SDR, AE, AM, CSM, etc.)
-- [ ] **Quel est le ratio SDR/AE ?**
-- [ ] **Qui manage l'équipe commerciale ?**
-- [ ] **Avez-vous un Sales Ops ?**
+| Étape | Description | Temps |
+|-------|-------------|:-----:|
+| 1. Découverte | Client trouve Quickfund (SEO, ads, bouche-à-oreille) | - |
+| 2. Simulation | Fait une simulation en ligne | ~2 min |
+| 3. Demande | Remplit le formulaire complet | ~10 min |
+| 4. Analyse | Algorithme de scoring évalue le dossier | ~24h |
+| 5. Offre | Reçoit une proposition (ou refus expliqué) | Automatique |
+| 6. Signature | Signe électroniquement | ~5 min |
+| 7. Versement | Reçoit les fonds | Quasi-instantané |
 
-### Organisation
-| Rôle | Nombre | Manager | Périmètre |
-|------|--------|---------|-----------|
-| VP Sales / Head of Sales | [X] | [CEO/autre] | Global |
-| Sales Manager | [X] | [VP Sales] | [À compléter] |
-| Account Executive (AE) | [X] | [Manager] | [À compléter] |
-| SDR / BDR | [X] | [Manager] | [À compléter] |
-| Account Manager (AM) | [X] | [Manager] | [À compléter] |
-| CSM (Customer Success) | [X] | [Manager] | [À compléter] |
-| Sales Ops | [X] | [Manager] | [À compléter] |
-| **Total** | **[X]** | - | - |
+**Durée totale :** Demande → Argent en ~24-48h max.
 
 ---
 
-## 3. Process de vente
+## Intervention humaine
 
-**Questions à répondre :**
+*Quand y a-t-il contact humain ?*
 
-- [ ] **Quelles sont les étapes de votre process de vente ?**
-- [ ] **Combien de temps dure chaque étape ?**
-- [ ] **Quels sont les critères de passage d'une étape à l'autre ?**
-- [ ] **Avez-vous un playbook commercial ?**
-- [ ] **Quels sont les livrables à chaque étape ?** (Email, call, démo, proposal, etc.)
+### Cas nécessitant une intervention
 
-### Pipeline stages
-| Étape | Description | Durée moyenne | Critères de passage | Livrables |
-|-------|-------------|---------------|---------------------|-----------|
-| 1. Lead | [À compléter] | [X jours] | [À compléter] | [À compléter] |
-| 2. Qualified | [À compléter] | [X jours] | [À compléter] | [À compléter] |
-| 3. Discovery | [À compléter] | [X jours] | [À compléter] | [À compléter] |
-| 4. Demo | [À compléter] | [X jours] | [À compléter] | [À compléter] |
-| 5. Proposal | [À compléter] | [X jours] | [À compléter] | [À compléter] |
-| 6. Negotiation | [À compléter] | [X jours] | [À compléter] | [À compléter] |
-| 7. Closed Won | [À compléter] | - | [À compléter] | [À compléter] |
-| 8. Closed Lost | [À compléter] | - | [À compléter] | [À compléter] |
+| Cas | Fréquence | Qui intervient |
+|-----|:---------:|----------------|
+| Dossier complexe | Rare | Fondateur |
+| Documents manquants | Occasionnel | Fondateur |
+| Questions client | Occasionnel | Fondateur |
+| Litige/problème | Rare | Fondateur |
+| Suivi impayé | Selon besoin | Fondateur ou freelance |
 
-### Réponses
-```
-Playbook : [Oui/Non - Lien si oui]
-Cycle de vente moyen : [X jours]
-```
+*Pourquoi si peu ?* L'automatisation est maximale. Le fondateur n'intervient que sur les cas exceptionnels.
 
 ---
 
-## 4. Qualification des leads
+## Pipeline et conversion
 
-**Questions à répondre :**
+*Comment suit-on les demandes ?*
 
-- [ ] **Quelle méthode de qualification utilisez-vous ?** (BANT, MEDDIC, CHAMP, autre)
-- [ ] **Quels critères définissent un MQL ?**
-- [ ] **Quels critères définissent un SQL ?**
-- [ ] **Quel est votre taux de MQL → SQL ?**
-- [ ] **Quel est votre taux de SQL → Closed Won ?**
-- [ ] **Comment passez-vous les leads du marketing aux sales ?**
+### Funnel de conversion
 
-### Critères de qualification
-```
-Méthode : [BANT/MEDDIC/CHAMP/Autre]
+| Étape | Description |
+|-------|-------------|
+| Leads | Visiteurs du site |
+| Simulations | Personnes ayant utilisé le simulateur |
+| Demandes | Dossiers soumis |
+| Acceptés | Dossiers approuvés |
+| Signés | Clients ayant accepté l'offre |
+| Actifs | Prêts en cours |
 
-Critères MQL :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
+### Métriques (à calculer Q1 2026)
 
-Critères SQL :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Taux MQL → SQL : [X%]
-Taux SQL → Won : [X%]
-
-Process handoff Marketing → Sales : [À compléter]
-```
+| Métrique | Valeur actuelle |
+|----------|:---------------:|
+| Taux acceptation | À calculer |
+| Taux signature post-acceptation | À calculer |
+| Cycle moyen demande → signature | ~24-48h |
+| Volume demandes/mois | À calculer |
 
 ---
 
-## 5. Pipeline et prévisions
+## Pourquoi pas de sales à l'avenir ?
 
-**Questions à répondre :**
+*Faut-il recruter des commerciaux un jour ?*
 
-- [ ] **Quelle est la valeur actuelle de votre pipeline ?**
-- [ ] **Combien d'opportunités actives dans le pipeline ?**
-- [ ] **Quel est le win rate global ?**
-- [ ] **Quel est le win rate par étape ?**
-- [ ] **Comment faites-vous vos prévisions ?** (Méthode, outil)
-- [ ] **Quelle est la précision de vos prévisions ?**
-- [ ] **Quel est le pipeline coverage ratio ?** (Pipeline / Objectif)
+### Argument CONTRE une équipe sales
 
-### Pipeline actuel
-| Stage | Nombre opps | Valeur | Win rate |
-|-------|-------------|--------|----------|
-| Qualified | [X] | [€] | [X%] |
-| Discovery | [X] | [€] | [X%] |
-| Demo | [X] | [€] | [X%] |
-| Proposal | [X] | [€] | [X%] |
-| Negotiation | [X] | [€] | [X%] |
-| **Total Pipeline** | **[X]** | **[€]** | **[X%]** |
+| Raison | Explication |
+|--------|-------------|
+| Coût | Un commercial coûte cher pour des prêts de faible montant |
+| Modèle B2C | Les particuliers préfèrent le self-service |
+| Scalabilité | L'automatisation scale, pas les humains |
+| Marges | Les marges crédit ne supportent pas le coût d'acquisition sales |
 
-### Réponses
-```
-Méthode forecast : [À compléter]
-Outil forecast : [À compléter]
-Précision historique : [X%]
-Pipeline coverage : [X]x
-```
+### Cas où des sales pourraient être utiles
+
+| Cas | Pertinence |
+|-----|:----------:|
+| Crédit pro (gros montants) | Moyenne |
+| Partenariats B2B | Possible |
+| White-label | Possible |
+
+*Conclusion :* Pas de sales prévu. Si un jour, ce serait pour le segment pro/B2B uniquement.
 
 ---
 
-## 6. Objectifs et quotas
+## Outils de "vente"
 
-**Questions à répondre :**
+*Quels outils supportent le parcours client ?*
 
-- [ ] **Quel est l'objectif de vente annuel ?**
-- [ ] **Comment est-il réparti par trimestre/mois ?**
-- [ ] **Quel est le quota individuel par AE ?**
-- [ ] **Quel % des commerciaux atteint son quota ?**
-- [ ] **Comment définissez-vous les quotas ?**
-- [ ] **Les quotas sont-ils réalistes ?** (Attainability)
-
-### Objectifs
-```
-Objectif annuel : [€]
-
-Répartition :
-- Q1 : [€]
-- Q2 : [€]
-- Q3 : [€]
-- Q4 : [€]
-
-Quota moyen par AE : [€/an]
-% AE at quota : [X%]
-Attainability : [X% du quota en moyenne]
-
-Méthode définition quotas : [À compléter]
-```
+| Fonction | Outil | Rôle |
+|----------|-------|------|
+| Site web | Plateforme Quickfund | Simulateur, demande, espace client |
+| Scoring | Algorithme interne | Décision automatique |
+| Documents | Upload + vérification | Collecte des pièces |
+| Signature | Signature électronique | Finalisation contrat |
+| Paiement | Virement SEPA | Versement des fonds |
 
 ---
 
-## 7. Rémunération commerciale
+## Comparaison avec un modèle sales classique
 
-**Questions à répondre :**
+*Pourquoi le self-service est-il supérieur pour Quickfund ?*
 
-- [ ] **Quelle est la structure de rémunération ?** (Fixe / Variable)
-- [ ] **Quel est le ratio fixe/variable ?** (Ex: 70/30)
-- [ ] **Sur quoi porte le variable ?** (ARR, MRR, marge, activité)
-- [ ] **Y a-t-il des accélérateurs ?** (Surperformance)
-- [ ] **Y a-t-il un minimum garanti ?** (Rampe-up)
-- [ ] **Quelle est l'OTE (On-Target Earnings) par rôle ?**
-- [ ] **Avez-vous des SPIFs ?** (Incentives court terme)
-
-### Grille de rémunération
-| Rôle | Fixe annuel | Variable cible | OTE | Ratio |
-|------|-------------|----------------|-----|-------|
-| SDR | [€] | [€] | [€] | [X/X] |
-| AE Junior | [€] | [€] | [€] | [X/X] |
-| AE Senior | [€] | [€] | [€] | [X/X] |
-| AM | [€] | [€] | [€] | [X/X] |
-| Head of Sales | [€] | [€] | [€] | [X/X] |
-
-### Réponses
-```
-Base variable : [MRR/ARR/Marge/Autre]
-Accélérateurs : [À compléter]
-Minimum garanti : [X mois]
-SPIFs : [À compléter]
-```
+| Critère | Self-service | Sales classique |
+|---------|:------------:|:---------------:|
+| Coût acquisition | Bas (automatisé) | Élevé (salaires) |
+| Scalabilité | Illimitée | Limitée par l'équipe |
+| Disponibilité | 24/7 | Horaires bureau |
+| Expérience client | Rapide, sans friction | Attente, RDV |
+| Marge préservée | ✅ Oui | ❌ Rognée |
 
 ---
 
-## 8. Outils sales
+## Résumé
 
-**Questions à répondre :**
-
-- [ ] **Quel CRM utilisez-vous ?**
-- [ ] **Quels autres outils sales utilisez-vous ?**
-- [ ] **Les commerciaux utilisent-ils bien le CRM ?** (Taux d'adoption)
-- [ ] **Manque-t-il des outils ?**
-
-### Stack sales
-| Catégorie | Outil | Prix/mois | Usage |
-|-----------|-------|-----------|-------|
-| CRM | [À compléter] | [€] | [À compléter] |
-| Sales intelligence | [À compléter] | [€] | [À compléter] |
-| Prospection | [À compléter] | [€] | [À compléter] |
-| Appels/Vidéo | [À compléter] | [€] | [À compléter] |
-| Signature électronique | [À compléter] | [€] | [À compléter] |
-| Proposal/CPQ | [À compléter] | [€] | [À compléter] |
-| Sales enablement | [À compléter] | [€] | [À compléter] |
-| **Total** | - | **[€/mois]** | - |
+| Élément | Valeur |
+|---------|--------|
+| Modèle de vente | 100% Self-service |
+| Équipe commerciale | Aucune (0 personne) |
+| Intervention humaine | Cas exceptionnels uniquement |
+| Cycle de vente | ~24-48h |
+| Évolution prévue | Rester sans sales |
+| Cas où sales envisagé | Crédit pro B2B (éventuellement) |
 
 ---
 
-## 9. Outbound et prospection
+## Non applicable
 
-**Questions à répondre :**
+*Sections classiques d'un fichier SALES.md non pertinentes pour Quickfund :*
 
-- [ ] **Faites-vous de l'outbound ?** (Cold calling, cold emailing)
-- [ ] **Combien de touches par prospect ?** (Séquence)
-- [ ] **Quel est le taux de réponse aux cold emails ?**
-- [ ] **Quel est le taux de meeting sur cold calls ?**
-- [ ] **Combien de meetings générés par SDR/mois ?**
-- [ ] **D'où viennent vos listes de prospection ?**
-- [ ] **Utilisez-vous des outils d'enrichissement ?** (Lesquels)
-
-### Métriques outbound
-```
-Volume emails/semaine par SDR : [X]
-Volume calls/semaine par SDR : [X]
-Taux réponse email : [X%]
-Taux meeting call : [X%]
-Meetings/mois par SDR : [X]
-
-Séquence type :
-- Jour 1 : [Action]
-- Jour 3 : [Action]
-- Jour 5 : [Action]
-- Jour 7 : [Action]
-- etc.
-
-Sources listes : [À compléter]
-Outils enrichissement : [À compléter]
-```
-
----
-
-## 10. Démos et présentations
-
-**Questions à répondre :**
-
-- [ ] **Combien de démos faites-vous par semaine ?**
-- [ ] **Quelle est la durée moyenne d'une démo ?**
-- [ ] **Qui fait les démos ?** (AE, SE, spécialiste)
-- [ ] **Avez-vous un script/framework de démo ?**
-- [ ] **Utilisez-vous un environnement de démo dédié ?**
-- [ ] **Quel est le taux de conversion post-démo ?**
-- [ ] **Proposez-vous des trials ?** (Durée, conditions)
-
-### Réponses
-```
-Démos/semaine : [X]
-Durée démo : [X min]
-Responsable démos : [À compléter]
-Script démo : [Oui/Non - Lien]
-Env démo : [Oui/Non]
-Conversion post-démo : [X%]
-
-Trials :
-- Durée : [X jours]
-- Conditions : [À compléter]
-- Conversion trial → paid : [X%]
-```
-
----
-
-## 11. Négociation et closing
-
-**Questions à répondre :**
-
-- [ ] **Qui a autorité pour donner des discounts ?** (Niveaux)
-- [ ] **Quel est le discount moyen accordé ?**
-- [ ] **Quels sont les principaux points de négociation ?**
-- [ ] **Quelles objections rencontrez-vous le plus souvent ?**
-- [ ] **Avez-vous des battle cards par concurrent ?**
-- [ ] **Quel est le délai moyen entre proposal et signature ?**
-
-### Politique de discount
-| Niveau approbation | Discount max | Conditions |
-|-------------------|--------------|------------|
-| AE | [X%] | [À compléter] |
-| Sales Manager | [X%] | [À compléter] |
-| VP Sales | [X%] | [À compléter] |
-| CEO | [X%+] | [À compléter] |
-
-### Objections courantes
-| Objection | Fréquence | Réponse type |
-|-----------|-----------|--------------|
-| [Objection 1] | [X%] | [À compléter] |
-| [Objection 2] | [X%] | [À compléter] |
-| [Objection 3] | [X%] | [À compléter] |
-| [Objection 4] | [X%] | [À compléter] |
-
-### Réponses
-```
-Discount moyen : [X%]
-Points de négo : [À compléter]
-Battle cards : [Oui/Non]
-Délai proposal → signature : [X jours]
-```
-
----
-
-## 12. Onboarding et handoff
-
-**Questions à répondre :**
-
-- [ ] **Comment passez-vous un client du sales au CSM/AM ?**
-- [ ] **Y a-t-il un kickoff meeting ?**
-- [ ] **Quelles informations sont transmises ?**
-- [ ] **Quel est le délai entre signature et onboarding ?**
-- [ ] **Qui est responsable de l'onboarding ?**
-
-### Réponses
-```
-Process handoff :
-1. [Étape 1]
-2. [Étape 2]
-3. [Étape 3]
-
-Kickoff meeting : [Oui/Non - Durée]
-Informations transmises : [À compléter]
-Délai signature → onboarding : [X jours]
-Responsable onboarding : [À compléter]
-```
-
----
-
-## 13. Formation et développement
-
-**Questions à répondre :**
-
-- [ ] **Comment formez-vous les nouveaux commerciaux ?**
-- [ ] **Quelle est la durée de la rampe-up ?**
-- [ ] **Quand un commercial atteint-il son quota ?** (En moyenne)
-- [ ] **Avez-vous un programme de formation continue ?**
-- [ ] **Utilisez-vous des outils de coaching ?** (Gong, Chorus, etc.)
-
-### Réponses
-```
-Formation initiale :
-- Durée : [X semaines]
-- Contenu : [À compléter]
-- Certification : [Oui/Non]
-
-Rampe-up :
-- Durée : [X mois]
-- Quota à M1 : [X%]
-- Quota à M3 : [X%]
-- Full quota : [M+X]
-
-Formation continue : [À compléter]
-Outils coaching : [À compléter]
-```
-
----
-
-## 14. Métriques sales
-
-**Questions à répondre :**
-
-- [ ] **Quelles métriques trackez-vous quotidiennement ?**
-- [ ] **Quelles métriques trackez-vous hebdomadairement ?**
-- [ ] **Avez-vous un dashboard sales ?** (Outil, métriques affichées)
-- [ ] **À quelle fréquence faites-vous des reviews ?**
-
-### Métriques clés
-| Métrique | Valeur actuelle | Objectif | Fréquence review |
-|----------|-----------------|----------|------------------|
-| ARR | [€] | [€] | Quotidien |
-| New MRR | [€] | [€] | Hebdo |
-| Win rate | [X%] | [X%] | Mensuel |
-| Cycle de vente | [X jours] | [X jours] | Mensuel |
-| ACV | [€] | [€] | Mensuel |
-| Pipeline value | [€] | [€] | Hebdo |
-| Activité (calls/emails) | [X] | [X] | Quotidien |
-| Meetings booked | [X] | [X] | Hebdo |
-
----
-
-## Résumé exécutif
-
-*(À générer automatiquement une fois les questions répondues)*
-
-| Élément | Contenu |
-|---------|---------|
-| Modèle de vente | [À compléter] |
-| Taille équipe | [X] |
-| Quota annuel | [€] |
-| Win rate | [X%] |
-| Cycle de vente | [X jours] |
-
----
-
-**Total questions : 78**
-**Répondues : 0/78**
+| Section | Raison de non-applicabilité |
+|---------|----------------------------|
+| Quotas commerciaux | Pas de commerciaux |
+| Rémunération variable | Pas de commerciaux |
+| Formation sales | Pas de commerciaux |
+| CRM pipeline | Pas de pipeline géré manuellement |
+| Démos produit | Pas de démos (self-service) |
+| Négociation/Discounts | Pas de négociation (offre fixe) |
+| Outbound/Prospection | Pas de prospection (inbound uniquement) |

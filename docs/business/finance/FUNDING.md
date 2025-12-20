@@ -1,347 +1,232 @@
 # Financement & Capitaux - Quickfund
 
-> **Statut :** 🔄 À compléter
-> **Dernière mise à jour :** Décembre 2025
+> **Derniere mise a jour :** Decembre 2025
 
 ---
 
-## 1. Historique de financement
+## Situation de financement
 
-**Questions à répondre :**
+*Comment Quickfund est-elle financee ?*
 
-- [ ] **Quel est le montant total levé depuis la création ?**
-- [ ] **Détaillez chaque tour de financement :** Date, montant, valorisation, investisseurs
-- [ ] **La société a-t-elle été bootstrappée au départ ?** (Combien de temps, avec quel capital)
-- [ ] **Y a-t-il eu des apports en compte courant d'associés ?**
+**Modele :** 100% Autofinancement (Bootstrap)
 
-### Tours de financement
-| Tour | Date | Montant levé | Valorisation pré-money | Valorisation post-money | Dilution | Lead investor |
-|------|------|--------------|------------------------|-------------------------|----------|---------------|
-| Amorçage/Love money | [Date] | [€] | [€] | [€] | [X%] | [Nom] |
-| Seed | [Date] | [€] | [€] | [€] | [X%] | [Nom] |
-| Series A | [Date] | [€] | [€] | [€] | [X%] | [Nom] |
-| Series B | [Date] | [€] | [€] | [€] | [X%] | [Nom] |
-| **Total levé** | - | **[€]** | - | - | - | - |
+| Element | Valeur |
+|---------|--------|
+| Total leve | 0 EUR |
+| Dettes | 0 EUR |
+| Mode de financement | Autofinancement |
+| Rentable | Oui (depuis le debut) |
+| Besoin de levee | Non |
 
-### Bootstrap/Compte courant
-```
-Phase bootstrap : [X mois]
-Capital initial : [€]
-Apports compte courant : [€]
-```
+*Pourquoi pas de levee ?* L'entreprise est rentable depuis sa creation. Le fondateur a choisi de garder 100% du capital et de croitre organiquement. Pas de pression d'investisseurs, pas de dilution.
 
 ---
 
-## 2. Structure du capital (Cap table)
+## Historique de financement
 
-**Questions à répondre :**
+*Y a-t-il eu des tours de financement ?*
 
-- [ ] **Qui sont les actionnaires ?**
-- [ ] **Quelle est la répartition du capital ?** (% par actionnaire)
-- [ ] **Y a-t-il des actions préférentielles ?** (Liquidation preference, anti-dilution)
-- [ ] **Y a-t-il un pool d'options/BSPCE ?** (Taille, attribution)
-- [ ] **Y a-t-il des BSA (Bons de Souscription d'Actions) ?**
-- [ ] **Y a-t-il des obligations convertibles en cours ?**
+| Tour | Montant | Valorisation | Investisseurs |
+|------|---------|--------------|---------------|
+| Aucun | - | - | - |
 
-### Cap table actuelle
-| Actionnaire | Type | Nombre d'actions | % capital | % droits de vote | Notes |
-|-------------|------|------------------|-----------|------------------|-------|
-| [Fondateur 1] | Ordinaires | [X] | [X%] | [X%] | [Notes] |
-| [Fondateur 2] | Ordinaires | [X] | [X%] | [X%] | [Notes] |
-| [Investisseur 1] | Préférentielles | [X] | [X%] | [X%] | [Notes] |
-| [Investisseur 2] | Préférentielles | [X] | [X%] | [X%] | [Notes] |
-| Pool BSPCE | Options | [X] | [X%] | - | [Notes] |
-| **Total** | - | **[X]** | **100%** | **100%** | - |
-
-### BSPCE/Options
-```
-Pool total : [X% du capital]
-Pool attribué : [X%]
-Pool disponible : [X%]
-Nombre de bénéficiaires : [X personnes]
-```
+**Resume :** Pas de levee de fonds. L'entreprise a ete creee avec le capital personnel du fondateur.
 
 ---
 
-## 3. Investisseurs actuels
+## Structure du capital (Cap table)
 
-**Questions à répondre :**
+*Qui detient Quickfund ?*
 
-Pour chaque investisseur :
-- [ ] **Nom de l'investisseur**
-- [ ] **Type** (BA, VC, Family Office, Corporate, etc.)
-- [ ] **Montant investi**
-- [ ] **% de capital détenu**
-- [ ] **Représentant / Contact principal**
-- [ ] **Siège au board ?**
-- [ ] **Droits spéciaux ?** (Veto, anti-dilution, etc.)
+| Actionnaire | Type | % capital | % droits de vote |
+|-------------|------|-----------|------------------|
+| Fondateur | Ordinaires | 100% | 100% |
+| **Total** | - | **100%** | **100%** |
 
-### Investisseur 1 : [Nom]
-```
-Type : [BA/VC/FO/Corporate]
-Montant investi : [€]
-% capital : [X%]
-Tour de participation : [Seed/Series A/etc.]
-Contact : [Nom - Email]
-Board seat : [Oui/Non]
-Droits spéciaux : [À compléter]
-Valeur ajoutée : [À compléter]
-```
+### Instruments financiers
 
-### Investisseur 2 : [Nom]
-*(Même structure)*
+| Element | Valeur |
+|---------|--------|
+| Actions preferentielles | Non |
+| BSPCE/Stock-options | Non |
+| BSA | Non |
+| Obligations convertibles | Non |
 
-### Investisseur 3 : [Nom]
-*(Même structure)*
+*Pourquoi 100% fondateur ?* Pas de levee = pas de dilution. Le fondateur garde le controle total.
 
 ---
 
-## 4. Dettes et prêts
+## Investisseurs
 
-**Questions à répondre :**
+*Y a-t-il des investisseurs externes ?*
 
-- [ ] **Avez-vous des prêts bancaires ?** (Montant, échéance, taux)
-- [ ] **Avez-vous des prêts d'amorçage/venture debt ?**
-- [ ] **Avez-vous des aides/subventions remboursables ?** (BPI, etc.)
-- [ ] **Avez-vous des obligations convertibles ?**
-- [ ] **Quelles sont les garanties données ?**
-- [ ] **Quel est le montant total de la dette ?**
-- [ ] **Quel est le calendrier de remboursement ?**
+**Aucun investisseur externe.**
 
-### Tableau des dettes
-| Type de dette | Prêteur | Montant initial | Capital restant dû | Taux | Échéance | Garantie |
-|---------------|---------|-----------------|-------------------|------|----------|----------|
-| Prêt bancaire | [Banque] | [€] | [€] | [X%] | [Date] | [À compléter] |
-| Venture debt | [Fonds] | [€] | [€] | [X%] | [Date] | [À compléter] |
-| Prêt d'amorçage BPI | [BPI] | [€] | [€] | [X%] | [Date] | [Aucune] |
-| OC (Obligation Convertible) | [Investisseur] | [€] | [€] | [X%] | [Date] | - |
-| **Total dette** | - | **[€]** | **[€]** | - | - | - |
-
-### Calendrier de remboursement
-| Année | Montant dû | Prêt 1 | Prêt 2 | Prêt 3 |
-|-------|------------|--------|--------|--------|
-| 2025 | [€] | [€] | [€] | [€] |
-| 2026 | [€] | [€] | [€] | [€] |
-| 2027 | [€] | [€] | [€] | [€] |
-| 2028 | [€] | [€] | [€] | [€] |
+| Element | Valeur |
+|---------|--------|
+| Business Angels | 0 |
+| VCs | 0 |
+| Family Offices | 0 |
+| Corporates | 0 |
 
 ---
 
-## 5. Aides et subventions
+## Dettes et prets
 
-**Questions à répondre :**
+*L'entreprise a-t-elle des dettes ?*
 
-- [ ] **Avez-vous reçu des subventions ?** (BPI, régions, Europe)
-- [ ] **Avez-vous le statut JEI (Jeune Entreprise Innovante) ?**
-- [ ] **Bénéficiez-vous du CIR (Crédit Impôt Recherche) ?**
-- [ ] **Bénéficiez-vous du CII (Crédit Impôt Innovation) ?**
-- [ ] **Êtes-vous dans un programme d'accélération ?** (Avec financement)
-- [ ] **Avez-vous des aides remboursables en cours ?**
+| Type de dette | Montant | Echeance |
+|---------------|---------|----------|
+| Prets bancaires | 0 EUR | - |
+| Venture debt | 0 EUR | - |
+| Prets BPI | 0 EUR | - |
+| Obligations convertibles | 0 EUR | - |
+| **Total dette** | **0 EUR** | - |
 
-### Aides reçues
-| Aide | Organisme | Montant | Date | Remboursable | Statut |
-|------|-----------|---------|------|--------------|--------|
-| [Subvention 1] | [Organisme] | [€] | [Date] | [Oui/Non] | [Reçu/En cours] |
-| CIR | [État] | [€] | [Année] | Non | [À récupérer/Récupéré] |
-| CII | [État] | [€] | [Année] | Non | [À récupérer/Récupéré] |
-| [Programme accélération] | [Organisme] | [€] | [Date] | [Oui/Non] | [En cours/Terminé] |
-| **Total aides** | - | **[€]** | - | - | - |
-
-### Statuts
-```
-JEI : [Oui/Non - Depuis quand]
-CIR : [Oui/Non - Montant annuel estimé]
-CII : [Oui/Non - Montant annuel estimé]
-```
+*Politique :* Pas de dette. L'entreprise fonctionne sur ses fonds propres.
 
 ---
 
-## 6. Prochaine levée de fonds
+## Aides et subventions
 
-**Questions à répondre :**
+*L'entreprise a-t-elle recu des aides ?*
 
-- [ ] **Prévoyez-vous une levée de fonds ?** (Oui/Non)
-- [ ] **Quel montant visez-vous ?**
-- [ ] **Pour quelle valorisation cible ?**
-- [ ] **Quand souhaitez-vous lever ?**
-- [ ] **À quoi serviront les fonds ?** (Use of proceeds)
-- [ ] **Quels investisseurs ciblez-vous ?**
-- [ ] **Avez-vous déjà des discussions en cours ?**
-- [ ] **Votre data room est-elle prête ?**
+| Element | Valeur |
+|---------|--------|
+| Subventions recues | Aucune |
+| JEI | Non applicable (Estonie) |
+| CIR | Non applicable (Estonie) |
+| Accelerateur | Non |
 
-### Plan de levée
-```
-Levée prévue : [Oui/Non]
-Montant cible : [€]
-Valorisation cible : [€]
-Timing : [Date prévue]
-Type de tour : [Seed/Series A/B/Bridge]
-
-Use of proceeds :
-- [X%] Produit/R&D
-- [X%] Sales & Marketing
-- [X%] G&A
-- [X%] Recrutement
-- [X%] Autre
-
-Investisseurs cibles :
-1. [Nom du fonds]
-2. [Nom du fonds]
-3. [Nom du fonds]
-
-Discussions en cours : [À compléter]
-Data room : [Prête/En cours/À faire]
-```
+*Note :* Quickfund etant une societe estonienne (OU), les dispositifs francais (JEI, CIR, BPI) ne s'appliquent pas.
 
 ---
 
-## 7. Valorisation
+## Prochaine levee de fonds
 
-**Questions à répondre :**
+*L'entreprise prevoit-elle de lever ?*
 
-- [ ] **Quelle est la dernière valorisation connue ?** (Post-money du dernier tour)
-- [ ] **Sur quels multiples est-elle basée ?** (ARR multiple, etc.)
-- [ ] **Comment estimez-vous la valorisation actuelle ?**
-- [ ] **Quels sont les comparables utilisés ?**
+| Element | Valeur |
+|---------|--------|
+| Levee prevue | Non |
+| Raison | Rentable, pas de besoin |
 
-### Réponses
-```
-Dernière valorisation : [€] (Post-money [Date])
-Multiple ARR : [X]x
-Multiple MRR : [X]x
+*Strategie :* Rester autofinance et croitre organiquement. Une levee pourrait etre envisagee si une opportunite de croissance massive se presentait, mais ce n'est pas dans les plans actuels.
 
-Valorisation estimée actuelle : [€]
-Méthode : [À compléter]
+### Cas ou une levee serait envisagee
 
-Comparables :
-1. [Société] - [Multiple] - [Source]
-2. [Société] - [Multiple] - [Source]
-3. [Société] - [Multiple] - [Source]
-```
+| Scenario | Probabilite |
+|----------|:-----------:|
+| Acquisition d'un concurrent | Faible |
+| Expansion geographique massive | Faible |
+| Diversification produit majeure | Faible |
+| Offre de rachat attractive | A evaluer |
 
 ---
 
-## 8. Gouvernance et droits des investisseurs
+## Valorisation
 
-**Questions à répondre :**
+*Comment valorise-t-on Quickfund ?*
 
-- [ ] **Avez-vous un board ?** (Composition)
-- [ ] **À quelle fréquence se réunit-il ?**
-- [ ] **Quels sont les droits de veto des investisseurs ?**
-- [ ] **Y a-t-il des seuils de décision nécessitant approbation ?** (Dépenses, recrutement, etc.)
-- [ ] **Y a-t-il des clauses de liquidation préférentielle ?**
-- [ ] **Y a-t-il des clauses d'anti-dilution ?**
-- [ ] **Y a-t-il des clauses de drag-along/tag-along ?**
+| Element | Valeur |
+|---------|--------|
+| Derniere valorisation | Pas de reference (pas de tour) |
+| Methode | Non applicable |
 
-### Composition du board
-| Siège | Nom | Représente | Rôle |
-|-------|-----|------------|------|
-| 1 | [Nom] | Fondateurs | Chairman |
-| 2 | [Nom] | Fondateurs | Member |
-| 3 | [Nom] | [Investisseur X] | Member |
-| 4 | [Nom] | Indépendant | Member |
+*Note :* Sans tour de financement, il n'y a pas de valorisation de reference. Une valorisation pourrait etre estimee sur base de multiples de CA (typiquement 2-5x pour une fintech rentable).
 
-### Droits des investisseurs
-```
-Fréquence board : [Mensuel/Trimestriel]
+### Estimation indicative
 
-Droits de veto sur :
-- [Action nécessitant veto 1]
-- [Action nécessitant veto 2]
-- [Action nécessitant veto 3]
+| Methode | Multiple | CA annuel estime | Valorisation indicative |
+|---------|:--------:|:----------------:|:-----------------------:|
+| Multiple CA | 3x | ~50K EUR | ~150K EUR |
 
-Seuils d'approbation :
-- Dépense > [€] : [Qui approuve]
-- Recrutement > [€] salaire : [Qui approuve]
-- Contrat > [€] : [Qui approuve]
-
-Liquidation preference : [X]x [Participating/Non-participating]
-Anti-dilution : [Full ratchet/Weighted average/None]
-Drag-along : [Oui/Non - Conditions]
-Tag-along : [Oui/Non - Conditions]
-```
+*Attention :* Estimation tres approximative, uniquement a titre indicatif.
 
 ---
 
-## 9. Programme OVH / Avantages spéciaux
+## Gouvernance
 
-**Questions à répondre :**
+*Comment est gouvernee l'entreprise ?*
 
-- [ ] **Bénéficiez-vous de programmes partenaires ?** (OVH, AWS, Google, etc.)
-- [ ] **Quels crédits/avantages avez-vous ?**
-- [ ] **Jusqu'à quand sont-ils valables ?**
-- [ ] **Quel impact sur vos coûts ?**
+| Element | Valeur |
+|---------|--------|
+| Board | Non (pas necessaire) |
+| Actionnaires | 1 (fondateur) |
+| Decisions majeures | Fondateur seul |
+| Reporting investisseurs | Aucun |
 
-### Programmes en cours
-| Programme | Fournisseur | Valeur | Date début | Date fin | Impact mensuel |
-|-----------|-------------|--------|------------|----------|----------------|
-| [Programme 1] | [OVH/AWS/etc.] | [€] | [Date] | [Date] | [€/mois économisés] |
-| [Programme 2] | [Fournisseur] | [€] | [Date] | [Date] | [€/mois économisés] |
-| **Total économies** | - | **[€]** | - | - | **[€/mois]** |
+*Avantage :* Decisions rapides, pas de comite, pas de process lourds. Le fondateur peut pivoter instantanement si necessaire.
 
 ---
 
-## 10. Scénarios de sortie
+## Programmes partenaires
 
-**Questions à répondre :**
+*L'entreprise beneficie-t-elle de programmes ?*
 
-- [ ] **Quelle est votre stratégie de sortie long terme ?** (IPO, acquisition, rester indépendant)
-- [ ] **Avez-vous des acquéreurs potentiels identifiés ?**
-- [ ] **À quel horizon envisagez-vous une sortie ?**
-- [ ] **Quelle valorisation de sortie visez-vous ?**
-- [ ] **Y a-t-il eu des approches/offres ?**
+| Programme | Fournisseur | Valeur | Statut |
+|-----------|-------------|--------|:------:|
+| Credits cloud | GCP | A verifier | Possible |
+| Startup program | Stripe | A verifier | Possible |
 
-### Réponses
-```
-Stratégie de sortie : [IPO/Acquisition/Indépendance/Pas décidé]
-Horizon : [X ans]
-Valorisation de sortie visée : [€]
-
-Acquéreurs potentiels :
-1. [Société]
-2. [Société]
-3. [Société]
-
-Approches reçues : [À compléter]
-```
+*A explorer :* VMCloud etant une entreprise du groupe, il pourrait y avoir des synergies de cout.
 
 ---
 
-## 11. Holding et structure groupe
+## Scenarios de sortie
 
-**Questions à répondre :**
+*Quelle est la strategie long terme ?*
 
-- [ ] **Avez-vous une holding ?**
-- [ ] **Quelle est la structure juridique du groupe ?**
-- [ ] **Y a-t-il des filiales ?**
-- [ ] **Dans quels pays êtes-vous présents juridiquement ?**
+| Element | Valeur |
+|---------|--------|
+| Strategie de sortie | Pas de plan de sortie |
+| Horizon | Indefini |
+| Approches recues | Aucune |
 
-### Structure
-```
-Holding : [Oui/Non - Nom]
-Structure :
-- [Société 1] - [Pays] - [Objet]
-  └── [Filiale 1.1] - [Pays] - [Objet]
-- [Société 2] - [Pays] - [Objet]
-
-Organigramme juridique : [À compléter ou lien vers schéma]
-```
+*Philosophie :* L'entreprise est construite pour durer, pas pour etre vendue. Le fondateur vise l'independance a long terme.
 
 ---
 
-## Résumé exécutif
+## Structure groupe
 
-*(À générer automatiquement une fois les questions répondues)*
+*Quelle est la structure juridique ?*
 
-| Élément | Contenu |
-|---------|---------|
-| Total levé | [€] |
-| Dernière valorisation | [€] |
-| Dette totale | [€] |
-| Prochaine levée | [€] - [Date] |
-| Runway avec cash actuel | [X mois] |
+| Element | Valeur |
+|---------|--------|
+| Holding | Non |
+| Filiales | Non |
+| Entreprises liees | VMCloud (cloud du groupe) |
+
+### Synergies groupe
+
+| Entite | Relation | Synergie |
+|--------|----------|----------|
+| VMCloud | Meme groupe | Hebergement cloud |
 
 ---
 
-**Total questions : 58**
-**Répondues : 0/58**
+## Resume
+
+| Element | Valeur |
+|---------|--------|
+| Total leve | 0 EUR |
+| Dette | 0 EUR |
+| Capital fondateur | 100% |
+| Rentable | Oui |
+| Levee prevue | Non |
+| Strategie | Autofinancement |
+
+---
+
+## Non applicable
+
+*Sections classiques d'un fichier FUNDING.md non pertinentes :*
+
+| Section | Raison |
+|---------|--------|
+| Tours de financement | Aucun tour |
+| Investisseurs | Aucun investisseur |
+| Cap table complexe | 1 seul actionnaire |
+| Liquidation preference | Pas d'investisseur |
+| Anti-dilution | Pas d'investisseur |
+| Reporting investisseurs | Aucun |

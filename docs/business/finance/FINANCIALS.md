@@ -1,347 +1,251 @@
 # Finances & P&L - Quickfund
 
-> **Statut :** 🔄 À compléter
-> **Dernière mise à jour :** Décembre 2025
+> **Derniere mise a jour :** Decembre 2025
 
 ---
 
-## 1. Situation financière actuelle
+## Situation financiere actuelle
 
-**Questions à répondre :**
+*Quel est l'etat financier de Quickfund ?*
 
-- [ ] **Quelle est votre trésorerie actuelle ?** (Solde bancaire)
-- [ ] **Quel est votre MRR actuel ?** (Monthly Recurring Revenue)
-- [ ] **Quel est votre ARR actuel ?** (Annual Recurring Revenue)
-- [ ] **Êtes-vous rentable ?** (Oui/Non, depuis quand)
-- [ ] **Quel est votre burn rate mensuel ?** (Dépenses - Revenus)
-- [ ] **Quel est votre runway ?** (Combien de mois avant besoin de financement)
-- [ ] **Avez-vous des dettes ?** (Montant total, échéances)
+| Element | Valeur |
+|---------|--------|
+| Tresorerie | 80 000 EUR |
+| CA 2024 | 30 000 EUR |
+| CA 2025 | ~40 000 EUR |
+| CA cumule (2 ans) | ~70 000 EUR |
+| Rentable | Oui (depuis le debut) |
+| Burn rate | Negatif (profitable) |
+| Runway | Illimite |
+| Dettes | 0 EUR |
 
-### Snapshot financier
-```
-Date du snapshot : [JJ/MM/AAAA]
-
-Trésorerie : [€]
-MRR : [€]
-ARR : [€]
-Rentable : [Oui/Non]
-Burn rate : [€/mois]
-Runway : [X mois]
-Dettes totales : [€]
-```
+*Point fort :* Entreprise rentable des le depart, pas de besoin de financement externe.
 
 ---
 
-## 2. Revenus
+## Revenus
 
-**Questions à répondre :**
+*D'ou viennent les revenus ?*
 
-### Revenus récurrents
-- [ ] **Quel est le MRR par produit ?**
-- [ ] **Quel est le MRR par segment client ?**
-- [ ] **Quel est le MRR par géographie ?**
-- [ ] **Quelle est la croissance MRR mois sur mois ?**
-- [ ] **Quel est le New MRR (nouveaux clients) ?**
-- [ ] **Quel est l'Expansion MRR (upsell/upgrade) ?**
-- [ ] **Quel est le Churn MRR (clients perdus) ?**
-- [ ] **Quel est le Net New MRR ?** (New + Expansion - Churn)
+### Sources de revenus
 
-### Revenus non-récurrents
-- [ ] **Avez-vous des revenus non-récurrents ?** (Services, implémentation, etc.)
-- [ ] **Quel montant représentent-ils ?**
-- [ ] **Quelle est la marge sur ces services ?**
+| Source | Description | % du CA |
+|--------|-------------|:-------:|
+| Interets | Interets sur prets | Majoritaire |
+| Frais de dossier | Frais fixes par pret | A calculer |
+| Penalites retard | Frais en cas d'impaye | Faible |
 
-### Répartition MRR
-| Catégorie | MRR | % du total |
-|-----------|-----|------------|
-| Produit 1 | [€] | [X%] |
-| Produit 2 | [€] | [X%] |
-| Produit 3 | [€] | [X%] |
-| **Total MRR** | **[€]** | **100%** |
+### Modele economique
 
-| Segment | MRR | % du total |
-|---------|-----|------------|
-| [Segment 1] | [€] | [X%] |
-| [Segment 2] | [€] | [X%] |
-| [Segment 3] | [€] | [X%] |
-| **Total** | **[€]** | **100%** |
+| Element | Valeur |
+|---------|--------|
+| Type de revenus | Interets (non recurrent) |
+| Marge sur interets | A calculer |
+| Ticket moyen | 500-3000 EUR (estime) |
+| Duree moyenne pret | 3-12 mois (estime) |
 
-### Évolution MRR (6 derniers mois)
-| Mois | New MRR | Expansion MRR | Churn MRR | Net New MRR | MRR Total | Growth |
-|------|---------|---------------|-----------|-------------|-----------|--------|
-| M-6 | [€] | [€] | [€] | [€] | [€] | [X%] |
-| M-5 | [€] | [€] | [€] | [€] | [€] | [X%] |
-| M-4 | [€] | [€] | [€] | [€] | [€] | [X%] |
-| M-3 | [€] | [€] | [€] | [€] | [€] | [X%] |
-| M-2 | [€] | [€] | [€] | [€] | [€] | [X%] |
-| M-1 | [€] | [€] | [€] | [€] | [€] | [X%] |
-
-### Revenus non-récurrents
-```
-Services : [€/an]
-Implémentation : [€/an]
-Formation : [€/an]
-Autre : [€/an]
-Total non-récurrent : [€/an]
-Marge sur services : [X%]
-```
+*Note :* Contrairement au SaaS, le credit ne genere pas de MRR au sens strict. Les revenus dependent du volume de prets actifs.
 
 ---
 
-## 3. Coûts et dépenses
+## Couts et depenses
 
-**Questions à répondre :**
+*Quels sont les postes de couts ?*
 
-### Coûts fixes
-- [ ] **Quels sont vos salaires totaux ?** (Brut + charges)
-- [ ] **Quels sont vos loyers/bureaux ?**
-- [ ] **Quels sont vos abonnements SaaS/outils ?**
-- [ ] **Quels sont vos coûts infra/cloud ?**
-- [ ] **Autres coûts fixes ?**
+### Structure de couts
 
-### Coûts variables
-- [ ] **Quels sont vos coûts d'acquisition client ?** (Marketing, pub)
-- [ ] **Quels sont vos coûts de vente ?** (Commissions, events)
-- [ ] **Quels sont vos coûts de delivery ?** (Support, implémentation)
-- [ ] **Autres coûts variables ?**
+| Poste | Type | Montant/mois |
+|-------|------|:------------:|
+| Fondateur | Fixe | Variable (dividendes) |
+| Freelance saisie | Variable | ~1 800 EUR net |
+| Infrastructure (GCP) | Fixe | ~1 500 EUR |
+| Stripe | Variable | 1.5% / transaction |
+| Twilio | Variable | Faible |
+| Comptable | Fixe | 0 EUR (mutualise groupe) |
+| Domaines/SSL | Fixe | Faible |
+| **Total fixe estime** | - | **~3 300 EUR/mois** |
 
-### Répartition des coûts
-| Catégorie | Montant/mois | % du total |
-|-----------|--------------|------------|
-| **Coûts fixes** | | |
-| Salaires + charges | [€] | [X%] |
-| Bureaux/Loyer | [€] | [X%] |
-| Outils/SaaS | [€] | [X%] |
-| Infrastructure/Cloud | [€] | [X%] |
-| Assurances | [€] | [X%] |
-| Comptabilité/Legal | [€] | [X%] |
-| **Coûts variables** | | |
-| Marketing/Acquisition | [€] | [X%] |
-| Ventes (commissions) | [€] | [X%] |
-| Support/Delivery | [€] | [X%] |
-| **Total dépenses** | **[€]** | **100%** |
+*Avantage :* Structure de couts tres legere grace a l'automatisation et aux outils internes.
+
+### Repartition des couts
+
+| Categorie | % estime |
+|-----------|:--------:|
+| RH (fondateur + freelance) | ~50% |
+| Infrastructure | ~30% |
+| Services tiers | ~15% |
+| Autre | ~5% |
 
 ---
 
-## 4. P&L simplifié
+## P&L simplifie
 
-**Questions à répondre :**
+*Comment se presente le P&L ?*
 
-- [ ] **Pouvez-vous fournir les données pour le P&L mensuel ?**
-- [ ] **Quel est le CA total (récurrent + non-récurrent) ?**
-- [ ] **Quelle est la marge brute ?**
-- [ ] **Quels sont les coûts opérationnels ?**
-- [ ] **Quel est le résultat net ?**
+| Ligne | Annuel (estime) |
+|-------|:---------------:|
+| **Revenus** | |
+| Interets percus | ~40-60K EUR |
+| Frais | A calculer |
+| **CA Total** | **40-60K EUR/an** |
+| | |
+| **Couts** | |
+| RH | A preciser |
+| Infrastructure | A preciser |
+| Services tiers | A preciser |
+| **Total couts** | **A calculer** |
+| | |
+| **Resultat** | **Positif** |
 
-### P&L mensuel actuel
-| Ligne | Montant/mois | % du CA |
-|-------|--------------|---------|
-| **Revenus** | | |
-| MRR | [€] | [X%] |
-| Non-récurrent | [€] | [X%] |
-| **CA Total** | **[€]** | **100%** |
-| | | |
-| **Coûts directs (COGS)** | | |
-| Infrastructure | [€] | [X%] |
-| Support delivery | [€] | [X%] |
-| **Marge brute** | **[€]** | **[X%]** |
-| | | |
-| **Coûts opérationnels (OpEx)** | | |
-| R&D | [€] | [X%] |
-| Sales & Marketing | [€] | [X%] |
-| G&A (Admin) | [€] | [X%] |
-| **Total OpEx** | **[€]** | **[X%]** |
-| | | |
-| **EBITDA** | **[€]** | **[X%]** |
-| Amortissements | [€] | [X%] |
-| Intérêts | [€] | [X%] |
-| Impôts | [€] | [X%] |
-| **Résultat net** | **[€]** | **[X%]** |
+*Note :* Chiffres approximatifs. Le CA total sur 2 ans est de 80-120K EUR.
 
 ---
 
-## 5. Budget et projections
+## Unit economics
 
-**Questions à répondre :**
+*Quelle est la rentabilite par pret ?*
 
-- [ ] **Avez-vous un budget annuel formalisé ?**
-- [ ] **Quelles sont vos projections de CA pour les 12 prochains mois ?**
-- [ ] **Quelles sont vos projections de dépenses ?**
-- [ ] **Quand prévoyez-vous d'atteindre le breakeven ?**
-- [ ] **Quels sont vos 3 scénarios ?** (Pessimiste, base, optimiste)
+| Metrique | Valeur | Cible |
+|----------|:------:|:-----:|
+| Montant moyen pret | A calculer | - |
+| Marge brute/pret | A calculer | >10% |
+| CAC | A calculer | <50 EUR |
+| LTV | A calculer | A definir |
+| LTV/CAC | A calculer | >3 |
 
-### Projection 12 mois
-| Mois | MRR prévu | CA total | Dépenses | Résultat | Tréso fin de mois |
-|------|-----------|----------|----------|----------|-------------------|
-| M+1 | [€] | [€] | [€] | [€] | [€] |
-| M+2 | [€] | [€] | [€] | [€] | [€] |
-| M+3 | [€] | [€] | [€] | [€] | [€] |
-| M+4 | [€] | [€] | [€] | [€] | [€] |
-| M+5 | [€] | [€] | [€] | [€] | [€] |
-| M+6 | [€] | [€] | [€] | [€] | [€] |
-| M+7 | [€] | [€] | [€] | [€] | [€] |
-| M+8 | [€] | [€] | [€] | [€] | [€] |
-| M+9 | [€] | [€] | [€] | [€] | [€] |
-| M+10 | [€] | [€] | [€] | [€] | [€] |
-| M+11 | [€] | [€] | [€] | [€] | [€] |
-| M+12 | [€] | [€] | [€] | [€] | [€] |
+### Calcul LTV (theorique)
 
-### Scénarios
-| Scénario | ARR fin d'année | Breakeven | Runway | Hypothèses |
-|----------|-----------------|-----------|--------|------------|
-| Pessimiste | [€] | [Date] | [X mois] | [À compléter] |
-| Base | [€] | [Date] | [X mois] | [À compléter] |
-| Optimiste | [€] | [Date] | [X mois] | [À compléter] |
-
----
-
-## 6. Unit economics
-
-**Questions à répondre :**
-
-- [ ] **Quel est votre CAC ?** (Customer Acquisition Cost)
-- [ ] **Quel est votre LTV ?** (Lifetime Value)
-- [ ] **Quel est votre ratio LTV/CAC ?**
-- [ ] **Quel est votre payback period ?** (Mois pour récupérer le CAC)
-- [ ] **Quelle est votre marge brute par client ?**
-- [ ] **Ces métriques varient-elles par segment ?**
-
-### Unit economics globaux
 ```
-CAC : [€]
-LTV : [€]
-LTV/CAC : [X]
-Payback period : [X mois]
-Marge brute : [X%]
-
-Calcul LTV :
-- ARPU : [€/mois]
-- Marge brute : [X%]
-- Churn mensuel : [X%]
-- LTV = ARPU × Marge × (1/Churn)
+LTV = Marge par pret x Nombre de prets par client
 ```
 
-### Unit economics par segment
-| Segment | CAC | LTV | LTV/CAC | Payback |
-|---------|-----|-----|---------|---------|
-| [Segment 1] | [€] | [€] | [X] | [X mois] |
-| [Segment 2] | [€] | [€] | [X] | [X mois] |
-| [Segment 3] | [€] | [€] | [X] | [X mois] |
+*A calculer Q1 2026 une fois les metriques en place.*
 
 ---
 
-## 7. Trésorerie et cash management
+## Tresorerie et cash management
 
-**Questions à répondre :**
+*Comment est geree la tresorerie ?*
 
-- [ ] **Où est placée votre trésorerie ?** (Banque, comptes)
-- [ ] **Avez-vous des placements ?** (CAT, OPCVM, etc.)
-- [ ] **Quelle est votre politique de cash management ?**
-- [ ] **Avez-vous une ligne de crédit disponible ?**
-- [ ] **Quel est votre BFR (Besoin en Fonds de Roulement) ?**
-- [ ] **Quels sont vos délais de paiement clients ?**
-- [ ] **Quels sont vos délais de paiement fournisseurs ?**
+| Element | Valeur |
+|---------|--------|
+| Banque principale | Revolut Business |
+| Tresorerie actuelle | 80 000 EUR |
+| Gestion liquidite | Fondateur |
+| Reserve de liquidite | Oui (pour debloquer prets) |
 
-### Réponses
-```
-Banques principales :
-1. [Banque] : [€]
-2. [Banque] : [€]
+### Flux de tresorerie
 
-Placements : [€]
-Politique cash : [À compléter]
-Ligne de crédit : [Oui/Non - Montant]
-BFR : [€]
-Délai paiement clients : [X jours]
-Délai paiement fournisseurs : [X jours]
-```
+| Flux entrant | Flux sortant |
+|--------------|--------------|
+| Remboursements clients | Deblocage nouveaux prets |
+| Interets percus | Charges fixes |
+| Frais de dossier | Services tiers |
+
+*Risque identifie :* Dependance a une banque pour la liquidite (cf STRATEGY.md).
 
 ---
 
-## 8. Historique financier
+## Historique financier
 
-**Questions à répondre :**
+*Evolution depuis la creation.*
 
-- [ ] **Quel est l'historique de CA depuis la création ?**
-- [ ] **Quel est l'historique des résultats ?**
-- [ ] **Y a-t-il eu des événements financiers majeurs ?** (Levée, prêt, restructuration)
+| Annee | CA | Resultat | Evenement |
+|-------|:--:|:--------:|-----------|
+| 2023 (Nov-Dec) | Faible | A l'equilibre | Lancement |
+| 2024 | 30 000 EUR | Positif | Croissance organique |
+| 2025 | ~40 000 EUR | Positif | "Pilote automatique" |
 
-### Historique annuel
-| Année | CA | Résultat net | Effectif | Événement majeur |
-|-------|-----|--------------|----------|------------------|
-| [Année 1] | [€] | [€] | [X] | [À compléter] |
-| [Année 2] | [€] | [€] | [X] | [À compléter] |
-| [Année 3] | [€] | [€] | [X] | [À compléter] |
-| [Année actuelle] | [€] | [€] | [X] | [À compléter] |
+*Note :* L'entreprise a fonctionne en "pilote automatique" pendant 2 ans avec une intervention minimale du fondateur.
 
 ---
 
-## 9. Comptabilité et reporting
+## Comptabilite et reporting
 
-**Questions à répondre :**
+*Comment est geree la comptabilite ?*
 
-- [ ] **Qui tient votre comptabilité ?** (Interne, expert-comptable)
-- [ ] **Quel est votre exercice fiscal ?** (Dates)
-- [ ] **À quelle fréquence faites-vous des clôtures ?**
-- [ ] **Avez-vous un DAF/CFO ?**
-- [ ] **Quels outils comptables utilisez-vous ?**
-- [ ] **Avez-vous un commissaire aux comptes ?**
+| Element | Valeur |
+|---------|--------|
+| Expert-comptable | Oui (mutualise groupe) |
+| Outil comptabilite | Interne (developpe maison) |
+| Exercice fiscal | Decembre |
+| Clotures | Annuelles |
+| DAF/CFO | Non (fondateur gere) |
+| Commissaire aux comptes | Non requis |
 
-### Réponses
-```
-Expert-comptable : [Nom du cabinet]
-Exercice fiscal : [Du JJ/MM au JJ/MM]
-Clôtures : [Mensuelle/Trimestrielle/Annuelle]
-DAF/CFO : [Oui/Non - Nom]
-Outil compta : [À compléter]
-Commissaire aux comptes : [Oui/Non - Nom du cabinet]
-```
+### Obligations (Estonie)
 
----
-
-## 10. Risques financiers
-
-**Questions à répondre :**
-
-- [ ] **Quels sont vos principaux risques financiers ?**
-- [ ] **Avez-vous une concentration de revenus ?** (Top client = X% du CA)
-- [ ] **Avez-vous des engagements hors bilan ?**
-- [ ] **Avez-vous des garanties données ?**
-- [ ] **Êtes-vous exposé au risque de change ?**
-
-### Réponses
-```
-Risques identifiés :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Concentration :
-- Top 1 client : [X% du CA]
-- Top 5 clients : [X% du CA]
-- Top 10 clients : [X% du CA]
-
-Engagements hors bilan : [À compléter]
-Garanties : [À compléter]
-Risque de change : [Oui/Non - Détails]
-```
+| Obligation | Frequence |
+|------------|:---------:|
+| Declaration TVA | Periodique |
+| Comptes annuels | Annuel |
+| Reporting FSA | Periodique |
 
 ---
 
-## Résumé exécutif
+## Budget et projections
 
-*(À générer automatiquement une fois les questions répondues)*
+*Y a-t-il un budget formalise ?*
 
-| Élément | Contenu |
-|---------|---------|
-| Trésorerie | [€] |
-| MRR | [€] |
-| ARR | [€] |
-| Burn rate | [€/mois] |
-| Runway | [X mois] |
-| Rentable | [Oui/Non] |
+| Element | Valeur |
+|---------|--------|
+| Budget annuel | Non formalise |
+| Projections | Non formalisees |
+| Scenarios | Non modelises |
+
+*Pourquoi pas de budget formel ?* Equipe d'1 personne, couts stables et previsibles, pas d'investisseur demandant du reporting.
+
+### Objectifs 2026 (informels)
+
+| Element | Objectif |
+|---------|----------|
+| Croissance CA | A definir |
+| Nouveaux clients | A definir |
+| Reduction impayes | Oui |
+| Dashboard metriques | Oui (Q1) |
 
 ---
 
-**Total questions : 62**
-**Répondues : 0/62**
+## Risques financiers
+
+*Quels sont les risques identifies ?*
+
+| Risque | Probabilite | Impact | Mitigation |
+|--------|:-----------:|:------:|------------|
+| Impayes massifs | Moyenne | Eleve | Scoring, relances |
+| Perte liquidite bancaire | Faible | Critique | Diversifier |
+| Fraude | Faible | Moyen | KYC Stripe |
+| Erreur comptable | Faible | Moyen | Comptable externe |
+
+### Concentration
+
+| Element | Valeur |
+|---------|--------|
+| Top 1 client | A calculer |
+| Top 5 clients | A calculer |
+| Risque concentration | A evaluer |
+
+---
+
+## Resume
+
+| Element | Valeur |
+|---------|--------|
+| Tresorerie | 80 000 EUR |
+| CA 2024 | 30 000 EUR |
+| CA 2025 | ~40 000 EUR |
+| Rentable | Oui |
+| Couts fixes/mois | ~3 300 EUR |
+| Dettes | 0 EUR |
+| Banque | Revolut Business |
+| Comptable | Mutualise groupe |
+
+---
+
+## Actions potentielles
+
+- [ ] Formaliser un suivi mensuel des finances
+- [ ] Calculer les unit economics precis
+- [ ] Modeliser des scenarios de croissance
+- [ ] Evaluer la concentration clients
+- [ ] Documenter les flux de tresorerie
