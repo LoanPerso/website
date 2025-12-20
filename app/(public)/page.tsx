@@ -1,127 +1,198 @@
-import Link from "next/link";
+"use client";
 
-import { Card } from "@/_components/card";
-import { FeatureTabs } from "@/_components/feature-tabs";
-import { Section } from "@/_components/section";
-import { VisualStack } from "@/_components/visual-stack";
-import { Button } from "@/_components/ui/button";
+import { useRef, useLayoutEffect } from "react";
+import Link from "next/link";
+import { ArrowRight, ShieldCheck, Clock, TrendingUp } from "lucide-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import ThreeScene from "@/_components/three-scene";
+import CustomCursor from "@/_components/ui/custom-cursor";
+import Preloader from "@/_components/preloader";
+import Magnetic from "@/_components/ui/magnetic-button";
+import FeatureReveal from "@/_components/feature-reveal";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function PublicHome() {
+  const container = useRef<HTMLDivElement>(null);
+  const horizontalSection = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    // Hero Animations
+    const tl = gsap.timeline({ delay: 2.2 }); // Wait for preloader
+    
+    tl.from(".hero-line", {
+      y: 150,
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.15,
+      ease: "power4.out",
+    })
+    .from(".hero-sub", {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "power2.out"
+    }, "-=1");
+
+    // Horizontal Scroll - Desktop Only
+    const horizon = horizontalSection.current;
+    
+    let mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 768px)", () => {
+      if (horizon) {
+        const sections = gsap.utils.toArray<HTMLElement>(".horizontal-item");
+        
+        gsap.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: horizon,
+            pin: true,
+            scrub: 1,
+            snap: 1 / (sections.length - 1),
+            end: () => "+=" + horizon.offsetWidth,
+          },
+        });
+      }
+    });
+
+    // Parallax Images
+    gsap.utils.toArray<HTMLElement>(".parallax-img-container").forEach((container) => {
+      const img = container.querySelector("img");
+      if (img) {
+        gsap.fromTo(img, 
+          { yPercent: -20 },
+          {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+              trigger: container,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            }
+          }
+        );
+      }
+    });
+
+  }, { scope: container });
+
   return (
-    <div className="container space-y-16 py-12">
-      <section className="grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr]">
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-3 rounded-full border border-border bg-secondary/60 px-4 py-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-            <span>public</span>
-            <span className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <span>design system ready</span>
-          </div>
-          <div className="space-y-4">
-            <h1 className="text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
-              Une landing solide, customisable, et deja connectee aux bons
-              outils.
-            </h1>
-            <p className="max-w-xl text-base text-muted-foreground md:text-lg">
-              Structure Next.js pro, tokens Tailwind, composants Radix/shadcn
-              adaptables, et socle data Supabase + Firebase.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg">
-              <Link href="/dashboard">Acceder a l'admin</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/features">Voir les modules</Link>
-            </Button>
-          </div>
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-            <span className="rounded-full border border-border px-3 py-1">
-              Supabase dynamique
-            </span>
-            <span className="rounded-full border border-border px-3 py-1">
-              Firebase long terme
-            </span>
-            <span className="rounded-full border border-border px-3 py-1">
-              Tokens design
-            </span>
-          </div>
+    <div ref={container} className="bg-background text-foreground w-full">
+      <CustomCursor />
+      <Preloader />
+
+      {/* HERO */}
+      <section className="relative h-screen flex flex-col justify-center items-center bg-deep-black text-white overflow-hidden">
+        <ThreeScene />
+        
+        <div className="container relative z-10 px-4 text-center">
+           <h1 className="text-[12vw] leading-[0.85] font-serif tracking-tighter mix-blend-difference">
+             <div className="overflow-hidden"><span className="hero-line block">CAPITAL</span></div>
+             <div className="overflow-hidden"><span className="hero-line block italic text-gold">& TIME</span></div>
+           </h1>
+           
+           <div className="hero-sub mt-8 max-w-xl mx-auto text-center">
+             <p className="text-xl md:text-2xl text-neutral-400 font-light">
+               L'art de la finance de précision pour les visionnaires.
+             </p>
+             <div className="mt-8 flex justify-center gap-4">
+                <Magnetic>
+                   <Link href="/pricing" className="px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-gold transition-colors">
+                     Start Process
+                   </Link>
+                </Magnetic>
+             </div>
+           </div>
         </div>
-        <div className="rounded-[32px] border border-border bg-white/80 p-6 shadow-soft">
-          <div className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-              Interface preview
-            </p>
-            <div className="space-y-3 rounded-2xl border border-border bg-secondary/30 p-4">
-              <div className="h-3 w-24 rounded-full bg-foreground/10" />
-              <div className="h-3 w-40 rounded-full bg-foreground/10" />
-              <div className="h-3 w-32 rounded-full bg-foreground/10" />
-              <div className="mt-6 flex items-center gap-2">
-                <div className="h-8 w-8 rounded-full bg-foreground/10" />
-                <div className="space-y-2">
-                  <div className="h-3 w-20 rounded-full bg-foreground/10" />
-                  <div className="h-3 w-28 rounded-full bg-foreground/10" />
+      </section>
+
+      {/* HORIZONTAL SCROLL - THE APPROACH */}
+      <section ref={horizontalSection} className="relative md:h-screen md:overflow-hidden bg-background">
+        <div className="flex flex-col md:flex-row h-auto md:h-full w-full md:w-[300vw]"> {/* 3 sections width on desktop */}
+          
+          {/* Panel 1 */}
+          <div className="horizontal-item w-full md:w-screen h-auto md:h-full flex items-center justify-center p-8 md:p-24 border-b md:border-b-0 md:border-r border-border/30">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full max-w-7xl">
+                <div>
+                   <span className="text-9xl font-serif text-border/40 absolute -translate-y-1/2 -translate-x-12 z-0">01</span>
+                   <h2 className="text-5xl md:text-7xl font-serif relative z-10 mb-8">Analyse <br /><span className="italic text-gold">Profonde</span></h2>
+                   <p className="text-xl text-muted-foreground max-w-md">Nous ne regardons pas seulement les chiffres. Nous comprenons votre vision, votre patrimoine et votre trajectoire future.</p>
                 </div>
-              </div>
-            </div>
-            <div className="rounded-2xl border border-border bg-secondary/40 p-4 text-sm text-muted-foreground">
-              Design system en cours d'iteration, composants customisables.
-            </div>
+                <div className="parallax-img-container aspect-[4/5] overflow-hidden relative">
+                   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Architecture" className="w-full h-[140%] object-cover absolute top-0" />
+                </div>
+             </div>
+          </div>
+
+          {/* Panel 2 */}
+          <div className="horizontal-item w-full md:w-screen h-auto md:h-full flex items-center justify-center p-8 md:p-24 border-b md:border-b-0 md:border-r border-border/30 bg-secondary/20">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full max-w-7xl">
+                <div className="order-2 md:order-1 parallax-img-container aspect-[4/5] overflow-hidden relative">
+                   <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop" alt="Meeting" className="w-full h-[140%] object-cover absolute top-0" />
+                </div>
+                <div className="order-1 md:order-2">
+                   <span className="text-9xl font-serif text-border/40 absolute -translate-y-1/2 -translate-x-12 z-0">02</span>
+                   <h2 className="text-5xl md:text-7xl font-serif relative z-10 mb-8">Stratégie <br /><span className="italic text-gold">Sur-mesure</span></h2>
+                   <p className="text-xl text-muted-foreground max-w-md">Chaque dossier est unique. Nos architectes financiers dessinent la solution optimale pour maximiser votre levier.</p>
+                </div>
+             </div>
+          </div>
+
+          {/* Panel 3 */}
+          <div className="horizontal-item w-full md:w-screen h-auto md:h-full flex items-center justify-center p-8 md:p-24">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full max-w-7xl">
+                <div>
+                   <span className="text-9xl font-serif text-border/40 absolute -translate-y-1/2 -translate-x-12 z-0">03</span>
+                   <h2 className="text-5xl md:text-7xl font-serif relative z-10 mb-8">Exécution <br /><span className="italic text-gold">Rapide</span></h2>
+                   <p className="text-xl text-muted-foreground max-w-md">Le temps est votre actif le plus précieux. Notre technologie propriétaire accélère chaque étape de validation.</p>
+                </div>
+                <div className="parallax-img-container aspect-[4/5] overflow-hidden relative">
+                   <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Success" className="w-full h-[140%] object-cover absolute top-0" />
+                </div>
+             </div>
+          </div>
+        
+        </div>
+      </section>
+
+      {/* FEATURE REVEAL LIST - INTERACTIVE */}
+      <FeatureReveal />
+
+      {/* OFFERS GRID - Minimalist */}
+      <section className="py-32 bg-deep-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="mb-24 text-center">
+            <h2 className="text-4xl md:text-6xl font-serif mb-6">Expertise Secteurs</h2>
+            <div className="w-24 h-1 bg-gold mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+             {[
+               { title: "Immobilier", icon: ShieldCheck, desc: "Acquisition, investissement, rénovation de prestige." },
+               { title: "Véhicules", icon: TrendingUp, desc: "Collection, sport, leasing haute performance." },
+               { title: "Art & Vin", icon: Clock, desc: "Financement d'actifs tangibles et passion." }
+             ].map((item, i) => (
+               <div key={i} className="group bg-deep-black p-12 hover:bg-neutral-900 transition-colors duration-500 flex flex-col items-center text-center">
+                  <item.icon className="w-12 h-12 text-gold mb-8 opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-2xl font-serif mb-4">{item.title}</h3>
+                  <p className="text-neutral-500 leading-relaxed mb-8">{item.desc}</p>
+                  <Magnetic>
+                    <span className="text-xs uppercase tracking-widest text-gold border-b border-gold/30 pb-1">En savoir plus</span>
+                  </Magnetic>
+               </div>
+             ))}
           </div>
         </div>
       </section>
 
-      <Section
-        title="Ce qui est deja en place"
-        description="Architecture claire, modules internes, et documentation au propre."
-      >
-        <div className="grid gap-6 md:grid-cols-3">
-          <Card
-            title="Public + Admin"
-            body="Deux espaces distincts pour le site et l'application."
-          />
-          <Card
-            title="Design system"
-            body="Tokens Tailwind et composants shadcn modifies pour votre charte."
-          />
-          <Card
-            title="Data stack"
-            body="Supabase pour le dynamisme, Firebase pour la duree."
-          />
-        </div>
-      </Section>
-
-      <Section
-        title="Comportements UI"
-        description="Radix pour les interactions, shadcn pour accelerer."
-      >
-        <FeatureTabs />
-      </Section>
-
-      <Section
-        title="Visuels interactifs"
-        description="Three.js pour enrichir l'experience."
-      >
-        <VisualStack />
-      </Section>
-
-      <section className="rounded-[32px] border border-border bg-secondary/50 p-10 text-center shadow-crisp">
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-          On valide la charte et on pousse le design ?
-        </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
-          L'infrastructure est en place. On peut maintenant definir les tokens
-          finaux, poser les composants shadcn customises, et brancher les
-          premiers flux de donnees.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Button asChild size="lg">
-            <Link href="/pricing">Demarrer</Link>
-          </Button>
-          <Button asChild size="lg" variant="ghost">
-            <Link href="/about">Voir l'equipe</Link>
-          </Button>
-        </div>
-      </section>
     </div>
   );
 }

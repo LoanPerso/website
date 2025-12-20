@@ -5,6 +5,14 @@
 - [ ] Define UI tokens (colors, typography, radius, shadows, density).
 - [ ] Establish design system rules for components.
 - [ ] Refresh public landing with Tailwind/Radix/shadcn (pending validation).
+  - [ ] Update Design System (Colors, Fonts) - *In Progress*
+  - [ ] Implement Hero (Cinematic/3D vibe)
+  - [ ] Implement Trust/Social Proof section
+  - [ ] Implement Offer Cards
+  - [ ] Implement Simulator (Minimal UI)
+  - [ ] Implement Process steps
+  - [ ] Implement Testimonials
+  - [ ] Implement Luxury Footer
 
 ## Data & Auth
 - [ ] Define Supabase schema for dynamic data.
