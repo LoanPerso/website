@@ -1,5 +1,11 @@
 # Journal
 
+## 2025-12-20
+- **Feature:** Refonte complète de la landing page publique (`app/(public)/page.tsx`) style "Awwards".
+- **Tech:** Intégration de `gsap` (animations), `lenis` (smooth scroll) et `three` (background 3D).
+- **Design:** Application stricte de la charte "Minimal Luxury" (Fraunces, Gold, Deep Black).
+- **Fix:** Résolution des problèmes de build liés à `gsap.registerPlugin` en SSR et types Three.js.
+
 ## 2025-12-19
 - **Design Update:** Initiating "Minimal Luxury" redesign for the public landing page.
 - **Objective:** Implement a cinematic, high-trust landing page for a credit granting company.
