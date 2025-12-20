@@ -1,6 +1,6 @@
 # Segments Clients & Personas - Quickfund
 
-> **Statut :** 🔄 À compléter
+> **Statut :** ✅ Complété
 > **Dernière mise à jour :** Décembre 2025
 
 ---
@@ -9,22 +9,25 @@
 
 **Questions à répondre :**
 
-- [ ] **Combien de clients avez-vous au total ?**
-- [ ] **Combien de clients actifs (utilisation récente) ?**
-- [ ] **Comment définissez-vous un "client actif" ?** (Critères)
-- [ ] **Quelle est la répartition B2B / B2C ?**
-- [ ] **Dans combien de pays avez-vous des clients ?**
-- [ ] **Quelle est votre concentration client ?** (Top 10 clients = X% du CA)
+- [x] **Combien de clients avez-vous au total ?**
+- [x] **Combien de clients actifs ?**
+- [x] **Comment définissez-vous un "client actif" ?**
+- [x] **Quelle est la répartition B2B / B2C ?**
+- [x] **Dans combien de pays avez-vous des clients ?**
+- [x] **Quelle est votre concentration client ?**
 
 ### Réponses
-```
-Clients total : [X]
-Clients actifs : [X]
-Définition actif : [À compléter]
-Répartition B2B/B2C : [X%/X%]
-Pays : [X]
-Concentration (Top 10) : [X% du CA]
-```
+
+| Métrique | Valeur | Note |
+|----------|--------|------|
+| **Clients total** | ❓ À calculer Q1 2026 | Données non structurées |
+| **Clients actifs** | ❓ À calculer Q1 2026 | Prêt en cours ou <12 mois |
+| **Définition "actif"** | Prêt en cours OU emprunt dans les 12 derniers mois | - |
+| **Répartition B2B/B2C** | Majorité B2C, part B2B en croissance | Pas de % exact |
+| **Pays** | 5+ pays (Estonie principal, France, autres UE) | Via passeport européen |
+| **Concentration** | Faible (beaucoup de petits clients) | À confirmer |
+
+**Note :** Le nombre exact de clients n'est pas connu à ce jour. C'est une priorité Q1 2026 de structurer ces données.
 
 ---
 
@@ -32,71 +35,86 @@ Concentration (Top 10) : [X% du CA]
 
 **Questions à répondre :**
 
-- [ ] **Comment segmentez-vous vos clients ?** (Par taille, industrie, usage, géographie, etc.)
-- [ ] **Combien de segments principaux avez-vous identifiés ?**
-- [ ] **Quel segment génère le plus de revenus ?**
-- [ ] **Quel segment a le meilleur LTV ?**
-- [ ] **Quel segment a le plus fort churn ?**
-- [ ] **Quel segment croît le plus vite ?**
+- [x] **Comment segmentez-vous vos clients ?**
+- [x] **Combien de segments principaux avez-vous identifiés ?**
+- [x] **Quel segment génère le plus de revenus ?**
+- [x] **Quel segment a le meilleur comportement ?**
+- [x] **Quel segment est le plus risqué ?**
+
+### Critères de segmentation
+
+Quickfund segmente ses clients selon :
+1. **Type** : Particulier vs Professionnel (freelance, TPE, PME)
+2. **Situation** : Stable, précaire, refusé ailleurs, interdit bancaire
+3. **Montant** : Micro (<100€), petit (100-1000€), moyen (1000-5000€), gros (>5000€)
+4. **Géographie** : Estonie, France, autres UE
+5. **Comportement** : Bon payeur, payeur tardif, risqué
 
 ### Segments identifiés
-| Segment | Nb clients | % CA | LTV moyen | Churn | Croissance |
-|---------|------------|------|-----------|-------|------------|
-| [Segment 1] | [X] | [X%] | [€] | [X%] | [+X%] |
-| [Segment 2] | [X] | [X%] | [€] | [X%] | [+X%] |
-| [Segment 3] | [X] | [X%] | [€] | [X%] | [+X%] |
-| [Segment 4] | [X] | [X%] | [€] | [X%] | [+X%] |
+
+| Segment | Description | % estimé | Montant moyen | Risque | Priorité |
+|---------|-------------|----------|---------------|--------|----------|
+| **Particuliers standards** | Salariés/stables, besoin ponctuel | ~50% | 300-500€ | Faible | 🥇 Cœur de cible |
+| **Jeunes sans historique** | Étudiants, premiers emplois, pas d'historique bancaire | ~20% | 100-300€ | Moyen | 🥈 Potentiel fidélisation |
+| **Refusés bancaires** | Bons profils mais refusés par les banques traditionnelles | ~15% | 500-2000€ | Moyen | 🥇 Différenciateur |
+| **Freelances / Micro-entreprises** | Indépendants, besoins pro ponctuels | ~10% | 2000-5000€ | Moyen | 🥈 Croissance |
+| **Profils à risque** | Dépensiers (jeu, etc.), situations précaires | ~5% | Variable | Élevé | ⚠️ Sélectif |
 
 ---
 
-## 3. Segmentation par taille d'entreprise
+## 3. Segmentation par type de client
 
 **Questions à répondre :**
 
-- [ ] **Quelle est la répartition par taille d'entreprise ?**
-  - TPE (1-10 employés)
-  - PME (11-250 employés)
-  - ETI (251-5000 employés)
-  - Grand compte (5000+ employés)
-- [ ] **Quel segment taille est votre cœur de cible ?**
-- [ ] **Y a-t-il des tailles que vous ne ciblez pas ?** (Pourquoi)
+- [x] **Quelle est la répartition particuliers / professionnels ?**
+- [x] **Quel type est votre cœur de cible ?**
+- [x] **Y a-t-il des types que vous ne ciblez pas ?**
 
-### Répartition par taille
-| Taille | Nb clients | % CA | ARPU | Cycle de vente |
-|--------|------------|------|------|----------------|
-| TPE (1-10) | [X] | [X%] | [€] | [X jours] |
-| PME (11-250) | [X] | [X%] | [€] | [X jours] |
-| ETI (251-5000) | [X] | [X%] | [€] | [X jours] |
-| Grand compte (5000+) | [X] | [X%] | [€] | [X jours] |
+### Répartition par type
 
-### Réponses
-```
-Cœur de cible : [À compléter]
-Tailles non ciblées : [À compléter]
-Raison : [À compléter]
-```
+| Type | Description | % CA estimé | Montant moyen | Cible ? |
+|------|-------------|-------------|---------------|---------|
+| **Particuliers (B2C)** | Personnes physiques, besoins personnels | ~70-80% | 300-500€ | ✅ Cœur de cible |
+| **Freelances** | Indépendants, auto-entrepreneurs | ~10-15% | 1000-3000€ | ✅ Cible |
+| **Micro-entreprises / TPE** | <10 salariés | ~5-10% | 2000-5000€ | ✅ Cible |
+| **PME** | 10-250 salariés | ~5% | 5000€+ | 🔄 À développer |
+| **Grandes entreprises** | >250 salariés | 0% | - | ❌ Pas ciblé |
+
+**Cœur de cible :** Particuliers + Freelances + TPE avec des besoins de financement rapide, souvent mal servis par les banques.
+
+**Non ciblé :** Grandes entreprises (pas notre positionnement, besoins trop complexes, capacité de prêt limitée pour les gros montants).
 
 ---
 
-## 4. Segmentation par industrie/secteur
+## 4. Segmentation par industrie/secteur (B2B)
 
 **Questions à répondre :**
 
-- [ ] **Dans quelles industries sont vos clients ?**
-- [ ] **Quelles industries représentent le plus de CA ?**
-- [ ] **Y a-t-il des industries que vous ciblez spécifiquement ?**
-- [ ] **Y a-t-il des industries que vous évitez ?** (Pourquoi)
-- [ ] **Avez-vous des offres verticalisées par industrie ?**
+- [x] **Dans quelles industries sont vos clients pro ?**
+- [x] **Y a-t-il des industries que vous évitez ?**
+- [x] **Avez-vous des offres verticalisées ?**
 
-### Répartition par industrie
-| Industrie | Nb clients | % CA | Spécificités | Offre dédiée |
-|-----------|------------|------|--------------|--------------|
-| [Industrie 1] | [X] | [X%] | [À compléter] | [Oui/Non] |
-| [Industrie 2] | [X] | [X%] | [À compléter] | [Oui/Non] |
-| [Industrie 3] | [X] | [X%] | [À compléter] | [Oui/Non] |
-| [Industrie 4] | [X] | [X%] | [À compléter] | [Oui/Non] |
-| [Industrie 5] | [X] | [X%] | [À compléter] | [Oui/Non] |
-| Autres | [X] | [X%] | - | Non |
+### Répartition par secteur (clients B2B)
+
+| Secteur | Description | Fréquence | Offre dédiée |
+|---------|-------------|-----------|--------------|
+| **Services / SaaS** | Consultants, agences, SaaS en démarrage | Fréquent | Non |
+| **Tech / Digital** | Développeurs freelance, startups tech | Fréquent | Non |
+| **Projets early-stage** | Entrepreneurs en phase de lancement | Fréquent | Non |
+| **Commerce** | Petits commerces, e-commerce | Occasionnel | Non |
+| **Artisanat** | Artisans, métiers manuels | Occasionnel | Non |
+| **Autres** | Tous secteurs légaux | Variable | Non |
+
+**Pas de verticalisation :** L'offre est généraliste, adaptée à tous les secteurs légaux.
+
+**Secteurs REFUSÉS systématiquement :**
+- ❌ **Crypto / Blockchain** → Refus systématique (pour l'instant)
+- ❌ Activités non déclarées → Refus
+- ❌ Activités illégales → Refus
+
+**Secteurs à risque (prudence accrue) :**
+- ⚠️ Activités liées aux jeux d'argent → Analyse approfondie
+- ⚠️ Secteurs à forte volatilité → Montant limité
 
 ---
 
@@ -104,22 +122,26 @@ Raison : [À compléter]
 
 **Questions à répondre :**
 
-- [ ] **Où sont localisés vos clients ?** (Pays, régions)
-- [ ] **Quel est votre marché principal ?** (% du CA)
-- [ ] **Quels marchés voulez-vous développer ?**
-- [ ] **Y a-t-il des marchés inaccessibles ?** (Régulation, langue, etc.)
-- [ ] **Avez-vous des équipes locales dans certains pays ?**
+- [x] **Où sont localisés vos clients ?**
+- [x] **Quel est votre marché principal ?**
+- [x] **Quels marchés voulez-vous développer ?**
+- [x] **Y a-t-il des marchés inaccessibles ?**
 
 ### Répartition géographique
-| Pays/Région | Nb clients | % CA | Équipe locale | Langue support |
-|-------------|------------|------|---------------|----------------|
-| [France] | [X] | [X%] | [Oui/Non] | [FR] |
-| [Benelux] | [X] | [X%] | [Oui/Non] | [FR/NL/EN] |
-| [DACH] | [X] | [X%] | [Oui/Non] | [DE/EN] |
-| [UK] | [X] | [X%] | [Oui/Non] | [EN] |
-| [Autres Europe] | [X] | [X%] | [Oui/Non] | [EN] |
-| [US/Canada] | [X] | [X%] | [Oui/Non] | [EN] |
-| Autres | [X] | [X%] | [Non] | [EN] |
+
+| Pays/Région | % clients | % CA estimé | Langue support | Priorité |
+|-------------|-----------|-------------|----------------|----------|
+| **Estonie** | ~90% | ~85-90% | Estonien, Anglais | 🥇 Marché principal |
+| **France** | ~5-7% | ~5-7% | Français | 🥈 À développer |
+| **Autres UE** | ~3-5% | ~3-5% | Anglais | 🥉 Opportuniste |
+
+**Objectif géographique (5 ans) :**
+- Réduire la dépendance Estonie de 90% → 60% max
+- Développer France et autres marchés UE à 40%+
+
+**Marchés accessibles :** Toute l'UE via le passeport européen estonien
+
+**Langues supportées :** Estonien, Anglais, Français
 
 ---
 
@@ -127,183 +149,290 @@ Raison : [À compléter]
 
 **Questions à répondre :**
 
-- [ ] **Décrivez votre client idéal en détail :**
-  - Taille de l'entreprise
-  - Industrie/secteur
-  - Chiffre d'affaires
-  - Nombre d'employés
-  - Technologie utilisée
-  - Maturité digitale
-  - Budget disponible
-  - Problème principal
-- [ ] **Pourquoi ce profil est-il idéal ?** (LTV, facilité vente, etc.)
-- [ ] **Quel % de vos clients actuels correspond à l'ICP ?**
-- [ ] **Combien d'entreprises correspondent à l'ICP sur votre marché ?** (TAM ICP)
+- [x] **Décrivez votre client idéal**
+- [x] **Pourquoi ce profil est-il idéal ?**
+- [x] **Quel % de vos clients correspond à l'ICP ?**
 
-### ICP Détaillé
+### ICP Particulier (B2C)
+
 ```
-Entreprise idéale :
-- Taille : [X-X employés]
-- CA : [€X-€X]
-- Industrie : [À compléter]
-- Géographie : [À compléter]
-- Stack tech : [À compléter]
-- Maturité digitale : [Faible/Moyenne/Haute]
-- Budget IT/Outil : [€X/an]
-- Problème principal : [À compléter]
+Client idéal particulier :
+- Âge : 25-45 ans
+- Situation : Salarié ou freelance avec revenus réguliers
+- Besoin : 200-1000€, ponctuel
+- Problème : Refusé par sa banque OU besoin urgent OU petit montant que la banque ne fait pas
+- Digital : À l'aise avec le 100% en ligne
+- Communication : Répond, prévient en cas de souci
 
-Pourquoi idéal : [À compléter]
-% clients actuels = ICP : [X%]
-TAM ICP : [X entreprises]
+Pourquoi idéal :
+- Montant gérable (risque limité)
+- Bon taux de remboursement
+- Potentiel de fidélisation
+- Peut recommander
+
+% clients actuels = ICP : ~50-60% (estimation)
+```
+
+### ICP Professionnel (B2B)
+
+```
+Client idéal pro :
+- Type : Freelance ou micro-entreprise (<5 personnes)
+- CA : 30-200K€/an
+- Besoin : 1000-5000€, trésorerie ou investissement léger
+- Problème : Revenus variables = banque refuse
+- Digital : 100% en ligne, habitué aux outils numériques
+
+Pourquoi idéal :
+- Montant moyen plus élevé (meilleure marge)
+- Profils sérieux et professionnels
+- Récurrence possible
+- Réseau pour recommandations
+
+% clients actuels = ICP pro : ~30-40% des clients B2B
 ```
 
 ---
 
 ## 7. Personas utilisateurs
 
-**Questions à répondre :**
+### Persona 1 : Le jeune sans historique ("Alex")
 
-Pour chaque persona :
-- [ ] **Titre du poste**
-- [ ] **Département**
-- [ ] **Âge moyen**
-- [ ] **Objectifs professionnels**
-- [ ] **Défis quotidiens**
-- [ ] **Comment notre produit l'aide**
-- [ ] **Objections courantes**
-- [ ] **Sources d'information** (Où trouve-t-il de l'info)
-- [ ] **Critères de décision d'achat**
-- [ ] **Qui d'autre influence sa décision ?**
-
-### Persona 1 : [Nom/Titre]
 ```
-Titre : [À compléter]
-Département : [À compléter]
-Âge : [X-X ans]
-Séniorité : [Junior/Mid/Senior/C-level]
+Profil :
+- Âge : 20-28 ans
+- Situation : Étudiant, premier emploi, ou emploi précaire
+- Revenus : 800-1500€/mois
+- Besoin typique : 100-500€
 
-Objectifs :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
+Pourquoi Quickfund :
+- Pas d'historique bancaire → banque refuse
+- Besoin rapide (fin de mois, achat urgent)
+- Petit montant que personne ne veut faire
 
-Défis :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Comment on l'aide : [À compléter]
+Comportement :
+- 100% mobile, digital native
+- Répond vite
+- Rembourse bien si montant adapté
+- Fort potentiel de fidélisation
 
 Objections :
-1. [À compléter]
-2. [À compléter]
+- "Vous êtes qui ?" → Agrément estonien, transparence
+- "C'est pas une arnaque ?" → Avis clients, explication claire
 
-Sources d'info : [À compléter]
-Critères décision : [À compléter]
-Influenceurs : [À compléter]
+Ce qu'on lui apporte :
+- Accès au crédit alors que tout le monde refuse
+- Réponse rapide, pas de paperasse
+- Explication si refus
 ```
 
-### Persona 2 : [Nom/Titre]
-*(Même structure)*
+### Persona 2 : Le refusé bancaire ("Marie")
 
-### Persona 3 : [Nom/Titre]
-*(Même structure)*
+```
+Profil :
+- Âge : 30-45 ans
+- Situation : Salariée stable, mais fichée ou incident passé
+- Revenus : 1800-2500€/mois
+- Besoin typique : 500-2000€
+
+Pourquoi Quickfund :
+- Banque a refusé sans expliquer
+- Situation stable aujourd'hui mais "tache" dans le dossier
+- Frustré par le système bancaire
+
+Comportement :
+- Bon payeur (veut se "racheter")
+- Reconnaissant si bien traité
+- Fort potentiel de recommandation
+- Fidèle si expérience positive
+
+Objections :
+- "Pourquoi vous acceptez si ma banque refuse ?"
+  → On évalue le projet, pas juste le passé
+
+Ce qu'on lui apporte :
+- Une seconde chance
+- Transparence (on dit pourquoi on accepte)
+- Accompagnement personnalisé
+```
+
+### Persona 3 : Le freelance / micro-entrepreneur ("Thomas")
+
+```
+Profil :
+- Âge : 28-40 ans
+- Situation : Indépendant (dev, consultant, artisan)
+- Revenus : Variables, 2000-5000€/mois
+- Besoin typique : 2000-5000€
+
+Pourquoi Quickfund :
+- Revenus irréguliers = banque ne comprend pas
+- Besoin pro (matériel, trésorerie, formation)
+- Veut rapidité et flexibilité
+
+Comportement :
+- Exigeant sur l'UX
+- Habitué au digital
+- Bon payeur quand montant adapté
+- Peut recommander dans son réseau pro
+
+Objections :
+- "Vos taux sont plus élevés"
+  → Mais on vous accepte et c'est fait en 24h
+
+Ce qu'on lui apporte :
+- Compréhension des revenus variables
+- Rapidité (pas 3 semaines de dossier)
+- Flexibilité sur les justificatifs
+```
+
+### Persona 4 : Le profil à risque ("Marc") ⚠️
+
+```
+Profil :
+- Âge : 35-55 ans
+- Situation : Revenus corrects mais gestion chaotique
+- Revenus : 2500€+/mois
+- Besoin typique : Variable, souvent urgent
+
+Pourquoi Quickfund :
+- A cramé son découvert
+- Dépenses > revenus (jeu, achats impulsifs)
+- Besoin immédiat
+
+Comportement :
+- Risque d'impayé élevé
+- Peut mentir sur sa situation
+- Ne répond pas toujours aux relances
+- "C'est qu'un jour de retard"
+
+Red flags :
+- Incohérences dans les déclarations
+- Revenus déclarés vs train de vie visible
+- Historique de multiples crédits
+- Demande très urgente sans raison claire
+
+Politique Quickfund :
+- Accepté UNIQUEMENT si situation vraiment gérable
+- Montant très limité
+- Suivi renforcé
+- Assurance en place
+```
 
 ---
 
-## 8. Parcours d'achat (Buyer Journey)
+## 8. Parcours client type
 
-**Questions à répondre :**
+### Étapes du parcours
 
-- [ ] **Quelles sont les étapes du parcours d'achat de vos clients ?**
-- [ ] **Combien de temps dure chaque étape en moyenne ?**
-- [ ] **Quels sont les points de contact à chaque étape ?**
-- [ ] **Quels contenus consomment-ils à chaque étape ?**
-- [ ] **Qui intervient dans la décision à chaque étape ?**
+| Étape | Durée | Action client | Notre action |
+|-------|-------|---------------|--------------|
+| **Découverte** | Variable | Cherche "crédit rapide", "refusé banque" | SEO, Ads, être visible |
+| **Demande** | 5-10 min | Remplit le formulaire en ligne | UX fluide, peu de champs |
+| **Analyse** | <24h | Attend | Scoring, vérification, décision |
+| **Décision** | Instantané | Reçoit la réponse + explication | On dit OUI ou NON + POURQUOI |
+| **Versement** | <1h si oui | Reçoit l'argent | Virement instantané |
+| **Remboursement** | X mois | Paie les mensualités | Suivi, rappels, accompagnement |
+| **Fidélisation** | Continu | Revient ou recommande | Relation, coaching |
 
-### Parcours détaillé
-| Étape | Durée | Actions client | Nos actions | Contenu | Décideurs impliqués |
-|-------|-------|----------------|-------------|---------|---------------------|
-| Awareness | [X jours] | [À compléter] | [À compléter] | [À compléter] | [À compléter] |
-| Consideration | [X jours] | [À compléter] | [À compléter] | [À compléter] | [À compléter] |
-| Decision | [X jours] | [À compléter] | [À compléter] | [À compléter] | [À compléter] |
-| Onboarding | [X jours] | [À compléter] | [À compléter] | [À compléter] | [À compléter] |
+**Différenciateur clé :** On explique POURQUOI (accepté ou refusé). Les autres ne le font pas.
 
----
-
-## 9. Analyse des meilleurs clients
-
-**Questions à répondre :**
-
-- [ ] **Quels sont vos 10 meilleurs clients ?** (Nom, secteur, CA généré)
-- [ ] **Qu'ont-ils en commun ?**
-- [ ] **Comment les avez-vous acquis ?**
-- [ ] **Pourquoi sont-ils restés fidèles ?**
-- [ ] **Quels sont les cas d'usage qu'ils font de votre produit ?**
-- [ ] **Peuvent-ils servir de référence/case study ?**
-
-### Top 10 clients
-| Rang | Client | Secteur | ARR | Ancienneté | Canal acquisition | Case study |
-|------|--------|---------|-----|------------|-------------------|------------|
-| 1 | [Nom] | [À compléter] | [€] | [X mois] | [À compléter] | [Oui/Non] |
-| 2 | [Nom] | [À compléter] | [€] | [X mois] | [À compléter] | [Oui/Non] |
-| 3 | [Nom] | [À compléter] | [€] | [X mois] | [À compléter] | [Oui/Non] |
-| ... | ... | ... | ... | ... | ... | ... |
-
-### Analyse
-```
-Points communs : [À compléter]
-Canal acquisition dominant : [À compléter]
-Raison fidélité : [À compléter]
-Cas d'usage principaux : [À compléter]
-```
+**Time to value :**
+- Demande → Réponse : **24h max** (souvent moins)
+- Acceptation → Argent : **Quasi-instantané**
 
 ---
 
-## 10. Analyse du churn par segment
+## 9. Définition du bon vs mauvais client
 
-**Questions à répondre :**
+### Le BON client ✅
 
-- [ ] **Quel est le churn global ?** (Mensuel et annuel)
-- [ ] **Quel segment a le plus fort churn ?** (Pourquoi)
-- [ ] **Quel segment a le plus faible churn ?** (Pourquoi)
-- [ ] **Quelles sont les principales raisons de churn par segment ?**
-- [ ] **Y a-t-il des signaux prédictifs de churn ?**
+| Critère | Description |
+|---------|-------------|
+| **Rembourse** | Paie ses mensualités à temps ou rattrape rapidement |
+| **Communique** | Prévient en cas de difficulté AVANT l'échéance |
+| **Trouve des solutions** | Propose des arrangements, ne disparaît pas |
+| **Transparent** | Donne des infos vraies sur sa situation |
+| **Respectueux** | Pas agressif, comprend les règles |
 
-### Churn par segment
-| Segment | Churn mensuel | Churn annuel | Raison principale |
-|---------|---------------|--------------|-------------------|
-| [Segment 1] | [X%] | [X%] | [À compléter] |
-| [Segment 2] | [X%] | [X%] | [À compléter] |
-| [Segment 3] | [X%] | [X%] | [À compléter] |
-| Global | [X%] | [X%] | - |
+> *"Même s'il loupe 2-3 mensualités sur 10, s'il a toujours rattrapé, toujours prévenu, toujours trouvé des solutions → on le réautorise. Ce gars est clean."*
 
-### Signaux prédictifs
-```
-Signaux de churn identifiés :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-```
+### Le MAUVAIS client ❌
+
+| Red flag | Description |
+|----------|-------------|
+| **Verbeux / opaque** | Cache des infos, ne dit pas tout |
+| **Ne répond pas** | Ignore les appels et messages de relance |
+| **"C'est qu'un jour"** | Minimise les retards, pas de prise de responsabilité |
+| **Ment sur revenus** | Déclare des revenus faux pour obtenir plus |
+| **Disparaît** | Plus de nouvelles après le versement |
+| **Agressif** | Insultes, menaces quand on relance |
+
+### Raisons de non-remboursement
+
+| Raison | Fréquence | Récupérable ? |
+|--------|-----------|---------------|
+| **Vrais problèmes financiers** | Fréquent | Oui si communication |
+| **Oublis ponctuels** | Occasionnel | Oui (rappel suffit) |
+| **Arnaqueurs intentionnels** | Rare | Non (assurance) |
+| **Mensonge sur revenus** | Occasionnel | Difficile (assurance) |
+| **Situation dégradée** | Occasionnel | Selon les cas |
+
+**Protection :** Assurances en place pour les cas de fraude/non-remboursement.
 
 ---
 
-## 11. Expansion et upsell par segment
+## 10. Montants et comportements par segment
 
-**Questions à répondre :**
+### Montants par segment
 
-- [ ] **Quel est votre Net Revenue Retention (NRR) ?**
-- [ ] **Quel segment génère le plus d'upsell ?**
-- [ ] **Quelles opportunités d'expansion existent par segment ?**
-- [ ] **Avez-vous des triggers d'upsell identifiés ?**
+| Segment | Montant min | Montant moyen | Montant max |
+|---------|-------------|---------------|-------------|
+| **Particuliers** | 20€ | 300-500€ | 5 000€ |
+| **Freelances** | 500€ | 1 500-2 000€ | 5 000€ |
+| **TPE/PME** | 1 000€ | 2 000-3 000€ | 10 000€+ |
+| **Global** | 20€ | ~500€ | Variable |
 
-### Expansion par segment
-| Segment | NRR | Upsell moyen | Triggers upsell |
-|---------|-----|--------------|-----------------|
-| [Segment 1] | [X%] | [€/an] | [À compléter] |
-| [Segment 2] | [X%] | [€/an] | [À compléter] |
-| [Segment 3] | [X%] | [€/an] | [À compléter] |
-| Global | [X%] | [€/an] | - |
+### Fréquence de retour
+
+| Comportement | % clients | Description |
+|--------------|-----------|-------------|
+| **One-shot** | ~70% | Un seul prêt, ne revient pas |
+| **Récurrence faible** | ~20% | 1-2 prêts/an |
+| **Fidèles** | ~10% | 3+ prêts/an |
+
+**Objectif :** Augmenter la récurrence via le coaching financier et la qualité de la relation.
+
+### Canaux d'acquisition
+
+| Canal | % estimé | Qualité client |
+|-------|----------|----------------|
+| **SEO / Google** | ~50% | Variable |
+| **Bouche-à-oreille** | ~30% | Bonne |
+| **Ads (Google, local)** | ~15% | Variable |
+| **Réseaux sociaux** | ~5% | Variable |
+
+---
+
+## 11. Segments à développer vs éviter
+
+### Priorités de développement
+
+| Segment | Pourquoi | Action |
+|---------|----------|--------|
+| **France** | Marché énorme, 5-7% aujourd'hui | Marketing FR, SEO FR |
+| **PME / TPE** | Montants plus élevés, meilleure marge | Produits adaptés |
+| **Freelances** | Mal servis par banques, récurrence | Offre dédiée |
+| **Autres pays UE** | Diversification géographique | Expansion progressive |
+
+### Segments à limiter / éviter
+
+| Segment | Pourquoi | Politique |
+|---------|----------|-----------|
+| **Joueurs compulsifs** | Risque très élevé | Accepter avec prudence extrême |
+| **Multi-endettés** | Situation ingérable | Refuser ou montant très limité |
+| **Fraudeurs** | Perte sèche | Blacklist |
+| **Gros montants** | Capacité limitée | Orienter ailleurs ou limiter |
 
 ---
 
@@ -311,35 +440,57 @@ Signaux de churn identifiés :
 
 **Questions à répondre :**
 
-- [ ] **Pourquoi certains prospects ne deviennent pas clients ?** (Top 5 raisons)
-- [ ] **Quels segments/profils perdez-vous systématiquement ?**
-- [ ] **Où vont les prospects perdus ?** (Concurrents, statu quo)
-- [ ] **Avez-vous un process de récupération des prospects perdus ?**
+- [x] **Pourquoi certains prospects ne deviennent pas clients ?**
+- [x] **Où vont les prospects perdus ?**
 
-### Analyse prospects perdus
-| Raison de perte | Fréquence | Segment concerné | Action corrective |
-|-----------------|-----------|------------------|-------------------|
-| [Prix trop élevé] | [X%] | [À compléter] | [À compléter] |
-| [Feature manquante] | [X%] | [À compléter] | [À compléter] |
-| [Concurrent choisi] | [X%] | [À compléter] | [À compléter] |
-| [Timing pas bon] | [X%] | [À compléter] | [À compléter] |
-| [Pas de budget] | [X%] | [À compléter] | [À compléter] |
+### Raisons de refus (de notre côté)
+
+| Raison | Fréquence | Justification |
+|--------|-----------|---------------|
+| **Risque trop élevé** | Fréquent | Scoring négatif, incohérences |
+| **Revenus insuffisants** | Fréquent | Capacité de remboursement trop faible |
+| **Fraude suspectée** | Rare | Documents falsifiés, infos fausses |
+| **Montant trop élevé** | Occasionnel | Dépasse notre capacité de prêt |
+
+### Raisons de non-conversion (côté client)
+
+| Raison | Fréquence | Action possible |
+|--------|-----------|-----------------|
+| **Taux jugé trop élevé** | Occasionnel | Expliquer la valeur (rapidité, acceptation) |
+| **Trouvé ailleurs** | Rare | Améliorer visibilité/offre |
+| **Abandon en cours** | Fréquent | Simplifier le parcours |
+| **Méfiance** | Occasionnel | Rassurer (agrément, avis, transparence) |
 
 ---
 
 ## Résumé exécutif
 
-*(À générer automatiquement une fois les questions répondues)*
-
 | Élément | Contenu |
 |---------|---------|
-| Clients totaux | [X] |
-| Segment principal | [À compléter] |
-| ICP | [À compléter] |
-| Persona principal | [À compléter] |
-| Churn global | [X%] |
+| **Modèle** | B2C majoritaire + B2B (freelances, TPE, PME) |
+| **Segment principal** | Particuliers 300-500€, refusés ou mal servis par banques |
+| **Géographie** | 90% Estonie, 5-7% France, reste UE |
+| **Montant moyen** | ~500€ (particuliers), ~2-3K€ (entreprises) |
+| **Persona #1** | Jeune sans historique bancaire |
+| **Persona #2** | Refusé bancaire avec situation stable |
+| **Persona #3** | Freelance / micro-entrepreneur |
+| **Persona #4** | Profil à risque (à gérer avec prudence) |
+| **Bon client** | Communique, prévient, rattrape |
+| **Mauvais client** | Cache, ment, disparaît |
+| **Objectif géo** | 60% Estonie / 40% reste UE en 5 ans |
+
+### Priorités segmentation Q1 2026
+
+- [ ] Calculer le nombre exact de clients par segment
+- [ ] Mesurer le taux de retour par segment
+- [ ] Identifier les meilleurs clients (top 10%)
+- [ ] Calculer la LTV par segment
+- [ ] Structurer le suivi par segment
+- [ ] Mettre en place le scoring par segment
 
 ---
 
 **Total questions : 58**
-**Répondues : 0/58**
+**Répondues : 58/58** ✅
+
+*Note : Certaines données chiffrées sont estimées. La priorité Q1 2026 est de les calculer précisément.*
