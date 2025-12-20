@@ -1,6 +1,10 @@
 # Journal
 
 ## 2025-12-20
+- **New Feature:** Added "Interactive Service List" (`FeatureReveal`) section.
+  - Implemented a hover-reveal effect where images float and follow the cursor.
+  - Added cinematic focus effect (blurring inactive items).
+  - Optimized for mobile (fallback to standard list).
 - **Mobile UX Fix:** Fixed scrolling issues on mobile devices.
   - Disabled Lenis smooth scroll on touch devices.
   - Added safety timeout to Preloader to unlock body overflow.

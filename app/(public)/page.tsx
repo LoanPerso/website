@@ -11,6 +11,7 @@ import ThreeScene from "@/_components/three-scene";
 import CustomCursor from "@/_components/ui/custom-cursor";
 import Preloader from "@/_components/preloader";
 import Magnetic from "@/_components/ui/magnetic-button";
+import FeatureReveal from "@/_components/feature-reveal";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -161,6 +162,9 @@ export default function PublicHome() {
         
         </div>
       </section>
+
+      {/* FEATURE REVEAL LIST - INTERACTIVE */}
+      <FeatureReveal />
 
       {/* OFFERS GRID - Minimalist */}
       <section className="py-32 bg-deep-black text-white">
