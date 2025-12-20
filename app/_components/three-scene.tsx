@@ -10,95 +10,107 @@ export default function ThreeScene() {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
-    
-    // Scene setup
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x0b0b0c, 0.002); // Deep Black fog
+    // No fog for this sharp tech look, or very subtle
+    // scene.fog = new THREE.FogExp2(0x0b0b0c, 0.001);
 
-    // Camera
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 8;
+    camera.position.y = 2;
 
-    // Renderer
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    
+    // Limit pixel ratio for performance on mobile
+    const pixelRatio = Math.min(window.devicePixelRatio, 2);
+    renderer.setPixelRatio(pixelRatio);
+    
     container.appendChild(renderer.domElement);
 
-    // Particles (Gold dust)
-    const geometry = new THREE.BufferGeometry();
-    const count = 2000;
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-
-    const goldColor = new THREE.Color("#C8A96A");
-
-    for (let i = 0; i < count * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 10; // Spread
-      colors[i] = goldColor.r;
-      colors[i + 1] = goldColor.g;
-      colors[i + 2] = goldColor.b;
-    }
-
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    // Simplify geometry for mobile if needed, but 40x40 is okay.
+    const isMobile = window.innerWidth < 768;
+    const segments = isMobile ? 20 : 40;
     
-    // Create a custom material or use PointsMaterial
-    const material = new THREE.PointsMaterial({
-      size: 0.02,
+    // Create a wireframe plane
+    const geometry = new THREE.PlaneGeometry(20, 20, segments, segments); // Width, Height, SegmentsX, SegmentsY
+    const material = new THREE.MeshBasicMaterial({ 
       color: 0xC8A96A, // Champagne Gold
+      wireframe: true,
       transparent: true,
-      opacity: 0.8,
-      sizeAttenuation: true,
+      opacity: 0.15,
+      side: THREE.DoubleSide
     });
 
-    const particles = new THREE.Points(geometry, material);
-    scene.add(particles);
+    const plane = new THREE.Mesh(geometry, material);
+    plane.rotation.x = -Math.PI / 2.5; // Tilt it
+    scene.add(plane);
 
-    // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
+    // Initial positions for wave animation
+    const originalPositions = new Float32Array(geometry.attributes.position.array);
+    
+    // Mouse interaction
+    const mouse = new THREE.Vector2();
+    const targetMouse = new THREE.Vector2();
 
-    // Animation loop
-    let mouseX = 0;
-    let mouseY = 0;
+    const onMouseMove = (event: MouseEvent) => {
+      targetMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      targetMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+
+    const clock = new THREE.Clock();
 
     const animate = () => {
       requestAnimationFrame(animate);
+      const time = clock.getElapsedTime();
 
-      const time = Date.now() * 0.0005;
+      // Smooth mouse follow
+      mouse.x += (targetMouse.x - mouse.x) * 0.05;
+      mouse.y += (targetMouse.y - mouse.y) * 0.05;
 
-      particles.rotation.x = time * 0.1;
-      particles.rotation.y = time * 0.05 + mouseX * 0.1;
+      const positions = geometry.attributes.position.array;
 
-      // Gentle wave effect
-      const positions = particles.geometry.attributes.position.array;
-      // We could manipulate positions here for more complex effects, 
-      // but simple rotation is performant and elegant.
+      for (let i = 0; i < positions.length; i += 3) {
+        // x, y, z are current vertex coordinates (remember plane is rotated, so Z is up/down relative to plane normal)
+        // But since we use PlaneGeometry, Z is initially 0.
+        
+        const x = originalPositions[i];
+        // const y = originalPositions[i + 1]; 
+        
+        // Create wave effect based on X and Time
+        const waveX = 0.5 * Math.sin(x * 0.5 + time * 0.5);
+        const waveY = 0.5 * Math.cos(originalPositions[i+1] * 0.5 + time * 0.3);
+        
+        // Mouse influence
+        const dist = Math.sqrt(Math.pow(x - mouse.x * 10, 2) + Math.pow(originalPositions[i+1] - mouse.y * 10, 2));
+        const mouseEffect = Math.max(0, 5 - dist) * 0.3 * Math.sin(time * 2);
+
+        // Update Z (which is vertical because of rotation)
+        // @ts-ignore
+        positions[i + 2] = originalPositions[i + 2] + waveX + waveY + mouseEffect;
+      }
+      geometry.attributes.position.needsUpdate = true;
+
+      // Gentle rotation of the whole plane
+      plane.rotation.z = time * 0.05;
 
       renderer.render(scene, camera);
     };
 
     animate();
 
-    // Resize handler
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    // Mouse movement for parallax
-    const handleMouseMove = (event: MouseEvent) => {
-      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-    };
-
     window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', onMouseMove);
       container.removeChild(renderer.domElement);
       geometry.dispose();
       material.dispose();
@@ -109,7 +121,6 @@ export default function ThreeScene() {
     <div 
       ref={containerRef} 
       className="absolute inset-0 z-0 pointer-events-none"
-      style={{ opacity: 0.6 }} // Subtle blending
     />
   );
 }
