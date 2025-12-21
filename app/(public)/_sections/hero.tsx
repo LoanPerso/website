@@ -198,81 +198,164 @@ export function Hero() {
     if (!isMobile) return;
 
     const ctx = gsap.context(() => {
-      // Timeline that follows scroll - starts early (at 10% scroll)
+      // Timeline that follows scroll
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "60% top", // Animation completes when 60% of hero has scrolled
-          scrub: 0.5, // Smooth scrub
+          end: "80% top",
+          scrub: 0.6,
         },
       });
 
-      // Dark veil rises progressively
+      // Dark veil rises then fades out to reveal next section
       scrollTl.to(
         veilRef.current,
-        { y: 0, duration: 1 },
+        { y: 0, duration: 0.6 },
         0
       );
+      scrollTl.to(
+        veilRef.current,
+        { opacity: 0, duration: 0.4 },
+        0.6
+      );
 
-      // Bottom bar slides down first
+      // Bottom bar - clip from right to left (wipe effect)
       scrollTl.to(
         bottomRef.current,
-        { opacity: 0, y: 30, duration: 0.2 },
+        {
+          clipPath: "inset(0 100% 0 0)",
+          duration: 0.25
+        },
         0
       );
 
-      // CTA buttons fade and move
+      // CTA buttons - first one rotates and scales, second clips
       const ctaButtons = ctaRef.current?.children;
-      if (ctaButtons) {
+      if (ctaButtons && ctaButtons[0] && ctaButtons[1]) {
         scrollTl.to(
-          ctaButtons,
-          { opacity: 0, y: 25, scale: 0.95, stagger: 0.02, duration: 0.25 },
+          ctaButtons[0],
+          {
+            opacity: 0,
+            scale: 0.8,
+            rotation: -5,
+            transformOrigin: "center bottom",
+            duration: 0.3
+          },
           0.05
+        );
+        scrollTl.to(
+          ctaButtons[1],
+          {
+            opacity: 0,
+            x: 40,
+            filter: "blur(8px)",
+            duration: 0.3
+          },
+          0.08
         );
       }
 
-      // Subtitle fades
+      // Subtitle - split into lines effect with clip
       scrollTl.to(
         subtitleRef.current,
-        { opacity: 0, y: 30, filter: "blur(4px)", duration: 0.25 },
+        {
+          clipPath: "inset(100% 0 0 0)",
+          duration: 0.3
+        },
         0.1
       );
 
-      // Title line 3 fades
+      // Title line 3 - scale down from top
       scrollTl.to(
         line3Ref.current,
-        { opacity: 0, y: 20, filter: "blur(6px)", duration: 0.2 },
+        {
+          opacity: 0,
+          scaleY: 0,
+          transformOrigin: "top center",
+          filter: "blur(4px)",
+          duration: 0.25
+        },
         0.15
       );
 
-      // Title lines slide out in opposite directions
+      // Title line 2 (en 24h) - dramatic slide + rotation
       scrollTl.to(
         line2Ref.current,
-        { opacity: 0, x: 60, filter: "blur(8px)", duration: 0.3 },
+        {
+          x: 100,
+          rotation: 3,
+          opacity: 0,
+          filter: "blur(12px)",
+          transformOrigin: "left center",
+          duration: 0.4
+        },
         0.2
       );
+
+      // Title line 1 - clip path reveal reverse (close like curtain)
       scrollTl.to(
         line1Ref.current,
-        { opacity: 0, x: -60, filter: "blur(8px)", duration: 0.3 },
+        {
+          clipPath: "inset(0 50% 0 50%)",
+          opacity: 0,
+          duration: 0.4
+        },
         0.2
       );
 
-      // Eyebrow fades up
+      // Eyebrow text - scale up and fade (zoom out effect)
       scrollTl.to(
-        eyebrowRef.current,
-        { opacity: 0, y: -30, duration: 0.25 },
-        0.25
+        eyebrowTextRef.current,
+        {
+          scale: 1.5,
+          opacity: 0,
+          filter: "blur(10px)",
+          duration: 0.3
+        },
+        0.15
       );
 
-      // Decorative elements shrink and fade
+      // Eyebrow lines - shrink to center
+      scrollTl.to(
+        eyebrowLineLeftRef.current,
+        {
+          scaleX: 0,
+          transformOrigin: "right center",
+          duration: 0.2
+        },
+        0.18
+      );
+      scrollTl.to(
+        eyebrowLineRightRef.current,
+        {
+          scaleX: 0,
+          transformOrigin: "left center",
+          duration: 0.2
+        },
+        0.18
+      );
+
+      // Decorative circles - spiral out effect
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
       if (circles) {
-        scrollTl.to(
-          circles,
-          { opacity: 0, scale: 0.5, stagger: 0.02, duration: 0.25 },
-          0.1
-        );
+        circles.forEach((circle, i) => {
+          const angle = (i * 90) + 45; // Different angle for each
+          const rad = angle * (Math.PI / 180);
+          const distance = 100;
+          scrollTl.to(
+            circle,
+            {
+              x: Math.cos(rad) * distance,
+              y: Math.sin(rad) * distance,
+              scale: 0,
+              opacity: 0,
+              rotation: angle,
+              duration: 0.35
+            },
+            0.05 + (i * 0.03)
+          );
+        });
       }
     });
 
