@@ -1,17 +1,35 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, forwardRef, useImperativeHandle } from "react";
 import * as THREE from "three";
+
+export interface HeroOrbRef {
+  setScale: (scale: number) => void;
+  setOpacity: (opacity: number) => void;
+}
 
 interface HeroOrbProps {
   className?: string;
 }
 
-export function HeroOrb({ className }: HeroOrbProps) {
+export const HeroOrb = forwardRef<HeroOrbRef, HeroOrbProps>(({ className }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const targetMouseRef = useRef({ x: 0, y: 0 });
+  const scaleRef = useRef(1);
+  const opacityRef = useRef(1);
+  const meshRef = useRef<THREE.Mesh | null>(null);
+  const materialRef = useRef<THREE.ShaderMaterial | null>(null);
   const [isReady, setIsReady] = useState(false);
+
+  useImperativeHandle(ref, () => ({
+    setScale: (scale: number) => {
+      scaleRef.current = scale;
+    },
+    setOpacity: (opacity: number) => {
+      opacityRef.current = opacity;
+    },
+  }));
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -20,14 +38,11 @@ export function HeroOrb({ className }: HeroOrbProps) {
     const width = container.clientWidth;
     const height = container.clientHeight;
 
-    // Scene setup
     const scene = new THREE.Scene();
 
-    // Camera
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.z = 5;
 
-    // Renderer
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
@@ -37,17 +52,18 @@ export function HeroOrb({ className }: HeroOrbProps) {
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
 
-    // Geometry - Icosahedron for that premium poly look
-    const geometry = new THREE.IcosahedronGeometry(1.5, 1);
+    // Sphère lisse haute résolution
+    const geometry = new THREE.SphereGeometry(1.5, 256, 256);
 
-    // Custom shader material for metallic gold effect
+    // Shader amélioré avec texture procédurale riche
     const material = new THREE.ShaderMaterial({
       uniforms: {
         uTime: { value: 0 },
         uMouse: { value: new THREE.Vector2(0, 0) },
-        uColor1: { value: new THREE.Color(0xc8a96a) }, // Champagne gold
-        uColor2: { value: new THREE.Color(0xa8874a) }, // Dark gold
-        uColor3: { value: new THREE.Color(0x161514) }, // Anthracite
+        uColor1: { value: new THREE.Color(0xd4af37) }, // Or riche
+        uColor2: { value: new THREE.Color(0xb8860b) }, // Or foncé
+        uColor3: { value: new THREE.Color(0xffd700) }, // Or brillant
+        uOpacity: { value: 1.0 },
       },
       vertexShader: `
         uniform float uTime;
@@ -55,12 +71,12 @@ export function HeroOrb({ className }: HeroOrbProps) {
 
         varying vec3 vNormal;
         varying vec3 vPosition;
-        varying float vDisplacement;
+        varying vec2 vUv;
+        varying vec3 vWorldPosition;
+        varying float vNoise;
 
-        // Simplex noise function
-        vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-        vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-        vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
+        // Simplex 3D Noise
+        vec4 permute(vec4 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
         vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
 
         float snoise(vec3 v) {
@@ -79,7 +95,7 @@ export function HeroOrb({ className }: HeroOrbProps) {
           vec3 x2 = x0 - i2 + C.yyy;
           vec3 x3 = x0 - D.yyy;
 
-          i = mod289(i);
+          i = mod(i, 289.0);
           vec4 p = permute(permute(permute(
                     i.z + vec4(0.0, i1.z, i2.z, 1.0))
                   + i.y + vec4(0.0, i1.y, i2.y, 1.0))
@@ -124,77 +140,136 @@ export function HeroOrb({ className }: HeroOrbProps) {
         }
 
         void main() {
-          vNormal = normal;
+          vNormal = normalize(normalMatrix * normal);
           vPosition = position;
+          vUv = uv;
 
-          // Displacement based on noise
-          float noise = snoise(position * 0.8 + uTime * 0.15);
-          float mouseInfluence = length(uMouse) * 0.3;
+          // Multiple layers of noise for organic displacement
+          float noise1 = snoise(position * 2.0 + uTime * 0.15);
+          float noise2 = snoise(position * 4.0 - uTime * 0.1) * 0.5;
+          float noise3 = snoise(position * 8.0 + uTime * 0.2) * 0.25;
 
-          vDisplacement = noise * (0.15 + mouseInfluence * 0.1);
+          float totalNoise = noise1 + noise2 + noise3;
+          vNoise = totalNoise;
 
-          vec3 newPosition = position + normal * vDisplacement;
+          // Displacement pour surface organique
+          float displacement = totalNoise * 0.08;
+          vec3 newPosition = position + normal * displacement;
+
+          vWorldPosition = (modelMatrix * vec4(newPosition, 1.0)).xyz;
 
           gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
         }
       `,
       fragmentShader: `
         uniform float uTime;
-        uniform vec2 uMouse;
         uniform vec3 uColor1;
         uniform vec3 uColor2;
         uniform vec3 uColor3;
+        uniform float uOpacity;
 
         varying vec3 vNormal;
         varying vec3 vPosition;
-        varying float vDisplacement;
+        varying vec2 vUv;
+        varying vec3 vWorldPosition;
+        varying float vNoise;
+
+        // Noise pour texture
+        float hash(vec2 p) {
+          return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+        }
+
+        float noise2D(vec2 p) {
+          vec2 i = floor(p);
+          vec2 f = fract(p);
+          f = f * f * (3.0 - 2.0 * f);
+
+          float a = hash(i);
+          float b = hash(i + vec2(1.0, 0.0));
+          float c = hash(i + vec2(0.0, 1.0));
+          float d = hash(i + vec2(1.0, 1.0));
+
+          return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+        }
+
+        float fbm(vec2 p) {
+          float value = 0.0;
+          float amplitude = 0.5;
+          float frequency = 1.0;
+
+          for(int i = 0; i < 6; i++) {
+            value += amplitude * noise2D(p * frequency);
+            amplitude *= 0.5;
+            frequency *= 2.0;
+          }
+          return value;
+        }
 
         void main() {
-          // Fresnel effect for edge glow
-          vec3 viewDirection = normalize(cameraPosition - vPosition);
-          float fresnel = pow(1.0 - dot(viewDirection, vNormal), 3.0);
+          vec3 viewDirection = normalize(cameraPosition - vWorldPosition);
+          vec3 normal = normalize(vNormal);
 
-          // Color mixing based on position and displacement
-          float colorMix = (vPosition.y + 1.5) / 3.0;
-          colorMix += vDisplacement * 2.0;
-          colorMix = clamp(colorMix, 0.0, 1.0);
+          // Fresnel - bords lumineux
+          float fresnel = pow(1.0 - max(dot(viewDirection, normal), 0.0), 4.0);
 
-          vec3 baseColor = mix(uColor2, uColor1, colorMix);
+          // Texture procédurale - grain métallique
+          vec2 texCoord = vUv * 15.0 + uTime * 0.05;
+          float grain = fbm(texCoord);
+          float grain2 = fbm(texCoord * 2.0 + 100.0);
 
-          // Add edge highlight
-          vec3 edgeColor = mix(baseColor, uColor1, fresnel * 0.8);
+          // Lignes de lumière qui bougent
+          float lightLines = sin(vUv.x * 30.0 + uTime * 0.5) * 0.5 + 0.5;
+          lightLines *= sin(vUv.y * 20.0 - uTime * 0.3) * 0.5 + 0.5;
 
-          // Subtle shimmer
-          float shimmer = sin(vPosition.x * 10.0 + uTime) * 0.5 + 0.5;
-          shimmer *= sin(vPosition.y * 10.0 - uTime * 0.7) * 0.5 + 0.5;
+          // Gradient de base
+          float gradient = (vPosition.y + 1.5) / 3.0;
+          gradient = smoothstep(0.0, 1.0, gradient);
 
-          vec3 finalColor = mix(edgeColor, uColor1, shimmer * 0.1 * fresnel);
+          // Mix des couleurs avec noise
+          vec3 baseColor = mix(uColor2, uColor1, gradient + vNoise * 0.3);
+          baseColor = mix(baseColor, uColor3, grain * 0.3);
 
-          // Alpha based on fresnel for soft edges
-          float alpha = 0.85 + fresnel * 0.15;
+          // Reflets spéculaires simulés
+          vec3 lightDir = normalize(vec3(1.0, 1.0, 1.0));
+          float specular = pow(max(dot(reflect(-lightDir, normal), viewDirection), 0.0), 32.0);
+
+          // Reflet secondaire
+          vec3 lightDir2 = normalize(vec3(-0.5, 0.5, 0.8));
+          float specular2 = pow(max(dot(reflect(-lightDir2, normal), viewDirection), 0.0), 16.0);
+
+          // Combine tout
+          vec3 finalColor = baseColor;
+
+          // Ajoute les highlights
+          finalColor += uColor3 * specular * 0.8;
+          finalColor += uColor1 * specular2 * 0.4;
+
+          // Fresnel glow
+          finalColor = mix(finalColor, uColor3, fresnel * 0.6);
+
+          // Grain subtil pour texture métallique
+          finalColor *= 0.9 + grain2 * 0.2;
+
+          // Light lines subtiles
+          finalColor += uColor3 * lightLines * 0.1 * fresnel;
+
+          // Alpha avec fresnel pour bords doux
+          float alpha = uOpacity * (0.85 + fresnel * 0.15);
 
           gl_FragColor = vec4(finalColor, alpha);
         }
       `,
       transparent: true,
-      side: THREE.DoubleSide,
+      side: THREE.FrontSide,
     });
+
+    materialRef.current = material;
 
     const mesh = new THREE.Mesh(geometry, material);
+    meshRef.current = mesh;
     scene.add(mesh);
 
-    // Wireframe overlay for premium effect
-    const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: 0xc8a96a,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.1,
-    });
-    const wireframeMesh = new THREE.Mesh(geometry.clone(), wireframeMaterial);
-    wireframeMesh.scale.setScalar(1.02);
-    scene.add(wireframeMesh);
-
-    // Mouse move handler
+    // Mouse handler
     const handleMouseMove = (e: MouseEvent) => {
       targetMouseRef.current.x = (e.clientX / window.innerWidth) * 2 - 1;
       targetMouseRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
@@ -202,7 +277,6 @@ export function HeroOrb({ className }: HeroOrbProps) {
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Animation
     let animationId: number;
     const clock = new THREE.Clock();
 
@@ -211,24 +285,22 @@ export function HeroOrb({ className }: HeroOrbProps) {
 
       const elapsed = clock.getElapsedTime();
 
-      // Smooth mouse follow
       mouseRef.current.x += (targetMouseRef.current.x - mouseRef.current.x) * 0.05;
       mouseRef.current.y += (targetMouseRef.current.y - mouseRef.current.y) * 0.05;
 
-      // Update uniforms
       material.uniforms.uTime.value = elapsed;
       material.uniforms.uMouse.value.set(mouseRef.current.x, mouseRef.current.y);
+      material.uniforms.uOpacity.value = opacityRef.current;
 
-      // Rotate mesh
-      mesh.rotation.x = elapsed * 0.1 + mouseRef.current.y * 0.3;
-      mesh.rotation.y = elapsed * 0.15 + mouseRef.current.x * 0.3;
+      mesh.scale.setScalar(scaleRef.current);
 
-      wireframeMesh.rotation.copy(mesh.rotation);
+      // Rotation lente + influence souris
+      mesh.rotation.x = elapsed * 0.03 + mouseRef.current.y * 0.15;
+      mesh.rotation.y = elapsed * 0.05 + mouseRef.current.x * 0.15;
 
       renderer.render(scene, camera);
     };
 
-    // Handle resize
     const handleResize = () => {
       const newWidth = container.clientWidth;
       const newHeight = container.clientHeight;
@@ -241,13 +313,11 @@ export function HeroOrb({ className }: HeroOrbProps) {
 
     window.addEventListener("resize", handleResize);
 
-    // Start animation after a brief delay
     setTimeout(() => {
       setIsReady(true);
       animate();
     }, 100);
 
-    // Cleanup
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("mousemove", handleMouseMove);
@@ -255,7 +325,6 @@ export function HeroOrb({ className }: HeroOrbProps) {
 
       geometry.dispose();
       material.dispose();
-      wireframeMaterial.dispose();
       renderer.dispose();
 
       if (container.contains(renderer.domElement)) {
@@ -274,6 +343,8 @@ export function HeroOrb({ className }: HeroOrbProps) {
       }}
     />
   );
-}
+});
+
+HeroOrb.displayName = "HeroOrb";
 
 export default HeroOrb;
