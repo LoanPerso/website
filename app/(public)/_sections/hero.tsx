@@ -26,6 +26,8 @@ export function Hero() {
   const decorRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const contentWrapperRef = useRef<HTMLDivElement>(null);
+  const veilRef = useRef<HTMLDivElement>(null);
+  const [hasTriggered, setHasTriggered] = useState(false);
 
   // Detect mobile
   useEffect(() => {
@@ -192,88 +194,158 @@ export function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // Mobile scroll exit animations
+  // Mobile scroll takeover animation
   useEffect(() => {
-    if (!isMobile) return;
+    if (!isMobile || hasTriggered) return;
 
-    const ctx = gsap.context(() => {
-      // Create scroll-triggered exit animation for mobile
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.8,
+    const handleWheel = (e: WheelEvent) => {
+      // Only trigger on scroll down
+      if (e.deltaY <= 0 || hasTriggered) return;
+
+      e.preventDefault();
+      setHasTriggered(true);
+
+      // Create takeover animation
+      const tl = gsap.timeline({
+        onComplete: () => {
+          // Scroll to next section after animation
+          const nextSection = containerRef.current?.nextElementSibling;
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+          }
         },
       });
 
-      // Eyebrow fades and moves up
-      scrollTl.to(
-        eyebrowRef.current,
-        { opacity: 0, y: -30, duration: 0.3 },
+      // Veil rises from bottom
+      tl.to(
+        veilRef.current,
+        {
+          y: 0,
+          duration: 0.8,
+          ease: "power3.inOut"
+        },
         0
       );
 
-      // Title lines stagger out with different directions
-      scrollTl.to(
-        line1Ref.current,
-        { opacity: 0, x: -50, filter: "blur(8px)", duration: 0.4 },
-        0.05
+      // Bottom bar slides down first
+      tl.to(
+        bottomRef.current,
+        { opacity: 0, y: 40, duration: 0.3, ease: "power2.in" },
+        0
       );
-      scrollTl.to(
-        line2Ref.current,
-        { opacity: 0, x: 50, filter: "blur(8px)", duration: 0.4 },
+
+      // CTA buttons fade and scale
+      const ctaButtons = ctaRef.current?.children;
+      if (ctaButtons) {
+        tl.to(
+          ctaButtons,
+          {
+            opacity: 0,
+            scale: 0.85,
+            y: 30,
+            stagger: 0.05,
+            duration: 0.4,
+            ease: "power2.in"
+          },
+          0.05
+        );
+      }
+
+      // Subtitle fades
+      tl.to(
+        subtitleRef.current,
+        { opacity: 0, y: 40, filter: "blur(6px)", duration: 0.4, ease: "power2.in" },
         0.1
       );
-      scrollTl.to(
+
+      // Title line 3 fades
+      tl.to(
         line3Ref.current,
-        { opacity: 0, y: 20, filter: "blur(6px)", duration: 0.3 },
+        { opacity: 0, y: 30, filter: "blur(8px)", duration: 0.35, ease: "power2.in" },
         0.15
       );
 
-      // Subtitle fades down
-      scrollTl.to(
-        subtitleRef.current,
-        { opacity: 0, y: 30, filter: "blur(4px)", duration: 0.3 },
+      // Title lines slide out in opposite directions
+      tl.to(
+        line2Ref.current,
+        { opacity: 0, x: 80, filter: "blur(10px)", duration: 0.5, ease: "power3.in" },
+        0.2
+      );
+      tl.to(
+        line1Ref.current,
+        { opacity: 0, x: -80, filter: "blur(10px)", duration: 0.5, ease: "power3.in" },
         0.2
       );
 
-      // CTA buttons scale down and fade
-      const ctaButtons = ctaRef.current?.children;
-      if (ctaButtons) {
-        scrollTl.to(
-          ctaButtons,
-          { opacity: 0, scale: 0.9, y: 20, stagger: 0.05, duration: 0.3 },
-          0.25
-        );
-      }
+      // Eyebrow fades up
+      tl.to(
+        eyebrowRef.current,
+        { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" },
+        0.25
+      );
 
-      // Decorative elements fade out
+      // Decorative elements shrink and fade
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
       if (circles) {
-        scrollTl.to(
+        tl.to(
           circles,
-          { opacity: 0, scale: 0.5, stagger: 0.02, duration: 0.3 },
+          {
+            opacity: 0,
+            scale: 0,
+            stagger: 0.03,
+            duration: 0.4,
+            ease: "power2.in"
+          },
           0.1
         );
       }
+    };
 
-      // Bottom bar slides down
-      scrollTl.to(
-        bottomRef.current,
-        { opacity: 0, y: 30, duration: 0.3 },
-        0.3
-      );
-    });
+    const handleTouchStart = (e: TouchEvent) => {
+      const startY = e.touches[0].clientY;
 
-    return () => ctx.revert();
-  }, [isMobile]);
+      const handleTouchMove = (moveEvent: TouchEvent) => {
+        const currentY = moveEvent.touches[0].clientY;
+        const diff = startY - currentY;
+
+        // Swipe up detected
+        if (diff > 30 && !hasTriggered) {
+          moveEvent.preventDefault();
+          handleWheel({ deltaY: 1, preventDefault: () => {} } as WheelEvent);
+          window.removeEventListener("touchmove", handleTouchMove);
+        }
+      };
+
+      window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+      const cleanup = () => {
+        window.removeEventListener("touchmove", handleTouchMove);
+        window.removeEventListener("touchend", cleanup);
+      };
+      window.addEventListener("touchend", cleanup);
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+    };
+  }, [isMobile, hasTriggered]);
 
   return (
     <section
       ref={containerRef}
       className="relative min-h-[100dvh] w-full overflow-hidden bg-background flex flex-col"
     >
+      {/* Dark veil overlay - mobile only */}
+      <div
+        ref={veilRef}
+        className="md:hidden fixed inset-0 z-50 bg-deep-black pointer-events-none"
+        style={{ transform: "translateY(100%)" }}
+      />
+
       {/* Mouse follower circle - hidden on mobile */}
       <div
         ref={cursorCircleRef}
