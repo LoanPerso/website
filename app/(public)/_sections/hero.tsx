@@ -4,19 +4,22 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Magnetic from "@/_components/ui/magnetic-button";
 
+
 export function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const cursorCircleRef = useRef<HTMLDivElement>(null);
 
   // Refs for animations
   const eyebrowRef = useRef<HTMLDivElement>(null);
+  const eyebrowLineLeftRef = useRef<HTMLDivElement>(null);
+  const eyebrowLineRightRef = useRef<HTMLDivElement>(null);
+  const eyebrowTextRef = useRef<HTMLSpanElement>(null);
   const line1Ref = useRef<HTMLDivElement>(null);
   const line2Ref = useRef<HTMLDivElement>(null);
   const line3Ref = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const decorRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   // Mouse follower (desktop only)
@@ -48,96 +51,128 @@ export function Hero() {
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
       const arcs = decorRef.current?.querySelectorAll(".deco-arc");
 
+      // Set initial states
+      gsap.set([eyebrowLineLeftRef.current, eyebrowLineRightRef.current], { scaleX: 0 });
+      gsap.set(eyebrowTextRef.current, { opacity: 0, filter: "blur(10px)" });
+      gsap.set([line1Ref.current, line2Ref.current], {
+        clipPath: "inset(0 100% 0 0)",
+        opacity: 1
+      });
+      gsap.set(line3Ref.current, { opacity: 0, y: 20, filter: "blur(8px)" });
+      gsap.set(subtitleRef.current, { opacity: 0, y: 30, filter: "blur(6px)" });
+      gsap.set(ctaRef.current?.children || [], { opacity: 0, scale: 0.8, y: 20 });
+      gsap.set(bottomRef.current, { opacity: 0 });
+
+      // Decorative circles - subtle fade in
       if (circles) {
         tl.fromTo(
           circles,
           { scale: 0, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 1, stagger: 0.1, ease: "back.out(1.7)" },
+          { scale: 1, opacity: 1, duration: 1.2, stagger: 0.15, ease: "elastic.out(1, 0.5)" },
           0
         );
       }
 
+      // SVG arc drawing
       if (arcs) {
         tl.fromTo(
           arcs,
           { strokeDashoffset: 300 },
-          { strokeDashoffset: 0, duration: 2, stagger: 0.2, ease: "power3.inOut" },
-          0.2
+          { strokeDashoffset: 0, duration: 2.5, stagger: 0.2, ease: "power2.inOut" },
+          0.3
         );
       }
 
-      // Eyebrow
-      tl.fromTo(
-        eyebrowRef.current,
-        { opacity: 0, x: -20 },
-        { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" },
-        0.3
+      // Eyebrow - lines extend from center
+      tl.to(
+        eyebrowLineLeftRef.current,
+        { scaleX: 1, duration: 0.6, ease: "power3.out", transformOrigin: "right center" },
+        0.2
+      );
+      tl.to(
+        eyebrowLineRightRef.current,
+        { scaleX: 1, duration: 0.6, ease: "power3.out", transformOrigin: "left center" },
+        0.2
       );
 
-      // Title reveal
-      tl.fromTo(
-        line1Ref.current,
-        { yPercent: 100, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 1.2, ease: "power4.out" },
+      // Eyebrow text - blur reveal
+      tl.to(
+        eyebrowTextRef.current,
+        { opacity: 1, filter: "blur(0px)", duration: 0.8, ease: "power2.out" },
         0.5
       );
 
-      tl.fromTo(
-        line2Ref.current,
-        { yPercent: 100, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 1.2, ease: "power4.out" },
-        0.65
-      );
-
-      tl.fromTo(
-        line3Ref.current,
-        { yPercent: 100, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 1.2, ease: "power4.out" },
-        0.8
-      );
-
-      // Stats - aligned with title animation
-      tl.fromTo(
-        statsRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+      // Title line 1 - clip-path reveal
+      tl.to(
+        line1Ref.current,
+        { clipPath: "inset(0 0% 0 0)", duration: 1, ease: "power3.inOut" },
         0.7
       );
 
-      // Subtitle
-      tl.fromTo(
-        subtitleRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-        1.1
+      // Title line 2 - clip-path reveal with slight delay
+      tl.to(
+        line2Ref.current,
+        { clipPath: "inset(0 0% 0 0)", duration: 1, ease: "power3.inOut" },
+        0.9
       );
 
-      // CTA
-      tl.fromTo(
-        ctaRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+      // Title line 3 - blur + fade reveal
+      tl.to(
+        line3Ref.current,
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" },
         1.3
       );
 
-      // Bottom bar
-      tl.fromTo(
-        bottomRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.6, ease: "power3.out" },
+      // Subtitle - blur + fade reveal
+      tl.to(
+        subtitleRef.current,
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.9, ease: "power3.out" },
         1.5
       );
 
-      // Floating animation for circles
+      // CTA buttons - scale + fade with stagger
+      tl.to(
+        ctaRef.current?.children || [],
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: "back.out(1.7)"
+        },
+        1.7
+      );
+
+      // Bottom bar - fade in with children stagger
+      tl.to(
+        bottomRef.current,
+        { opacity: 1, duration: 0.5, ease: "power2.out" },
+        2.0
+      );
+
+      // Bottom bar items cascade
+      const bottomItems = bottomRef.current?.querySelectorAll("span");
+      if (bottomItems) {
+        tl.fromTo(
+          bottomItems,
+          { opacity: 0, x: -10 },
+          { opacity: 1, x: 0, duration: 0.4, stagger: 0.1, ease: "power2.out" },
+          2.1
+        );
+      }
+
+      // Floating animation for circles (continuous)
       if (circles) {
         gsap.to(circles, {
-          y: "random(-8, 8)",
-          x: "random(-4, 4)",
-          duration: "random(3, 4)",
+          y: "random(-10, 10)",
+          x: "random(-5, 5)",
+          rotation: "random(-5, 5)",
+          duration: "random(3, 5)",
           ease: "sine.inOut",
           yoyo: true,
           repeat: -1,
-          stagger: { each: 0.3, from: "random" },
+          stagger: { each: 0.4, from: "random" },
         });
       }
     });
@@ -183,37 +218,38 @@ export function Hero() {
       <div className="relative z-10 flex-1 flex items-center">
         <div className="w-full px-8 sm:px-12 lg:px-20 xl:px-28">
 
-          {/* Grid: 2 columns using full width */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-32 items-center">
+          {/* Centered content */}
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
-            {/* Left - Main content */}
-            <div className="max-w-2xl">
+            {/* Main content */}
+            <div>
               {/* Eyebrow */}
-              <div ref={eyebrowRef} className="flex items-center gap-4 mb-8 opacity-0">
-                <div className="w-12 h-[1px] bg-accent" />
-                <span className="text-sm uppercase tracking-[0.25em] text-muted-foreground font-medium">
+              <div ref={eyebrowRef} className="flex items-center justify-center gap-4 mb-8">
+                <div ref={eyebrowLineLeftRef} className="w-12 h-[1px] bg-accent" />
+                <span ref={eyebrowTextRef} className="text-sm uppercase tracking-[0.25em] text-muted-foreground font-medium">
                   Crédit transparent
                 </span>
+                <div ref={eyebrowLineRightRef} className="w-12 h-[1px] bg-accent" />
               </div>
 
               {/* Title */}
               <div className="mb-10">
                 <div className="overflow-hidden">
-                  <div ref={line1Ref} className="opacity-0">
+                  <div ref={line1Ref}>
                     <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-[-0.02em]">
                       Votre crédit,
                     </h1>
                   </div>
                 </div>
                 <div className="overflow-hidden">
-                  <div ref={line2Ref} className="opacity-0">
+                  <div ref={line2Ref}>
                     <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-[-0.02em]">
                       <span className="text-accent italic">en 24h.</span>
                     </h1>
                   </div>
                 </div>
                 <div className="overflow-hidden mt-4">
-                  <div ref={line3Ref} className="opacity-0">
+                  <div ref={line3Ref}>
                     <p className="font-serif text-xl sm:text-2xl md:text-3xl font-light leading-[1.2] text-muted-foreground">
                       Sans surprise, sans jargon.
                     </p>
@@ -224,7 +260,7 @@ export function Hero() {
               {/* Subtitle */}
               <p
                 ref={subtitleRef}
-                className="text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed mb-10 opacity-0"
+                className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10"
               >
                 De <span className="text-foreground font-medium">20€ à 10 000€</span>.
                 Réponse garantie. Et si c'est non,{" "}
@@ -232,7 +268,7 @@ export function Hero() {
               </p>
 
               {/* CTA */}
-              <div ref={ctaRef} className="flex flex-wrap items-center gap-6 opacity-0">
+              <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-6">
                 <Magnetic>
                   <button className="group relative px-10 py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl">
                     <span className="relative z-10 flex items-center gap-3">
@@ -262,70 +298,12 @@ export function Hero() {
                 </Magnetic>
               </div>
             </div>
-
-            {/* Right - Stats */}
-            <div ref={statsRef} className="hidden lg:flex flex-col justify-center opacity-0">
-              <div className="grid grid-cols-1 gap-8 xl:gap-10">
-                {/* Stat 1 */}
-                <div className="group">
-                  <div className="flex items-baseline gap-2">
-                    <span className="font-serif text-6xl xl:text-7xl font-light">24</span>
-                    <span className="text-accent text-xl xl:text-2xl">h</span>
-                  </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider mt-2">
-                    Réponse garantie
-                  </div>
-                  <div className="w-16 h-[1px] bg-accent/30 mt-4" />
-                </div>
-
-                {/* Stat 2 */}
-                <div className="group">
-                  <div className="flex items-baseline gap-2">
-                    <span className="font-serif text-6xl xl:text-7xl font-light">10 000</span>
-                    <span className="text-accent text-xl xl:text-2xl">€</span>
-                  </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider mt-2">
-                    Montant maximum
-                  </div>
-                  <div className="w-16 h-[1px] bg-accent/30 mt-4" />
-                </div>
-
-                {/* Stat 3 */}
-                <div className="group">
-                  <div className="flex items-baseline gap-2">
-                    <span className="font-serif text-6xl xl:text-7xl font-light">0</span>
-                    <span className="text-accent text-xl xl:text-2xl">€</span>
-                  </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider mt-2">
-                    Frais cachés
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile stats - horizontal row below CTA */}
-          <div className="lg:hidden mt-12 pt-10 border-t border-foreground/5">
-            <div className="flex justify-between text-center">
-              <div>
-                <div className="font-serif text-4xl font-light">24<span className="text-accent text-sm ml-1">h</span></div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">Réponse</div>
-              </div>
-              <div>
-                <div className="font-serif text-4xl font-light">10k<span className="text-accent text-sm ml-1">€</span></div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">Maximum</div>
-              </div>
-              <div>
-                <div className="font-serif text-4xl font-light">0<span className="text-accent text-sm ml-1">€</span></div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">Frais cachés</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div ref={bottomRef} className="py-5 border-t border-foreground/5 opacity-0">
+      <div ref={bottomRef} className="py-5 border-t border-foreground/5">
         <div className="px-8 sm:px-12 lg:px-20 xl:px-28 flex items-center justify-between text-sm text-muted-foreground">
           <div className="flex items-center gap-6 sm:gap-10">
             <span className="flex items-center gap-2">

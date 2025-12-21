@@ -1,0 +1,15 @@
+<svg viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&amp;display=swap');
+    .logo-text { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 42px; font-style: italic; }
+  </style>
+  <text x="200" y="50" text-anchor="middle" class="logo-text" fill="#161514">Quickfund</text>
+  <!-- Gradient signature line -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C8A96A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8A96A;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  <rect x="80" y="65" width="240" height="3" fill="url(#goldGradient)"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Crane Simple 2: The Percher (Soft) -->
+    <!-- Less sharp, more friendly. Standing. -->
+    
+    <!-- Body (Teardrop shape) -->
+    <path d="M100 60 C 130 60, 150 90, 150 120 C 150 150, 120 160, 100 160 C 70 160, 60 130, 60 120" fill="#161514"/>
+    
+    <!-- Wing (Folded) -->
+    <path d="M100 80 L140 120 L100 120 Z" fill="#C8A96A"/>
+    
+    <!-- Neck & Head -->
+    <path d="M60 120 C 60 100, 60 70, 80 50" stroke="#161514" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="80" cy="50" r="8" fill="#161514"/>
+    <path d="M80 50 L90 55" stroke="#161514" stroke-width="4" stroke-linecap="round"/> <!-- Beak -->
+    
+    <!-- Legs -->
+    <line x1="100" y1="160" x2="100" y2="180" stroke="#161514" stroke-width="4"/>
+    <line x1="120" y1="155" x2="120" y2="180" stroke="#161514" stroke-width="4"/>
+</svg>

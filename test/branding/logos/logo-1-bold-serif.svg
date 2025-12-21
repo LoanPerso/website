@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&amp;display=swap');
+    .logo-text { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 48px; letter-spacing: -0.02em; }
+  </style>
+  <text x="200" y="55" text-anchor="middle" class="logo-text" fill="#161514">QUICKFUND</text>
+  <rect x="140" y="70" width="120" height="4" rx="2" fill="#C8A96A"/>
+</svg>

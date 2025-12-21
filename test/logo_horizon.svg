@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Logo 3: The Horizon (Optic) -->
+    <!-- Minimalist sunset/sunrise. Clarity and vision. -->
+    
+    <!-- The Horizon Line -->
+    <rect x="30" y="110" width="140" height="10" fill="#161514"/>
+    
+    <!-- The Sun/Orb rising -->
+    <mask id="mask-circle">
+        <rect x="0" y="0" width="200" height="110" fill="white"/>
+    </mask>
+    <circle cx="100" cy="110" r="50" fill="#C8A96A" mask="url(#mask-circle)"/>
+    
+    <!-- Reflection/Shadow -->
+    <rect x="70" y="130" width="60" height="4" fill="#C8A96A" fill-opacity="0.5"/>
+    <rect x="85" y="140" width="30" height="4" fill="#C8A96A" fill-opacity="0.3"/>
+</svg>
