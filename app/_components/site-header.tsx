@@ -39,7 +39,7 @@ export function SiteHeader() {
         
         <Magnetic>
           <Link href="/" className="text-2xl font-serif font-bold tracking-tighter">
-            WEBSITE
+            <span className="font-medium">Quick</span>fund
           </Link>
         </Magnetic>
 

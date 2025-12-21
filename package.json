@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "quickfund",
   "private": true,
   "scripts": {
     "dev": "next dev",
