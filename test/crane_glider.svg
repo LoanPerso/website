@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Crane Simple 1: The Glider (Geometry) -->
+    <!-- 3 Triangles only. Super simple. -->
+    
+    <!-- Body/Wing (Main Triangle) -->
+    <path d="M40 120 L100 60 L160 120 Z" fill="#161514"/>
+    
+    <!-- Lower Body (Smaller Triangle) -->
+    <path d="M100 120 L130 150 L70 150 Z" fill="#C8A96A"/>
+    
+    <!-- Head (Tiny Triangle) -->
+    <path d="M40 120 L30 100 L55 105 Z" fill="#8D847A"/>
+    
+    <!-- Eye -->
+    <circle cx="42" cy="110" r="2" fill="#F6F1E7"/>
+</svg>

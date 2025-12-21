@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quickfund - Symboles simples</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #F6F1E7;
+      padding: 40px;
+    }
+    h1 { text-align: center; margin-bottom: 40px; font-weight: 400; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .card svg { width: 80px; height: 80px; margin-bottom: 16px; }
+    .card p { color: #8D847A; font-size: 14px; }
+    .dark { background: #161514; }
+    .dark p { color: #8D847A; }
+  </style>
+</head>
+<body>
+  <h1>Symboles simples</h1>
+  <div class="grid">
+
+    <!-- 1. Point doré -->
+    <div class="card">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="25" fill="#C8A96A"/>
+      </svg>
+      <p>Point</p>
+    </div>
+
+    <!-- 2. Cercle vide -->
+    <div class="card dark">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="30" stroke="#C8A96A" stroke-width="6" fill="none"/>
+      </svg>
+      <p>Cercle</p>
+    </div>
+
+    <!-- 3. Cercle incomplet -->
+    <div class="card">
+      <svg viewBox="0 0 100 100">
+        <path d="M50 20 A30 30 0 1 1 20 50" stroke="#C8A96A" stroke-width="6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <p>Arc</p>
+    </div>
+
+    <!-- 4. Trait diagonal -->
+    <div class="card dark">
+      <svg viewBox="0 0 100 100">
+        <line x1="25" y1="75" x2="75" y2="25" stroke="#C8A96A" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+      <p>Trait</p>
+    </div>
+
+    <!-- 5. Flèche simple -->
+    <div class="card">
+      <svg viewBox="0 0 100 100">
+        <path d="M25 50 L75 50 M60 35 L75 50 L60 65" stroke="#C8A96A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Flèche</p>
+    </div>
+
+    <!-- 6. Chevron -->
+    <div class="card dark">
+      <svg viewBox="0 0 100 100">
+        <path d="M35 30 L65 50 L35 70" stroke="#C8A96A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Chevron</p>
+    </div>
+
+    <!-- 7. Goutte -->
+    <div class="card">
+      <svg viewBox="0 0 100 100">
+        <path d="M50 20 C65 40, 75 55, 75 65 C75 80, 65 90, 50 90 C35 90, 25 80, 25 65 C25 55, 35 40, 50 20Z" fill="#C8A96A"/>
+      </svg>
+      <p>Goutte</p>
+    </div>
+
+    <!-- 8. Losange -->
+    <div class="card dark">
+      <svg viewBox="0 0 100 100">
+        <path d="M50 15 L80 50 L50 85 L20 50 Z" fill="#C8A96A"/>
+      </svg>
+      <p>Losange</p>
+    </div>
+
+    <!-- 9. Deux traits -->
+    <div class="card">
+      <svg viewBox="0 0 100 100">
+        <line x1="30" y1="40" x2="70" y2="40" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+        <line x1="30" y1="60" x2="55" y2="60" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <p>Lignes</p>
+    </div>
+
+    <!-- 10. Q minimal -->
+    <div class="card dark">
+      <svg viewBox="0 0 100 100">
+        <circle cx="45" cy="45" r="25" stroke="#C8A96A" stroke-width="6" fill="none"/>
+        <line x1="60" y1="60" x2="80" y2="80" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <p>Q</p>
+    </div>
+
+    <!-- 11. Croissant -->
+    <div class="card">
+      <svg viewBox="0 0 100 100">
+        <path d="M60 20 A35 35 0 1 0 60 80 A25 25 0 1 1 60 20" fill="#C8A96A"/>
+      </svg>
+      <p>Croissant</p>
+    </div>
+
+    <!-- 12. Plus -->
+    <div class="card dark">
+      <svg viewBox="0 0 100 100">
+        <line x1="50" y1="25" x2="50" y2="75" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+        <line x1="25" y1="50" x2="75" y2="50" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <p>Plus</p>
+    </div>
+
+  </div>
+</body>
+</html>

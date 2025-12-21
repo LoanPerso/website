@@ -1,394 +1,224 @@
 # Opérations & Processus - Quickfund
 
-> **Statut :** 🔄 À compléter
 > **Dernière mise à jour :** Décembre 2025
 
 ---
 
-## 1. Organisation opérationnelle
+## Organisation opérationnelle
 
-**Questions à répondre :**
+*Comment l'entreprise fonctionne-t-elle au quotidien ?*
 
-- [ ] **Avez-vous un COO ou responsable des opérations ?**
-- [ ] **Quels sont les domaines couverts par les "ops" ?** (IT, finance, RH, legal, etc.)
-- [ ] **Quels processus sont formalisés ?**
-- [ ] **Quels processus restent à formaliser ?**
-- [ ] **Comment documentez-vous vos processus ?** (Outil, format)
+**Philosophie :** Automatisation maximale, intervention humaine minimale.
 
-### Réponses
-```
-COO : [Oui/Non - Nom]
-Responsable ops : [Nom]
+| Élément | Valeur |
+|---------|--------|
+| COO | ❌ Non (fondateur gère tout) |
+| Équipe ops | 1 personne (fondateur) + 1 freelance (saisie) |
+| Processus formalisés | Partiellement |
+| Documentation | Limitée |
 
-Domaines ops :
-- IT/Infra : [Qui]
-- Finance/Compta : [Qui]
-- RH/People : [Qui]
-- Legal : [Qui]
-- Office management : [Qui]
-
-Processus formalisés :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-Processus à formaliser :
-1. [À compléter]
-2. [À compléter]
-
-Documentation : [Outil - Format]
-```
+*Pourquoi si lean ?* L'entreprise a été conçue pour fonctionner en "pilote automatique". Le fondateur n'intervient que sur les exceptions.
 
 ---
 
-## 2. Cycle de développement produit
+## Processus métier principaux
 
-**Questions à répondre :**
+*Quels sont les processus critiques pour Quickfund ?*
 
-- [ ] **Quelle méthodologie utilisez-vous ?** (Scrum, Kanban, Shape Up, etc.)
-- [ ] **Quelle est la durée de vos sprints/cycles ?**
-- [ ] **Comment sont priorisées les tâches ?**
-- [ ] **Comment sont estimées les tâches ?** (Story points, T-shirt sizing)
-- [ ] **Quels sont vos rituels de dev ?** (Standup, retro, planning, review)
-- [ ] **Comment gérez-vous les bugs vs features ?**
-- [ ] **Quelle est votre fréquence de release ?**
-- [ ] **Avez-vous un feature freeze ?**
+### 1. Traitement des demandes de crédit
 
-### Réponses
-```
-Méthodologie : [Scrum/Kanban/Shape Up/Autre]
-Durée cycle : [X semaines]
+| Étape | Automatisé ? | Responsable |
+|-------|:------------:|-------------|
+| Réception demande | ✅ Oui | Système |
+| Collecte documents | ✅ Oui | Système |
+| Vérification identité | ⚠️ Partiel | Système + review manuel si doute |
+| Scoring crédit | ✅ Oui | Algorithme |
+| Décision (acceptation/refus) | ✅ Oui | Algorithme |
+| Génération offre | ✅ Oui | Système |
+| Signature électronique | ✅ Oui | Système |
+| Versement fonds | ✅ Oui | Système |
 
-Priorisation : [À compléter]
-Estimation : [Story points/T-shirt/Autre]
+**Délai moyen :** 24-48h de la demande au versement.
 
-Rituels :
-- Daily standup : [Durée - Heure]
-- Sprint planning : [Durée - Fréquence]
-- Sprint review : [Durée - Fréquence]
-- Retro : [Durée - Fréquence]
+### 2. Suivi des remboursements
 
-Gestion bugs : [À compléter]
-Fréquence release : [À compléter]
-Feature freeze : [Oui/Non - Quand]
-```
+| Étape | Automatisé ? | Responsable |
+|-------|:------------:|-------------|
+| Prélèvement mensuel | ✅ Oui | SEPA |
+| Confirmation paiement | ✅ Oui | Système |
+| Détection impayé | ✅ Oui | Système |
+| Relance niveau 1 | ✅ Oui | Email auto |
+| Relance niveau 2 | ⚠️ Partiel | Email/SMS |
+| Relance niveau 3 | ❌ Manuel | Fondateur |
+| Recouvrement | ❌ Manuel | Fondateur/Externe |
 
----
+### 3. Gestion des clients
 
-## 3. Déploiement et CI/CD
-
-**Questions à répondre :**
-
-- [ ] **Quel est votre process de déploiement ?**
-- [ ] **Utilisez-vous du CI/CD ?** (Outils)
-- [ ] **Combien de déploiements par jour/semaine ?**
-- [ ] **Avez-vous des environnements de staging/preprod ?**
-- [ ] **Comment gérez-vous les rollbacks ?**
-- [ ] **Avez-vous des feature flags ?**
-- [ ] **Qui peut déployer en production ?**
-
-### Réponses
-```
-CI/CD : [Oui/Non]
-Outils CI/CD : [GitHub Actions/GitLab CI/Jenkins/etc.]
-
-Environnements :
-- Dev : [À compléter]
-- Staging : [À compléter]
-- Preprod : [À compléter]
-- Production : [À compléter]
-
-Déploiements :
-- Fréquence : [X/jour ou X/semaine]
-- Process : [À compléter]
-- Autorisés : [Qui]
-
-Feature flags : [Oui/Non - Outil]
-Rollback : [À compléter]
-```
+| Tâche | Automatisé ? | Fréquence |
+|-------|:------------:|:---------:|
+| Espace client | ✅ Oui | Permanent |
+| Relevés/Attestations | ✅ Oui | Sur demande |
+| Support questions | ❌ Manuel | À la demande |
+| Modifications contrat | ⚠️ Partiel | Rare |
 
 ---
 
-## 4. Monitoring et observabilité
+## Processus actuellement manuels
 
-**Questions à répondre :**
+*Quelles tâches nécessitent encore une intervention humaine ?*
 
-- [ ] **Comment monitorez-vous vos systèmes ?** (APM, logs, metrics)
-- [ ] **Quels outils de monitoring utilisez-vous ?**
-- [ ] **Avez-vous des dashboards de monitoring ?**
-- [ ] **Quelles alertes sont configurées ?**
-- [ ] **Qui reçoit les alertes ?**
-- [ ] **Quel est votre MTTD (Mean Time To Detect) ?**
-
-### Stack monitoring
-| Type | Outil | Usage |
-|------|-------|-------|
-| APM | [Datadog/NewRelic/etc.] | [À compléter] |
-| Logs | [Datadog/ELK/etc.] | [À compléter] |
-| Metrics | [Prometheus/Grafana/etc.] | [À compléter] |
-| Uptime | [Pingdom/UptimeRobot/etc.] | [À compléter] |
-| Error tracking | [Sentry/Rollbar/etc.] | [À compléter] |
-
-### Alertes
-| Alerte | Seuil | Priorité | Notifié |
-|--------|-------|----------|---------|
-| [Alerte 1] | [Seuil] | [P1/P2/P3] | [Qui] |
-| [Alerte 2] | [Seuil] | [P1/P2/P3] | [Qui] |
-| [Alerte 3] | [Seuil] | [P1/P2/P3] | [Qui] |
-
-### Réponses
-```
-MTTD : [X minutes]
-Dashboards : [URL/Outil]
-```
+| Processus | Fréquence | Qui | Temps estimé |
+|-----------|:---------:|-----|:------------:|
+| Dossiers complexes | 60-70% des demandes | Fondateur | Variable |
+| Documents illisibles | Occasionnel | Freelance | ~5 min/dossier |
+| Impayés niveau 3 | Selon besoin | Fondateur | Variable |
+| Support client | ~8% des clients | Fondateur | Variable |
+| Comptabilité | Mensuel | Fondateur/Comptable | ~2h/mois |
+| Reporting réglementaire | Périodique | Fondateur | Variable |
 
 ---
 
-## 5. Gestion des incidents
+## Processus à améliorer
 
-**Questions à répondre :**
+*Quels processus posent problème ou manquent de formalisation ?*
 
-- [ ] **Avez-vous un process de gestion d'incidents formalisé ?**
-- [ ] **Comment classifiez-vous les incidents ?** (Sévérité)
-- [ ] **Qui est on-call ?** (Rotation, compensation)
-- [ ] **Quel est le temps de réponse cible par sévérité ?**
-- [ ] **Comment communiquez-vous en cas d'incident ?** (Interne, clients)
-- [ ] **Faites-vous des post-mortems ?**
-- [ ] **Quel est votre MTTR (Mean Time To Resolve) ?**
+### Problème #1 : Suivi des métriques
 
-### Classification des incidents
-| Sévérité | Définition | Temps de réponse | Temps de résolution |
-|----------|------------|------------------|---------------------|
-| SEV1 - Critique | [À compléter] | [X min] | [X heures] |
-| SEV2 - Majeur | [À compléter] | [X min] | [X heures] |
-| SEV3 - Mineur | [À compléter] | [X heures] | [X jours] |
-| SEV4 - Low | [À compléter] | [X jours] | [Best effort] |
+| Élément | Problème |
+|---------|----------|
+| Symptôme | ~50K€ perdus en 2 ans par manque de suivi |
+| Cause | Pas de dashboard, pas d'alertes |
+| Solution Q1 2026 | Mettre en place un tableau de bord |
 
-### On-call
-```
-Rotation : [X personnes, X semaines]
-Compensation : [À compléter]
-Outils : [PagerDuty/Opsgenie/etc.]
-Escalation : [À compléter]
-```
+### ~~Problème #2 : Suivi des impayés~~ ✅ RÉSOLU
 
-### Post-mortems
-```
-Obligatoire pour : [SEV1/SEV2]
-Template : [Lien]
-Délai : [X jours après résolution]
-MTTR actuel : [X heures]
-```
+| Élément | Statut |
+|---------|--------|
+| Alertes automatiques | ✅ En place |
+| Détection | Automatique |
+| Vérification | Manuelle en complément |
+
+*Les alertes automatiques sont désormais en place. Le fondateur reçoit une notification et vérifie manuellement.*
+
+### Problème #3 : Documentation processus
+
+| Élément | Problème |
+|---------|----------|
+| Symptôme | Connaissance dans la tête du fondateur |
+| Cause | 2 ans de fonctionnement informel |
+| Solution | Documenter les processus critiques |
 
 ---
 
-## 6. Sécurité opérationnelle
+## Gestion des risques opérationnels
 
-**Questions à répondre :**
+*Quels risques opérationnels existent ?*
 
-- [ ] **Avez-vous une politique de sécurité ?**
-- [ ] **Comment gérez-vous les accès ?** (SSO, MFA)
-- [ ] **Comment gérez-vous les secrets ?** (Vault, etc.)
-- [ ] **Faites-vous des audits de sécurité ?** (Pentests)
-- [ ] **Avez-vous un plan de réponse aux incidents sécurité ?**
-- [ ] **Formez-vous l'équipe à la sécurité ?**
-
-### Réponses
-```
-Politique sécurité : [Oui/Non - Lien]
-
-Accès :
-- SSO : [Oui/Non - Fournisseur]
-- MFA : [Obligatoire/Optionnel]
-- Gestion accès : [Outil]
-
-Secrets :
-- Outil : [Vault/AWS Secrets Manager/etc.]
-- Rotation : [Automatique/Manuelle]
-
-Audits :
-- Pentests : [Fréquence - Dernier]
-- Audit code : [Oui/Non]
-- Bug bounty : [Oui/Non]
-
-Formation sécurité : [À compléter]
-```
+| Risque | Probabilité | Impact | Mitigation |
+|--------|:-----------:|:------:|------------|
+| Fondateur indisponible | Moyenne | Critique | Documenter, automatiser plus |
+| Panne système | Faible | Élevé | Backups, monitoring |
+| Fraude client | Moyenne | Moyen | Vérification identité |
+| Impayés massifs | Moyenne | Élevé | Scoring, relances précoces |
+| Erreur de versement | Faible | Moyen | Double vérification |
 
 ---
 
-## 7. Disaster Recovery et continuité
+## Conformité et réglementaire
 
-**Questions à répondre :**
+*Quelles obligations réglementaires affectent les opérations ?*
 
-- [ ] **Avez-vous un plan de reprise d'activité (PRA/DRP) ?**
-- [ ] **Avez-vous un plan de continuité d'activité (PCA/BCP) ?**
-- [ ] **Quel est votre RTO (Recovery Time Objective) ?**
-- [ ] **Quel est votre RPO (Recovery Point Objective) ?**
-- [ ] **Comment sont gérées les backups ?**
-- [ ] **Avez-vous testé votre DRP récemment ?**
-- [ ] **Avez-vous un site de secours ?**
-
-### Réponses
-```
-DRP : [Oui/Non - Lien]
-BCP : [Oui/Non - Lien]
-
-RTO : [X heures]
-RPO : [X heures]
-
-Backups :
-- Fréquence : [X fois/jour]
-- Rétention : [X jours]
-- Localisation : [À compléter]
-- Chiffrement : [Oui/Non]
-- Test restauration : [Fréquence]
-
-Dernier test DRP : [Date]
-Site de secours : [Oui/Non - Localisation]
-```
+| Obligation | Fréquence | Responsable | Statut |
+|------------|:---------:|-------------|:------:|
+| Reporting FSA Estonie | Périodique | Fondateur | ✅ |
+| KYC (Know Your Customer) | Chaque client | Système | ✅ |
+| AML (Anti-Money Laundering) | Permanent | Système | ✅ |
+| RGPD | Permanent | Système | ✅ |
+| Conservation documents | Permanent | Système | ✅ |
 
 ---
 
-## 8. Change management
+## Outils opérationnels
 
-**Questions à répondre :**
+*Quels outils supportent les opérations quotidiennes ?*
 
-- [ ] **Comment gérez-vous les changements majeurs ?** (Infra, process)
-- [ ] **Avez-vous un CAB (Change Advisory Board) ?**
-- [ ] **Comment sont documentés les changements ?**
-- [ ] **Comment sont communiqués les changements ?**
+| Fonction | Outil | Commentaire |
+|----------|-------|-------------|
+| Plateforme crédit | Interne | Core business |
+| Paiements | Stripe | Prélèvements, versements |
+| KYC / Vérification identité | Stripe Identity | Automatisé |
+| Signature électronique | Interne | Développé en interne |
+| Email transactionnel | Interne | Développé en interne |
+| SMS / Alertes | Twilio | Notifications |
+| Comptabilité | Interne | Lié au comptable externe |
+| Stockage documents | Interne | Hébergé en interne |
 
-### Réponses
-```
-Process de change : [À compléter]
-CAB : [Oui/Non - Composition]
-Documentation changes : [Où]
-Communication : [Comment]
-
-Types de changements :
-- Standard (pré-approuvé) : [Exemples]
-- Normal (nécessite approbation) : [Exemples]
-- Urgent : [Process]
-```
+*Philosophie :* Maximum d'outils développés en interne pour garder le contrôle et réduire les coûts SaaS.
 
 ---
 
-## 9. Vendor management
+## Métriques opérationnelles
 
-**Questions à répondre :**
+*Que devrait-on mesurer ? (À mettre en place Q1 2026)*
 
-- [ ] **Quels sont vos fournisseurs critiques ?** (Cloud, SaaS, etc.)
-- [ ] **Avez-vous des SLA avec vos fournisseurs ?**
-- [ ] **Comment évaluez-vous vos fournisseurs ?**
-- [ ] **Avez-vous des alternatives identifiées ?** (Plan B)
-
-### Fournisseurs critiques
-| Fournisseur | Service | Criticité | SLA | Coût/mois | Alternative |
-|-------------|---------|-----------|-----|-----------|-------------|
-| [Fournisseur 1] | [À compléter] | [Haute/Moyenne] | [X%] | [€] | [À compléter] |
-| [Fournisseur 2] | [À compléter] | [Haute/Moyenne] | [X%] | [€] | [À compléter] |
-| [Fournisseur 3] | [À compléter] | [Haute/Moyenne] | [X%] | [€] | [À compléter] |
+| Métrique | Importance | Trackée ? |
+|----------|:----------:|:---------:|
+| Temps traitement demande | Haute | ❌ |
+| Taux d'acceptation | Haute | ❌ |
+| Taux d'impayés | Critique | ⚠️ Partiel |
+| Volume demandes/jour | Haute | ❌ |
+| Tickets support/jour | Moyenne | ❌ |
+| Temps réponse support | Moyenne | ❌ |
 
 ---
 
-## 10. Documentation technique
+## Scalabilité opérationnelle
 
-**Questions à répondre :**
+*Les opérations peuvent-elles absorber une croissance ?*
 
-- [ ] **Où est centralisée votre documentation technique ?**
-- [ ] **La documentation est-elle à jour ?**
-- [ ] **Qui maintient la documentation ?**
-- [ ] **Avez-vous de la documentation d'architecture ?**
-- [ ] **Avez-vous des runbooks opérationnels ?**
+| Facteur | Scalable ? | Limite |
+|---------|:----------:|--------|
+| Traitement demandes | ✅ Oui | Automatisé |
+| Versements | ✅ Oui | Limité par liquidité |
+| Support | ⚠️ Partiellement | 1 personne = goulot |
+| Impayés | ⚠️ Partiellement | Nécessite process |
+| Compliance | ⚠️ Partiellement | Dépend du volume |
 
-### Réponses
-```
-Documentation centralisée : [Outil - URL]
-À jour : [Oui/Non/Partiellement]
-Responsable : [Qui]
-
-Types de docs :
-- Architecture : [Oui/Non - Lien]
-- API : [Oui/Non - Lien]
-- Runbooks : [Oui/Non - Lien]
-- Onboarding dev : [Oui/Non - Lien]
-- ADR (Architecture Decision Records) : [Oui/Non - Lien]
-```
+**Limite actuelle :** Le fondateur seul. Si le volume explose, il faudra recruter ou automatiser encore plus.
 
 ---
 
-## 11. Métriques opérationnelles
+## Disaster Recovery opérationnel
 
-**Questions à répondre :**
+*Que se passe-t-il si quelque chose tourne mal ?*
 
-- [ ] **Quelles métriques ops suivez-vous ?**
-- [ ] **Quel est votre uptime actuel ?**
-- [ ] **Combien d'incidents par mois ?**
-- [ ] **Quel est votre MTTR ?**
-- [ ] **Quel est votre lead time for changes ?**
-- [ ] **Quel est votre deployment frequency ?**
-- [ ] **Quel est votre change failure rate ?**
-
-### Métriques DORA
-| Métrique | Valeur actuelle | Objectif | Benchmark "Elite" |
-|----------|-----------------|----------|-------------------|
-| Deployment frequency | [X/jour ou X/semaine] | [À compléter] | Multiple/jour |
-| Lead time for changes | [X heures/jours] | [À compléter] | < 1 heure |
-| Change failure rate | [X%] | [À compléter] | < 15% |
-| MTTR | [X heures] | [À compléter] | < 1 heure |
-
-### Autres métriques
-| Métrique | Valeur actuelle | Objectif |
-|----------|-----------------|----------|
-| Uptime | [X%] | [X%] |
-| Incidents SEV1/mois | [X] | [X] |
-| Incidents SEV2/mois | [X] | [X] |
-| Time to first response (incidents) | [X min] | [X min] |
+| Scénario | Plan actuel |
+|----------|-------------|
+| Panne plateforme | Restaurer depuis backup |
+| Fraude détectée | Blocage manuel, investigation |
+| Impayés massifs | Resserrer le scoring, relances agressives |
+| Fondateur indisponible | ⚠️ Problème critique (personne clé unique) |
 
 ---
 
-## 12. Automatisation
+## Résumé
 
-**Questions à répondre :**
-
-- [ ] **Quels processus sont automatisés ?**
-- [ ] **Quels processus devraient être automatisés ?**
-- [ ] **Utilisez-vous de l'Infrastructure as Code ?** (Terraform, etc.)
-- [ ] **Avez-vous des scripts d'automatisation ?** (Où)
-
-### Réponses
-```
-Processus automatisés :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-À automatiser :
-1. [À compléter]
-2. [À compléter]
-
-Infrastructure as Code :
-- Outil : [Terraform/Pulumi/CloudFormation/etc.]
-- Couverture : [X% de l'infra]
-
-Scripts : [Repo/Dossier]
-```
+| Élément | Valeur |
+|---------|--------|
+| Équipe ops | 1 personne + 1 freelance |
+| Niveau automatisation | ~30-40% automatisé (60-70% manuel) |
+| Processus documentés | Partiellement |
+| Alertes impayés | ✅ En place |
+| Problème restant | Pas de suivi métriques (~50K€ perdus) |
+| Risque principal | Fondateur = personne clé unique |
+| Priorité Q1 2026 | Dashboard + documentation |
 
 ---
 
-## Résumé exécutif
+## Actions Q1 2026
 
-*(À générer automatiquement une fois les questions répondues)*
-
-| Élément | Contenu |
-|---------|---------|
-| Méthodologie | [Scrum/Kanban/etc.] |
-| Déploiements/semaine | [X] |
-| Uptime | [X%] |
-| MTTR | [X heures] |
-| Incidents SEV1/mois | [X] |
-
----
-
-**Total questions : 58**
-**Répondues : 0/58**
+- [ ] Mettre en place un dashboard opérationnel
+- [x] ~~Configurer des alertes impayés~~ → En place (auto + vérif manuelle)
+- [ ] Documenter les processus critiques
+- [ ] Définir des SLA internes (temps traitement, réponse)
+- [ ] Identifier les tâches à automatiser encore

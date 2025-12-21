@@ -1,376 +1,275 @@
-# Compliance & Conformité - Quickfund
+# Compliance & Conformite - Quickfund
 
-> **Statut :** 🔄 À compléter
-> **Dernière mise à jour :** Décembre 2025
-
----
-
-## 1. RGPD / Protection des données
-
-**Questions à répondre :**
-
-### Responsabilités
-- [ ] **Avez-vous un DPO (Data Protection Officer) ?** (Interne ou externe)
-- [ ] **Êtes-vous responsable de traitement ou sous-traitant ?**
-- [ ] **Avez-vous un registre des traitements ?**
-
-### Données collectées
-- [ ] **Quelles données personnelles collectez-vous ?** (Liste exhaustive)
-- [ ] **Quelle est la base légale de chaque traitement ?** (Contrat, consentement, intérêt légitime)
-- [ ] **Quelle est la durée de conservation des données ?**
-- [ ] **Où sont stockées les données ?** (Pays, hébergeur)
-- [ ] **Y a-t-il des transferts hors UE ?** (Lesquels, garanties)
-
-### Droits des personnes
-- [ ] **Comment gérez-vous les demandes d'accès ?**
-- [ ] **Comment gérez-vous les demandes de suppression ?**
-- [ ] **Comment gérez-vous le droit à la portabilité ?**
-- [ ] **Quel est le délai de réponse aux demandes ?**
-
-### Sécurité
-- [ ] **Avez-vous réalisé une AIPD (Analyse d'Impact) ?**
-- [ ] **Comment notifiez-vous les violations de données ?**
-
-### Réponses RGPD
-```
-DPO : [Oui/Non - Nom/Société]
-Registre des traitements : [Oui/Non - Lien]
-Politique de confidentialité : [Lien]
-
-Données collectées :
-- [Type 1] - Base légale : [Contrat/Consentement/etc.] - Durée : [X ans]
-- [Type 2] - Base légale : [Contrat/Consentement/etc.] - Durée : [X ans]
-- [Type 3] - Base légale : [Contrat/Consentement/etc.] - Durée : [X ans]
-
-Hébergement données : [Pays - Hébergeur]
-Transferts hors UE : [Oui/Non - Garanties]
-
-Demandes RGPD (12 derniers mois) :
-- Accès : [X]
-- Suppression : [X]
-- Portabilité : [X]
-- Délai moyen réponse : [X jours]
-
-AIPD réalisée : [Oui/Non - Date]
-Procédure violation : [Oui/Non - Lien]
-```
+> **Derniere mise a jour :** Decembre 2025
 
 ---
 
-## 2. Certifications et normes
+## Cadre reglementaire
 
-**Questions à répondre :**
+*Quel est le cadre reglementaire de Quickfund ?*
 
-- [ ] **Avez-vous des certifications ?** (ISO 27001, SOC 2, HDS, etc.)
-- [ ] **Lesquelles visez-vous ?**
-- [ ] **Quel est l'état d'avancement ?**
-- [ ] **Qui pilote les certifications ?**
+| Element | Valeur |
+|---------|--------|
+| Secteur | Credit a la consommation |
+| Regulateur | FSA Estonie |
+| Pays d'operation | France (clients) |
+| Licence | Credit institution (Estonie) |
+| Statut | Conforme |
 
-### Certifications
-| Certification | Statut | Date obtention | Expiration | Organisme |
-|---------------|--------|----------------|------------|-----------|
-| ISO 27001 | [Obtenue/En cours/Visée] | [Date] | [Date] | [Organisme] |
-| SOC 2 Type I | [Obtenue/En cours/Visée] | [Date] | [Date] | [Organisme] |
-| SOC 2 Type II | [Obtenue/En cours/Visée] | [Date] | [Date] | [Organisme] |
-| HDS | [Obtenue/En cours/Visée] | [Date] | [Date] | [Organisme] |
-| SecNumCloud | [Obtenue/En cours/Visée] | [Date] | [Date] | [Organisme] |
-| PCI-DSS | [Obtenue/En cours/Visée] | [Date] | [Date] | [Organisme] |
-| [Autre] | [Obtenue/En cours/Visée] | [Date] | [Date] | [Organisme] |
-
-### Réponses
-```
-Responsable certifications : [Nom]
-Budget certifications : [€/an]
-Roadmap certifications :
-1. [Certification] - [Date cible]
-2. [Certification] - [Date cible]
-```
+*Pourquoi l'Estonie ?* Structure OU estonienne avec licence FSA. Permet d'operer dans l'UE via le passeport europeen.
 
 ---
 
-## 3. Sécurité de l'information
+## Reglementations applicables
 
-**Questions à répondre :**
+*Quelles reglementations s'appliquent ?*
 
-- [ ] **Avez-vous une politique de sécurité de l'information (PSSI) ?**
-- [ ] **Avez-vous un RSSI ?** (Responsable Sécurité SI)
-- [ ] **Réalisez-vous des audits de sécurité ?** (Pentests, etc.)
-- [ ] **Avez-vous un plan de gestion des vulnérabilités ?**
-- [ ] **Comment gérez-vous les accès aux systèmes ?**
-- [ ] **Formez-vous vos employés à la sécurité ?**
-
-### Réponses
-```
-PSSI : [Oui/Non - Lien]
-RSSI : [Oui/Non - Nom]
-
-Audits de sécurité :
-- Pentests : [Fréquence - Dernier : Date]
-- Audit de code : [Fréquence]
-- Scan de vulnérabilités : [Fréquence]
-
-Gestion des vulnérabilités :
-- Outil : [À compléter]
-- SLA correction : [Critique: Xh, Haute: Xj, etc.]
-
-Gestion des accès :
-- SSO : [Oui/Non]
-- MFA : [Obligatoire/Optionnel]
-- Revue des accès : [Fréquence]
-- Principe du moindre privilège : [Oui/Non]
-
-Formation sécurité :
-- Fréquence : [À compléter]
-- Contenu : [À compléter]
-- Phishing tests : [Oui/Non - Résultats]
-```
+| Reglementation | Applicable | Conforme |
+|----------------|:----------:|:--------:|
+| RGPD | Oui | Oui |
+| KYC/AML | Oui | Oui |
+| FSA Estonie | Oui | Oui |
+| Consumer Credit Directive | Oui | Oui |
+| ePrivacy | Oui | Oui |
+| DORA | A evaluer | A verifier |
+| NIS2 | A evaluer | A verifier |
 
 ---
 
-## 4. Continuité d'activité
+## RGPD / Protection des donnees
 
-**Questions à répondre :**
+*Comment Quickfund gere-t-il les donnees personnelles ?*
 
-- [ ] **Avez-vous un PCA (Plan de Continuité d'Activité) ?**
-- [ ] **Avez-vous un PRA (Plan de Reprise d'Activité) ?**
-- [ ] **Quels sont vos RTO/RPO ?**
-- [ ] **Avez-vous testé ces plans ?** (Quand)
-- [ ] **Avez-vous un site de secours ?**
+### Responsabilites
 
-### Réponses
-```
-PCA : [Oui/Non - Lien]
-PRA : [Oui/Non - Lien]
+| Element | Valeur |
+|---------|--------|
+| DPO | Non (pas obligatoire <250 employes) |
+| Responsable traitement | Quickfund OU |
+| Registre des traitements | A formaliser |
+| Politique de confidentialite | Oui (site) |
 
-RTO (Recovery Time Objective) : [X heures]
-RPO (Recovery Point Objective) : [X heures]
+### Donnees collectees
 
-Tests :
-- Dernier test PCA : [Date]
-- Dernier test PRA : [Date]
-- Résultats : [À compléter]
+| Type de donnee | Base legale | Duree conservation |
+|----------------|-------------|:------------------:|
+| Identite (nom, adresse) | Contrat | Duree du pret + 5 ans |
+| Documents (KYC) | Obligation legale | 5 ans apres fin relation |
+| Bancaires | Contrat | Duree du pret + 5 ans |
+| Historique prets | Obligation legale | 10 ans |
 
-Site de secours : [Oui/Non - Localisation]
-```
+### Mesures de securite
 
----
-
-## 5. Conformité réglementaire sectorielle
-
-**Questions à répondre :**
-
-- [ ] **Quelles réglementations sectorielles s'appliquent ?**
-- [ ] **Êtes-vous conforme à ces réglementations ?**
-- [ ] **Avez-vous des agréments nécessaires ?**
-- [ ] **Y a-t-il des évolutions réglementaires à anticiper ?**
-
-### Réglementations applicables
-| Réglementation | Applicable | Conforme | Actions en cours |
-|----------------|------------|----------|------------------|
-| RGPD | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-| NIS2 | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-| DORA | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-| ePrivacy | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-| DSA | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-| DMA | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-| AI Act | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-| [Autre] | [Oui/Non] | [Oui/Non/Partiel] | [À compléter] |
-
-### Évolutions anticipées
-```
-1. [Réglementation] - [Date entrée en vigueur] - [Impact]
-2. [Réglementation] - [Date entrée en vigueur] - [Impact]
-```
+| Mesure | Statut |
+|--------|:------:|
+| Chiffrement en transit (HTTPS) | Oui |
+| Chiffrement au repos | A verifier |
+| Acces restreint | Oui |
+| Stockage en Europe | Oui |
 
 ---
 
-## 6. Gestion des risques
+## KYC / AML
 
-**Questions à répondre :**
+*Comment Quickfund verifie-t-il l'identite des clients ?*
 
-- [ ] **Avez-vous une cartographie des risques ?**
-- [ ] **Comment évaluez-vous les risques ?** (Méthodologie)
-- [ ] **Avez-vous un comité des risques ?**
-- [ ] **À quelle fréquence révisez-vous les risques ?**
+| Element | Valeur |
+|---------|--------|
+| Fournisseur KYC | Stripe Identity |
+| Verification automatique | Oui |
+| Review manuel si doute | Oui (fondateur) |
+| Stockage documents | Interne |
 
-### Top risques identifiés
-| Risque | Probabilité (1-5) | Impact (1-5) | Score | Mitigation | Owner |
-|--------|-------------------|--------------|-------|------------|-------|
-| [Risque 1] | [X] | [X] | [X] | [À compléter] | [Nom] |
-| [Risque 2] | [X] | [X] | [X] | [À compléter] | [Nom] |
-| [Risque 3] | [X] | [X] | [X] | [À compléter] | [Nom] |
-| [Risque 4] | [X] | [X] | [X] | [À compléter] | [Nom] |
-| [Risque 5] | [X] | [X] | [X] | [À compléter] | [Nom] |
+### Process KYC
 
-### Réponses
-```
-Cartographie des risques : [Oui/Non - Lien]
-Méthodologie : [ISO 27005/EBIOS/Autre]
-Comité des risques : [Oui/Non - Fréquence]
-Dernière revue : [Date]
-```
+| Etape | Automatise | Outil |
+|-------|:----------:|-------|
+| Verification identite | Oui | Stripe Identity |
+| Verification document | Oui | Stripe Identity |
+| Screening AML | Oui | Stripe |
+| Cas suspects | Manuel | Fondateur |
 
----
+### Conformite AML
 
-## 7. Conformité contractuelle
-
-**Questions à répondre :**
-
-- [ ] **Vos contrats clients incluent-ils des clauses de conformité ?**
-- [ ] **Vos fournisseurs sont-ils évalués sur la conformité ?**
-- [ ] **Avez-vous des DPA avec tous vos sous-traitants ?**
-- [ ] **Comment gérez-vous les audits clients ?**
-
-### Réponses
-```
-Clauses conformité contrats : [Oui/Non]
-Évaluation fournisseurs : [Oui/Non - Processus]
-
-DPA sous-traitants :
-- [Sous-traitant 1] : [Oui/Non]
-- [Sous-traitant 2] : [Oui/Non]
-- [Sous-traitant 3] : [Oui/Non]
-
-Audits clients acceptés : [Oui/Non - Conditions]
-Audits réalisés (12 mois) : [X]
-```
+| Element | Statut |
+|---------|:------:|
+| Detection transactions suspectes | Oui |
+| Reporting autorites | Si necessaire |
+| Formation AML | N/A (1 personne) |
 
 ---
 
-## 8. Éthique et anti-corruption
+## Reporting regulateur
 
-**Questions à répondre :**
+*Quelles obligations envers le FSA ?*
 
-- [ ] **Avez-vous un code de conduite / éthique ?**
-- [ ] **Avez-vous une politique anti-corruption ?**
-- [ ] **Avez-vous un système d'alerte (whistleblowing) ?**
-- [ ] **Formez-vous les employés à l'éthique ?**
-- [ ] **Êtes-vous soumis à Sapin II ?**
-
-### Réponses
-```
-Code de conduite : [Oui/Non - Lien]
-Politique anti-corruption : [Oui/Non - Lien]
-Système d'alerte : [Oui/Non - Canal]
-Formation éthique : [Oui/Non - Fréquence]
-Sapin II applicable : [Oui/Non]
-
-Incidents signalés (12 mois) : [X]
-```
+| Obligation | Frequence | Responsable |
+|------------|:---------:|:-----------:|
+| Reporting FSA | Periodique | Fondateur |
+| Comptes annuels | Annuel | Comptable |
+| Notification incidents | Si besoin | Fondateur |
 
 ---
 
-## 9. Accessibilité
+## Securite de l'information
 
-**Questions à répondre :**
+*Comment est geree la securite ?*
 
-- [ ] **Votre produit est-il accessible ?** (WCAG, RGAA)
-- [ ] **Quel niveau d'accessibilité visez-vous ?** (A, AA, AAA)
-- [ ] **Avez-vous une déclaration d'accessibilité ?**
-- [ ] **Réalisez-vous des audits d'accessibilité ?**
+| Element | Valeur |
+|---------|--------|
+| PSSI | Non formalisee |
+| RSSI | Non (fondateur gere) |
+| Pentests internes | Oui (realises en interne) |
+| Audits securite internes | Oui (realises en interne) |
+| Pentests/Audits externes | Prevu prochainement |
 
-### Réponses
-```
-Standard suivi : [WCAG 2.1/RGAA 4]
-Niveau actuel : [A/AA/AAA/Non conforme]
-Niveau visé : [A/AA/AAA]
+### Mesures en place
 
-Déclaration d'accessibilité : [Oui/Non - Lien]
-Dernier audit : [Date]
-Résultat : [X% conforme]
+| Mesure | Statut |
+|--------|:------:|
+| HTTPS partout | Oui |
+| Authentification securisee | Oui |
+| MFA admin | Oui |
+| Backups | Oui (GCP, tous les 2 jours) |
+| Monitoring | Oui (alertes partout) |
 
-Plan d'amélioration : [À compléter]
-```
+### Acces
 
----
-
-## 10. Environnement et RSE
-
-**Questions à répondre :**
-
-- [ ] **Avez-vous une politique RSE ?**
-- [ ] **Mesurez-vous votre empreinte carbone ?**
-- [ ] **Avez-vous des objectifs environnementaux ?**
-- [ ] **Êtes-vous certifié B-Corp ou équivalent ?**
-- [ ] **Publiez-vous un rapport RSE ?**
-
-### Réponses
-```
-Politique RSE : [Oui/Non - Lien]
-Bilan carbone : [Oui/Non - Résultat]
-Compensation carbone : [Oui/Non]
-
-Objectifs environnementaux :
-1. [À compléter]
-2. [À compléter]
-
-B-Corp : [Oui/Non/En cours]
-Rapport RSE : [Oui/Non - Lien]
-```
+| Element | Valeur |
+|---------|--------|
+| Acces admin | Fondateur uniquement |
+| Gestion secrets | Variables d'environnement |
+| Revue des acces | N/A (1 personne) |
 
 ---
 
-## 11. Documentation et preuves
+## Continuite d'activite
 
-**Questions à répondre :**
+*Existe-t-il un plan de continuite ?*
 
-- [ ] **Où centralisez-vous la documentation compliance ?**
-- [ ] **Comment gérez-vous les preuves d'audit ?**
-- [ ] **Quelle est la durée de conservation des preuves ?**
-- [ ] **Êtes-vous prêts pour un audit externe ?**
+| Element | Valeur |
+|---------|--------|
+| PCA | Non formalise |
+| PRA | Non formalise |
+| Backups | Oui (GCP automatique) |
+| Site de secours | VMCloud (prevu) |
 
-### Réponses
-```
-Centralisation docs : [Outil - Lien]
-Gestion des preuves : [Outil/Process]
-Durée conservation : [X ans]
-Prêt pour audit : [Oui/Non]
+### Risques operationnels
 
-Derniers audits :
-- [Type] : [Date] - [Résultat]
-- [Type] : [Date] - [Résultat]
-```
+| Risque | Impact | Mitigation |
+|--------|:------:|------------|
+| Panne plateforme | Eleve | Restaurer depuis backup |
+| Fondateur indisponible | Critique | Documenter les process |
+| Panne Stripe | Critique | Pas d'alternative immediate |
 
 ---
 
-## 12. Roadmap compliance
+## Gestion des risques
 
-**Questions à répondre :**
+*Comment sont geres les risques ?*
 
-- [ ] **Quels sont vos objectifs compliance pour l'année ?**
-- [ ] **Quels investissements sont prévus ?**
-- [ ] **Qui pilote la compliance ?**
+| Element | Valeur |
+|---------|--------|
+| Cartographie des risques | Non formalisee |
+| Comite des risques | Non (1 personne) |
+| Methodologie | Informelle |
 
-### Roadmap
-| Objectif | Trimestre | Budget | Responsable | Statut |
-|----------|-----------|--------|-------------|--------|
-| [Objectif 1] | [Q1/Q2/Q3/Q4] | [€] | [Nom] | [À faire/En cours/Fait] |
-| [Objectif 2] | [Q1/Q2/Q3/Q4] | [€] | [Nom] | [À faire/En cours/Fait] |
-| [Objectif 3] | [Q1/Q2/Q3/Q4] | [€] | [Nom] | [À faire/En cours/Fait] |
-| [Objectif 4] | [Q1/Q2/Q3/Q4] | [€] | [Nom] | [À faire/En cours/Fait] |
+### Top risques identifies
 
-### Réponses
-```
-Responsable compliance : [Nom/Rôle]
-Budget compliance annuel : [€]
-Conseil externe : [Cabinet - Contact]
-```
+| Risque | Probabilite | Impact |
+|--------|:-----------:|:------:|
+| Dependance banque liquidite | Moyenne | Critique |
+| Fondateur = personne cle | Haute | Critique |
+| Impayes massifs | Moyenne | Eleve |
+| Fraude client | Moyenne | Moyen |
 
 ---
 
-## Résumé exécutif
+## Ethique et anti-corruption
 
-*(À générer automatiquement une fois les questions répondues)*
+*Quickfund a-t-il des politiques ethiques ?*
 
-| Élément | Contenu |
-|---------|---------|
-| DPO | [Oui/Non] |
-| Certifications | [Liste] |
-| RGPD conforme | [Oui/Non/Partiel] |
-| Dernier pentest | [Date] |
-| PCA/PRA testés | [Oui/Non] |
+| Element | Valeur |
+|---------|--------|
+| Code de conduite | Non formalise |
+| Politique anti-corruption | N/A (1 personne, pas de tiers) |
+| Whistleblowing | N/A |
+| Sapin II | Non applicable (Estonie) |
+
+*Valeurs appliquees :* Transparence, respect, pragmatisme (cf VISION.md).
 
 ---
 
-**Total questions : 48**
-**Répondues : 0/48**
+## Accessibilite
+
+*Le produit est-il accessible ?*
+
+| Element | Valeur |
+|---------|--------|
+| Standard suivi | A evaluer |
+| Niveau actuel | A evaluer |
+| Declaration accessibilite | Non |
+| Audit realise | Non |
+
+*A considerer :* Mettre en conformite avec RGAA/WCAG si l'activite grandit.
+
+---
+
+## RSE / Environnement
+
+*Quickfund a-t-il des engagements RSE ?*
+
+| Element | Valeur |
+|---------|--------|
+| Politique RSE | Non formalisee |
+| Bilan carbone | Non realise |
+| B-Corp | Non |
+
+*Note :* Structure legere = empreinte faible. Pas de bureaux physiques, equipe minimale, infrastructure cloud mutualisee.
+
+---
+
+## Documentation compliance
+
+*Ou est stockee la documentation ?*
+
+| Element | Valeur |
+|---------|--------|
+| Centralisation | Interne |
+| Acces | Fondateur |
+| Pret pour audit | A ameliorer |
+
+### Documents obligatoires
+
+| Document | Existe | A jour |
+|----------|:------:|:------:|
+| Licence FSA | Oui | Oui |
+| Statuts | Oui | Oui |
+| Politique confidentialite | Oui | Oui |
+| CGU/CGV | Oui | Oui |
+| Registre traitements | A formaliser | - |
+
+---
+
+## Resume
+
+| Element | Valeur |
+|---------|--------|
+| Regulateur | FSA Estonie |
+| Licence | Oui (credit) |
+| RGPD | Conforme |
+| KYC/AML | Stripe Identity |
+| Securite formalisee | Non |
+| PCA/PRA | Non |
+| Audit externe | Non realise |
+
+---
+
+## Actions potentielles
+
+- [x] ~~Verifier le chiffrement au repos~~ → Oui, quasi-totalite chiffree
+- [x] ~~Audits securite internes~~ → Realises
+- [ ] Formaliser le registre des traitements RGPD
+- [ ] Evaluer les obligations DORA/NIS2
+- [ ] Documenter un PCA/PRA basique
+- [ ] Realiser audit de securite externe (prevu prochainement)

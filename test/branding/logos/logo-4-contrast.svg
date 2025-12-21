@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,700&amp;display=swap');
+    .quick { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 48px; letter-spacing: -0.02em; }
+    .fund { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-size: 48px; }
+  </style>
+  <text x="70" y="60" class="quick" fill="#161514">QUICK</text>
+  <text x="228" y="60" class="fund" fill="#161514">fund</text>
+  <!-- Gold dot -->
+  <circle cx="340" cy="50" r="6" fill="#C8A96A"/>
+</svg>

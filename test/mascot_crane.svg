@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Mascot 3: The Crane (Origami/Precision) -->
+    <!-- Paper bird. Represents lightness and paper/contracts. -->
+    
+    <!-- Main Body Wing -->
+    <path d="M40 120 L100 60 L160 120 L100 100 Z" fill="#161514"/>
+    
+    <!-- Lower Body -->
+    <path d="M100 100 L160 120 L100 160 L80 120 Z" fill="#8D847A"/>
+    
+    <!-- Head/Neck -->
+    <path d="M40 120 L20 80 L45 90" stroke="#161514" stroke-width="2"/>
+    <path d="M20 80 L15 85" stroke="#161514" stroke-width="2"/> <!-- Beak -->
+    
+    <!-- Gold Fold/Accent -->
+    <path d="M100 60 L100 100 L130 90 Z" fill="#C8A96A" fill-opacity="0.8"/>
+</svg>

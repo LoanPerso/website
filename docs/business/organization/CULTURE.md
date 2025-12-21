@@ -1,422 +1,219 @@
 # Culture & Valeurs - Quickfund
 
-> **Statut :** 🔄 À compléter
-> **Dernière mise à jour :** Décembre 2025
+> **Derniere mise a jour :** Decembre 2025
 
 ---
 
-## 1. Valeurs de l'entreprise
+## Valeurs fondamentales
 
-**Questions à répondre :**
+*Quelles sont les valeurs de Quickfund ?*
 
-- [ ] **Quelles sont vos valeurs fondamentales ?** (3-5 valeurs)
-- [ ] **Comment ont-elles été définies ?** (Fondateurs, équipe, processus)
-- [ ] **Comment sont-elles communiquées ?**
-- [ ] **Comment sont-elles intégrées au quotidien ?**
-- [ ] **Comment les utilisez-vous dans le recrutement ?**
-- [ ] **Comment les utilisez-vous dans l'évaluation ?**
+| Valeur | Signification | Application |
+|--------|---------------|-------------|
+| Transparence | Communication claire avec les clients | Prix affiches, pas de frais caches |
+| Respect | Traiter les clients dignement | Pas de harcelement pour recouvrement |
+| Pragmatisme | Solutions pratiques | Automatisation, efficacite |
 
-### Valeurs
-| Valeur | Signification | Exemple concret au quotidien | Anti-pattern |
-|--------|---------------|------------------------------|--------------|
-| [Valeur 1] | [À compléter] | [À compléter] | [À compléter] |
-| [Valeur 2] | [À compléter] | [À compléter] | [À compléter] |
-| [Valeur 3] | [À compléter] | [À compléter] | [À compléter] |
-| [Valeur 4] | [À compléter] | [À compléter] | [À compléter] |
-| [Valeur 5] | [À compléter] | [À compléter] | [À compléter] |
-
-### Réponses
-```
-Définition des valeurs : [À compléter]
-Communication : [À compléter]
-Intégration quotidienne : [À compléter]
-Utilisation recrutement : [À compléter]
-Utilisation évaluation : [À compléter]
-```
+*Origine :* Valeurs definies par le fondateur, appliquees depuis le debut. Cf VISION.md.
 
 ---
 
-## 2. Mode de travail
+## Mode de travail
 
-**Questions à répondre :**
+*Comment travaille l'equipe Quickfund ?*
 
-- [ ] **Êtes-vous remote-first, hybrid, ou office-first ?**
-- [ ] **Combien de jours de présence au bureau sont requis ?**
-- [ ] **Avez-vous des bureaux ?** (Localisation, capacité)
-- [ ] **Avez-vous des plages horaires communes ?** (Core hours)
-- [ ] **Quelle flexibilité sur les horaires ?**
-- [ ] **Faites-vous des off-sites/team buildings ?** (Fréquence)
-- [ ] **Comment maintenez-vous la cohésion en remote ?**
+| Element | Valeur |
+|---------|--------|
+| Mode | 100% Remote |
+| Bureaux | Non |
+| Core hours | Non |
+| Fuseaux horaires | N/A (1 personne) |
+| Off-sites | Non |
 
-### Réponses
-```
-Mode de travail : [Remote-first/Hybrid/Office-first]
-Jours bureau requis : [X/semaine]
-
-Bureaux :
-- Adresse : [À compléter]
-- Capacité : [X places]
-- Équipements : [À compléter]
-
-Horaires :
-- Core hours : [Xh-Xh]
-- Flexibilité : [À compléter]
-- Fuseaux horaires couverts : [À compléter]
-
-Off-sites : [X/an]
-Budget off-site : [€/personne]
-
-Cohésion remote :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-```
+*Avantage full remote :* Flexibilite totale, pas de couts de bureaux, focus sur les resultats.
 
 ---
 
-## 3. Communication interne
+## Communication
 
-**Questions à répondre :**
+*Comment communique l'equipe ?*
 
-- [ ] **Quels outils de communication utilisez-vous ?**
-- [ ] **Avez-vous des rituels de communication ?** (All-hands, standups, etc.)
-- [ ] **À quelle fréquence faites-vous des all-hands ?**
-- [ ] **Comment partagez-vous les informations stratégiques ?**
-- [ ] **Quel est le niveau de transparence ?** (Finances, décisions, etc.)
-- [ ] **Comment gérez-vous la communication asynchrone ?**
+| Element | Valeur |
+|---------|--------|
+| Messagerie | N/A (1 personne) |
+| Visio | N/A |
+| Documentation | Interne (code, docs) |
+| Transparence | Elevee (fondateur = tout) |
 
-### Outils de communication
-| Usage | Outil | Fréquence |
-|-------|-------|-----------|
-| Messagerie instantanée | [Slack/Teams/etc.] | Continue |
-| Visio | [Zoom/Meet/etc.] | [À compléter] |
-| Email | [Gmail/Outlook] | [À compléter] |
-| Documentation | [Notion/Confluence] | [À compléter] |
-| Project management | [Linear/Jira/etc.] | [À compléter] |
+### Avec le freelance
 
-### Rituels
-| Rituel | Fréquence | Durée | Participants | Objectif |
-|--------|-----------|-------|--------------|----------|
-| All-hands | [X/mois] | [X min] | Toute l'équipe | [À compléter] |
-| Team standup | [Quotidien] | [X min] | [Équipe] | [À compléter] |
-| 1:1 manager | [Hebdo] | [X min] | Manager + report | [À compléter] |
-| Demo | [X/semaine] | [X min] | [Qui] | [À compléter] |
-| Retro | [X/sprint] | [X min] | [Équipe] | [À compléter] |
-| [Autre rituel] | [Fréquence] | [Durée] | [Qui] | [À compléter] |
+| Element | Outil |
+|---------|-------|
+| Communication | A preciser |
+| Envoi documents | Email/partage |
+| Suivi | Direct |
 
-### Réponses
-```
-Niveau de transparence :
-- Finances : [Transparentes/Partielles/Confidentielles]
-- Salaires : [Transparents/Partiels/Confidentiels]
-- Décisions stratégiques : [À compléter]
-- Roadmap : [À compléter]
-
-Communication asynchrone : [À compléter]
-```
+*Note :* Communication minimale necessaire vu la taille de l'equipe.
 
 ---
 
-## 4. Management et leadership
+## Management et leadership
 
-**Questions à répondre :**
+*Quel est le style de management ?*
 
-- [ ] **Quel est votre style de management ?** (Horizontal, hiérarchique, etc.)
-- [ ] **Combien de niveaux hiérarchiques avez-vous ?**
-- [ ] **Quel est le span of control moyen ?** (Nombre de reports directs)
-- [ ] **Comment prenez-vous les décisions ?** (Consensus, top-down, etc.)
-- [ ] **Avez-vous des Individual Contributors senior ?** (IC track vs Manager track)
-- [ ] **Formez-vous vos managers ?**
+| Element | Valeur |
+|---------|--------|
+| Style | N/A (1 personne) |
+| Hierarchie | Aucune |
+| Niveaux | 1 (fondateur) |
+| Decisions | Unilaterales |
 
-### Réponses
-```
-Style de management : [À compléter]
-Niveaux hiérarchiques : [X]
-Span of control moyen : [X reports/manager]
-
-Prise de décision :
-- Décisions quotidiennes : [À compléter]
-- Décisions tactiques : [À compléter]
-- Décisions stratégiques : [À compléter]
-
-Career tracks :
-- IC track : [Oui/Non]
-- Manager track : [Oui/Non]
-
-Formation managers : [À compléter]
-```
+*Avantage solo :* Decisions instantanees, pas de reunions, pas de politique interne.
 
 ---
 
-## 5. Développement et formation
+## Developpement et formation
 
-**Questions à répondre :**
+*Comment se forme l'equipe ?*
 
-- [ ] **Avez-vous un budget formation par personne ?** (€/an)
-- [ ] **Quels types de formation proposez-vous ?** (Interne, externe, conférences)
-- [ ] **Comment gérez-vous le développement de carrière ?**
-- [ ] **Avez-vous des career ladders ?** (Grilles de progression)
-- [ ] **Faites-vous des reviews de performance ?** (Fréquence)
-- [ ] **Comment fonctionne le feedback ?**
+| Element | Valeur |
+|---------|--------|
+| Budget formation | 0 EUR (auto-formation) |
+| Formations externes | Non |
+| Conferences | Non |
+| Career ladders | N/A |
 
-### Budget et formats
-```
-Budget formation : [€/personne/an]
-
-Formats proposés :
-- Formations internes : [Oui/Non]
-- Formations externes : [Oui/Non]
-- Conférences : [Oui/Non - Budget]
-- Certifications : [Oui/Non - Budget]
-- Livres/Cours en ligne : [Oui/Non - Budget]
-- Coaching : [Oui/Non]
-```
-
-### Progression de carrière
-```
-Career ladders : [Oui/Non - Lien]
-
-Reviews de performance :
-- Fréquence : [Trimestriel/Semestriel/Annuel]
-- Process : [À compléter]
-- 360° feedback : [Oui/Non]
-
-Augmentations :
-- Fréquence : [À compléter]
-- Critères : [À compléter]
-```
+*Approche :* Auto-formation continue du fondateur selon les besoins (tech, reglementaire, business).
 
 ---
 
-## 6. Work-life balance
+## Equilibre vie pro/perso
 
-**Questions à répondre :**
+*Comment est gere l'equilibre ?*
 
-- [ ] **Quelle est votre politique de congés ?** (Jours légaux + RTT + autres)
-- [ ] **Avez-vous des congés illimités ?**
-- [ ] **Quelle est votre politique de congé parental ?**
-- [ ] **Avez-vous une politique de déconnexion ?**
-- [ ] **Comment gérez-vous les urgences/astreintes ?**
-- [ ] **Quelle est la charge de travail réelle ?** (Heures/semaine moyennes)
+| Element | Valeur |
+|---------|--------|
+| Heures/semaine | Variable (pilote auto) |
+| Conges | Flexibles |
+| Astreintes | Minimales |
+| Deconnexion | Libre |
 
-### Congés
-```
-Congés payés : [X jours]
-RTT : [X jours]
-Congés maladie : [À compléter]
-Congés enfant malade : [À compléter]
-
-Congé maternité : [X semaines] (légal) + [X semaines] (entreprise)
-Congé paternité : [X semaines] (légal) + [X semaines] (entreprise)
-
-Congés spéciaux :
-- Mariage : [X jours]
-- Déménagement : [X jours]
-- Deuil : [X jours]
-- Autre : [À compléter]
-```
-
-### Équilibre
-```
-Heures/semaine moyennes : [X heures]
-Politique déconnexion : [À compléter]
-Astreintes : [Oui/Non - Compensation]
-Flexibilité horaires : [À compléter]
-```
+*Avantage pilote automatique :* Le fondateur peut travailler peu car le systeme tourne seul.
 
 ---
 
-## 7. Rituels et traditions
+## Rituels et traditions
 
-**Questions à répondre :**
+*Y a-t-il des rituels d'equipe ?*
 
-- [ ] **Avez-vous des traditions d'équipe ?** (Anniversaires, célébrations, etc.)
-- [ ] **Faites-vous des team buildings ?** (Type, fréquence)
-- [ ] **Avez-vous des clubs/activités internes ?** (Sport, jeux, etc.)
-- [ ] **Comment célébrez-vous les succès ?**
-- [ ] **Comment accueillez-vous les nouveaux ?**
+| Element | Valeur |
+|---------|--------|
+| All-hands | Non (1 personne) |
+| Standups | Non |
+| Retros | Non |
+| Team buildings | Non |
 
-### Traditions
-| Tradition | Fréquence | Description |
-|-----------|-----------|-------------|
-| [Tradition 1] | [Fréquence] | [À compléter] |
-| [Tradition 2] | [Fréquence] | [À compléter] |
-| [Tradition 3] | [Fréquence] | [À compléter] |
-
-### Team buildings
-```
-Fréquence : [X/an]
-Budget : [€/personne]
-Types : [À compléter]
-
-Derniers team buildings :
-1. [Date] - [Activité]
-2. [Date] - [Activité]
-3. [Date] - [Activité]
-```
-
-### Clubs/Activités
-| Activité | Participants | Fréquence |
-|----------|--------------|-----------|
-| [Club 1] | [X personnes] | [Fréquence] |
-| [Club 2] | [X personnes] | [Fréquence] |
+*Note :* Pas de rituels formels. Le fondateur gere selon son propre rythme.
 
 ---
 
-## 8. Bien-être et santé mentale
+## Bien-etre
 
-**Questions à répondre :**
+*Y a-t-il des initiatives bien-etre ?*
 
-- [ ] **Avez-vous des initiatives bien-être ?**
-- [ ] **Proposez-vous un soutien psychologique ?** (Accès psy, EAP)
-- [ ] **Comment gérez-vous le stress/burnout ?**
-- [ ] **Avez-vous un espace de pause/détente ?**
-- [ ] **Proposez-vous des activités sportives ?** (Subvention gym, cours, etc.)
+| Element | Valeur |
+|---------|--------|
+| Soutien psy | N/A |
+| Sport subventionne | N/A |
+| Espace detente | N/A (remote) |
 
-### Initiatives bien-être
-| Initiative | Description | Budget |
-|------------|-------------|--------|
-| [Initiative 1] | [À compléter] | [€] |
-| [Initiative 2] | [À compléter] | [€] |
-| [Initiative 3] | [À compléter] | [€] |
-
-### Réponses
-```
-Soutien psychologique : [Oui/Non - Détails]
-Prévention burnout : [À compléter]
-Activités sportives : [À compléter]
-Espace détente : [Oui/Non - Description]
-```
+*Approche :* Le fondateur gere son propre bien-etre. Flexibilite totale du remote.
 
 ---
 
-## 9. Feedback et amélioration continue
+## Feedback
 
-**Questions à répondre :**
+*Comment est gere le feedback ?*
 
-- [ ] **Comment collectez-vous le feedback des employés ?** (Surveys, 1:1, etc.)
-- [ ] **Faites-vous des enquêtes de satisfaction ?** (eNPS, engagement surveys)
-- [ ] **Quel est votre eNPS actuel ?**
-- [ ] **Comment traitez-vous le feedback ?**
-- [ ] **Avez-vous une boîte à idées ?**
+| Element | Valeur |
+|---------|--------|
+| Enquetes satisfaction | N/A |
+| eNPS | N/A |
+| 1:1 | N/A |
+| Boite a idees | N/A |
 
-### Collecte de feedback
-```
-Enquêtes :
-- Type : [eNPS/Engagement/etc.]
-- Fréquence : [Mensuel/Trimestriel/Annuel]
-- Outil : [À compléter]
-- Taux de participation : [X%]
-
-eNPS actuel : [X]
-Dernière enquête : [Date]
-
-Traitement du feedback : [À compléter]
-Boîte à idées : [Oui/Non - Outil]
-```
+*Note :* Pas applicable avec 1 personne.
 
 ---
 
-## 10. Diversité et inclusion
+## Diversite et inclusion
 
-**Questions à répondre :**
+*Y a-t-il une politique D&I ?*
 
-- [ ] **Avez-vous une politique D&I formalisée ?**
-- [ ] **Quels sont vos objectifs D&I ?**
-- [ ] **Quelles actions menez-vous pour la diversité ?**
-- [ ] **Avez-vous des ERG (Employee Resource Groups) ?**
-- [ ] **Formez-vous l'équipe aux biais inconscients ?**
+| Element | Valeur |
+|---------|--------|
+| Politique D&I | N/A |
+| ERG | N/A |
+| Objectifs | N/A |
+| Formation biais | N/A |
 
-### Réponses
-```
-Politique D&I : [Oui/Non - Lien]
-
-Objectifs D&I :
-1. [À compléter]
-2. [À compléter]
-
-Actions D&I :
-1. [À compléter]
-2. [À compléter]
-3. [À compléter]
-
-ERG : [Oui/Non - Lesquels]
-Formation biais : [Oui/Non]
-```
+*Note :* Non applicable avec 1 personne.
 
 ---
 
-## 11. Responsabilité sociale et environnementale
+## RSE / Environnement
 
-**Questions à répondre :**
+*Y a-t-il des engagements RSE ?*
 
-- [ ] **Avez-vous des engagements RSE ?**
-- [ ] **Êtes-vous une entreprise à mission ?**
-- [ ] **Avez-vous un bilan carbone ?**
-- [ ] **Quelles actions environnementales menez-vous ?**
-- [ ] **Soutenez-vous des causes ?** (Dons, bénévolat, etc.)
-- [ ] **Proposez-vous des congés solidaires ?**
+| Element | Valeur |
+|---------|--------|
+| Politique RSE | Non formalisee |
+| B-Corp | Non |
+| Bilan carbone | Non realise |
+| Causes soutenues | Non |
 
-### Réponses
-```
-Engagements RSE : [À compléter]
-Entreprise à mission : [Oui/Non]
-B-Corp : [Oui/Non - Score]
-
-Environnement :
-- Bilan carbone : [Oui/Non - Résultat]
-- Compensation : [Oui/Non]
-- Actions : [À compléter]
-
-Causes soutenues :
-1. [Cause] - [Don/Action]
-2. [Cause] - [Don/Action]
-
-Congés solidaires : [X jours/an]
-```
+*Impact naturellement faible :* Pas de bureaux, pas de deplacements, infrastructure cloud mutualisee. Cf COMPLIANCE.md.
 
 ---
 
-## 12. Culture documentée
+## Documentation culture
 
-**Questions à répondre :**
+*Ou est documentee la culture ?*
 
-- [ ] **Avez-vous un culture book/handbook ?**
-- [ ] **Avez-vous un manifeste/charte ?**
-- [ ] **Où est documentée votre culture ?**
-- [ ] **Comment onboardez-vous sur la culture ?**
+| Element | Valeur |
+|---------|--------|
+| Culture book | Non |
+| Handbook | Non |
+| Manifeste | Non |
 
-### Réponses
-```
-Culture book : [Oui/Non - Lien]
-Handbook : [Oui/Non - Lien]
-Manifeste : [Oui/Non - Lien]
-
-Documentation :
-- Interne : [Où]
-- Publique : [Où]
-
-Onboarding culture :
-1. [Étape 1]
-2. [Étape 2]
-3. [Étape 3]
-```
+*Note :* La culture est incarnee par le fondateur. Pas de formalisation necessaire a ce stade.
 
 ---
 
-## Résumé exécutif
+## Resume
 
-*(À générer automatiquement une fois les questions répondues)*
-
-| Élément | Contenu |
-|---------|---------|
-| Mode de travail | [Remote/Hybrid/Office] |
-| Valeurs clés | [À compléter] |
-| eNPS | [X] |
-| Budget formation | [€/personne] |
-| Congés | [X jours] |
+| Element | Valeur |
+|---------|--------|
+| Mode de travail | 100% Remote |
+| Valeurs | Transparence, Respect, Pragmatisme |
+| Management | Solo (fondateur) |
+| Rituels | Aucun formel |
+| D&I | N/A (1 personne) |
+| RSE | Non formalisee |
 
 ---
 
-**Total questions : 55**
-**Répondues : 0/55**
+## Non applicable
+
+*Sections non pertinentes pour Quickfund :*
+
+| Section | Raison |
+|---------|--------|
+| Communication interne | 1 personne |
+| Management | 1 personne |
+| Team buildings | 1 personne |
+| eNPS | 1 personne |
+| D&I | 1 personne |
+| ERG | 1 personne |
+| Formation managers | Pas de managers |
+

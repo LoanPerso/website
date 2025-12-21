@@ -1,371 +1,292 @@
 # Structure Juridique - Quickfund
 
-> **Statut :** 🔄 À compléter
-> **Dernière mise à jour :** Décembre 2025
+> **Derniere mise a jour :** Decembre 2025
 
 ---
 
-## 1. Forme juridique et structure
+## Forme juridique et structure
 
-**Questions à répondre :**
+*Quelle est la structure legale de Quickfund ?*
 
-- [ ] **Quelle est la forme juridique de l'entreprise ?** (SAS, SARL, SA, OÜ, etc.)
-- [ ] **Dans quel pays est domiciliée l'entreprise ?**
-- [ ] **Quelle est la date de création ?**
-- [ ] **Quel est le numéro d'immatriculation ?** (SIREN, registre estonien, etc.)
-- [ ] **Quel est le capital social ?**
-- [ ] **Quelle est l'adresse du siège social ?**
-- [ ] **Y a-t-il une holding ?** (Structure groupe)
-- [ ] **Y a-t-il des filiales ?** (Où, pourquoi)
+| Element | Valeur |
+|---------|--------|
+| Forme juridique | OU (Osauhing) |
+| Pays | Estonie |
+| Date de creation | Novembre 2023 |
+| N° immatriculation | A preciser |
+| Capital social | A preciser |
+| Siege social | Estonie |
 
-### Réponses
-```
-Forme juridique : [SAS/SARL/OÜ/etc.]
-Pays : [France/Estonie/etc.]
-Date création : [JJ/MM/AAAA]
-N° immatriculation : [À compléter]
-Capital social : [€]
-Siège social : [Adresse complète]
-
-Structure groupe :
-- Holding : [Oui/Non - Nom et pays]
-- Filiales : [Oui/Non - Liste]
-
-Organigramme juridique : [Lien vers schéma]
-```
+*Pourquoi l'Estonie ?* L'Estonie offre un cadre favorable pour les fintechs : e-Residency, FSA comme regulateur, passeport europeen, fiscalite avantageuse sur les benefices reinvestis.
 
 ---
 
-## 2. Gouvernance
+## Structure groupe
 
-**Questions à répondre :**
+*Y a-t-il d'autres entites liees ?*
 
-- [ ] **Qui est le président / gérant / CEO légal ?**
-- [ ] **Y a-t-il un board / conseil d'administration ?**
-- [ ] **Qui sont les mandataires sociaux ?**
-- [ ] **Y a-t-il des statuts particuliers ?** (Clauses spécifiques)
-- [ ] **Existe-t-il un pacte d'actionnaires ?**
-- [ ] **Quelles décisions nécessitent l'approbation du board ?**
+| Element | Valeur |
+|---------|--------|
+| Holding | Non |
+| Filiales | Non |
+| Entreprises liees | VMCloud (meme groupe) |
+
+### VMCloud
+
+| Element | Valeur |
+|---------|--------|
+| Relation | Meme groupe |
+| Synergie | Hebergement cloud |
+| Migration prevue | Oui (GCP -> VMCloud) |
+
+---
+
+## Gouvernance
+
+*Comment est gouvernee l'entreprise ?*
+
+| Element | Valeur |
+|---------|--------|
+| Dirigeant | Fondateur |
+| Board | Non (pas necessaire) |
+| Actionnaires | 1 (fondateur = 100%) |
+| Pacte d'actionnaires | Non applicable |
 
 ### Mandataires sociaux
-| Fonction | Nom | Depuis | Pouvoirs |
-|----------|-----|--------|----------|
-| Président | [Nom] | [Date] | [Pouvoirs généraux/limités] |
-| Directeur Général | [Nom] | [Date] | [À compléter] |
-| [Autre] | [Nom] | [Date] | [À compléter] |
 
-### Gouvernance
-```
-Board : [Oui/Non]
-Composition board : [À compléter]
-Fréquence réunions : [À compléter]
+| Fonction | Nom | Pouvoirs |
+|----------|-----|----------|
+| Directeur (juhatuse liige) | Fondateur | Pouvoirs generaux |
 
-Pacte d'actionnaires : [Oui/Non]
-Dernière mise à jour statuts : [Date]
-Clauses spécifiques : [À compléter]
-
-Décisions board :
-- [Type de décision 1]
-- [Type de décision 2]
-- [Type de décision 3]
-```
+*Avantage OU estonienne :* Structure simple, decision unilaterale possible, pas de formalisme lourd.
 
 ---
 
-## 3. Actionnariat
+## Actionnariat (Cap table)
 
-**Questions à répondre :**
+*Qui detient Quickfund ?*
 
-- [ ] **Qui sont les actionnaires ?** (Noms, % détenus)
-- [ ] **Y a-t-il des actions préférentielles ?**
-- [ ] **Y a-t-il des BSA, BSPCE, stock-options ?**
-- [ ] **Y a-t-il des clauses d'agrément, préemption, inaliénabilité ?**
-- [ ] **Quel est le droit de vote de chaque actionnaire ?**
+| Actionnaire | Type | % capital | % votes |
+|-------------|------|:---------:|:-------:|
+| Fondateur | Parts sociales | 100% | 100% |
+| **Total** | - | **100%** | **100%** |
 
-### Cap table
-| Actionnaire | Type d'actions | Nombre | % capital | % droits de vote |
-|-------------|----------------|--------|-----------|------------------|
-| [Nom 1] | Ordinaires | [X] | [X%] | [X%] |
-| [Nom 2] | Ordinaires | [X] | [X%] | [X%] |
-| [Investisseur 1] | Préférentielles A | [X] | [X%] | [X%] |
-| [Pool BSPCE] | - | [X] | [X%] | - |
-| **Total** | - | **[X]** | **100%** | **100%** |
+### Instruments
 
-### Réponses
-```
-Actions préférentielles : [Oui/Non - Détails]
-BSPCE/SO pool : [X%]
-Clause agrément : [Oui/Non]
-Clause préemption : [Oui/Non]
-Inaliénabilité : [Oui/Non - Durée]
-```
+| Element | Valeur |
+|---------|--------|
+| Actions preferentielles | Non |
+| BSPCE/Options | Non |
+| BSA | Non |
+| Convertibles | Non |
+
+*Note :* Structure simple sans dilution. Le fondateur garde le controle total.
 
 ---
 
-## 4. Propriété intellectuelle
+## Propriete intellectuelle
 
-**Questions à répondre :**
-
-- [ ] **Avez-vous des marques déposées ?** (Noms, pays, numéros)
-- [ ] **Avez-vous des brevets ?** (Titres, numéros)
-- [ ] **Avez-vous des noms de domaine ?** (Liste)
-- [ ] **Qui détient les droits sur le code source ?**
-- [ ] **Les contrats de travail prévoient-ils la cession de PI ?**
-- [ ] **Utilisez-vous des licences open source ?** (Lesquelles, compliance)
+*Quels sont les actifs PI ?*
 
 ### Marques
-| Marque | Pays | Classe | N° dépôt | Expiration |
-|--------|------|--------|----------|------------|
-| [Marque 1] | [FR/EU/etc.] | [9/42/etc.] | [N°] | [Date] |
-| [Marque 2] | [FR/EU/etc.] | [9/42/etc.] | [N°] | [Date] |
 
-### Brevets
-| Titre | Pays | N° dépôt | Statut |
-|-------|------|----------|--------|
-| [Brevet 1] | [À compléter] | [N°] | [Déposé/Accordé] |
+| Element | Valeur |
+|---------|--------|
+| Marque "Quickfund" | A verifier si deposee |
+| Pays de depot | A verifier |
 
 ### Noms de domaine
-| Domaine | Registrar | Expiration |
-|---------|-----------|------------|
-| [quickfund.com] | [À compléter] | [Date] |
-| [quickfund.fr] | [À compléter] | [Date] |
-| [quickfund.io] | [À compléter] | [Date] |
 
-### Réponses
-```
-Code source : [Propriété de l'entreprise]
-Cession PI dans contrats : [Oui/Non]
-Open source utilisé : [Oui/Non - Liste et licences]
-Compliance open source : [À compléter]
-```
+| Domaine | Statut |
+|---------|:------:|
+| quickfund.[tld] | A verifier |
 
----
+### Code source
 
-## 5. Contrats clients
-
-**Questions à répondre :**
-
-- [ ] **Avez-vous des CGV / CGU ?** (Dernière mise à jour)
-- [ ] **Avez-vous un contrat de licence SaaS type ?**
-- [ ] **Avez-vous un DPA (Data Processing Agreement) ?**
-- [ ] **Quelles sont les conditions de résiliation ?**
-- [ ] **Quelle est la limitation de responsabilité ?**
-- [ ] **Quel droit s'applique ?** (Juridiction)
-- [ ] **Comment sont gérés les litiges ?** (Médiation, arbitrage, tribunal)
-
-### Réponses
-```
-CGV/CGU : [Oui/Non - Date mise à jour - Lien]
-Contrat SaaS type : [Oui/Non - Lien]
-DPA : [Oui/Non - Lien]
-
-Résiliation :
-- Préavis : [X jours/mois]
-- Conditions : [À compléter]
-- Remboursement : [À compléter]
-
-Limitation responsabilité : [X fois le montant payé / €X max]
-Droit applicable : [Français/Estonien/etc.]
-Juridiction : [Tribunal de commerce de X]
-Clause d'arbitrage : [Oui/Non]
-```
+| Element | Valeur |
+|---------|--------|
+| Propriete du code | Quickfund OU |
+| Cession PI | Oui (tout developpe par le fondateur) |
+| Open source utilise | Oui (licences standards) |
 
 ---
 
-## 6. Contrats fournisseurs et partenaires
+## Contrats clients
 
-**Questions à répondre :**
+*Quels contrats regissent la relation client ?*
 
-- [ ] **Avez-vous des contrats avec vos fournisseurs critiques ?**
-- [ ] **Y a-t-il des clauses d'exclusivité ?**
-- [ ] **Y a-t-il des engagements de durée minimale ?**
-- [ ] **Comment sont gérées les pénalités/SLA ?**
+| Document | Existe | A jour |
+|----------|:------:|:------:|
+| CGU/CGV | Oui | Oui |
+| Contrat de pret type | Oui | Oui |
+| Politique de confidentialite | Oui | Oui |
+| DPA | A evaluer | - |
 
-### Contrats critiques
-| Fournisseur | Type | Durée | Valeur annuelle | Clause spécifique |
-|-------------|------|-------|-----------------|-------------------|
-| [Fournisseur 1] | [Cloud/SaaS/etc.] | [X ans] | [€] | [À compléter] |
-| [Fournisseur 2] | [Cloud/SaaS/etc.] | [X ans] | [€] | [À compléter] |
-| [Fournisseur 3] | [Cloud/SaaS/etc.] | [X ans] | [€] | [À compléter] |
+### Conditions
 
----
-
-## 7. Contrats de travail
-
-**Questions à répondre :**
-
-- [ ] **Quel type de contrats de travail utilisez-vous ?** (CDI, CDD, freelance)
-- [ ] **Quelle convention collective appliquez-vous ?**
-- [ ] **Avez-vous des clauses de non-concurrence ?**
-- [ ] **Avez-vous des clauses de confidentialité ?**
-- [ ] **Avez-vous des clauses de cession de PI ?**
-- [ ] **Les contrats sont-ils à jour avec la réglementation ?**
-
-### Réponses
-```
-Types de contrats :
-- CDI : [X personnes]
-- CDD : [X personnes]
-- Freelance : [X personnes]
-- Étranger (EOR) : [X personnes]
-
-Convention collective : [Syntec/Métallurgie/etc.]
-Dernière mise à jour modèle : [Date]
-
-Clauses :
-- Non-concurrence : [Oui/Non - Durée]
-- Confidentialité : [Oui/Non]
-- Cession PI : [Oui/Non]
-- Mobilité : [Oui/Non]
-```
+| Element | Valeur |
+|---------|--------|
+| Droit applicable | Estonien |
+| Juridiction | Estonie |
+| Resiliation | Selon conditions du pret |
+| Limitation responsabilite | Standard |
 
 ---
 
-## 8. Assurances
+## Contrats fournisseurs
 
-**Questions à répondre :**
+*Quels sont les contrats critiques ?*
 
-- [ ] **Quelles assurances avez-vous ?**
-- [ ] **Avez-vous une RC Pro ?** (Montant de couverture)
-- [ ] **Avez-vous une assurance cyber ?**
-- [ ] **Avez-vous une D&O ?** (Directors & Officers)
-- [ ] **Quel est le coût annuel des assurances ?**
-- [ ] **Les couvertures sont-elles suffisantes ?**
+| Fournisseur | Type | Criticite |
+|-------------|------|:---------:|
+| Stripe | Paiements + KYC | Critique |
+| GCP | Cloud | Critique (migration VMCloud) |
+| Twilio | SMS | Moyenne |
 
-### Assurances souscrites
-| Type | Assureur | Couverture | Prime annuelle | Expiration |
-|------|----------|------------|----------------|------------|
-| RC Pro | [Assureur] | [€] | [€] | [Date] |
-| RC Exploitation | [Assureur] | [€] | [€] | [Date] |
-| Cyber | [Assureur] | [€] | [€] | [Date] |
-| D&O | [Assureur] | [€] | [€] | [Date] |
-| Multirisque | [Assureur] | [€] | [€] | [Date] |
-| **Total** | - | - | **[€/an]** | - |
+### Dependances
+
+| Fournisseur | Impact si indisponible |
+|-------------|------------------------|
+| Stripe | Impossible de payer/encaisser |
+| GCP/VMCloud | Plateforme down |
+| Twilio | Pas de SMS (email fallback) |
 
 ---
 
-## 9. Contentieux et litiges
+## Contrats de travail
 
-**Questions à répondre :**
+*Quelle est la situation RH legale ?*
 
-- [ ] **Y a-t-il des litiges en cours ?**
-- [ ] **Y a-t-il des litiges passés significatifs ?**
-- [ ] **Y a-t-il des risques de litige identifiés ?**
-- [ ] **Avez-vous un avocat habituel ?** (Cabinet)
+| Element | Valeur |
+|---------|--------|
+| Salaries | 0 |
+| Freelances | 1 (saisie) |
+| Convention collective | N/A |
 
-### Réponses
-```
-Litiges en cours : [Oui/Non]
-- [Litige 1] : [Statut - Enjeu]
-- [Litige 2] : [Statut - Enjeu]
+### Freelance
 
-Litiges passés : [À compléter]
-
-Risques identifiés :
-1. [À compléter]
-2. [À compléter]
-
-Avocat : [Cabinet - Contact]
-Provision pour litiges : [€]
-```
+| Element | Valeur |
+|---------|--------|
+| Mission | Saisie de donnees |
+| Type de contrat | Prestation de service |
+| Localisation | A preciser |
 
 ---
 
-## 10. Réglementation sectorielle
+## Assurances
 
-**Questions à répondre :**
+*Quelles assurances sont souscrites ?*
 
-- [ ] **Êtes-vous soumis à une réglementation sectorielle ?** (Finance, santé, etc.)
-- [ ] **Avez-vous des agréments/licences obligatoires ?**
-- [ ] **Êtes-vous supervisé par un régulateur ?**
-- [ ] **Y a-t-il des évolutions réglementaires à anticiper ?**
+| Type | Statut |
+|------|:------:|
+| RC Pro | A verifier |
+| Cyber | A verifier |
+| D&O | Non requis (1 personne) |
 
-### Réponses
-```
-Secteur régulé : [Oui/Non]
-Régulateur : [À compléter]
-
-Agréments/Licences :
-- [Agrément 1] : [Statut - Expiration]
-- [Agrément 2] : [Statut - Expiration]
-
-Évolutions réglementaires :
-1. [À compléter]
-2. [À compléter]
-```
+*A evaluer :* Les assurances necessaires pour une activite de credit.
 
 ---
 
-## 11. Obligations légales récurrentes
+## Contentieux et litiges
 
-**Questions à répondre :**
+*Y a-t-il des litiges en cours ?*
 
-- [ ] **Quelles sont vos obligations légales annuelles ?** (AG, comptes, etc.)
-- [ ] **Avez-vous un expert-comptable ?**
-- [ ] **Avez-vous un commissaire aux comptes ?**
-- [ ] **Êtes-vous à jour de vos obligations ?**
-
-### Calendrier légal
-| Obligation | Fréquence | Prochaine échéance | Responsable |
-|------------|-----------|-------------------|-------------|
-| Approbation des comptes | Annuel | [Date] | [Qui] |
-| Déclaration TVA | [Mensuel/Trimestriel] | [Date] | [Qui] |
-| Liasse fiscale | Annuel | [Date] | [Qui] |
-| Bilan social | Annuel | [Date] | [Qui] |
-| [Autre] | [Fréquence] | [Date] | [Qui] |
-
-### Réponses
-```
-Expert-comptable : [Cabinet - Contact]
-Commissaire aux comptes : [Cabinet - Contact]
-Obligations à jour : [Oui/Non]
-```
+| Element | Valeur |
+|---------|--------|
+| Litiges en cours | Aucun |
+| Litiges passes | Aucun |
+| Risques identifies | Faibles |
+| Avocat | A preciser |
 
 ---
 
-## 12. Documents légaux clés
+## Reglementation sectorielle
 
-**Questions à répondre :**
+*Quel cadre reglementaire s'applique ?*
 
-- [ ] **Où sont stockés les documents légaux ?** (Data room, safe)
-- [ ] **Quels documents avez-vous ?**
-- [ ] **Sont-ils à jour ?**
+| Element | Valeur |
+|---------|--------|
+| Secteur regule | Oui (credit) |
+| Regulateur | FSA Estonie |
+| Licence | Credit institution |
+| Passeport UE | Oui |
 
-### Checklist documents
-| Document | Existe | À jour | Localisation |
-|----------|--------|--------|--------------|
-| Statuts | [Oui/Non] | [Oui/Non] | [Lien] |
-| K-bis / Extrait registre | [Oui/Non] | [Oui/Non] | [Lien] |
-| Pacte d'actionnaires | [Oui/Non] | [Oui/Non] | [Lien] |
-| PV assemblées | [Oui/Non] | [Oui/Non] | [Lien] |
-| Registre des mouvements de titres | [Oui/Non] | [Oui/Non] | [Lien] |
-| Contrat de travail type | [Oui/Non] | [Oui/Non] | [Lien] |
-| CGV/CGU | [Oui/Non] | [Oui/Non] | [Lien] |
-| Politique de confidentialité | [Oui/Non] | [Oui/Non] | [Lien] |
-| DPA | [Oui/Non] | [Oui/Non] | [Lien] |
-| Polices d'assurance | [Oui/Non] | [Oui/Non] | [Lien] |
+### Agrement FSA
 
-### Réponses
-```
-Data room : [Outil - Lien]
-Accès : [Qui a accès]
-```
+| Element | Valeur |
+|---------|--------|
+| Type de licence | Credit |
+| Date d'obtention | 2023 |
+| Expiration | Permanente |
+| Reporting | Periodique |
 
 ---
 
-## Résumé exécutif
+## Obligations legales
 
-*(À générer automatiquement une fois les questions répondues)*
+*Quelles obligations periodiques ?*
 
-| Élément | Contenu |
-|---------|---------|
-| Forme juridique | [À compléter] |
-| Pays | [À compléter] |
-| Capital social | [€] |
-| Actionnaires | [X] |
-| Litiges en cours | [Oui/Non] |
+| Obligation | Frequence | Responsable |
+|------------|:---------:|:-----------:|
+| Comptes annuels | Annuel | Comptable |
+| Reporting FSA | Periodique | Fondateur |
+| Declaration TVA | Periodique | Comptable |
+| Registre beneficiaires | A jour | Fondateur |
+
+### Intervenants
+
+| Role | Intervenant |
+|------|-------------|
+| Expert-comptable | Oui (externe) |
+| Commissaire aux comptes | Non requis |
+| Avocat | A preciser |
 
 ---
 
-**Total questions : 52**
-**Répondues : 0/52**
+## Documents legaux
+
+*Ou sont stockes les documents ?*
+
+| Document | Existe | A jour |
+|----------|:------:|:------:|
+| Statuts | Oui | Oui |
+| Extrait registre | Oui | Oui |
+| Licence FSA | Oui | Oui |
+| CGU/CGV | Oui | Oui |
+| Contrat type | Oui | Oui |
+| Politique confidentialite | Oui | Oui |
+
+### Stockage
+
+| Element | Valeur |
+|---------|--------|
+| Data room | Non formalisee |
+| Acces | Fondateur |
+| Pret pour due diligence | A ameliorer |
+
+---
+
+## Resume
+
+| Element | Valeur |
+|---------|--------|
+| Forme juridique | OU (Estonie) |
+| Date creation | Novembre 2023 |
+| Actionnaires | 1 (100% fondateur) |
+| Regulateur | FSA Estonie |
+| Licence | Credit |
+| Litiges | Aucun |
+| Assurances | A verifier |
+
+---
+
+## Non applicable
+
+*Sections non pertinentes pour Quickfund :*
+
+| Section | Raison |
+|---------|--------|
+| Pacte d'actionnaires | 1 seul actionnaire |
+| Board | Pas necessaire |
+| BSPCE/Options | Pas de salaries |
+| Convention collective | Pas de salaries |

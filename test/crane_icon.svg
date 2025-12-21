@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Crane Simple 3: The Icon (Line Art) -->
+    <!-- One single continuous line concept. Very pure. -->
+    
+    <!-- The Line -->
+    <path d="M40 100 L80 60 L120 100 L160 80" stroke="#161514" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M80 60 L80 140" stroke="#161514" stroke-width="8" stroke-linecap="round" fill="none"/>
+    
+    <!-- The Gold Dot (Sun/Eye/Accent) -->
+    <circle cx="160" cy="60" r="10" fill="#C8A96A"/>
+</svg>

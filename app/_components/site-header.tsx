@@ -8,7 +8,7 @@ import { marketingNav } from "@/_config/navigation";
 import Magnetic from "@/_components/ui/magnetic-button";
 
 export function SiteHeader() {
-  const headerRef = useRef<HTMLHeaderElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {

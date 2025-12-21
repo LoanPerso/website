@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Horizon Logo 2: The Arch (Protection) -->
+    <!-- The sun rising inside a protective arch/window -->
+    
+    <!-- The Arch Frame -->
+    <path d="M40 150 L40 90 C 40 50, 70 30, 100 30 C 130 30, 160 50, 160 90 L 160 150" stroke="#161514" stroke-width="6" stroke-linecap="round"/>
+    <line x1="30" y1="150" x2="170" y2="150" stroke="#161514" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- The Sun -->
+    <circle cx="100" cy="110" r="30" fill="#C8A96A"/>
+</svg>
