@@ -27,7 +27,6 @@ export function Hero() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const contentWrapperRef = useRef<HTMLDivElement>(null);
   const veilRef = useRef<HTMLDivElement>(null);
-  const [hasTriggered, setHasTriggered] = useState(false);
 
   // Detect mobile
   useEffect(() => {
@@ -194,145 +193,91 @@ export function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // Mobile scroll takeover animation
+  // Mobile scroll exit animations with scrub
   useEffect(() => {
-    if (!isMobile || hasTriggered) return;
+    if (!isMobile) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      // Only trigger on scroll down
-      if (e.deltaY <= 0 || hasTriggered) return;
-
-      e.preventDefault();
-      setHasTriggered(true);
-
-      // Create takeover animation
-      const tl = gsap.timeline({
-        onComplete: () => {
-          // Scroll to next section after animation
-          const nextSection = containerRef.current?.nextElementSibling;
-          if (nextSection) {
-            nextSection.scrollIntoView({ behavior: "smooth" });
-          }
+    const ctx = gsap.context(() => {
+      // Timeline that follows scroll - starts early (at 10% scroll)
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "60% top", // Animation completes when 60% of hero has scrolled
+          scrub: 0.5, // Smooth scrub
         },
       });
 
-      // Veil rises from bottom
-      tl.to(
+      // Dark veil rises progressively
+      scrollTl.to(
         veilRef.current,
-        {
-          y: 0,
-          duration: 0.8,
-          ease: "power3.inOut"
-        },
+        { y: 0, duration: 1 },
         0
       );
 
       // Bottom bar slides down first
-      tl.to(
+      scrollTl.to(
         bottomRef.current,
-        { opacity: 0, y: 40, duration: 0.3, ease: "power2.in" },
+        { opacity: 0, y: 30, duration: 0.2 },
         0
       );
 
-      // CTA buttons fade and scale
+      // CTA buttons fade and move
       const ctaButtons = ctaRef.current?.children;
       if (ctaButtons) {
-        tl.to(
+        scrollTl.to(
           ctaButtons,
-          {
-            opacity: 0,
-            scale: 0.85,
-            y: 30,
-            stagger: 0.05,
-            duration: 0.4,
-            ease: "power2.in"
-          },
+          { opacity: 0, y: 25, scale: 0.95, stagger: 0.02, duration: 0.25 },
           0.05
         );
       }
 
       // Subtitle fades
-      tl.to(
+      scrollTl.to(
         subtitleRef.current,
-        { opacity: 0, y: 40, filter: "blur(6px)", duration: 0.4, ease: "power2.in" },
+        { opacity: 0, y: 30, filter: "blur(4px)", duration: 0.25 },
         0.1
       );
 
       // Title line 3 fades
-      tl.to(
+      scrollTl.to(
         line3Ref.current,
-        { opacity: 0, y: 30, filter: "blur(8px)", duration: 0.35, ease: "power2.in" },
+        { opacity: 0, y: 20, filter: "blur(6px)", duration: 0.2 },
         0.15
       );
 
       // Title lines slide out in opposite directions
-      tl.to(
+      scrollTl.to(
         line2Ref.current,
-        { opacity: 0, x: 80, filter: "blur(10px)", duration: 0.5, ease: "power3.in" },
+        { opacity: 0, x: 60, filter: "blur(8px)", duration: 0.3 },
         0.2
       );
-      tl.to(
+      scrollTl.to(
         line1Ref.current,
-        { opacity: 0, x: -80, filter: "blur(10px)", duration: 0.5, ease: "power3.in" },
+        { opacity: 0, x: -60, filter: "blur(8px)", duration: 0.3 },
         0.2
       );
 
       // Eyebrow fades up
-      tl.to(
+      scrollTl.to(
         eyebrowRef.current,
-        { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" },
+        { opacity: 0, y: -30, duration: 0.25 },
         0.25
       );
 
       // Decorative elements shrink and fade
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
       if (circles) {
-        tl.to(
+        scrollTl.to(
           circles,
-          {
-            opacity: 0,
-            scale: 0,
-            stagger: 0.03,
-            duration: 0.4,
-            ease: "power2.in"
-          },
+          { opacity: 0, scale: 0.5, stagger: 0.02, duration: 0.25 },
           0.1
         );
       }
-    };
+    });
 
-    const handleTouchStart = (e: TouchEvent) => {
-      const startY = e.touches[0].clientY;
-
-      const handleTouchMove = (moveEvent: TouchEvent) => {
-        const currentY = moveEvent.touches[0].clientY;
-        const diff = startY - currentY;
-
-        // Swipe up detected
-        if (diff > 30 && !hasTriggered) {
-          moveEvent.preventDefault();
-          handleWheel({ deltaY: 1, preventDefault: () => {} } as WheelEvent);
-          window.removeEventListener("touchmove", handleTouchMove);
-        }
-      };
-
-      window.addEventListener("touchmove", handleTouchMove, { passive: false });
-
-      const cleanup = () => {
-        window.removeEventListener("touchmove", handleTouchMove);
-        window.removeEventListener("touchend", cleanup);
-      };
-      window.addEventListener("touchend", cleanup);
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchstart", handleTouchStart);
-    };
-  }, [isMobile, hasTriggered]);
+    return () => ctx.revert();
+  }, [isMobile]);
 
   return (
     <section
