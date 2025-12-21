@@ -27,7 +27,6 @@ export function Hero() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const bottomLeftRef = useRef<HTMLDivElement>(null);
   const bottomRightRef = useRef<HTMLDivElement>(null);
-  const contentWrapperRef = useRef<HTMLDivElement>(null);
   const veilRef = useRef<HTMLDivElement>(null);
   const ctaButtonRef = useRef<HTMLButtonElement>(null);
   const ctaButtonTextRef = useRef<HTMLSpanElement>(null);
@@ -200,187 +199,161 @@ export function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // Mobile scroll exit animations with scrub
+  // Scroll exit animations - ALL content disappears while pinned, then scroll resumes
   useEffect(() => {
-    if (!isMobile) return;
-
     const ctx = gsap.context(() => {
-      // Timeline that follows scroll
-      const scrollTl = gsap.timeline({
+      // Adapted values for mobile vs desktop
+      const config = isMobile
+        ? {
+            bottomX: 100,
+            playTextX: -60,
+            eyebrowLineX: 80,
+            eyebrowTextY: -40,
+            titleX: 150,
+            titleY: -30,
+            scrub: 0.5,
+            pinDuration: "+=30%",
+          }
+        : {
+            bottomX: 200,
+            playTextX: -100,
+            eyebrowLineX: 150,
+            eyebrowTextY: -60,
+            titleX: 300,
+            titleY: -50,
+            scrub: 0.8,
+            pinDuration: "+=40%",
+          };
+
+      // Single pinned timeline - everything disappears before scroll resumes
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "95% top",
-          scrub: 0.5,
+          end: config.pinDuration,
+          scrub: config.scrub,
+          pin: true,
+          pinSpacing: true,
         },
       });
 
-      // ===== 1. BOTTOM BAR - Left fades left, Right fades right =====
-      scrollTl.to(
+      // ===== 1. BOTTOM BAR - First to go =====
+      tl.fromTo(
         bottomLeftRef.current,
-        {
-          x: -100,
-          opacity: 0,
-          duration: 0.15
-        },
+        { x: 0, opacity: 1 },
+        { x: -config.bottomX, opacity: 0, duration: 0.15 },
         0
       );
-      scrollTl.to(
+      tl.fromTo(
         bottomRightRef.current,
-        {
-          x: 100,
-          opacity: 0,
-          duration: 0.15
-        },
+        { x: 0, opacity: 1 },
+        { x: config.bottomX, opacity: 0, duration: 0.15 },
         0
       );
 
-      // ===== 2. "COMMENT ÇA MARCHE" - Text retracts into play button, then play zooms out =====
-      scrollTl.to(
-        playTextRef.current,
-        {
-          x: -60,
-          scale: 0.5,
-          opacity: 0,
-          duration: 0.15
-        },
+      // ===== 2. EYEBROW - Lines extend + text fades =====
+      tl.fromTo(
+        eyebrowLineLeftRef.current,
+        { x: 0, scaleX: 1, opacity: 1 },
+        { x: -config.eyebrowLineX, scaleX: 2, opacity: 0, duration: 0.15 },
         0.05
       );
-      scrollTl.to(
-        playButtonRef.current,
-        {
-          scale: 0,
-          opacity: 0,
-          duration: 0.12
-        },
-        0.1
+      tl.fromTo(
+        eyebrowLineRightRef.current,
+        { x: 0, scaleX: 1, opacity: 1 },
+        { x: config.eyebrowLineX, scaleX: 2, opacity: 0, duration: 0.15 },
+        0.05
       );
-
-      // ===== 3. "SIMULER MON CRÉDIT" - Text fades progressively with clip =====
-      scrollTl.to(
-        ctaButtonTextRef.current,
-        {
-          clipPath: "inset(0 100% 0 0)",
-          duration: 0.18
-        },
+      tl.fromTo(
+        eyebrowTextRef.current,
+        { y: 0, opacity: 1, filter: "blur(0px)" },
+        { y: config.eyebrowTextY, opacity: 0, filter: "blur(8px)", duration: 0.15 },
         0.08
       );
-      scrollTl.to(
-        ctaButtonRef.current,
-        {
-          scaleX: 0,
-          transformOrigin: "right center",
-          opacity: 0,
-          duration: 0.12
-        },
+
+      // ===== 3. CTA BUTTONS =====
+      tl.fromTo(
+        playTextRef.current,
+        { x: 0, scale: 1, opacity: 1 },
+        { x: config.playTextX, scale: 0.5, opacity: 0, duration: 0.15 },
+        0.12
+      );
+      tl.fromTo(
+        playButtonRef.current,
+        { scale: 1, opacity: 1 },
+        { scale: 0, opacity: 0, duration: 0.12 },
         0.15
       );
-
-      // ===== 4. EYEBROW - Lines extend outward, text fades up =====
-      scrollTl.to(
-        eyebrowLineLeftRef.current,
-        {
-          x: -80,
-          opacity: 0,
-          duration: 0.15
-        },
+      tl.fromTo(
+        ctaButtonTextRef.current,
+        { clipPath: "inset(0 0% 0 0)" },
+        { clipPath: "inset(0 100% 0 0)", duration: 0.18 },
         0.12
       );
-      scrollTl.to(
-        eyebrowLineRightRef.current,
-        {
-          x: 80,
-          opacity: 0,
-          duration: 0.15
-        },
-        0.12
-      );
-      scrollTl.to(
-        eyebrowTextRef.current,
-        {
-          y: -40,
-          opacity: 0,
-          filter: "blur(4px)",
-          duration: 0.15
-        },
-        0.14
+      tl.fromTo(
+        ctaButtonRef.current,
+        { scaleX: 1, opacity: 1 },
+        { scaleX: 0, transformOrigin: "right center", opacity: 0, duration: 0.12 },
+        0.18
       );
 
-      // ===== 5. SUBTITLE - Quick fade =====
-      scrollTl.to(
+      // ===== 4. SUBTITLE =====
+      tl.fromTo(
         subtitleRef.current,
-        {
-          opacity: 0,
-          y: 20,
-          duration: 0.12
-        },
-        0.16
-      );
-
-      // ===== 6. TITLE - Letters transform into lines and fly away =====
-      scrollTl.to(
-        line3Ref.current,
-        {
-          scaleY: 0.02,
-          scaleX: 2,
-          opacity: 0,
-          y: -30,
-          transformOrigin: "center center",
-          duration: 0.18
-        },
+        { opacity: 1, y: 0, filter: "blur(0px)" },
+        { opacity: 0, y: 30, filter: "blur(4px)", duration: 0.15 },
         0.2
       );
-      scrollTl.to(
-        line2Ref.current,
-        {
-          scaleY: 0.02,
-          scaleX: 1.5,
-          x: 150,
-          opacity: 0,
-          transformOrigin: "left center",
-          duration: 0.2
-        },
+
+      // ===== 5. TITLE - Lines transform and fly away =====
+      tl.fromTo(
+        line3Ref.current,
+        { scaleY: 1, scaleX: 1, opacity: 1, y: 0 },
+        { scaleY: 0.02, scaleX: 2, opacity: 0, y: config.titleY, transformOrigin: "center center", duration: 0.2 },
         0.25
       );
-      scrollTl.to(
+      tl.fromTo(
+        line2Ref.current,
+        { scaleY: 1, scaleX: 1, x: 0, opacity: 1 },
+        { scaleY: 0.02, scaleX: 1.5, x: config.titleX, opacity: 0, transformOrigin: "left center", duration: 0.25 },
+        0.3
+      );
+      tl.fromTo(
         line1Ref.current,
-        {
-          scaleY: 0.02,
-          scaleX: 1.5,
-          x: -150,
-          opacity: 0,
-          transformOrigin: "right center",
-          duration: 0.2
-        },
-        0.25
+        { scaleY: 1, scaleX: 1, x: 0, opacity: 1 },
+        { scaleY: 1, scaleX: 1.5, x: -config.titleX, opacity: 0, transformOrigin: "right center", duration: 0.25 },
+        0.3
       );
 
-      // ===== 7. DECORATIVE CIRCLES - Fade out =====
+      // ===== 6. DECORATIVE CIRCLES =====
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
       if (circles) {
-        scrollTl.to(
+        tl.fromTo(
           circles,
-          {
-            opacity: 0,
-            scale: 0.5,
-            stagger: 0.02,
-            duration: 0.15
-          },
+          { opacity: 1, scale: 1 },
+          { opacity: 0, scale: 0.5, stagger: 0.02, duration: 0.15 },
           0.1
         );
       }
 
-      // ===== 8. DARK VEIL - Rises AFTER everything has disappeared =====
-      scrollTl.to(
-        veilRef.current,
-        { y: 0, duration: 0.4 },
-        0.5
-      );
-      scrollTl.to(
-        veilRef.current,
-        { opacity: 0, duration: 0.3 },
-        0.85
-      );
+      // ===== 7. SVG ARCS (desktop) =====
+      if (!isMobile) {
+        const arcs = decorRef.current?.querySelectorAll(".deco-arc");
+        if (arcs) {
+          tl.fromTo(arcs, { opacity: 1, strokeDashoffset: 0 }, { opacity: 0, strokeDashoffset: 300, duration: 0.2 }, 0.15);
+        }
+      }
+
+      // ===== 8. MOUSE FOLLOWER (desktop) =====
+      if (!isMobile && cursorCircleRef.current) {
+        tl.fromTo(cursorCircleRef.current, { opacity: 0.05, scale: 1 }, { opacity: 0, scale: 0.3, duration: 0.2 }, 0.1);
+      }
+
+      // ===== 9. DARK VEIL (mobile) =====
+      if (isMobile) {
+        tl.fromTo(veilRef.current, { y: "100%" }, { y: 0, duration: 0.4 }, 0.5);
+        tl.to(veilRef.current, { opacity: 0, duration: 0.3 }, 0.85);
+      }
     });
 
     return () => ctx.revert();
