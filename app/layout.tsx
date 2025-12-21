@@ -16,8 +16,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata = {
-  title: "Website",
-  description: "Base Next.js project",
+  title: "Quickfund",
+  description: "Financement premium pour vos projets",
 };
 
 export default function RootLayout({
