@@ -210,22 +210,10 @@ export function Hero() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "90% top",
+          end: "95% top",
           scrub: 0.5,
         },
       });
-
-      // Dark veil rises then fades out to reveal next section
-      scrollTl.to(
-        veilRef.current,
-        { y: 0, duration: 0.7 },
-        0
-      );
-      scrollTl.to(
-        veilRef.current,
-        { opacity: 0, duration: 0.3 },
-        0.7
-      );
 
       // ===== 1. BOTTOM BAR - Left fades left, Right fades right =====
       scrollTl.to(
@@ -233,7 +221,7 @@ export function Hero() {
         {
           x: -100,
           opacity: 0,
-          duration: 0.2
+          duration: 0.15
         },
         0
       );
@@ -242,32 +230,30 @@ export function Hero() {
         {
           x: 100,
           opacity: 0,
-          duration: 0.2
+          duration: 0.15
         },
         0
       );
 
       // ===== 2. "COMMENT ÇA MARCHE" - Text retracts into play button, then play zooms out =====
-      // Text slides towards play button and shrinks
       scrollTl.to(
         playTextRef.current,
         {
           x: -60,
           scale: 0.5,
           opacity: 0,
-          duration: 0.25
+          duration: 0.15
         },
-        0.08
+        0.05
       );
-      // Play button zooms out
       scrollTl.to(
         playButtonRef.current,
         {
           scale: 0,
           opacity: 0,
-          duration: 0.2
+          duration: 0.12
         },
-        0.15
+        0.1
       );
 
       // ===== 3. "SIMULER MON CRÉDIT" - Text fades progressively with clip =====
@@ -275,9 +261,9 @@ export function Hero() {
         ctaButtonTextRef.current,
         {
           clipPath: "inset(0 100% 0 0)",
-          duration: 0.3
+          duration: 0.18
         },
-        0.12
+        0.08
       );
       scrollTl.to(
         ctaButtonRef.current,
@@ -285,41 +271,39 @@ export function Hero() {
           scaleX: 0,
           transformOrigin: "right center",
           opacity: 0,
-          duration: 0.2
+          duration: 0.12
         },
-        0.22
+        0.15
       );
 
       // ===== 4. EYEBROW - Lines extend outward, text fades up =====
-      // Lines fly outward
       scrollTl.to(
         eyebrowLineLeftRef.current,
         {
           x: -80,
           opacity: 0,
-          duration: 0.25
+          duration: 0.15
         },
-        0.2
+        0.12
       );
       scrollTl.to(
         eyebrowLineRightRef.current,
         {
           x: 80,
           opacity: 0,
-          duration: 0.25
+          duration: 0.15
         },
-        0.2
+        0.12
       );
-      // Text fades up
       scrollTl.to(
         eyebrowTextRef.current,
         {
           y: -40,
           opacity: 0,
           filter: "blur(4px)",
-          duration: 0.25
+          duration: 0.15
         },
-        0.22
+        0.14
       );
 
       // ===== 5. SUBTITLE - Quick fade =====
@@ -328,13 +312,12 @@ export function Hero() {
         {
           opacity: 0,
           y: 20,
-          duration: 0.2
+          duration: 0.12
         },
-        0.25
+        0.16
       );
 
       // ===== 6. TITLE - Letters transform into lines and fly away =====
-      // Line 3 (Sans surprise) - scales to thin line
       scrollTl.to(
         line3Ref.current,
         {
@@ -343,12 +326,10 @@ export function Hero() {
           opacity: 0,
           y: -30,
           transformOrigin: "center center",
-          duration: 0.3
+          duration: 0.18
         },
-        0.3
+        0.2
       );
-
-      // Line 2 (en 24h) - stretches and flies right
       scrollTl.to(
         line2Ref.current,
         {
@@ -357,12 +338,10 @@ export function Hero() {
           x: 150,
           opacity: 0,
           transformOrigin: "left center",
-          duration: 0.35
+          duration: 0.2
         },
-        0.35
+        0.25
       );
-
-      // Line 1 (Votre crédit) - stretches and flies left
       scrollTl.to(
         line1Ref.current,
         {
@@ -371,9 +350,9 @@ export function Hero() {
           x: -150,
           opacity: 0,
           transformOrigin: "right center",
-          duration: 0.35
+          duration: 0.2
         },
-        0.35
+        0.25
       );
 
       // ===== 7. DECORATIVE CIRCLES - Fade out =====
@@ -385,11 +364,23 @@ export function Hero() {
             opacity: 0,
             scale: 0.5,
             stagger: 0.02,
-            duration: 0.2
+            duration: 0.15
           },
           0.1
         );
       }
+
+      // ===== 8. DARK VEIL - Rises AFTER everything has disappeared =====
+      scrollTl.to(
+        veilRef.current,
+        { y: 0, duration: 0.4 },
+        0.5
+      );
+      scrollTl.to(
+        veilRef.current,
+        { opacity: 0, duration: 0.3 },
+        0.85
+      );
     });
 
     return () => ctx.revert();
