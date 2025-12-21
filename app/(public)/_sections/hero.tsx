@@ -25,8 +25,15 @@ export function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null);
   const decorRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const bottomLeftRef = useRef<HTMLDivElement>(null);
+  const bottomRightRef = useRef<HTMLDivElement>(null);
   const contentWrapperRef = useRef<HTMLDivElement>(null);
   const veilRef = useRef<HTMLDivElement>(null);
+  const ctaButtonRef = useRef<HTMLButtonElement>(null);
+  const ctaButtonTextRef = useRef<HTMLSpanElement>(null);
+  const playButtonRef = useRef<HTMLSpanElement>(null);
+  const playTextRef = useRef<HTMLSpanElement>(null);
+  const titleContainerRef = useRef<HTMLDivElement>(null);
 
   // Detect mobile
   useEffect(() => {
@@ -203,159 +210,185 @@ export function Hero() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "80% top",
-          scrub: 0.6,
+          end: "90% top",
+          scrub: 0.5,
         },
       });
 
       // Dark veil rises then fades out to reveal next section
       scrollTl.to(
         veilRef.current,
-        { y: 0, duration: 0.6 },
+        { y: 0, duration: 0.7 },
         0
       );
       scrollTl.to(
         veilRef.current,
-        { opacity: 0, duration: 0.4 },
-        0.6
+        { opacity: 0, duration: 0.3 },
+        0.7
       );
 
-      // Bottom bar - clip from right to left (wipe effect)
+      // ===== 1. BOTTOM BAR - Left fades left, Right fades right =====
       scrollTl.to(
-        bottomRef.current,
+        bottomLeftRef.current,
         {
-          clipPath: "inset(0 100% 0 0)",
-          duration: 0.25
+          x: -100,
+          opacity: 0,
+          duration: 0.2
+        },
+        0
+      );
+      scrollTl.to(
+        bottomRightRef.current,
+        {
+          x: 100,
+          opacity: 0,
+          duration: 0.2
         },
         0
       );
 
-      // CTA buttons - first one rotates and scales, second clips
-      const ctaButtons = ctaRef.current?.children;
-      if (ctaButtons && ctaButtons[0] && ctaButtons[1]) {
-        scrollTl.to(
-          ctaButtons[0],
-          {
-            opacity: 0,
-            scale: 0.8,
-            rotation: -5,
-            transformOrigin: "center bottom",
-            duration: 0.3
-          },
-          0.05
-        );
-        scrollTl.to(
-          ctaButtons[1],
-          {
-            opacity: 0,
-            x: 40,
-            filter: "blur(8px)",
-            duration: 0.3
-          },
-          0.08
-        );
-      }
-
-      // Subtitle - split into lines effect with clip
+      // ===== 2. "COMMENT ÇA MARCHE" - Text retracts into play button, then play zooms out =====
+      // Text slides towards play button and shrinks
       scrollTl.to(
-        subtitleRef.current,
+        playTextRef.current,
         {
-          clipPath: "inset(100% 0 0 0)",
-          duration: 0.3
-        },
-        0.1
-      );
-
-      // Title line 3 - scale down from top
-      scrollTl.to(
-        line3Ref.current,
-        {
+          x: -60,
+          scale: 0.5,
           opacity: 0,
-          scaleY: 0,
-          transformOrigin: "top center",
-          filter: "blur(4px)",
           duration: 0.25
         },
+        0.08
+      );
+      // Play button zooms out
+      scrollTl.to(
+        playButtonRef.current,
+        {
+          scale: 0,
+          opacity: 0,
+          duration: 0.2
+        },
         0.15
       );
 
-      // Title line 2 (en 24h) - dramatic slide + rotation
+      // ===== 3. "SIMULER MON CRÉDIT" - Text fades progressively with clip =====
       scrollTl.to(
-        line2Ref.current,
+        ctaButtonTextRef.current,
         {
-          x: 100,
-          rotation: 3,
-          opacity: 0,
-          filter: "blur(12px)",
-          transformOrigin: "left center",
-          duration: 0.4
-        },
-        0.2
-      );
-
-      // Title line 1 - clip path reveal reverse (close like curtain)
-      scrollTl.to(
-        line1Ref.current,
-        {
-          clipPath: "inset(0 50% 0 50%)",
-          opacity: 0,
-          duration: 0.4
-        },
-        0.2
-      );
-
-      // Eyebrow text - scale up and fade (zoom out effect)
-      scrollTl.to(
-        eyebrowTextRef.current,
-        {
-          scale: 1.5,
-          opacity: 0,
-          filter: "blur(10px)",
+          clipPath: "inset(0 100% 0 0)",
           duration: 0.3
         },
-        0.15
+        0.12
       );
-
-      // Eyebrow lines - shrink to center
       scrollTl.to(
-        eyebrowLineLeftRef.current,
+        ctaButtonRef.current,
         {
           scaleX: 0,
           transformOrigin: "right center",
+          opacity: 0,
           duration: 0.2
         },
-        0.18
+        0.22
+      );
+
+      // ===== 4. EYEBROW - Lines extend outward, text fades up =====
+      // Lines fly outward
+      scrollTl.to(
+        eyebrowLineLeftRef.current,
+        {
+          x: -80,
+          opacity: 0,
+          duration: 0.25
+        },
+        0.2
       );
       scrollTl.to(
         eyebrowLineRightRef.current,
         {
-          scaleX: 0,
-          transformOrigin: "left center",
-          duration: 0.2
+          x: 80,
+          opacity: 0,
+          duration: 0.25
         },
-        0.18
+        0.2
+      );
+      // Text fades up
+      scrollTl.to(
+        eyebrowTextRef.current,
+        {
+          y: -40,
+          opacity: 0,
+          filter: "blur(4px)",
+          duration: 0.25
+        },
+        0.22
       );
 
-      // Decorative circles - spiral out effect
+      // ===== 5. SUBTITLE - Quick fade =====
+      scrollTl.to(
+        subtitleRef.current,
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.2
+        },
+        0.25
+      );
+
+      // ===== 6. TITLE - Letters transform into lines and fly away =====
+      // Line 3 (Sans surprise) - scales to thin line
+      scrollTl.to(
+        line3Ref.current,
+        {
+          scaleY: 0.02,
+          scaleX: 2,
+          opacity: 0,
+          y: -30,
+          transformOrigin: "center center",
+          duration: 0.3
+        },
+        0.3
+      );
+
+      // Line 2 (en 24h) - stretches and flies right
+      scrollTl.to(
+        line2Ref.current,
+        {
+          scaleY: 0.02,
+          scaleX: 1.5,
+          x: 150,
+          opacity: 0,
+          transformOrigin: "left center",
+          duration: 0.35
+        },
+        0.35
+      );
+
+      // Line 1 (Votre crédit) - stretches and flies left
+      scrollTl.to(
+        line1Ref.current,
+        {
+          scaleY: 0.02,
+          scaleX: 1.5,
+          x: -150,
+          opacity: 0,
+          transformOrigin: "right center",
+          duration: 0.35
+        },
+        0.35
+      );
+
+      // ===== 7. DECORATIVE CIRCLES - Fade out =====
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
       if (circles) {
-        circles.forEach((circle, i) => {
-          const angle = (i * 90) + 45; // Different angle for each
-          const rad = angle * (Math.PI / 180);
-          const distance = 100;
-          scrollTl.to(
-            circle,
-            {
-              x: Math.cos(rad) * distance,
-              y: Math.sin(rad) * distance,
-              scale: 0,
-              opacity: 0,
-              rotation: angle,
-              duration: 0.35
-            },
-            0.05 + (i * 0.03)
-          );
-        });
+        scrollTl.to(
+          circles,
+          {
+            opacity: 0,
+            scale: 0.5,
+            stagger: 0.02,
+            duration: 0.2
+          },
+          0.1
+        );
       }
     });
 
@@ -422,7 +455,7 @@ export function Hero() {
               </div>
 
               {/* Title */}
-              <div className="mb-10">
+              <div ref={titleContainerRef} className="mb-10">
                 <div className="overflow-hidden">
                   <div ref={line1Ref}>
                     <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-[-0.02em]">
@@ -459,8 +492,8 @@ export function Hero() {
               {/* CTA */}
               <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-6">
                 <Magnetic>
-                  <button className="group relative px-10 py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl">
-                    <span className="relative z-10 flex items-center gap-3">
+                  <button ref={ctaButtonRef} className="group relative px-10 py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl">
+                    <span ref={ctaButtonTextRef} className="relative z-10 flex items-center gap-3">
                       Simuler mon crédit
                       <svg
                         className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -477,12 +510,12 @@ export function Hero() {
 
                 <Magnetic>
                   <button className="group flex items-center gap-4 text-base font-medium text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    <span className="w-14 h-14 rounded-full border border-current flex items-center justify-center group-hover:border-accent group-hover:text-accent transition-colors duration-300">
+                    <span ref={playButtonRef} className="w-14 h-14 rounded-full border border-current flex items-center justify-center group-hover:border-accent group-hover:text-accent transition-colors duration-300">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       </svg>
                     </span>
-                    Comment ça marche
+                    <span ref={playTextRef}>Comment ça marche</span>
                   </button>
                 </Magnetic>
               </div>
@@ -494,7 +527,7 @@ export function Hero() {
       {/* Bottom bar */}
       <div ref={bottomRef} className="py-5 border-t border-foreground/5">
         <div className="px-8 sm:px-12 lg:px-20 xl:px-28 flex items-center justify-between text-sm text-muted-foreground">
-          <div className="flex items-center gap-6 sm:gap-10">
+          <div ref={bottomLeftRef} className="flex items-center gap-6 sm:gap-10">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               100% en ligne
@@ -508,7 +541,7 @@ export function Hero() {
               Réponse garantie
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div ref={bottomRightRef} className="flex items-center gap-3">
             <span className="uppercase tracking-widest text-xs">Scroll</span>
             <svg className="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
