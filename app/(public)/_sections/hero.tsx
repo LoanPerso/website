@@ -1,13 +1,17 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Magnetic from "@/_components/ui/magnetic-button";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 export function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const cursorCircleRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Refs for animations
   const eyebrowRef = useRef<HTMLDivElement>(null);
@@ -21,10 +25,18 @@ export function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null);
   const decorRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const contentWrapperRef = useRef<HTMLDivElement>(null);
+
+  // Detect mobile
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Mouse follower (desktop only)
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
     if (isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -179,6 +191,83 @@ export function Hero() {
 
     return () => ctx.revert();
   }, []);
+
+  // Mobile scroll exit animations
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const ctx = gsap.context(() => {
+      // Create scroll-triggered exit animation for mobile
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 0.8,
+        },
+      });
+
+      // Eyebrow fades and moves up
+      scrollTl.to(
+        eyebrowRef.current,
+        { opacity: 0, y: -30, duration: 0.3 },
+        0
+      );
+
+      // Title lines stagger out with different directions
+      scrollTl.to(
+        line1Ref.current,
+        { opacity: 0, x: -50, filter: "blur(8px)", duration: 0.4 },
+        0.05
+      );
+      scrollTl.to(
+        line2Ref.current,
+        { opacity: 0, x: 50, filter: "blur(8px)", duration: 0.4 },
+        0.1
+      );
+      scrollTl.to(
+        line3Ref.current,
+        { opacity: 0, y: 20, filter: "blur(6px)", duration: 0.3 },
+        0.15
+      );
+
+      // Subtitle fades down
+      scrollTl.to(
+        subtitleRef.current,
+        { opacity: 0, y: 30, filter: "blur(4px)", duration: 0.3 },
+        0.2
+      );
+
+      // CTA buttons scale down and fade
+      const ctaButtons = ctaRef.current?.children;
+      if (ctaButtons) {
+        scrollTl.to(
+          ctaButtons,
+          { opacity: 0, scale: 0.9, y: 20, stagger: 0.05, duration: 0.3 },
+          0.25
+        );
+      }
+
+      // Decorative elements fade out
+      const circles = decorRef.current?.querySelectorAll(".deco-circle");
+      if (circles) {
+        scrollTl.to(
+          circles,
+          { opacity: 0, scale: 0.5, stagger: 0.02, duration: 0.3 },
+          0.1
+        );
+      }
+
+      // Bottom bar slides down
+      scrollTl.to(
+        bottomRef.current,
+        { opacity: 0, y: 30, duration: 0.3 },
+        0.3
+      );
+    });
+
+    return () => ctx.revert();
+  }, [isMobile]);
 
   return (
     <section
