@@ -14,7 +14,7 @@ import {
 
 export default function PublicHome() {
   return (
-    <div className="bg-background text-foreground w-full">
+    <div className="bg-background text-foreground w-full overflow-x-hidden">
       <CustomCursor />
       <Preloader />
 
