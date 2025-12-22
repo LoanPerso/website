@@ -83,7 +83,7 @@ export function Hero() {
       gsap.set(bottomRef.current, { opacity: 0 });
 
       // Decorative circles - subtle fade in
-      if (circles) {
+      if (circles && circles.length > 0) {
         tl.fromTo(
           circles,
           { scale: 0, opacity: 0 },
@@ -93,7 +93,7 @@ export function Hero() {
       }
 
       // SVG arc drawing
-      if (arcs) {
+      if (arcs && arcs.length > 0) {
         tl.fromTo(
           arcs,
           { strokeDashoffset: 300 },
@@ -172,7 +172,7 @@ export function Hero() {
 
       // Bottom bar items cascade
       const bottomItems = bottomRef.current?.querySelectorAll("span");
-      if (bottomItems) {
+      if (bottomItems && bottomItems.length > 0) {
         tl.fromTo(
           bottomItems,
           { opacity: 0, x: -10 },
@@ -182,7 +182,7 @@ export function Hero() {
       }
 
       // Floating animation for circles (continuous)
-      if (circles) {
+      if (circles && circles.length > 0) {
         gsap.to(circles, {
           y: "random(-10, 10)",
           x: "random(-5, 5)",
@@ -201,6 +201,9 @@ export function Hero() {
 
   // Scroll exit animations - ALL content disappears while pinned, then scroll resumes
   useEffect(() => {
+    // Wait for all refs to be available
+    if (!containerRef.current || !bottomLeftRef.current || !playButtonRef.current) return;
+
     const ctx = gsap.context(() => {
       // Adapted values for mobile vs desktop
       const config = isMobile
@@ -272,18 +275,25 @@ export function Hero() {
       );
 
       // ===== 3. CTA BUTTONS =====
+      // Text "Comment ça marche" disappears
       tl.fromTo(
         playTextRef.current,
         { x: 0, scale: 1, opacity: 1 },
         { x: config.playTextX, scale: 0.5, opacity: 0, duration: 0.15 },
         0.12
       );
-      tl.fromTo(
+      // Play button stays visible but fills with black at the end
+      tl.to(
         playButtonRef.current,
-        { scale: 1, opacity: 1 },
-        { scale: 0, opacity: 0, duration: 0.12 },
-        0.15
+        {
+          backgroundColor: "hsl(var(--background))",
+          borderColor: "hsl(var(--background))",
+          color: "hsl(var(--background))",
+          duration: 0.3
+        },
+        0.5
       );
+
       tl.fromTo(
         ctaButtonTextRef.current,
         { clipPath: "inset(0 0% 0 0)" },
@@ -327,7 +337,7 @@ export function Hero() {
 
       // ===== 6. DECORATIVE CIRCLES =====
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
-      if (circles) {
+      if (circles && circles.length > 0) {
         tl.fromTo(
           circles,
           { opacity: 1, scale: 1 },
@@ -339,7 +349,7 @@ export function Hero() {
       // ===== 7. SVG ARCS (desktop) =====
       if (!isMobile) {
         const arcs = decorRef.current?.querySelectorAll(".deco-arc");
-        if (arcs) {
+        if (arcs && arcs.length > 0) {
           tl.fromTo(arcs, { opacity: 1, strokeDashoffset: 0 }, { opacity: 0, strokeDashoffset: 300, duration: 0.2 }, 0.15);
         }
       }
