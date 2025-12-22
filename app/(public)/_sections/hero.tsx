@@ -33,7 +33,8 @@ export function Hero() {
   const playButtonRef = useRef<SVGSVGElement>(null);
   const playIconRef = useRef<SVGGElement>(null);
   const playTextRef = useRef<HTMLSpanElement>(null);
-  const streamRef = useRef<SVGPathElement>(null);
+  const circleStrokeRef = useRef<SVGCircleElement>(null);
+  const circleFillRef = useRef<SVGCircleElement>(null);
   const titleContainerRef = useRef<HTMLDivElement>(null);
 
   // Detect mobile
@@ -281,19 +282,20 @@ export function Hero() {
         0.12
       );
 
-      // Stream animation: black flows from button into circle
-      // Stream starts thin and draws in
+      // Circle stroke draws around progressively
       tl.fromTo(
-        streamRef.current,
-        { attr: { "stroke-width": 8 }, strokeDashoffset: 106 },
-        { strokeDashoffset: 0, duration: 0.2, ease: "power2.out" },
+        circleStrokeRef.current,
+        { strokeDashoffset: 170 },
+        { strokeDashoffset: 0, duration: 0.25, ease: "power2.inOut" },
         0.08
       );
-      // Then: stream thickens to fill the entire circle
-      tl.to(
-        streamRef.current,
-        { attr: { "stroke-width": 60 }, duration: 0.15, ease: "power2.in" },
-        0.22
+
+      // Circle fills with black (opacity increases)
+      tl.fromTo(
+        circleFillRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.2, ease: "power2.in" },
+        0.18
       );
 
       // Play icon fades out as the black fills
@@ -499,24 +501,16 @@ export function Hero() {
                       viewBox="0 0 56 56"
                       fill="none"
                     >
-                      <defs>
-                        <clipPath id="circleClip">
-                          <circle cx="28" cy="28" r="27" />
-                        </clipPath>
-                      </defs>
-                      {/* Stream - comes from left, clipped by circle */}
-                      <path
-                        ref={streamRef}
-                        d="M -50 28 L 56 28"
-                        stroke="hsl(var(--foreground))"
-                        strokeWidth="0"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeDasharray="106"
-                        strokeDashoffset="106"
-                        clipPath="url(#circleClip)"
+                      {/* Fill circle - starts transparent, fills with black */}
+                      <circle
+                        ref={circleFillRef}
+                        cx="28"
+                        cy="28"
+                        r="27"
+                        fill="hsl(var(--foreground))"
+                        opacity="0"
                       />
-                      {/* Border circle */}
+                      {/* Border circle - static */}
                       <circle
                         cx="28"
                         cy="28"
@@ -525,6 +519,20 @@ export function Hero() {
                         strokeWidth="1"
                         fill="none"
                         className="group-hover:stroke-accent transition-colors duration-300"
+                      />
+                      {/* Animated stroke circle - draws around */}
+                      <circle
+                        ref={circleStrokeRef}
+                        cx="28"
+                        cy="28"
+                        r="27"
+                        stroke="hsl(var(--foreground))"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeDasharray="170"
+                        strokeDashoffset="170"
+                        strokeLinecap="round"
+                        style={{ transform: "rotate(-90deg)", transformOrigin: "center" }}
                       />
                       {/* Play icon - fades out as black fills */}
                       <g ref={playIconRef}>
