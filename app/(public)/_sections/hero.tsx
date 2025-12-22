@@ -36,6 +36,8 @@ export function Hero() {
   const circleStrokeRef = useRef<SVGCircleElement>(null);
   const circleFillRef = useRef<SVGCircleElement>(null);
   const titleContainerRef = useRef<HTMLDivElement>(null);
+  const transitionOverlayRef = useRef<SVGSVGElement>(null);
+  const transitionCircleRef = useRef<SVGCircleElement>(null);
 
   // Detect mobile
   useEffect(() => {
@@ -375,6 +377,40 @@ export function Hero() {
         tl.fromTo(veilRef.current, { y: "100%" }, { y: 0, duration: 0.4 }, 0.5);
         tl.to(veilRef.current, { opacity: 0, duration: 0.3 }, 0.85);
       }
+
+      // ===== 10. TRANSITION OVERLAY - SVG circle expands from play button =====
+      if (playButtonRef.current && transitionOverlayRef.current && transitionCircleRef.current) {
+        // Get play button center position
+        const rect = playButtonRef.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        // Calculate max radius needed to cover entire screen from that point
+        const maxRadius = Math.sqrt(
+          Math.pow(Math.max(centerX, window.innerWidth - centerX), 2) +
+          Math.pow(Math.max(centerY, window.innerHeight - centerY), 2)
+        ) * 1.2;
+
+        // Set initial circle position at play button
+        gsap.set(transitionCircleRef.current, {
+          attr: { cx: centerX, cy: centerY, r: 0 }
+        });
+
+        // Show SVG overlay
+        tl.to(
+          transitionOverlayRef.current,
+          { opacity: 1, duration: 0.01 },
+          0.32
+        );
+
+        // Expand circle from play button size to full screen
+        tl.fromTo(
+          transitionCircleRef.current,
+          { attr: { r: 27 } },
+          { attr: { r: maxRadius }, duration: 0.55, ease: "power2.inOut" },
+          0.33
+        );
+      }
     });
 
     return () => ctx.revert();
@@ -391,6 +427,21 @@ export function Hero() {
         className="md:hidden fixed inset-0 z-50 bg-deep-black pointer-events-none"
         style={{ transform: "translateY(100%)" }}
       />
+
+      {/* Transition overlay - SVG circle that expands */}
+      <svg
+        ref={transitionOverlayRef}
+        className="fixed inset-0 w-full h-full pointer-events-none z-[100]"
+        style={{ opacity: 0 }}
+      >
+        <circle
+          ref={transitionCircleRef}
+          cx="50%"
+          cy="50%"
+          r="0"
+          fill="hsl(var(--foreground))"
+        />
+      </svg>
 
       {/* Mouse follower circle - hidden on mobile */}
       <div
