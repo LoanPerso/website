@@ -36,8 +36,6 @@ export function Hero() {
   const circleStrokeRef = useRef<SVGCircleElement>(null);
   const circleFillRef = useRef<SVGCircleElement>(null);
   const titleContainerRef = useRef<HTMLDivElement>(null);
-  const transitionOverlayRef = useRef<SVGSVGElement>(null);
-  const transitionCircleRef = useRef<SVGCircleElement>(null);
 
   // Detect mobile
   useEffect(() => {
@@ -287,7 +285,7 @@ export function Hero() {
       // Circle stroke draws around progressively
       tl.fromTo(
         circleStrokeRef.current,
-        { strokeDashoffset: 170 },
+        { strokeDashoffset: 1700 },
         { strokeDashoffset: 0, duration: 0.25, ease: "power2.inOut" },
         0.08
       );
@@ -378,39 +376,45 @@ export function Hero() {
         tl.to(veilRef.current, { opacity: 0, duration: 0.3 }, 0.85);
       }
 
-      // ===== 10. TRANSITION OVERLAY - SVG circle expands from play button =====
-      if (playButtonRef.current && transitionOverlayRef.current && transitionCircleRef.current) {
-        // Get play button center position
-        const rect = playButtonRef.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+      // ===== 10. ZOOM THE PLAY BUTTON SVG =====
+      // Calculate final size needed to cover entire screen
+      const maxDimension = Math.max(window.innerWidth, window.innerHeight) * 2.5;
+      const startSize = 56; // Initial SVG size in px
 
-        // Calculate max radius needed to cover entire screen from that point
-        const maxRadius = Math.sqrt(
-          Math.pow(Math.max(centerX, window.innerWidth - centerX), 2) +
-          Math.pow(Math.max(centerY, window.innerHeight - centerY), 2)
-        ) * 1.2;
+      const zoomStart = 0.38;
+      const zoomEnd = 0.88;
 
-        // Set initial circle position at play button
-        gsap.set(transitionCircleRef.current, {
-          attr: { cx: centerX, cy: centerY, r: 0 }
-        });
+      // Get the parent button to disable interactions
+      const parentButton = playButtonRef.current?.closest('button');
+      const magneticWrapper = parentButton?.closest('.magnetic');
 
-        // Show SVG overlay
-        tl.to(
-          transitionOverlayRef.current,
-          { opacity: 1, duration: 0.01 },
-          0.32
-        );
+      // Disable pointer events and magnetic effect when zoom starts
+      tl.set(playButtonRef.current, { zIndex: 100 }, zoomStart);
 
-        // Expand circle from play button size to full screen
-        tl.fromTo(
-          transitionCircleRef.current,
-          { attr: { r: 27 } },
-          { attr: { r: maxRadius }, duration: 0.55, ease: "power2.inOut" },
-          0.33
-        );
+      if (parentButton) {
+        tl.set(parentButton, { pointerEvents: "none" }, zoomStart);
       }
+      if (magneticWrapper) {
+        tl.set(magneticWrapper, { pointerEvents: "none" }, zoomStart);
+      }
+
+      // Zoom animation using width/height instead of scale for true vector rendering
+      tl.fromTo(
+        playButtonRef.current,
+        {
+          width: startSize,
+          height: startSize,
+          margin: 0,
+        },
+        {
+          width: maxDimension,
+          height: maxDimension,
+          margin: -(maxDimension - startSize) / 2, // Keep centered
+          ease: "power2.inOut",
+          duration: zoomEnd - zoomStart
+        },
+        zoomStart
+      );
     });
 
     return () => ctx.revert();
@@ -428,20 +432,6 @@ export function Hero() {
         style={{ transform: "translateY(100%)" }}
       />
 
-      {/* Transition overlay - SVG circle that expands */}
-      <svg
-        ref={transitionOverlayRef}
-        className="fixed inset-0 w-full h-full pointer-events-none z-[100]"
-        style={{ opacity: 0 }}
-      >
-        <circle
-          ref={transitionCircleRef}
-          cx="50%"
-          cy="50%"
-          r="0"
-          fill="hsl(var(--foreground))"
-        />
-      </svg>
 
       {/* Mouse follower circle - hidden on mobile */}
       <div
@@ -549,48 +539,52 @@ export function Hero() {
                     <svg
                       ref={playButtonRef}
                       className="w-14 h-14 overflow-visible"
-                      viewBox="0 0 56 56"
+                      viewBox="0 0 560 560"
                       fill="none"
+                      shapeRendering="geometricPrecision"
+                      style={{
+                        transformOrigin: "center center",
+                      }}
                     >
-                      {/* Fill circle - starts transparent, fills with black */}
+                      {/* Fill circle - starts transparent, fills with deep-black */}
                       <circle
                         ref={circleFillRef}
-                        cx="28"
-                        cy="28"
-                        r="27"
-                        fill="hsl(var(--foreground))"
+                        cx="280"
+                        cy="280"
+                        r="270"
+                        fill="hsl(var(--deep-black))"
                         opacity="0"
                       />
                       {/* Border circle - static */}
                       <circle
-                        cx="28"
-                        cy="28"
-                        r="27"
+                        cx="280"
+                        cy="280"
+                        r="270"
                         stroke="currentColor"
-                        strokeWidth="1"
+                        strokeWidth="10"
                         fill="none"
                         className="group-hover:stroke-accent transition-colors duration-300"
                       />
                       {/* Animated stroke circle - draws around */}
                       <circle
                         ref={circleStrokeRef}
-                        cx="28"
-                        cy="28"
-                        r="27"
-                        stroke="hsl(var(--foreground))"
-                        strokeWidth="2"
+                        cx="280"
+                        cy="280"
+                        r="270"
+                        stroke="hsl(var(--deep-black))"
+                        strokeWidth="20"
                         fill="none"
-                        strokeDasharray="170"
-                        strokeDashoffset="170"
+                        strokeDasharray="1700"
+                        strokeDashoffset="1700"
                         strokeLinecap="round"
                         style={{ transform: "rotate(-90deg)", transformOrigin: "center" }}
                       />
                       {/* Play icon - fades out as black fills */}
                       <g ref={playIconRef}>
                         <path
-                          d="M24 20L36 28L24 36V20Z"
+                          d="M240 200L360 280L240 360V200Z"
                           stroke="currentColor"
-                          strokeWidth="1.5"
+                          strokeWidth="15"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           fill="none"
