@@ -30,8 +30,10 @@ export function Hero() {
   const veilRef = useRef<HTMLDivElement>(null);
   const ctaButtonRef = useRef<HTMLButtonElement>(null);
   const ctaButtonTextRef = useRef<HTMLSpanElement>(null);
-  const playButtonRef = useRef<HTMLSpanElement>(null);
+  const playButtonRef = useRef<SVGSVGElement>(null);
+  const playIconRef = useRef<SVGGElement>(null);
   const playTextRef = useRef<HTMLSpanElement>(null);
+  const streamRef = useRef<SVGPathElement>(null);
   const titleContainerRef = useRef<HTMLDivElement>(null);
 
   // Detect mobile
@@ -278,11 +280,28 @@ export function Hero() {
         { x: config.playTextX, scale: 0.5, opacity: 0, duration: 0.15 },
         0.12
       );
+
+      // Stream animation: black flows from button into circle
+      // Stream starts thin and draws in
       tl.fromTo(
-        playButtonRef.current,
-        { scale: 1, opacity: 1 },
-        { scale: 0, opacity: 0, duration: 0.12 },
-        0.15
+        streamRef.current,
+        { attr: { "stroke-width": 8 }, strokeDashoffset: 106 },
+        { strokeDashoffset: 0, duration: 0.2, ease: "power2.out" },
+        0.08
+      );
+      // Then: stream thickens to fill the entire circle
+      tl.to(
+        streamRef.current,
+        { attr: { "stroke-width": 60 }, duration: 0.15, ease: "power2.in" },
+        0.22
+      );
+
+      // Play icon fades out as the black fills
+      tl.fromTo(
+        playIconRef.current,
+        { opacity: 1 },
+        { opacity: 0, duration: 0.15, ease: "power2.in" },
+        0.2
       );
       tl.fromTo(
         ctaButtonTextRef.current,
@@ -474,11 +493,52 @@ export function Hero() {
 
                 <Magnetic>
                   <button className="group flex items-center gap-4 text-base font-medium text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    <span ref={playButtonRef} className="w-14 h-14 rounded-full border border-current flex items-center justify-center group-hover:border-accent group-hover:text-accent transition-colors duration-300">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      </svg>
-                    </span>
+                    <svg
+                      ref={playButtonRef}
+                      className="w-14 h-14 overflow-visible"
+                      viewBox="0 0 56 56"
+                      fill="none"
+                    >
+                      <defs>
+                        <clipPath id="circleClip">
+                          <circle cx="28" cy="28" r="27" />
+                        </clipPath>
+                      </defs>
+                      {/* Stream - comes from left, clipped by circle */}
+                      <path
+                        ref={streamRef}
+                        d="M -50 28 L 56 28"
+                        stroke="hsl(var(--foreground))"
+                        strokeWidth="0"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeDasharray="106"
+                        strokeDashoffset="106"
+                        clipPath="url(#circleClip)"
+                      />
+                      {/* Border circle */}
+                      <circle
+                        cx="28"
+                        cy="28"
+                        r="27"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        fill="none"
+                        className="group-hover:stroke-accent transition-colors duration-300"
+                      />
+                      {/* Play icon - fades out as black fills */}
+                      <g ref={playIconRef}>
+                        <path
+                          d="M24 20L36 28L24 36V20Z"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                          className="group-hover:stroke-accent transition-colors duration-300"
+                        />
+                      </g>
+                    </svg>
                     <span ref={playTextRef}>Comment ça marche</span>
                   </button>
                 </Magnetic>
