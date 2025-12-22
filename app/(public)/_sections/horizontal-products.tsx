@@ -67,9 +67,9 @@ export function HorizontalProducts() {
   }, []);
 
   return (
-    <>
+    <div className="relative z-[70] bg-background">
       {/* Section header */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-8 text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
             Nos Solutions
@@ -147,7 +147,7 @@ export function HorizontalProducts() {
           </div>
         </HorizontalPanel>
       </HorizontalSection>
-    </>
+    </div>
   );
 }
 

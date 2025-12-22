@@ -1,15 +1,18 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, type RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Magnetic from "@/_components/ui/magnetic-button";
-import { BrandOverlay, type BrandOverlayRef } from "./hero/brand-overlay";
+import { type BrandOverlayRef } from "./hero/brand-overlay";
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface HeroProps {
+  brandOverlayRef: RefObject<BrandOverlayRef | null>;
+}
 
-export function Hero() {
+export function Hero({ brandOverlayRef }: HeroProps) {
   const containerRef = useRef<HTMLElement>(null);
   const cursorCircleRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -37,7 +40,6 @@ export function Hero() {
   const circleStrokeRef = useRef<SVGCircleElement>(null);
   const circleFillRef = useRef<SVGCircleElement>(null);
   const titleContainerRef = useRef<HTMLDivElement>(null);
-  const brandOverlayRef = useRef<BrandOverlayRef>(null);
 
   // Detect mobile
   useEffect(() => {
@@ -420,7 +422,7 @@ export function Hero() {
 
       // At the end of zoom, show the brand overlay
       const brand = brandOverlayRef.current;
-      if (brand) {
+      if (brand?.overlay && brand?.container && brand?.lines?.length) {
         tl.to(brand.overlay, { opacity: 1, duration: 0.05 }, zoomEnd - 0.05);
         tl.to(brand.container, { opacity: 1, duration: 0.01 }, zoomEnd);
         tl.fromTo(
@@ -433,7 +435,7 @@ export function Hero() {
     });
 
     return () => ctx.revert();
-  }, [isMobile]);
+  }, [isMobile, brandOverlayRef]);
 
   return (
     <section
@@ -447,8 +449,6 @@ export function Hero() {
         style={{ transform: "translateY(100%)" }}
       />
 
-      {/* Brand overlay - appears when circle zoom completes */}
-      <BrandOverlay ref={brandOverlayRef} />
 
 
       {/* Mouse follower circle - hidden on mobile */}
