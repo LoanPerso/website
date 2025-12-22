@@ -3,12 +3,12 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Section } from "@/_components/layout/section";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function BrandStatement() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const linesRef = useRef<HTMLDivElement[]>([]);
 
   const lines = [
@@ -26,8 +26,8 @@ export function BrandStatement() {
         gsap.fromTo(
           line,
           {
-            opacity: 0.15,
-            y: 30,
+            opacity: 0,
+            y: 50,
           },
           {
             opacity: 1,
@@ -35,9 +35,9 @@ export function BrandStatement() {
             duration: 1,
             ease: "power3.out",
             scrollTrigger: {
-              trigger: line,
-              start: "top 80%",
-              end: "top 40%",
+              trigger: sectionRef.current,
+              start: "top 60%",
+              end: "top 20%",
               scrub: 1,
             },
           }
@@ -49,27 +49,33 @@ export function BrandStatement() {
   }, []);
 
   return (
-    <Section theme="dark" size="xl" className="flex items-center">
-      <div ref={containerRef} className="max-w-5xl mx-auto">
-        {lines.map((line, i) => (
-          <div
-            key={i}
-            ref={(el) => {
-              if (el) linesRef.current[i] = el;
-            }}
-            className="overflow-hidden"
-          >
-            <p
-              className={`font-serif text-4xl md:text-6xl lg:text-7xl leading-tight mb-4 ${
-                i === 1 || i === 3 ? "text-accent" : "text-white"
-              }`}
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen w-full flex items-center justify-center z-[60]"
+      style={{ backgroundColor: "transparent" }}
+    >
+      <div className="container mx-auto px-6 md:px-8">
+        <div ref={containerRef} className="max-w-5xl mx-auto text-center">
+          {lines.map((line, i) => (
+            <div
+              key={i}
+              ref={(el) => {
+                if (el) linesRef.current[i] = el;
+              }}
+              className="overflow-hidden"
             >
-              {line}
-            </p>
-          </div>
-        ))}
+              <p
+                className={`font-serif text-4xl md:text-6xl lg:text-7xl leading-tight mb-4 ${
+                  i === 1 || i === 3 ? "text-accent" : "text-white"
+                }`}
+              >
+                {line}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
 

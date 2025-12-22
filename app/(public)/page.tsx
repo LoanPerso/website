@@ -4,7 +4,6 @@ import CustomCursor from "@/_components/ui/custom-cursor";
 import Preloader from "@/_components/preloader";
 import {
   Hero,
-  BrandStatement,
   HorizontalProducts,
   Stats,
   Process,
@@ -19,13 +18,10 @@ export default function PublicHome() {
       <CustomCursor />
       <Preloader />
 
-      {/* Section 1: Hero */}
+      {/* Section 1: Hero (includes Brand Statement) */}
       <Hero />
 
-      {/* Section 2: Brand Statement */}
-      <BrandStatement />
-
-      {/* Section 3: Horizontal Scroll Products */}
+      {/* Section 2: Horizontal Scroll Products */}
       <HorizontalProducts />
 
       {/* Section 4: Stats */}

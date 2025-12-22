@@ -36,6 +36,9 @@ export function Hero() {
   const circleStrokeRef = useRef<SVGCircleElement>(null);
   const circleFillRef = useRef<SVGCircleElement>(null);
   const titleContainerRef = useRef<HTMLDivElement>(null);
+  const blackOverlayRef = useRef<HTMLDivElement>(null);
+  const brandTextRef = useRef<HTMLDivElement>(null);
+  const brandLinesRef = useRef<HTMLDivElement[]>([]);
 
   // Detect mobile
   useEffect(() => {
@@ -415,6 +418,34 @@ export function Hero() {
         },
         zoomStart
       );
+
+      // At the end of zoom, show the black overlay
+      tl.to(
+        blackOverlayRef.current,
+        { opacity: 1, duration: 0.05 },
+        zoomEnd - 0.05
+      );
+
+      // Show brand text container
+      tl.to(
+        brandTextRef.current,
+        { opacity: 1, duration: 0.01 },
+        zoomEnd
+      );
+
+      // Animate each line of brand text
+      tl.fromTo(
+        brandLinesRef.current,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.15,
+          stagger: 0.03,
+          ease: "power3.out"
+        },
+        zoomEnd
+      );
     });
 
     return () => ctx.revert();
@@ -431,6 +462,42 @@ export function Hero() {
         className="md:hidden fixed inset-0 z-50 bg-deep-black pointer-events-none"
         style={{ transform: "translateY(100%)" }}
       />
+
+      {/* Black overlay that persists for BrandStatement section */}
+      <div
+        ref={blackOverlayRef}
+        className="fixed inset-0 z-[55] bg-deep-black pointer-events-none opacity-0"
+      />
+
+      {/* Brand statement text - appears when circle is at 100% */}
+      <div
+        ref={brandTextRef}
+        className="fixed inset-0 z-[60] flex items-center justify-center pointer-events-none opacity-0"
+      >
+        <div className="max-w-5xl mx-auto text-center px-6">
+          {[
+            { text: "Les banques vous ignorent.", accent: false },
+            { text: "Nous, on vous écoute.", accent: true },
+            { text: "Crédit transparent pour ceux", accent: false },
+            { text: "que le système oublie.", accent: true },
+          ].map((line, i) => (
+            <div
+              key={i}
+              ref={(el) => {
+                if (el) brandLinesRef.current[i] = el;
+              }}
+            >
+              <p
+                className={`font-serif text-4xl md:text-6xl lg:text-7xl leading-tight mb-4 ${
+                  line.accent ? "text-accent" : "text-white"
+                }`}
+              >
+                {line.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
 
       {/* Mouse follower circle - hidden on mobile */}
