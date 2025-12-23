@@ -67,23 +67,29 @@ export function HorizontalProducts() {
   }, []);
 
   return (
-    <div className="relative z-[70] bg-background">
-      {/* Section header */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-6 md:px-8 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
-            Nos Solutions
-          </p>
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl">
-            Un crédit pour
-            <br />
-            <span className="text-accent">chaque besoin</span>
-          </h2>
-        </div>
-      </section>
+    <div className="relative z-[70]">
+      {/* Horizontal scroll section - header integrated as first panel */}
+      <HorizontalSection panels={products.length + 2} className="bg-background">
+        {/* Intro Panel */}
+        <HorizontalPanel className="bg-background">
+          <div className="text-center">
+            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6">
+              Nos Solutions
+            </p>
+            <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-8">
+              Un crédit pour
+              <br />
+              <span className="text-accent">chaque besoin</span>
+            </h2>
+            <div className="flex items-center justify-center gap-3 text-muted-foreground">
+              <span className="text-sm uppercase tracking-wider">Scroll</span>
+              <svg className="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </div>
+        </HorizontalPanel>
 
-      {/* Horizontal scroll section */}
-      <HorizontalSection panels={products.length + 1} className="bg-background">
         {products.map((product, i) => (
           <HorizontalPanel key={i} className={product.color}>
             <div className="max-w-4xl w-full grid md:grid-cols-2 gap-12 items-center">

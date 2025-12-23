@@ -1,6 +1,10 @@
 "use client";
 
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useImperativeHandle, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const BRAND_LINES = [
   { text: "Les banques vous ignorent.", accent: false },
@@ -19,6 +23,29 @@ export const BrandOverlay = forwardRef<BrandOverlayRef>((_, ref) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const linesRef = useRef<HTMLDivElement[]>([]);
+
+  // Hide overlay when scrolled past hero section
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: "body",
+        start: "top top",
+        end: "+=200%", // After hero + some scroll
+        onUpdate: (self) => {
+          // Hide when scrolled past ~150% of viewport
+          if (self.progress > 0.6) {
+            gsap.set(overlayRef.current, { visibility: "hidden" });
+            gsap.set(containerRef.current, { visibility: "hidden" });
+          } else {
+            gsap.set(overlayRef.current, { visibility: "visible" });
+            gsap.set(containerRef.current, { visibility: "visible" });
+          }
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   useImperativeHandle(ref, () => ({
     overlay: overlayRef.current,
