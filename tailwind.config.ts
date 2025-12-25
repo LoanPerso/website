@@ -52,6 +52,27 @@ const config: Config = {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui"],
         serif: ["var(--font-serif)", "ui-serif", "Georgia"],
         display: ["var(--font-serif)", "ui-serif", "Georgia"]
+      },
+      keyframes: {
+        toss: {
+          "0%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-4px) rotate(10deg)" },
+          "100%": { transform: "translateY(0) rotate(0deg)" }
+        },
+        slideRight: {
+          "0%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(4px)" },
+          "100%": { transform: "translateX(0)" }
+        },
+        grow: {
+          "0%": { transform: "scaleY(0)" },
+          "100%": { transform: "scaleY(1)" }
+        }
+      },
+      animation: {
+        toss: "toss 0.6s ease-out",
+        slideRight: "slideRight 0.6s ease-out",
+        grow: "grow 0.6s ease-out forwards"
       }
     }
   },
