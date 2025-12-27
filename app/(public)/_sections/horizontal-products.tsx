@@ -142,19 +142,25 @@ export function HorizontalProducts() {
       <HorizontalSection panels={products.length + 2} className="bg-background">
         {/* Intro Panel */}
         <HorizontalPanel className="bg-background">
-          <div className="text-center">
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6">
+          <div className="text-center px-4">
+            <p className="text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground mb-4 md:mb-6">
               Nos Solutions
             </p>
-            <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-8">
+            <h2 className="font-serif text-4xl md:text-7xl lg:text-8xl mb-6 md:mb-8">
               Un crédit pour
               <br />
               <span className="text-accent">chaque besoin</span>
             </h2>
+            {/* Desktop: horizontal arrow, Mobile: vertical arrow */}
             <div className="flex items-center justify-center gap-3 text-muted-foreground">
-              <span className="text-sm uppercase tracking-wider">Scroll</span>
-              <svg className="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <span className="text-xs md:text-sm uppercase tracking-wider">Scroll</span>
+              {/* Horizontal arrow for desktop */}
+              <svg className="w-6 h-6 animate-pulse hidden md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+              {/* Vertical arrow for mobile */}
+              <svg className="w-6 h-6 animate-bounce md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </div>
           </div>
@@ -162,39 +168,39 @@ export function HorizontalProducts() {
 
         {products.map((product, i) => (
           <HorizontalPanel key={i} className={product.color}>
-            <div className="max-w-4xl w-full grid md:grid-cols-2 gap-12 items-center">
-              {/* Left: Number & Title */}
-              <div>
+            <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
+              {/* Number - Large decorative, positioned differently on mobile */}
+              <div className="relative md:static">
                 <span
                   ref={(el) => {
                     if (el) numbersRef.current[i] = el;
                   }}
-                  className="block font-serif text-[12rem] md:text-[16rem] leading-none opacity-20"
+                  className="block font-serif text-[8rem] md:text-[16rem] leading-none opacity-10 md:opacity-20 absolute -top-8 -left-2 md:static"
                 >
                   {product.number}
                 </span>
               </div>
 
-              {/* Right: Content */}
-              <div>
-                <p className="text-accent text-sm uppercase tracking-wider mb-2">
+              {/* Content */}
+              <div className="relative z-10">
+                <p className="text-accent text-xs md:text-sm uppercase tracking-wider mb-2">
                   {product.range}
                 </p>
                 <h3
                   ref={(el) => {
                     if (el) titlesRef.current[i] = el;
                   }}
-                  className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
+                  className="font-serif text-3xl md:text-5xl lg:text-6xl mb-4 md:mb-6"
                 >
                   {product.title}
                 </h3>
-                <p className="text-lg text-muted-foreground mb-8 max-w-md">
+                <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-md">
                   {product.description}
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
                   {product.features.map((feature, j) => (
                     <li key={j} className="flex items-center gap-3 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -207,44 +213,46 @@ export function HorizontalProducts() {
         {/* CTA Panel with other products */}
         <HorizontalPanel className="bg-deep-black">
           <div className="text-white max-w-4xl w-full">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Left: Title */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+              {/* Title */}
               <div className="text-center md:text-left">
-                <p className="text-accent text-sm uppercase tracking-wider mb-4">
+                <p className="text-accent text-xs md:text-sm uppercase tracking-wider mb-3 md:mb-4">
                   Et bien plus encore
                 </p>
-                <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
+                <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl mb-4 md:mb-6">
                   Découvrez tous
                   <br />
                   nos produits
                 </h3>
-                <Magnetic>
-                  <button className="px-8 py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-deep-black transition-colors duration-300">
-                    Voir tout →
-                  </button>
-                </Magnetic>
+                <div className="hidden md:block">
+                  <Magnetic>
+                    <button className="px-8 py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-deep-black transition-colors duration-300">
+                      Voir tout →
+                    </button>
+                  </Magnetic>
+                </div>
               </div>
 
-              {/* Right: Other products list */}
-              <div className="space-y-3">
+              {/* Other products list */}
+              <div className="space-y-2 md:space-y-3">
                 {otherProducts.map((product, i) => (
                   <div
                     key={i}
-                    className="group cursor-icon-target flex items-center gap-4 p-4 border border-white/10 rounded-lg hover:border-accent/30 transition-colors duration-500 cursor-pointer"
+                    className="group cursor-icon-target flex items-center gap-3 md:gap-4 p-3 md:p-4 border border-white/10 rounded-lg hover:border-accent/30 transition-colors duration-500 cursor-pointer"
                   >
-                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
                       {product.icon}
                     </div>
-                    <div>
-                      <h4 className="font-medium text-white">
+                    <div className="min-w-0">
+                      <h4 className="font-medium text-white text-sm md:text-base">
                         {product.title}
                       </h4>
-                      <p className="text-sm text-white/50">
+                      <p className="text-xs md:text-sm text-white/50 truncate">
                         {product.tagline}
                       </p>
                     </div>
                     <svg
-                      className="w-5 h-5 text-white/20 shrink-0 ml-auto"
+                      className="w-4 h-4 md:w-5 md:h-5 text-white/20 shrink-0 ml-auto"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -253,6 +261,13 @@ export function HorizontalProducts() {
                     </svg>
                   </div>
                 ))}
+              </div>
+
+              {/* Mobile CTA button */}
+              <div className="md:hidden text-center pt-4">
+                <button className="px-6 py-3 border border-white/20 rounded-full text-white text-sm active:bg-white active:text-deep-black transition-colors duration-300">
+                  Voir tout →
+                </button>
               </div>
             </div>
           </div>
