@@ -108,10 +108,13 @@ const otherProducts = [
 export function HorizontalProducts() {
   const numbersRef = useRef<HTMLSpanElement[]>([]);
   const titlesRef = useRef<HTMLHeadingElement[]>([]);
+  const mobileCardsRef = useRef<HTMLDivElement[]>([]);
+  const introRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate elements as they come into view during horizontal scroll
+      // Desktop: Animate elements during horizontal scroll
       numbersRef.current.forEach((num) => {
         if (!num) return;
         gsap.fromTo(
@@ -131,6 +134,158 @@ export function HorizontalProducts() {
           }
         );
       });
+
+      // Mobile: Animate each card's content on scroll
+      const mm = gsap.matchMedia();
+      mm.add("(max-width: 767px)", () => {
+        mobileCardsRef.current.forEach((card) => {
+          if (!card) return;
+
+          const number = card.querySelector(".mobile-number");
+          const range = card.querySelector(".mobile-range");
+          const title = card.querySelector(".mobile-title");
+          const description = card.querySelector(".mobile-description");
+          const features = card.querySelectorAll(".mobile-feature");
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: card,
+              start: "top 50%",
+              toggleActions: "play none none none",
+            },
+          });
+
+          // Number drops in with scale - more dramatic
+          if (number) {
+            tl.fromTo(
+              number,
+              { opacity: 0, scale: 0.3, y: -60 },
+              { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(2)" },
+              0
+            );
+          }
+
+          // Range slides up - bigger movement
+          if (range) {
+            tl.fromTo(
+              range,
+              { opacity: 0, y: 40 },
+              { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+              0.15
+            );
+          }
+
+          // Title reveals with bigger movement
+          if (title) {
+            tl.fromTo(
+              title,
+              { opacity: 0, y: 80, skewY: 3 },
+              { opacity: 1, y: 0, skewY: 0, duration: 0.9, ease: "power3.out" },
+              0.25
+            );
+          }
+
+          // Description fades in - bigger movement
+          if (description) {
+            tl.fromTo(
+              description,
+              { opacity: 0, y: 50 },
+              { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
+              0.45
+            );
+          }
+
+          // Features stagger in - bigger movement
+          if (features.length > 0) {
+            tl.fromTo(
+              features,
+              { opacity: 0, x: -40 },
+              { opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: "power2.out" },
+              0.55
+            );
+          }
+        });
+
+        // Intro animation
+        if (introRef.current) {
+          const introTitle = introRef.current.querySelector(".intro-title");
+          const introSubtitle = introRef.current.querySelector(".intro-subtitle");
+          const introScroll = introRef.current.querySelector(".intro-scroll");
+
+          const introTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: introRef.current,
+              start: "top 50%",
+              toggleActions: "play none none none",
+            },
+          });
+
+          if (introSubtitle) {
+            introTl.fromTo(
+              introSubtitle,
+              { opacity: 0, y: 40 },
+              { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
+              0
+            );
+          }
+          if (introTitle) {
+            introTl.fromTo(
+              introTitle,
+              { opacity: 0, y: 100 },
+              { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+              0.15
+            );
+          }
+          if (introScroll) {
+            introTl.fromTo(
+              introScroll,
+              { opacity: 0, y: 20 },
+              { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+              0.5
+            );
+          }
+        }
+
+        // CTA animation
+        if (ctaRef.current) {
+          const ctaTitle = ctaRef.current.querySelector(".cta-title");
+          const ctaItems = ctaRef.current.querySelectorAll(".cta-item");
+          const ctaButton = ctaRef.current.querySelector(".cta-button");
+
+          const ctaTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: ctaRef.current,
+              start: "top 50%",
+              toggleActions: "play none none none",
+            },
+          });
+
+          if (ctaTitle) {
+            ctaTl.fromTo(
+              ctaTitle,
+              { opacity: 0, y: 60 },
+              { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+              0
+            );
+          }
+          if (ctaItems.length > 0) {
+            ctaTl.fromTo(
+              ctaItems,
+              { opacity: 0, y: 40 },
+              { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" },
+              0.25
+            );
+          }
+          if (ctaButton) {
+            ctaTl.fromTo(
+              ctaButton,
+              { opacity: 0, scale: 0.7, y: 30 },
+              { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "back.out(2)" },
+              0.6
+            );
+          }
+        }
+      });
     });
 
     return () => ctx.revert();
@@ -142,24 +297,24 @@ export function HorizontalProducts() {
       <HorizontalSection panels={products.length + 2} className="bg-background">
         {/* Intro Panel */}
         <HorizontalPanel className="bg-background">
-          <div className="text-center px-4">
-            <p className="text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground mb-4 md:mb-6">
+          <div ref={introRef} className="text-center px-4">
+            <p className="intro-subtitle text-sm md:text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6">
               Nos Solutions
             </p>
-            <h2 className="font-serif text-4xl md:text-7xl lg:text-8xl mb-6 md:mb-8">
+            <h2 className="intro-title font-serif text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight">
               Un crédit pour
               <br />
               <span className="text-accent">chaque besoin</span>
             </h2>
             {/* Desktop: horizontal arrow, Mobile: vertical arrow */}
-            <div className="flex items-center justify-center gap-3 text-muted-foreground">
-              <span className="text-xs md:text-sm uppercase tracking-wider">Scroll</span>
+            <div className="intro-scroll flex items-center justify-center gap-3 text-muted-foreground">
+              <span className="text-sm uppercase tracking-wider">Scroll</span>
               {/* Horizontal arrow for desktop */}
               <svg className="w-6 h-6 animate-pulse hidden md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
               {/* Vertical arrow for mobile */}
-              <svg className="w-6 h-6 animate-bounce md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-7 h-7 animate-bounce md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </div>
@@ -168,44 +323,71 @@ export function HorizontalProducts() {
 
         {products.map((product, i) => (
           <HorizontalPanel key={i} className={product.color}>
-            <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
-              {/* Number - Large decorative, positioned differently on mobile */}
-              <div className="relative md:static">
+            {/* Desktop layout */}
+            <div className="hidden md:grid max-w-4xl w-full grid-cols-2 gap-12 items-center">
+              <div className="relative">
                 <span
                   ref={(el) => {
                     if (el) numbersRef.current[i] = el;
                   }}
-                  className="block font-serif text-[8rem] md:text-[16rem] leading-none opacity-10 md:opacity-20 absolute -top-8 -left-2 md:static"
+                  className="block font-serif text-[16rem] leading-none text-dark-gold/30"
                 >
                   {product.number}
                 </span>
               </div>
-
-              {/* Content */}
-              <div className="relative z-10">
-                <p className="text-accent text-xs md:text-sm uppercase tracking-wider mb-2">
+              <div>
+                <p className="text-dark-gold text-sm uppercase tracking-wider mb-2">
                   {product.range}
                 </p>
                 <h3
                   ref={(el) => {
                     if (el) titlesRef.current[i] = el;
                   }}
-                  className="font-serif text-3xl md:text-5xl lg:text-6xl mb-4 md:mb-6"
+                  className="font-serif text-5xl lg:text-6xl mb-6"
                 >
                   {product.title}
                 </h3>
-                <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-md">
+                <p className="text-lg text-muted-foreground mb-8 max-w-md">
                   {product.description}
                 </p>
-                <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
+                <ul className="space-y-3 mb-8">
                   {product.features.map((feature, j) => (
                     <li key={j} className="flex items-center gap-3 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-dark-gold flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
               </div>
+            </div>
+
+            {/* Mobile layout - centered, much bigger */}
+            <div
+              ref={(el) => {
+                if (el) mobileCardsRef.current[i] = el;
+              }}
+              className="md:hidden w-full text-center"
+            >
+              <span className="mobile-number inline-block font-serif text-8xl text-dark-gold/60 mb-4">
+                {product.number}
+              </span>
+              <p className="mobile-range text-dark-gold text-base uppercase tracking-widest mb-4">
+                {product.range}
+              </p>
+              <h3 className="mobile-title font-serif text-5xl leading-tight mb-6">
+                {product.title}
+              </h3>
+              <p className="mobile-description text-lg text-muted-foreground mb-10 max-w-sm mx-auto leading-relaxed">
+                {product.description}
+              </p>
+              <ul className="space-y-5 text-left max-w-xs mx-auto">
+                {product.features.map((feature, j) => (
+                  <li key={j} className="mobile-feature flex items-center gap-4 text-lg">
+                    <span className="w-2.5 h-2.5 rounded-full bg-dark-gold flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
           </HorizontalPanel>
         ))}
@@ -213,46 +395,42 @@ export function HorizontalProducts() {
         {/* CTA Panel with other products */}
         <HorizontalPanel className="bg-deep-black">
           <div className="text-white max-w-4xl w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-              {/* Title */}
-              <div className="text-center md:text-left">
-                <p className="text-accent text-xs md:text-sm uppercase tracking-wider mb-3 md:mb-4">
+            {/* Desktop layout */}
+            <div className="hidden md:grid grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-accent text-sm uppercase tracking-wider mb-4">
                   Et bien plus encore
                 </p>
-                <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl mb-4 md:mb-6">
+                <h3 className="font-serif text-5xl lg:text-6xl mb-6">
                   Découvrez tous
                   <br />
                   nos produits
                 </h3>
-                <div className="hidden md:block">
-                  <Magnetic>
-                    <button className="px-8 py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-deep-black transition-colors duration-300">
-                      Voir tout →
-                    </button>
-                  </Magnetic>
-                </div>
+                <Magnetic>
+                  <button className="px-8 py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-deep-black transition-colors duration-300">
+                    Voir tout →
+                  </button>
+                </Magnetic>
               </div>
-
-              {/* Other products list */}
-              <div className="space-y-2 md:space-y-3">
+              <div className="space-y-3">
                 {otherProducts.map((product, i) => (
                   <div
                     key={i}
-                    className="group cursor-icon-target flex items-center gap-3 md:gap-4 p-3 md:p-4 border border-white/10 rounded-lg hover:border-accent/30 transition-colors duration-500 cursor-pointer"
+                    className="group cursor-icon-target flex items-center gap-4 p-4 border border-white/10 rounded-lg hover:border-accent/30 transition-colors duration-500 cursor-pointer"
                   >
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
                       {product.icon}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-medium text-white text-sm md:text-base">
+                      <h4 className="font-medium text-white text-base">
                         {product.title}
                       </h4>
-                      <p className="text-xs md:text-sm text-white/50 truncate">
+                      <p className="text-sm text-white/50 truncate">
                         {product.tagline}
                       </p>
                     </div>
                     <svg
-                      className="w-4 h-4 md:w-5 md:h-5 text-white/20 shrink-0 ml-auto"
+                      className="w-5 h-5 text-white/20 shrink-0 ml-auto"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -262,13 +440,49 @@ export function HorizontalProducts() {
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Mobile CTA button */}
-              <div className="md:hidden text-center pt-4">
-                <button className="px-6 py-3 border border-white/20 rounded-full text-white text-sm active:bg-white active:text-deep-black transition-colors duration-300">
-                  Voir tout →
-                </button>
+            {/* Mobile layout */}
+            <div ref={ctaRef} className="md:hidden text-center">
+              <div className="cta-title">
+                <p className="text-accent text-base uppercase tracking-widest mb-4">
+                  Et bien plus encore
+                </p>
+                <h3 className="font-serif text-4xl mb-10 leading-tight">
+                  Découvrez tous<br />nos produits
+                </h3>
               </div>
+              <div className="space-y-4 mb-10">
+                {otherProducts.map((product, i) => (
+                  <div
+                    key={i}
+                    className="cta-item flex items-center gap-4 p-5 border border-white/10 rounded-2xl active:border-accent/50 transition-colors cursor-pointer"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                      {product.icon}
+                    </div>
+                    <div className="min-w-0 text-left flex-1">
+                      <h4 className="font-medium text-white text-lg">
+                        {product.title}
+                      </h4>
+                      <p className="text-base text-white/50">
+                        {product.tagline}
+                      </p>
+                    </div>
+                    <svg
+                      className="w-6 h-6 text-white/30 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                ))}
+              </div>
+              <button className="cta-button w-full max-w-xs px-8 py-5 bg-white text-deep-black rounded-full text-lg font-medium active:scale-95 transition-transform">
+                Voir tout →
+              </button>
             </div>
           </div>
         </HorizontalPanel>

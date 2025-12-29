@@ -9,7 +9,7 @@ import {
   Stats,
   Process,
   FeaturesGrid,
-  Testimonials,
+  Faq,
   CtaFinal,
 } from "./_sections";
 import { BrandOverlay, type BrandOverlayRef } from "./_sections/hero/brand-overlay";
@@ -40,8 +40,8 @@ export default function PublicHome() {
       {/* Section 6: Features Grid */}
       <FeaturesGrid />
 
-      {/* Section 7: Testimonials */}
-      <Testimonials />
+      {/* Section 7: FAQ */}
+      <Faq />
 
       {/* Section 8: CTA Final */}
       <CtaFinal />
