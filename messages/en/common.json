@@ -2,6 +2,28 @@
   "nav": {
     "clientArea": "Client Area"
   },
+  "regulatory": {
+    "title": "Regulatory Information",
+    "company": "Quickfund OÜ is a credit company registered in Estonia, duly authorized by the Finantsinspektsioon (Estonian Financial Supervisory Authority) to operate as a lender.",
+    "passport": "Thanks to the 'European passport', we are able to offer our credit solutions to clients located in the EU, in strict compliance with applicable regulations.",
+    "availability": "Offer available only to residents of Estonia. Although our license allows us to receive loan applications from other EU countries, a contract can only be established if the application complies with all applicable consumer credit regulations.",
+    "refusal": "An application may be rejected if it does not meet legal requirements — this refusal simply reflects non-compliance with consumer protection standards.",
+    "compliance": "We fully comply with consumer protection codes, European directives (Directive 2008/48/EC), and GDPR.",
+    "fraud": "In case of attempted fraud, Quickfund OÜ reserves the right to report the facts to the competent authorities.",
+    "accept": "I understand and accept",
+    "moreInfo": "Learn more"
+  },
+  "cookies": {
+    "message": "We use cookies to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "moreInfo": "Learn more"
+  },
+  "languageNotice": {
+    "detected": "Language detected based on your location",
+    "terms": "Displayed terms and rates apply to residents of this country.",
+    "change": "You can change country at any time."
+  },
   "footer": {
     "title": "Let's talk",
     "titleAccent": "credit.",

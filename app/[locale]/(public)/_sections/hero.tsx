@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Magnetic from "@/_components/ui/magnetic-button";
+import { useSiteReady } from "@/_components/site-ready-provider";
 import { type BrandOverlayRef } from "./hero/brand-overlay";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,9 +16,11 @@ interface HeroProps {
 
 export function Hero({ brandOverlayRef }: HeroProps) {
   const t = useTranslations("home");
+  const { isSiteReady } = useSiteReady();
   const containerRef = useRef<HTMLElement>(null);
   const cursorCircleRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   // Refs for animations
   const eyebrowRef = useRef<HTMLDivElement>(null);
@@ -70,10 +73,14 @@ export function Hero({ brandOverlayRef }: HeroProps) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Main animations
+  // Main animations - triggered when site is ready
   useEffect(() => {
+    if (!isSiteReady || hasAnimated) return;
+
+    setHasAnimated(true);
+
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 3.5 });
+      const tl = gsap.timeline({ delay: 0.1 });
 
       // Decorative elements
       const circles = decorRef.current?.querySelectorAll(".deco-circle");
@@ -206,7 +213,7 @@ export function Hero({ brandOverlayRef }: HeroProps) {
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [isSiteReady, hasAnimated]);
 
   // Scroll exit animations - ALL content disappears while pinned, then scroll resumes
   useEffect(() => {

@@ -2,6 +2,28 @@
   "nav": {
     "clientArea": "Kliendi ala"
   },
+  "regulatory": {
+    "title": "Regulatiivne teave",
+    "company": "Quickfund OÜ on Eestis registreeritud krediidiettevõte, millel on Finantsinspektsioonilt laenuandja tegevusluba.",
+    "passport": "Tänu 'Euroopa passile' saame pakkuda oma laenulahendusi klientidele kogu EL-is, järgides rangelt kehtivaid eeskirju.",
+    "availability": "Pakkumine on saadaval ainult Eesti residentidele. Kuigi meie litsents võimaldab meil vastu võtta laenutaotlusi teistest EL-i riikidest, saab lepingu sõlmida ainult siis, kui taotlus vastab kõigile kehtivatele tarbijakrediidi eeskirjadele.",
+    "refusal": "Taotlus võidakse tagasi lükata, kui see ei vasta õiguslikele nõuetele — see keeldumine peegeldab lihtsalt tarbijakaitse standarditele mittevastavust.",
+    "compliance": "Järgime täielikult tarbijakaitseseadusi, Euroopa direktiive (direktiiv 2008/48/EÜ) ja isikuandmete kaitse üldmäärust (GDPR).",
+    "fraud": "Pettusekatsete korral jätab Quickfund OÜ endale õiguse teatada asjaoludest pädevatele asutustele.",
+    "accept": "Mõistan ja nõustun",
+    "moreInfo": "Lisateave"
+  },
+  "cookies": {
+    "message": "Kasutame küpsiseid teie kogemuse parandamiseks.",
+    "accept": "Nõustu",
+    "decline": "Keeldu",
+    "moreInfo": "Lisateave"
+  },
+  "languageNotice": {
+    "detected": "Keel tuvastatud teie asukoha põhjal",
+    "terms": "Kuvatud tingimused ja hinnad kehtivad selle riigi elanikele.",
+    "change": "Saate riiki igal ajal muuta."
+  },
   "footer": {
     "title": "Räägime",
     "titleAccent": "laenust.",

@@ -1,7 +1,19 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import { locales, type Locale } from '@/_i18n/config';
+import { SiteReadyProvider } from '@/_components/site-ready-provider';
+
+const RegulatoryDisclaimer = dynamic(
+  () => import('@/_components/regulatory-disclaimer').then(mod => mod.RegulatoryDisclaimer),
+  { ssr: false }
+);
+
+const CookieConsent = dynamic(
+  () => import('@/_components/cookie-consent').then(mod => mod.CookieConsent),
+  { ssr: false }
+);
 
 type Props = {
   children: React.ReactNode;
@@ -21,7 +33,11 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
 
   return (
     <NextIntlClientProvider messages={messages}>
-      {children}
+      <SiteReadyProvider>
+        {children}
+        <RegulatoryDisclaimer />
+        <CookieConsent />
+      </SiteReadyProvider>
     </NextIntlClientProvider>
   );
 }

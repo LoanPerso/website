@@ -2,8 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
+import { useSiteReady } from "./site-ready-provider";
 
 export default function Preloader() {
+  const t = useTranslations("common");
+  const { setPreloaderDone } = useSiteReady();
   const [isComplete, setIsComplete] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
@@ -19,6 +23,7 @@ export default function Preloader() {
         onComplete: () => {
           document.body.style.overflow = "";
           setIsComplete(true);
+          setPreloaderDone();
         },
       });
 
@@ -120,6 +125,7 @@ export default function Preloader() {
     const timeout = setTimeout(() => {
       document.body.style.overflow = "";
       setIsComplete(true);
+      setPreloaderDone();
     }, 5000);
 
     return () => {
@@ -127,7 +133,7 @@ export default function Preloader() {
       document.body.style.overflow = "";
       clearTimeout(timeout);
     };
-  }, []);
+  }, [setPreloaderDone]);
 
   if (isComplete) return null;
 
@@ -183,7 +189,7 @@ export default function Preloader() {
 
         {/* Tagline */}
         <p className="mt-4 text-sm md:text-base text-white/40 tracking-[0.3em] uppercase">
-          Crédit Transparent
+          {t("preloader.tagline")}
         </p>
 
         {/* Progress line */}
