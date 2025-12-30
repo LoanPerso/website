@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "clientArea": "Espace Client"
+  },
+  "footer": {
+    "title": "Parlons",
+    "titleAccent": "crédit.",
+    "description": "Une question ? Un projet ? Notre équipe vous répond en moins de 24h.",
+    "contact": "Nous contacter",
+    "sections": {
+      "products": "Produits",
+      "legal": "Légal",
+      "social": "Suivez-nous"
+    },
+    "products": {
+      "microCredit": "Micro-crédit",
+      "consumerCredit": "Crédit conso",
+      "proCredit": "Crédit pro"
+    },
+    "legal": {
+      "legalNotice": "Mentions légales",
+      "privacy": "Politique de confidentialité",
+      "terms": "CGU"
+    },
+    "locations": {
+      "estonia": "Estonie",
+      "france": "France",
+      "europe": "Europe"
+    }
+  },
+  "preloader": {
+    "tagline": "Crédit Transparent"
+  }
+}

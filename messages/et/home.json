@@ -1,0 +1,201 @@
+{
+  "brandStatement": {
+    "line1": "Pangad eiravad teid.",
+    "line2": "Meie kuulame.",
+    "line3": "Läbipaistev laen neile,",
+    "line4": "keda süsteem unustab."
+  },
+  "hero": {
+    "eyebrow": "Läbipaistev laen",
+    "title": {
+      "line1": "Teie laen,",
+      "line2": "24 tunniga.",
+      "line3": "Üllatusteta, žargoonita."
+    },
+    "subtitle": {
+      "range": "20€ kuni 10 000€.",
+      "guarantee": "Vastus garanteeritud.",
+      "explain": "Ja kui vastus on ei, selgitame miks"
+    },
+    "cta": {
+      "primary": "Simuleeri oma laenu",
+      "secondary": "Kuidas see töötab"
+    },
+    "badges": {
+      "online": "100% veebis",
+      "noCommitment": "Kohustuseta",
+      "guaranteed": "Vastus garanteeritud"
+    },
+    "scroll": "Keri"
+  },
+  "products": {
+    "eyebrow": "Meie lahendused",
+    "title": {
+      "line1": "Laen igale",
+      "line2": "vajadusele"
+    },
+    "scroll": "Keri",
+    "items": {
+      "micro": {
+        "title": "Mikrolaen",
+        "range": "20€ - 500€",
+        "description": "Väikesteks kiireloomulisteks vajadusteks. Vastus vähem kui 24 tunniga, ilma tarbetu paberitööta.",
+        "features": ["Summad alates 20€", "Kiire heakskiit", "Ilma keeruliste tõenditeta"]
+      },
+      "conso": {
+        "title": "Tarbimislaen",
+        "range": "500€ - 5 000€",
+        "description": "Rahastage oma isiklikke projekte läbipaistvalt. Me ütleme alati miks.",
+        "features": ["Konkurentsivõimelised intressimäärad", "Paindlikud maksegraafikud", "Tasuta ennetähtaegne tagasimakse"]
+      },
+      "pro": {
+        "title": "Ärilaen",
+        "range": "1 000€ - 10 000€",
+        "description": "Vabakutselistele ja väikeettevõtetele. Me mõistame muutuvaid sissetulekuid.",
+        "features": ["Ebatüüpilised profiilid aktsepteeritud", "Personaliseeritud analüüs", "Coaching kaasas"]
+      }
+    },
+    "otherProducts": {
+      "title": "Ja palju muud",
+      "subtitle": {
+        "line1": "Avastage kõik",
+        "line2": "meie tooted"
+      },
+      "cta": "Vaata kõiki →",
+      "items": {
+        "student": {
+          "title": "Õppelaen",
+          "tagline": "Rahastage oma õpinguid ilma pangagarantiita"
+        },
+        "advance": {
+          "title": "Palgaavans",
+          "tagline": "Teie palk mõned päevad varem"
+        },
+        "leasing": {
+          "title": "Liising",
+          "tagline": "Kasutage ilma ostmata"
+        },
+        "buyback": {
+          "title": "Laenude koondamine",
+          "tagline": "Lihtsustage oma igakuiseid makseid"
+        },
+        "coaching": {
+          "title": "Finantsnõustamine",
+          "tagline": "Juhtige oma eelarvet, mitte vastupidi"
+        }
+      }
+    }
+  },
+  "stats": {
+    "items": {
+      "response": {
+        "value": "24",
+        "suffix": "h",
+        "label": "Vastus garanteeritud"
+      },
+      "minimum": {
+        "value": "20",
+        "suffix": "€",
+        "label": "Minimaalne summa"
+      },
+      "transparency": {
+        "value": "100",
+        "suffix": "%",
+        "label": "Läbipaistvus"
+      },
+      "hiddenFees": {
+        "value": "0",
+        "suffix": "€",
+        "label": "Varjatud tasud"
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Kuidas see töötab",
+    "title": {
+      "line1": "Lihtne. Kiire.",
+      "line2": "Läbipaistev."
+    },
+    "steps": {
+      "simulate": {
+        "number": "01",
+        "title": "Simuleeri",
+        "description": "2 minutit, et teada saada oma sobivus ja personaliseeritud pakkumine."
+      },
+      "send": {
+        "number": "02",
+        "title": "Saada",
+        "description": "Lihtsad dokumendid, kiire kontrollimine. Pole tarbetut paberitööd."
+      },
+      "response": {
+        "number": "03",
+        "title": "Vastus",
+        "description": "Maksimaalselt 24 tundi. Ja kui vastus on ei, selgitame miks."
+      },
+      "receive": {
+        "number": "04",
+        "title": "Saa",
+        "description": "Kohene ülekanne pärast heakskiitu. Raha teie kontol mõne tunniga."
+      }
+    }
+  },
+  "features": {
+    "eyebrow": "Miks meie",
+    "title": {
+      "line1": "Mis teeb meid",
+      "line2": "erinevaks"
+    },
+    "learnMore": "Loe rohkem",
+    "items": {
+      "transparency": {
+        "title": "Täielik läbipaistvus",
+        "description": "Me ütleme alati miks. Heaks kiidetud või keeldutud, te teate täpset põhjust."
+      },
+      "atypical": {
+        "title": "Ebatüüpilised profiilid",
+        "description": "Vabakutselised, üliõpilased, pangast keeldutud... Me mõistame, et iga olukord on ainulaadne."
+      },
+      "coaching": {
+        "title": "Finantsnõustamine",
+        "description": "Tasuta kaasas. Me aitame teil eelarvet hallata, mitte ainult laenata."
+      },
+      "flexibility": {
+        "title": "Täielik paindlikkus",
+        "description": "Makse edasilükkamine, tasuta ennetähtaegne tagasimakse, vajadusel restruktureerimine."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Korduma kippuvad küsimused",
+    "title": {
+      "line1": "Me",
+      "line2": "vastame"
+    },
+    "items": {
+      "who": {
+        "question": "Kes võib laenu taotleda?",
+        "answer": "Iga täiskasvanu, kes elab Eestis, isegi keerulise pangaajalooga. Me analüüsime teie praegust olukorda, mitte ainult minevikku."
+      },
+      "time": {
+        "question": "Kui kaua raha saamiseks kulub?",
+        "answer": "Põhimõtteline vastus 24 tunni jooksul, raha kantakse üle 48-72 tunni jooksul pärast kinnitamist. Kõik toimub 100% veebis."
+      },
+      "fees": {
+        "question": "Kas on varjatud tasusid?",
+        "answer": "Mitte ühtegi. Näidatud intressimäär on lõplik. Pole toimikutasusid, pole ennetähtaegse tagasimakse trahve."
+      }
+    }
+  },
+  "cta": {
+    "title": {
+      "line1": "Valmis saama",
+      "line2": "oma laenu?"
+    },
+    "subtitle": {
+      "line1": "Tasuta simulatsioon 2 minutiga.",
+      "line2": "Kohustuseta, mõjutamata teie skoori."
+    },
+    "button": "Alusta oma taotlust",
+    "benefits": "Vastus 24h • 100% veebis • Varjatud tasudeta"
+  }
+}

@@ -3,37 +3,35 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import { Section } from "@/_components/layout/section";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const features = [
-  {
-    title: "Transparence totale",
-    description: "On vous dit toujours pourquoi. Accepté ou refusé, vous saurez la raison exacte.",
-    image: "/images/transparency.jpg",
-  },
-  {
-    title: "Profils atypiques",
-    description: "Freelances, étudiants, refusés bancaires... On comprend que chaque situation est unique.",
-    image: "/images/profiles.jpg",
-  },
-  {
-    title: "Coaching financier",
-    description: "Inclus gratuitement. On vous accompagne pour gérer votre budget, pas juste pour prêter.",
-    image: "/images/coaching.jpg",
-  },
-  {
-    title: "Flexibilité totale",
-    description: "Report d'échéance, remboursement anticipé gratuit, restructuration si besoin.",
-    image: "/images/flexibility.jpg",
-  },
-];
-
 export function FeaturesGrid() {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const features = [
+    {
+      title: t("features.items.transparency.title"),
+      description: t("features.items.transparency.description"),
+    },
+    {
+      title: t("features.items.atypical.title"),
+      description: t("features.items.atypical.description"),
+    },
+    {
+      title: t("features.items.coaching.title"),
+      description: t("features.items.coaching.description"),
+    },
+    {
+      title: t("features.items.flexibility.title"),
+      description: t("features.items.flexibility.description"),
+    },
+  ];
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -41,10 +39,7 @@ export function FeaturesGrid() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         itemsRef.current,
-        {
-          opacity: 0,
-          y: 80,
-        },
+        { opacity: 0, y: 80 },
         {
           opacity: 1,
           y: 0,
@@ -66,12 +61,12 @@ export function FeaturesGrid() {
     <Section theme="dark" size="xl">
       <div className="text-center mb-16">
         <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
-          Pourquoi nous
+          {t("features.eyebrow")}
         </p>
         <h2 className="font-serif text-4xl md:text-6xl text-white">
-          Ce qui nous rend
+          {t("features.title.line1")}
           <br />
-          <span className="text-accent">différents</span>
+          <span className="text-accent">{t("features.title.line2")}</span>
         </h2>
       </div>
 
@@ -89,14 +84,12 @@ export function FeaturesGrid() {
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            {/* Background gradient on hover */}
             <div
               className={`absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent transition-opacity duration-500 ${
                 hoveredIndex === i ? "opacity-100" : "opacity-0"
               }`}
             />
 
-            {/* Content */}
             <div className="relative z-10">
               <span className="text-accent text-sm tracking-wider mb-4 block">
                 0{i + 1}
@@ -108,7 +101,6 @@ export function FeaturesGrid() {
                 {feature.description}
               </p>
 
-              {/* Arrow on hover */}
               <div
                 className={`mt-6 flex items-center gap-2 text-accent transition-all duration-300 ${
                   hoveredIndex === i
@@ -116,7 +108,7 @@ export function FeaturesGrid() {
                     : "opacity-0 -translate-x-4"
                 }`}
               >
-                <span className="text-sm uppercase tracking-wider">En savoir plus</span>
+                <span className="text-sm uppercase tracking-wider">{t("features.learnMore")}</span>
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -133,7 +125,6 @@ export function FeaturesGrid() {
               </div>
             </div>
 
-            {/* Corner decoration */}
             <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
               <div
                 className={`absolute top-0 right-0 w-[1px] h-20 bg-accent origin-top transition-transform duration-500 ${

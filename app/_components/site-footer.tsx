@@ -3,7 +3,8 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/_i18n/navigation";
 import Magnetic from "@/_components/ui/magnetic-button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,19 +14,8 @@ const socialLinks = [
   { name: "Twitter", href: "#" },
 ];
 
-const legalLinks = [
-  { name: "Mentions légales", href: "/legal" },
-  { name: "Politique de confidentialité", href: "/privacy" },
-  { name: "CGU", href: "/terms" },
-];
-
-const productLinks = [
-  { name: "Micro-crédit", href: "/products/micro-credit" },
-  { name: "Crédit conso", href: "/products/consumer" },
-  { name: "Crédit pro", href: "/products/professional" },
-];
-
 export function SiteFooter() {
+  const t = useTranslations("common");
   const footerRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
@@ -34,7 +24,6 @@ export function SiteFooter() {
     if (!footerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Title reveal
       gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: 60 },
@@ -50,7 +39,6 @@ export function SiteFooter() {
         }
       );
 
-      // Links stagger
       const linkGroups = linksRef.current?.querySelectorAll(".link-group");
       if (linkGroups) {
         gsap.fromTo(
@@ -74,34 +62,43 @@ export function SiteFooter() {
     return () => ctx.revert();
   }, []);
 
+  const productLinks = [
+    { name: t("footer.products.microCredit"), href: "/products/micro-credit" },
+    { name: t("footer.products.consumerCredit"), href: "/products/consumer" },
+    { name: t("footer.products.proCredit"), href: "/products/professional" },
+  ];
+
+  const legalLinks = [
+    { name: t("footer.legal.legalNotice"), href: "/legal" },
+    { name: t("footer.legal.privacy"), href: "/privacy" },
+    { name: t("footer.legal.terms"), href: "/terms" },
+  ];
+
   return (
     <footer
       ref={footerRef}
       className="relative bg-deep-black text-white pt-24 pb-12 overflow-hidden"
     >
       <div className="container mx-auto px-6 md:px-8 relative z-10">
-        {/* Main content */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-16">
-          {/* Left: CTA */}
           <div className="space-y-8 max-w-xl">
             <h2
               ref={titleRef}
               className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[0.9]"
             >
-              Parlons
+              {t("footer.title")}
               <br />
-              <span className="text-accent italic">crédit.</span>
+              <span className="text-accent italic">{t("footer.titleAccent")}</span>
             </h2>
             <p className="text-white/50 text-lg max-w-md">
-              Une question ? Un projet ? Notre équipe vous répond en moins de
-              24h.
+              {t("footer.description")}
             </p>
             <Magnetic>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 rounded-full text-sm uppercase tracking-wider hover:bg-white hover:text-deep-black transition-all duration-300"
               >
-                Nous contacter
+                {t("footer.contact")}
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -119,18 +116,17 @@ export function SiteFooter() {
             </Magnetic>
           </div>
 
-          {/* Right: Links */}
           <div
             ref={linksRef}
             className="grid grid-cols-2 md:grid-cols-3 gap-12 text-sm"
           >
             <div className="link-group space-y-4">
               <h3 className="text-white uppercase tracking-wider text-xs font-medium">
-                Produits
+                {t("footer.sections.products")}
               </h3>
               <ul className="space-y-3 text-white/50">
                 {productLinks.map((link) => (
-                  <li key={link.name}>
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="hover:text-accent transition-colors duration-200"
@@ -144,11 +140,11 @@ export function SiteFooter() {
 
             <div className="link-group space-y-4">
               <h3 className="text-white uppercase tracking-wider text-xs font-medium">
-                Légal
+                {t("footer.sections.legal")}
               </h3>
               <ul className="space-y-3 text-white/50">
                 {legalLinks.map((link) => (
-                  <li key={link.name}>
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="hover:text-accent transition-colors duration-200"
@@ -162,7 +158,7 @@ export function SiteFooter() {
 
             <div className="link-group space-y-4">
               <h3 className="text-white uppercase tracking-wider text-xs font-medium">
-                Suivez-nous
+                {t("footer.sections.social")}
               </h3>
               <ul className="space-y-3 text-white/50">
                 {socialLinks.map((link) => (
@@ -182,7 +178,6 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30 uppercase tracking-wider">
           <div className="flex items-center gap-2">
             <span className="text-accent font-serif text-base not-italic normal-case">
@@ -192,19 +187,17 @@ export function SiteFooter() {
           </div>
 
           <div className="flex items-center gap-6">
-            <span>Estonie</span>
+            <span>{t("footer.locations.estonia")}</span>
             <span className="w-1 h-1 rounded-full bg-white/20" />
-            <span>France</span>
+            <span>{t("footer.locations.france")}</span>
             <span className="w-1 h-1 rounded-full bg-white/20" />
-            <span>Europe</span>
+            <span>{t("footer.locations.europe")}</span>
           </div>
         </div>
       </div>
 
-      {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-accent/5 to-transparent pointer-events-none" />
 
-      {/* Corner accent */}
       <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-[1px] h-32 bg-gradient-to-b from-accent/50 to-transparent" />
         <div className="absolute top-0 right-0 w-32 h-[1px] bg-gradient-to-l from-accent/50 to-transparent" />

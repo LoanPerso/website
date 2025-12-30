@@ -3,11 +3,13 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import Magnetic from "@/_components/ui/magnetic-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function CtaFinal() {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -43,7 +45,6 @@ export function CtaFinal() {
           "-=0.3"
         );
 
-      // Floating decoration animation
       gsap.to(decorRef.current, {
         y: 20,
         rotation: 5,
@@ -62,40 +63,37 @@ export function CtaFinal() {
       ref={containerRef}
       className="relative py-32 md:py-48 bg-deep-black overflow-hidden"
     >
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-deep-black via-deep-black to-accent/10" />
 
-      {/* Floating decoration */}
       <div
         ref={decorRef}
         className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-accent/5 blur-3xl"
       />
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-center">
         <h2
           ref={titleRef}
           className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6"
         >
-          Prêt à obtenir
+          {t("cta.title.line1")}
           <br />
-          <span className="text-accent">votre crédit ?</span>
+          <span className="text-accent">{t("cta.title.line2")}</span>
         </h2>
 
         <p
           ref={subtitleRef}
           className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-12"
         >
-          Simulation gratuite en 2 minutes.
+          {t("cta.subtitle.line1")}
           <br />
-          Sans engagement, sans impact sur votre score.
+          {t("cta.subtitle.line2")}
         </p>
 
         <div ref={ctaRef}>
           <Magnetic>
             <button className="group relative px-12 py-5 bg-accent text-deep-black rounded-full font-medium text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-accent/30">
               <span className="relative z-10 flex items-center gap-3">
-                Commencer ma demande
+                {t("cta.button")}
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
                   fill="none"
@@ -114,12 +112,11 @@ export function CtaFinal() {
           </Magnetic>
 
           <p className="mt-6 text-sm text-white/40">
-            Réponse en 24h • 100% en ligne • Pas de frais cachés
+            {t("cta.benefits")}
           </p>
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-deep-black to-transparent" />
     </section>
   );

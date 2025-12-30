@@ -3,15 +3,9 @@
 import { forwardRef, useImperativeHandle, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const BRAND_LINES = [
-  { text: "Les banques vous ignorent.", accent: false },
-  { text: "Nous, on vous écoute.", accent: true },
-  { text: "Crédit transparent pour ceux", accent: false },
-  { text: "que le système oublie.", accent: true },
-] as const;
 
 export interface BrandOverlayRef {
   overlay: HTMLDivElement | null;
@@ -20,9 +14,17 @@ export interface BrandOverlayRef {
 }
 
 export const BrandOverlay = forwardRef<BrandOverlayRef>((_, ref) => {
+  const t = useTranslations("home");
   const overlayRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const linesRef = useRef<HTMLDivElement[]>([]);
+
+  const brandLines = [
+    { text: t("brandStatement.line1"), accent: false },
+    { text: t("brandStatement.line2"), accent: true },
+    { text: t("brandStatement.line3"), accent: false },
+    { text: t("brandStatement.line4"), accent: true },
+  ];
 
   // Hide overlay when scrolled past hero section
   useEffect(() => {
@@ -67,7 +69,7 @@ export const BrandOverlay = forwardRef<BrandOverlayRef>((_, ref) => {
         className="fixed inset-0 z-[60] flex items-center justify-center pointer-events-none opacity-0"
       >
         <div className="max-w-5xl mx-auto text-center px-6">
-          {BRAND_LINES.map((line, i) => (
+          {brandLines.map((line, i) => (
             <div
               key={i}
               ref={(el) => {

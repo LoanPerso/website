@@ -1,13 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 
+import { Link } from "@/_i18n/navigation";
 import { marketingNav } from "@/_config/navigation";
 import Magnetic from "@/_components/ui/magnetic-button";
+import { LanguageSwitcher } from "@/_components/language-switcher";
 
 export function SiteHeader() {
+  const t = useTranslations("common");
   const headerRef = useRef<HTMLElement>(null);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -122,15 +125,18 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <Magnetic>
-            <Link
-              href="/dashboard"
-              className="hidden md:inline-flex px-6 py-3 border border-white/20 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
-            >
-              Espace Client
-            </Link>
-          </Magnetic>
+          {/* Desktop CTA + Language */}
+          <div className="hidden md:flex items-center gap-4">
+            <Magnetic>
+              <Link
+                href="/dashboard"
+                className="px-6 py-3 border border-white/20 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+              >
+                {t("nav.clientArea")}
+              </Link>
+            </Magnetic>
+            <LanguageSwitcher variant="desktop" />
+          </div>
 
           {/* Mobile menu button */}
           <button
@@ -177,13 +183,14 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <div className="mt-8 pt-8 border-t border-background/10 w-full flex justify-center">
+            <div className="mt-8 pt-8 border-t border-background/10 w-full flex flex-col items-center gap-6">
+              <LanguageSwitcher variant="mobile" />
               <Link
                 href="/dashboard"
                 onClick={() => setIsMenuOpen(false)}
                 className="px-8 py-4 bg-background text-foreground font-medium text-sm uppercase tracking-widest hover:bg-accent transition-colors"
               >
-                Espace Client
+                {t("nav.clientArea")}
               </Link>
             </div>
           </nav>

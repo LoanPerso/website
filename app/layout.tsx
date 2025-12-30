@@ -17,16 +17,17 @@ const dmSans = DM_Sans({
 
 export const metadata = {
   title: "Quickfund",
-  description: "Financement premium pour vos projets",
+  description: "Premium financing for your projects",
 };
 
-export default function RootLayout({
-  children,
-}: {
+type Props = {
   children: React.ReactNode;
-}) {
+  params: { locale: string };
+};
+
+export default function RootLayout({ children, params }: Props) {
   return (
-    <html lang="fr" className={`${dmSans.variable} ${cormorant.variable}`}>
+    <html lang={params.locale || 'et'} className={`${dmSans.variable} ${cormorant.variable}`}>
       <body>{children}</body>
     </html>
   );

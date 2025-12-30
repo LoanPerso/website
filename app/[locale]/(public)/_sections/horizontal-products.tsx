@@ -3,37 +3,13 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import { HorizontalSection, HorizontalPanel } from "@/_components/layout/horizontal-section";
 import Magnetic from "@/_components/ui/magnetic-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const products = [
-  {
-    number: "01",
-    title: "Micro-crédit",
-    range: "20€ - 500€",
-    description: "Pour les petits besoins urgents. Réponse en moins de 24h, sans paperasse inutile.",
-    features: ["Montants dès 20€", "Approbation rapide", "Sans justificatif complexe"],
-    color: "bg-accent/10",
-  },
-  {
-    number: "02",
-    title: "Crédit Conso",
-    range: "500€ - 5 000€",
-    description: "Financez vos projets personnels avec transparence. On vous dit toujours pourquoi.",
-    features: ["Taux compétitifs", "Échéances flexibles", "Remboursement anticipé gratuit"],
-    color: "bg-deep-black text-white",
-  },
-  {
-    number: "03",
-    title: "Crédit Pro",
-    range: "1 000€ - 10 000€",
-    description: "Pour les freelances et TPEs. On comprend les revenus variables.",
-    features: ["Profils atypiques acceptés", "Analyse personnalisée", "Coaching inclus"],
-    color: "bg-accent/10",
-  },
-];
+const productColors = ["bg-accent/10", "bg-deep-black text-white", "bg-accent/10"];
 
 // Animated icons components
 const StudentIcon = () => (
@@ -77,40 +53,56 @@ const ChartIcon = () => (
   </svg>
 );
 
-const otherProducts = [
-  {
-    title: "Prêt étudiant",
-    tagline: "Financez vos études sans garant bancaire",
-    icon: <StudentIcon />,
-  },
-  {
-    title: "Avance sur salaire",
-    tagline: "Votre salaire, quelques jours plus tôt",
-    icon: <ClockIcon />,
-  },
-  {
-    title: "Leasing",
-    tagline: "Utilisez sans acheter",
-    icon: <CarIcon />,
-  },
-  {
-    title: "Rachat de crédits",
-    tagline: "Simplifiez vos mensualités",
-    icon: <RefreshIcon />,
-  },
-  {
-    title: "Coaching financier",
-    tagline: "Pilotez votre budget, pas l'inverse",
-    icon: <ChartIcon />,
-  },
+const otherProductIcons = [
+  <StudentIcon key="student" />,
+  <ClockIcon key="clock" />,
+  <CarIcon key="car" />,
+  <RefreshIcon key="refresh" />,
+  <ChartIcon key="chart" />,
 ];
 
+const otherProductKeys = ["student", "advance", "leasing", "buyback", "coaching"] as const;
+
 export function HorizontalProducts() {
+  const t = useTranslations("home");
   const numbersRef = useRef<HTMLSpanElement[]>([]);
   const titlesRef = useRef<HTMLHeadingElement[]>([]);
   const mobileCardsRef = useRef<HTMLDivElement[]>([]);
   const introRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
+  const products = [
+    {
+      number: "01",
+      title: t("products.items.micro.title"),
+      range: t("products.items.micro.range"),
+      description: t("products.items.micro.description"),
+      features: t.raw("products.items.micro.features") as string[],
+      color: productColors[0],
+    },
+    {
+      number: "02",
+      title: t("products.items.conso.title"),
+      range: t("products.items.conso.range"),
+      description: t("products.items.conso.description"),
+      features: t.raw("products.items.conso.features") as string[],
+      color: productColors[1],
+    },
+    {
+      number: "03",
+      title: t("products.items.pro.title"),
+      range: t("products.items.pro.range"),
+      description: t("products.items.pro.description"),
+      features: t.raw("products.items.pro.features") as string[],
+      color: productColors[2],
+    },
+  ];
+
+  const otherProducts = otherProductKeys.map((key, i) => ({
+    title: t(`products.otherProducts.items.${key}.title`),
+    tagline: t(`products.otherProducts.items.${key}.tagline`),
+    icon: otherProductIcons[i],
+  }));
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -299,16 +291,16 @@ export function HorizontalProducts() {
         <HorizontalPanel className="bg-background">
           <div ref={introRef} className="text-center px-4">
             <p className="intro-subtitle text-sm md:text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6">
-              Nos Solutions
+              {t("products.eyebrow")}
             </p>
             <h2 className="intro-title font-serif text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight">
-              Un crédit pour
+              {t("products.title.line1")}
               <br />
-              <span className="text-accent">chaque besoin</span>
+              <span className="text-accent">{t("products.title.line2")}</span>
             </h2>
             {/* Desktop: horizontal arrow, Mobile: vertical arrow */}
             <div className="intro-scroll flex items-center justify-center gap-3 text-muted-foreground">
-              <span className="text-sm uppercase tracking-wider">Scroll</span>
+              <span className="text-sm uppercase tracking-wider">{t("products.scroll")}</span>
               {/* Horizontal arrow for desktop */}
               <svg className="w-6 h-6 animate-pulse hidden md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -399,16 +391,16 @@ export function HorizontalProducts() {
             <div className="hidden md:grid grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-accent text-sm uppercase tracking-wider mb-4">
-                  Et bien plus encore
+                  {t("products.otherProducts.title")}
                 </p>
                 <h3 className="font-serif text-5xl lg:text-6xl mb-6">
-                  Découvrez tous
+                  {t("products.otherProducts.subtitle.line1")}
                   <br />
-                  nos produits
+                  {t("products.otherProducts.subtitle.line2")}
                 </h3>
                 <Magnetic>
                   <button className="px-8 py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-deep-black transition-colors duration-300">
-                    Voir tout →
+                    {t("products.otherProducts.cta")}
                   </button>
                 </Magnetic>
               </div>
@@ -446,10 +438,10 @@ export function HorizontalProducts() {
             <div ref={ctaRef} className="md:hidden text-center">
               <div className="cta-title">
                 <p className="text-accent text-base uppercase tracking-widest mb-4">
-                  Et bien plus encore
+                  {t("products.otherProducts.title")}
                 </p>
                 <h3 className="font-serif text-4xl mb-10 leading-tight">
-                  Découvrez tous<br />nos produits
+                  {t("products.otherProducts.subtitle.line1")}<br />{t("products.otherProducts.subtitle.line2")}
                 </h3>
               </div>
               <div className="space-y-4 mb-10">
@@ -481,7 +473,7 @@ export function HorizontalProducts() {
                 ))}
               </div>
               <button className="cta-button w-full max-w-xs px-8 py-5 bg-white text-deep-black rounded-full text-lg font-medium active:scale-95 transition-transform">
-                Voir tout →
+                {t("products.otherProducts.cta")}
               </button>
             </div>
           </div>

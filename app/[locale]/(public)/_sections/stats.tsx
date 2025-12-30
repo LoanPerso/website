@@ -3,21 +3,23 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import { Section } from "@/_components/layout/section";
 import { Counter } from "@/_components/animations/counter";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
-  { value: 24, suffix: "h", label: "Réponse garantie" },
-  { value: 20, prefix: "", suffix: "€", label: "Montant minimum" },
-  { value: 100, suffix: "%", label: "Transparence" },
-  { value: 0, prefix: "", suffix: "€", label: "Frais cachés" },
-];
-
 export function Stats() {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement[]>([]);
+
+  const stats = [
+    { value: 24, suffix: "h", label: t("stats.items.response.label") },
+    { value: 20, prefix: "", suffix: "€", label: t("stats.items.minimum.label") },
+    { value: 100, suffix: "%", label: t("stats.items.transparency.label") },
+    { value: 0, prefix: "", suffix: "€", label: t("stats.items.hiddenFees.label") },
+  ];
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -25,10 +27,7 @@ export function Stats() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         itemsRef.current,
-        {
-          opacity: 0,
-          y: 60,
-        },
+        { opacity: 0, y: 60 },
         {
           opacity: 1,
           y: 0,

@@ -3,32 +3,31 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import { Section } from "@/_components/layout/section";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const faqs = [
-  {
-    question: "Qui peut demander un crédit ?",
-    answer:
-      "Toute personne majeure résidant en France, même avec un historique bancaire compliqué. Nous analysons votre situation actuelle, pas seulement votre passé.",
-  },
-  {
-    question: "Combien de temps pour recevoir l'argent ?",
-    answer:
-      "Réponse de principe en 24h, fonds versés sous 48-72h après validation. Tout se fait 100% en ligne.",
-  },
-  {
-    question: "Y a-t-il des frais cachés ?",
-    answer:
-      "Aucun. Le taux affiché est le taux final. Pas de frais de dossier, pas de pénalités de remboursement anticipé.",
-  },
-];
-
 export function Faq() {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement[]>([]);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      question: t("faq.items.who.question"),
+      answer: t("faq.items.who.answer"),
+    },
+    {
+      question: t("faq.items.time.question"),
+      answer: t("faq.items.time.answer"),
+    },
+    {
+      question: t("faq.items.fees.question"),
+      answer: t("faq.items.fees.answer"),
+    },
+  ];
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -36,10 +35,7 @@ export function Faq() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         itemsRef.current,
-        {
-          opacity: 0,
-          y: 40,
-        },
+        { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
@@ -65,12 +61,12 @@ export function Faq() {
     <Section theme="light" size="xl">
       <div className="text-center mb-16">
         <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
-          Questions fréquentes
+          {t("faq.eyebrow")}
         </p>
         <h2 className="font-serif text-4xl md:text-6xl">
-          On vous
+          {t("faq.title.line1")}
           <br />
-          <span className="text-accent">répond</span>
+          <span className="text-accent">{t("faq.title.line2")}</span>
         </h2>
       </div>
 

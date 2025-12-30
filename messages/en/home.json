@@ -1,0 +1,201 @@
+{
+  "brandStatement": {
+    "line1": "Banks ignore you.",
+    "line2": "We listen.",
+    "line3": "Transparent credit for those",
+    "line4": "the system forgets."
+  },
+  "hero": {
+    "eyebrow": "Transparent credit",
+    "title": {
+      "line1": "Your loan,",
+      "line2": "in 24 hours.",
+      "line3": "No surprises, no jargon."
+    },
+    "subtitle": {
+      "range": "From €20 to €10,000.",
+      "guarantee": "Response guaranteed.",
+      "explain": "And if it's a no, we explain why"
+    },
+    "cta": {
+      "primary": "Simulate my loan",
+      "secondary": "How it works"
+    },
+    "badges": {
+      "online": "100% online",
+      "noCommitment": "No commitment",
+      "guaranteed": "Response guaranteed"
+    },
+    "scroll": "Scroll"
+  },
+  "products": {
+    "eyebrow": "Our Solutions",
+    "title": {
+      "line1": "A loan for",
+      "line2": "every need"
+    },
+    "scroll": "Scroll",
+    "items": {
+      "micro": {
+        "title": "Micro-loan",
+        "range": "€20 - €500",
+        "description": "For small urgent needs. Response in less than 24 hours, without unnecessary paperwork.",
+        "features": ["Amounts from €20", "Fast approval", "No complex documents"]
+      },
+      "conso": {
+        "title": "Consumer Credit",
+        "range": "€500 - €5,000",
+        "description": "Finance your personal projects with transparency. We always tell you why.",
+        "features": ["Competitive rates", "Flexible terms", "Free early repayment"]
+      },
+      "pro": {
+        "title": "Business Credit",
+        "range": "€1,000 - €10,000",
+        "description": "For freelancers and small businesses. We understand variable income.",
+        "features": ["Atypical profiles accepted", "Personalized analysis", "Coaching included"]
+      }
+    },
+    "otherProducts": {
+      "title": "And much more",
+      "subtitle": {
+        "line1": "Discover all",
+        "line2": "our products"
+      },
+      "cta": "See all →",
+      "items": {
+        "student": {
+          "title": "Student loan",
+          "tagline": "Finance your studies without a bank guarantee"
+        },
+        "advance": {
+          "title": "Salary advance",
+          "tagline": "Your salary, a few days earlier"
+        },
+        "leasing": {
+          "title": "Leasing",
+          "tagline": "Use without buying"
+        },
+        "buyback": {
+          "title": "Loan consolidation",
+          "tagline": "Simplify your monthly payments"
+        },
+        "coaching": {
+          "title": "Financial coaching",
+          "tagline": "Manage your budget, not the other way around"
+        }
+      }
+    }
+  },
+  "stats": {
+    "items": {
+      "response": {
+        "value": "24",
+        "suffix": "h",
+        "label": "Response guaranteed"
+      },
+      "minimum": {
+        "value": "20",
+        "suffix": "€",
+        "label": "Minimum amount"
+      },
+      "transparency": {
+        "value": "100",
+        "suffix": "%",
+        "label": "Transparency"
+      },
+      "hiddenFees": {
+        "value": "0",
+        "suffix": "€",
+        "label": "Hidden fees"
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": {
+      "line1": "Simple. Fast.",
+      "line2": "Transparent."
+    },
+    "steps": {
+      "simulate": {
+        "number": "01",
+        "title": "Simulate",
+        "description": "2 minutes to know your eligibility and your personalized offer."
+      },
+      "send": {
+        "number": "02",
+        "title": "Send",
+        "description": "Simple documents, quick verification. No unnecessary paperwork."
+      },
+      "response": {
+        "number": "03",
+        "title": "Response",
+        "description": "24 hours maximum. And if it's a no, we explain why."
+      },
+      "receive": {
+        "number": "04",
+        "title": "Receive",
+        "description": "Instant transfer upon approval. Money in your account within hours."
+      }
+    }
+  },
+  "features": {
+    "eyebrow": "Why us",
+    "title": {
+      "line1": "What makes us",
+      "line2": "different"
+    },
+    "learnMore": "Learn more",
+    "items": {
+      "transparency": {
+        "title": "Total transparency",
+        "description": "We always tell you why. Approved or declined, you'll know the exact reason."
+      },
+      "atypical": {
+        "title": "Atypical profiles",
+        "description": "Freelancers, students, bank-declined... We understand that every situation is unique."
+      },
+      "coaching": {
+        "title": "Financial coaching",
+        "description": "Included for free. We help you manage your budget, not just lend."
+      },
+      "flexibility": {
+        "title": "Total flexibility",
+        "description": "Payment deferral, free early repayment, restructuring if needed."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "title": {
+      "line1": "We",
+      "line2": "answer"
+    },
+    "items": {
+      "who": {
+        "question": "Who can apply for a loan?",
+        "answer": "Any adult residing in Europe, even with a complicated banking history. We analyze your current situation, not just your past."
+      },
+      "time": {
+        "question": "How long to receive the money?",
+        "answer": "Initial response within 24 hours, funds transferred within 48-72 hours after approval. Everything is 100% online."
+      },
+      "fees": {
+        "question": "Are there hidden fees?",
+        "answer": "None. The displayed rate is the final rate. No application fees, no early repayment penalties."
+      }
+    }
+  },
+  "cta": {
+    "title": {
+      "line1": "Ready to get",
+      "line2": "your loan?"
+    },
+    "subtitle": {
+      "line1": "Free simulation in 2 minutes.",
+      "line2": "No commitment, no impact on your score."
+    },
+    "button": "Start my application",
+    "benefits": "Response in 24h • 100% online • No hidden fees"
+  }
+}

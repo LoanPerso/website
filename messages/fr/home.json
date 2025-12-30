@@ -1,0 +1,201 @@
+{
+  "brandStatement": {
+    "line1": "Les banques vous ignorent.",
+    "line2": "Nous, on vous écoute.",
+    "line3": "Crédit transparent pour ceux",
+    "line4": "que le système oublie."
+  },
+  "hero": {
+    "eyebrow": "Crédit transparent",
+    "title": {
+      "line1": "Votre crédit,",
+      "line2": "en 24h.",
+      "line3": "Sans surprise, sans jargon."
+    },
+    "subtitle": {
+      "range": "De 20€ à 10 000€.",
+      "guarantee": "Réponse garantie.",
+      "explain": "Et si c'est non, on vous explique pourquoi"
+    },
+    "cta": {
+      "primary": "Simuler mon crédit",
+      "secondary": "Comment ça marche"
+    },
+    "badges": {
+      "online": "100% en ligne",
+      "noCommitment": "Sans engagement",
+      "guaranteed": "Réponse garantie"
+    },
+    "scroll": "Scroll"
+  },
+  "products": {
+    "eyebrow": "Nos Solutions",
+    "title": {
+      "line1": "Un crédit pour",
+      "line2": "chaque besoin"
+    },
+    "scroll": "Scroll",
+    "items": {
+      "micro": {
+        "title": "Micro-crédit",
+        "range": "20€ - 500€",
+        "description": "Pour les petits besoins urgents. Réponse en moins de 24h, sans paperasse inutile.",
+        "features": ["Montants dès 20€", "Approbation rapide", "Sans justificatif complexe"]
+      },
+      "conso": {
+        "title": "Crédit Conso",
+        "range": "500€ - 5 000€",
+        "description": "Financez vos projets personnels avec transparence. On vous dit toujours pourquoi.",
+        "features": ["Taux compétitifs", "Échéances flexibles", "Remboursement anticipé gratuit"]
+      },
+      "pro": {
+        "title": "Crédit Pro",
+        "range": "1 000€ - 10 000€",
+        "description": "Pour les freelances et TPEs. On comprend les revenus variables.",
+        "features": ["Profils atypiques acceptés", "Analyse personnalisée", "Coaching inclus"]
+      }
+    },
+    "otherProducts": {
+      "title": "Et bien plus encore",
+      "subtitle": {
+        "line1": "Découvrez tous",
+        "line2": "nos produits"
+      },
+      "cta": "Voir tout →",
+      "items": {
+        "student": {
+          "title": "Prêt étudiant",
+          "tagline": "Financez vos études sans garant bancaire"
+        },
+        "advance": {
+          "title": "Avance sur salaire",
+          "tagline": "Votre salaire, quelques jours plus tôt"
+        },
+        "leasing": {
+          "title": "Leasing",
+          "tagline": "Utilisez sans acheter"
+        },
+        "buyback": {
+          "title": "Rachat de crédits",
+          "tagline": "Simplifiez vos mensualités"
+        },
+        "coaching": {
+          "title": "Coaching financier",
+          "tagline": "Pilotez votre budget, pas l'inverse"
+        }
+      }
+    }
+  },
+  "stats": {
+    "items": {
+      "response": {
+        "value": "24",
+        "suffix": "h",
+        "label": "Réponse garantie"
+      },
+      "minimum": {
+        "value": "20",
+        "suffix": "€",
+        "label": "Montant minimum"
+      },
+      "transparency": {
+        "value": "100",
+        "suffix": "%",
+        "label": "Transparence"
+      },
+      "hiddenFees": {
+        "value": "0",
+        "suffix": "€",
+        "label": "Frais cachés"
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": {
+      "line1": "Simple. Rapide.",
+      "line2": "Transparent."
+    },
+    "steps": {
+      "simulate": {
+        "number": "01",
+        "title": "Simulez",
+        "description": "2 minutes pour connaître votre éligibilité et votre offre personnalisée."
+      },
+      "send": {
+        "number": "02",
+        "title": "Envoyez",
+        "description": "Documents simples, vérification rapide. Pas de paperasse inutile."
+      },
+      "response": {
+        "number": "03",
+        "title": "Réponse",
+        "description": "24h maximum. Et si c'est non, on vous explique pourquoi."
+      },
+      "receive": {
+        "number": "04",
+        "title": "Recevez",
+        "description": "Virement instantané dès l'acceptation. L'argent sur votre compte en quelques heures."
+      }
+    }
+  },
+  "features": {
+    "eyebrow": "Pourquoi nous",
+    "title": {
+      "line1": "Ce qui nous rend",
+      "line2": "différents"
+    },
+    "learnMore": "En savoir plus",
+    "items": {
+      "transparency": {
+        "title": "Transparence totale",
+        "description": "On vous dit toujours pourquoi. Accepté ou refusé, vous saurez la raison exacte."
+      },
+      "atypical": {
+        "title": "Profils atypiques",
+        "description": "Freelances, étudiants, refusés bancaires... On comprend que chaque situation est unique."
+      },
+      "coaching": {
+        "title": "Coaching financier",
+        "description": "Inclus gratuitement. On vous accompagne pour gérer votre budget, pas juste pour prêter."
+      },
+      "flexibility": {
+        "title": "Flexibilité totale",
+        "description": "Report d'échéance, remboursement anticipé gratuit, restructuration si besoin."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "title": {
+      "line1": "On vous",
+      "line2": "répond"
+    },
+    "items": {
+      "who": {
+        "question": "Qui peut demander un crédit ?",
+        "answer": "Toute personne majeure résidant en France, même avec un historique bancaire compliqué. Nous analysons votre situation actuelle, pas seulement votre passé."
+      },
+      "time": {
+        "question": "Combien de temps pour recevoir l'argent ?",
+        "answer": "Réponse de principe en 24h, fonds versés sous 48-72h après validation. Tout se fait 100% en ligne."
+      },
+      "fees": {
+        "question": "Y a-t-il des frais cachés ?",
+        "answer": "Aucun. Le taux affiché est le taux final. Pas de frais de dossier, pas de pénalités de remboursement anticipé."
+      }
+    }
+  },
+  "cta": {
+    "title": {
+      "line1": "Prêt à obtenir",
+      "line2": "votre crédit ?"
+    },
+    "subtitle": {
+      "line1": "Simulation gratuite en 2 minutes.",
+      "line2": "Sans engagement, sans impact sur votre score."
+    },
+    "button": "Commencer ma demande",
+    "benefits": "Réponse en 24h • 100% en ligne • Pas de frais cachés"
+  }
+}

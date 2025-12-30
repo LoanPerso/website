@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState, type RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import Magnetic from "@/_components/ui/magnetic-button";
 import { type BrandOverlayRef } from "./hero/brand-overlay";
 
@@ -13,6 +14,7 @@ interface HeroProps {
 }
 
 export function Hero({ brandOverlayRef }: HeroProps) {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLElement>(null);
   const cursorCircleRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -462,7 +464,6 @@ export function Hero({ brandOverlayRef }: HeroProps) {
 
       {/* Decorative elements */}
       <div ref={decorRef} className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="deco-circle absolute top-[15%] right-[12%] w-2 md:w-2.5 h-2 md:h-2.5 rounded-full border border-accent/30" />
         <div className="deco-circle hidden sm:block absolute top-[70%] left-[8%] w-1.5 h-1.5 rounded-full bg-accent/20" />
         <div className="deco-circle absolute bottom-[35%] right-[25%] w-3 h-3 rounded-full border border-foreground/5" />
         <div className="deco-circle hidden lg:block absolute top-[45%] left-[5%] w-3 h-3 rounded-full border border-accent/15" />
@@ -493,7 +494,7 @@ export function Hero({ brandOverlayRef }: HeroProps) {
               <div ref={eyebrowRef} className="flex items-center justify-center gap-4 mb-8">
                 <div ref={eyebrowLineLeftRef} className="w-12 h-[1px] bg-accent" />
                 <span ref={eyebrowTextRef} className="text-sm uppercase tracking-[0.25em] text-muted-foreground font-medium">
-                  Crédit transparent
+                  {t("hero.eyebrow")}
                 </span>
                 <div ref={eyebrowLineRightRef} className="w-12 h-[1px] bg-accent" />
               </div>
@@ -503,21 +504,21 @@ export function Hero({ brandOverlayRef }: HeroProps) {
                 <div className="overflow-hidden">
                   <div ref={line1Ref}>
                     <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-[-0.02em]">
-                      Votre crédit,
+                      {t("hero.title.line1")}
                     </h1>
                   </div>
                 </div>
                 <div className="overflow-hidden">
                   <div ref={line2Ref}>
                     <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-[-0.02em]">
-                      <span className="text-accent italic">en 24h.</span>
+                      <span className="text-accent italic">{t("hero.title.line2")}</span>
                     </h1>
                   </div>
                 </div>
                 <div className="overflow-hidden mt-4">
                   <div ref={line3Ref}>
                     <p className="font-serif text-xl sm:text-2xl md:text-3xl font-light leading-[1.2] text-muted-foreground">
-                      Sans surprise, sans jargon.
+                      {t("hero.title.line3")}
                     </p>
                   </div>
                 </div>
@@ -528,9 +529,9 @@ export function Hero({ brandOverlayRef }: HeroProps) {
                 ref={subtitleRef}
                 className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10"
               >
-                De <span className="text-foreground font-medium">20€ à 10 000€</span>.
-                Réponse garantie. Et si c'est non,{" "}
-                <span className="text-foreground font-medium">on vous explique pourquoi</span>.
+                <span className="text-foreground font-medium">{t("hero.subtitle.range")}</span>{" "}
+                {t("hero.subtitle.guarantee")}{" "}
+                <span className="text-foreground font-medium">{t("hero.subtitle.explain")}</span>.
               </p>
 
               {/* CTA */}
@@ -538,7 +539,7 @@ export function Hero({ brandOverlayRef }: HeroProps) {
                 <Magnetic>
                   <button ref={ctaButtonRef} className="group relative px-10 py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl">
                     <span ref={ctaButtonTextRef} className="relative z-10 flex items-center gap-3">
-                      Simuler mon crédit
+                      {t("hero.cta.primary")}
                       <svg
                         className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                         fill="none"
@@ -610,7 +611,7 @@ export function Hero({ brandOverlayRef }: HeroProps) {
                         />
                       </g>
                     </svg>
-                    <span ref={playTextRef}>Comment ça marche</span>
+                    <span ref={playTextRef}>{t("hero.cta.secondary")}</span>
                   </button>
                 </Magnetic>
               </div>
@@ -625,19 +626,19 @@ export function Hero({ brandOverlayRef }: HeroProps) {
           <div ref={bottomLeftRef} className="flex items-center gap-6 sm:gap-10">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              100% en ligne
+              {t("hero.badges.online")}
             </span>
             <span className="hidden sm:flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Sans engagement
+              {t("hero.badges.noCommitment")}
             </span>
             <span className="hidden md:flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Réponse garantie
+              {t("hero.badges.guaranteed")}
             </span>
           </div>
           <div ref={bottomRightRef} className="flex items-center gap-3">
-            <span className="uppercase tracking-widest text-xs">Scroll</span>
+            <span className="uppercase tracking-widest text-xs">{t("hero.scroll")}</span>
             <svg className="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>

@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "clientArea": "Kliendi ala"
+  },
+  "footer": {
+    "title": "Räägime",
+    "titleAccent": "laenust.",
+    "description": "Küsimus? Projekt? Meie meeskond vastab teile vähem kui 24 tunni jooksul.",
+    "contact": "Võtke meiega ühendust",
+    "sections": {
+      "products": "Tooted",
+      "legal": "Õiguslik",
+      "social": "Jälgi meid"
+    },
+    "products": {
+      "microCredit": "Mikrolaen",
+      "consumerCredit": "Tarbimislaen",
+      "proCredit": "Ärilaen"
+    },
+    "legal": {
+      "legalNotice": "Õigusteave",
+      "privacy": "Privaatsuspoliitika",
+      "terms": "Kasutustingimused"
+    },
+    "locations": {
+      "estonia": "Eesti",
+      "france": "Prantsusmaa",
+      "europe": "Euroopa"
+    }
+  },
+  "preloader": {
+    "tagline": "Läbipaistev laen"
+  }
+}
