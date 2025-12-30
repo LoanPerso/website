@@ -1,6 +1,40 @@
 {
   "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "features": "Pourquoi nous",
+    "pricing": "Tarifs",
     "clientArea": "Espace Client"
+  },
+  "products": {
+    "microCredit": "Micro-crédit",
+    "consumerCredit": "Crédit conso",
+    "proCredit": "Crédit pro",
+    "studentLoan": "Prêt étudiant",
+    "salaryAdvance": "Avance sur salaire",
+    "leasing": "Leasing",
+    "loanConsolidation": "Rachat de crédits",
+    "financialCoaching": "Coaching financier"
+  },
+  "features": {
+    "transparency": "Transparence totale",
+    "atypicalProfiles": "Profils atypiques",
+    "coaching": "Coaching financier",
+    "flexibility": "Flexibilité totale"
+  },
+  "tools": {
+    "simulator": "Simulateur de crédit",
+    "eligibility": "Test d'éligibilité"
+  },
+  "legal": {
+    "legalNotice": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "CGU"
+  },
+  "app": {
+    "dashboard": "Tableau de bord",
+    "settings": "Paramètres",
+    "profile": "Profil"
   },
   "regulatory": {
     "title": "Information réglementaire",

@@ -119,7 +119,7 @@ export function SiteHeader() {
                   href={item.href}
                   className="text-sm uppercase tracking-widest hover:text-gold transition-colors"
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Link>
               </Magnetic>
             ))}
@@ -180,7 +180,7 @@ export function SiteHeader() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-background text-3xl font-serif font-light tracking-tight hover:text-accent transition-colors"
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             ))}
             <div className="mt-8 pt-8 border-t border-background/10 w-full flex flex-col items-center gap-6">

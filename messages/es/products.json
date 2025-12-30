@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "title": "Nuestros Productos de Crédito | Quickfund",
+    "description": "Descubre nuestras soluciones de crédito de 20€ a 10.000€. Microcrédito, crédito al consumo, crédito profesional y más. Respuesta en 24h."
+  },
+  "hero": {
+    "eyebrow": "Nuestras Soluciones",
+    "title": {
+      "line1": "Un crédito para",
+      "line2": "cada necesidad"
+    },
+    "subtitle": "De 20€ a 10.000€, encuentra la financiación adaptada a tu situación. Respuesta garantizada en 24h."
+  },
+  "cta": {
+    "simulate": "Simular mi crédito",
+    "learnMore": "Saber más",
+    "seeAll": "Ver todos los productos"
+  },
+  "categories": {
+    "core": "Productos destacados",
+    "other": "Otras soluciones"
+  },
+  "products": {
+    "microCredit": {
+      "title": "Microcrédito",
+      "tagline": "De 20€ a 500€, respuesta en 24h",
+      "description": "Para pequeñas necesidades urgentes. Sin papeleo innecesario, sin juicios. Entendemos que a veces un pequeño impulso marca la diferencia.",
+      "range": "20€ - 500€",
+      "duration": "1 a 3 meses",
+      "rate": "Desde 12% TAE",
+      "features": [
+        "Importes desde 20€",
+        "Aprobación en menos de 24h",
+        "Sin justificantes complejos",
+        "Perfiles atípicos aceptados"
+      ],
+      "ideal": "Ideal para: fin de mes difícil, gasto imprevisto, compra urgente pequeña"
+    },
+    "consumer": {
+      "title": "Crédito Consumo",
+      "tagline": "Hasta 5.000€, transparente y rápido",
+      "description": "Financia tus proyectos personales con transparencia. Coche, reformas, equipamiento... Siempre te decimos por qué, aceptado o rechazado.",
+      "range": "500€ - 5.000€",
+      "duration": "3 a 36 meses",
+      "rate": "Desde 6% TAE",
+      "features": [
+        "Tipos competitivos",
+        "Cuotas flexibles",
+        "Reembolso anticipado gratis",
+        "100% online, sin cita"
+      ],
+      "ideal": "Ideal para: coche, reformas, electrodomésticos, viajes"
+    },
+    "professional": {
+      "title": "Crédito Profesional",
+      "tagline": "Tesorería rápida para autónomos y pequeñas empresas",
+      "description": "Entendemos los ingresos variables. Autónomos, microempresas, artesanos: no necesitas 3 balances para ser tomado en serio.",
+      "range": "1.000€ - 10.000€",
+      "duration": "3 a 24 meses",
+      "rate": "Desde 6% TAE",
+      "features": [
+        "Ingresos variables aceptados",
+        "Análisis personalizado",
+        "Respuesta en 24-48h",
+        "Coaching incluido gratis"
+      ],
+      "ideal": "Ideal para: tesorería, inversión en equipos, desarrollo"
+    },
+    "student": {
+      "title": "Préstamo Estudiante",
+      "tagline": "Financia tus estudios sin aval bancario",
+      "description": "¿Sin historial crediticio? ¿Sin aval familiar? Evaluamos tu proyecto y potencial, no solo tu pasado.",
+      "range": "500€ - 5.000€",
+      "duration": "Variable + aplazamiento posible",
+      "rate": "Desde 6% TAE",
+      "features": [
+        "Sin aval bancario",
+        "Aplazamiento de pago posible",
+        "Tipos preferenciales estudiantes",
+        "Acompañamiento personalizado"
+      ],
+      "ideal": "Ideal para: matrícula, vivienda, material, movilidad"
+    },
+    "salaryAdvance": {
+      "title": "Anticipo de Nómina",
+      "tagline": "Tu salario, unos días antes",
+      "description": "¿Gasto urgente antes de cobrar? Evita el descubierto bancario costoso. Una solución simple con reembolso automático al recibir el salario.",
+      "range": "Parte del salario",
+      "duration": "Unos días/semanas",
+      "rate": "Desde 8% TAE",
+      "features": [
+        "Reembolso con la nómina",
+        "Sin descubierto",
+        "Riesgo mínimo",
+        "Proceso ultrarrápido"
+      ],
+      "ideal": "Ideal para: fin de mes apretado, gasto imprevisto, factura urgente"
+    },
+    "leasing": {
+      "title": "Leasing",
+      "tagline": "Usa sin comprar",
+      "description": "Vehículo, equipo profesional... El leasing permite distribuir el coste sin inversión pesada. El bien sirve de garantía, mejores tipos.",
+      "range": "Variable según el bien",
+      "duration": "12 a 60 meses",
+      "rate": "Desde 5% TAE",
+      "features": [
+        "Sin compra inmediata",
+        "Cuotas controladas",
+        "Opción de compra al final",
+        "Tipos ventajosos (bien garantizado)"
+      ],
+      "ideal": "Ideal para: vehículo, equipo profesional, material informático"
+    },
+    "loanConsolidation": {
+      "title": "Reunificación de Créditos",
+      "tagline": "Simplifica tus cuotas mensuales",
+      "description": "¿Varios créditos? Los reunificamos en uno solo con una cuota a menudo reducida. Recupera el control de tu presupuesto.",
+      "range": "Variable según situación",
+      "duration": "Variable",
+      "rate": "Según perfil",
+      "features": [
+        "Una sola cuota mensual",
+        "A menudo más barato en total",
+        "Tesorería liberada",
+        "Gestión simplificada"
+      ],
+      "ideal": "Ideal para: múltiples créditos, cuotas demasiado altas, simplificación"
+    },
+    "financialCoaching": {
+      "title": "Coaching Financiero",
+      "tagline": "Controla tu presupuesto, no al revés",
+      "description": "Incluido gratis con cada crédito. Panel de seguimiento, alertas, consejos personalizados. Versión premium disponible para acompañamiento avanzado.",
+      "range": "Gratis / 25€/mes premium",
+      "duration": "Sin compromiso",
+      "rate": "Servicio (no es crédito)",
+      "features": [
+        "Panel de seguimiento",
+        "Alertas automáticas",
+        "Consejos personalizados",
+        "Versión premium con coach"
+      ],
+      "ideal": "Ideal para: dominar tu presupuesto, evitar impagos, mejor gestión"
+    }
+  },
+  "comparison": {
+    "title": "Compara nuestras ofertas",
+    "headers": {
+      "product": "Producto",
+      "amount": "Importe",
+      "duration": "Duración",
+      "rate": "TAE"
+    }
+  },
+  "labels": {
+    "amount": "Importe",
+    "duration": "Duración",
+    "rate": "TAE"
+  },
+  "whyUs": {
+    "title": "¿Por qué Quickfund?",
+    "items": {
+      "transparency": {
+        "title": "Transparencia total",
+        "description": "Siempre te explicamos por qué, aceptado o rechazado."
+      },
+      "speed": {
+        "title": "Respuesta en 24h",
+        "description": "Sin esperas interminables, sabes rápido."
+      },
+      "coaching": {
+        "title": "Coaching incluido",
+        "description": "Te acompañamos, no solo prestamos."
+      }
+    }
+  },
+  "finalCta": {
+    "title": {
+      "line1": "¿Listo para obtener",
+      "line2": "tu crédito?"
+    },
+    "subtitle": "Simulación gratuita en 2 minutos. Sin compromiso, sin impacto en tu puntuación.",
+    "features": "Respuesta en 24h • 100% online • Sin costes ocultos"
+  },
+  "microCredit": {
+    "hero": {
+      "eyebrow": "Microcrédito",
+      "title": "Desde 20€",
+      "subtitle": "Respuesta en 24h",
+      "description": "Los bancos no prestan pequeñas cantidades. Nosotros sí.",
+      "cta": "Simular mi microcrédito"
+    },
+    "stats": {
+      "minAmount": { "value": "20€", "label": "Importe mínimo" },
+      "maxAmount": { "value": "500€", "label": "Importe máximo" },
+      "delay": { "value": "24h", "label": "Tiempo de respuesta" },
+      "rate": { "value": "12%", "label": "TAE desde" }
+    },
+    "problem": {
+      "eyebrow": "El problema",
+      "title": "Los bancos te ignoran",
+      "items": [
+        { "number": "1000€", "text": "Importe mínimo en bancos tradicionales" },
+        { "number": "7d", "text": "Tiempo medio de respuesta" },
+        { "number": "60%", "text": "Rechazo sin explicación" }
+      ]
+    },
+    "solution": {
+      "eyebrow": "Nuestro enfoque",
+      "title": "Pequeño importe, gran diferencia",
+      "description": "Estructura ligera, proceso automatizado, enfoque de riesgo diferente. Podemos hacer lo que los bancos rechazan.",
+      "features": [
+        { "title": "Desde 20€", "description": "Sin importe mínimo ridículo. ¿Necesitas 50€? Te los prestamos." },
+        { "title": "24h respuesta", "description": "Respuesta garantizada en menos de 24 horas. Sin semanas de espera." },
+        { "title": "Perfiles atípicos", "description": "Jóvenes, contrato temporal, autónomos... Miramos tu situación, no tu casilla." },
+        { "title": "Cero papeleo", "description": "100% online. Sin citas, sin expedientes en papel, sin documentos innecesarios." }
+      ]
+    },
+    "audience": {
+      "eyebrow": "¿Para quién?",
+      "title": "Los que los bancos olvidan",
+      "profiles": [
+        { "title": "Fin de mes apretado", "description": "El alquiler pasa, pero quedan 10 días. Te adelantamos." },
+        { "title": "Gasto imprevisto", "description": "Reparación, factura urgente, imprevisto. La vida no espera." },
+        { "title": "Jóvenes profesionales", "description": "¿Sin historial crediticio? Evaluamos tu potencial." },
+        { "title": "Perfiles atípicos", "description": "Contrato temporal, interino, freelance. Tu situación no es un obstáculo." }
+      ]
+    },
+    "process": {
+      "eyebrow": "Cómo funciona",
+      "title": "3 pasos, 24 horas",
+      "steps": [
+        { "number": "01", "title": "Simula", "description": "2 minutos para rellenar tu solicitud. Sin compromiso." },
+        { "number": "02", "title": "Respuesta", "description": "Nuestro algoritmo analiza. Respuesta en menos de 24h, con explicación." },
+        { "number": "03", "title": "Recibe", "description": "¿Aceptado? Los fondos llegan a tu cuenta en 48h." }
+      ]
+    },
+    "finalCta": {
+      "title": "¿Necesitas un impulso?",
+      "subtitle": "De 20€ a 500€, sin juicios, sin papeleo.",
+      "cta": "Simular ahora",
+      "reassurance": "Simulación gratuita • Sin compromiso • Respuesta en 24h"
+    }
+  }
+}

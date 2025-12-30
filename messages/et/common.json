@@ -1,6 +1,40 @@
 {
   "nav": {
+    "home": "Avaleht",
+    "products": "Tooted",
+    "features": "Miks meie",
+    "pricing": "Hinnad",
     "clientArea": "Kliendi ala"
+  },
+  "products": {
+    "microCredit": "Mikrolaen",
+    "consumerCredit": "Tarbimislaen",
+    "proCredit": "Ärilaen",
+    "studentLoan": "Õppelaen",
+    "salaryAdvance": "Palgaavans",
+    "leasing": "Liising",
+    "loanConsolidation": "Laenude koondamine",
+    "financialCoaching": "Finantsnõustamine"
+  },
+  "features": {
+    "transparency": "Täielik läbipaistvus",
+    "atypicalProfiles": "Ebatüüpilised profiilid",
+    "coaching": "Finantsnõustamine",
+    "flexibility": "Täielik paindlikkus"
+  },
+  "tools": {
+    "simulator": "Laenukalkulaator",
+    "eligibility": "Sobivuse test"
+  },
+  "legal": {
+    "legalNotice": "Õigusteave",
+    "privacy": "Privaatsuspoliitika",
+    "terms": "Kasutustingimused"
+  },
+  "app": {
+    "dashboard": "Töölaud",
+    "settings": "Seaded",
+    "profile": "Profiil"
   },
   "regulatory": {
     "title": "Regulatiivne teave",

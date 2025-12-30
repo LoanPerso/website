@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "title": "Meie Laenutooted | Quickfund",
+    "description": "Avasta meie laenulahendused 20€-st kuni 10 000€-ni. Mikrolaen, tarbimislaen, ärilaen ja palju muud. Vastus 24h jooksul."
+  },
+  "hero": {
+    "eyebrow": "Meie Lahendused",
+    "title": {
+      "line1": "Laen igaks",
+      "line2": "vajaduseks"
+    },
+    "subtitle": "20€-st kuni 10 000€-ni, leia oma olukorrale sobiv rahastus. Garanteeritud vastus 24h jooksul."
+  },
+  "cta": {
+    "simulate": "Simuleeri laenu",
+    "learnMore": "Loe lähemalt",
+    "seeAll": "Vaata kõiki tooteid"
+  },
+  "categories": {
+    "core": "Põhitooted",
+    "other": "Muud lahendused"
+  },
+  "products": {
+    "microCredit": {
+      "title": "Mikrolaen",
+      "tagline": "20€-st kuni 500€-ni, vastus 24h jooksul",
+      "description": "Väikesteks kiireloomulisteks vajadusteks. Ilma tarbetu paberimajanduseta, ilma hinnanguteta. Me mõistame, et mõnikord teeb väike abi suure vahe.",
+      "range": "20€ - 500€",
+      "duration": "1 kuni 3 kuud",
+      "rate": "Alates 12% krediidi kulukuse määr",
+      "features": [
+        "Summad alates 20€",
+        "Heakskiit alla 24h",
+        "Ilma keerukate tõenditeta",
+        "Ebatüüpilised profiilid aktsepteeritud"
+      ],
+      "ideal": "Ideaalne: raske kuulõpp, ootamatu kulu, kiire väike ost"
+    },
+    "consumer": {
+      "title": "Tarbimislaen",
+      "tagline": "Kuni 5000€, läbipaistev ja kiire",
+      "description": "Rahasta oma isiklikke projekte läbipaistvalt. Auto, remont, seadmed... Me ütleme alati, miks - kas heaks kiidetud või keeldutud.",
+      "range": "500€ - 5000€",
+      "duration": "3 kuni 36 kuud",
+      "rate": "Alates 6% krediidi kulukuse määr",
+      "features": [
+        "Konkurentsivõimelised intressid",
+        "Paindlikud maksed",
+        "Tasuta ennetähtaegne tagasimakse",
+        "100% veebis, ilma kohtumiseta"
+      ],
+      "ideal": "Ideaalne: auto, remont, kodumasinad, reisimine"
+    },
+    "professional": {
+      "title": "Ärilaen",
+      "tagline": "Kiire rahavoog vabakutselistele ja väikeettevõtetele",
+      "description": "Me mõistame muutuvaid sissetulekuid. Vabakutselised, mikroettevõtted, käsitöölised: pole vaja 3 aasta aruandeid, et teid tõsiselt võetaks.",
+      "range": "1000€ - 10 000€",
+      "duration": "3 kuni 24 kuud",
+      "rate": "Alates 6% krediidi kulukuse määr",
+      "features": [
+        "Muutuvad sissetulekud aktsepteeritud",
+        "Personaalne analüüs",
+        "Vastus 24-48h jooksul",
+        "Tasuta coaching kaasas"
+      ],
+      "ideal": "Ideaalne: rahavoog, seadmete investeering, arendus"
+    },
+    "student": {
+      "title": "Õppelaen",
+      "tagline": "Rahasta oma õpinguid ilma pangagarantiita",
+      "description": "Pole krediidiajalugu? Pole perekondlikku käendajat? Me hindame sinu projekti ja potentsiaali, mitte ainult minevikku.",
+      "range": "500€ - 5000€",
+      "duration": "Muutuv + edasilükkamine võimalik",
+      "rate": "Alates 6% krediidi kulukuse määr",
+      "features": [
+        "Ilma pangakäendajata",
+        "Makse edasilükkamine võimalik",
+        "Soodusintressid tudengitele",
+        "Personaalne tugi"
+      ],
+      "ideal": "Ideaalne: õppemaks, eluase, varustus, mobiilsus"
+    },
+    "salaryAdvance": {
+      "title": "Palgaettemaks",
+      "tagline": "Sinu palk, mõned päevad varem",
+      "description": "Kiire kulu enne palgapäeva? Väldi kallist pangaarvekrediiti. Lihtne lahendus automaatse tagasimaksega palga saabumisel.",
+      "range": "Osa palgast",
+      "duration": "Mõned päevad/nädalad",
+      "rate": "Alates 8% krediidi kulukuse määr",
+      "features": [
+        "Tagasimakse palgapäeval",
+        "Ilma arvekrediidita",
+        "Minimaalne risk",
+        "Ülikiire protsess"
+      ],
+      "ideal": "Ideaalne: pingeline kuulõpp, ootamatu kulu, kiire arve"
+    },
+    "leasing": {
+      "title": "Liising",
+      "tagline": "Kasuta ilma ostmata",
+      "description": "Sõiduk, äriseadmed... Liising võimaldab kulusid hajutada ilma suure investeeringuta. Vara toimib tagatisena, seega paremad intressid.",
+      "range": "Muutuv sõltuvalt varast",
+      "duration": "12 kuni 60 kuud",
+      "rate": "Alates 5% krediidi kulukuse määr",
+      "features": [
+        "Pole kohest ostu",
+        "Kontrollitud kuumaksed",
+        "Ostuvõimalus lõpus",
+        "Soodsad intressid (tagatud vara)"
+      ],
+      "ideal": "Ideaalne: sõiduk, äriseadmed, IT-riistvara"
+    },
+    "loanConsolidation": {
+      "title": "Laenude Refinantseerimine",
+      "tagline": "Lihtsusta oma kuumakseid",
+      "description": "Mitu laenu? Koondame need üheks sageli väiksema kuumaksega. Võta oma eelarve üle kontroll tagasi.",
+      "range": "Muutuv sõltuvalt olukorrast",
+      "duration": "Muutuv",
+      "rate": "Sõltuvalt profiilist",
+      "features": [
+        "Üks kuumakse",
+        "Sageli odavam kokku",
+        "Vabastatud rahavoog",
+        "Lihtsustatud haldus"
+      ],
+      "ideal": "Ideaalne: mitu laenu, liiga kõrged kuumaksed, lihtsustamine"
+    },
+    "financialCoaching": {
+      "title": "Finants-coaching",
+      "tagline": "Kontrolli oma eelarvet, mitte vastupidi",
+      "description": "Tasuta kaasas iga laenuga. Jälgimise töölaud, hoiatused, personaalsed nõuanded. Premium versioon saadaval põhjalikumaks toeks.",
+      "range": "Tasuta / 25€/kuu premium",
+      "duration": "Ilma kohustuseta",
+      "rate": "Teenus (mitte laen)",
+      "features": [
+        "Jälgimise töölaud",
+        "Automaatsed hoiatused",
+        "Personaalsed nõuanded",
+        "Premium versioon coachiga"
+      ],
+      "ideal": "Ideaalne: eelarve valdamine, maksehäirete vältimine, parem haldus"
+    }
+  },
+  "comparison": {
+    "title": "Võrdle meie pakkumisi",
+    "headers": {
+      "product": "Toode",
+      "amount": "Summa",
+      "duration": "Kestus",
+      "rate": "Krediidi kulukuse määr"
+    }
+  },
+  "labels": {
+    "amount": "Summa",
+    "duration": "Kestus",
+    "rate": "Krediidi kulukuse määr"
+  },
+  "whyUs": {
+    "title": "Miks Quickfund?",
+    "items": {
+      "transparency": {
+        "title": "Täielik läbipaistvus",
+        "description": "Me selgitame alati, miks - kas heaks kiidetud või keeldutud."
+      },
+      "speed": {
+        "title": "Vastus 24h jooksul",
+        "description": "Pole lõputut ootamist, saad kiiresti teada."
+      },
+      "coaching": {
+        "title": "Coaching kaasas",
+        "description": "Me toetame sind, me mitte ainult ei laena."
+      }
+    }
+  },
+  "finalCta": {
+    "title": {
+      "line1": "Valmis saama",
+      "line2": "oma laenu?"
+    },
+    "subtitle": "Tasuta simulatsioon 2 minutiga. Ilma kohustuseta, ilma mõjuta sinu skoorile.",
+    "features": "Vastus 24h • 100% veebis • Pole varjatud tasusid"
+  },
+  "microCredit": {
+    "hero": {
+      "eyebrow": "Mikrolaen",
+      "title": "Alates 20€",
+      "subtitle": "Vastus 24h jooksul",
+      "description": "Pangad ei laena väikeseid summasid. Meie laename.",
+      "cta": "Simuleeri minu mikrolaenu"
+    },
+    "stats": {
+      "minAmount": { "value": "20€", "label": "Minimaalne summa" },
+      "maxAmount": { "value": "500€", "label": "Maksimaalne summa" },
+      "delay": { "value": "24h", "label": "Vastamise aeg" },
+      "rate": { "value": "12%", "label": "Krediidi kulukuse määr alates" }
+    },
+    "problem": {
+      "eyebrow": "Probleem",
+      "title": "Pangad ignoreerivad sind",
+      "items": [
+        { "number": "1000€", "text": "Minimaalne summa traditsioonilistes pankades" },
+        { "number": "7p", "text": "Keskmine vastamise aeg" },
+        { "number": "60%", "text": "Keeldumine ilma selgituseta" }
+      ]
+    },
+    "solution": {
+      "eyebrow": "Meie lähenemine",
+      "title": "Väike summa, suur erinevus",
+      "description": "Kerge struktuur, automatiseeritud protsess, erinev riskikäsitlus. Saame teha seda, mida pangad keelduvad.",
+      "features": [
+        { "title": "Alates 20€", "description": "Pole naeruväärset miinimumsummat. Vajad 50€? Laename sulle." },
+        { "title": "24h vastus", "description": "Garanteeritud vastus alla 24 tunni. Pole nädalaid ootamist." },
+        { "title": "Ebatüüpilised profiilid", "description": "Noored, tähtajaline leping, vabakutselised... Vaatame sinu olukorda, mitte kategooriat." },
+        { "title": "Null paberimajandust", "description": "100% veebis. Pole kohtumisi, pole pabereid, pole tarbetuid dokumente." }
+      ]
+    },
+    "audience": {
+      "eyebrow": "Kellele?",
+      "title": "Need, keda pangad unustavad",
+      "profiles": [
+        { "title": "Pingeline kuulõpp", "description": "Üür on tasutud, aga 10 päeva jäänud. Anname ettemaksu." },
+        { "title": "Ootamatu kulu", "description": "Remont, kiire arve, ootamatu. Elu ei oota." },
+        { "title": "Noored spetsialistid", "description": "Pole krediidiajalugu? Hindame sinu potentsiaali." },
+        { "title": "Ebatüüpilised profiilid", "description": "Tähtajaline leping, ajutine, vabakutseline. Sinu olukord pole takistus." }
+      ]
+    },
+    "process": {
+      "eyebrow": "Kuidas see toimib",
+      "title": "3 sammu, 24 tundi",
+      "steps": [
+        { "number": "01", "title": "Simuleeri", "description": "2 minutit taotluse täitmiseks. Ilma kohustuseta." },
+        { "number": "02", "title": "Vastus", "description": "Meie algoritm analüüsib. Vastus alla 24h, koos selgitusega." },
+        { "number": "03", "title": "Saa kätte", "description": "Heaks kiidetud? Raha jõuab kontole 48h jooksul." }
+      ]
+    },
+    "finalCta": {
+      "title": "Vajad tõuget?",
+      "subtitle": "20€-st kuni 500€-ni, ilma hinnanguteta, ilma paberimajanduseta.",
+      "cta": "Simuleeri kohe",
+      "reassurance": "Tasuta simulatsioon • Ilma kohustuseta • Vastus 24h"
+    }
+  }
+}

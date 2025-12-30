@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "title": "Our Credit Products | Quickfund",
+    "description": "Discover our credit solutions from €20 to €10,000. Micro-loan, consumer credit, business credit and more. Response within 24h."
+  },
+  "hero": {
+    "eyebrow": "Our Solutions",
+    "title": {
+      "line1": "A credit for",
+      "line2": "every need"
+    },
+    "subtitle": "From €20 to €10,000, find the financing that fits your situation. Guaranteed response within 24h."
+  },
+  "cta": {
+    "simulate": "Simulate my credit",
+    "learnMore": "Learn more",
+    "seeAll": "See all products"
+  },
+  "categories": {
+    "core": "Featured products",
+    "other": "Other solutions"
+  },
+  "products": {
+    "microCredit": {
+      "title": "Micro-loan",
+      "tagline": "From €20 to €500, response in 24h",
+      "description": "For small urgent needs. No unnecessary paperwork, no judgment. We understand that sometimes a small boost makes all the difference.",
+      "range": "€20 - €500",
+      "duration": "1 to 3 months",
+      "rate": "From 12% APR",
+      "features": [
+        "Amounts from €20",
+        "Approval in less than 24h",
+        "No complex proof required",
+        "Atypical profiles accepted"
+      ],
+      "ideal": "Ideal for: tight end of month, unexpected expense, urgent small purchase"
+    },
+    "consumer": {
+      "title": "Consumer Credit",
+      "tagline": "Up to €5,000, transparent and fast",
+      "description": "Finance your personal projects with transparency. Car, renovations, equipment... We always tell you why, accepted or declined.",
+      "range": "€500 - €5,000",
+      "duration": "3 to 36 months",
+      "rate": "From 6% APR",
+      "features": [
+        "Competitive rates",
+        "Flexible payments",
+        "Free early repayment",
+        "100% online, no appointment"
+      ],
+      "ideal": "Ideal for: car, renovations, appliances, travel"
+    },
+    "professional": {
+      "title": "Business Credit",
+      "tagline": "Quick cash flow for freelancers and small businesses",
+      "description": "We understand variable income. Freelancers, micro-businesses, artisans: no need for 3 years of accounts to be taken seriously.",
+      "range": "€1,000 - €10,000",
+      "duration": "3 to 24 months",
+      "rate": "From 6% APR",
+      "features": [
+        "Variable income accepted",
+        "Personalized analysis",
+        "Response in 24-48h",
+        "Free coaching included"
+      ],
+      "ideal": "Ideal for: cash flow, equipment investment, development"
+    },
+    "student": {
+      "title": "Student Loan",
+      "tagline": "Finance your studies without a bank guarantor",
+      "description": "No credit history? No family guarantor? We evaluate your project and potential, not just your past.",
+      "range": "€500 - €5,000",
+      "duration": "Variable + deferral possible",
+      "rate": "From 6% APR",
+      "features": [
+        "No bank guarantor needed",
+        "Payment deferral possible",
+        "Preferential student rates",
+        "Personalized support"
+      ],
+      "ideal": "Ideal for: tuition fees, housing, equipment, mobility"
+    },
+    "salaryAdvance": {
+      "title": "Salary Advance",
+      "tagline": "Your salary, a few days earlier",
+      "description": "Urgent expense before payday? Avoid costly bank overdraft. A simple solution with automatic repayment when salary arrives.",
+      "range": "Portion of salary",
+      "duration": "A few days/weeks",
+      "rate": "From 8% APR",
+      "features": [
+        "Repayment on payday",
+        "No overdraft",
+        "Minimal risk",
+        "Ultra-fast process"
+      ],
+      "ideal": "Ideal for: tight end of month, unexpected expense, urgent bill"
+    },
+    "leasing": {
+      "title": "Leasing",
+      "tagline": "Use without buying",
+      "description": "Vehicle, professional equipment... Leasing allows you to spread the cost without heavy investment. The asset serves as collateral, hence better rates.",
+      "range": "Variable depending on asset",
+      "duration": "12 to 60 months",
+      "rate": "From 5% APR",
+      "features": [
+        "No immediate purchase",
+        "Controlled monthly payments",
+        "Purchase option at end",
+        "Advantageous rates (secured asset)"
+      ],
+      "ideal": "Ideal for: vehicle, professional equipment, IT hardware"
+    },
+    "loanConsolidation": {
+      "title": "Loan Consolidation",
+      "tagline": "Simplify your monthly payments",
+      "description": "Multiple loans? We consolidate them into one with often reduced monthly payment. Take back control of your budget.",
+      "range": "Variable depending on situation",
+      "duration": "Variable",
+      "rate": "Depending on profile",
+      "features": [
+        "Single monthly payment",
+        "Often cheaper overall",
+        "Freed up cash flow",
+        "Simplified management"
+      ],
+      "ideal": "Ideal for: multiple loans, high monthly payments, simplification"
+    },
+    "financialCoaching": {
+      "title": "Financial Coaching",
+      "tagline": "Control your budget, not the other way around",
+      "description": "Included free with every loan. Tracking dashboard, alerts, personalized advice. Premium version available for in-depth support.",
+      "range": "Free / €25/month premium",
+      "duration": "No commitment",
+      "rate": "Service (not a loan)",
+      "features": [
+        "Tracking dashboard",
+        "Automatic alerts",
+        "Personalized advice",
+        "Premium version with coach"
+      ],
+      "ideal": "Ideal for: mastering your budget, avoiding defaults, better management"
+    }
+  },
+  "comparison": {
+    "title": "Compare our offers",
+    "headers": {
+      "product": "Product",
+      "amount": "Amount",
+      "duration": "Duration",
+      "rate": "APR"
+    }
+  },
+  "labels": {
+    "amount": "Amount",
+    "duration": "Duration",
+    "rate": "APR"
+  },
+  "whyUs": {
+    "title": "Why Quickfund?",
+    "items": {
+      "transparency": {
+        "title": "Total transparency",
+        "description": "We always explain why, accepted or declined."
+      },
+      "speed": {
+        "title": "Response in 24h",
+        "description": "No endless waiting, you know quickly."
+      },
+      "coaching": {
+        "title": "Coaching included",
+        "description": "We support you, we don't just lend."
+      }
+    }
+  },
+  "finalCta": {
+    "title": {
+      "line1": "Ready to get",
+      "line2": "your credit?"
+    },
+    "subtitle": "Free simulation in 2 minutes. No commitment, no impact on your score.",
+    "features": "Response in 24h • 100% online • No hidden fees"
+  },
+  "microCredit": {
+    "hero": {
+      "eyebrow": "Micro-loan",
+      "title": "From €20",
+      "subtitle": "Response in 24h",
+      "description": "Banks don't lend small amounts. We do.",
+      "cta": "Simulate my micro-loan"
+    },
+    "stats": {
+      "minAmount": { "value": "€20", "label": "Minimum amount" },
+      "maxAmount": { "value": "€500", "label": "Maximum amount" },
+      "delay": { "value": "24h", "label": "Response time" },
+      "rate": { "value": "12%", "label": "APR from" }
+    },
+    "problem": {
+      "eyebrow": "The problem",
+      "title": "Banks ignore you",
+      "items": [
+        { "number": "€1000", "text": "Minimum amount at traditional banks" },
+        { "number": "7d", "text": "Average response time" },
+        { "number": "60%", "text": "Rejection without explanation" }
+      ]
+    },
+    "solution": {
+      "eyebrow": "Our approach",
+      "title": "Small amount, big difference",
+      "description": "Lean structure, automated process, different risk approach. We can do what banks refuse.",
+      "features": [
+        { "title": "From €20", "description": "No ridiculous minimum amount. Need €50? We'll lend it to you." },
+        { "title": "24h response", "description": "Guaranteed response in less than 24 hours. No weeks of waiting." },
+        { "title": "Atypical profiles", "description": "Young, temporary contract, freelancers... We look at your situation, not your box." },
+        { "title": "Zero paperwork", "description": "100% online. No appointments, no paper files, no unnecessary documents." }
+      ]
+    },
+    "audience": {
+      "eyebrow": "For whom?",
+      "title": "Those banks forget",
+      "profiles": [
+        { "title": "Tight end of month", "description": "Rent is due, but 10 days left. We advance you." },
+        { "title": "Unexpected expense", "description": "Repair, urgent bill, unexpected. Life doesn't wait." },
+        { "title": "Young professionals", "description": "No credit history? We evaluate your potential." },
+        { "title": "Atypical profiles", "description": "Temporary contract, interim, freelance. Your situation is not an obstacle." }
+      ]
+    },
+    "process": {
+      "eyebrow": "How it works",
+      "title": "3 steps, 24 hours",
+      "steps": [
+        { "number": "01", "title": "Simulate", "description": "2 minutes to fill your request. No commitment." },
+        { "number": "02", "title": "Response", "description": "Our algorithm analyzes. Response in less than 24h, with explanation." },
+        { "number": "03", "title": "Receive", "description": "Accepted? Funds arrive in your account within 48h." }
+      ]
+    },
+    "finalCta": {
+      "title": "Need a boost?",
+      "subtitle": "From €20 to €500, no judgment, no paperwork.",
+      "cta": "Simulate now",
+      "reassurance": "Free simulation • No commitment • Response in 24h"
+    }
+  }
+}

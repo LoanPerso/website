@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "title": "Nos Produits de Crédit | Quickfund",
+    "description": "Découvrez nos solutions de crédit de 20€ à 10 000€. Micro-crédit, crédit conso, crédit pro et plus. Réponse en 24h."
+  },
+  "hero": {
+    "eyebrow": "Nos Solutions",
+    "title": {
+      "line1": "Un crédit pour",
+      "line2": "chaque besoin"
+    },
+    "subtitle": "De 20€ à 10 000€, trouvez le financement adapté à votre situation. Réponse garantie en 24h."
+  },
+  "cta": {
+    "simulate": "Simuler mon crédit",
+    "learnMore": "En savoir plus",
+    "seeAll": "Voir tous les produits"
+  },
+  "categories": {
+    "core": "Produits phares",
+    "other": "Autres solutions"
+  },
+  "products": {
+    "microCredit": {
+      "title": "Micro-crédit",
+      "tagline": "De 20€ à 500€, réponse en 24h",
+      "description": "Pour les petits besoins urgents. Pas de paperasse inutile, pas de jugement. On comprend que parfois, un petit coup de pouce fait toute la différence.",
+      "range": "20€ - 500€",
+      "duration": "1 à 3 mois",
+      "rate": "À partir de 12% TAEG",
+      "features": [
+        "Montants dès 20€",
+        "Approbation en moins de 24h",
+        "Sans justificatif complexe",
+        "Profils atypiques acceptés"
+      ],
+      "ideal": "Idéal pour : fin de mois difficile, dépense imprévue, petit achat urgent"
+    },
+    "consumer": {
+      "title": "Crédit Conso",
+      "tagline": "Jusqu'à 5 000€, transparent et rapide",
+      "description": "Financez vos projets personnels avec transparence. Auto, travaux, équipement... On vous dit toujours pourquoi, accepté ou refusé.",
+      "range": "500€ - 5 000€",
+      "duration": "3 à 36 mois",
+      "rate": "À partir de 6% TAEG",
+      "features": [
+        "Taux compétitifs",
+        "Échéances flexibles",
+        "Remboursement anticipé gratuit",
+        "100% en ligne, pas de RDV"
+      ],
+      "ideal": "Idéal pour : voiture, travaux, électroménager, voyage"
+    },
+    "professional": {
+      "title": "Crédit Pro",
+      "tagline": "Trésorerie rapide pour indépendants et TPE",
+      "description": "On comprend les revenus variables. Freelances, micro-entreprises, artisans : pas besoin de 3 bilans pour être pris au sérieux.",
+      "range": "1 000€ - 10 000€",
+      "duration": "3 à 24 mois",
+      "rate": "À partir de 6% TAEG",
+      "features": [
+        "Revenus variables acceptés",
+        "Analyse personnalisée",
+        "Réponse en 24-48h",
+        "Coaching inclus gratuitement"
+      ],
+      "ideal": "Idéal pour : trésorerie, investissement matériel, développement"
+    },
+    "student": {
+      "title": "Prêt Étudiant",
+      "tagline": "Financez vos études sans garant bancaire",
+      "description": "Pas d'historique bancaire ? Pas de garant familial ? On évalue votre projet et votre potentiel, pas seulement votre passé.",
+      "range": "500€ - 5 000€",
+      "duration": "Variable + différé possible",
+      "rate": "À partir de 6% TAEG",
+      "features": [
+        "Sans garant bancaire",
+        "Différé de remboursement possible",
+        "Taux préférentiels étudiants",
+        "Accompagnement personnalisé"
+      ],
+      "ideal": "Idéal pour : frais de scolarité, logement, matériel, mobilité"
+    },
+    "salaryAdvance": {
+      "title": "Avance sur Salaire",
+      "tagline": "Votre salaire, quelques jours plus tôt",
+      "description": "Dépense urgente avant la paie ? Évitez le découvert bancaire coûteux. Une solution simple avec remboursement automatique à réception du salaire.",
+      "range": "Portion du salaire",
+      "duration": "Quelques jours/semaines",
+      "rate": "À partir de 8% TAEG",
+      "features": [
+        "Remboursement à la paie",
+        "Pas de découvert",
+        "Risque minimal",
+        "Process ultra-rapide"
+      ],
+      "ideal": "Idéal pour : fin de mois serrée, dépense imprévue, facture urgente"
+    },
+    "leasing": {
+      "title": "Leasing",
+      "tagline": "Utilisez sans acheter",
+      "description": "Véhicule, équipement pro... Le leasing permet d'étaler le coût sans investissement lourd. Le bien sert de garantie, donc meilleurs taux.",
+      "range": "Variable selon le bien",
+      "duration": "12 à 60 mois",
+      "rate": "À partir de 5% TAEG",
+      "features": [
+        "Pas d'achat immédiat",
+        "Mensualités maîtrisées",
+        "Option d'achat en fin",
+        "Taux avantageux (bien garanti)"
+      ],
+      "ideal": "Idéal pour : véhicule, équipement professionnel, matériel informatique"
+    },
+    "loanConsolidation": {
+      "title": "Rachat de Crédits",
+      "tagline": "Simplifiez vos mensualités",
+      "description": "Plusieurs crédits ? On les regroupe en un seul avec une mensualité souvent réduite. Reprenez le contrôle de votre budget.",
+      "range": "Variable selon situation",
+      "duration": "Variable",
+      "rate": "Selon profil",
+      "features": [
+        "Une seule mensualité",
+        "Souvent moins cher au total",
+        "Trésorerie dégagée",
+        "Gestion simplifiée"
+      ],
+      "ideal": "Idéal pour : multi-crédits, mensualités trop élevées, simplification"
+    },
+    "financialCoaching": {
+      "title": "Coaching Financier",
+      "tagline": "Pilotez votre budget, pas l'inverse",
+      "description": "Inclus gratuitement avec tout crédit. Dashboard de suivi, alertes, conseils personnalisés. Version premium disponible pour un accompagnement approfondi.",
+      "range": "Gratuit / 25€/mois premium",
+      "duration": "Sans engagement",
+      "rate": "Service (pas un crédit)",
+      "features": [
+        "Dashboard de suivi",
+        "Alertes automatiques",
+        "Conseils personnalisés",
+        "Version premium avec coach"
+      ],
+      "ideal": "Idéal pour : maîtriser son budget, éviter les impayés, mieux gérer"
+    }
+  },
+  "comparison": {
+    "title": "Comparer nos offres",
+    "headers": {
+      "product": "Produit",
+      "amount": "Montant",
+      "duration": "Durée",
+      "rate": "TAEG"
+    }
+  },
+  "labels": {
+    "amount": "Montant",
+    "duration": "Durée",
+    "rate": "TAEG"
+  },
+  "whyUs": {
+    "title": "Pourquoi Quickfund ?",
+    "items": {
+      "transparency": {
+        "title": "Transparence totale",
+        "description": "On vous explique toujours pourquoi, accepté ou refusé."
+      },
+      "speed": {
+        "title": "Réponse en 24h",
+        "description": "Pas d'attente interminable, vous savez vite."
+      },
+      "coaching": {
+        "title": "Coaching inclus",
+        "description": "On vous accompagne, on ne fait pas que prêter."
+      }
+    }
+  },
+  "finalCta": {
+    "title": {
+      "line1": "Prêt à obtenir",
+      "line2": "votre crédit ?"
+    },
+    "subtitle": "Simulation gratuite en 2 minutes. Sans engagement, sans impact sur votre score.",
+    "features": "Réponse en 24h • 100% en ligne • Pas de frais cachés"
+  },
+  "microCredit": {
+    "hero": {
+      "eyebrow": "Micro-crédit",
+      "title": "Dès 20€",
+      "subtitle": "Réponse en 24h",
+      "description": "Les banques ne prêtent pas de petits montants. Nous, si.",
+      "cta": "Simuler mon micro-crédit"
+    },
+    "stats": {
+      "minAmount": { "value": "20€", "label": "Montant minimum" },
+      "maxAmount": { "value": "500€", "label": "Montant maximum" },
+      "delay": { "value": "24h", "label": "Délai de réponse" },
+      "rate": { "value": "12%", "label": "TAEG à partir de" }
+    },
+    "problem": {
+      "eyebrow": "Le problème",
+      "title": "Les banques vous ignorent",
+      "items": [
+        { "number": "1000€", "text": "Montant minimum chez les banques traditionnelles" },
+        { "number": "7j", "text": "Délai moyen pour une réponse" },
+        { "number": "60%", "text": "De refus sans explication" }
+      ]
+    },
+    "solution": {
+      "eyebrow": "Notre approche",
+      "title": "Petit montant, grande différence",
+      "description": "Structure légère, process automatisé, rapport au risque différent. On peut faire ce que les banques refusent.",
+      "features": [
+        { "title": "Dès 20€", "description": "Pas de montant minimum ridicule. Vous avez besoin de 50€ ? On vous les prête." },
+        { "title": "24h chrono", "description": "Réponse garantie en moins de 24 heures. Pas de semaines d'attente." },
+        { "title": "Profils atypiques", "description": "Jeunes, CDD, indépendants... On regarde votre situation, pas votre case." },
+        { "title": "Zéro paperasse", "description": "100% en ligne. Pas de RDV, pas de dossier papier, pas de justificatifs inutiles." }
+      ]
+    },
+    "audience": {
+      "eyebrow": "Pour qui ?",
+      "title": "Ceux que les banques oublient",
+      "profiles": [
+        { "title": "Fin de mois serrée", "description": "Le loyer passe, mais il reste 10 jours. On vous avance." },
+        { "title": "Dépense imprévue", "description": "Réparation, facture urgente, imprévu. La vie n'attend pas." },
+        { "title": "Jeunes actifs", "description": "Pas d'historique bancaire ? On évalue votre potentiel." },
+        { "title": "Profils atypiques", "description": "CDD, intérim, freelance. Votre situation n'est pas un obstacle." }
+      ]
+    },
+    "process": {
+      "eyebrow": "Comment ça marche",
+      "title": "3 étapes, 24 heures",
+      "steps": [
+        { "number": "01", "title": "Simulez", "description": "2 minutes pour remplir votre demande. Aucun engagement." },
+        { "number": "02", "title": "Réponse", "description": "Notre algorithme analyse. Réponse en moins de 24h, avec explication." },
+        { "number": "03", "title": "Recevez", "description": "Accepté ? Les fonds arrivent sur votre compte sous 48h." }
+      ]
+    },
+    "finalCta": {
+      "title": "Besoin d'un coup de pouce ?",
+      "subtitle": "De 20€ à 500€, sans jugement, sans paperasse.",
+      "cta": "Simuler maintenant",
+      "reassurance": "Simulation gratuite • Sans engagement • Réponse en 24h"
+    }
+  }
+}

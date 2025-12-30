@@ -62,16 +62,18 @@ export function SiteFooter() {
     return () => ctx.revert();
   }, []);
 
-  const productLinks = [
-    { name: t("footer.products.microCredit"), href: "/products/micro-credit" },
-    { name: t("footer.products.consumerCredit"), href: "/products/consumer" },
-    { name: t("footer.products.proCredit"), href: "/products/professional" },
+  const productLinksData = [
+    { name: t("products.microCredit"), href: "/products/micro-credit" },
+    { name: t("products.consumerCredit"), href: "/products/consumer" },
+    { name: t("products.proCredit"), href: "/products/professional" },
+    { name: t("products.studentLoan"), href: "/products/student" },
+    { name: t("products.salaryAdvance"), href: "/products/salary-advance" },
   ];
 
-  const legalLinks = [
-    { name: t("footer.legal.legalNotice"), href: "/legal" },
-    { name: t("footer.legal.privacy"), href: "/privacy" },
-    { name: t("footer.legal.terms"), href: "/terms" },
+  const legalLinksData = [
+    { name: t("legal.legalNotice"), href: "/legal" },
+    { name: t("legal.privacy"), href: "/legal/privacy" },
+    { name: t("legal.terms"), href: "/legal/terms" },
   ];
 
   return (
@@ -122,10 +124,10 @@ export function SiteFooter() {
           >
             <div className="link-group space-y-4">
               <h3 className="text-white uppercase tracking-wider text-xs font-medium">
-                {t("footer.sections.products")}
+                {t("nav.products")}
               </h3>
               <ul className="space-y-3 text-white/50">
-                {productLinks.map((link) => (
+                {productLinksData.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -143,7 +145,7 @@ export function SiteFooter() {
                 {t("footer.sections.legal")}
               </h3>
               <ul className="space-y-3 text-white/50">
-                {legalLinks.map((link) => (
+                {legalLinksData.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
