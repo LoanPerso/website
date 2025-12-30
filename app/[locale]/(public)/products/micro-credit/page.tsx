@@ -1,12 +1,25 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { gsap } from "gsap";
 
 export default function MicroCreditPage() {
   const t = useTranslations("products.microCredit");
   const locale = useLocale();
+
+  // Hero refs
+  const heroRef = useRef<HTMLElement>(null);
+  const eyebrowRef = useRef<HTMLParagraphElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const scrollDotRef = useRef<HTMLDivElement>(null);
 
   const stats = [
     { value: t("stats.minAmount.value"), label: t("stats.minAmount.label") },
@@ -19,10 +32,98 @@ export default function MicroCreditPage() {
   const audienceProfiles = t.raw("audience.profiles") as Array<{ title: string; description: string }>;
   const processSteps = t.raw("process.steps") as Array<{ number: string; title: string; description: string }>;
 
+  // Hero animations
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ delay: 0.3 });
+
+      // Set initial states
+      gsap.set([eyebrowRef.current, titleRef.current, subtitleRef.current, descriptionRef.current, ctaRef.current], {
+        opacity: 0,
+        y: 30,
+      });
+
+      if (cardsRef.current) {
+        const cards = cardsRef.current.children;
+        gsap.set(cards, { opacity: 0, x: 60 });
+      }
+
+      gsap.set(scrollIndicatorRef.current, { opacity: 0 });
+
+      // Animate text elements with stagger
+      tl.to(eyebrowRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      tl.to(titleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+      }, "-=0.5");
+
+      tl.to(subtitleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      }, "-=0.6");
+
+      tl.to(descriptionRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      }, "-=0.5");
+
+      tl.to(ctaRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      }, "-=0.5");
+
+      // Animate cards sliding in from right with stagger
+      if (cardsRef.current) {
+        const cards = cardsRef.current.children;
+        tl.to(cards, {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out",
+        }, "-=0.8");
+      }
+
+      // Scroll indicator fade in
+      tl.to(scrollIndicatorRef.current, {
+        opacity: 1,
+        duration: 0.6,
+        ease: "power1.out",
+      }, "-=0.3");
+
+      // Scroll dot bounce animation (looping)
+      gsap.to(scrollDotRef.current, {
+        y: 12,
+        duration: 1,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: 2,
+      });
+
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="bg-background text-foreground">
       {/* Hero - Immersive full screen */}
-      <section className="min-h-screen relative flex flex-col justify-center overflow-hidden">
+      <section ref={heroRef} className="min-h-screen relative flex flex-col justify-center overflow-hidden">
         {/* Background accent */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 -skew-x-12 translate-x-1/4" />
 
@@ -30,24 +131,37 @@ export default function MicroCreditPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Content */}
             <div className="space-y-8">
-              <p className="text-sm uppercase tracking-[0.3em] text-accent font-medium">
+              <p
+                ref={eyebrowRef}
+                className="text-sm uppercase tracking-[0.3em] text-accent font-medium"
+              >
                 {t("hero.eyebrow")}
               </p>
 
               <div className="space-y-4">
-                <h1 className="font-serif text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight">
+                <h1
+                  ref={titleRef}
+                  className="font-serif text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight"
+                >
                   {t("hero.title")}
                 </h1>
-                <p className="text-3xl md:text-4xl lg:text-5xl font-serif text-muted-foreground">
+                <p
+                  ref={subtitleRef}
+                  className="text-3xl md:text-4xl lg:text-5xl font-serif text-muted-foreground"
+                >
                   {t("hero.subtitle")}
                 </p>
               </div>
 
-              <p className="text-xl text-muted-foreground max-w-md">
+              <p
+                ref={descriptionRef}
+                className="text-xl text-muted-foreground max-w-md"
+              >
                 {t("hero.description")}
               </p>
 
               <Link
+                ref={ctaRef}
                 href={`/${locale}/simulateur`}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-foreground text-background rounded-full text-base font-medium hover:bg-accent hover:text-white transition-colors duration-300"
               >
@@ -60,7 +174,7 @@ export default function MicroCreditPage() {
 
             {/* Right - Stats cards stacked */}
             <div className="relative">
-              <div className="space-y-4">
+              <div ref={cardsRef} className="space-y-4">
                 {stats.map((stat, i) => (
                   <div
                     key={i}
@@ -88,9 +202,9 @@ export default function MicroCreditPage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div ref={scrollIndicatorRef} className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-muted-foreground/50 rounded-full" />
+            <div ref={scrollDotRef} className="w-1 h-2 bg-muted-foreground/50 rounded-full" />
           </div>
         </div>
       </section>

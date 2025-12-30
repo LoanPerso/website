@@ -200,7 +200,7 @@
       "title": "Les banques vous ignorent",
       "items": [
         { "number": "1000€", "text": "Montant minimum chez les banques traditionnelles" },
-        { "number": "7j", "text": "Délai moyen pour une réponse" },
+        { "number": "15j", "text": "Délai moyen pour une réponse" },
         { "number": "60%", "text": "De refus sans explication" }
       ]
     },

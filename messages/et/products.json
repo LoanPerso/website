@@ -200,7 +200,7 @@
       "title": "Pangad ignoreerivad sind",
       "items": [
         { "number": "1000€", "text": "Minimaalne summa traditsioonilistes pankades" },
-        { "number": "7p", "text": "Keskmine vastamise aeg" },
+        { "number": "15p", "text": "Keskmine vastamise aeg" },
         { "number": "60%", "text": "Keeldumine ilma selgituseta" }
       ]
     },

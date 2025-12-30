@@ -200,7 +200,7 @@
       "title": "Los bancos te ignoran",
       "items": [
         { "number": "1000€", "text": "Importe mínimo en bancos tradicionales" },
-        { "number": "7d", "text": "Tiempo medio de respuesta" },
+        { "number": "15d", "text": "Tiempo medio de respuesta" },
         { "number": "60%", "text": "Rechazo sin explicación" }
       ]
     },

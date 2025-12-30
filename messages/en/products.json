@@ -200,7 +200,7 @@
       "title": "Banks ignore you",
       "items": [
         { "number": "€1000", "text": "Minimum amount at traditional banks" },
-        { "number": "7d", "text": "Average response time" },
+        { "number": "15d", "text": "Average response time" },
         { "number": "60%", "text": "Rejection without explanation" }
       ]
     },
