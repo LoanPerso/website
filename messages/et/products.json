@@ -209,10 +209,14 @@
       "title": "Väike summa, suur erinevus",
       "description": "Kerge struktuur, automatiseeritud protsess, erinev riskikäsitlus. Saame teha seda, mida pangad keelduvad.",
       "features": [
-        { "title": "Alates 20€", "description": "Pole naeruväärset miinimumsummat. Vajad 50€? Laename sulle." },
-        { "title": "24h vastus", "description": "Garanteeritud vastus alla 24 tunni. Pole nädalaid ootamist." },
-        { "title": "Ebatüüpilised profiilid", "description": "Noored, tähtajaline leping, vabakutselised... Vaatame sinu olukorda, mitte kategooriat." },
-        { "title": "Null paberimajandust", "description": "100% veebis. Pole kohtumisi, pole pabereid, pole tarbetuid dokumente." }
+        { "title": "Alates 20€", "description": "Pole naeruväärset miinimumsummat. Vajad 50€? Laename sulle. Pangad alustavad 1000€-st." },
+        { "title": "Vastus 24h jooksul", "description": "Garanteeritud vastus alla 24 tunni. Pangad võtavad keskmiselt 15 päeva." },
+        { "title": "Selgitame miks", "description": "Heaks kiidetud või keeldutud, sa tead miks. Pole vaikust, pole läbipaistmatuid otsuseid. See on meie erinevus." },
+        { "title": "Ebatüüpilised profiilid", "description": "Noored ilma ajaloota, tähtajalised lepingud, vabakutselised... Hindame sinu tegelikku olukorda, mitte administratiivset kategooriat." },
+        { "title": "Täpselt 5 min", "description": "Lihtne taotlus väheste väljadega. Pole toimikut koostada, pole kasutuid dokumente skaneerida." },
+        { "title": "100% veebis", "description": "Pole kohtumisi kontoris, pole ootamist. Tee kõik oma diivanilt, igal ajal." },
+        { "title": "Kiirülekanne", "description": "Taotlus heaks kiidetud? Raha jõuab kontole alla 48h. Mõnikord vaid mõne tunniga." },
+        { "title": "Coaching kaasas", "description": "Me mitte ainult ei laena, vaid toetame sind. Eelarve jälgimine ja personaalsed nõuanded kaasas tasuta." }
       ]
     },
     "audience": {

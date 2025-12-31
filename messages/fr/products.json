@@ -209,10 +209,14 @@
       "title": "Petit montant, grande différence",
       "description": "Structure légère, process automatisé, rapport au risque différent. On peut faire ce que les banques refusent.",
       "features": [
-        { "title": "Dès 20€", "description": "Pas de montant minimum ridicule. Vous avez besoin de 50€ ? On vous les prête." },
-        { "title": "24h chrono", "description": "Réponse garantie en moins de 24 heures. Pas de semaines d'attente." },
-        { "title": "Profils atypiques", "description": "Jeunes, CDD, indépendants... On regarde votre situation, pas votre case." },
-        { "title": "Zéro paperasse", "description": "100% en ligne. Pas de RDV, pas de dossier papier, pas de justificatifs inutiles." }
+        { "title": "Dès 20€", "description": "Pas de montant minimum ridicule. Vous avez besoin de 50€ ? On vous les prête. Les banques commencent à 1 000€." },
+        { "title": "Réponse en 24h", "description": "Réponse garantie en moins de 24 heures. Les banques mettent en moyenne 15 jours." },
+        { "title": "On vous explique", "description": "Accepté ou refusé, vous savez pourquoi. Pas de silence radio, pas de décision opaque. C'est notre différence." },
+        { "title": "Profils atypiques", "description": "Jeunes sans historique, CDD, intérimaires, freelances... On évalue votre situation réelle, pas votre case administrative." },
+        { "title": "5 min chrono", "description": "Une demande simple avec peu de champs. Pas de dossier à constituer, pas de documents inutiles à scanner." },
+        { "title": "100% en ligne", "description": "Pas de RDV en agence, pas d'attente au guichet. Vous faites tout depuis votre canapé, à n'importe quelle heure." },
+        { "title": "Virement express", "description": "Dossier accepté ? Les fonds arrivent sur votre compte en moins de 48h. Parfois quelques heures." },
+        { "title": "Coaching inclus", "description": "On ne fait pas que prêter, on vous accompagne. Suivi de budget et conseils personnalisés inclus gratuitement." }
       ]
     },
     "audience": {

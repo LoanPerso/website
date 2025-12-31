@@ -5,6 +5,9 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function MicroCreditPage() {
   const t = useTranslations("products.microCredit");
@@ -20,6 +23,11 @@ export default function MicroCreditPage() {
   const cardsRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const scrollDotRef = useRef<HTMLDivElement>(null);
+
+  // Problem section refs
+  const problemSectionRef = useRef<HTMLElement>(null);
+  const problemHeaderRef = useRef<HTMLDivElement>(null);
+  const problemItemsRef = useRef<HTMLDivElement>(null);
 
   const stats = [
     { value: t("stats.minAmount.value"), label: t("stats.minAmount.label") },
@@ -114,6 +122,34 @@ export default function MicroCreditPage() {
         yoyo: true,
         delay: 2,
       });
+
+      // Problem section animations
+      if (problemHeaderRef.current && problemItemsRef.current) {
+        gsap.set(problemHeaderRef.current, { opacity: 0, y: 30 });
+        gsap.set(problemItemsRef.current.children, { opacity: 0, y: 40 });
+
+        ScrollTrigger.create({
+          trigger: problemSectionRef.current,
+          start: "top 70%",
+          onEnter: () => {
+            gsap.to(problemHeaderRef.current, {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power2.out",
+            });
+            gsap.to(problemItemsRef.current!.children, {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              stagger: 0.15,
+              ease: "power2.out",
+              delay: 0.3,
+            });
+          },
+          once: true,
+        });
+      }
 
     }, heroRef);
 
@@ -210,9 +246,9 @@ export default function MicroCreditPage() {
       </section>
 
       {/* Problem Section - Horizontal layout with big numbers */}
-      <section className="py-32 bg-deep-black text-white overflow-hidden">
+      <section ref={problemSectionRef} className="py-32 bg-deep-black text-white overflow-hidden">
         <div className="container">
-          <div className="mb-20">
+          <div ref={problemHeaderRef} className="mb-20">
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
               {t("problem.eyebrow")}
             </p>
@@ -222,13 +258,13 @@ export default function MicroCreditPage() {
           </div>
 
           {/* Horizontal scroll-like layout */}
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div ref={problemItemsRef} className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {problemItems.map((item, i) => (
-              <div key={i} className="group">
-                <p className="font-serif text-6xl md:text-7xl lg:text-8xl text-white/10 group-hover:text-accent/30 transition-colors duration-500 mb-4">
+              <div key={i}>
+                <p className="font-serif text-6xl md:text-7xl lg:text-8xl text-accent mb-4">
                   {item.number}
                 </p>
-                <p className="text-lg text-white/60 max-w-xs">
+                <p className="text-lg text-white/70 max-w-xs">
                   {item.text}
                 </p>
               </div>
@@ -237,42 +273,60 @@ export default function MicroCreditPage() {
         </div>
       </section>
 
-      {/* Solution Section - Bento grid */}
+      {/* Solution Section - Sticky left, bento grid right */}
       <section className="py-32">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Left - Sticky header */}
-            <div className="lg:sticky lg:top-32 space-y-6">
+            <div className="lg:sticky lg:top-32 lg:self-start space-y-6">
               <p className="text-sm uppercase tracking-[0.3em] text-accent">
                 {t("solution.eyebrow")}
               </p>
               <h2 className="font-serif text-5xl md:text-6xl leading-[1.1]">
                 {t("solution.title")}
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground max-w-md">
                 {t("solution.description")}
               </p>
             </div>
 
             {/* Right - Bento grid */}
             <div className="grid grid-cols-2 gap-4">
-              {solutionFeatures.map((feature, i) => (
-                <div
-                  key={i}
-                  className={`p-6 lg:p-8 rounded-2xl border border-border hover:border-accent/30 transition-colors duration-300 ${
-                    i === 0 ? "col-span-2 bg-accent/5" :
-                    i === 3 ? "col-span-2 bg-foreground text-background" :
-                    "bg-background"
-                  }`}
-                >
-                  <h3 className={`font-serif text-2xl lg:text-3xl mb-3 ${i === 3 ? "text-background" : ""}`}>
-                    {feature.title}
-                  </h3>
-                  <p className={`${i === 3 ? "text-background/70" : "text-muted-foreground"}`}>
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
+              {solutionFeatures.map((feature, i) => {
+                // Bento pattern: 0=wide, 1-2=half, 3=wide, 4-5=half, 6-7=half
+                const isWide = i === 0 || i === 3;
+                const isHighlight = i === 0;
+                const isDark = i === 3;
+                const isAccent = i === 7;
+
+                return (
+                  <div
+                    key={i}
+                    className={`p-6 lg:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
+                      isWide ? "col-span-2" : ""
+                    } ${
+                      isHighlight ? "bg-accent/10 border-accent/20" :
+                      isDark ? "bg-foreground text-background border-foreground" :
+                      isAccent ? "bg-deep-black text-white border-deep-black" :
+                      "bg-background border-border hover:border-accent/30"
+                    }`}
+                  >
+                    <h3 className={`font-serif text-xl lg:text-2xl mb-3 ${
+                      isDark ? "text-background" :
+                      isAccent ? "text-white" : ""
+                    }`}>
+                      {feature.title}
+                    </h3>
+                    <p className={`text-sm lg:text-base ${
+                      isDark ? "text-background/70" :
+                      isAccent ? "text-white/70" :
+                      "text-muted-foreground"
+                    }`}>
+                      {feature.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

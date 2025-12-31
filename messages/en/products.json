@@ -209,10 +209,14 @@
       "title": "Small amount, big difference",
       "description": "Lean structure, automated process, different risk approach. We can do what banks refuse.",
       "features": [
-        { "title": "From €20", "description": "No ridiculous minimum amount. Need €50? We'll lend it to you." },
-        { "title": "24h response", "description": "Guaranteed response in less than 24 hours. No weeks of waiting." },
-        { "title": "Atypical profiles", "description": "Young, temporary contract, freelancers... We look at your situation, not your box." },
-        { "title": "Zero paperwork", "description": "100% online. No appointments, no paper files, no unnecessary documents." }
+        { "title": "From €20", "description": "No ridiculous minimum amount. Need €50? We'll lend it to you. Banks start at €1,000." },
+        { "title": "Response in 24h", "description": "Guaranteed response in less than 24 hours. Banks take an average of 15 days." },
+        { "title": "We explain why", "description": "Accepted or declined, you know why. No radio silence, no opaque decisions. That's our difference." },
+        { "title": "Atypical profiles", "description": "Young without history, temp contracts, freelancers... We evaluate your real situation, not your administrative box." },
+        { "title": "5 min flat", "description": "A simple request with few fields. No file to compile, no useless documents to scan." },
+        { "title": "100% online", "description": "No branch appointments, no waiting at the counter. Do everything from your couch, anytime." },
+        { "title": "Express transfer", "description": "Application accepted? Funds arrive in your account in less than 48h. Sometimes just a few hours." },
+        { "title": "Coaching included", "description": "We don't just lend, we support you. Budget tracking and personalized advice included for free." }
       ]
     },
     "audience": {

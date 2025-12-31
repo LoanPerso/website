@@ -209,10 +209,14 @@
       "title": "Pequeño importe, gran diferencia",
       "description": "Estructura ligera, proceso automatizado, enfoque de riesgo diferente. Podemos hacer lo que los bancos rechazan.",
       "features": [
-        { "title": "Desde 20€", "description": "Sin importe mínimo ridículo. ¿Necesitas 50€? Te los prestamos." },
-        { "title": "24h respuesta", "description": "Respuesta garantizada en menos de 24 horas. Sin semanas de espera." },
-        { "title": "Perfiles atípicos", "description": "Jóvenes, contrato temporal, autónomos... Miramos tu situación, no tu casilla." },
-        { "title": "Cero papeleo", "description": "100% online. Sin citas, sin expedientes en papel, sin documentos innecesarios." }
+        { "title": "Desde 20€", "description": "Sin importe mínimo ridículo. ¿Necesitas 50€? Te los prestamos. Los bancos empiezan en 1.000€." },
+        { "title": "Respuesta en 24h", "description": "Respuesta garantizada en menos de 24 horas. Los bancos tardan una media de 15 días." },
+        { "title": "Te explicamos", "description": "Aceptado o rechazado, sabes por qué. Sin silencio, sin decisiones opacas. Esa es nuestra diferencia." },
+        { "title": "Perfiles atípicos", "description": "Jóvenes sin historial, contratos temporales, autónomos... Evaluamos tu situación real, no tu casilla administrativa." },
+        { "title": "5 min exactos", "description": "Una solicitud simple con pocos campos. Sin expediente que preparar, sin documentos inútiles que escanear." },
+        { "title": "100% online", "description": "Sin citas en sucursal, sin esperas en ventanilla. Hazlo todo desde tu sofá, a cualquier hora." },
+        { "title": "Transferencia exprés", "description": "¿Solicitud aceptada? Los fondos llegan a tu cuenta en menos de 48h. A veces en pocas horas." },
+        { "title": "Coaching incluido", "description": "No solo prestamos, te acompañamos. Seguimiento de presupuesto y consejos personalizados incluidos gratis." }
       ]
     },
     "audience": {
