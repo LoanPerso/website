@@ -79,7 +79,7 @@ export function SiteFooter() {
   return (
     <footer
       ref={footerRef}
-      className="relative bg-deep-black text-white pt-24 pb-12 overflow-hidden"
+      className="relative bg-deep-black !text-white pt-24 pb-12 overflow-hidden"
     >
       <div className="container mx-auto px-6 md:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-16">
