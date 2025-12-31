@@ -276,7 +276,7 @@ export default function MicroCreditPage() {
       {/* Solution Section - Sticky left, bento grid right */}
       <section className="py-32">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16">
             {/* Left - Sticky header */}
             <div className="lg:sticky lg:top-32 lg:self-start space-y-6">
               <p className="text-sm uppercase tracking-[0.3em] text-accent">
@@ -290,34 +290,63 @@ export default function MicroCreditPage() {
               </p>
             </div>
 
-            {/* Right - Bento grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Right - Bento grid with variable tile sizes */}
+            <div className="grid grid-cols-3 auto-rows-[minmax(140px,auto)] gap-4">
               {solutionFeatures.map((feature, i) => {
-                // Bento pattern: 0=wide, 1-2=half, 3=wide, 4-5=half, 6-7=half
-                const isWide = i === 0 || i === 3;
+                // Bento layout pattern:
+                // Card 0: 2x2 (col 1-2, row 1-2) - Featured large
+                // Card 1: 1x1 (col 3, row 1)
+                // Card 2: 1x1 (col 3, row 2)
+                // Card 3: 1x1 (col 1, row 3)
+                // Card 4: 2x1 wide (col 2-3, row 3)
+                // Card 5: 2x1 wide (col 1-2, row 4)
+                // Card 6: 1x2 tall (col 3, row 4-5)
+                // Card 7: 2x1 wide (col 1-2, row 5)
+
+                const gridPositions: Record<number, string> = {
+                  0: "col-span-2 row-span-2",           // 2x2 featured
+                  1: "col-start-3 row-start-1",        // 1x1
+                  2: "col-start-3 row-start-2",        // 1x1
+                  3: "col-start-1 row-start-3",        // 1x1
+                  4: "col-span-2 col-start-2 row-start-3", // 2x1 wide
+                  5: "col-span-2 col-start-1 row-start-4", // 2x1 wide
+                  6: "col-start-3 row-span-2 row-start-4", // 1x2 tall
+                  7: "col-span-2 col-start-1 row-start-5", // 2x1 wide
+                };
+
+                const isLarge = i === 0;
+                const isTall = i === 6;
                 const isHighlight = i === 0;
-                const isDark = i === 3;
-                const isAccent = i === 7;
+                const isDark = i === 4;
+                const isAccent = i === 6;
+                const isSubtle = i === 7;
 
                 return (
                   <div
                     key={i}
-                    className={`p-6 lg:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
-                      isWide ? "col-span-2" : ""
+                    className={`p-6 lg:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col ${
+                      gridPositions[i] || ""
                     } ${
                       isHighlight ? "bg-accent/10 border-accent/20" :
                       isDark ? "bg-foreground text-background border-foreground" :
                       isAccent ? "bg-deep-black text-white border-deep-black" :
+                      isSubtle ? "bg-secondary/50 border-border" :
                       "bg-background border-border hover:border-accent/30"
                     }`}
                   >
-                    <h3 className={`font-serif text-xl lg:text-2xl mb-3 ${
+                    <h3 className={`font-serif mb-3 ${
+                      isLarge ? "text-2xl lg:text-3xl" :
+                      isTall ? "text-xl lg:text-2xl" :
+                      "text-lg lg:text-xl"
+                    } ${
                       isDark ? "text-background" :
                       isAccent ? "text-white" : ""
                     }`}>
                       {feature.title}
                     </h3>
-                    <p className={`text-sm lg:text-base ${
+                    <p className={`text-sm lg:text-base flex-1 ${
+                      isLarge ? "text-base lg:text-lg" : ""
+                    } ${
                       isDark ? "text-background/70" :
                       isAccent ? "text-white/70" :
                       "text-muted-foreground"
