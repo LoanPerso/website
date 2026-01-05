@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Rachat de Crédits",
+    "title": "Une seule mensualité",
+    "subtitle": "Simplifiez votre budget",
+    "description": "Plusieurs crédits ? On les regroupe en un seul, souvent moins cher au total.",
+    "cta": "Analyser mes crédits"
+  },
+  "stats": {
+    "minAmount": { "value": "Variable", "label": "Selon vos crédits" },
+    "maxAmount": { "value": "Illimité", "label": "Cumul possible" },
+    "delay": { "value": "48h", "label": "Première analyse" },
+    "rate": { "value": "Variable", "label": "Selon profil" }
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Trop de crédits tue le budget",
+    "items": [
+      { "number": "5+", "text": "Prélèvements différents à suivre chaque mois" },
+      { "number": "Invisible", "text": "Le coût total de tous vos crédits combinés" },
+      { "number": "Étouffant", "text": "Mensualités cumulées trop lourdes pour respirer" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre approche",
+    "title": "Regrouper pour respirer",
+    "description": "On analyse tous vos crédits en cours et on les remplace par un seul. Une mensualité unique, souvent réduite, un interlocuteur unique. Reprenez le contrôle.",
+    "features": [
+      { "title": "Une seule mensualité", "description": "Fini les 5 prélèvements différents à dates différentes. Un seul montant, une date." },
+      { "title": "Mensualité souvent réduite", "description": "En renégociant et en allongeant la durée, votre mensualité peut baisser significativement." },
+      { "title": "Vision claire", "description": "Vous savez exactement ce que vous devez, à qui, jusqu'à quand. Clarté totale." },
+      { "title": "Trésorerie dégagée", "description": "Mensualité réduite = argent libéré chaque mois pour vivre ou épargner." },
+      { "title": "Tous types de crédits", "description": "Conso, auto, travaux, revolving... On regroupe tout ce qui peut l'être." },
+      { "title": "Analyse personnalisée", "description": "On étudie si le rachat est vraiment intéressant pour vous. Pas de rachat inutile." },
+      { "title": "Accompagnement", "description": "On vous guide dans les démarches, on gère les remboursements anticipés aux anciens créanciers." },
+      { "title": "Coaching inclus", "description": "Au-delà du rachat, on vous aide à mieux gérer pour éviter de retomber dans l'accumulation." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Pour qui ?",
+    "title": "Reprenez le contrôle",
+    "profiles": [
+      { "title": "Multi-crédits", "description": "3, 4, 5 crédits ou plus ? Il est temps de simplifier." },
+      { "title": "Mensualités trop lourdes", "description": "Le cumul des échéances étouffe votre budget mensuel." },
+      { "title": "Perte de visibilité", "description": "Vous ne savez plus exactement ce que vous devez au total." },
+      { "title": "Nouveau départ", "description": "Vous voulez remettre les compteurs à zéro et repartir sur des bases saines." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "On reprend tout en main",
+    "steps": [
+      { "number": "01", "title": "Inventaire", "description": "Listez vos crédits en cours. On analyse la situation complète." },
+      { "number": "02", "title": "Proposition", "description": "Si le rachat est intéressant, on vous fait une offre claire sous 48h." },
+      { "number": "03", "title": "Simplification", "description": "On rembourse vos anciens crédits, vous n'avez plus qu'une mensualité." }
+    ]
+  },
+  "finalCta": {
+    "title": "Trop de crédits ?",
+    "subtitle": "Regroupez-les en un seul, simplifiez votre vie financière.",
+    "cta": "Analyser ma situation",
+    "reassurance": "Analyse gratuite • Une seule mensualité • Accompagnement complet"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "eyebrow": "Financial Coaching",
+    "title": "Master your budget",
+    "subtitle": "Free with any loan",
+    "description": "We don't just lend, we support you. Dashboard, alerts, personalized advice.",
+    "cta": "Discover coaching"
+  },
+  "solution": {
+    "eyebrow": "What we offer",
+    "title": "Much more than a loan",
+    "description": "Every Quickfund client gets free support to better manage their budget. Because a borrower who manages well is a borrower who repays well.",
+    "features": [
+      { "title": "Personal dashboard", "description": "Visualize your income, expenses, current loan. Everything in one place, in real time." },
+      { "title": "Automatic alerts", "description": "Notification before overdraft, payment reminder, budget tracking. We watch for you." },
+      { "title": "Personalized advice", "description": "Based on your real situation, not generic tips. Immediately applicable." },
+      { "title": "Free with any loan", "description": "Automatically included when you take a loan with us. No extra cost." },
+      { "title": "Premium version", "description": "To go further: €25/month, dedicated coach, in-depth support, personalized goals." },
+      { "title": "Avoid missed payments", "description": "Better management = less stress = less risk of incident. Good for you, good for us." },
+      { "title": "Financial education", "description": "Articles, guides, best practices. Learn to manage sustainably." },
+      { "title": "No commitment", "description": "Free coaching stays active as long as you want. Premium can be cancelled anytime." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "For whom?",
+    "title": "Everyone who wants to manage better",
+    "profiles": [
+      { "title": "First steps", "description": "You never really learned to manage a budget. We guide you." },
+      { "title": "Getting back on track", "description": "Management slipped, you want to restore order. We structure." },
+      { "title": "Optimization", "description": "You manage well but want to do better. We refine." },
+      { "title": "Savings project", "description": "You want to save for a project. We help you find the margins." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "Simple and automatic",
+    "steps": [
+      { "number": "01", "title": "Loan activated", "description": "As soon as your loan is in place, coaching activates automatically." },
+      { "number": "02", "title": "Connect your accounts", "description": "Optional but recommended: connect your accounts for precise tracking." },
+      { "number": "03", "title": "Manage better", "description": "Dashboard, alerts, advice. You have the tools to succeed." }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to manage better?",
+    "subtitle": "Free with any loan, premium to go further.",
+    "cta": "Start now",
+    "reassurance": "Free with any loan • Personal dashboard • Automatic alerts"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Student Loan",
+    "title": "Up to €5,000",
+    "subtitle": "No bank guarantor",
+    "description": "Your future matters more than your past. We evaluate your potential, not your history.",
+    "cta": "Simulate my student loan"
+  },
+  "stats": {
+    "minAmount": { "value": "€500", "label": "Minimum amount" },
+    "maxAmount": { "value": "€5,000", "label": "Maximum amount" },
+    "delay": { "value": "24h", "label": "Response time" },
+    "rate": { "value": "6%", "label": "APR from" }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Student = invisible to banks",
+    "items": [
+      { "number": "Guarantor", "text": "Systematically required, excluding those without wealthy families" },
+      { "number": "0", "text": "Credit history = application automatically rejected" },
+      { "number": "CDI", "text": "Only accepted criteria, discriminating students" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Our approach",
+    "title": "Your potential, not your past",
+    "description": "No history? No wealthy guarantor? We look at your education, your project, your future capacity. Studies are an investment, we understand that.",
+    "features": [
+      { "title": "No bank guarantor", "description": "No homeowner parents or family collateral required. Your project is enough." },
+      { "title": "Potential evaluation", "description": "We analyze your education, your job prospects, not just a bank score." },
+      { "title": "Deferral available", "description": "Start repaying after your studies or first job. We adapt." },
+      { "title": "Preferential rates", "description": "Conditions adapted for students. We invest in your future." },
+      { "title": "All projects", "description": "Tuition, housing, international mobility, equipment... We finance your real needs." },
+      { "title": "100% online", "description": "Between classes and student jobs, no time for bank appointments. Everything is done online." },
+      { "title": "Fast response", "description": "The semester won't wait. Response in 24h so you don't miss enrollment." },
+      { "title": "Financial coaching", "description": "Learn to manage a budget now. Advice and tracking included for free." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "For whom?",
+    "title": "All students",
+    "profiles": [
+      { "title": "Tuition fees", "description": "Business school, engineering, university. Finance your education." },
+      { "title": "Student housing", "description": "Deposit, first rents, furnishing. Settle in peacefully." },
+      { "title": "International mobility", "description": "Erasmus, internship abroad, semester away. Move without financial barriers." },
+      { "title": "Equipment and daily life", "description": "Computer, transport, everyday life. Real needs, financed." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "Fast and adapted",
+    "steps": [
+      { "number": "01", "title": "Present your project", "description": "Your program, your funding need. 5 minutes online." },
+      { "number": "02", "title": "We evaluate", "description": "Our analysis looks at your potential. Response within 24h." },
+      { "number": "03", "title": "Funded", "description": "Accepted? Choose deferral if needed, funds transferred quickly." }
+    ]
+  },
+  "finalCta": {
+    "title": "Your studies deserve better",
+    "subtitle": "From €500 to €5,000, no guarantor, deferral available.",
+    "cta": "Simulate now",
+    "reassurance": "Free simulation • No guarantor • Repayment deferral available"
+  }
+}

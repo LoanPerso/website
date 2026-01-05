@@ -1,0 +1,108 @@
+{
+  "code": "DEFAULT",
+  "name": "Other",
+  "flag": "",
+  "locale": "en-US",
+
+  "options": {
+    "employmentStatus": ["permanent", "temporary", "self-employed", "student", "retired", "unemployed"],
+    "contractType": ["permanent", "temporary"],
+    "businessType": ["self-employed", "small-business", "company", "startup"],
+    "sector": ["tech", "commerce", "services", "construction", "health", "other"],
+    "businessNeed": ["treasury", "investment", "equipment"],
+    "loanPurpose": ["auto", "homeImprovement", "equipment", "event", "travel"],
+    "institutionType": ["university", "college", "business-school", "other"],
+    "studyLevel": ["year1", "year2", "year3", "year4", "master", "doctorate"],
+    "assetType": ["vehicle", "professional-equipment", "it-equipment", "machinery"],
+    "clientType": ["individual", "business"]
+  },
+
+  "age": {
+    "minAge": 18,
+    "maxAge": 75,
+    "studentMaxAge": 30,
+    "salaryAdvanceMinAge": 18
+  },
+
+  "products": {
+    "micro-credit": {
+      "minAmount": 100,
+      "maxAmount": 3000,
+      "minDuration": 1,
+      "maxDuration": 12,
+      "minRate": 0,
+      "maxRate": 20.0,
+      "available": true
+    },
+    "consumer": {
+      "minAmount": 500,
+      "maxAmount": 5000,
+      "minDuration": 3,
+      "maxDuration": 48,
+      "minRate": 5.0,
+      "maxRate": 20.0,
+      "available": true
+    },
+    "professional": {
+      "minAmount": 1000,
+      "maxAmount": 10000,
+      "minDuration": 6,
+      "maxDuration": 60,
+      "minRate": 5.0,
+      "maxRate": 15.0,
+      "available": true
+    },
+    "student": {
+      "minAmount": 500,
+      "maxAmount": 5000,
+      "minDuration": 6,
+      "maxDuration": 60,
+      "minRate": 4.0,
+      "maxRate": 10.0,
+      "available": true
+    },
+    "salary-advance": {
+      "minAmount": 100,
+      "maxAmount": 2000,
+      "minDuration": 1,
+      "maxDuration": 3,
+      "minRate": 0,
+      "maxRate": 0,
+      "available": true
+    },
+    "leasing": {
+      "minAmount": 1000,
+      "maxAmount": 15000,
+      "minDuration": 12,
+      "maxDuration": 60,
+      "minRate": 4.0,
+      "maxRate": 12.0,
+      "available": true
+    }
+  },
+
+  "formatting": {
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyPosition": "after",
+    "decimalSeparator": ",",
+    "thousandsSeparator": " ",
+    "dateFormat": "DD/MM/YYYY"
+  },
+
+  "legal": {
+    "regulatoryBody": "N/A",
+    "maxUsurateMultiplier": 1.5,
+    "coolingOffPeriod": 14,
+    "mandatoryInsurance": false
+  },
+
+  "availableProducts": [
+    "micro-credit",
+    "consumer",
+    "professional",
+    "student",
+    "salary-advance",
+    "leasing"
+  ]
+}

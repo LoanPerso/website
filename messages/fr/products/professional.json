@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Crédit Pro",
+    "title": "Jusqu'à 10 000€",
+    "subtitle": "Pour indépendants et TPE",
+    "description": "Revenus variables ? On comprend. Pas besoin de 3 bilans pour être pris au sérieux.",
+    "cta": "Simuler mon crédit pro"
+  },
+  "stats": {
+    "minAmount": { "value": "1 000€", "label": "Montant minimum" },
+    "maxAmount": { "value": "10 000€", "label": "Montant maximum" },
+    "delay": { "value": "48h", "label": "Délai de réponse" },
+    "rate": { "value": "6%", "label": "TAEG à partir de" }
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Les banques et les indépendants",
+    "items": [
+      { "number": "3 bilans", "text": "Exigés par les banques traditionnelles" },
+      { "number": "80%", "text": "De refus pour les freelances et jeunes entreprises" },
+      { "number": "4 sem.", "text": "Délai moyen pour une réponse (quand elle arrive)" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre approche",
+    "title": "On parle business, pas paperasse",
+    "description": "Indépendants, freelances, micro-entreprises : votre activité est différente, notre analyse aussi. On regarde votre réalité, pas vos cases administratives.",
+    "features": [
+      { "title": "Revenus variables acceptés", "description": "Votre CA fluctue ? Normal pour un indépendant. On analyse votre situation réelle, pas un CDI fictif." },
+      { "title": "Pas de bilan exigé", "description": "Nouveau ? Moins de 3 ans d'activité ? On peut quand même étudier votre dossier sérieusement." },
+      { "title": "Réponse en 24-48h", "description": "Le temps c'est de l'argent. Vous avez la réponse en 1-2 jours, pas en 4 semaines." },
+      { "title": "Analyse personnalisée", "description": "Pas d'algorithme aveugle. On regarde votre secteur, vos clients, votre trajectoire." },
+      { "title": "Trésorerie ou investissement", "description": "Besoin de souffler sur la tréso ? D'investir dans du matériel ? On s'adapte à vos besoins." },
+      { "title": "Échéances adaptables", "description": "Votre activité est saisonnière ? On peut moduler les remboursements." },
+      { "title": "100% en ligne", "description": "Vous travaillez n'importe où, nous aussi. Pas de RDV bancaire à caler entre deux clients." },
+      { "title": "Coaching inclus", "description": "Suivi de trésorerie, alertes budget, conseils. On vous accompagne au-delà du prêt." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Pour qui ?",
+    "title": "Les entrepreneurs qu'on comprend",
+    "profiles": [
+      { "title": "Freelances", "description": "Développeur, designer, consultant... Votre statut n'est pas un obstacle." },
+      { "title": "Micro-entreprises", "description": "Artisans, commerçants, prestataires. On connaît vos contraintes." },
+      { "title": "Jeunes entreprises", "description": "Moins de 3 ans ? Pas de panique, on évalue votre potentiel." },
+      { "title": "Professions libérales", "description": "Infirmier, architecte, consultant. Revenus irréguliers compris." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "Simple et rapide",
+    "steps": [
+      { "number": "01", "title": "Demande en ligne", "description": "Décrivez votre activité et votre besoin. 5 minutes, quelques documents." },
+      { "number": "02", "title": "Analyse personnalisée", "description": "Notre équipe étudie votre dossier. Réponse sous 24-48h." },
+      { "number": "03", "title": "Fonds disponibles", "description": "Accepté ? Signature électronique, virement rapide sur votre compte pro." }
+    ]
+  },
+  "finalCta": {
+    "title": "Besoin de trésorerie ?",
+    "subtitle": "De 1 000€ à 10 000€, pour développer votre activité.",
+    "cta": "Simuler maintenant",
+    "reassurance": "Simulation gratuite • Revenus variables acceptés • Réponse en 48h"
+  }
+}

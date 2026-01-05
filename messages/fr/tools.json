@@ -1,0 +1,392 @@
+{
+  "simulator": {
+    "eyebrow": "Simulateur de Crédit",
+    "title": "Combien pouvez-vous emprunter ?",
+    "subtitle": "Simulez votre crédit en 30 secondes. Sans engagement, sans impact sur votre score.",
+
+    "productLabel": "Type de crédit",
+    "products": {
+      "microCredit": "Micro-crédit",
+      "microcredit": "Micro-crédit",
+      "consumer": "Crédit Conso",
+      "professional": "Crédit Pro",
+      "student": "Prêt Étudiant",
+      "salaryAdvance": "Avance Salaire",
+      "salaryadvance": "Avance Salaire",
+      "leasing": "Leasing"
+    },
+
+    "amountLabel": "Montant souhaité",
+    "durationLabel": "Durée de remboursement",
+    "month": "mois",
+    "months": "mois",
+
+    "monthlyPayment": "Mensualité estimée",
+    "totalCost": "Coût total",
+    "interestCost": "Coût des intérêts",
+    "rateRange": "Taux indicatif",
+
+    "disclaimer": "Simulation indicative. Le taux définitif dépend de votre profil. Aucun engagement.",
+    "cta": "Faire ma demande",
+
+    "modeSimple": "Simulation rapide",
+    "modeAdvanced": "Simulation personnalisée",
+
+    "whySimulate": "Pourquoi simuler chez Quickfund ?",
+    "features": {
+      "instant": {
+        "title": "Résultat instantané",
+        "description": "Obtenez votre estimation en quelques secondes."
+      },
+      "noCommitment": {
+        "title": "Sans engagement",
+        "description": "Simulez autant que vous voulez, aucune obligation."
+      },
+      "transparent": {
+        "title": "100% transparent",
+        "description": "Tous les frais affichés, pas de surprise."
+      },
+      "explained": {
+        "title": "On vous explique",
+        "description": "Accepté ou refusé, vous saurez pourquoi."
+      }
+    },
+
+    "faq": {
+      "title": "Questions fréquentes",
+      "q1": {
+        "question": "La simulation affecte-t-elle mon score de crédit ?",
+        "answer": "Non. La simulation est 100% gratuite et sans impact sur votre score. Nous ne faisons aucune vérification de crédit à ce stade."
+      },
+      "q2": {
+        "question": "Le taux affiché est-il garanti ?",
+        "answer": "Le taux affiché est indicatif. Votre taux final dépend de votre profil (revenus, historique, situation). Nous vous communiquerons votre taux exact lors de l'étude de votre dossier."
+      },
+      "q3": {
+        "question": "Combien de temps prend la réponse définitive ?",
+        "answer": "Une fois votre demande complète, vous recevez une réponse en moins de 24h. Pour les dossiers complexes, cela peut prendre 48h."
+      },
+      "q4": {
+        "question": "Puis-je modifier ma demande après simulation ?",
+        "answer": "Absolument. La simulation n'engage à rien. Vous pouvez modifier le montant, la durée ou le type de crédit à tout moment avant de soumettre votre demande."
+      }
+    },
+
+    "advanced": {
+      "step": "Étape",
+      "progress": {
+        "country": "Pays",
+        "type": "Type",
+        "amount": "Montant",
+        "profile": "Profil",
+        "result": "Résultat"
+      },
+
+      "step0Eyebrow": "Commençons",
+      "step0Title": "Dans quel pays résidez-vous ?",
+      "step0Subtitle": "Les conditions et produits varient selon votre pays de résidence",
+      "productsAvailable": "produits disponibles",
+      "countryHint": "Votre pays détermine les offres disponibles",
+      "selectCountry": "Sélectionnez votre pays",
+      "searchCountry": "Rechercher un pays...",
+      "noCountryFound": "Aucun pays trouvé",
+      "optimized": "Optimisé",
+
+      "step1Eyebrow": "Étape 1 sur 4",
+      "step1Title": "Quel type de crédit vous correspond ?",
+      "step1Subtitle": "Choisissez le produit adapté à votre situation",
+      "selectHint": "Cliquez sur un produit pour continuer",
+      "amountRange": "Montant",
+      "durationRange": "Durée",
+
+      "products": {
+        "microcredit": {
+          "description": "Pour les petits besoins urgents, de 20€ à 500€"
+        },
+        "consumer": {
+          "description": "Projets personnels : auto, travaux, équipement"
+        },
+        "professional": {
+          "description": "Trésorerie et investissement pour freelances & TPE"
+        },
+        "student": {
+          "description": "Financez vos études sans garant obligatoire"
+        },
+        "salaryadvance": {
+          "description": "Avance sur votre prochain salaire, moins cher qu'un découvert"
+        },
+        "leasing": {
+          "description": "Véhicules et équipements professionnels"
+        }
+      },
+
+      "step2Title": "Définissez votre projet",
+      "step2Subtitle": "Ajustez le montant et la durée selon vos besoins",
+      "estimatedMonthly": "Mensualité estimée",
+      "rateIndicative": "Taux indicatif",
+      "back": "Retour",
+      "continue": "Continuer",
+
+      "step3Title": "Parlez-nous de vous",
+      "step3Subtitle": "Ces informations nous aident à personnaliser votre offre",
+      "seeResults": "Voir mon estimation",
+      "fillRequired": "Veuillez remplir les champs obligatoires",
+
+      "yes": "Oui",
+      "no": "Non",
+      "other": "Autre",
+
+      "questions": {
+        "age": "Quel âge avez-vous ?",
+        "ageSubtitle": "L'âge minimum est de 18 ans",
+        "yearsOld": "ans"
+      },
+
+      "employment": {
+        "title": "Quelle est votre situation professionnelle ?",
+        "subtitle": "Sélectionnez ce qui correspond le mieux"
+      },
+
+      "options": {
+        "employmentStatus": {
+          "cdi": "CDI",
+          "cdd": "CDD",
+          "freelance": "Freelance",
+          "independant": "Indépendant",
+          "permanent": "Contrat permanent",
+          "temporary": "Contrat temporaire",
+          "self-employed": "Indépendant",
+          "indefinido": "Contrat indéfini",
+          "temporal": "Contrat temporaire",
+          "autonomo": "Autonome",
+          "student": "Étudiant",
+          "retired": "Retraité",
+          "unemployed": "Sans emploi"
+        },
+        "contractType": {
+          "cdi": "CDI",
+          "cdd": "CDD",
+          "permanent": "Permanent",
+          "temporary": "Temporaire",
+          "indefinido": "Indéfini",
+          "temporal": "Temporaire"
+        },
+        "businessType": {
+          "freelance": "Freelance",
+          "auto-entrepreneur": "Auto-entrepreneur",
+          "tpe": "TPE (< 10 salariés)",
+          "startup": "Startup",
+          "independant": "Indépendant",
+          "sprl": "SPRL",
+          "sa": "SA",
+          "sarl": "SARL",
+          "sl": "SL",
+          "self-employed": "Indépendant",
+          "small-business": "Petite entreprise",
+          "company": "Entreprise",
+          "autonomo": "Autonome"
+        },
+        "institutionType": {
+          "university": "Université",
+          "business-school": "École de commerce",
+          "engineering-school": "École d'ingénieurs",
+          "art-school": "École d'art / Design",
+          "haute-ecole": "Haute école",
+          "epfl-ethz": "EPFL / ETHZ",
+          "hes": "HES",
+          "fp-superior": "Formation professionnelle supérieure",
+          "college": "Collège / IUT",
+          "other": "Autre établissement"
+        },
+        "studyLevel": {
+          "l1": "Licence 1",
+          "l2": "Licence 2",
+          "l3": "Licence 3",
+          "m1": "Master 1",
+          "m2": "Master 2",
+          "bac1": "Bac 1",
+          "bac2": "Bac 2",
+          "bac3": "Bac 3",
+          "master1": "Master 1",
+          "master2": "Master 2",
+          "bachelor1": "Bachelor 1",
+          "bachelor2": "Bachelor 2",
+          "bachelor3": "Bachelor 3",
+          "grado1": "1ère année",
+          "grado2": "2ème année",
+          "grado3": "3ème année",
+          "grado4": "4ème année",
+          "year1": "1ère année",
+          "year2": "2ème année",
+          "year3": "3ème année",
+          "year4": "4ème année",
+          "master": "Master",
+          "doctorate": "Doctorat"
+        },
+        "loanPurpose": {
+          "auto": "Véhicule",
+          "homeImprovement": "Travaux",
+          "equipment": "Équipement",
+          "event": "Événement",
+          "travel": "Voyage"
+        },
+        "assetType": {
+          "vehicle": "Véhicule",
+          "professional-equipment": "Équipement pro",
+          "it-equipment": "Matériel IT",
+          "machinery": "Machine / Outillage"
+        },
+        "clientType": {
+          "individual": "Particulier",
+          "business": "Professionnel"
+        },
+        "sector": {
+          "tech": "Tech / Digital",
+          "commerce": "Commerce / Retail",
+          "services": "Services",
+          "construction": "BTP / Construction",
+          "health": "Santé / Bien-être",
+          "other": "Autre"
+        },
+        "businessNeed": {
+          "treasury": "Trésorerie",
+          "investment": "Investissement",
+          "equipment": "Équipement"
+        }
+      },
+
+      "student": {
+        "institutionTitle": "Dans quel type d'établissement étudiez-vous ?",
+        "institutionSubtitle": "Sélectionnez votre type d'école",
+        "university": "Université",
+        "businessSchool": "École de commerce",
+        "engineeringSchool": "École d'ingénieurs",
+        "artSchool": "École d'art / Design",
+        "otherSchool": "Autre établissement",
+        "fieldTitle": "Quelle est votre filière ?",
+        "fieldPlaceholder": "Ex: Informatique, Marketing, Droit...",
+        "levelTitle": "En quelle année êtes-vous ?",
+        "doctorate": "Doctorat",
+        "jobTitle": "Avez-vous un job étudiant ?",
+        "jobSubtitle": "Revenus complémentaires réguliers",
+        "monthlyIncome": "Revenu mensuel approximatif",
+        "guarantorTitle": "Avez-vous un garant disponible ?",
+        "guarantorSubtitle": "Un garant peut améliorer votre taux",
+        "guarantorYes": "Améliore vos chances",
+        "guarantorNo": "Pas de garant"
+      },
+
+      "pro": {
+        "typeTitle": "Quel est votre statut professionnel ?",
+        "typeSubtitle": "Sélectionnez votre forme juridique",
+        "freelance": "Freelance",
+        "autoEntrepreneur": "Auto-entrepreneur",
+        "tpe": "TPE (< 10 salariés)",
+        "startup": "Startup",
+        "sectorTitle": "Dans quel secteur exercez-vous ?",
+        "sectorPlaceholder": "Sélectionnez un secteur",
+        "sectors": {
+          "tech": "Tech / Digital",
+          "commerce": "Commerce / Retail",
+          "services": "Services",
+          "construction": "BTP / Construction",
+          "health": "Santé / Bien-être",
+          "other": "Autre"
+        },
+        "yearsTitle": "Depuis combien de temps exercez-vous ?",
+        "years": {
+          "lessThan1": "< 1 an"
+        },
+        "revenueTitle": "Quel est votre chiffre d'affaires annuel ?",
+        "revenueSubtitle": "Estimation approximative",
+        "year": "an",
+        "needTitle": "Quel est l'objet de ce financement ?",
+        "needs": {
+          "treasury": "Trésorerie",
+          "treasuryDesc": "Gérer un décalage de cash-flow",
+          "investment": "Investissement",
+          "investmentDesc": "Développer votre activité",
+          "equipment": "Équipement",
+          "equipmentDesc": "Acheter du matériel"
+        }
+      },
+
+      "consumer": {
+        "purposeTitle": "Quel est l'objet de ce crédit ?",
+        "incomeTitle": "Quel est votre revenu mensuel net ?",
+        "incomeSubtitle": "Plus votre revenu est élevé, meilleur sera votre taux",
+        "purposes": {
+          "auto": "Véhicule",
+          "homeImprovement": "Travaux",
+          "equipment": "Équipement",
+          "event": "Événement",
+          "travel": "Voyage"
+        }
+      },
+
+      "salary": {
+        "contractTitle": "Quel est votre type de contrat ?",
+        "netTitle": "Quel est votre salaire net mensuel ?",
+        "netSubtitle": "Montant après impôts",
+        "paydayTitle": "Quand recevez-vous votre prochain salaire ?"
+      },
+
+      "leasing": {
+        "assetTitle": "Quel type de bien souhaitez-vous financer ?",
+        "assetSubtitle": "Le bien sert de garantie, ce qui améliore votre taux",
+        "vehicle": "Véhicule",
+        "proEquipment": "Équipement pro",
+        "itEquipment": "Matériel IT",
+        "machinery": "Machine / Outillage",
+        "statusTitle": "Êtes-vous un particulier ou un professionnel ?",
+        "individual": "Particulier",
+        "individualDesc": "Usage personnel",
+        "business": "Professionnel",
+        "businessDesc": "Usage business"
+      },
+
+      "rateInfo": {
+        "title": "Comprendre votre taux",
+        "description": "Le taux affiché est une estimation basée sur votre profil. Le taux final dépendra de l'étude complète de votre dossier.",
+        "rateRange": "Pour ce produit, le taux peut varier entre",
+        "and": "et",
+        "yourRate": "Votre taux estimé",
+        "customRate": "Simuler avec un autre taux",
+        "applyCustom": "Appliquer ce taux",
+        "resetRate": "Réinitialiser",
+        "close": "Fermer"
+      },
+
+      "results": {
+        "title": "Votre estimation personnalisée",
+        "subtitle": "Basée sur les informations que vous avez fournies",
+        "perMonth": "par mois",
+        "summary": "Récapitulatif",
+        "amount": "Montant emprunté",
+        "duration": "Durée",
+        "type": "Type de crédit",
+        "response": "Délai de réponse",
+        "yourProfile": "Votre profil",
+        "withGuarantor": "Avec garant",
+        "withJob": "Avec revenus",
+        "established": "Activité établie",
+        "assessment": "Évaluation préliminaire",
+        "riskCategory": "Catégorie de risque",
+        "riskLow": "Risque faible",
+        "riskModerate": "Risque modéré",
+        "riskMedium": "Risque moyen",
+        "riskHigh": "Risque élevé",
+        "approvalChance": "Probabilité d'acceptation",
+        "approvalHigh": "Élevée",
+        "approvalMedium": "Moyenne",
+        "approvalLow": "À évaluer",
+        "nextSteps": "Prochaines étapes",
+        "step1": "Complétez votre demande en ligne (5 min)",
+        "step2": "Fournissez vos justificatifs (pièce d'identité, revenus)",
+        "step3": "Recevez une réponse définitive sous {time}",
+        "applyNow": "Faire ma demande",
+        "newSimulation": "Nouvelle simulation"
+      }
+    }
+  }
+}

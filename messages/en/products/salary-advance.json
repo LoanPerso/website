@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Salary Advance",
+    "title": "Your salary, earlier",
+    "subtitle": "Skip the overdraft",
+    "description": "Urgent expense before payday? A simple solution, repaid automatically.",
+    "cta": "Request an advance"
+  },
+  "stats": {
+    "minAmount": { "value": "€50", "label": "Minimum amount" },
+    "maxAmount": { "value": "Salary", "label": "Available portion" },
+    "delay": { "value": "24h", "label": "Transfer time" },
+    "rate": { "value": "8%", "label": "APR from" }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Overdrafts are expensive",
+    "items": [
+      { "number": "16%", "text": "Average overdraft interest rate" },
+      { "number": "€50+", "text": "Fees per incident" },
+      { "number": "Stress", "text": "Waiting for payday with fingers crossed" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Our approach",
+    "title": "As simple as advancing your pay",
+    "description": "Your salary arrives in 10 days, but the expense is now. We advance you a portion, you repay when you receive your salary. No stress, no overdraft.",
+    "features": [
+      { "title": "Skip the overdraft", "description": "Bank overdrafts are among the most expensive credit. Our advance costs less." },
+      { "title": "Automatic repayment", "description": "When salary arrives, repayment happens. No installment to manage." },
+      { "title": "Minimal risk", "description": "Based on your upcoming salary, not a long-term loan. Simple and controlled." },
+      { "title": "Ultra-fast process", "description": "Apply in 2 minutes, funds available in hours." },
+      { "title": "No long commitment", "description": "A few days or weeks maximum. No loan that drags on." },
+      { "title": "Transparent", "description": "You know exactly what you repay. No hidden fees." },
+      { "title": "Discreet", "description": "Your employer is not contacted. It's between you and us." },
+      { "title": "Repeatable", "description": "Regular need? Possibility to renew if everything goes well." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "For whom?",
+    "title": "When timing doesn't align",
+    "profiles": [
+      { "title": "Tight end of month", "description": "Bills fall before salary. We sync for you." },
+      { "title": "Unexpected expense", "description": "Car repair, medical fees, emergency. Life doesn't wait for the 25th." },
+      { "title": "Urgent bill", "description": "Electricity, rent, deadline. Avoid late payment penalties." },
+      { "title": "Avoid overdraft fees", "description": "Overdraft costs you every month? Break the cycle." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "In 3 clicks",
+    "steps": [
+      { "number": "01", "title": "Request", "description": "Enter the amount and your payday. 2 minutes." },
+      { "number": "02", "title": "Validated", "description": "We verify your situation. Quick response." },
+      { "number": "03", "title": "Advanced", "description": "Funds in your account, repayment at payday." }
+    ]
+  },
+  "finalCta": {
+    "title": "Need it before payday?",
+    "subtitle": "A simple advance, automatically repaid at salary.",
+    "cta": "Request an advance",
+    "reassurance": "Cheaper than overdraft • Automatic repayment • Discreet"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Avance sur Salaire",
+    "title": "Votre salaire, plus tôt",
+    "subtitle": "Évitez le découvert",
+    "description": "Dépense urgente avant la paie ? Une solution simple, remboursée automatiquement.",
+    "cta": "Demander une avance"
+  },
+  "stats": {
+    "minAmount": { "value": "50€", "label": "Montant minimum" },
+    "maxAmount": { "value": "Salaire", "label": "Portion disponible" },
+    "delay": { "value": "24h", "label": "Délai de versement" },
+    "rate": { "value": "8%", "label": "TAEG à partir de" }
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Le découvert coûte cher",
+    "items": [
+      { "number": "16%", "text": "Taux moyen d'un découvert bancaire" },
+      { "number": "50€+", "text": "Agios et frais par incident" },
+      { "number": "Stress", "text": "Attendre la paie en croisant les doigts" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre approche",
+    "title": "Simple comme avancer votre paie",
+    "description": "Votre salaire arrive dans 10 jours, mais la dépense est maintenant. On vous avance une partie, vous remboursez à la réception du salaire. Sans stress, sans découvert.",
+    "features": [
+      { "title": "Évitez le découvert", "description": "Les agios bancaires sont parmi les crédits les plus chers. Notre avance coûte moins cher." },
+      { "title": "Remboursement automatique", "description": "À réception du salaire, le remboursement s'effectue. Pas de mensualité à gérer." },
+      { "title": "Risque minimal", "description": "Basé sur votre salaire à venir, pas sur un crédit long terme. Simple et maîtrisé." },
+      { "title": "Process ultra-rapide", "description": "Demande en 2 minutes, fonds disponibles en quelques heures." },
+      { "title": "Pas d'engagement long", "description": "Quelques jours ou semaines maximum. Pas de crédit qui s'éternise." },
+      { "title": "Transparent", "description": "Vous savez exactement ce que vous remboursez. Pas de frais cachés." },
+      { "title": "Discret", "description": "Votre employeur n'est pas contacté. C'est entre vous et nous." },
+      { "title": "Répétable", "description": "Besoin régulier ? Possibilité de renouveler si tout se passe bien." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Pour qui ?",
+    "title": "Quand le timing ne colle pas",
+    "profiles": [
+      { "title": "Fin de mois serrée", "description": "Les factures tombent avant le salaire. On synchronise pour vous." },
+      { "title": "Dépense imprévue", "description": "Réparation voiture, frais médicaux, urgence. La vie n'attend pas le 25." },
+      { "title": "Facture urgente", "description": "Électricité, loyer, échéance. Évitez les pénalités de retard." },
+      { "title": "Éviter les agios", "description": "Le découvert vous coûte cher chaque mois ? Cassez le cycle." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "En 3 clics",
+    "steps": [
+      { "number": "01", "title": "Demandez", "description": "Indiquez le montant et votre date de paie. 2 minutes." },
+      { "number": "02", "title": "Validé", "description": "On vérifie votre situation. Réponse rapide." },
+      { "number": "03", "title": "Avancé", "description": "Fonds sur votre compte, remboursement à la paie." }
+    ]
+  },
+  "finalCta": {
+    "title": "Besoin avant la paie ?",
+    "subtitle": "Une avance simple, remboursée automatiquement au salaire.",
+    "cta": "Demander une avance",
+    "reassurance": "Moins cher qu'un découvert • Remboursement automatique • Discret"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Crédit Conso",
+    "title": "Jusqu'à 5 000€",
+    "subtitle": "100% transparent",
+    "description": "Financez vos projets sans mauvaise surprise. On vous dit tout, toujours.",
+    "cta": "Simuler mon crédit conso"
+  },
+  "stats": {
+    "minAmount": { "value": "500€", "label": "Montant minimum" },
+    "maxAmount": { "value": "5 000€", "label": "Montant maximum" },
+    "delay": { "value": "24h", "label": "Délai de réponse" },
+    "rate": { "value": "6%", "label": "TAEG à partir de" }
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Le crédit conso traditionnel",
+    "items": [
+      { "number": "2 sem.", "text": "Délai moyen pour obtenir une réponse des banques" },
+      { "number": "0%", "text": "D'explications en cas de refus" },
+      { "number": "Cachés", "text": "Frais de dossier, pénalités, surprises" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre approche",
+    "title": "Simple, clair, honnête",
+    "description": "Le crédit conso devrait être simple. Pas de petites lignes, pas de surprises. Vous savez exactement ce que vous payez, et pourquoi on accepte ou refuse.",
+    "features": [
+      { "title": "Transparence totale", "description": "Taux, frais, conditions : tout est affiché clairement dès le départ. Pas de surprises à la signature." },
+      { "title": "Réponse en 24h", "description": "Vous avez un projet, vous voulez savoir vite. Réponse garantie en moins de 24 heures." },
+      { "title": "On explique toujours", "description": "Accepté ou refusé, vous savez pourquoi. Pas de décision opaque qui tombe sans explication." },
+      { "title": "Taux compétitifs", "description": "Notre structure légère nous permet de proposer des taux parmi les plus bas du marché. À partir de 6% TAEG." },
+      { "title": "Remboursement anticipé gratuit", "description": "Vous voulez solder plus tôt ? Pas de pénalité. C'est votre argent, votre choix." },
+      { "title": "100% en ligne", "description": "Pas de RDV en agence, pas de paperasse postale. Tout se fait depuis chez vous, 24h/24." },
+      { "title": "Échéances flexibles", "description": "De 3 à 36 mois, adaptez la durée à votre capacité de remboursement." },
+      { "title": "Coaching inclus", "description": "Suivi de budget et conseils personnalisés offerts. On vous accompagne au-delà du prêt." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Pour qui ?",
+    "title": "Vos projets, nos solutions",
+    "profiles": [
+      { "title": "Achat véhicule", "description": "Voiture, moto, scooter. Financez votre mobilité sans vider votre épargne." },
+      { "title": "Travaux maison", "description": "Rénovation, aménagement, équipement. Améliorez votre quotidien." },
+      { "title": "Événement de vie", "description": "Mariage, naissance, déménagement. Les grands moments méritent d'être financés sereinement." },
+      { "title": "Équipement", "description": "Électroménager, high-tech, mobilier. Équipez-vous sans attendre." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "3 étapes, 24 heures",
+    "steps": [
+      { "number": "01", "title": "Simulez", "description": "Indiquez le montant et la durée souhaitée. 2 minutes, aucun engagement." },
+      { "number": "02", "title": "Réponse", "description": "Notre analyse automatisée évalue votre demande. Réponse claire sous 24h." },
+      { "number": "03", "title": "Recevez", "description": "Dossier accepté ? Signez en ligne, fonds versés sous 48h." }
+    ]
+  },
+  "finalCta": {
+    "title": "Un projet en tête ?",
+    "subtitle": "De 500€ à 5 000€, financez-le en toute transparence.",
+    "cta": "Simuler maintenant",
+    "reassurance": "Simulation gratuite • Sans engagement • Réponse en 24h"
+  }
+}

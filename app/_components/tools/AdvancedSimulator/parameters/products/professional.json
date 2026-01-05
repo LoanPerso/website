@@ -1,0 +1,113 @@
+{
+  "id": "professional",
+  "icon": "briefcase",
+  "color": "#4A6FA5",
+
+  "questions": {
+    "age": {
+      "min": 18,
+      "max": 70
+    },
+    "businessType": {
+      "scores": {
+        "freelance": 70,
+        "auto-entrepreneur": 65,
+        "tpe": 85,
+        "startup": 50
+      }
+    },
+    "sector": {
+      "scores": {
+        "tech": 90,
+        "commerce": 75,
+        "services": 80,
+        "construction": 70,
+        "health": 95,
+        "other": 60
+      }
+    },
+    "yearsInBusiness": {
+      "min": 0,
+      "max": 50
+    },
+    "annualRevenue": {
+      "min": 0,
+      "max": 500000,
+      "step": 5000
+    },
+    "businessNeed": {
+      "scores": {
+        "treasury": 80,
+        "investment": 90,
+        "equipment": 95
+      }
+    }
+  },
+
+  "scoring": {
+    "baseScore": 40,
+    "weights": {
+      "age": 10,
+      "businessType": 15,
+      "sector": 15,
+      "yearsInBusiness": 25,
+      "annualRevenue": 20,
+      "businessNeed": 10
+    },
+    "thresholds": {
+      "A": 80,
+      "B": 60,
+      "C": 40
+    },
+    "ageRanges": {
+      "optimal": { "min": 30, "max": 55, "score": 100 },
+      "good": { "min": 25, "max": 60, "score": 80 },
+      "default": 60
+    },
+    "yearsInBusinessRanges": {
+      "excellent": { "min": 5, "score": 100 },
+      "good": { "min": 3, "score": 85 },
+      "acceptable": { "min": 2, "score": 70 },
+      "new": { "min": 1, "score": 50 },
+      "default": 30
+    },
+    "debtRatioRanges": {
+      "excellent": { "maxRatio": 0.1, "score": 100 },
+      "good": { "maxRatio": 0.2, "score": 85 },
+      "acceptable": { "maxRatio": 0.3, "score": 70 },
+      "risky": { "maxRatio": 0.5, "score": 50 },
+      "default": 30
+    }
+  },
+
+  "calculation": {
+    "interestMethod": "compound",
+    "baseRate": 11,
+    "minRate": 6,
+    "maxRate": 20,
+    "rateAdjustments": {
+      "A": -5,
+      "B": -2,
+      "C": 4,
+      "D": 7
+    },
+    "fees": {
+      "applicationFee": 0,
+      "applicationFeePercent": 1,
+      "managementFee": 0
+    }
+  },
+
+  "responseTime": {
+    "default": "48h",
+    "fastTrack": "24h",
+    "fastTrackMinYears": 3
+  },
+
+  "approvalProbability": {
+    "A": "high",
+    "B": "high",
+    "C": "medium",
+    "D": "low"
+  }
+}

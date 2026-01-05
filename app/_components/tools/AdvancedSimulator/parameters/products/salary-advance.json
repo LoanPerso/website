@@ -1,0 +1,78 @@
+{
+  "id": "salary-advance",
+  "icon": "calendar",
+  "color": "#F59E0B",
+
+  "questions": {
+    "age": {
+      "min": 18,
+      "max": 65
+    },
+    "contractType": {
+      "scores": {
+        "cdi": 100,
+        "cdd": 60
+      }
+    },
+    "netSalary": {
+      "min": 1000,
+      "max": 10000,
+      "step": 100
+    }
+  },
+
+  "scoring": {
+    "baseScore": 60,
+    "weights": {
+      "contractType": 40,
+      "netSalary": 35,
+      "age": 10
+    },
+    "thresholds": {
+      "A": 85,
+      "B": 70,
+      "C": 50
+    },
+    "ageRanges": {
+      "optimal": { "min": 25, "max": 55, "score": 100 },
+      "default": 70
+    },
+    "salaryRatioRanges": {
+      "excellent": { "maxRatio": 0.2, "score": 100 },
+      "good": { "maxRatio": 0.3, "score": 90 },
+      "acceptable": { "maxRatio": 0.4, "score": 75 },
+      "risky": { "maxRatio": 0.5, "score": 60 },
+      "default": 40
+    }
+  },
+
+  "calculation": {
+    "interestMethod": "flat",
+    "baseRate": 14,
+    "minRate": 8,
+    "maxRate": 20,
+    "rateAdjustments": {
+      "A": -6,
+      "B": -2,
+      "C": 3,
+      "D": 6
+    },
+    "fees": {
+      "applicationFee": 0,
+      "applicationFeePercent": 0,
+      "managementFee": 0
+    }
+  },
+
+  "responseTime": {
+    "default": "< 24h",
+    "fastTrack": "< 2h"
+  },
+
+  "approvalProbability": {
+    "A": "high",
+    "B": "high",
+    "C": "high",
+    "D": "medium"
+  }
+}

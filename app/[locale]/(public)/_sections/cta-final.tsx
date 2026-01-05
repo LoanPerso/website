@@ -3,13 +3,16 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 import Magnetic from "@/_components/ui/magnetic-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function CtaFinal() {
   const t = useTranslations("home");
+  const locale = useLocale();
+  const router = useRouter();
   const containerRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -91,7 +94,7 @@ export function CtaFinal() {
 
         <div ref={ctaRef}>
           <Magnetic>
-            <button className="group relative px-12 py-5 bg-accent text-deep-black rounded-full font-medium text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-accent/30">
+            <button onClick={() => router.push(`/${locale}/tools/simulator`)} className="group relative px-12 py-5 bg-accent text-deep-black rounded-full font-medium text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-accent/30">
               <span className="relative z-10 flex items-center gap-3">
                 {t("cta.button")}
                 <svg

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Leasing",
+    "title": "Utilisez sans acheter",
+    "subtitle": "Taux avantageux",
+    "description": "Le bien sert de garantie. Résultat : des conditions plus favorables pour vous.",
+    "cta": "Simuler mon leasing"
+  },
+  "stats": {
+    "minAmount": { "value": "1 000€", "label": "Valeur minimum" },
+    "maxAmount": { "value": "Variable", "label": "Selon le bien" },
+    "delay": { "value": "48h", "label": "Délai de réponse" },
+    "rate": { "value": "5%", "label": "TAEG à partir de" }
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Acheter coûte cher d'un coup",
+    "items": [
+      { "number": "100%", "text": "À sortir immédiatement pour un achat comptant" },
+      { "number": "Blocage", "text": "Trésorerie immobilisée sur un bien qui se déprécie" },
+      { "number": "Risque", "text": "Si le bien ne convient plus, vous êtes coincé" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre approche",
+    "title": "Louer pour mieux financer",
+    "description": "Le leasing permet d'utiliser un bien sans l'acheter immédiatement. Le bien reste une garantie, donc on peut proposer de meilleurs taux. À la fin, vous pouvez l'acheter ou le rendre.",
+    "features": [
+      { "title": "Taux avantageux", "description": "Le bien garanti le prêt. Moins de risque pour nous = meilleur taux pour vous." },
+      { "title": "Pas d'achat immédiat", "description": "Conservez votre trésorerie. Pas de gros décaissement au départ." },
+      { "title": "Mensualités maîtrisées", "description": "Un montant fixe chaque mois, facile à budgéter." },
+      { "title": "Option d'achat", "description": "À la fin du contrat, achetez le bien à sa valeur résiduelle ou rendez-le." },
+      { "title": "Flexibilité", "description": "Le bien ne vous convient plus ? À la fin du contrat, vous n'êtes pas obligé de l'acheter." },
+      { "title": "Véhicules et équipements", "description": "Voiture, utilitaire, matériel pro, équipement informatique. Tout se lease." },
+      { "title": "Avantages fiscaux (pro)", "description": "Pour les professionnels, déductibilité des loyers. Optimisation fiscale." },
+      { "title": "100% en ligne", "description": "De la simulation à la signature, tout se fait à distance." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Pour qui ?",
+    "title": "Utilisez sans immobiliser",
+    "profiles": [
+      { "title": "Véhicule personnel", "description": "Voiture, moto, scooter. Roulez sans vider votre épargne." },
+      { "title": "Véhicule professionnel", "description": "Utilitaire, flotte, véhicule de fonction. Déductible et maîtrisé." },
+      { "title": "Équipement pro", "description": "Machines, outillage, équipement lourd. Investissez sans bloquer." },
+      { "title": "Matériel informatique", "description": "Serveurs, postes de travail, infra. Renouvelez sans surcoût." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "Du devis à l'utilisation",
+    "steps": [
+      { "number": "01", "title": "Choisissez le bien", "description": "Véhicule, équipement, matériel. On estime sa valeur et votre leasing." },
+      { "number": "02", "title": "Validation", "description": "Analyse de votre dossier et du bien. Réponse sous 48h." },
+      { "number": "03", "title": "Utilisez", "description": "Contrat signé, vous utilisez le bien. À la fin, achat ou restitution." }
+    ]
+  },
+  "finalCta": {
+    "title": "Besoin d'un bien sans l'acheter ?",
+    "subtitle": "Leasing avec option d'achat. Taux parmi les plus bas.",
+    "cta": "Simuler maintenant",
+    "reassurance": "Taux avantageux • Option d'achat • Mensualités fixes"
+  }
+}

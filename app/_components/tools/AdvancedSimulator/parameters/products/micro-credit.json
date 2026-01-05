@@ -1,0 +1,73 @@
+{
+  "id": "micro-credit",
+  "icon": "flash",
+  "color": "#C8A96A",
+
+  "questions": {
+    "age": {
+      "min": 18,
+      "max": 75
+    },
+    "employmentStatus": {
+      "scores": {
+        "cdi": 100,
+        "cdd": 70,
+        "freelance": 60,
+        "student": 50,
+        "retired": 80,
+        "unemployed": 20
+      }
+    }
+  },
+
+  "scoring": {
+    "baseScore": 50,
+    "weights": {
+      "age": 25,
+      "employmentStatus": 25
+    },
+    "thresholds": {
+      "A": 80,
+      "B": 60,
+      "C": 40
+    },
+    "ageRanges": {
+      "optimal": { "min": 26, "max": 45, "score": 100 },
+      "good": { "min": 46, "max": 55, "score": 85 },
+      "acceptable1": { "min": 18, "max": 25, "score": 70 },
+      "acceptable2": { "min": 56, "max": 65, "score": 70 },
+      "default": 50
+    }
+  },
+
+  "calculation": {
+    "interestMethod": "compound",
+    "baseRate": 18,
+    "minRate": 12,
+    "maxRate": 25,
+    "rateAdjustments": {
+      "A": -6,
+      "B": -3,
+      "C": 2,
+      "D": 5
+    },
+    "fees": {
+      "applicationFee": 0,
+      "applicationFeePercent": 1,
+      "managementFee": 0
+    }
+  },
+
+  "responseTime": {
+    "default": "< 24h",
+    "fastTrack": "< 2h",
+    "fastTrackCondition": "categoryA"
+  },
+
+  "approvalProbability": {
+    "A": "high",
+    "B": "high",
+    "C": "medium",
+    "D": "low"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Consumer Credit",
+    "title": "Up to €5,000",
+    "subtitle": "100% transparent",
+    "description": "Finance your projects with no surprises. We tell you everything, always.",
+    "cta": "Simulate my consumer loan"
+  },
+  "stats": {
+    "minAmount": { "value": "€500", "label": "Minimum amount" },
+    "maxAmount": { "value": "€5,000", "label": "Maximum amount" },
+    "delay": { "value": "24h", "label": "Response time" },
+    "rate": { "value": "6%", "label": "APR from" }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Traditional consumer credit",
+    "items": [
+      { "number": "2 wks", "text": "Average time to get a response from banks" },
+      { "number": "0%", "text": "Explanation when declined" },
+      { "number": "Hidden", "text": "Processing fees, penalties, surprises" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Our approach",
+    "title": "Simple, clear, honest",
+    "description": "Consumer credit should be simple. No fine print, no surprises. You know exactly what you pay, and why we accept or decline.",
+    "features": [
+      { "title": "Total transparency", "description": "Rates, fees, conditions: everything is clearly displayed from the start. No surprises at signing." },
+      { "title": "Response in 24h", "description": "You have a project, you want to know fast. Response guaranteed in less than 24 hours." },
+      { "title": "We always explain", "description": "Accepted or declined, you know why. No opaque decision that falls without explanation." },
+      { "title": "Competitive rates", "description": "Our lean structure allows us to offer rates among the lowest on the market. From 6% APR." },
+      { "title": "Free early repayment", "description": "Want to pay off early? No penalty. It's your money, your choice." },
+      { "title": "100% online", "description": "No branch appointments, no postal paperwork. Everything is done from home, 24/7." },
+      { "title": "Flexible terms", "description": "From 3 to 36 months, adapt the duration to your repayment capacity." },
+      { "title": "Coaching included", "description": "Budget tracking and personalized advice included free. We support you beyond the loan." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "For whom?",
+    "title": "Your projects, our solutions",
+    "profiles": [
+      { "title": "Vehicle purchase", "description": "Car, motorcycle, scooter. Finance your mobility without emptying your savings." },
+      { "title": "Home improvements", "description": "Renovation, decoration, equipment. Improve your daily life." },
+      { "title": "Life events", "description": "Wedding, birth, move. Big moments deserve to be financed calmly." },
+      { "title": "Equipment", "description": "Appliances, tech, furniture. Get equipped without waiting." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "3 steps, 24 hours",
+    "steps": [
+      { "number": "01", "title": "Simulate", "description": "Enter the amount and desired duration. 2 minutes, no commitment." },
+      { "number": "02", "title": "Response", "description": "Our automated analysis evaluates your request. Clear response within 24h." },
+      { "number": "03", "title": "Receive", "description": "Application accepted? Sign online, funds transferred within 48h." }
+    ]
+  },
+  "finalCta": {
+    "title": "Have a project in mind?",
+    "subtitle": "From €500 to €5,000, finance it with total transparency.",
+    "cta": "Simulate now",
+    "reassurance": "Free simulation • No commitment • Response in 24h"
+  }
+}

@@ -3,7 +3,8 @@
 import { useRef, useEffect, useState, type RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 import Magnetic from "@/_components/ui/magnetic-button";
 import { useSiteReady } from "@/_components/site-ready-provider";
 import { type BrandOverlayRef } from "./hero/brand-overlay";
@@ -16,6 +17,8 @@ interface HeroProps {
 
 export function Hero({ brandOverlayRef }: HeroProps) {
   const t = useTranslations("home");
+  const locale = useLocale();
+  const router = useRouter();
   const { isSiteReady } = useSiteReady();
   const containerRef = useRef<HTMLElement>(null);
   const cursorCircleRef = useRef<HTMLDivElement>(null);
@@ -544,7 +547,7 @@ export function Hero({ brandOverlayRef }: HeroProps) {
               {/* CTA */}
               <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-6">
                 <Magnetic>
-                  <button ref={ctaButtonRef} className="group relative px-10 py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl">
+                  <button ref={ctaButtonRef} onClick={() => router.push(`/${locale}/tools/simulator`)} className="group relative px-10 py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl">
                     <span ref={ctaButtonTextRef} className="relative z-10 flex items-center gap-3">
                       {t("hero.cta.primary")}
                       <svg

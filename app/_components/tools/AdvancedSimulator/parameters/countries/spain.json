@@ -1,0 +1,108 @@
+{
+  "code": "ES",
+  "name": "Espana",
+  "flag": "ES",
+  "locale": "es-ES",
+
+  "options": {
+    "employmentStatus": ["indefinido", "temporal", "autonomo", "student", "retired", "unemployed"],
+    "contractType": ["indefinido", "temporal"],
+    "businessType": ["autonomo", "sl", "sa", "startup"],
+    "sector": ["tech", "commerce", "services", "construction", "health", "other"],
+    "businessNeed": ["treasury", "investment", "equipment"],
+    "loanPurpose": ["auto", "homeImprovement", "equipment", "event", "travel"],
+    "institutionType": ["university", "business-school", "fp-superior", "other"],
+    "studyLevel": ["grado1", "grado2", "grado3", "grado4", "master", "doctorate"],
+    "assetType": ["vehicle", "professional-equipment", "it-equipment", "machinery"],
+    "clientType": ["individual", "business"]
+  },
+
+  "age": {
+    "minAge": 18,
+    "maxAge": 75,
+    "studentMaxAge": 30,
+    "salaryAdvanceMinAge": 18
+  },
+
+  "products": {
+    "micro-credit": {
+      "minAmount": 100,
+      "maxAmount": 3000,
+      "minDuration": 1,
+      "maxDuration": 12,
+      "minRate": 0,
+      "maxRate": 24.0,
+      "available": true
+    },
+    "consumer": {
+      "minAmount": 500,
+      "maxAmount": 6000,
+      "minDuration": 3,
+      "maxDuration": 60,
+      "minRate": 5.0,
+      "maxRate": 24.0,
+      "available": true
+    },
+    "professional": {
+      "minAmount": 1000,
+      "maxAmount": 12000,
+      "minDuration": 6,
+      "maxDuration": 60,
+      "minRate": 5.5,
+      "maxRate": 16.0,
+      "available": true
+    },
+    "student": {
+      "minAmount": 500,
+      "maxAmount": 6000,
+      "minDuration": 6,
+      "maxDuration": 60,
+      "minRate": 4.0,
+      "maxRate": 9.0,
+      "available": true
+    },
+    "salary-advance": {
+      "minAmount": 100,
+      "maxAmount": 2000,
+      "minDuration": 1,
+      "maxDuration": 3,
+      "minRate": 0,
+      "maxRate": 0,
+      "available": true
+    },
+    "leasing": {
+      "minAmount": 1000,
+      "maxAmount": 18000,
+      "minDuration": 12,
+      "maxDuration": 60,
+      "minRate": 4.0,
+      "maxRate": 12.0,
+      "available": true
+    }
+  },
+
+  "formatting": {
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyPosition": "after",
+    "decimalSeparator": ",",
+    "thousandsSeparator": ".",
+    "dateFormat": "DD/MM/YYYY"
+  },
+
+  "legal": {
+    "regulatoryBody": "Banco de Espana",
+    "maxUsurateMultiplier": 2.0,
+    "coolingOffPeriod": 14,
+    "mandatoryInsurance": false
+  },
+
+  "availableProducts": [
+    "micro-credit",
+    "consumer",
+    "professional",
+    "student",
+    "salary-advance",
+    "leasing"
+  ]
+}

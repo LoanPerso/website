@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Loan Consolidation",
+    "title": "One single payment",
+    "subtitle": "Simplify your budget",
+    "description": "Multiple loans? We consolidate them into one, often cheaper overall.",
+    "cta": "Analyze my loans"
+  },
+  "stats": {
+    "minAmount": { "value": "Variable", "label": "Based on your loans" },
+    "maxAmount": { "value": "Unlimited", "label": "Cumulative possible" },
+    "delay": { "value": "48h", "label": "First analysis" },
+    "rate": { "value": "Variable", "label": "Based on profile" }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Too many loans kill the budget",
+    "items": [
+      { "number": "5+", "text": "Different payments to track each month" },
+      { "number": "Invisible", "text": "The total cost of all your combined loans" },
+      { "number": "Suffocating", "text": "Cumulative payments too heavy to breathe" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Our approach",
+    "title": "Consolidate to breathe",
+    "description": "We analyze all your current loans and replace them with one. A single payment, often reduced, a single contact. Take back control.",
+    "features": [
+      { "title": "One single payment", "description": "No more 5 different deductions on different dates. One amount, one date." },
+      { "title": "Often reduced payment", "description": "By renegotiating and extending the term, your payment can drop significantly." },
+      { "title": "Clear vision", "description": "You know exactly what you owe, to whom, until when. Total clarity." },
+      { "title": "Freed cash flow", "description": "Reduced payment = money freed each month to live or save." },
+      { "title": "All loan types", "description": "Consumer, auto, home improvement, revolving... We consolidate everything possible." },
+      { "title": "Personalized analysis", "description": "We study if consolidation is really interesting for you. No useless consolidation." },
+      { "title": "Support", "description": "We guide you through the process, we handle early repayments to old creditors." },
+      { "title": "Coaching included", "description": "Beyond consolidation, we help you manage better to avoid falling back into accumulation." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "For whom?",
+    "title": "Take back control",
+    "profiles": [
+      { "title": "Multiple loans", "description": "3, 4, 5 loans or more? It's time to simplify." },
+      { "title": "Payments too heavy", "description": "The cumulative payments are suffocating your monthly budget." },
+      { "title": "Lost visibility", "description": "You no longer know exactly what you owe in total." },
+      { "title": "Fresh start", "description": "You want to reset and start on a healthy basis." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "We take everything in hand",
+    "steps": [
+      { "number": "01", "title": "Inventory", "description": "List your current loans. We analyze the complete situation." },
+      { "number": "02", "title": "Proposal", "description": "If consolidation is interesting, we make you a clear offer within 48h." },
+      { "number": "03", "title": "Simplification", "description": "We pay off your old loans, you only have one payment left." }
+    ]
+  },
+  "finalCta": {
+    "title": "Too many loans?",
+    "subtitle": "Consolidate them into one, simplify your financial life.",
+    "cta": "Analyze my situation",
+    "reassurance": "Free analysis • One single payment • Complete support"
+  }
+}

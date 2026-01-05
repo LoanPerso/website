@@ -1,0 +1,392 @@
+{
+  "simulator": {
+    "eyebrow": "Credit Simulator",
+    "title": "How much can you borrow?",
+    "subtitle": "Simulate your loan in 30 seconds. No commitment, no impact on your score.",
+
+    "productLabel": "Credit type",
+    "products": {
+      "microCredit": "Micro-loan",
+      "microcredit": "Micro-loan",
+      "consumer": "Consumer Credit",
+      "professional": "Business Credit",
+      "student": "Student Loan",
+      "salaryAdvance": "Salary Advance",
+      "salaryadvance": "Salary Advance",
+      "leasing": "Leasing"
+    },
+
+    "amountLabel": "Desired amount",
+    "durationLabel": "Repayment duration",
+    "month": "month",
+    "months": "months",
+
+    "monthlyPayment": "Estimated monthly payment",
+    "totalCost": "Total cost",
+    "interestCost": "Interest cost",
+    "rateRange": "Indicative rate",
+
+    "disclaimer": "Indicative simulation. Final rate depends on your profile. No commitment.",
+    "cta": "Submit my application",
+
+    "modeSimple": "Quick simulation",
+    "modeAdvanced": "Personalized simulation",
+
+    "whySimulate": "Why simulate with Quickfund?",
+    "features": {
+      "instant": {
+        "title": "Instant result",
+        "description": "Get your estimate in seconds."
+      },
+      "noCommitment": {
+        "title": "No commitment",
+        "description": "Simulate as much as you want, no obligation."
+      },
+      "transparent": {
+        "title": "100% transparent",
+        "description": "All fees displayed, no surprises."
+      },
+      "explained": {
+        "title": "We explain",
+        "description": "Accepted or declined, you'll know why."
+      }
+    },
+
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": {
+        "question": "Does the simulation affect my credit score?",
+        "answer": "No. The simulation is 100% free and has no impact on your score. We do not perform any credit check at this stage."
+      },
+      "q2": {
+        "question": "Is the displayed rate guaranteed?",
+        "answer": "The displayed rate is indicative. Your final rate depends on your profile (income, history, situation). We will communicate your exact rate when reviewing your application."
+      },
+      "q3": {
+        "question": "How long does the final response take?",
+        "answer": "Once your application is complete, you receive a response in less than 24 hours. For complex cases, it may take 48 hours."
+      },
+      "q4": {
+        "question": "Can I modify my application after simulation?",
+        "answer": "Absolutely. The simulation commits you to nothing. You can modify the amount, duration, or credit type at any time before submitting your application."
+      }
+    },
+
+    "advanced": {
+      "step": "Step",
+      "progress": {
+        "country": "Country",
+        "type": "Type",
+        "amount": "Amount",
+        "profile": "Profile",
+        "result": "Result"
+      },
+
+      "step0Eyebrow": "Let's start",
+      "step0Title": "Which country do you live in?",
+      "step0Subtitle": "Terms and products vary based on your country of residence",
+      "productsAvailable": "products available",
+      "countryHint": "Your country determines available offers",
+      "selectCountry": "Select your country",
+      "searchCountry": "Search for a country...",
+      "noCountryFound": "No country found",
+      "optimized": "Optimized",
+
+      "step1Eyebrow": "Step 1 of 4",
+      "step1Title": "What type of credit suits you?",
+      "step1Subtitle": "Choose the product adapted to your situation",
+      "selectHint": "Click on a product to continue",
+      "amountRange": "Amount",
+      "durationRange": "Duration",
+
+      "products": {
+        "microcredit": {
+          "description": "For small urgent needs, from €20 to €500"
+        },
+        "consumer": {
+          "description": "Personal projects: car, home improvement, equipment"
+        },
+        "professional": {
+          "description": "Cash flow and investment for freelancers & small businesses"
+        },
+        "student": {
+          "description": "Finance your studies without mandatory guarantor"
+        },
+        "salaryadvance": {
+          "description": "Advance on your next salary, cheaper than overdraft"
+        },
+        "leasing": {
+          "description": "Vehicles and professional equipment"
+        }
+      },
+
+      "step2Title": "Define your project",
+      "step2Subtitle": "Adjust the amount and duration according to your needs",
+      "estimatedMonthly": "Estimated monthly payment",
+      "rateIndicative": "Indicative rate",
+      "back": "Back",
+      "continue": "Continue",
+
+      "step3Title": "Tell us about yourself",
+      "step3Subtitle": "This information helps us personalize your offer",
+      "seeResults": "See my estimate",
+      "fillRequired": "Please fill in the required fields",
+
+      "yes": "Yes",
+      "no": "No",
+      "other": "Other",
+
+      "questions": {
+        "age": "How old are you?",
+        "ageSubtitle": "Minimum age is 18 years",
+        "yearsOld": "years old"
+      },
+
+      "employment": {
+        "title": "What is your employment status?",
+        "subtitle": "Select what fits best"
+      },
+
+      "options": {
+        "employmentStatus": {
+          "cdi": "Permanent contract (CDI)",
+          "cdd": "Fixed-term contract (CDD)",
+          "freelance": "Freelance",
+          "independant": "Self-employed",
+          "permanent": "Permanent contract",
+          "temporary": "Temporary contract",
+          "self-employed": "Self-employed",
+          "indefinido": "Permanent contract",
+          "temporal": "Temporary contract",
+          "autonomo": "Self-employed",
+          "student": "Student",
+          "retired": "Retired",
+          "unemployed": "Unemployed"
+        },
+        "contractType": {
+          "cdi": "Permanent (CDI)",
+          "cdd": "Fixed-term (CDD)",
+          "permanent": "Permanent",
+          "temporary": "Temporary",
+          "indefinido": "Permanent",
+          "temporal": "Temporary"
+        },
+        "businessType": {
+          "freelance": "Freelance",
+          "auto-entrepreneur": "Sole proprietor",
+          "tpe": "Small business (< 10 employees)",
+          "startup": "Startup",
+          "independant": "Self-employed",
+          "sprl": "Private limited company",
+          "sa": "Public limited company",
+          "sarl": "Limited liability company",
+          "sl": "Limited company",
+          "self-employed": "Self-employed",
+          "small-business": "Small business",
+          "company": "Company",
+          "autonomo": "Self-employed"
+        },
+        "institutionType": {
+          "university": "University",
+          "business-school": "Business School",
+          "engineering-school": "Engineering School",
+          "art-school": "Art / Design School",
+          "haute-ecole": "University College",
+          "epfl-ethz": "EPFL / ETHZ",
+          "hes": "University of Applied Sciences",
+          "fp-superior": "Higher vocational training",
+          "college": "College",
+          "other": "Other institution"
+        },
+        "studyLevel": {
+          "l1": "Bachelor Year 1",
+          "l2": "Bachelor Year 2",
+          "l3": "Bachelor Year 3",
+          "m1": "Master Year 1",
+          "m2": "Master Year 2",
+          "bac1": "Year 1",
+          "bac2": "Year 2",
+          "bac3": "Year 3",
+          "master1": "Master Year 1",
+          "master2": "Master Year 2",
+          "bachelor1": "Bachelor Year 1",
+          "bachelor2": "Bachelor Year 2",
+          "bachelor3": "Bachelor Year 3",
+          "grado1": "Year 1",
+          "grado2": "Year 2",
+          "grado3": "Year 3",
+          "grado4": "Year 4",
+          "year1": "Year 1",
+          "year2": "Year 2",
+          "year3": "Year 3",
+          "year4": "Year 4",
+          "master": "Master",
+          "doctorate": "Doctorate"
+        },
+        "loanPurpose": {
+          "auto": "Vehicle",
+          "homeImprovement": "Home improvement",
+          "equipment": "Equipment",
+          "event": "Event",
+          "travel": "Travel"
+        },
+        "assetType": {
+          "vehicle": "Vehicle",
+          "professional-equipment": "Professional equipment",
+          "it-equipment": "IT equipment",
+          "machinery": "Machinery / Tools"
+        },
+        "clientType": {
+          "individual": "Individual",
+          "business": "Business"
+        },
+        "sector": {
+          "tech": "Tech / Digital",
+          "commerce": "Commerce / Retail",
+          "services": "Services",
+          "construction": "Construction",
+          "health": "Health / Wellness",
+          "other": "Other"
+        },
+        "businessNeed": {
+          "treasury": "Cash flow",
+          "investment": "Investment",
+          "equipment": "Equipment"
+        }
+      },
+
+      "student": {
+        "institutionTitle": "What type of institution do you attend?",
+        "institutionSubtitle": "Select your school type",
+        "university": "University",
+        "businessSchool": "Business School",
+        "engineeringSchool": "Engineering School",
+        "artSchool": "Art / Design School",
+        "otherSchool": "Other institution",
+        "fieldTitle": "What is your field of study?",
+        "fieldPlaceholder": "E.g.: Computer Science, Marketing, Law...",
+        "levelTitle": "What year are you in?",
+        "doctorate": "Doctorate",
+        "jobTitle": "Do you have a part-time job?",
+        "jobSubtitle": "Regular supplementary income",
+        "monthlyIncome": "Approximate monthly income",
+        "guarantorTitle": "Do you have a guarantor available?",
+        "guarantorSubtitle": "A guarantor can improve your rate",
+        "guarantorYes": "Improves your chances",
+        "guarantorNo": "No guarantor"
+      },
+
+      "pro": {
+        "typeTitle": "What is your professional status?",
+        "typeSubtitle": "Select your legal form",
+        "freelance": "Freelance",
+        "autoEntrepreneur": "Sole proprietor",
+        "tpe": "Small business (< 10 employees)",
+        "startup": "Startup",
+        "sectorTitle": "What sector do you work in?",
+        "sectorPlaceholder": "Select a sector",
+        "sectors": {
+          "tech": "Tech / Digital",
+          "commerce": "Commerce / Retail",
+          "services": "Services",
+          "construction": "Construction",
+          "health": "Health / Wellness",
+          "other": "Other"
+        },
+        "yearsTitle": "How long have you been in business?",
+        "years": {
+          "lessThan1": "< 1 year"
+        },
+        "revenueTitle": "What is your annual revenue?",
+        "revenueSubtitle": "Approximate estimate",
+        "year": "year",
+        "needTitle": "What is the purpose of this financing?",
+        "needs": {
+          "treasury": "Cash flow",
+          "treasuryDesc": "Manage a cash flow gap",
+          "investment": "Investment",
+          "investmentDesc": "Grow your business",
+          "equipment": "Equipment",
+          "equipmentDesc": "Purchase equipment"
+        }
+      },
+
+      "consumer": {
+        "purposeTitle": "What is the purpose of this credit?",
+        "incomeTitle": "What is your monthly net income?",
+        "incomeSubtitle": "The higher your income, the better your rate",
+        "purposes": {
+          "auto": "Vehicle",
+          "homeImprovement": "Home improvement",
+          "equipment": "Equipment",
+          "event": "Event",
+          "travel": "Travel"
+        }
+      },
+
+      "salary": {
+        "contractTitle": "What is your contract type?",
+        "netTitle": "What is your net monthly salary?",
+        "netSubtitle": "Amount after taxes",
+        "paydayTitle": "When do you receive your next salary?"
+      },
+
+      "leasing": {
+        "assetTitle": "What type of asset do you want to finance?",
+        "assetSubtitle": "The asset serves as collateral, which improves your rate",
+        "vehicle": "Vehicle",
+        "proEquipment": "Professional equipment",
+        "itEquipment": "IT equipment",
+        "machinery": "Machinery / Tools",
+        "statusTitle": "Are you an individual or a business?",
+        "individual": "Individual",
+        "individualDesc": "Personal use",
+        "business": "Business",
+        "businessDesc": "Business use"
+      },
+
+      "rateInfo": {
+        "title": "Understanding your rate",
+        "description": "The displayed rate is an estimate based on your profile. The final rate will depend on the full review of your application.",
+        "rateRange": "For this product, rates can vary between",
+        "and": "and",
+        "yourRate": "Your estimated rate",
+        "customRate": "Simulate with a different rate",
+        "applyCustom": "Apply this rate",
+        "resetRate": "Reset",
+        "close": "Close"
+      },
+
+      "results": {
+        "title": "Your personalized estimate",
+        "subtitle": "Based on the information you provided",
+        "perMonth": "per month",
+        "summary": "Summary",
+        "amount": "Amount borrowed",
+        "duration": "Duration",
+        "type": "Credit type",
+        "response": "Response time",
+        "yourProfile": "Your profile",
+        "withGuarantor": "With guarantor",
+        "withJob": "With income",
+        "established": "Established business",
+        "assessment": "Preliminary assessment",
+        "riskCategory": "Risk category",
+        "riskLow": "Low risk",
+        "riskModerate": "Moderate risk",
+        "riskMedium": "Medium risk",
+        "riskHigh": "High risk",
+        "approvalChance": "Approval probability",
+        "approvalHigh": "High",
+        "approvalMedium": "Medium",
+        "approvalLow": "To be evaluated",
+        "nextSteps": "Next steps",
+        "step1": "Complete your online application (5 min)",
+        "step2": "Provide your documents (ID, proof of income)",
+        "step3": "Receive a final response within {time}",
+        "applyNow": "Submit my application",
+        "newSimulation": "New simulation"
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "leasing",
+  "icon": "car",
+  "color": "#10B981",
+
+  "questions": {
+    "age": {
+      "min": 18,
+      "max": 70
+    },
+    "assetType": {
+      "scores": {
+        "vehicle": 95,
+        "professional-equipment": 90,
+        "it-equipment": 85,
+        "machinery": 80
+      }
+    },
+    "isBusinessClient": {
+      "scores": {
+        "individual": 70,
+        "business": 90
+      }
+    },
+    "yearsInBusiness": {
+      "min": 0,
+      "max": 50
+    },
+    "employmentStatus": {
+      "scores": {
+        "cdi": 100,
+        "cdd": 65,
+        "freelance": 70,
+        "retired": 80
+      }
+    }
+  },
+
+  "scoring": {
+    "baseScore": 55,
+    "weights": {
+      "assetType": 20,
+      "isBusinessClient": 15,
+      "yearsInBusiness": 20,
+      "employmentStatus": 20,
+      "age": 10
+    },
+    "thresholds": {
+      "A": 80,
+      "B": 65,
+      "C": 45
+    },
+    "ageRanges": {
+      "optimal": { "min": 25, "max": 55, "score": 100 },
+      "good": { "min": 20, "max": 60, "score": 80 },
+      "default": 60
+    },
+    "yearsInBusinessRanges": {
+      "excellent": { "min": 5, "score": 100 },
+      "good": { "min": 3, "score": 85 },
+      "acceptable": { "min": 2, "score": 70 },
+      "new": { "min": 1, "score": 55 },
+      "default": 40
+    },
+    "businessNeutralScore": 80,
+    "individualNeutralScore": 70
+  },
+
+  "calculation": {
+    "interestMethod": "degressive",
+    "baseRate": 9,
+    "minRate": 5,
+    "maxRate": 14,
+    "rateAdjustments": {
+      "A": -4,
+      "B": -1,
+      "C": 3,
+      "D": 5
+    },
+    "fees": {
+      "applicationFee": 0,
+      "applicationFeePercent": 1,
+      "managementFee": 10
+    },
+    "residualValuePercent": 0.1
+  },
+
+  "responseTime": {
+    "default": "48h",
+    "fastTrack": "24h"
+  },
+
+  "approvalProbability": {
+    "A": "high",
+    "B": "high",
+    "C": "medium",
+    "D": "low"
+  }
+}

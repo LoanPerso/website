@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Leasing",
+    "title": "Use without buying",
+    "subtitle": "Advantageous rates",
+    "description": "The asset serves as collateral. Result: better conditions for you.",
+    "cta": "Simulate my leasing"
+  },
+  "stats": {
+    "minAmount": { "value": "€1,000", "label": "Minimum value" },
+    "maxAmount": { "value": "Variable", "label": "Depending on asset" },
+    "delay": { "value": "48h", "label": "Response time" },
+    "rate": { "value": "5%", "label": "APR from" }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Buying costs a lot upfront",
+    "items": [
+      { "number": "100%", "text": "To pay immediately for a cash purchase" },
+      { "number": "Locked", "text": "Cash flow tied up in a depreciating asset" },
+      { "number": "Risk", "text": "If the asset no longer suits you, you're stuck" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Our approach",
+    "title": "Lease to finance better",
+    "description": "Leasing allows you to use an asset without buying it immediately. The asset remains collateral, so we can offer better rates. At the end, you can buy it or return it.",
+    "features": [
+      { "title": "Advantageous rates", "description": "The asset guarantees the loan. Less risk for us = better rate for you." },
+      { "title": "No immediate purchase", "description": "Keep your cash flow. No large outlay at the start." },
+      { "title": "Controlled payments", "description": "A fixed amount each month, easy to budget." },
+      { "title": "Purchase option", "description": "At the end of the contract, buy the asset at residual value or return it." },
+      { "title": "Flexibility", "description": "Asset no longer suits you? At the end of the contract, you're not obliged to buy." },
+      { "title": "Vehicles and equipment", "description": "Car, utility, professional equipment, IT. Everything can be leased." },
+      { "title": "Tax advantages (business)", "description": "For professionals, deductible lease payments. Tax optimization." },
+      { "title": "100% online", "description": "From simulation to signature, everything is done remotely." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "For whom?",
+    "title": "Use without tying up capital",
+    "profiles": [
+      { "title": "Personal vehicle", "description": "Car, motorcycle, scooter. Drive without emptying your savings." },
+      { "title": "Professional vehicle", "description": "Utility, fleet, company car. Deductible and controlled." },
+      { "title": "Professional equipment", "description": "Machines, tools, heavy equipment. Invest without blocking." },
+      { "title": "IT equipment", "description": "Servers, workstations, infrastructure. Renew without extra cost." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "From quote to use",
+    "steps": [
+      { "number": "01", "title": "Choose the asset", "description": "Vehicle, equipment, material. We estimate its value and your leasing." },
+      { "number": "02", "title": "Validation", "description": "Analysis of your file and the asset. Response within 48h." },
+      { "number": "03", "title": "Use it", "description": "Contract signed, you use the asset. At the end, purchase or return." }
+    ]
+  },
+  "finalCta": {
+    "title": "Need an asset without buying?",
+    "subtitle": "Leasing with purchase option. Among the lowest rates.",
+    "cta": "Simulate now",
+    "reassurance": "Advantageous rates • Purchase option • Fixed payments"
+  }
+}

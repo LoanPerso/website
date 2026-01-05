@@ -117,7 +117,7 @@ export default function ProductsPage() {
 
           <div ref={ctaRef}>
             <Link
-              href={`/${locale}/simulateur`}
+              href={`/${locale}/tools/simulator`}
               className="inline-flex items-center gap-3 px-8 py-4 bg-foreground text-background rounded-full text-base font-medium hover:bg-accent hover:text-white transition-colors duration-200"
             >
               {t("cta.simulate")}
@@ -215,7 +215,7 @@ export default function ProductsPage() {
             </p>
 
             <Link
-              href={`/${locale}/simulateur`}
+              href={`/${locale}/tools/simulator`}
               className="inline-flex items-center gap-3 px-12 py-5 bg-white text-deep-black rounded-full text-lg font-medium hover:bg-accent hover:text-white transition-colors duration-200"
             >
               {t("cta.simulate")}

@@ -1,0 +1,106 @@
+{
+  "id": "student",
+  "icon": "academic",
+  "color": "#8B5CF6",
+
+  "questions": {
+    "age": {
+      "min": 18,
+      "max": 30,
+      "countryOverrides": {
+        "BE": { "max": 35 },
+        "CH": { "max": 28 }
+      }
+    },
+    "institutionType": {
+      "scores": {
+        "university": 85,
+        "business-school": 95,
+        "engineering-school": 100,
+        "art-school": 70,
+        "other": 60
+      }
+    },
+    "studyLevel": {
+      "scores": {
+        "l1": 60,
+        "l2": 65,
+        "l3": 75,
+        "m1": 85,
+        "m2": 95,
+        "doctorate": 90
+      }
+    },
+    "partTimeIncome": {
+      "min": 0,
+      "max": 2000,
+      "step": 50
+    },
+    "hasGuarantor": {
+      "scores": {
+        "yes": 100,
+        "no": 50
+      }
+    }
+  },
+
+  "scoring": {
+    "baseScore": 40,
+    "weights": {
+      "age": 10,
+      "institutionType": 25,
+      "studyLevel": 15,
+      "hasPartTimeJob": 15,
+      "hasGuarantor": 35
+    },
+    "thresholds": {
+      "A": 80,
+      "B": 60,
+      "C": 45
+    },
+    "ageRanges": {
+      "optimal": { "max": 22, "score": 100 },
+      "good": { "max": 25, "score": 85 },
+      "acceptable": { "max": 28, "score": 70 },
+      "default": 60
+    },
+    "incomeRanges": {
+      "high": { "min": 800, "score": 100 },
+      "medium": { "min": 500, "score": 85 },
+      "default": 70
+    },
+    "noJobScore": 40,
+    "guarantorYesScore": 100,
+    "guarantorNoScore": 40
+  },
+
+  "calculation": {
+    "interestMethod": "compound",
+    "baseRate": 9,
+    "minRate": 6,
+    "maxRate": 15,
+    "rateAdjustments": {
+      "A": -3,
+      "B": -1,
+      "C": 2,
+      "D": 4
+    },
+    "fees": {
+      "applicationFee": 0,
+      "applicationFeePercent": 0,
+      "managementFee": 0
+    }
+  },
+
+  "responseTime": {
+    "default": "24h",
+    "fastTrack": "< 12h"
+  },
+
+  "approvalProbability": {
+    "A": "high",
+    "B": "high",
+    "C": "medium",
+    "D": "low"
+  }
+}

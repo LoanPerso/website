@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Prêt Étudiant",
+    "title": "Jusqu'à 5 000€",
+    "subtitle": "Sans garant bancaire",
+    "description": "Votre avenir compte plus que votre passé. On évalue votre potentiel, pas votre historique.",
+    "cta": "Simuler mon prêt étudiant"
+  },
+  "stats": {
+    "minAmount": { "value": "500€", "label": "Montant minimum" },
+    "maxAmount": { "value": "5 000€", "label": "Montant maximum" },
+    "delay": { "value": "24h", "label": "Délai de réponse" },
+    "rate": { "value": "6%", "label": "TAEG à partir de" }
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Étudiant = invisible pour les banques",
+    "items": [
+      { "number": "Garant", "text": "Exigé systématiquement, excluant ceux sans famille aisée" },
+      { "number": "0", "text": "Historique bancaire = dossier refusé automatiquement" },
+      { "number": "CDI", "text": "Seul critère accepté, discriminant les étudiants" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre approche",
+    "title": "Votre potentiel, pas votre passé",
+    "description": "Pas d'historique ? Pas de garant fortuné ? On regarde votre formation, votre projet, votre capacité future. Les études sont un investissement, on le comprend.",
+    "features": [
+      { "title": "Sans garant bancaire", "description": "Pas de parents propriétaires ou de caution familiale exigée. Votre projet suffit." },
+      { "title": "Évaluation du potentiel", "description": "On analyse votre formation, vos perspectives d'emploi, pas juste un scoring bancaire." },
+      { "title": "Différé possible", "description": "Commencez à rembourser après vos études ou votre premier emploi. On s'adapte." },
+      { "title": "Taux préférentiels", "description": "Des conditions adaptées aux étudiants. On investit dans votre avenir." },
+      { "title": "Tous les projets", "description": "Frais de scolarité, logement, mobilité internationale, matériel... On finance vos besoins réels." },
+      { "title": "100% en ligne", "description": "Entre les cours et le job étudiant, pas le temps pour des RDV bancaires. Tout se fait en ligne." },
+      { "title": "Réponse rapide", "description": "La rentrée n'attend pas. Réponse en 24h pour ne pas rater votre inscription." },
+      { "title": "Coaching financier", "description": "Apprendre à gérer un budget dès maintenant. Conseils et suivi inclus gratuitement." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Pour qui ?",
+    "title": "Tous les étudiants",
+    "profiles": [
+      { "title": "Frais de scolarité", "description": "École de commerce, ingénieur, université. Financez votre formation." },
+      { "title": "Logement étudiant", "description": "Caution, premiers loyers, équipement. Installez-vous sereinement." },
+      { "title": "Mobilité internationale", "description": "Erasmus, stage à l'étranger, semestre ailleurs. Bougez sans barrière financière." },
+      { "title": "Matériel et quotidien", "description": "Ordinateur, transports, vie quotidienne. Les vrais besoins, financés." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "Rapide et adapté",
+    "steps": [
+      { "number": "01", "title": "Présentez votre projet", "description": "Formation suivie, besoin de financement. 5 minutes en ligne." },
+      { "number": "02", "title": "On évalue", "description": "Notre analyse regarde votre potentiel. Réponse sous 24h." },
+      { "number": "03", "title": "Financé", "description": "Accepté ? Choisissez le différé si besoin, fonds versés rapidement." }
+    ]
+  },
+  "finalCta": {
+    "title": "Vos études méritent mieux",
+    "subtitle": "De 500€ à 5 000€, sans garant, avec différé possible.",
+    "cta": "Simuler maintenant",
+    "reassurance": "Simulation gratuite • Sans garant • Différé de remboursement possible"
+  }
+}

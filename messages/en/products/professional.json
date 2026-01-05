@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "eyebrow": "Professional Credit",
+    "title": "Up to €10,000",
+    "subtitle": "For freelancers and small businesses",
+    "description": "Variable income? We get it. No need for 3 years of accounts to be taken seriously.",
+    "cta": "Simulate my business loan"
+  },
+  "stats": {
+    "minAmount": { "value": "€1,000", "label": "Minimum amount" },
+    "maxAmount": { "value": "€10,000", "label": "Maximum amount" },
+    "delay": { "value": "48h", "label": "Response time" },
+    "rate": { "value": "6%", "label": "APR from" }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Banks and freelancers",
+    "items": [
+      { "number": "3 years", "text": "Of accounts required by traditional banks" },
+      { "number": "80%", "text": "Rejection rate for freelancers and young businesses" },
+      { "number": "4 wks", "text": "Average response time (when it comes)" }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Our approach",
+    "title": "We talk business, not paperwork",
+    "description": "Freelancers, independent workers, micro-businesses: your activity is different, so is our analysis. We look at your reality, not your administrative boxes.",
+    "features": [
+      { "title": "Variable income accepted", "description": "Your revenue fluctuates? Normal for a freelancer. We analyze your real situation, not a fictional permanent contract." },
+      { "title": "No accounts required", "description": "New business? Less than 3 years old? We can still seriously review your application." },
+      { "title": "Response in 24-48h", "description": "Time is money. You get an answer in 1-2 days, not 4 weeks." },
+      { "title": "Personalized analysis", "description": "No blind algorithm. We look at your sector, your clients, your trajectory." },
+      { "title": "Cash flow or investment", "description": "Need breathing room on cash flow? Want to invest in equipment? We adapt to your needs." },
+      { "title": "Flexible payments", "description": "Seasonal business? We can adjust your repayment schedule." },
+      { "title": "100% online", "description": "You work from anywhere, so do we. No bank meetings to schedule between clients." },
+      { "title": "Coaching included", "description": "Cash flow tracking, budget alerts, advice. We support you beyond the loan." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "For whom?",
+    "title": "Entrepreneurs we understand",
+    "profiles": [
+      { "title": "Freelancers", "description": "Developer, designer, consultant... Your status is not an obstacle." },
+      { "title": "Micro-businesses", "description": "Craftsmen, merchants, service providers. We know your constraints." },
+      { "title": "Young businesses", "description": "Less than 3 years? No panic, we evaluate your potential." },
+      { "title": "Liberal professions", "description": "Nurse, architect, consultant. Irregular income understood." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "Simple and fast",
+    "steps": [
+      { "number": "01", "title": "Online application", "description": "Describe your activity and your need. 5 minutes, a few documents." },
+      { "number": "02", "title": "Personalized analysis", "description": "Our team reviews your file. Response within 24-48h." },
+      { "number": "03", "title": "Funds available", "description": "Accepted? Electronic signature, quick transfer to your business account." }
+    ]
+  },
+  "finalCta": {
+    "title": "Need cash flow?",
+    "subtitle": "From €1,000 to €10,000, to grow your business.",
+    "cta": "Simulate now",
+    "reassurance": "Free simulation • Variable income accepted • Response in 48h"
+  }
+}

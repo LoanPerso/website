@@ -1,0 +1,96 @@
+{
+  "id": "consumer",
+  "icon": "home",
+  "color": "#6B8E6B",
+
+  "questions": {
+    "age": {
+      "min": 18,
+      "max": 75
+    },
+    "employmentStatus": {
+      "scores": {
+        "cdi": 100,
+        "cdd": 70,
+        "freelance": 60,
+        "student": 40,
+        "retired": 80,
+        "unemployed": 15
+      }
+    },
+    "loanPurpose": {
+      "required": true,
+      "scores": {
+        "auto": 90,
+        "homeImprovement": 95,
+        "equipment": 80,
+        "event": 60,
+        "travel": 50
+      }
+    },
+    "monthlyIncome": {
+      "min": 500,
+      "max": 15000,
+      "step": 100
+    }
+  },
+
+  "scoring": {
+    "baseScore": 45,
+    "weights": {
+      "age": 15,
+      "employmentStatus": 25,
+      "loanPurpose": 10,
+      "monthlyIncome": 25
+    },
+    "incomeRatioRanges": {
+      "excellent": { "maxRatio": 0.15, "score": 100 },
+      "good": { "maxRatio": 0.25, "score": 85 },
+      "acceptable": { "maxRatio": 0.35, "score": 65 },
+      "risky": { "maxRatio": 0.5, "score": 45 },
+      "default": 25
+    },
+    "thresholds": {
+      "A": 75,
+      "B": 55,
+      "C": 35
+    },
+    "ageRanges": {
+      "optimal": { "min": 30, "max": 50, "score": 100 },
+      "good": { "min": 25, "max": 55, "score": 85 },
+      "acceptable": { "min": 18, "max": 24, "score": 60 },
+      "default": 50
+    }
+  },
+
+  "calculation": {
+    "interestMethod": "compound",
+    "baseRate": 12,
+    "minRate": 6,
+    "maxRate": 22,
+    "rateAdjustments": {
+      "A": -6,
+      "B": -2,
+      "C": 4,
+      "D": 8
+    },
+    "fees": {
+      "applicationFee": 0,
+      "applicationFeePercent": 1,
+      "managementFee": 0
+    }
+  },
+
+  "responseTime": {
+    "default": "24-48h",
+    "fastTrack": "< 24h",
+    "fastTrackMaxAmount": 2000
+  },
+
+  "approvalProbability": {
+    "A": "high",
+    "B": "high",
+    "C": "medium",
+    "D": "low"
+  }
+}

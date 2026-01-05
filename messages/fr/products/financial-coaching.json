@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "eyebrow": "Coaching Financier",
+    "title": "Maîtrisez votre budget",
+    "subtitle": "Gratuit avec tout crédit",
+    "description": "On ne fait pas que prêter, on vous accompagne. Dashboard, alertes, conseils personnalisés.",
+    "cta": "Découvrir le coaching"
+  },
+  "solution": {
+    "eyebrow": "Ce qu'on propose",
+    "title": "Bien plus qu'un crédit",
+    "description": "Chaque client Quickfund bénéficie d'un accompagnement gratuit pour mieux gérer son budget. Parce qu'un emprunteur qui gère bien, c'est un emprunteur qui rembourse bien.",
+    "features": [
+      { "title": "Dashboard personnel", "description": "Visualisez vos revenus, dépenses, crédit en cours. Tout au même endroit, en temps réel." },
+      { "title": "Alertes automatiques", "description": "Notification avant découvert, rappel d'échéance, suivi de budget. On veille pour vous." },
+      { "title": "Conseils personnalisés", "description": "Basés sur votre situation réelle, pas des conseils génériques. Applicable immédiatement." },
+      { "title": "Gratuit avec tout crédit", "description": "Inclus automatiquement quand vous prenez un crédit chez nous. Pas de surcoût." },
+      { "title": "Version premium", "description": "Pour aller plus loin : 25€/mois, coach dédié, accompagnement approfondi, objectifs personnalisés." },
+      { "title": "Évitez les impayés", "description": "Mieux gérer = moins de stress = moins de risque d'incident. Bon pour vous, bon pour nous." },
+      { "title": "Éducation financière", "description": "Articles, guides, bonnes pratiques. Apprenez à gérer durablement." },
+      { "title": "Sans engagement", "description": "Le coaching gratuit reste actif tant que vous le souhaitez. Le premium se résilie quand vous voulez." }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Pour qui ?",
+    "title": "Tous ceux qui veulent mieux gérer",
+    "profiles": [
+      { "title": "Premiers pas", "description": "Vous n'avez jamais vraiment appris à gérer un budget. On vous guide." },
+      { "title": "Reprise en main", "description": "La gestion a dérapé, vous voulez remettre de l'ordre. On structure." },
+      { "title": "Optimisation", "description": "Vous gérez bien mais vous voulez faire mieux. On affine." },
+      { "title": "Projet d'épargne", "description": "Vous voulez économiser pour un projet. On vous aide à trouver les marges." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "Simple et automatique",
+    "steps": [
+      { "number": "01", "title": "Crédit activé", "description": "Dès que votre crédit est en place, le coaching s'active automatiquement." },
+      { "number": "02", "title": "Connectez vos comptes", "description": "Optionnel mais recommandé : connectez vos comptes pour un suivi précis." },
+      { "number": "03", "title": "Gérez mieux", "description": "Dashboard, alertes, conseils. Vous avez les outils pour réussir." }
+    ]
+  },
+  "finalCta": {
+    "title": "Prêt à mieux gérer ?",
+    "subtitle": "Gratuit avec tout crédit, premium pour aller plus loin.",
+    "cta": "Commencer maintenant",
+    "reassurance": "Gratuit avec tout crédit • Dashboard personnel • Alertes automatiques"
+  }
+}
