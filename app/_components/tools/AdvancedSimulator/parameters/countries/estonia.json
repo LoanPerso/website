@@ -1,0 +1,108 @@
+{
+  "code": "EE",
+  "name": "Estonie",
+  "flag": "EE",
+  "locale": "et-EE",
+
+  "options": {
+    "employmentStatus": ["tahtajatu", "tahtajaline", "fie", "student", "retired", "unemployed"],
+    "contractType": ["tahtajatu", "tahtajaline", "fie"],
+    "businessType": ["fie", "oue", "as", "startup"],
+    "sector": ["tech", "commerce", "services", "construction", "health", "other"],
+    "businessNeed": ["treasury", "investment", "equipment"],
+    "loanPurpose": ["auto", "homeImprovement", "equipment", "event", "travel", "other"],
+    "institutionType": ["university", "applied-university", "vocational-school", "other"],
+    "studyLevel": ["bachelor-1", "bachelor-2", "bachelor-3", "master-1", "master-2", "doctorate"],
+    "assetType": ["vehicle", "professional-equipment", "it-equipment", "machinery"],
+    "clientType": ["individual", "business"]
+  },
+
+  "age": {
+    "minAge": 18,
+    "maxAge": 75,
+    "studentMaxAge": 35,
+    "salaryAdvanceMinAge": 18
+  },
+
+  "products": {
+    "micro-credit": {
+      "minAmount": 50,
+      "maxAmount": 2000,
+      "minDuration": 1,
+      "maxDuration": 12,
+      "minRate": 0,
+      "maxRate": 25.0,
+      "available": true
+    },
+    "consumer": {
+      "minAmount": 500,
+      "maxAmount": 10000,
+      "minDuration": 3,
+      "maxDuration": 60,
+      "minRate": 5.0,
+      "maxRate": 25.0,
+      "available": true
+    },
+    "professional": {
+      "minAmount": 1000,
+      "maxAmount": 25000,
+      "minDuration": 6,
+      "maxDuration": 72,
+      "minRate": 5.0,
+      "maxRate": 18.0,
+      "available": true
+    },
+    "student": {
+      "minAmount": 500,
+      "maxAmount": 10000,
+      "minDuration": 6,
+      "maxDuration": 72,
+      "minRate": 4.0,
+      "maxRate": 12.0,
+      "available": true
+    },
+    "salary-advance": {
+      "minAmount": 50,
+      "maxAmount": 1500,
+      "minDuration": 1,
+      "maxDuration": 3,
+      "minRate": 0,
+      "maxRate": 0,
+      "available": true
+    },
+    "leasing": {
+      "minAmount": 1000,
+      "maxAmount": 30000,
+      "minDuration": 12,
+      "maxDuration": 72,
+      "minRate": 4.0,
+      "maxRate": 15.0,
+      "available": true
+    }
+  },
+
+  "formatting": {
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyPosition": "after",
+    "decimalSeparator": ",",
+    "thousandsSeparator": " ",
+    "dateFormat": "DD.MM.YYYY"
+  },
+
+  "legal": {
+    "regulatoryBody": "Finantsinspektsioon",
+    "maxUsurateMultiplier": 1.5,
+    "coolingOffPeriod": 14,
+    "mandatoryInsurance": false
+  },
+
+  "availableProducts": [
+    "micro-credit",
+    "consumer",
+    "professional",
+    "student",
+    "salary-advance",
+    "leasing"
+  ]
+}

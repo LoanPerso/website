@@ -10,52 +10,100 @@
     },
     "contractType": {
       "scores": {
-        "cdi": 100,
-        "cdd": 60
+        "tahtajatu": 100,
+        "tahtajaline": 55
+      }
+    },
+    "employmentDuration": {
+      "scores": {
+        "more-than-2-years": 100,
+        "1-to-2-years": 90,
+        "6-months-to-1-year": 70,
+        "less-than-6-months": 40
       }
     },
     "netSalary": {
       "min": 1000,
       "max": 10000,
       "step": 100
+    },
+    "paydayFrequency": {
+      "scores": {
+        "monthly": 100,
+        "biweekly": 90,
+        "weekly": 80
+      }
+    },
+    "hasDirectDeposit": {
+      "scores": {
+        "yes": 100,
+        "no": 60
+      }
+    },
+    "hasRecentOverdrafts": {
+      "scores": {
+        "no": 100,
+        "yes": 40
+      }
+    },
+    "advancePurpose": {
+      "scores": {
+        "bills": 90,
+        "emergency": 85,
+        "medical": 95,
+        "other": 70
+      }
     }
   },
 
   "scoring": {
-    "baseScore": 60,
+    "baseScore": 0,
     "weights": {
-      "contractType": 40,
-      "netSalary": 35,
-      "age": 10
+      "age": 5,
+      "contractType": 25,
+      "employmentDuration": 15,
+      "salaryRatio": 25,
+      "paydayFrequency": 5,
+      "hasDirectDeposit": 10,
+      "hasRecentOverdrafts": 10,
+      "advancePurpose": 5
     },
     "thresholds": {
-      "A": 85,
-      "B": 70,
-      "C": 50
+      "A": 80,
+      "B": 60,
+      "C": 40
     },
     "ageRanges": {
       "optimal": { "min": 25, "max": 55, "score": 100 },
+      "good": { "min": 18, "max": 24, "score": 80 },
+      "senior": { "min": 56, "max": 65, "score": 75 },
       "default": 70
     },
     "salaryRatioRanges": {
-      "excellent": { "maxRatio": 0.2, "score": 100 },
-      "good": { "maxRatio": 0.3, "score": 90 },
-      "acceptable": { "maxRatio": 0.4, "score": 75 },
-      "risky": { "maxRatio": 0.5, "score": 60 },
-      "default": 40
+      "excellent": { "maxRatio": 0.20, "score": 100 },
+      "good": { "maxRatio": 0.30, "score": 85 },
+      "acceptable": { "maxRatio": 0.40, "score": 65 },
+      "risky": { "maxRatio": 0.50, "score": 40 },
+      "default": 20
     }
+  },
+
+  "limits": {
+    "maxPercentOfSalary": 0.50,
+    "maxAbsoluteAmount": 2000,
+    "minNetSalary": 1200
   },
 
   "calculation": {
     "interestMethod": "flat",
-    "baseRate": 14,
-    "minRate": 8,
-    "maxRate": 20,
+    "baseRate": 12,
+    "minRate": 6,
+    "maxRate": 18,
     "rateAdjustments": {
-      "A": -6,
+      "A": -5,
       "B": -2,
-      "C": 3,
-      "D": 6
+      "C": 2,
+      "D": 5
     },
     "fees": {
       "applicationFee": 0,
@@ -66,7 +114,11 @@
 
   "responseTime": {
     "default": "< 24h",
-    "fastTrack": "< 2h"
+    "fastTrack": "< 2h",
+    "fastTrackConditions": {
+      "hasDirectDeposit": true,
+      "minCategory": "B"
+    }
   },
 
   "approvalProbability": {

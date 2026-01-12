@@ -8,15 +8,115 @@
       "min": 18,
       "max": 75
     },
+    "maritalStatus": {
+      "scores": {
+        "married": 100,
+        "pacs": 95,
+        "single": 70,
+        "divorced": 65,
+        "widowed": 60
+      }
+    },
     "employmentStatus": {
       "scores": {
-        "cdi": 100,
-        "cdd": 70,
-        "freelance": 60,
-        "student": 40,
+        "tahtajatu": 100,
+        "tahtajaline": 65,
+        "fie": 60,
         "retired": 80,
-        "unemployed": 15
+        "student": 30,
+        "unemployed": 10
       }
+    },
+    "employmentDuration": {
+      "scores": {
+        "more-than-2-years": 100,
+        "1-to-2-years": 80,
+        "6-months-to-1-year": 50,
+        "less-than-6-months": 25
+      }
+    },
+    "incomeType": {
+      "scores": {
+        "salary": 100,
+        "pension": 90,
+        "business": 70,
+        "rental": 60,
+        "benefits": 40,
+        "other": 30
+      }
+    },
+    "monthlyIncome": {
+      "min": 0,
+      "max": 20000,
+      "step": 100
+    },
+    "spouseIncome": {
+      "min": 0,
+      "max": 15000,
+      "step": 100
+    },
+    "otherIncome": {
+      "min": 0,
+      "max": 5000,
+      "step": 50
+    },
+    "housingStatus": {
+      "scores": {
+        "owner": 100,
+        "tenant": 70,
+        "hosted": 40,
+        "other": 30
+      }
+    },
+    "rentAmount": {
+      "min": 0,
+      "max": 3000,
+      "step": 50
+    },
+    "monthlyExpenses": {
+      "min": 0,
+      "max": 10000,
+      "step": 50
+    },
+    "existingLoans": {
+      "min": 0,
+      "max": 5000,
+      "step": 50
+    },
+    "dependents": {
+      "min": 0,
+      "max": 10,
+      "step": 1
+    },
+    "creditHistory": {
+      "scores": {
+        "excellent": 100,
+        "good": 75,
+        "mixed": 40,
+        "incidents": 15
+      }
+    },
+    "hasRecentOverdrafts": {
+      "scores": {
+        "no": 100,
+        "yes": 40
+      }
+    },
+    "hasCoBorrower": {
+      "scores": {
+        "yes": 100,
+        "no": 60
+      }
+    },
+    "coBorrowerIncome": {
+      "min": 0,
+      "max": 15000,
+      "step": 100
+    },
+    "savingsAmount": {
+      "min": 0,
+      "max": 50000,
+      "step": 500
     },
     "loanPurpose": {
       "required": true,
@@ -25,30 +125,34 @@
         "homeImprovement": 95,
         "equipment": 80,
         "event": 60,
-        "travel": 50
+        "travel": 50,
+        "other": 40
       }
     },
-    "monthlyIncome": {
-      "min": 500,
-      "max": 15000,
-      "step": 100
+    "wantsInsurance": {
+      "scores": {
+        "yes": 100,
+        "no": 70
+      }
     }
   },
 
   "scoring": {
-    "baseScore": 45,
+    "baseScore": 0,
     "weights": {
-      "age": 15,
-      "employmentStatus": 25,
-      "loanPurpose": 10,
-      "monthlyIncome": 25
-    },
-    "incomeRatioRanges": {
-      "excellent": { "maxRatio": 0.15, "score": 100 },
-      "good": { "maxRatio": 0.25, "score": 85 },
-      "acceptable": { "maxRatio": 0.35, "score": 65 },
-      "risky": { "maxRatio": 0.5, "score": 45 },
-      "default": 25
+      "age": 5,
+      "maritalStatus": 3,
+      "employmentStatus": 15,
+      "employmentDuration": 7,
+      "incomeType": 5,
+      "housingStatus": 5,
+      "creditHistory": 18,
+      "hasRecentOverdrafts": 5,
+      "debtRatio": 15,
+      "remainingIncome": 12,
+      "hasCoBorrower": 5,
+      "loanPurpose": 3,
+      "savingsRatio": 2
     },
     "thresholds": {
       "A": 75,
@@ -59,15 +163,47 @@
       "optimal": { "min": 30, "max": 50, "score": 100 },
       "good": { "min": 25, "max": 55, "score": 85 },
       "acceptable": { "min": 18, "max": 24, "score": 60 },
+      "senior": { "min": 56, "max": 65, "score": 70 },
       "default": 50
+    },
+    "debtRatioRanges": {
+      "excellent": { "maxRatio": 0.25, "score": 100 },
+      "good": { "maxRatio": 0.33, "score": 85 },
+      "acceptable": { "maxRatio": 0.40, "score": 60 },
+      "risky": { "maxRatio": 0.50, "score": 35 },
+      "veryRisky": { "maxRatio": 0.65, "score": 15 },
+      "default": 5
+    },
+    "remainingIncomeRanges": {
+      "excellent": { "minPerPerson": 800, "score": 100 },
+      "good": { "minPerPerson": 600, "score": 80 },
+      "acceptable": { "minPerPerson": 450, "score": 55 },
+      "tight": { "minPerPerson": 300, "score": 30 },
+      "veryTight": { "minPerPerson": 200, "score": 15 },
+      "default": 5
+    },
+    "savingsRatioRanges": {
+      "excellent": { "minRatio": 0.20, "score": 100 },
+      "good": { "minRatio": 0.10, "score": 80 },
+      "acceptable": { "minRatio": 0.05, "score": 50 },
+      "low": { "minRatio": 0.01, "score": 30 },
+      "default": 20
     }
+  },
+
+  "limits": {
+    "maxDebtRatio": 0.45,
+    "minRemainingIncomePerPerson": 350,
+    "maxAmountMultiplier": 4,
+    "baseMinRemainingIncome": 450,
+    "perDependentAmount": 200
   },
 
   "calculation": {
     "interestMethod": "compound",
     "baseRate": 12,
-    "minRate": 6,
-    "maxRate": 22,
+    "minRate": 5,
+    "maxRate": 21,
     "rateAdjustments": {
       "A": -6,
       "B": -2,
@@ -78,19 +214,24 @@
       "applicationFee": 0,
       "applicationFeePercent": 1,
       "managementFee": 0
-    }
+    },
+    "insuranceRate": 0.30
   },
 
   "responseTime": {
     "default": "24-48h",
     "fastTrack": "< 24h",
-    "fastTrackMaxAmount": 2000
+    "fastTrackConditions": {
+      "maxAmount": 5000,
+      "minCategory": "B",
+      "hasCoBorrower": false
+    }
   },
 
   "approvalProbability": {
     "A": "high",
     "B": "high",
-    "C": "medium",
-    "D": "low"
+    "C": "high",
+    "D": "medium"
   }
 }

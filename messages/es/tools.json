@@ -1,0 +1,840 @@
+{
+  "simulator": {
+    "eyebrow": "Simulador de Credito",
+    "title": "Cuanto puedes pedir prestado?",
+    "subtitle": "Simula tu credito en 30 segundos. Sin compromiso, sin impacto en tu puntuacion.",
+
+    "productLabel": "Tipo de credito",
+    "products": {
+      "microCredit": "Microcredito",
+      "microcredit": "Microcredito",
+      "consumer": "Credito Consumo",
+      "professional": "Credito Empresarial",
+      "student": "Prestamo Estudiantil",
+      "salaryAdvance": "Anticipo de Nomina",
+      "salaryadvance": "Anticipo de Nomina",
+      "leasing": "Leasing"
+    },
+
+    "amountLabel": "Importe deseado",
+    "durationLabel": "Duracion del reembolso",
+    "month": "mes",
+    "months": "meses",
+
+    "monthlyPayment": "Cuota mensual estimada",
+    "totalCost": "Coste total",
+    "interestCost": "Coste de intereses",
+    "rateRange": "Tipo indicativo",
+
+    "disclaimer": "Simulacion indicativa. El tipo final depende de tu perfil. Sin compromiso.",
+    "cta": "Hacer mi solicitud",
+
+    "modeSimple": "Simulacion rapida",
+    "modeAdvanced": "Simulacion personalizada",
+
+    "whySimulate": "Por que simular con Quickfund?",
+    "features": {
+      "instant": {
+        "title": "Resultado instantaneo",
+        "description": "Obtiene tu estimacion en segundos."
+      },
+      "noCommitment": {
+        "title": "Sin compromiso",
+        "description": "Simula tanto como quieras, sin obligacion."
+      },
+      "transparent": {
+        "title": "100% transparente",
+        "description": "Todas las comisiones mostradas, sin sorpresas."
+      },
+      "explained": {
+        "title": "Te explicamos",
+        "description": "Aceptado o rechazado, sabras por que."
+      }
+    },
+
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": {
+        "question": "La simulacion afecta mi puntuacion de credito?",
+        "answer": "No. La simulacion es 100% gratuita y sin impacto en tu puntuacion. No realizamos ninguna verificacion de credito en esta etapa."
+      },
+      "q2": {
+        "question": "El tipo mostrado esta garantizado?",
+        "answer": "El tipo mostrado es indicativo. Tu tipo final depende de tu perfil (ingresos, historial, situacion). Te comunicaremos tu tipo exacto al estudiar tu expediente."
+      },
+      "q3": {
+        "question": "Cuanto tarda la respuesta definitiva?",
+        "answer": "Una vez completada tu solicitud, recibes una respuesta en menos de 24 horas. Para casos complejos, puede tardar 48 horas."
+      },
+      "q4": {
+        "question": "Puedo modificar mi solicitud despues de la simulacion?",
+        "answer": "Por supuesto. La simulacion no te compromete a nada. Puedes modificar el importe, la duracion o el tipo de credito en cualquier momento antes de enviar tu solicitud."
+      }
+    },
+
+    "advanced": {
+      "step": "Paso",
+      "progress": {
+        "country": "Pais",
+        "type": "Tipo",
+        "amount": "Importe",
+        "profile": "Perfil",
+        "result": "Resultado"
+      },
+
+      "step0Eyebrow": "Empecemos",
+      "step0Title": "Prestamos para residentes estonios",
+      "step0Subtitle": "Nuestros servicios estan disponibles exclusivamente para personas que residen en Estonia",
+      "productsAvailable": "productos disponibles",
+      "countryHint": "Tu pais determina las ofertas disponibles",
+      "selectCountry": "Selecciona tu pais",
+      "searchCountry": "Buscar un pais...",
+      "noCountryFound": "Ningun pais encontrado",
+      "optimized": "Optimizado",
+      "estoniaName": "Estonia",
+      "estoniaHint": "Prestamos exclusivos para residentes estonios",
+      "estoniaOnly": "Nuestros servicios de prestamo actualmente solo estan disponibles para residentes estonios",
+
+      "step1Eyebrow": "Paso 1 de 4",
+      "step1Title": "Que tipo de credito te conviene?",
+      "step1Subtitle": "Elige el producto adaptado a tu situacion",
+      "selectHint": "Haz clic en un producto para continuar",
+      "amountRange": "Importe",
+      "durationRange": "Duracion",
+
+      "products": {
+        "microcredit": {
+          "description": "Para pequenas necesidades urgentes, de 20 a 500 EUR"
+        },
+        "consumer": {
+          "description": "Proyectos personales: coche, reformas, equipamiento"
+        },
+        "professional": {
+          "description": "Tesoreria e inversion para autonomos y PYMES"
+        },
+        "student": {
+          "description": "Financia tus estudios sin avalista obligatorio"
+        },
+        "salaryadvance": {
+          "description": "Anticipo de tu proxima nomina, mas barato que un descubierto"
+        },
+        "leasing": {
+          "description": "Vehiculos y equipos profesionales"
+        }
+      },
+
+      "step2Title": "Define tu proyecto",
+      "step2Subtitle": "Ajusta el importe y la duracion segun tus necesidades",
+      "estimatedMonthly": "Cuota mensual estimada",
+      "rateIndicative": "Tipo indicativo",
+      "back": "Volver",
+      "continue": "Continuar",
+
+      "step3Title": "Cuentanos sobre ti",
+      "step3Subtitle": "Esta informacion nos ayuda a personalizar tu oferta",
+      "seeResults": "Ver mi estimacion",
+      "fillRequired": "Por favor, completa los campos obligatorios",
+
+      "yes": "Si",
+      "no": "No",
+      "other": "Otro",
+
+      "questions": {
+        "age": "Cuantos anos tienes?",
+        "ageSubtitle": "La edad minima es 18 anos",
+        "yearsOld": "anos"
+      },
+
+      "employment": {
+        "title": "Cual es tu situacion laboral?",
+        "subtitle": "Selecciona lo que mejor corresponda"
+      },
+
+      "employmentDuration": {
+        "title": "Cuanto tiempo llevas en tu puesto actual?",
+        "subtitle": "Tiempo en tu trabajo actual",
+        "moreThan2Years": "Mas de 2 anos",
+        "1to2Years": "1 a 2 anos",
+        "6monthsTo1Year": "6 meses a 1 ano",
+        "lessThan6Months": "Menos de 6 meses"
+      },
+
+      "income": {
+        "title": "Cuales son tus ingresos mensuales netos?",
+        "subtitle": "Incluye todos los ingresos regulares (salario, ayudas, pensiones...)"
+      },
+
+      "expenses": {
+        "title": "Cuales son tus gastos fijos mensuales?",
+        "subtitle": "Alquiler, prestamos en curso, seguros, suscripciones..."
+      },
+
+      "existingLoans": {
+        "title": "Cuanto pagas en prestamos existentes?",
+        "subtitle": "Cuotas mensuales de otros creditos"
+      },
+
+      "dependents": {
+        "title": "Cuantas personas dependientes tienes?",
+        "subtitle": "Hijos u otras personas a tu cargo"
+      },
+
+      "housing": {
+        "title": "Cual es tu situacion de vivienda?",
+        "subtitle": "La estabilidad residencial es un factor positivo",
+        "owner": "Propietario",
+        "tenant": "Inquilino",
+        "hosted": "Alojado por familia/amigos",
+        "other": "Otra situacion"
+      },
+
+      "creditHistory": {
+        "title": "Como describirias tu historial crediticio?",
+        "subtitle": "Incidentes = pagos rechazados, descubiertos no autorizados, impagos...",
+        "excellent": "Excelente (nunca incidentes)",
+        "good": "Bueno (sin incidentes recientes)",
+        "mixed": "Regular (algunos incidentes pasados)",
+        "incidents": "Dificil (incidentes actuales o recientes)"
+      },
+
+      "consumer": {
+        "maritalStatus": {
+          "title": "Cual es tu estado civil?",
+          "subtitle": "Tu situacion familiar",
+          "single": "Soltero/a",
+          "married": "Casado/a",
+          "pacs": "Pareja de hecho",
+          "divorced": "Divorciado/a",
+          "widowed": "Viudo/a"
+        },
+        "incomeType": {
+          "title": "Cual es tu tipo de ingresos principal?",
+          "subtitle": "Selecciona tu fuente de ingresos principal",
+          "salary": "Salario",
+          "pension": "Pension",
+          "business": "Ingresos empresariales",
+          "rental": "Alquileres",
+          "benefits": "Ayudas sociales",
+          "other": "Otros"
+        },
+        "spouseIncome": {
+          "title": "Ingresos de tu pareja",
+          "subtitle": "Ingresos mensuales netos de tu pareja"
+        },
+        "otherIncome": {
+          "title": "Otros ingresos",
+          "subtitle": "Alquileres, ayudas, otros ingresos regulares"
+        },
+        "rentAmount": {
+          "title": "Cuanto pagas de alquiler?",
+          "subtitle": "Alquiler mensual"
+        },
+        "overdrafts": {
+          "title": "Has tenido descubiertos recientes?",
+          "subtitle": "En los ultimos 3 meses"
+        },
+        "savings": {
+          "title": "Cuanto tienes ahorrado?",
+          "subtitle": "Ahorros disponibles"
+        },
+        "coBorrower": {
+          "title": "Tienes un co-prestatario?",
+          "subtitle": "Un co-prestatario mejora tus posibilidades",
+          "yes": "Si, con co-prestatario",
+          "no": "No, solo yo"
+        },
+        "coBorrowerIncome": {
+          "title": "Ingresos del co-prestatario",
+          "subtitle": "Ingresos mensuales netos"
+        },
+        "insurance": {
+          "title": "Quieres un seguro de credito?",
+          "subtitle": "Protege tu credito en caso de imprevistos",
+          "yes": "Si, quiero estar protegido",
+          "no": "No, gracias"
+        },
+        "purposeTitle": "Cual es el objeto de este credito?",
+        "incomeTitle": "Cuales son tus ingresos mensuales netos?",
+        "incomeSubtitle": "Cuanto mas altos tus ingresos, mejor sera tu tipo",
+        "purposes": {
+          "auto": "Vehiculo",
+          "homeImprovement": "Reformas",
+          "equipment": "Equipamiento",
+          "event": "Evento",
+          "travel": "Viaje"
+        }
+      },
+
+      "options": {
+        "employmentStatus": {
+          "cdi": "Contrato indefinido",
+          "cdd": "Contrato temporal",
+          "freelance": "Freelance",
+          "independant": "Autonomo",
+          "permanent": "Contrato indefinido",
+          "temporary": "Contrato temporal",
+          "self-employed": "Autonomo",
+          "indefinido": "Contrato indefinido",
+          "temporal": "Contrato temporal",
+          "autonomo": "Autonomo",
+          "tahtajatu": "Contrato indefinido",
+          "tahtajaline": "Contrato temporal",
+          "fie": "Empresario individual (FIE)",
+          "student": "Estudiante",
+          "retired": "Jubilado",
+          "unemployed": "Desempleado"
+        },
+        "contractType": {
+          "cdi": "Indefinido",
+          "cdd": "Temporal",
+          "permanent": "Indefinido",
+          "temporary": "Temporal",
+          "indefinido": "Indefinido",
+          "temporal": "Temporal",
+          "tahtajatu": "Indefinido",
+          "tahtajaline": "Temporal",
+          "fie": "Empresario individual (FIE)"
+        },
+        "businessType": {
+          "freelance": "Freelance",
+          "auto-entrepreneur": "Autonomo",
+          "tpe": "PYME (< 10 empleados)",
+          "startup": "Startup",
+          "independant": "Autonomo",
+          "sprl": "SRL",
+          "sa": "SA",
+          "sarl": "SL",
+          "sl": "SL",
+          "self-employed": "Autonomo",
+          "small-business": "Pequena empresa",
+          "company": "Empresa",
+          "autonomo": "Autonomo",
+          "fie": "Empresario individual (FIE)",
+          "oue": "Sociedad limitada (OÜ)",
+          "as": "Sociedad anonima (AS)"
+        },
+        "institutionType": {
+          "university": "Universidad",
+          "business-school": "Escuela de negocios",
+          "engineering-school": "Escuela de ingenieria",
+          "art-school": "Escuela de arte / Diseno",
+          "haute-ecole": "Escuela superior",
+          "epfl-ethz": "EPFL / ETHZ",
+          "hes": "Escuela superior especializada",
+          "fp-superior": "FP Superior",
+          "college": "Colegio / Instituto",
+          "applied-university": "Universidad de ciencias aplicadas",
+          "vocational-school": "Escuela profesional",
+          "other": "Otro centro"
+        },
+        "studyLevel": {
+          "l1": "1er ano de grado",
+          "l2": "2o ano de grado",
+          "l3": "3er ano de grado",
+          "m1": "1er ano de master",
+          "m2": "2o ano de master",
+          "bac1": "1er ano",
+          "bac2": "2o ano",
+          "bac3": "3er ano",
+          "master1": "1er ano de master",
+          "master2": "2o ano de master",
+          "bachelor1": "1er ano de grado",
+          "bachelor2": "2o ano de grado",
+          "bachelor3": "3er ano de grado",
+          "bachelor-1": "1er ano de grado",
+          "bachelor-2": "2o ano de grado",
+          "bachelor-3": "3er ano de grado",
+          "master-1": "1er ano de master",
+          "master-2": "2o ano de master",
+          "grado1": "1er ano",
+          "grado2": "2o ano",
+          "grado3": "3er ano",
+          "grado4": "4o ano",
+          "year1": "1er ano",
+          "year2": "2o ano",
+          "year3": "3er ano",
+          "year4": "4o ano",
+          "master": "Master",
+          "doctorate": "Doctorado"
+        },
+        "loanPurpose": {
+          "auto": "Vehiculo",
+          "homeImprovement": "Reformas",
+          "equipment": "Equipamiento",
+          "event": "Evento",
+          "travel": "Viaje",
+          "other": "Otro"
+        },
+        "assetType": {
+          "vehicle": "Vehiculo",
+          "professional-equipment": "Equipo profesional",
+          "it-equipment": "Material informatico",
+          "machinery": "Maquinaria / Herramientas"
+        },
+        "clientType": {
+          "individual": "Particular",
+          "business": "Profesional"
+        },
+        "sector": {
+          "tech": "Tech / Digital",
+          "commerce": "Comercio / Retail",
+          "services": "Servicios",
+          "construction": "Construccion",
+          "health": "Salud / Bienestar",
+          "other": "Otro"
+        },
+        "businessNeed": {
+          "treasury": "Tesoreria",
+          "investment": "Inversion",
+          "equipment": "Equipamiento"
+        }
+      },
+
+      "student": {
+        "institutionTitle": "En que tipo de centro estudias?",
+        "institutionSubtitle": "Selecciona tu tipo de centro",
+        "university": "Universidad",
+        "businessSchool": "Escuela de negocios",
+        "engineeringSchool": "Escuela de ingenieria",
+        "artSchool": "Escuela de arte / Diseno",
+        "otherSchool": "Otro centro",
+        "fieldTitle": "Cual es tu especialidad?",
+        "fieldPlaceholder": "Ej: Informatica, Marketing, Derecho...",
+        "levelTitle": "En que ano estas?",
+        "doctorate": "Doctorado",
+        "jobTitle": "Tienes un trabajo de estudiante?",
+        "jobSubtitle": "Ingresos complementarios regulares",
+        "monthlyIncome": "Ingresos mensuales aproximados",
+        "guarantorTitle": "Tienes un avalista disponible?",
+        "guarantorSubtitle": "Un avalista puede mejorar tu tipo",
+        "guarantorYes": "Mejora tus posibilidades",
+        "guarantorNo": "Sin avalista",
+        "institution": {
+          "title": "En que tipo de centro estudias?",
+          "subtitle": "El tipo de centro influye en tu perfil",
+          "university": "Universidad",
+          "businessSchool": "Escuela de negocios",
+          "engineeringSchool": "Escuela de ingenieria",
+          "medicalSchool": "Facultad de medicina / Farmacia",
+          "lawSchool": "Facultad de derecho",
+          "artSchool": "Escuela de arte / Diseno",
+          "other": "Otro centro"
+        },
+        "level": {
+          "title": "En que ano estas?",
+          "subtitle": "Tu nivel de estudios actual",
+          "l1": "1er ano",
+          "l2": "2o ano",
+          "l3": "3er ano",
+          "m1": "Master 1",
+          "m2": "Master 2",
+          "doctorate": "Doctorado"
+        },
+        "remainingYears": {
+          "title": "Cuantos anos de estudios te quedan?",
+          "subtitle": "Tiempo restante hasta la graduacion"
+        },
+        "job": {
+          "title": "Tienes un trabajo de estudiante?",
+          "subtitle": "Trabajo a tiempo parcial",
+          "income": "Ingresos mensuales de tu trabajo",
+          "incomeSubtitle": "Salario neto mensual promedio"
+        },
+        "scholarship": {
+          "title": "Tienes una beca?",
+          "subtitle": "Beca de estudios o ayuda financiera",
+          "amount": "Importe mensual de la beca",
+          "amountSubtitle": "Cantidad recibida cada mes"
+        },
+        "housing": {
+          "title": "Donde vives durante tus estudios?",
+          "subtitle": "Tu situacion de vivienda actual",
+          "withParents": "Con mis padres",
+          "studentResidence": "Residencia de estudiantes",
+          "rental": "Alquiler (apartamento/compartido)",
+          "other": "Otra situacion"
+        },
+        "guarantor": {
+          "title": "Tienes un avalista?",
+          "subtitle": "Un avalista mejora significativamente tu solicitud",
+          "yes": "Si, tengo un avalista",
+          "no": "No, sin avalista",
+          "relationship": "Cual es tu relacion con el avalista?",
+          "relationshipSubtitle": "Relacion familiar u otra",
+          "parent": "Padre/Madre",
+          "grandparent": "Abuelo/a",
+          "sibling": "Hermano/a",
+          "otherRelation": "Otra persona",
+          "income": "Ingresos mensuales del avalista",
+          "incomeSubtitle": "Salario neto mensual del avalista"
+        },
+        "loan": {
+          "purpose": "Cual es el objetivo de este prestamo?",
+          "purposeSubtitle": "Para que se usara esta financiacion",
+          "tuition": "Matricula",
+          "living": "Gastos de vida (alquiler, comida...)",
+          "equipment": "Equipamiento (ordenador, libros...)",
+          "internship": "Practicas / Estudios en el extranjero",
+          "other": "Otra necesidad"
+        },
+        "insurance": {
+          "wants": "Quieres un seguro de prestamo?",
+          "wantsSubtitle": "Proteccion en caso de imprevistos"
+        }
+      },
+
+      "pro": {
+        "typeTitle": "Cual es tu situacion profesional?",
+        "typeSubtitle": "Selecciona tu forma juridica",
+        "freelance": "Freelance",
+        "autoEntrepreneur": "Autonomo",
+        "tpe": "PYME (< 10 empleados)",
+        "startup": "Startup",
+        "sectorTitle": "En que sector trabajas?",
+        "sectorPlaceholder": "Selecciona un sector",
+        "sectors": {
+          "tech": "Tech / Digital",
+          "commerce": "Comercio / Retail",
+          "services": "Servicios",
+          "construction": "Construccion",
+          "health": "Salud / Bienestar",
+          "other": "Otro"
+        },
+        "yearsTitle": "Cuanto tiempo llevas ejerciendo?",
+        "years": {
+          "lessThan1": "< 1 ano"
+        },
+        "revenueTitle": "Cual es tu facturacion anual?",
+        "revenueSubtitle": "Estimacion aproximada",
+        "year": "ano",
+        "needTitle": "Cual es el objetivo de esta financiacion?",
+        "needs": {
+          "treasury": "Tesoreria",
+          "treasuryDesc": "Gestionar un desfase de caja",
+          "investment": "Inversion",
+          "investmentDesc": "Desarrollar tu actividad",
+          "equipment": "Equipamiento",
+          "equipmentDesc": "Comprar material"
+        }
+      },
+
+      "professional": {
+        "business": {
+          "type": "Cual es la forma juridica de tu empresa?",
+          "typeSubtitle": "Selecciona el estatus de tu empresa",
+          "freelance": "Freelance / Autonomo",
+          "autoEntrepreneur": "Empresario individual",
+          "eirl": "EIRL",
+          "sarl": "SL (SARL)",
+          "sas": "SAS / SASU",
+          "sa": "SA",
+          "tpe": "Pequena empresa (< 10 empleados)",
+          "startup": "Startup",
+          "other": "Otra forma juridica",
+          "sector": "En que sector trabajas?",
+          "sectorSubtitle": "El sector influye en la evaluacion de riesgo",
+          "years": "Cuanto tiempo llevas en actividad?",
+          "yearsSubtitle": "Antiguedad de tu empresa",
+          "employees": "Cuantos empleados tienes?",
+          "employeesSubtitle": "Incluyete a ti mismo"
+        },
+        "sectors": {
+          "tech": "Tech / Digital",
+          "health": "Salud / Bienestar",
+          "services": "Servicios",
+          "commerce": "Comercio / Retail",
+          "construction": "Construccion",
+          "industry": "Industria / Fabricacion",
+          "food": "Alimentacion / Hosteleria",
+          "transport": "Transporte / Logistica",
+          "other": "Otro sector"
+        },
+        "financials": {
+          "revenue": "Cual es tu facturacion anual?",
+          "revenueSubtitle": "Ultimos 12 meses o proyectado",
+          "profit": "Cual es tu beneficio neto mensual?",
+          "profitSubtitle": "Ingresos despues de gastos e impuestos",
+          "existingLoans": "Cuotas de prestamos empresariales actuales",
+          "existingLoansSubtitle": "Total de cuotas mensuales de prestamos empresariales"
+        },
+        "banking": {
+          "creditHistory": "Tu historial bancario empresarial",
+          "creditHistorySubtitle": "Incidentes de pago, cheques rechazados, descubiertos...",
+          "businessAccount": "Tienes una cuenta bancaria empresarial?",
+          "businessAccountSubtitle": "Cuenta dedicada a tu negocio"
+        },
+        "loan": {
+          "purpose": "Cual es el objetivo de esta financiacion?",
+          "purposeSubtitle": "Describe tus necesidades",
+          "treasury": "Tesoreria",
+          "treasuryDesc": "Gestionar un desfase de caja",
+          "investment": "Inversion",
+          "investmentDesc": "Desarrollar tu actividad",
+          "equipment": "Equipamiento",
+          "equipmentDesc": "Comprar material",
+          "stock": "Inventario",
+          "stockDesc": "Constituir o reponer stock",
+          "expansion": "Expansion",
+          "expansionDesc": "Abrir un nuevo local",
+          "other": "Otra necesidad"
+        },
+        "insurance": {
+          "wants": "Quieres un seguro de prestamo?",
+          "wantsSubtitle": "Proteccion en caso de invalidez o fallecimiento"
+        }
+      },
+
+      "salary": {
+        "contractTitle": "Cual es tu tipo de contrato?",
+        "netTitle": "Cual es tu salario neto mensual?",
+        "netSubtitle": "Importe despues de impuestos",
+        "paydayTitle": "Cuando recibes tu proxima nomina?"
+      },
+
+      "salaryAdvance": {
+        "employment": {
+          "contract": "Cual es tu tipo de contrato?",
+          "contractSubtitle": "Solo contratos indefinidos o temporales",
+          "duration": "Cuanto tiempo llevas en tu puesto actual?",
+          "durationSubtitle": "Tiempo con tu empleador actual"
+        },
+        "income": {
+          "salary": "Cual es tu salario neto mensual?",
+          "salarySubtitle": "Importe despues de impuestos en tu nomina",
+          "nextPayday": "Cuando es tu proxima nomina?",
+          "nextPaydaySubtitle": "Cuando recibes tu salario",
+          "frequency": "Con que frecuencia te pagan?",
+          "frequencySubtitle": "Frecuencia de pago del salario",
+          "monthly": "Mensual",
+          "biweekly": "Quincenal (2x/mes)",
+          "weekly": "Semanal"
+        },
+        "banking": {
+          "directDeposit": "Tu salario se paga por transferencia directa?",
+          "directDepositSubtitle": "Transferencia bancaria automatica del empleador",
+          "overdrafts": "Has tenido descubiertos recientes?",
+          "overdraftsSubtitle": "En los ultimos 3 meses"
+        },
+        "loan": {
+          "purpose": "Por que necesitas este anticipo?",
+          "purposeSubtitle": "Ayudanos a entender tu situacion",
+          "bills": "Facturas / Regularizacion",
+          "emergency": "Gasto imprevisto",
+          "medical": "Gastos medicos",
+          "other": "Otra necesidad"
+        }
+      },
+
+      "common": {
+        "yes": "Si",
+        "no": "No"
+      },
+
+      "microcredit": {
+        "identity": {
+          "maritalStatus": "Cual es tu situacion familiar?"
+        },
+        "employment": {
+          "title": "Cual es tu situacion laboral?",
+          "subtitle": "Tu estabilidad profesional influye en tu solicitud"
+        },
+        "income": {
+          "type": "Cual es el tipo de tus ingresos?",
+          "monthly": "Cuales son tus ingresos mensuales netos?",
+          "monthlySubtitle": "Todos los ingresos combinados"
+        },
+        "housing": {
+          "title": "Cual es tu situacion de vivienda?",
+          "subtitle": "Tu estabilidad residencial importa",
+          "rent": "Importe mensual de tu alquiler"
+        },
+        "expenses": {
+          "monthly": "Cuales son tus gastos mensuales?",
+          "monthlySubtitle": "Sin alquiler, incluye suscripciones, seguros, comida...",
+          "existingLoans": "Prestamos actuales",
+          "existingLoansSubtitle": "Total de cuotas mensuales de tus prestamos",
+          "dependents": "Dependientes",
+          "dependentsSubtitle": "Hijos u otras personas a tu cargo"
+        },
+        "banking": {
+          "creditHistory": "Como describirias tu historial bancario?",
+          "creditHistorySubtitle": "Pagos rechazados, descubiertos, impagos...",
+          "overdrafts": "Descubiertos bancarios recientes?",
+          "overdraftsSubtitle": "En los ultimos 3 meses"
+        },
+        "loan": {
+          "purpose": "Cual es el objetivo de este microprestamo?",
+          "purposeSubtitle": "Ayudanos a entender tus necesidades",
+          "emergency": "Gasto de emergencia",
+          "bills": "Facturas / Regularizacion",
+          "medical": "Gastos medicos",
+          "repair": "Reparacion (vehiculo, electrodomesticos...)",
+          "other": "Otra necesidad"
+        },
+        "insurance": {
+          "wants": "Quieres seguro?",
+          "wantsSubtitle": "Proteccion en caso de imprevistos (fallecimiento, invalidez)"
+        }
+      },
+
+      "leasing": {
+        "assetTitle": "Que tipo de bien quieres financiar?",
+        "assetSubtitle": "El bien sirve de garantia, lo que mejora tu tipo",
+        "vehicle": "Vehiculo",
+        "proEquipment": "Equipo profesional",
+        "itEquipment": "Material informatico",
+        "machinery": "Maquinaria / Herramientas",
+        "statusTitle": "Eres un particular o un profesional?",
+        "individual": "Particular",
+        "individualDesc": "Uso personal",
+        "business": "Profesional",
+        "businessDesc": "Uso empresarial",
+        "asset": {
+          "type": "Que tipo de bien quieres financiar?",
+          "typeSubtitle": "El bien sirve de garantia, lo que mejora tu tipo",
+          "vehicle": "Vehiculo",
+          "proEquipment": "Equipo profesional",
+          "itEquipment": "Material informatico",
+          "machinery": "Maquinaria / Herramientas",
+          "medicalEquipment": "Equipo medico",
+          "industrial": "Equipo industrial",
+          "other": "Otro bien",
+          "condition": "Cual es el estado del bien?",
+          "conditionSubtitle": "Un bien nuevo es mas facil de financiar",
+          "new": "Nuevo",
+          "recent": "Reciente (menos de 2 anos)",
+          "used": "Usado"
+        },
+        "client": {
+          "type": "Eres un particular o una empresa?",
+          "typeSubtitle": "Las condiciones varian segun tu estatus",
+          "individual": "Particular",
+          "individualDesc": "Uso personal",
+          "business": "Empresa",
+          "businessDesc": "Uso profesional"
+        },
+        "individual": {
+          "employment": "Cual es tu situacion laboral?",
+          "employmentSubtitle": "Tu estatus influye en las condiciones",
+          "duration": "Cuanto tiempo llevas en tu puesto actual?",
+          "durationSubtitle": "La antiguedad es un indicador importante",
+          "income": "Cuales son tus ingresos mensuales netos?",
+          "incomeSubtitle": "Todos los ingresos despues de impuestos"
+        },
+        "business": {
+          "years": "Cuantos anos lleva tu empresa operando?",
+          "yearsSubtitle": "Antiguedad de la empresa",
+          "revenue": "Cual es tu facturacion anual?",
+          "revenueSubtitle": "Facturacion del ultimo ejercicio"
+        },
+        "banking": {
+          "creditHistory": "Como es tu historial de pagos?",
+          "creditHistorySubtitle": "Has tenido incidentes de pago?"
+        },
+        "options": {
+          "buyOption": "Quieres una opcion de compra al final?",
+          "buyOptionSubtitle": "Posibilidad de adquirir el bien al final del contrato",
+          "buyYes": "Si, con opcion de compra",
+          "buyNo": "No, leasing simple"
+        },
+        "insurance": {
+          "wants": "Quieres seguro de leasing?",
+          "wantsSubtitle": "Protege tus pagos en caso de dificultades"
+        }
+      },
+
+      "rateInfo": {
+        "title": "Entender tu tipo",
+        "description": "El tipo mostrado es una estimacion basada en tu perfil. El tipo final dependera del estudio completo de tu expediente.",
+        "rateRange": "Para este producto, el tipo puede variar entre",
+        "and": "y",
+        "yourRate": "Tu tipo estimado",
+        "customRate": "Simular con otro tipo",
+        "applyCustom": "Aplicar este tipo",
+        "resetRate": "Reiniciar",
+        "close": "Cerrar"
+      },
+
+      "results": {
+        "title": "Tu estimacion personalizada",
+        "subtitle": "Basada en la informacion que has proporcionado",
+        "perMonth": "por mes",
+        "summary": "Resumen",
+        "amount": "Importe prestado",
+        "duration": "Duracion",
+        "type": "Tipo de credito",
+        "response": "Tiempo de respuesta",
+        "yourProfile": "Tu perfil",
+        "withGuarantor": "Con avalista",
+        "withJob": "Con ingresos",
+        "established": "Actividad establecida",
+        "assessment": "Evaluacion preliminar",
+        "riskCategory": "Categoria de riesgo",
+        "riskLow": "Riesgo bajo",
+        "riskModerate": "Riesgo moderado",
+        "riskMedium": "Riesgo medio",
+        "riskHigh": "Riesgo alto",
+        "approvalChance": "Probabilidad de aprobacion",
+        "approvalHigh": "Alta",
+        "approvalMedium": "Media",
+        "approvalLow": "A evaluar",
+        "nextSteps": "Proximos pasos",
+        "step1": "Completa tu solicitud online (5 min)",
+        "step2": "Proporciona tus justificantes (DNI, ingresos)",
+        "step3": "Recibe una respuesta definitiva en {time}",
+        "applyNow": "Hacer mi solicitud",
+        "newSimulation": "Nueva simulacion"
+      }
+    }
+  },
+
+  "application": {
+    "eyebrow": "Solicitud de credito",
+    "title": "Completa tu solicitud",
+    "subtitle": "Rellena la informacion a continuacion para enviar tu solicitud",
+
+    "steps": {
+      "info": "Informacion",
+      "document": "Documento"
+    },
+
+    "back": "Volver",
+    "continue": "Continuar",
+    "submit": "Enviar",
+
+    "info": {
+      "title": "Tu informacion personal",
+      "subtitle": "Esta informacion es necesaria para procesar tu solicitud",
+      "firstName": "Nombre",
+      "lastName": "Apellidos",
+      "email": "Correo electronico"
+    },
+
+    "document": {
+      "title": "Tu documento de identidad",
+      "subtitle": "Sube una foto de tu documento de identidad",
+      "upload": "Haz clic o arrastra un archivo aqui",
+      "formats": "PDF, JPG, PNG (max 10 MB)"
+    },
+
+    "analyzing": {
+      "title": "Analizando tu documento...",
+      "subtitle": "Por favor espera mientras verificamos tu informacion",
+      "steps": {
+        "uploading": "Subiendo documento...",
+        "verifying": "Verificando identidad...",
+        "scanning": "Escaneando documento...",
+        "analyzing": "Analizando datos..."
+      }
+    },
+
+    "error": {
+      "title": "No se pudo procesar tu solicitud",
+      "countryNotSupported": "Actualmente, solo aceptamos documentos de Estonia. Por favor, intenta de nuevo con un documento de identidad estonio valido.",
+      "retry": "Intentar de nuevo",
+      "backHome": "Volver al inicio",
+      "generic": "Se produjo un error al procesar tu solicitud",
+      "network": "Error de red. Por favor, verifica tu conexion e intenta de nuevo."
+    }
+  }
+}

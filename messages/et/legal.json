@@ -1,0 +1,373 @@
+{
+  "eyebrow": "Oiguslik",
+  "lastUpdated": "Viimati uuendatud",
+  "questions": "Kusimusi?",
+
+  "nav": {
+    "terms": "Tingimused",
+    "privacy": "Privaatsus",
+    "legalNotices": "Oigusteave",
+    "cookies": "Kupsised"
+  },
+
+  "terms": {
+    "title": "Kasutustingimused",
+    "sections": {
+      "intro": {
+        "title": "Sissejuhatus",
+        "content": "Kaeslolevad uldtingimused (edaspidi \"Tingimused\") reguleerivad Quickfundi platvormi ja teenuste kasutamist. Meie teenuste kasutamisega noustute nende Tingimustega taielikult."
+      },
+      "definitions": {
+        "title": "Moistete",
+        "platform": "Platvorm",
+        "platformDef": "Quickfundi veebisait ja mobiilirakendus",
+        "user": "Kasutaja",
+        "userDef": "Iga isik, kes poordub Platvormile",
+        "borrower": "Laenuvotja",
+        "borrowerDef": "Kasutaja, kes on solminud Quickfundiga krediidilepingu",
+        "credit": "Krediit",
+        "creditDef": "Iga Quickfundi poolt antud laen voi rahastus",
+        "services": "Teenused",
+        "servicesDef": "Koik Quickfundi pakutavad teenused, sealhulgas krediit, simulatsioon ja finantsnooustamine"
+      },
+      "acceptance": {
+        "title": "Tingimuste nousolek",
+        "content": "Meie Platvormile ligi poosedes voi seda kasutades kinnitate, et olete need Tingimused labi lugenud, mooistnud ja noustute nendega. Kui te nende Tingimustega ei noustu, ei tohi te meie teenuseid kasutada."
+      },
+      "services": {
+        "title": "Pakutavad teenused",
+        "intro": "Quickfund pakub jargmisi krediidi- ja finantsteenuseid:",
+        "microCredit": "Mikrokrediit: 20€ kuni 500€, vastus 24 tunni jooksul",
+        "consumerCredit": "Tarbijakrediit: 500€ kuni 5000€, paindlikud tingimused",
+        "proCredit": "Arikrediit: 1000€ kuni 10 000€, vabakutselistele ja vaikeettevooetjatele",
+        "studentLoan": "Oopilasulaen: oppimise rahastamine ilma traditsioonilise pangagarantiita",
+        "salaryAdvance": "Palgaettemakse: juurdepoos osale oma palgale enne palgapaeva",
+        "leasing": "Liising: kasuta seadmeid ilma ostmata",
+        "coaching": "Finantsnoustamine: eelarve haldamine ja personaalne nooustamine"
+      },
+      "eligibility": {
+        "title": "Sobivus",
+        "intro": "Meie krediiditeenuste kasutamiseks peate:",
+        "age": "Olema vahemalt 18-aastane",
+        "residence": "Olema Eesti voi Euroopa Liidu elanik",
+        "capacity": "Omama tais oigusvoimet",
+        "identity": "Esitama kehtiva isikut toendava dokumendi"
+      },
+      "application": {
+        "title": "Taotlusprotsess",
+        "content": "Kreditaotlused esitatakse veebis meie Platvormi kaudu. Peate esitama toosed ja taielikud andmed. Quickfund jatab endale ooiguse kusiida lisadokumente. Iga taotlust hinnatakse krediidivooimelisuse alusel. Heakskiit ei ole garanteeritud ja sooltub meie analuusist."
+      },
+      "creditTerms": {
+        "title": "Krediiditingimused",
+        "content": "Iga krediidi konkreetsed tingimused on satesatud uksikus krediidilepingus, sealhulgas:",
+        "amount": "Laenatud poohisumma",
+        "duration": "Tagasimakse kestus",
+        "rate": "Krediidi kulukuse aastamaar (KKM)",
+        "repayment": "Igakuise makse summa ja graafik"
+      },
+      "obligations": {
+        "title": "Teie kohustused",
+        "intro": "Kasutaja ja/voi Laenuvotjana kohustute:",
+        "accurate": "Esitama toosed ja ooiseid andmeid",
+        "update": "Uuendama oma andmeid muutuste korral",
+        "repay": "Tegema makseid ooigeaegselt vastavalt kokkulepitud graafikule",
+        "notify": "Teavitama meid raskustest maksete tegemisel"
+      },
+      "withdrawal": {
+        "title": "Taganemisooigus",
+        "content": "Tarbijakrediidi puhul on teil ooigus taganeda krediidilepingust 14 kalendripaeva jooksul alates allkirjastamise kuupaevast, ilma poorhjust esitamata. Selle ooiguse kasutamiseks peate meid kirjalikult teavitama ja tagastama poohisumma ning kogunenud intressid."
+      },
+      "earlyRepayment": {
+        "title": "Ennetahtaegne tagasimakse",
+        "content": "Voite oma krediidi ennetahtaegselt tagasi maksta, taielikult voi osaliselt, igal ajal. Ennetahtaegse tagasimakse trahvi ei kohaldata. Peate tasuma ainult tagasimakse kuupaevani kogunenud intressid."
+      },
+      "latePayment": {
+        "title": "Makseviivitus",
+        "content": "Makseviivituse korral vooidakse kohaldada viiviseintresse vastavalt teie krediidilepingule. Voottame teiega uhendust lahenduse leidmiseks. Pusiv mittemaksmine voib kaasa tuua sissenoudmismenetluse ja teatamise krediidibuuroodele."
+      },
+      "liability": {
+        "title": "Vastutuse piiramine",
+        "content": "Quickfund ei vastuta kaudsete kahjude, saamata jaanud kasumi voi kahjude eest, mis tulenevad asjaoludest valjaspool meie kontrolli. Meie vastutus on piiratud seadusega lubatud maksimaalses ulatuses."
+      },
+      "modifications": {
+        "title": "Tingimuste muutmine",
+        "content": "Jatame endale ooiguse neid Tingimusi igal ajal muuta. Muudatustest teavitatakse Platvormi ja/voi e-posti kaudu. Meie teenuste jatkuv kasutamine peorast muudatusi tahenab uute Tingimuste aktsepteerimist."
+      },
+      "governingLaw": {
+        "title": "Kohaldatav ooigus ja jurisdiktsioon",
+        "content": "Neid Tingimusi reguleerib Eesti ooigus. Vaidlused lahendatakse Eesti paodevates kohtutes. ELi tarbijate puhul voivad kohalduda ka teie elukohariigi kohustuslikud tarbijakaitseseadused."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Kusimuste korral nende Tingimuste kohta:",
+        "address": "Aadress",
+        "regNumber": "Registreerimisnumber"
+      }
+    }
+  },
+
+  "privacy": {
+    "title": "Privaatsuspoliitika",
+    "sections": {
+      "intro": {
+        "title": "Sissejuhatus",
+        "content": "Quickfundis poohendume teie privaatsuse ja isikuandmete kaitsmisele. See Privaatsuspoliitika selgitab, kuidas me kogume, kasutame, salvestame ja kaitseme teie andmeid kooskolas isikuandmete kaitse uldmaarusega (GDPR) ja Eesti ooigusega."
+      },
+      "controller": {
+        "title": "Vastutav toootleja",
+        "content": "Teie isikuandmete vastutav toootleja on:",
+        "company": "Ettevote",
+        "regNumber": "Registreerimisnumber",
+        "address": "Aadress",
+        "email": "E-post",
+        "parent": "Emaettevote"
+      },
+      "dataCollected": {
+        "title": "Kogutavad andmed",
+        "intro": "Kogume jargmisi isikuandmete kategooriaid:",
+        "identity": {
+          "title": "Isikuandmed",
+          "name": "Taielik nimi",
+          "dob": "Sunniaeg",
+          "nationality": "Kodakondsus",
+          "idDoc": "Isikut toendav dokument (pass, ID-kaart)"
+        },
+        "contact": {
+          "title": "Kontaktandmed",
+          "email": "E-posti aadress",
+          "phone": "Telefoninumber",
+          "address": "Postiaadress"
+        },
+        "financial": {
+          "title": "Finantsandmed",
+          "income": "Sissetuleku ja tooohooidud andmed",
+          "employment": "Tooohooidustaatus ja uksikasjad",
+          "bank": "Pangakonto andmed"
+        },
+        "technical": {
+          "title": "Tehnilised andmed",
+          "ip": "IP-aadress",
+          "device": "Seadme ja brauseri teave",
+          "cookies": "Kupsiste andmed"
+        }
+      },
+      "legalBasis": {
+        "title": "Toootlemise ooiguslik alus",
+        "intro": "Toootleme teie andmeid jargmistel ooiguslikel alustel:",
+        "contract": "Lepingu taitmise",
+        "contractDesc": "Meie krediiditeenuste osutamiseks ja lepinguliste kohustuste taitmiseks",
+        "legal": "Seadusest tulenev kohustus",
+        "legalDesc": "KYC/AML-normide ja finantsjaarelevalve nouoete taitmiseks",
+        "consent": "Nousolek",
+        "consentDesc": "Turundussuhtluse ja valikuliste teenuste jaoks",
+        "legitimate": "Oigustatud huvi",
+        "legitimateDesc": "Pettuste eonnetamise, turvalisuse ja teenuste parendamise eesmorgil"
+      },
+      "purposes": {
+        "title": "Toootlemise eesmorgid",
+        "creditAssessment": "Krediidivooimelisuse hindamine ja laenuotsuste tegemine",
+        "contractExecution": "Krediidilepingute taitmise ja haldamine",
+        "kyc": "Teie isikusamasuse kontrollimine (KYC) ja rahapesu tokkestamine (AML)",
+        "fraud": "Pettuste avastamine ja eonnetamine",
+        "communication": "Teiega suhtlemine teie konto ja teenuste kohta",
+        "improvement": "Meie teenuste ja kasutajakogemuse parendamine",
+        "legal": "Seadusest ja regulatsioonidest tulenevate kohustuste taitmise"
+      },
+      "sharing": {
+        "title": "Andmete jagamine",
+        "intro": "Voime jagada teie andmeid:",
+        "stripe": "Stripe",
+        "stripeDesc": "Maksetootlemiseks ja isikusamasuse kontrollimiseks (KYC)",
+        "cloud": "Pilveteenuse pakkujad",
+        "cloudDesc": "Andmete turvaliseks salvestamiseks (Google Cloud Platform, Euroopa serverid)",
+        "authorities": "Reguleerivad asutused",
+        "authoritiesDesc": "Kui seadus nouab (Eesti FSA, maksuametid)"
+      },
+      "retention": {
+        "title": "Andmete salilitamine",
+        "intro": "Salilitame teie andmeid jargmiste perioodide jooksul:",
+        "contract": "Lepinguandmed: Krediidi kestus + 5 aastat",
+        "kyc": "KYC-dokumendid: 5 aastat poorast suhte loooppemist",
+        "legal": "Oiguslikud dokumendid: 10 aastat (raamatupidamise nouded)"
+      },
+      "security": {
+        "title": "Andmeturve",
+        "content": "Rakendame asjakohaseid tehnilisi ja korralduslikke meetmeid teie andmete kaitsmiseks:",
+        "encryption": "Kruupteerimine edastusel (HTTPS/TLS) ja puhkeolekus",
+        "access": "Ranged juurdepaosu kontrollid ja autentimine",
+        "monitoring": "24/7 turvaseire ja hoiatused",
+        "storage": "Andmed salilitatakse ainult Euroopa Liidus"
+      },
+      "rights": {
+        "title": "Teie ooigused",
+        "intro": "GDPR-i kohaselt on teil jargmised ooigused:",
+        "access": "Juurdepaosuooigus",
+        "accessDesc": "Taotleda oma isikuandmete koopiat",
+        "rectification": "Parandamisooigus",
+        "rectificationDesc": "Parandada ebataipseid voi puudulikke andmeid",
+        "erasure": "Kustutamisooigus",
+        "erasureDesc": "Taotleda oma andmete kustutamist (arvestades seaduslikke salilitamiskohustusi)",
+        "restriction": "Piiramise ooigus",
+        "restrictionDesc": "Piirata teie andmete kasutamist",
+        "portability": "Ulekandmise ooigus",
+        "portabilityDesc": "Saada oma andmeid struktureeritud, masinloetavas vormingus",
+        "objection": "Vastuvaite ooigus",
+        "objectionDesc": "Esitada vastuvaoteid oigustatud huvil pohinevale toootlemisele",
+        "exercise": "Nende ooiguste kasutamiseks voottke uhendust legal@quickfund.ee voi legal@quickfund.fr"
+      },
+      "transfers": {
+        "title": "Rahvusvahelised andmeedastused",
+        "content": "Teie andmeid salilitatakse ja tooodeldakse Euroopa Majanduspiirkonnas (EMP). Me ei edasta teie andmeid valjaspoole EMP-d. Meie pilveinfrastruktuur asub Euroopa andmekeskustes."
+      },
+      "changes": {
+        "title": "Muudatused selles poliitikas",
+        "content": "Voime seda Privaatsuspoliitikat aeg-ajalt uuendada. Teavitame teid olulistest muudatustest e-posti voi meie Platvormi kaudu. Viimase uuenduse kuupaev on markitud selle lehekulje tipus."
+      },
+      "contact": {
+        "title": "Voottke meiega uhendust",
+        "content": "Kusimuste korral selle Privaatsuspoliitika kohta voi oma ooiguste kasutamiseks:",
+        "address": "Aadress",
+        "authority": "Teil on ka ooigus esitada kaebus Eesti Andmekaitse Inspektsioonile voi oma kohalikule jaarelevalveasutusele."
+      }
+    }
+  },
+
+  "legalNotices": {
+    "title": "Oigusteave",
+    "sections": {
+      "publisher": {
+        "title": "Valjaandja",
+        "company": "Ettevotte nimi",
+        "legalForm": "Oiguslik vorm",
+        "regNumber": "Registreerimisnumber",
+        "address": "Registrijargne aadress",
+        "email": "E-post",
+        "director": "Juhataja"
+      },
+      "parent": {
+        "title": "Emaettevote",
+        "company": "Ettevotte nimi",
+        "regNumber": "Registreerimisnumber",
+        "address": "Aadress"
+      },
+      "regulatory": {
+        "title": "Regulatiivne teave",
+        "authority": "Jaarelevalveasutus",
+        "license": "Litsents",
+        "licenseType": "Krediidiasutuse tegevusluba",
+        "euPassport": "ELi pass",
+        "euPassportDesc": "Volitatud tegutsema Euroopa Liidus",
+        "content": "Quickfund OU on Eesti Finantsinspektsiooni jaarelevalve all tegutsev litsentseeritud krediidiasutus. ELi ooigusaktide kohaselt oleme volitatud osutama krediiditeenuseid kogu Euroopa Liidus ELi passimehhanismi kaudu."
+      },
+      "hosting": {
+        "title": "Veebisaidi majutus",
+        "provider": "Majutusteenuse pakkuja",
+        "location": "Serveri asukoht",
+        "address": "Aadress"
+      },
+      "ip": {
+        "title": "Intellektuaalomand",
+        "content": "Koik selle veebisaidi sisu on kaitstud intellektuaalomandi ooigustega. Jorgmised elemendid on Quickfund OU ainuomand:",
+        "trademark": "Quickfundi kaubamork ja logo",
+        "content2": "Koik tekstid, artiklid ja toimetatav sisu",
+        "design": "Graafiline disain ja visuaalne identiteet",
+        "software": "Tarkvara ja lohtekood"
+      },
+      "links": {
+        "title": "Voelislingid",
+        "content": "See veebisait voib sisaldada linke voelistele veebisaitidele. Quickfund ei vastuta nende kolmandate osapoolte saitide sisu ega privaatsustavade eest. Nendele linkidele juurdepoos on teie enda vastutusel."
+      },
+      "liability": {
+        "title": "Vastutuse piiramine",
+        "content": "Kuigi me puuame tagada sellel veebisaidil oleva teabe toopsuse, ei saa Quickfund garanteerida, et koik teave on taielik, toopne voi ajakohane. Me ei vastuta otseste ega kaudsete kahjude eest, mis tulenevad selle veebisaidi kasutamisest."
+      },
+      "accessibility": {
+        "title": "Juurdepoosetavus",
+        "content": "Oleme poohendunud tegema oma veebisaidi koigile kasutajatele juurdepoosetavaks. Kui kohtate juurdepoosetavuse probleeme, voottke meiega uhendust legal@quickfund.ee, et saaksime neid lahendada."
+      },
+      "credits": {
+        "title": "Veebisaidi krediidid",
+        "design": "Disain",
+        "dev": "Arendus"
+      },
+      "applicableLaw": {
+        "title": "Kohaldatav ooigus",
+        "content": "Seda veebisaiti ja seda ooigusteavet reguleerib Eesti ooigus. Koik selle veebisaidi kasutamisega seotud vaidlused kuuluvad Eesti kohtute ainupaodevusse."
+      }
+    }
+  },
+
+  "cookies": {
+    "title": "Kupsiste poliitika",
+    "sections": {
+      "intro": {
+        "title": "Sissejuhatus",
+        "content": "See Kupsiste poliitika selgitab, kuidas Quickfund OU kasutab kupsiseid ja sarnaseid tehnoloogiaid meie veebisaidil. Meie veebisaidi kasutamisega noustute kupsiste kasutamisega vastavalt sellele poliitikale."
+      },
+      "what": {
+        "title": "Mis on kupsised?",
+        "content": "Kupsised on vaikesed tekstifailid, mis paigutatakse teie seadmesse veebisaidi kulastamisel. Neid kasutatakse laialdaselt veebisaitide toohusamaks toimimiseks, teabe andmiseks veebisaidi omanikele ja kasutajakogemuse parandamiseks."
+      },
+      "types": {
+        "title": "Kupsiste tuubid, mida kasutame",
+        "essential": {
+          "title": "Hoadavajalikud kupsised",
+          "desc": "Need kupsised on vajalikud veebisaidi nouetekohaseks toimimiseks. Neid ei saa keelata.",
+          "session": "Seansi haldamine ja autentimine",
+          "security": "Turvalisus ja pettuste eonnetamine",
+          "preferences": "Olulised kasutaja eelistused (nt kupsiste nousolek)"
+        },
+        "functional": {
+          "title": "Funktsionaalsed kupsised",
+          "desc": "Need kupsised vooimaldavad taoisutatud funktsionaalsust ja isikupaorastamist.",
+          "language": "Keele-eelistused",
+          "settings": "Kuva- ja liidese seaded"
+        },
+        "analytics": {
+          "title": "Anallutilised kupsised",
+          "desc": "Need kupsised aitavad meil moista, kuidas kulastajad meie veebisaidiga suhtlevad.",
+          "usage": "Vaadatud lehed ja navigeerimismustrid",
+          "performance": "Veebisaidi joudluse jooalgimine"
+        }
+      },
+      "list": {
+        "title": "Kupsised, mida kasutame",
+        "name": "Kupsise nimi",
+        "purpose": "Eesmoork",
+        "duration": "Kestus",
+        "type": "Tuup",
+        "sessionPurpose": "Kasutaja seansi haldamine",
+        "sessionDuration": "Seanss",
+        "localePurpose": "Keele-eelistuse salvestamine",
+        "consentPurpose": "Kupsiste nousoleku salvestamine",
+        "year": "aasta"
+      },
+      "thirdParty": {
+        "title": "Kolmandate osapoolte kupsised",
+        "content": "Voime kasutada kolmandate osapoolte teenuseid, mis seadistavad oma kupsiseid:",
+        "stripe": "Maksetootlemine ja pettuste eonnetamine"
+      },
+      "manage": {
+        "title": "Kupsiste haldamine",
+        "content": "Saate kupsiseid kontrollida ja kustutada oma brauseri seadete kaudu:",
+        "chrome": "Seaded > Privaatsus ja turvalisus > Kupsised",
+        "firefox": "Valikud > Privaatsus ja turvalisus > Kupsised",
+        "safari": "Eelistused > Privaatsus > Kupsised",
+        "edge": "Seaded > Kupsised ja saidi load",
+        "warning": "Poaluge tahelepanu, et hoadavajalike kupsiste keelamine voib moojutada veebisaidi funktsionaalsust."
+      },
+      "consent": {
+        "title": "Kupsiste nousolek",
+        "content": "Meie veebisaidi esmakorrasel kulastamisel palutakse teil kupsised aktsepteerida voi konfigureerida. Saate oma eelistusi igal ajal muuta meie kupsiste seadete kaudu voi brauseri kupsiste kustutamisega."
+      },
+      "changes": {
+        "title": "Muudatused selles poliitikas",
+        "content": "Voime seda Kupsiste poliitikat aeg-ajalt uuendada. Muudatused avaldatakse sellel lehel koos uuendatud uleevaatamise kuupaevaga."
+      },
+      "contact": {
+        "title": "Voottke meiega uhendust",
+        "content": "Kui teil on kusimusi meie kupsiste kasutamise kohta, voottke meiega uhendust:"
+      }
+    }
+  }
+}

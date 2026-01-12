@@ -13,81 +13,158 @@
         "vehicle": 95,
         "professional-equipment": 90,
         "it-equipment": 85,
-        "machinery": 80
+        "machinery": 80,
+        "medical-equipment": 95,
+        "industrial": 75,
+        "other": 60
       }
     },
-    "isBusinessClient": {
+    "assetCondition": {
+      "scores": {
+        "new": 100,
+        "recent": 85,
+        "used": 60
+      }
+    },
+    "clientType": {
       "scores": {
         "individual": 70,
         "business": 90
       }
     },
-    "yearsInBusiness": {
-      "min": 0,
-      "max": 50
-    },
     "employmentStatus": {
       "scores": {
-        "cdi": 100,
-        "cdd": 65,
-        "freelance": 70,
+        "tahtajatu": 100,
+        "tahtajaline": 65,
+        "fie": 70,
         "retired": 80
+      }
+    },
+    "employmentDuration": {
+      "scores": {
+        "more-than-2-years": 100,
+        "1-to-2-years": 85,
+        "6-months-to-1-year": 60,
+        "less-than-6-months": 35
+      }
+    },
+    "monthlyIncome": {
+      "min": 0,
+      "max": 15000,
+      "step": 100
+    },
+    "yearsInBusiness": {
+      "min": 0,
+      "max": 50,
+      "step": 1
+    },
+    "annualRevenue": {
+      "min": 0,
+      "max": 500000,
+      "step": 5000
+    },
+    "creditHistory": {
+      "scores": {
+        "excellent": 100,
+        "good": 75,
+        "mixed": 45,
+        "incidents": 20
+      }
+    },
+    "wantsInsurance": {
+      "scores": {
+        "yes": 100,
+        "no": 70
+      }
+    },
+    "buyOption": {
+      "scores": {
+        "yes": 90,
+        "no": 100
       }
     }
   },
 
   "scoring": {
-    "baseScore": 55,
+    "baseScore": 0,
     "weights": {
-      "assetType": 20,
-      "isBusinessClient": 15,
-      "yearsInBusiness": 20,
-      "employmentStatus": 20,
-      "age": 10
+      "age": 5,
+      "assetType": 15,
+      "assetCondition": 10,
+      "clientType": 10,
+      "employmentOrBusiness": 20,
+      "incomeOrRevenue": 15,
+      "creditHistory": 15,
+      "buyOption": 5,
+      "wantsInsurance": 5
     },
     "thresholds": {
-      "A": 80,
-      "B": 65,
-      "C": 45
+      "A": 75,
+      "B": 55,
+      "C": 35
     },
     "ageRanges": {
       "optimal": { "min": 25, "max": 55, "score": 100 },
       "good": { "min": 20, "max": 60, "score": 80 },
-      "default": 60
+      "acceptable": { "min": 18, "max": 19, "score": 65 },
+      "default": 55
     },
     "yearsInBusinessRanges": {
       "excellent": { "min": 5, "score": 100 },
       "good": { "min": 3, "score": 85 },
       "acceptable": { "min": 2, "score": 70 },
-      "new": { "min": 1, "score": 55 },
-      "default": 40
+      "new": { "min": 1, "score": 50 },
+      "default": 30
     },
-    "businessNeutralScore": 80,
-    "individualNeutralScore": 70
+    "incomeRatioRanges": {
+      "excellent": { "maxRatio": 0.20, "score": 100 },
+      "good": { "maxRatio": 0.30, "score": 85 },
+      "acceptable": { "maxRatio": 0.40, "score": 65 },
+      "risky": { "maxRatio": 0.50, "score": 40 },
+      "default": 20
+    },
+    "revenueRatioRanges": {
+      "excellent": { "maxRatio": 0.15, "score": 100 },
+      "good": { "maxRatio": 0.25, "score": 85 },
+      "acceptable": { "maxRatio": 0.40, "score": 60 },
+      "risky": { "maxRatio": 0.60, "score": 35 },
+      "default": 20
+    }
+  },
+
+  "limits": {
+    "maxPercentOfIncome": 0.35,
+    "maxPercentOfRevenue": 0.30,
+    "minDownPaymentPercent": 0.10
   },
 
   "calculation": {
     "interestMethod": "degressive",
     "baseRate": 9,
-    "minRate": 5,
+    "minRate": 4,
     "maxRate": 14,
     "rateAdjustments": {
       "A": -4,
       "B": -1,
       "C": 3,
-      "D": 5
+      "D": 6
     },
     "fees": {
       "applicationFee": 0,
       "applicationFeePercent": 1,
       "managementFee": 10
     },
-    "residualValuePercent": 0.1
+    "residualValuePercent": 0.10,
+    "insuranceRate": 0.25
   },
 
   "responseTime": {
-    "default": "48h",
-    "fastTrack": "24h"
+    "default": "48-72h",
+    "fastTrack": "24h",
+    "fastTrackConditions": {
+      "clientType": "business",
+      "minCategory": "B"
+    }
   },
 
   "approvalProbability": {

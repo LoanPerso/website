@@ -5,12 +5,12 @@
   "locale": "fr-CH",
 
   "options": {
-    "employmentStatus": ["permanent", "temporary", "independant", "student", "retired", "unemployed"],
-    "contractType": ["permanent", "temporary"],
-    "businessType": ["independant", "sarl", "sa", "startup"],
+    "employmentStatus": ["cdi", "fonctionnaire", "cdd", "freelance", "auto-entrepreneur", "permanent", "temporary", "independant", "student", "retired", "unemployed"],
+    "contractType": ["cdi", "fonctionnaire", "cdd", "permanent", "temporary"],
+    "businessType": ["independant", "sarl", "sa", "startup", "freelance", "auto-entrepreneur", "tpe"],
     "sector": ["tech", "commerce", "services", "construction", "health", "other"],
     "businessNeed": ["treasury", "investment", "equipment"],
-    "loanPurpose": ["auto", "homeImprovement", "equipment", "event", "travel"],
+    "loanPurpose": ["auto", "homeImprovement", "equipment", "event", "travel", "other"],
     "institutionType": ["university", "epfl-ethz", "hes", "business-school", "other"],
     "studyLevel": ["bachelor1", "bachelor2", "bachelor3", "master1", "master2", "doctorate"],
     "assetType": ["vehicle", "professional-equipment", "it-equipment", "machinery"],

@@ -191,6 +191,7 @@ export function AdvancedSimulator({ className = "" }: AdvancedSimulatorProps) {
             result={calculateResult()}
             onRestart={reset}
             onRecalculate={setCustomRate}
+            onUpdateFormData={updateFormData}
             t={t}
             locale={locale}
           />

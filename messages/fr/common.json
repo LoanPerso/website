@@ -39,10 +39,9 @@
   "regulatory": {
     "title": "Information réglementaire",
     "company": "Quickfund OÜ est une société de crédit immatriculée en Estonie, dûment autorisée par la Finantsinspektsioon (autorité financière estonienne) à exercer l'activité de prêteur.",
-    "passport": "Grâce au « passeport européen », nous disposons de la faculté de proposer nos solutions de crédit à des clients situés en France, dans le strict respect des réglementations en vigueur.",
-    "availability": "Offre disponible uniquement pour les résidents d'Estonie. Bien que notre agrément nous permette de recevoir des demandes de prêt depuis la France, la mise en place effective d'un contrat ne peut intervenir que si le dossier respecte l'ensemble des règles françaises et européennes applicables au crédit à la consommation.",
+    "availability": "Nos services sont exclusivement disponibles pour les résidents d'Estonie.",
     "refusal": "Une demande peut être rejetée si elle ne satisfait pas aux exigences légales — ce refus traduit simplement un non-respect des normes de protection du consommateur.",
-    "compliance": "Nous nous soumettons pleinement au Code de la consommation, aux directives européennes (directive 2008/48/CE), ainsi qu'au RGPD.",
+    "compliance": "Nous nous conformons pleinement aux lois estoniennes de protection du consommateur, aux directives européennes (directive 2008/48/CE), ainsi qu'au RGPD.",
     "fraud": "En cas de tentative de fraude, Quickfund OÜ se réserve le droit de transmettre les faits aux autorités compétentes.",
     "accept": "J'ai compris et j'accepte",
     "moreInfo": "En savoir plus"
@@ -54,9 +53,8 @@
     "moreInfo": "En savoir plus"
   },
   "languageNotice": {
-    "detected": "Langue détectée selon votre localisation",
-    "terms": "Les conditions et tarifs affichés s'appliquent aux résidents de ce pays.",
-    "change": "Vous pouvez changer de pays à tout moment."
+    "detected": "Service disponible en Estonie",
+    "terms": "Les conditions et tarifs affichés s'appliquent aux résidents d'Estonie."
   },
   "footer": {
     "title": "Parlons",
@@ -79,9 +77,7 @@
       "terms": "CGU"
     },
     "locations": {
-      "estonia": "Estonie",
-      "france": "France",
-      "europe": "Europe"
+      "estonia": "Estonie"
     }
   },
   "preloader": {

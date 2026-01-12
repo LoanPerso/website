@@ -8,9 +8,13 @@ export const STUDENT_CONFIG: ProductFullConfig = {
   descriptionKey: "simulator.advanced.products.student.description",
 
   questions: [
+    // ============================================================
+    // SECTION: IDENTITY
+    // ============================================================
     {
       id: "age",
       type: "number",
+      section: "identity",
       labelKey: "simulator.advanced.questions.age",
       subtitleKey: "simulator.advanced.questions.ageSubtitle",
       required: true,
@@ -19,96 +23,212 @@ export const STUDENT_CONFIG: ProductFullConfig = {
       unit: "years",
       countryOverrides: params.questions.age.countryOverrides,
     },
+
+    // ============================================================
+    // SECTION: STUDIES
+    // ============================================================
     {
       id: "institutionType",
       type: "select",
-      labelKey: "simulator.advanced.student.institutionTitle",
-      subtitleKey: "simulator.advanced.student.institutionSubtitle",
+      section: "studies",
+      labelKey: "simulator.advanced.student.institution.title",
+      subtitleKey: "simulator.advanced.student.institution.subtitle",
       required: true,
       options: [
         { value: "university", labelKey: "simulator.advanced.options.institutionType.university", score: params.questions.institutionType.scores.university },
-        { value: "business-school", labelKey: "simulator.advanced.options.institutionType.business-school", score: params.questions.institutionType.scores["business-school"] },
-        { value: "engineering-school", labelKey: "simulator.advanced.options.institutionType.engineering-school", score: params.questions.institutionType.scores["engineering-school"] },
-        { value: "art-school", labelKey: "simulator.advanced.options.institutionType.art-school", score: params.questions.institutionType.scores["art-school"] },
-        { value: "haute-ecole", labelKey: "simulator.advanced.options.institutionType.haute-ecole", score: params.questions.institutionType.scores.university },
-        { value: "epfl-ethz", labelKey: "simulator.advanced.options.institutionType.epfl-ethz", score: params.questions.institutionType.scores["engineering-school"] },
-        { value: "hes", labelKey: "simulator.advanced.options.institutionType.hes", score: params.questions.institutionType.scores.university },
-        { value: "fp-superior", labelKey: "simulator.advanced.options.institutionType.fp-superior", score: params.questions.institutionType.scores.university },
-        { value: "college", labelKey: "simulator.advanced.options.institutionType.college", score: params.questions.institutionType.scores.university },
+        { value: "applied-university", labelKey: "simulator.advanced.options.institutionType.applied-university", score: params.questions.institutionType.scores["applied-university"] },
+        { value: "vocational-school", labelKey: "simulator.advanced.options.institutionType.vocational-school", score: params.questions.institutionType.scores["vocational-school"] },
         { value: "other", labelKey: "simulator.advanced.options.institutionType.other", score: params.questions.institutionType.scores.other },
       ],
     },
     {
       id: "studyLevel",
       type: "select",
-      labelKey: "simulator.advanced.student.levelTitle",
+      section: "studies",
+      labelKey: "simulator.advanced.student.level.title",
+      subtitleKey: "simulator.advanced.student.level.subtitle",
       required: true,
       options: [
-        { value: "l1", labelKey: "simulator.advanced.options.studyLevel.l1", score: params.questions.studyLevel.scores.l1 },
-        { value: "l2", labelKey: "simulator.advanced.options.studyLevel.l2", score: params.questions.studyLevel.scores.l2 },
-        { value: "l3", labelKey: "simulator.advanced.options.studyLevel.l3", score: params.questions.studyLevel.scores.l3 },
-        { value: "m1", labelKey: "simulator.advanced.options.studyLevel.m1", score: params.questions.studyLevel.scores.m1 },
-        { value: "m2", labelKey: "simulator.advanced.options.studyLevel.m2", score: params.questions.studyLevel.scores.m2 },
-        { value: "bac1", labelKey: "simulator.advanced.options.studyLevel.bac1", score: params.questions.studyLevel.scores.l1 },
-        { value: "bac2", labelKey: "simulator.advanced.options.studyLevel.bac2", score: params.questions.studyLevel.scores.l2 },
-        { value: "bac3", labelKey: "simulator.advanced.options.studyLevel.bac3", score: params.questions.studyLevel.scores.l3 },
-        { value: "master1", labelKey: "simulator.advanced.options.studyLevel.master1", score: params.questions.studyLevel.scores.m1 },
-        { value: "master2", labelKey: "simulator.advanced.options.studyLevel.master2", score: params.questions.studyLevel.scores.m2 },
-        { value: "bachelor1", labelKey: "simulator.advanced.options.studyLevel.bachelor1", score: params.questions.studyLevel.scores.l1 },
-        { value: "bachelor2", labelKey: "simulator.advanced.options.studyLevel.bachelor2", score: params.questions.studyLevel.scores.l2 },
-        { value: "bachelor3", labelKey: "simulator.advanced.options.studyLevel.bachelor3", score: params.questions.studyLevel.scores.l3 },
-        { value: "grado1", labelKey: "simulator.advanced.options.studyLevel.grado1", score: params.questions.studyLevel.scores.l1 },
-        { value: "grado2", labelKey: "simulator.advanced.options.studyLevel.grado2", score: params.questions.studyLevel.scores.l2 },
-        { value: "grado3", labelKey: "simulator.advanced.options.studyLevel.grado3", score: params.questions.studyLevel.scores.l3 },
-        { value: "grado4", labelKey: "simulator.advanced.options.studyLevel.grado4", score: params.questions.studyLevel.scores.m1 },
-        { value: "year1", labelKey: "simulator.advanced.options.studyLevel.year1", score: params.questions.studyLevel.scores.l1 },
-        { value: "year2", labelKey: "simulator.advanced.options.studyLevel.year2", score: params.questions.studyLevel.scores.l2 },
-        { value: "year3", labelKey: "simulator.advanced.options.studyLevel.year3", score: params.questions.studyLevel.scores.l3 },
-        { value: "year4", labelKey: "simulator.advanced.options.studyLevel.year4", score: params.questions.studyLevel.scores.m1 },
-        { value: "master", labelKey: "simulator.advanced.options.studyLevel.master", score: params.questions.studyLevel.scores.m2 },
+        { value: "bachelor-1", labelKey: "simulator.advanced.options.studyLevel.bachelor-1", score: params.questions.studyLevel.scores["bachelor-1"] },
+        { value: "bachelor-2", labelKey: "simulator.advanced.options.studyLevel.bachelor-2", score: params.questions.studyLevel.scores["bachelor-2"] },
+        { value: "bachelor-3", labelKey: "simulator.advanced.options.studyLevel.bachelor-3", score: params.questions.studyLevel.scores["bachelor-3"] },
+        { value: "master-1", labelKey: "simulator.advanced.options.studyLevel.master-1", score: params.questions.studyLevel.scores["master-1"] },
+        { value: "master-2", labelKey: "simulator.advanced.options.studyLevel.master-2", score: params.questions.studyLevel.scores["master-2"] },
         { value: "doctorate", labelKey: "simulator.advanced.options.studyLevel.doctorate", score: params.questions.studyLevel.scores.doctorate },
       ],
     },
     {
-      id: "hasPartTimeJob",
-      type: "boolean",
-      labelKey: "simulator.advanced.student.jobTitle",
-      subtitleKey: "simulator.advanced.student.jobSubtitle",
+      id: "remainingYears",
+      type: "number",
+      section: "studies",
+      labelKey: "simulator.advanced.student.remainingYears.title",
+      subtitleKey: "simulator.advanced.student.remainingYears.subtitle",
       required: true,
+      min: params.questions.remainingYears.min,
+      max: params.questions.remainingYears.max,
+      unit: "years",
+    },
+
+    // ============================================================
+    // SECTION: INCOME
+    // ============================================================
+    {
+      id: "hasPartTimeJob",
+      type: "select",
+      section: "income",
+      labelKey: "simulator.advanced.student.job.title",
+      subtitleKey: "simulator.advanced.student.job.subtitle",
+      required: true,
+      options: [
+        { value: "yes", labelKey: "simulator.advanced.common.yes", score: params.questions.hasPartTimeJob.scores.yes },
+        { value: "no", labelKey: "simulator.advanced.common.no", score: params.questions.hasPartTimeJob.scores.no },
+      ],
     },
     {
       id: "partTimeIncome",
       type: "slider",
-      labelKey: "simulator.advanced.student.monthlyIncome",
-      required: false,
+      section: "income",
+      labelKey: "simulator.advanced.student.job.income",
+      subtitleKey: "simulator.advanced.student.job.incomeSubtitle",
+      required: true,
       min: params.questions.partTimeIncome.min,
       max: params.questions.partTimeIncome.max,
       step: params.questions.partTimeIncome.step,
       unit: "euros",
       showIf: (formData) => {
-        if ("hasPartTimeJob" in formData) {
-          return formData.hasPartTimeJob === true;
-        }
-        return false;
+        const data = formData as unknown as Record<string, unknown>;
+        return data.hasPartTimeJob === "yes";
       },
     },
     {
-      id: "hasGuarantor",
+      id: "hasScholarship",
       type: "select",
-      labelKey: "simulator.advanced.student.guarantorTitle",
-      subtitleKey: "simulator.advanced.student.guarantorSubtitle",
+      section: "income",
+      labelKey: "simulator.advanced.student.scholarship.title",
+      subtitleKey: "simulator.advanced.student.scholarship.subtitle",
       required: true,
       options: [
-        {
-          value: "yes",
-          labelKey: "simulator.advanced.student.guarantorYes",
-          score: params.questions.hasGuarantor.scores.yes,
-        },
-        {
-          value: "no",
-          labelKey: "simulator.advanced.student.guarantorNo",
-          score: params.questions.hasGuarantor.scores.no,
-        },
+        { value: "yes", labelKey: "simulator.advanced.common.yes", score: params.questions.hasScholarship.scores.yes },
+        { value: "no", labelKey: "simulator.advanced.common.no", score: params.questions.hasScholarship.scores.no },
+      ],
+    },
+    {
+      id: "scholarshipAmount",
+      type: "slider",
+      section: "income",
+      labelKey: "simulator.advanced.student.scholarship.amount",
+      subtitleKey: "simulator.advanced.student.scholarship.amountSubtitle",
+      required: true,
+      min: params.questions.scholarshipAmount.min,
+      max: params.questions.scholarshipAmount.max,
+      step: params.questions.scholarshipAmount.step,
+      unit: "euros",
+      showIf: (formData) => {
+        const data = formData as unknown as Record<string, unknown>;
+        return data.hasScholarship === "yes";
+      },
+    },
+
+    // ============================================================
+    // SECTION: HOUSING
+    // ============================================================
+    {
+      id: "housingStatus",
+      type: "select",
+      section: "housing",
+      labelKey: "simulator.advanced.student.housing.title",
+      subtitleKey: "simulator.advanced.student.housing.subtitle",
+      required: true,
+      options: [
+        { value: "withParents", labelKey: "simulator.advanced.student.housing.withParents", score: params.questions.housingStatus.scores.withParents },
+        { value: "studentResidence", labelKey: "simulator.advanced.student.housing.studentResidence", score: params.questions.housingStatus.scores.studentResidence },
+        { value: "rental", labelKey: "simulator.advanced.student.housing.rental", score: params.questions.housingStatus.scores.rental },
+        { value: "other", labelKey: "simulator.advanced.student.housing.other", score: params.questions.housingStatus.scores.other },
+      ],
+    },
+
+    // ============================================================
+    // SECTION: GUARANTOR
+    // ============================================================
+    {
+      id: "hasGuarantor",
+      type: "select",
+      section: "guarantor",
+      labelKey: "simulator.advanced.student.guarantor.title",
+      subtitleKey: "simulator.advanced.student.guarantor.subtitle",
+      required: true,
+      options: [
+        { value: "yes", labelKey: "simulator.advanced.student.guarantor.yes", score: params.questions.hasGuarantor.scores.yes },
+        { value: "no", labelKey: "simulator.advanced.student.guarantor.no", score: params.questions.hasGuarantor.scores.no },
+      ],
+    },
+    {
+      id: "guarantorRelationship",
+      type: "select",
+      section: "guarantor",
+      labelKey: "simulator.advanced.student.guarantor.relationship",
+      subtitleKey: "simulator.advanced.student.guarantor.relationshipSubtitle",
+      required: true,
+      showIf: (formData) => {
+        const data = formData as unknown as Record<string, unknown>;
+        return data.hasGuarantor === "yes";
+      },
+      options: [
+        { value: "parent", labelKey: "simulator.advanced.student.guarantor.parent", score: params.questions.guarantorRelationship.scores.parent },
+        { value: "grandparent", labelKey: "simulator.advanced.student.guarantor.grandparent", score: params.questions.guarantorRelationship.scores.grandparent },
+        { value: "sibling", labelKey: "simulator.advanced.student.guarantor.sibling", score: params.questions.guarantorRelationship.scores.sibling },
+        { value: "other", labelKey: "simulator.advanced.student.guarantor.otherRelation", score: params.questions.guarantorRelationship.scores.other },
+      ],
+    },
+    {
+      id: "guarantorIncome",
+      type: "slider",
+      section: "guarantor",
+      labelKey: "simulator.advanced.student.guarantor.income",
+      subtitleKey: "simulator.advanced.student.guarantor.incomeSubtitle",
+      required: true,
+      min: params.questions.guarantorIncome.min,
+      max: params.questions.guarantorIncome.max,
+      step: params.questions.guarantorIncome.step,
+      unit: "euros",
+      showIf: (formData) => {
+        const data = formData as unknown as Record<string, unknown>;
+        return data.hasGuarantor === "yes";
+      },
+    },
+
+    // ============================================================
+    // SECTION: LOAN
+    // ============================================================
+    {
+      id: "loanPurpose",
+      type: "select",
+      section: "loan",
+      labelKey: "simulator.advanced.student.loan.purpose",
+      subtitleKey: "simulator.advanced.student.loan.purposeSubtitle",
+      required: true,
+      options: [
+        { value: "tuition", labelKey: "simulator.advanced.student.loan.tuition", score: params.questions.loanPurpose.scores.tuition },
+        { value: "living", labelKey: "simulator.advanced.student.loan.living", score: params.questions.loanPurpose.scores.living },
+        { value: "equipment", labelKey: "simulator.advanced.student.loan.equipment", score: params.questions.loanPurpose.scores.equipment },
+        { value: "internship", labelKey: "simulator.advanced.student.loan.internship", score: params.questions.loanPurpose.scores.internship },
+        { value: "other", labelKey: "simulator.advanced.student.loan.other", score: params.questions.loanPurpose.scores.other },
+      ],
+    },
+
+    // ============================================================
+    // SECTION: INSURANCE
+    // ============================================================
+    {
+      id: "wantsInsurance",
+      type: "select",
+      section: "insurance",
+      labelKey: "simulator.advanced.student.insurance.wants",
+      subtitleKey: "simulator.advanced.student.insurance.wantsSubtitle",
+      required: true,
+      options: [
+        { value: "yes", labelKey: "simulator.advanced.common.yes", score: params.questions.wantsInsurance.scores.yes },
+        { value: "no", labelKey: "simulator.advanced.common.no", score: params.questions.wantsInsurance.scores.no },
       ],
     },
   ],
@@ -139,30 +259,67 @@ export const STUDENT_CONFIG: ProductFullConfig = {
         scoreMap: params.questions.studyLevel.scores,
       },
       {
+        fieldId: "remainingYears",
+        weight: params.scoring.weights.remainingYears,
+        scoreFn: (value) => {
+          const years = value as number;
+          const ranges = params.scoring.remainingYearsRanges;
+          if (years <= ranges.short.max) return ranges.short.score;
+          if (years <= ranges.medium.max) return ranges.medium.score;
+          if (years <= ranges.long.max) return ranges.long.score;
+          return ranges.default;
+        },
+      },
+      {
         fieldId: "hasPartTimeJob",
         weight: params.scoring.weights.hasPartTimeJob,
         scoreFn: (value, formData) => {
-          if (value === true) {
-            if ("partTimeIncome" in formData) {
-              const income = formData.partTimeIncome || 0;
-              const ranges = params.scoring.incomeRanges;
-              if (income >= ranges.high.min) return ranges.high.score;
-              if (income >= ranges.medium.min) return ranges.medium.score;
-              return ranges.default;
-            }
-            return 80;
+          if (value === "yes") {
+            const data = formData as unknown as Record<string, unknown>;
+            const income = (data.partTimeIncome as number) || 0;
+            const ranges = params.scoring.incomeRanges;
+            if (income >= ranges.high.min) return ranges.high.score;
+            if (income >= ranges.medium.min) return ranges.medium.score;
+            if (income >= ranges.low.min) return ranges.low.score;
+            return ranges.default;
           }
-          return params.scoring.noJobScore;
+          return params.questions.hasPartTimeJob.scores.no;
         },
+      },
+      {
+        fieldId: "hasScholarship",
+        weight: params.scoring.weights.hasScholarship,
+        scoreMap: params.questions.hasScholarship.scores,
+      },
+      {
+        fieldId: "housingStatus",
+        weight: params.scoring.weights.housingStatus,
+        scoreMap: params.questions.housingStatus.scores,
       },
       {
         fieldId: "hasGuarantor",
         weight: params.scoring.weights.hasGuarantor,
-        scoreFn: (value) => {
-          return value === "yes"
-            ? params.scoring.guarantorYesScore
-            : params.scoring.guarantorNoScore;
+        scoreMap: params.questions.hasGuarantor.scores,
+      },
+      {
+        fieldId: "guarantorIncome",
+        weight: params.scoring.weights.guarantorIncome,
+        scoreFn: (_, formData) => {
+          const data = formData as unknown as Record<string, unknown>;
+          if (data.hasGuarantor !== "yes") return 50;
+
+          const income = (data.guarantorIncome as number) || 0;
+          const ranges = params.scoring.guarantorIncomeRanges;
+          if (income >= ranges.high.min) return ranges.high.score;
+          if (income >= ranges.medium.min) return ranges.medium.score;
+          if (income >= ranges.acceptable.min) return ranges.acceptable.score;
+          return ranges.default;
         },
+      },
+      {
+        fieldId: "loanPurpose",
+        weight: params.scoring.weights.loanPurpose,
+        scoreMap: params.questions.loanPurpose.scores,
       },
     ],
     thresholds: params.scoring.thresholds,
@@ -181,11 +338,14 @@ export const STUDENT_CONFIG: ProductFullConfig = {
     default: params.responseTime.default,
     conditions: [
       {
-        check: (formData) => {
-          if ("hasGuarantor" in formData) {
-            return formData.hasGuarantor === "yes";
-          }
-          return false;
+        check: (formData, riskCategory) => {
+          const data = formData as unknown as Record<string, unknown>;
+          const hasGuarantor = data.hasGuarantor === "yes";
+          const conditions = params.responseTime.fastTrackConditions;
+          const categoryOrder = ["A", "B", "C", "D"];
+          const minCategoryIndex = categoryOrder.indexOf(conditions.minCategory);
+          const currentCategoryIndex = categoryOrder.indexOf(riskCategory);
+          return hasGuarantor && currentCategoryIndex <= minCategoryIndex;
         },
         time: params.responseTime.fastTrack,
       },

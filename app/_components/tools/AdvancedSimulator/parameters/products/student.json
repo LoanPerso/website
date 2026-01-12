@@ -6,29 +6,38 @@
   "questions": {
     "age": {
       "min": 18,
-      "max": 30,
+      "max": 35,
       "countryOverrides": {
-        "BE": { "max": 35 },
-        "CH": { "max": 28 }
+        "EE": { "max": 35 }
       }
     },
     "institutionType": {
       "scores": {
-        "university": 85,
-        "business-school": 95,
-        "engineering-school": 100,
-        "art-school": 70,
+        "university": 90,
+        "applied-university": 85,
+        "vocational-school": 70,
         "other": 60
       }
     },
     "studyLevel": {
       "scores": {
-        "l1": 60,
-        "l2": 65,
-        "l3": 75,
-        "m1": 85,
-        "m2": 95,
+        "bachelor-1": 60,
+        "bachelor-2": 65,
+        "bachelor-3": 75,
+        "master-1": 85,
+        "master-2": 95,
         "doctorate": 90
+      }
+    },
+    "remainingYears": {
+      "min": 1,
+      "max": 7,
+      "step": 1
+    },
+    "hasPartTimeJob": {
+      "scores": {
+        "yes": 100,
+        "no": 50
       }
     },
     "partTimeIncome": {
@@ -36,65 +45,140 @@
       "max": 2000,
       "step": 50
     },
+    "hasScholarship": {
+      "scores": {
+        "yes": 90,
+        "no": 50
+      }
+    },
+    "scholarshipAmount": {
+      "min": 0,
+      "max": 1500,
+      "step": 50
+    },
+    "housingStatus": {
+      "scores": {
+        "withParents": 85,
+        "studentResidence": 80,
+        "rental": 70,
+        "other": 60
+      }
+    },
     "hasGuarantor": {
       "scores": {
         "yes": 100,
-        "no": 50
+        "no": 40
+      }
+    },
+    "guarantorRelationship": {
+      "scores": {
+        "parent": 100,
+        "grandparent": 90,
+        "sibling": 75,
+        "other": 60
+      }
+    },
+    "guarantorIncome": {
+      "min": 0,
+      "max": 10000,
+      "step": 100
+    },
+    "loanPurpose": {
+      "scores": {
+        "tuition": 100,
+        "living": 90,
+        "equipment": 85,
+        "internship": 95,
+        "other": 70
+      }
+    },
+    "wantsInsurance": {
+      "scores": {
+        "yes": 100,
+        "no": 70
       }
     }
   },
 
   "scoring": {
-    "baseScore": 40,
+    "baseScore": 0,
     "weights": {
-      "age": 10,
-      "institutionType": 25,
-      "studyLevel": 15,
-      "hasPartTimeJob": 15,
-      "hasGuarantor": 35
+      "age": 5,
+      "institutionType": 18,
+      "studyLevel": 12,
+      "remainingYears": 5,
+      "hasPartTimeJob": 10,
+      "hasScholarship": 5,
+      "housingStatus": 5,
+      "hasGuarantor": 30,
+      "guarantorIncome": 8,
+      "loanPurpose": 2
     },
     "thresholds": {
-      "A": 80,
-      "B": 60,
-      "C": 45
+      "A": 75,
+      "B": 55,
+      "C": 35
     },
     "ageRanges": {
       "optimal": { "max": 22, "score": 100 },
       "good": { "max": 25, "score": 85 },
       "acceptable": { "max": 28, "score": 70 },
-      "default": 60
+      "default": 55
+    },
+    "remainingYearsRanges": {
+      "short": { "max": 2, "score": 100 },
+      "medium": { "max": 4, "score": 80 },
+      "long": { "max": 6, "score": 60 },
+      "default": 45
     },
     "incomeRanges": {
       "high": { "min": 800, "score": 100 },
       "medium": { "min": 500, "score": 85 },
-      "default": 70
+      "low": { "min": 200, "score": 70 },
+      "default": 60
     },
-    "noJobScore": 40,
-    "guarantorYesScore": 100,
-    "guarantorNoScore": 40
+    "guarantorIncomeRanges": {
+      "high": { "min": 4000, "score": 100 },
+      "medium": { "min": 2500, "score": 85 },
+      "acceptable": { "min": 1500, "score": 65 },
+      "default": 45
+    }
+  },
+
+  "limits": {
+    "maxAmountWithoutGuarantor": 5000,
+    "maxAmountWithGuarantor": 50000,
+    "minGuarantorIncome": 1500
   },
 
   "calculation": {
     "interestMethod": "compound",
     "baseRate": 9,
-    "minRate": 6,
+    "minRate": 4,
     "maxRate": 15,
     "rateAdjustments": {
-      "A": -3,
+      "A": -4,
       "B": -1,
       "C": 2,
-      "D": 4
+      "D": 5
     },
     "fees": {
       "applicationFee": 0,
       "applicationFeePercent": 0,
       "managementFee": 0
-    }
+    },
+    "insuranceRate": 0.15,
+    "deferredPayment": true,
+    "maxDeferralMonths": 36
   },
 
   "responseTime": {
-    "default": "24h",
-    "fastTrack": "< 12h"
+    "default": "24-48h",
+    "fastTrack": "< 12h",
+    "fastTrackConditions": {
+      "hasGuarantor": true,
+      "minCategory": "B"
+    }
   },
 
   "approvalProbability": {

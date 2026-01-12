@@ -33,6 +33,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       home: (await import(`../../messages/${locale}/home.json`)).default,
       products: (await import(`../../messages/${locale}/products.json`)).default,
       tools: await loadOptionalMessages("tools"),
+      legal: await loadOptionalMessages("legal"),
       // Product pages
       "product-micro-credit": await loadProductMessages("micro-credit"),
       "product-consumer": await loadProductMessages("consumer"),

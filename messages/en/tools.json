@@ -83,14 +83,17 @@
       },
 
       "step0Eyebrow": "Let's start",
-      "step0Title": "Which country do you live in?",
-      "step0Subtitle": "Terms and products vary based on your country of residence",
+      "step0Title": "Lending for Estonian residents",
+      "step0Subtitle": "Our services are exclusively available for people residing in Estonia",
       "productsAvailable": "products available",
       "countryHint": "Your country determines available offers",
       "selectCountry": "Select your country",
       "searchCountry": "Search for a country...",
       "noCountryFound": "No country found",
       "optimized": "Optimized",
+      "estoniaName": "Estonia",
+      "estoniaHint": "Exclusive lending for Estonian residents",
+      "estoniaOnly": "Our lending services are currently only available for Estonian residents",
 
       "step1Eyebrow": "Step 1 of 4",
       "step1Title": "What type of credit suits you?",
@@ -131,6 +134,9 @@
       "step3Subtitle": "This information helps us personalize your offer",
       "seeResults": "See my estimate",
       "fillRequired": "Please fill in the required fields",
+      "missingFieldsOne": "1 required field missing",
+      "missingFieldsMany": "{count} required fields missing",
+      "clickToSee": "Click to see",
 
       "yes": "Yes",
       "no": "No",
@@ -144,14 +150,61 @@
 
       "employment": {
         "title": "What is your employment status?",
-        "subtitle": "Select what fits best"
+        "subtitle": "Select what fits best",
+        "cdi": "Permanent contract",
+        "fonctionnaire": "Civil servant",
+        "cdd": "Fixed-term contract",
+        "freelance": "Freelance / Self-employed",
+        "autoEntrepreneur": "Self-employed (micro)",
+        "student": "Student",
+        "retired": "Retired",
+        "unemployed": "Unemployed"
+      },
+
+      "employmentDuration": {
+        "title": "How long have you been in your current position?",
+        "subtitle": "Time at your current job",
+        "moreThan2Years": "More than 2 years",
+        "1to2Years": "1 to 2 years",
+        "6monthsTo1Year": "6 months to 1 year",
+        "lessThan6Months": "Less than 6 months"
+      },
+
+      "income": {
+        "title": "What is your monthly net income?",
+        "subtitle": "Include all regular income (salary, benefits, pensions...)"
+      },
+
+      "expenses": {
+        "title": "What are your monthly fixed expenses?",
+        "subtitle": "Rent, ongoing loans, insurance, subscriptions..."
+      },
+
+      "housing": {
+        "title": "What is your housing situation?",
+        "subtitle": "Residential stability is a positive factor",
+        "owner": "Homeowner",
+        "tenant": "Tenant",
+        "hosted": "Living with family/friends",
+        "other": "Other situation"
+      },
+
+      "creditHistory": {
+        "title": "How would you describe your credit history?",
+        "subtitle": "Incidents = rejected payments, unauthorized overdraft, defaults...",
+        "excellent": "Excellent (no incidents ever)",
+        "good": "Good (no recent incidents)",
+        "mixed": "Fair (some past incidents)",
+        "incidents": "Difficult (current or recent incidents)"
       },
 
       "options": {
         "employmentStatus": {
           "cdi": "Permanent contract (CDI)",
           "cdd": "Fixed-term contract (CDD)",
+          "fonctionnaire": "Civil servant",
           "freelance": "Freelance",
+          "auto-entrepreneur": "Self-employed",
           "independant": "Self-employed",
           "permanent": "Permanent contract",
           "temporary": "Temporary contract",
@@ -159,6 +212,9 @@
           "indefinido": "Permanent contract",
           "temporal": "Temporary contract",
           "autonomo": "Self-employed",
+          "tahtajatu": "Permanent contract",
+          "tahtajaline": "Fixed-term contract",
+          "fie": "Sole proprietor (FIE)",
           "student": "Student",
           "retired": "Retired",
           "unemployed": "Unemployed"
@@ -169,7 +225,10 @@
           "permanent": "Permanent",
           "temporary": "Temporary",
           "indefinido": "Permanent",
-          "temporal": "Temporary"
+          "temporal": "Temporary",
+          "tahtajatu": "Permanent",
+          "tahtajaline": "Fixed-term",
+          "fie": "Sole proprietor (FIE)"
         },
         "businessType": {
           "freelance": "Freelance",
@@ -184,7 +243,10 @@
           "self-employed": "Self-employed",
           "small-business": "Small business",
           "company": "Company",
-          "autonomo": "Self-employed"
+          "autonomo": "Self-employed",
+          "fie": "Sole proprietor (FIE)",
+          "oue": "Private limited company (OÜ)",
+          "as": "Public limited company (AS)"
         },
         "institutionType": {
           "university": "University",
@@ -196,6 +258,8 @@
           "hes": "University of Applied Sciences",
           "fp-superior": "Higher vocational training",
           "college": "College",
+          "applied-university": "University of Applied Sciences",
+          "vocational-school": "Vocational School",
           "other": "Other institution"
         },
         "studyLevel": {
@@ -212,6 +276,11 @@
           "bachelor1": "Bachelor Year 1",
           "bachelor2": "Bachelor Year 2",
           "bachelor3": "Bachelor Year 3",
+          "bachelor-1": "Bachelor Year 1",
+          "bachelor-2": "Bachelor Year 2",
+          "bachelor-3": "Bachelor Year 3",
+          "master-1": "Master Year 1",
+          "master-2": "Master Year 2",
           "grado1": "Year 1",
           "grado2": "Year 2",
           "grado3": "Year 3",
@@ -228,7 +297,8 @@
           "homeImprovement": "Home improvement",
           "equipment": "Equipment",
           "event": "Event",
-          "travel": "Travel"
+          "travel": "Travel",
+          "other": "Other"
         },
         "assetType": {
           "vehicle": "Vehicle",
@@ -273,7 +343,79 @@
         "guarantorTitle": "Do you have a guarantor available?",
         "guarantorSubtitle": "A guarantor can improve your rate",
         "guarantorYes": "Improves your chances",
-        "guarantorNo": "No guarantor"
+        "guarantorNo": "No guarantor",
+        "institution": {
+          "title": "What type of institution do you attend?",
+          "subtitle": "School type influences your profile",
+          "university": "University",
+          "businessSchool": "Business School",
+          "engineeringSchool": "Engineering School",
+          "medicalSchool": "Medical / Pharmacy School",
+          "lawSchool": "Law School",
+          "artSchool": "Art / Design School",
+          "other": "Other institution"
+        },
+        "level": {
+          "title": "What year are you in?",
+          "subtitle": "Your current study level",
+          "l1": "Year 1 / Freshman",
+          "l2": "Year 2 / Sophomore",
+          "l3": "Year 3 / Junior",
+          "m1": "Master 1 / Senior",
+          "m2": "Master 2 / Graduate",
+          "doctorate": "Doctorate / PhD"
+        },
+        "remainingYears": {
+          "title": "How many years of studies do you have left?",
+          "subtitle": "Time remaining until graduation"
+        },
+        "job": {
+          "title": "Do you have a student job?",
+          "subtitle": "Part-time work or side job",
+          "income": "Monthly income from your job",
+          "incomeSubtitle": "Average monthly net salary"
+        },
+        "scholarship": {
+          "title": "Do you have a scholarship?",
+          "subtitle": "Study grant or financial aid",
+          "amount": "Monthly scholarship amount",
+          "amountSubtitle": "Amount received each month"
+        },
+        "housing": {
+          "title": "Where do you live during your studies?",
+          "subtitle": "Your current housing situation",
+          "withParents": "With my parents",
+          "studentResidence": "Student residence / Dorm",
+          "rental": "Renting (apartment/shared)",
+          "other": "Other situation"
+        },
+        "guarantor": {
+          "title": "Do you have a guarantor?",
+          "subtitle": "A guarantor significantly improves your application",
+          "yes": "Yes, I have a guarantor",
+          "no": "No, without guarantor",
+          "relationship": "What is your relationship to the guarantor?",
+          "relationshipSubtitle": "Family or other relationship",
+          "parent": "Parent (father/mother)",
+          "grandparent": "Grandparent",
+          "sibling": "Brother / Sister",
+          "otherRelation": "Other person",
+          "income": "Guarantor's monthly income",
+          "incomeSubtitle": "Guarantor's monthly net salary"
+        },
+        "loan": {
+          "purpose": "What is the purpose of this loan?",
+          "purposeSubtitle": "What this funding will be used for",
+          "tuition": "Tuition fees",
+          "living": "Living expenses (rent, food...)",
+          "equipment": "Equipment (computer, books...)",
+          "internship": "Internship / Study abroad",
+          "other": "Other need"
+        },
+        "insurance": {
+          "wants": "Do you want borrower insurance?",
+          "wantsSubtitle": "Protection in case of unforeseen events"
+        }
       },
 
       "pro": {
@@ -311,6 +453,124 @@
         }
       },
 
+      "professional": {
+        "business": {
+          "type": "What is your business legal structure?",
+          "typeSubtitle": "Select your company status",
+          "freelance": "Freelance / Self-employed",
+          "autoEntrepreneur": "Sole proprietor / Micro-enterprise",
+          "eirl": "EIRL",
+          "sarl": "LLC (SARL)",
+          "sas": "SAS / SASU",
+          "sa": "Corporation (SA)",
+          "tpe": "Small business (< 10 employees)",
+          "startup": "Startup",
+          "other": "Other legal form",
+          "sector": "What sector do you work in?",
+          "sectorSubtitle": "Sector influences risk assessment",
+          "years": "How long have you been in business?",
+          "yearsSubtitle": "Age of your business",
+          "employees": "How many employees do you have?",
+          "employeesSubtitle": "Include yourself in the count"
+        },
+        "sectors": {
+          "tech": "Tech / Digital",
+          "health": "Health / Wellness",
+          "services": "Services",
+          "commerce": "Commerce / Retail",
+          "construction": "Construction",
+          "industry": "Industry / Manufacturing",
+          "food": "Food / Hospitality",
+          "transport": "Transport / Logistics",
+          "other": "Other sector"
+        },
+        "financials": {
+          "revenue": "What is your annual revenue?",
+          "revenueSubtitle": "Last 12 months or projected",
+          "profit": "What is your monthly net profit?",
+          "profitSubtitle": "Income after expenses and taxes",
+          "existingLoans": "Current business loan payments",
+          "existingLoansSubtitle": "Total monthly business loan repayments"
+        },
+        "banking": {
+          "creditHistory": "Your business banking history",
+          "creditHistorySubtitle": "Payment incidents, bounced checks, overdrafts...",
+          "businessAccount": "Do you have a business bank account?",
+          "businessAccountSubtitle": "Dedicated account for your business"
+        },
+        "loan": {
+          "purpose": "What is the purpose of this financing?",
+          "purposeSubtitle": "Describe your needs",
+          "treasury": "Cash flow",
+          "treasuryDesc": "Manage a cash flow gap",
+          "investment": "Investment",
+          "investmentDesc": "Grow your business",
+          "equipment": "Equipment",
+          "equipmentDesc": "Purchase equipment",
+          "stock": "Inventory",
+          "stockDesc": "Build or replenish inventory",
+          "expansion": "Expansion",
+          "expansionDesc": "Open a new location",
+          "other": "Other need"
+        },
+        "insurance": {
+          "wants": "Do you want borrower insurance?",
+          "wantsSubtitle": "Protection in case of disability or death"
+        }
+      },
+
+      "common": {
+        "yes": "Yes",
+        "no": "No"
+      },
+
+      "microcredit": {
+        "identity": {
+          "maritalStatus": "What is your family situation?"
+        },
+        "employment": {
+          "title": "What is your employment situation?",
+          "subtitle": "Your professional stability impacts your application"
+        },
+        "income": {
+          "type": "What is the nature of your income?",
+          "monthly": "What is your monthly net income?",
+          "monthlySubtitle": "All income combined"
+        },
+        "housing": {
+          "title": "What is your housing situation?",
+          "subtitle": "Your residential stability matters",
+          "rent": "Your monthly rent amount"
+        },
+        "expenses": {
+          "monthly": "What are your monthly expenses?",
+          "monthlySubtitle": "Excluding rent, include subscriptions, insurance, food...",
+          "existingLoans": "Current loans",
+          "existingLoansSubtitle": "Total monthly payments for your loans",
+          "dependents": "Dependents",
+          "dependentsSubtitle": "Children or people depending on your income"
+        },
+        "banking": {
+          "creditHistory": "How would you describe your banking history?",
+          "creditHistorySubtitle": "Bounced payments, overdrafts, unpaid debts...",
+          "overdrafts": "Recent bank overdrafts?",
+          "overdraftsSubtitle": "In the last 3 months"
+        },
+        "loan": {
+          "purpose": "What is the purpose of this micro-loan?",
+          "purposeSubtitle": "Help us understand your needs",
+          "emergency": "Emergency expense",
+          "bills": "Bills / Regularization",
+          "medical": "Medical expenses",
+          "repair": "Repair (vehicle, appliances...)",
+          "other": "Other need"
+        },
+        "insurance": {
+          "wants": "Do you want insurance?",
+          "wantsSubtitle": "Protection in case of unforeseen events (death, disability)"
+        }
+      },
+
       "consumer": {
         "purposeTitle": "What is the purpose of this credit?",
         "incomeTitle": "What is your monthly net income?",
@@ -321,6 +581,68 @@
           "equipment": "Equipment",
           "event": "Event",
           "travel": "Travel"
+        },
+        "identity": {
+          "single": "Single",
+          "married": "Married",
+          "pacs": "Civil partnership",
+          "divorced": "Divorced",
+          "widowed": "Widowed"
+        },
+        "maritalStatus": {
+          "title": "What is your family situation?",
+          "subtitle": "Your situation influences borrowing capacity",
+          "single": "Single",
+          "married": "Married",
+          "pacs": "Civil partnership",
+          "divorced": "Divorced",
+          "widowed": "Widowed"
+        },
+        "incomeType": {
+          "title": "What is the nature of your main income?",
+          "subtitle": "Select your main source of income",
+          "salary": "Salary",
+          "pension": "Pension / Retirement",
+          "business": "Business income",
+          "rental": "Rental income",
+          "benefits": "Benefits / Allowances",
+          "other": "Other income"
+        },
+        "spouseIncome": {
+          "title": "Your spouse's monthly income",
+          "subtitle": "Net salary or other regular income"
+        },
+        "otherIncome": {
+          "title": "Other monthly income",
+          "subtitle": "Benefits, alimony, rental income..."
+        },
+        "rentAmount": {
+          "title": "Your monthly rent amount",
+          "subtitle": "Including charges"
+        },
+        "overdrafts": {
+          "title": "Have you had recent bank overdrafts?",
+          "subtitle": "In the last 3 months"
+        },
+        "savings": {
+          "title": "Available savings",
+          "subtitle": "Savings accounts, liquid investments"
+        },
+        "coBorrower": {
+          "title": "Do you want to add a co-borrower?",
+          "subtitle": "A co-borrower increases your borrowing capacity",
+          "yes": "Yes, with co-borrower",
+          "no": "No, alone"
+        },
+        "coBorrowerIncome": {
+          "title": "Co-borrower's monthly income",
+          "subtitle": "Monthly net income"
+        },
+        "insurance": {
+          "title": "Do you want borrower insurance?",
+          "subtitle": "Protects in case of death, disability, or job loss",
+          "yes": "Yes, with insurance",
+          "no": "No, without insurance"
         }
       },
 
@@ -331,18 +653,93 @@
         "paydayTitle": "When do you receive your next salary?"
       },
 
+      "salaryAdvance": {
+        "employment": {
+          "contract": "What is your contract type?",
+          "contractSubtitle": "Permanent or fixed-term contracts only",
+          "duration": "How long have you been in your current position?",
+          "durationSubtitle": "Time with your current employer"
+        },
+        "income": {
+          "salary": "What is your net monthly salary?",
+          "salarySubtitle": "Amount after taxes on your payslip",
+          "nextPayday": "When is your next payday?",
+          "nextPaydaySubtitle": "When you receive your salary",
+          "frequency": "How often are you paid?",
+          "frequencySubtitle": "Salary payment frequency",
+          "monthly": "Monthly",
+          "biweekly": "Biweekly (2x/month)",
+          "weekly": "Weekly"
+        },
+        "banking": {
+          "directDeposit": "Is your salary paid by direct deposit?",
+          "directDepositSubtitle": "Automatic bank transfer from employer",
+          "overdrafts": "Have you had recent overdrafts?",
+          "overdraftsSubtitle": "In the last 3 months"
+        },
+        "loan": {
+          "purpose": "Why do you need this advance?",
+          "purposeSubtitle": "Help us understand your situation",
+          "bills": "Bills / Regularization",
+          "emergency": "Unexpected expense",
+          "medical": "Medical expenses",
+          "other": "Other need"
+        }
+      },
+
       "leasing": {
-        "assetTitle": "What type of asset do you want to finance?",
-        "assetSubtitle": "The asset serves as collateral, which improves your rate",
-        "vehicle": "Vehicle",
-        "proEquipment": "Professional equipment",
-        "itEquipment": "IT equipment",
-        "machinery": "Machinery / Tools",
-        "statusTitle": "Are you an individual or a business?",
-        "individual": "Individual",
-        "individualDesc": "Personal use",
-        "business": "Business",
-        "businessDesc": "Business use"
+        "asset": {
+          "type": "What type of asset do you want to finance?",
+          "typeSubtitle": "The asset serves as collateral, which improves your rate",
+          "vehicle": "Vehicle",
+          "proEquipment": "Professional equipment",
+          "itEquipment": "IT equipment",
+          "machinery": "Machinery / Tools",
+          "medicalEquipment": "Medical equipment",
+          "industrial": "Industrial equipment",
+          "other": "Other asset",
+          "condition": "What is the condition of the asset?",
+          "conditionSubtitle": "A new asset is easier to finance",
+          "new": "New",
+          "recent": "Recent (less than 2 years)",
+          "used": "Used"
+        },
+        "client": {
+          "type": "Are you an individual or a business?",
+          "typeSubtitle": "The financing terms vary depending on your status",
+          "individual": "Individual",
+          "individualDesc": "Personal use",
+          "business": "Business",
+          "businessDesc": "Professional use"
+        },
+        "individual": {
+          "employment": "What is your employment status?",
+          "employmentSubtitle": "Your status influences the terms",
+          "duration": "How long have you been in your current position?",
+          "durationSubtitle": "Tenure is an important indicator",
+          "income": "What is your monthly net income?",
+          "incomeSubtitle": "All income combined after taxes"
+        },
+        "business": {
+          "years": "How many years has your business been in operation?",
+          "yearsSubtitle": "Age of the company",
+          "revenue": "What is your annual revenue?",
+          "revenueSubtitle": "Revenue of the last fiscal year"
+        },
+        "banking": {
+          "creditHistory": "How is your payment history?",
+          "creditHistorySubtitle": "Have you had any payment incidents?"
+        },
+        "options": {
+          "buyOption": "Do you want a purchase option at the end?",
+          "buyOptionSubtitle": "Ability to acquire the asset at the end of the contract",
+          "buyYes": "Yes, with purchase option",
+          "buyNo": "No, simple leasing"
+        },
+        "insurance": {
+          "wants": "Do you want leasing insurance?",
+          "wantsSubtitle": "Protects your payments in case of hardship"
+        }
       },
 
       "rateInfo": {
@@ -360,6 +757,7 @@
       "results": {
         "title": "Your personalized estimate",
         "subtitle": "Based on the information you provided",
+        "adjustSimulation": "Adjust my simulation",
         "perMonth": "per month",
         "summary": "Summary",
         "amount": "Amount borrowed",
@@ -371,22 +769,120 @@
         "withJob": "With income",
         "established": "Established business",
         "assessment": "Preliminary assessment",
-        "riskCategory": "Risk category",
-        "riskLow": "Low risk",
-        "riskModerate": "Moderate risk",
-        "riskMedium": "Medium risk",
-        "riskHigh": "High risk",
-        "approvalChance": "Approval probability",
-        "approvalHigh": "High",
-        "approvalMedium": "Medium",
-        "approvalLow": "To be evaluated",
+        "riskCategory": "Your profile",
+        "riskLow": "Very favorable",
+        "riskModerate": "Favorable",
+        "riskMedium": "Standard",
+        "riskHigh": "With support",
+        "approvalChance": "Approval chances",
+        "approvalHigh": "Excellent",
+        "approvalMedium": "Very good",
+        "approvalLow": "Good",
         "nextSteps": "Next steps",
         "step1": "Complete your online application (5 min)",
         "step2": "Provide your documents (ID, proof of income)",
         "step3": "Receive a final response within {time}",
         "applyNow": "Submit my application",
         "newSimulation": "New simulation"
+      },
+
+      "existingLoans": {
+        "title": "Current loan payments",
+        "subtitle": "Total monthly repayments for existing loans (excluding rent)"
+      },
+
+      "dependents": {
+        "title": "Dependents",
+        "subtitle": "Children or others depending on your income"
+      },
+
+      "financial": {
+        "title": "Financial analysis",
+        "remainingIncome": "Remaining income",
+        "debtRatio": "Debt ratio",
+        "maxRecommended": "Max recommended"
+      },
+
+      "scoreFactors": {
+        "title": "Score breakdown",
+        "age": "Age",
+        "maritalStatus": "Family status",
+        "employmentStatus": "Employment",
+        "employmentDuration": "Tenure",
+        "incomeType": "Income type",
+        "housingStatus": "Housing",
+        "creditHistory": "Credit history",
+        "hasRecentOverdrafts": "Overdrafts",
+        "hasCoBorrower": "Co-borrower",
+        "debtRatio": "Debt ratio",
+        "remainingIncome": "Remaining income",
+        "savingsRatio": "Savings",
+        "loanPurpose": "Loan purpose"
+      },
+
+      "warnings": {
+        "amountTooHigh": "The requested amount exceeds the recommended maximum ({max} €) for your profile.",
+        "remainingIncomeLow": "Your remaining income would be below the recommended minimum ({min} €/month).",
+        "debtRatioHigh": "Your debt ratio ({ratio}%) exceeds the recommended threshold of {max}%."
+      },
+
+      "recommendations": {
+        "title": "Our recommendations",
+        "reduceAmount": "Consider a lower amount below {amount} €",
+        "longerDuration": "Extend the duration to reduce monthly payments",
+        "improveCreditHistory": "Resolve any banking incidents",
+        "reduceExpenses": "Reduce fixed expenses if possible"
       }
+    }
+  },
+
+  "application": {
+    "eyebrow": "Loan Application",
+    "title": "Complete your application",
+    "subtitle": "Fill in the information below to submit your application",
+
+    "steps": {
+      "info": "Information",
+      "document": "Document"
+    },
+
+    "back": "Back",
+    "continue": "Continue",
+    "submit": "Submit",
+
+    "info": {
+      "title": "Your personal information",
+      "subtitle": "This information is required to process your application",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email address"
+    },
+
+    "document": {
+      "title": "Your ID document",
+      "subtitle": "Upload a photo of your identity document",
+      "upload": "Click or drag a file here",
+      "formats": "PDF, JPG, PNG (max 10 MB)"
+    },
+
+    "analyzing": {
+      "title": "Analyzing your document...",
+      "subtitle": "Please wait while we verify your information",
+      "steps": {
+        "uploading": "Uploading document...",
+        "verifying": "Verifying identity...",
+        "scanning": "Scanning document...",
+        "analyzing": "Analyzing data..."
+      }
+    },
+
+    "error": {
+      "title": "Unable to process your application",
+      "countryNotSupported": "Currently, we only support documents from Estonia. Please try again with a valid Estonian ID.",
+      "retry": "Try again",
+      "backHome": "Back to home",
+      "generic": "An error occurred while processing your application",
+      "network": "Network error. Please check your connection and try again."
     }
   }
 }

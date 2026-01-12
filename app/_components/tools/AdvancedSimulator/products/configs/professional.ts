@@ -8,9 +8,13 @@ export const PROFESSIONAL_CONFIG: ProductFullConfig = {
   descriptionKey: "simulator.advanced.products.professional.description",
 
   questions: [
+    // ============================================================
+    // SECTION: IDENTITY
+    // ============================================================
     {
       id: "age",
       type: "number",
+      section: "identity",
       labelKey: "simulator.advanced.questions.age",
       subtitleKey: "simulator.advanced.questions.ageSubtitle",
       required: true,
@@ -18,56 +22,74 @@ export const PROFESSIONAL_CONFIG: ProductFullConfig = {
       max: params.questions.age.max,
       unit: "years",
     },
+
+    // ============================================================
+    // SECTION: BUSINESS
+    // ============================================================
     {
       id: "businessType",
       type: "select",
-      labelKey: "simulator.advanced.pro.typeTitle",
-      subtitleKey: "simulator.advanced.pro.typeSubtitle",
+      section: "business",
+      labelKey: "simulator.advanced.professional.business.type",
+      subtitleKey: "simulator.advanced.professional.business.typeSubtitle",
       required: true,
       options: [
-        { value: "freelance", labelKey: "simulator.advanced.options.businessType.freelance", score: params.questions.businessType.scores.freelance },
-        { value: "auto-entrepreneur", labelKey: "simulator.advanced.options.businessType.auto-entrepreneur", score: params.questions.businessType.scores["auto-entrepreneur"] },
-        { value: "tpe", labelKey: "simulator.advanced.options.businessType.tpe", score: params.questions.businessType.scores.tpe },
+        { value: "fie", labelKey: "simulator.advanced.options.businessType.fie", score: params.questions.businessType.scores.fie },
+        { value: "oue", labelKey: "simulator.advanced.options.businessType.oue", score: params.questions.businessType.scores.oue },
+        { value: "as", labelKey: "simulator.advanced.options.businessType.as", score: params.questions.businessType.scores.as },
         { value: "startup", labelKey: "simulator.advanced.options.businessType.startup", score: params.questions.businessType.scores.startup },
-        { value: "independant", labelKey: "simulator.advanced.options.businessType.independant", score: params.questions.businessType.scores.freelance },
-        { value: "sprl", labelKey: "simulator.advanced.options.businessType.sprl", score: params.questions.businessType.scores.tpe },
-        { value: "sa", labelKey: "simulator.advanced.options.businessType.sa", score: params.questions.businessType.scores.tpe },
-        { value: "sarl", labelKey: "simulator.advanced.options.businessType.sarl", score: params.questions.businessType.scores.tpe },
-        { value: "sl", labelKey: "simulator.advanced.options.businessType.sl", score: params.questions.businessType.scores.tpe },
-        { value: "self-employed", labelKey: "simulator.advanced.options.businessType.self-employed", score: params.questions.businessType.scores.freelance },
-        { value: "small-business", labelKey: "simulator.advanced.options.businessType.small-business", score: params.questions.businessType.scores.tpe },
-        { value: "company", labelKey: "simulator.advanced.options.businessType.company", score: params.questions.businessType.scores.tpe },
-        { value: "autonomo", labelKey: "simulator.advanced.options.businessType.autonomo", score: params.questions.businessType.scores.freelance },
       ],
     },
     {
       id: "sector",
       type: "select",
-      labelKey: "simulator.advanced.pro.sectorTitle",
+      section: "business",
+      labelKey: "simulator.advanced.professional.business.sector",
+      subtitleKey: "simulator.advanced.professional.business.sectorSubtitle",
       required: true,
       options: [
-        { value: "tech", labelKey: "simulator.advanced.options.sector.tech", score: params.questions.sector.scores.tech },
-        { value: "commerce", labelKey: "simulator.advanced.options.sector.commerce", score: params.questions.sector.scores.commerce },
-        { value: "services", labelKey: "simulator.advanced.options.sector.services", score: params.questions.sector.scores.services },
-        { value: "construction", labelKey: "simulator.advanced.options.sector.construction", score: params.questions.sector.scores.construction },
-        { value: "health", labelKey: "simulator.advanced.options.sector.health", score: params.questions.sector.scores.health },
-        { value: "other", labelKey: "simulator.advanced.options.sector.other", score: params.questions.sector.scores.other },
+        { value: "tech", labelKey: "simulator.advanced.professional.sectors.tech", score: params.questions.sector.scores.tech },
+        { value: "health", labelKey: "simulator.advanced.professional.sectors.health", score: params.questions.sector.scores.health },
+        { value: "services", labelKey: "simulator.advanced.professional.sectors.services", score: params.questions.sector.scores.services },
+        { value: "commerce", labelKey: "simulator.advanced.professional.sectors.commerce", score: params.questions.sector.scores.commerce },
+        { value: "construction", labelKey: "simulator.advanced.professional.sectors.construction", score: params.questions.sector.scores.construction },
+        { value: "industry", labelKey: "simulator.advanced.professional.sectors.industry", score: params.questions.sector.scores.industry },
+        { value: "food", labelKey: "simulator.advanced.professional.sectors.food", score: params.questions.sector.scores.food },
+        { value: "transport", labelKey: "simulator.advanced.professional.sectors.transport", score: params.questions.sector.scores.transport },
+        { value: "other", labelKey: "simulator.advanced.professional.sectors.other", score: params.questions.sector.scores.other },
       ],
     },
     {
       id: "yearsInBusiness",
       type: "number",
-      labelKey: "simulator.advanced.pro.yearsTitle",
+      section: "business",
+      labelKey: "simulator.advanced.professional.business.years",
+      subtitleKey: "simulator.advanced.professional.business.yearsSubtitle",
       required: true,
       min: params.questions.yearsInBusiness.min,
       max: params.questions.yearsInBusiness.max,
       unit: "years",
     },
     {
+      id: "employees",
+      type: "number",
+      section: "business",
+      labelKey: "simulator.advanced.professional.business.employees",
+      subtitleKey: "simulator.advanced.professional.business.employeesSubtitle",
+      required: true,
+      min: params.questions.employees.min,
+      max: params.questions.employees.max,
+    },
+
+    // ============================================================
+    // SECTION: INCOME (Business Financials)
+    // ============================================================
+    {
       id: "annualRevenue",
       type: "slider",
-      labelKey: "simulator.advanced.pro.revenueTitle",
-      subtitleKey: "simulator.advanced.pro.revenueSubtitle",
+      section: "income",
+      labelKey: "simulator.advanced.professional.financials.revenue",
+      subtitleKey: "simulator.advanced.professional.financials.revenueSubtitle",
       required: true,
       min: params.questions.annualRevenue.min,
       max: params.questions.annualRevenue.max,
@@ -75,29 +97,93 @@ export const PROFESSIONAL_CONFIG: ProductFullConfig = {
       unit: "euros",
     },
     {
-      id: "businessNeed",
+      id: "monthlyProfit",
+      type: "slider",
+      section: "income",
+      labelKey: "simulator.advanced.professional.financials.profit",
+      subtitleKey: "simulator.advanced.professional.financials.profitSubtitle",
+      required: true,
+      min: params.questions.monthlyProfit.min,
+      max: params.questions.monthlyProfit.max,
+      step: params.questions.monthlyProfit.step,
+      unit: "euros",
+    },
+    {
+      id: "existingBusinessLoans",
+      type: "slider",
+      section: "income",
+      labelKey: "simulator.advanced.professional.financials.existingLoans",
+      subtitleKey: "simulator.advanced.professional.financials.existingLoansSubtitle",
+      required: true,
+      min: params.questions.existingBusinessLoans.min,
+      max: params.questions.existingBusinessLoans.max,
+      step: params.questions.existingBusinessLoans.step,
+      unit: "euros",
+    },
+
+    // ============================================================
+    // SECTION: BANKING
+    // ============================================================
+    {
+      id: "creditHistory",
       type: "select",
-      labelKey: "simulator.advanced.pro.needTitle",
+      section: "banking",
+      labelKey: "simulator.advanced.professional.banking.creditHistory",
+      subtitleKey: "simulator.advanced.professional.banking.creditHistorySubtitle",
       required: true,
       options: [
-        {
-          value: "treasury",
-          labelKey: "simulator.advanced.options.businessNeed.treasury",
-          descriptionKey: "simulator.advanced.pro.needs.treasuryDesc",
-          score: params.questions.businessNeed.scores.treasury,
-        },
-        {
-          value: "investment",
-          labelKey: "simulator.advanced.options.businessNeed.investment",
-          descriptionKey: "simulator.advanced.pro.needs.investmentDesc",
-          score: params.questions.businessNeed.scores.investment,
-        },
-        {
-          value: "equipment",
-          labelKey: "simulator.advanced.options.businessNeed.equipment",
-          descriptionKey: "simulator.advanced.pro.needs.equipmentDesc",
-          score: params.questions.businessNeed.scores.equipment,
-        },
+        { value: "excellent", labelKey: "simulator.advanced.creditHistory.excellent", score: params.questions.creditHistory.scores.excellent },
+        { value: "good", labelKey: "simulator.advanced.creditHistory.good", score: params.questions.creditHistory.scores.good },
+        { value: "mixed", labelKey: "simulator.advanced.creditHistory.mixed", score: params.questions.creditHistory.scores.mixed },
+        { value: "incidents", labelKey: "simulator.advanced.creditHistory.incidents", score: params.questions.creditHistory.scores.incidents },
+      ],
+    },
+    {
+      id: "hasBusinessAccount",
+      type: "select",
+      section: "banking",
+      labelKey: "simulator.advanced.professional.banking.businessAccount",
+      subtitleKey: "simulator.advanced.professional.banking.businessAccountSubtitle",
+      required: true,
+      options: [
+        { value: "yes", labelKey: "simulator.advanced.common.yes", score: params.questions.hasBusinessAccount.scores.yes },
+        { value: "no", labelKey: "simulator.advanced.common.no", score: params.questions.hasBusinessAccount.scores.no },
+      ],
+    },
+
+    // ============================================================
+    // SECTION: LOAN
+    // ============================================================
+    {
+      id: "businessNeed",
+      type: "select",
+      section: "loan",
+      labelKey: "simulator.advanced.professional.loan.purpose",
+      subtitleKey: "simulator.advanced.professional.loan.purposeSubtitle",
+      required: true,
+      options: [
+        { value: "treasury", labelKey: "simulator.advanced.professional.loan.treasury", descriptionKey: "simulator.advanced.professional.loan.treasuryDesc", score: params.questions.businessNeed.scores.treasury },
+        { value: "investment", labelKey: "simulator.advanced.professional.loan.investment", descriptionKey: "simulator.advanced.professional.loan.investmentDesc", score: params.questions.businessNeed.scores.investment },
+        { value: "equipment", labelKey: "simulator.advanced.professional.loan.equipment", descriptionKey: "simulator.advanced.professional.loan.equipmentDesc", score: params.questions.businessNeed.scores.equipment },
+        { value: "stock", labelKey: "simulator.advanced.professional.loan.stock", descriptionKey: "simulator.advanced.professional.loan.stockDesc", score: params.questions.businessNeed.scores.stock },
+        { value: "expansion", labelKey: "simulator.advanced.professional.loan.expansion", descriptionKey: "simulator.advanced.professional.loan.expansionDesc", score: params.questions.businessNeed.scores.expansion },
+        { value: "other", labelKey: "simulator.advanced.professional.loan.other", score: params.questions.businessNeed.scores.other },
+      ],
+    },
+
+    // ============================================================
+    // SECTION: INSURANCE
+    // ============================================================
+    {
+      id: "wantsInsurance",
+      type: "select",
+      section: "insurance",
+      labelKey: "simulator.advanced.professional.insurance.wants",
+      subtitleKey: "simulator.advanced.professional.insurance.wantsSubtitle",
+      required: true,
+      options: [
+        { value: "yes", labelKey: "simulator.advanced.common.yes", score: params.questions.wantsInsurance.scores.yes },
+        { value: "no", labelKey: "simulator.advanced.common.no", score: params.questions.wantsInsurance.scores.no },
       ],
     },
   ],
@@ -113,6 +199,7 @@ export const PROFESSIONAL_CONFIG: ProductFullConfig = {
           const ranges = params.scoring.ageRanges;
           if (age >= ranges.optimal.min && age <= ranges.optimal.max) return ranges.optimal.score;
           if (age >= ranges.good.min && age <= ranges.good.max) return ranges.good.score;
+          if (age >= ranges.acceptable.min && age <= ranges.acceptable.max) return ranges.acceptable.score;
           return ranges.default;
         },
       },
@@ -140,19 +227,67 @@ export const PROFESSIONAL_CONFIG: ProductFullConfig = {
         },
       },
       {
-        fieldId: "annualRevenue",
-        weight: params.scoring.weights.annualRevenue,
-        scoreFn: (value, formData) => {
-          const revenue = value as number;
+        fieldId: "employees",
+        weight: params.scoring.weights.employees,
+        scoreFn: (value) => {
+          const employees = value as number;
+          const ranges = params.scoring.employeesRanges;
+          if (employees >= ranges.medium.min) return ranges.medium.score;
+          if (employees >= ranges.small.min) return ranges.small.score;
+          if (employees >= ranges.micro.min) return ranges.micro.score;
+          return ranges.solo.score;
+        },
+      },
+      {
+        fieldId: "revenueRatio",
+        weight: params.scoring.weights.revenueRatio,
+        scoreFn: (_, formData) => {
+          const data = formData as unknown as Record<string, unknown>;
+          const revenue = (data.annualRevenue as number) || 0;
           const amount = formData.amount || 1000;
+
+          if (revenue <= 0) return params.scoring.revenueRatioRanges.default;
+
           const ratio = amount / revenue;
-          const ranges = params.scoring.debtRatioRanges;
-          if (ratio < ranges.excellent.maxRatio) return ranges.excellent.score;
-          if (ratio < ranges.good.maxRatio) return ranges.good.score;
-          if (ratio < ranges.acceptable.maxRatio) return ranges.acceptable.score;
-          if (ratio < ranges.risky.maxRatio) return ranges.risky.score;
+          const ranges = params.scoring.revenueRatioRanges;
+
+          if (ratio <= ranges.excellent.maxRatio) return ranges.excellent.score;
+          if (ratio <= ranges.good.maxRatio) return ranges.good.score;
+          if (ratio <= ranges.acceptable.maxRatio) return ranges.acceptable.score;
+          if (ratio <= ranges.risky.maxRatio) return ranges.risky.score;
           return ranges.default;
         },
+      },
+      {
+        fieldId: "profitMargin",
+        weight: params.scoring.weights.profitMargin,
+        scoreFn: (_, formData) => {
+          const data = formData as unknown as Record<string, unknown>;
+          const revenue = (data.annualRevenue as number) || 0;
+          const monthlyProfit = (data.monthlyProfit as number) || 0;
+          const annualProfit = monthlyProfit * 12;
+
+          if (revenue <= 0) return params.scoring.profitMarginRanges.default;
+
+          const margin = annualProfit / revenue;
+          const ranges = params.scoring.profitMarginRanges;
+
+          if (margin >= ranges.excellent.minMargin) return ranges.excellent.score;
+          if (margin >= ranges.good.minMargin) return ranges.good.score;
+          if (margin >= ranges.acceptable.minMargin) return ranges.acceptable.score;
+          if (margin >= ranges.tight.minMargin) return ranges.tight.score;
+          return ranges.default;
+        },
+      },
+      {
+        fieldId: "creditHistory",
+        weight: params.scoring.weights.creditHistory,
+        scoreMap: params.questions.creditHistory.scores,
+      },
+      {
+        fieldId: "hasBusinessAccount",
+        weight: params.scoring.weights.hasBusinessAccount,
+        scoreMap: params.questions.hasBusinessAccount.scores,
       },
       {
         fieldId: "businessNeed",
@@ -176,9 +311,15 @@ export const PROFESSIONAL_CONFIG: ProductFullConfig = {
     default: params.responseTime.default,
     conditions: [
       {
-        check: (formData, riskCategory) =>
-          riskCategory === "A" &&
-          (("yearsInBusiness" in formData && (formData.yearsInBusiness || 0) >= params.responseTime.fastTrackMinYears) || false),
+        check: (formData, riskCategory) => {
+          const data = formData as unknown as Record<string, unknown>;
+          const years = (data.yearsInBusiness as number) || 0;
+          const conditions = params.responseTime.fastTrackConditions;
+          const categoryOrder = ["A", "B", "C", "D"];
+          const minCategoryIndex = categoryOrder.indexOf(conditions.minCategory);
+          const currentCategoryIndex = categoryOrder.indexOf(riskCategory);
+          return years >= conditions.minYears && currentCategoryIndex <= minCategoryIndex;
+        },
         time: params.responseTime.fastTrack,
       },
     ],

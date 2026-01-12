@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Zap, ShieldCheck, BarChart3, MessageCircle } from "lucide-react";
 import { SimulatorWidget, AdvancedSimulator, SimulatorModeToggle } from "@/_components/tools";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -67,10 +68,10 @@ export default function SimulatorPage() {
   };
 
   const features = [
-    { icon: "⚡", title: t("simulator.features.instant.title"), description: t("simulator.features.instant.description") },
-    { icon: "🔒", title: t("simulator.features.noCommitment.title"), description: t("simulator.features.noCommitment.description") },
-    { icon: "📊", title: t("simulator.features.transparent.title"), description: t("simulator.features.transparent.description") },
-    { icon: "💬", title: t("simulator.features.explained.title"), description: t("simulator.features.explained.description") },
+    { icon: Zap, title: t("simulator.features.instant.title"), description: t("simulator.features.instant.description") },
+    { icon: ShieldCheck, title: t("simulator.features.noCommitment.title"), description: t("simulator.features.noCommitment.description") },
+    { icon: BarChart3, title: t("simulator.features.transparent.title"), description: t("simulator.features.transparent.description") },
+    { icon: MessageCircle, title: t("simulator.features.explained.title"), description: t("simulator.features.explained.description") },
   ];
 
   return (
@@ -98,7 +99,7 @@ export default function SimulatorPage() {
           />
 
           {/* Simulator Widget */}
-          <div ref={simulatorRef} className={mode === "simple" ? "max-w-3xl mx-auto" : "max-w-5xl mx-auto"}>
+          <div ref={simulatorRef} className="max-w-6xl mx-auto">
             {mode === "simple" ? (
               <SimulatorWidget />
             ) : (
@@ -116,16 +117,23 @@ export default function SimulatorPage() {
               {t("simulator.whySimulate")}
             </h2>
             <div ref={featuresRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, i) => (
-                <div
-                  key={i}
-                  className="p-6 rounded-2xl bg-background border border-border text-center"
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="font-serif text-xl mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </div>
-              ))}
+              {features.map((feature, i) => {
+                const Icon = feature.icon;
+                return (
+                  <div
+                    key={i}
+                    className="p-6 rounded-2xl bg-background border border-border text-center"
+                  >
+                    <div className="flex justify-center mb-4">
+                      <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                        <Icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                      </div>
+                    </div>
+                    <h3 className="font-serif text-xl mb-2">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

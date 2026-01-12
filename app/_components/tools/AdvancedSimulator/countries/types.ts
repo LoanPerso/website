@@ -13,7 +13,7 @@
 import { CreditType } from "../types";
 
 // Configured countries with specific parameters
-export type ConfiguredCountryCode = "FR" | "BE" | "CH" | "ES";
+export type ConfiguredCountryCode = "FR" | "BE" | "CH" | "ES" | "EE";
 
 // Any country code (for the dropdown)
 export type CountryCode = string;

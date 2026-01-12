@@ -1,0 +1,373 @@
+{
+  "eyebrow": "Legal",
+  "lastUpdated": "Last updated",
+  "questions": "Questions?",
+
+  "nav": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "legalNotices": "Legal Notices",
+    "cookies": "Cookie Policy"
+  },
+
+  "terms": {
+    "title": "Terms of Service",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "These General Terms of Service (hereinafter \"Terms\") govern the use of the Quickfund platform and services. By using our services, you agree to these Terms in their entirety."
+      },
+      "definitions": {
+        "title": "Definitions",
+        "platform": "Platform",
+        "platformDef": "The Quickfund website and mobile application",
+        "user": "User",
+        "userDef": "Any person accessing the Platform",
+        "borrower": "Borrower",
+        "borrowerDef": "A User who has entered into a credit agreement with Quickfund",
+        "credit": "Credit",
+        "creditDef": "Any loan or financing granted by Quickfund",
+        "services": "Services",
+        "servicesDef": "All services offered by Quickfund, including credit, simulation, and financial coaching"
+      },
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing or using our Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree to these Terms, you must not use our services."
+      },
+      "services": {
+        "title": "Services Offered",
+        "intro": "Quickfund offers the following credit and financial services:",
+        "microCredit": "Micro-credit: €20 to €500, response within 24 hours",
+        "consumerCredit": "Consumer credit: €500 to €5,000, flexible terms",
+        "proCredit": "Professional credit: €1,000 to €10,000, for freelancers and small businesses",
+        "studentLoan": "Student loan: financing for studies without traditional bank guarantee",
+        "salaryAdvance": "Salary advance: access part of your salary before payday",
+        "leasing": "Leasing: use equipment without buying",
+        "coaching": "Financial coaching: budget management and personalized advice"
+      },
+      "eligibility": {
+        "title": "Eligibility",
+        "intro": "To use our credit services, you must:",
+        "age": "Be at least 18 years old",
+        "residence": "Be a resident of Estonia or the European Union",
+        "capacity": "Have full legal capacity",
+        "identity": "Provide valid proof of identity"
+      },
+      "application": {
+        "title": "Application Process",
+        "content": "Credit applications are submitted online via our Platform. You must provide accurate and complete information. Quickfund reserves the right to request additional documents. Each application is subject to creditworthiness assessment. Approval is not guaranteed and depends on our analysis."
+      },
+      "creditTerms": {
+        "title": "Credit Terms",
+        "content": "The specific terms of each credit are detailed in the individual credit agreement, including:",
+        "amount": "Principal amount borrowed",
+        "duration": "Repayment duration",
+        "rate": "Annual Percentage Rate (APR)",
+        "repayment": "Monthly payment amount and schedule"
+      },
+      "obligations": {
+        "title": "Your Obligations",
+        "intro": "As a User and/or Borrower, you agree to:",
+        "accurate": "Provide accurate and truthful information",
+        "update": "Update your information if it changes",
+        "repay": "Make payments on time according to the agreed schedule",
+        "notify": "Notify us of any difficulties in making payments"
+      },
+      "withdrawal": {
+        "title": "Right of Withdrawal",
+        "content": "For consumer credit, you have the right to withdraw from the credit agreement within 14 calendar days from the date of signing, without providing any reason. To exercise this right, you must notify us in writing and repay the principal and any accrued interest."
+      },
+      "earlyRepayment": {
+        "title": "Early Repayment",
+        "content": "You may repay your credit early, in full or in part, at any time. No early repayment penalty will be charged. You will only owe interest accrued up to the repayment date."
+      },
+      "latePayment": {
+        "title": "Late Payment",
+        "content": "In case of late payment, late payment interest may be applied as specified in your credit agreement. We will contact you to find a solution. Persistent non-payment may result in legal recovery procedures and reporting to credit bureaus."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "content": "Quickfund shall not be liable for indirect damages, loss of profits, or damages resulting from circumstances beyond our control. Our liability is limited to the maximum extent permitted by law."
+      },
+      "modifications": {
+        "title": "Modifications to Terms",
+        "content": "We reserve the right to modify these Terms at any time. Changes will be communicated via the Platform and/or email. Continued use of our services after modifications constitutes acceptance of the new Terms."
+      },
+      "governingLaw": {
+        "title": "Governing Law and Jurisdiction",
+        "content": "These Terms are governed by Estonian law. Any dispute shall be submitted to the competent courts of Estonia. For EU consumers, mandatory consumer protection laws of your country of residence may also apply."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For any questions regarding these Terms:",
+        "address": "Address",
+        "regNumber": "Registration number"
+      }
+    }
+  },
+
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "At Quickfund, we are committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your information in accordance with the General Data Protection Regulation (GDPR) and Estonian law."
+      },
+      "controller": {
+        "title": "Data Controller",
+        "content": "The data controller responsible for your personal data is:",
+        "company": "Company",
+        "regNumber": "Registration number",
+        "address": "Address",
+        "email": "Email",
+        "parent": "Parent company"
+      },
+      "dataCollected": {
+        "title": "Data We Collect",
+        "intro": "We collect the following categories of personal data:",
+        "identity": {
+          "title": "Identity Data",
+          "name": "Full name",
+          "dob": "Date of birth",
+          "nationality": "Nationality",
+          "idDoc": "Identity document (passport, ID card)"
+        },
+        "contact": {
+          "title": "Contact Data",
+          "email": "Email address",
+          "phone": "Phone number",
+          "address": "Postal address"
+        },
+        "financial": {
+          "title": "Financial Data",
+          "income": "Income and employment information",
+          "employment": "Employment status and details",
+          "bank": "Bank account details"
+        },
+        "technical": {
+          "title": "Technical Data",
+          "ip": "IP address",
+          "device": "Device and browser information",
+          "cookies": "Cookie data"
+        }
+      },
+      "legalBasis": {
+        "title": "Legal Basis for Processing",
+        "intro": "We process your data based on the following legal grounds:",
+        "contract": "Contract execution",
+        "contractDesc": "To provide our credit services and fulfill our contractual obligations",
+        "legal": "Legal obligation",
+        "legalDesc": "To comply with KYC/AML regulations and financial supervision requirements",
+        "consent": "Consent",
+        "consentDesc": "For marketing communications and optional services",
+        "legitimate": "Legitimate interest",
+        "legitimateDesc": "For fraud prevention, security, and service improvement"
+      },
+      "purposes": {
+        "title": "Purposes of Processing",
+        "creditAssessment": "Assessing creditworthiness and making lending decisions",
+        "contractExecution": "Executing and managing credit agreements",
+        "kyc": "Verifying your identity (KYC) and preventing money laundering (AML)",
+        "fraud": "Detecting and preventing fraud",
+        "communication": "Communicating with you about your account and services",
+        "improvement": "Improving our services and user experience",
+        "legal": "Complying with legal and regulatory obligations"
+      },
+      "sharing": {
+        "title": "Data Sharing",
+        "intro": "We may share your data with:",
+        "stripe": "Stripe",
+        "stripeDesc": "For payment processing and identity verification (KYC)",
+        "cloud": "Cloud providers",
+        "cloudDesc": "For secure data storage (Google Cloud Platform, European servers)",
+        "authorities": "Regulatory authorities",
+        "authoritiesDesc": "When required by law (FSA Estonia, tax authorities)"
+      },
+      "retention": {
+        "title": "Data Retention",
+        "intro": "We retain your data for the following periods:",
+        "contract": "Contract data: Duration of the credit + 5 years",
+        "kyc": "KYC documents: 5 years after end of relationship",
+        "legal": "Legal records: 10 years (accounting requirements)"
+      },
+      "security": {
+        "title": "Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your data:",
+        "encryption": "Encryption in transit (HTTPS/TLS) and at rest",
+        "access": "Strict access controls and authentication",
+        "monitoring": "24/7 security monitoring and alerts",
+        "storage": "Data stored exclusively in the European Union"
+      },
+      "rights": {
+        "title": "Your Rights",
+        "intro": "Under GDPR, you have the following rights:",
+        "access": "Right of access",
+        "accessDesc": "Request a copy of your personal data",
+        "rectification": "Right to rectification",
+        "rectificationDesc": "Correct inaccurate or incomplete data",
+        "erasure": "Right to erasure",
+        "erasureDesc": "Request deletion of your data (subject to legal retention requirements)",
+        "restriction": "Right to restriction",
+        "restrictionDesc": "Limit how we use your data",
+        "portability": "Right to portability",
+        "portabilityDesc": "Receive your data in a structured, machine-readable format",
+        "objection": "Right to object",
+        "objectionDesc": "Object to processing based on legitimate interest",
+        "exercise": "To exercise these rights, contact us at legal@quickfund.ee or legal@quickfund.fr"
+      },
+      "transfers": {
+        "title": "International Data Transfers",
+        "content": "Your data is stored and processed within the European Economic Area (EEA). We do not transfer your data outside the EEA. Our cloud infrastructure is located in European data centers."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time. We will notify you of significant changes via email or through our Platform. The date of the last update is indicated at the top of this page."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "For any questions about this Privacy Policy or to exercise your rights:",
+        "address": "Address",
+        "authority": "You also have the right to lodge a complaint with the Estonian Data Protection Inspectorate (Andmekaitse Inspektsioon) or your local supervisory authority."
+      }
+    }
+  },
+
+  "legalNotices": {
+    "title": "Legal Notices",
+    "sections": {
+      "publisher": {
+        "title": "Publisher",
+        "company": "Company name",
+        "legalForm": "Legal form",
+        "regNumber": "Registration number",
+        "address": "Registered address",
+        "email": "Email",
+        "director": "Director"
+      },
+      "parent": {
+        "title": "Parent Company",
+        "company": "Company name",
+        "regNumber": "Registration number",
+        "address": "Address"
+      },
+      "regulatory": {
+        "title": "Regulatory Information",
+        "authority": "Supervisory authority",
+        "license": "License",
+        "licenseType": "Credit institution license",
+        "euPassport": "EU Passport",
+        "euPassportDesc": "Authorized to operate in the European Union",
+        "content": "Quickfund OU is a licensed credit institution supervised by the Estonian Financial Supervision Authority (Finantsinspektsioon). Under EU regulations, we are authorized to provide credit services throughout the European Union through the EU passport mechanism."
+      },
+      "hosting": {
+        "title": "Website Hosting",
+        "provider": "Hosting provider",
+        "location": "Server location",
+        "address": "Address"
+      },
+      "ip": {
+        "title": "Intellectual Property",
+        "content": "All content on this website is protected by intellectual property rights. The following elements are the exclusive property of Quickfund OU:",
+        "trademark": "The Quickfund trademark and logo",
+        "content2": "All texts, articles, and editorial content",
+        "design": "Graphic design and visual identity",
+        "software": "Software and source code"
+      },
+      "links": {
+        "title": "External Links",
+        "content": "This website may contain links to external websites. Quickfund is not responsible for the content or privacy practices of these third-party sites. Accessing these links is at your own risk."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "content": "While we strive to ensure the accuracy of information on this website, Quickfund cannot guarantee that all information is complete, accurate, or up-to-date. We are not liable for any direct or indirect damages resulting from the use of this website."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "content": "We are committed to making our website accessible to all users. If you encounter any accessibility issues, please contact us at legal@quickfund.ee so we can address them."
+      },
+      "credits": {
+        "title": "Website Credits",
+        "design": "Design",
+        "dev": "Development"
+      },
+      "applicableLaw": {
+        "title": "Applicable Law",
+        "content": "This website and these legal notices are governed by Estonian law. Any dispute relating to the use of this website shall be subject to the exclusive jurisdiction of the Estonian courts."
+      }
+    }
+  },
+
+  "cookies": {
+    "title": "Cookie Policy",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "This Cookie Policy explains how Quickfund OU uses cookies and similar technologies on our website. By using our website, you consent to the use of cookies as described in this policy."
+      },
+      "what": {
+        "title": "What Are Cookies?",
+        "content": "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently, provide information to website owners, and improve user experience."
+      },
+      "types": {
+        "title": "Types of Cookies We Use",
+        "essential": {
+          "title": "Essential Cookies",
+          "desc": "These cookies are necessary for the website to function properly. They cannot be disabled.",
+          "session": "Session management and authentication",
+          "security": "Security and fraud prevention",
+          "preferences": "Essential user preferences (e.g., cookie consent)"
+        },
+        "functional": {
+          "title": "Functional Cookies",
+          "desc": "These cookies enable enhanced functionality and personalization.",
+          "language": "Language preferences",
+          "settings": "Display and interface settings"
+        },
+        "analytics": {
+          "title": "Analytics Cookies",
+          "desc": "These cookies help us understand how visitors interact with our website.",
+          "usage": "Page views and navigation patterns",
+          "performance": "Website performance monitoring"
+        }
+      },
+      "list": {
+        "title": "Cookies We Use",
+        "name": "Cookie Name",
+        "purpose": "Purpose",
+        "duration": "Duration",
+        "type": "Type",
+        "sessionPurpose": "User session management",
+        "sessionDuration": "Session",
+        "localePurpose": "Language preference storage",
+        "consentPurpose": "Cookie consent storage",
+        "year": "year"
+      },
+      "thirdParty": {
+        "title": "Third-Party Cookies",
+        "content": "We may use third-party services that set their own cookies:",
+        "stripe": "Payment processing and fraud prevention"
+      },
+      "manage": {
+        "title": "Managing Cookies",
+        "content": "You can control and delete cookies through your browser settings:",
+        "chrome": "Settings > Privacy and security > Cookies",
+        "firefox": "Options > Privacy & Security > Cookies",
+        "safari": "Preferences > Privacy > Cookies",
+        "edge": "Settings > Cookies and site permissions",
+        "warning": "Please note that disabling essential cookies may affect website functionality."
+      },
+      "consent": {
+        "title": "Cookie Consent",
+        "content": "When you first visit our website, you will be asked to accept or configure cookies. You can change your preferences at any time through our cookie settings or by clearing your browser cookies."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "content": "We may update this Cookie Policy from time to time. Changes will be posted on this page with an updated revision date."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about our use of cookies, please contact us:"
+      }
+    }
+  }
+}

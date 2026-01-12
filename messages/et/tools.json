@@ -1,0 +1,782 @@
+{
+  "simulator": {
+    "eyebrow": "Laenukalkulaator",
+    "title": "Kui palju saate laenata?",
+    "subtitle": "Simuleerige oma laenu 30 sekundiga. Ilma kohustuseta, ilma mojuta teie skoorile.",
+
+    "productLabel": "Laenu tuup",
+    "products": {
+      "microCredit": "Mikrolaen",
+      "microcredit": "Mikrolaen",
+      "consumer": "Tarbimislaen",
+      "professional": "Arilaen",
+      "student": "Oppelaen",
+      "salaryAdvance": "Palgaavans",
+      "salaryadvance": "Palgaavans",
+      "leasing": "Liising"
+    },
+
+    "amountLabel": "Soovitud summa",
+    "durationLabel": "Tagasimakse periood",
+    "month": "kuu",
+    "months": "kuud",
+
+    "monthlyPayment": "Hinnanguline kuumakse",
+    "totalCost": "Kogukulu",
+    "interestCost": "Intressikulu",
+    "rateRange": "Orienteeruv intressimaar",
+
+    "disclaimer": "Orienteeruv simulatsioon. Loplik intressimaar soltub teie profiilist. Ilma kohustuseta.",
+    "cta": "Esita taotlus",
+
+    "modeSimple": "Kiirsimulatsioon",
+    "modeAdvanced": "Isikupärastatud simulatsioon",
+
+    "whySimulate": "Miks simuleerida Quickfundis?",
+    "features": {
+      "instant": {
+        "title": "Kohene tulemus",
+        "description": "Saate oma hinnangu sekunditega."
+      },
+      "noCommitment": {
+        "title": "Ilma kohustuseta",
+        "description": "Simuleerige nii palju kui soovite, ilma kohustuseta."
+      },
+      "transparent": {
+        "title": "100% labipaistev",
+        "description": "Koik tasud naidatud, ilma ullatusteta."
+      },
+      "explained": {
+        "title": "Selgitame",
+        "description": "Heaks kiidetud voi tagasi lukatud, saate teada miks."
+      }
+    },
+
+    "faq": {
+      "title": "Korduma kippuvad kusimused",
+      "q1": {
+        "question": "Kas simulatsioon mojutab minu krediidiskoori?",
+        "answer": "Ei. Simulatsioon on 100% tasuta ja ei moju teie skoorile. Me ei tee selles etapis mingit krediidigontrolli."
+      },
+      "q2": {
+        "question": "Kas naidatud intressimaar on garanteeritud?",
+        "answer": "Naidatud intressimaar on orienteeruv. Teie loplik intressimaar soltub teie profiilist (sissetulek, ajalugu, olukord). Teatame teile tapse intressimaara teie taotluse labivaatamisel."
+      },
+      "q3": {
+        "question": "Kui kaua votab loplik vastus aega?",
+        "answer": "Kui teie taotlus on taidetud, saate vastuse vahem kui 24 tunni jooksul. Keerulisemate juhtumite puhul voib see votta 48 tundi."
+      },
+      "q4": {
+        "question": "Kas saan oma taotlust parast simulatsiooni muuta?",
+        "answer": "Kindlasti. Simulatsioon ei kohusta teid millegagi. Saate muuta summat, perioodi voi laenu tuupi igal ajal enne taotluse esitamist."
+      }
+    },
+
+    "advanced": {
+      "step": "Samm",
+      "progress": {
+        "country": "Riik",
+        "type": "Tuup",
+        "amount": "Summa",
+        "profile": "Profiil",
+        "result": "Tulemus"
+      },
+
+      "step0Eyebrow": "Alustame",
+      "step0Title": "Laenud Eesti elanikele",
+      "step0Subtitle": "Meie teenused on saadaval ainult Eestis elavatele inimestele",
+      "productsAvailable": "saadaolevad tooted",
+      "countryHint": "Teie riik maarab saadaolevad pakkumised",
+      "selectCountry": "Valige oma riik",
+      "searchCountry": "Otsi riiki...",
+      "noCountryFound": "Riiki ei leitud",
+      "optimized": "Optimeeritud",
+      "estoniaName": "Eesti",
+      "estoniaHint": "Eksklusiivne laenuteenused Eesti elanikele",
+      "estoniaOnly": "Meie laenuteenused on praegu saadaval ainult Eesti elanikele",
+
+      "step1Eyebrow": "Samm 1/4",
+      "step1Title": "Milline laenu tuup teile sobib?",
+      "step1Subtitle": "Valige teie olukorrale sobiv toode",
+      "selectHint": "Jatkamiseks klopsake tootele",
+      "amountRange": "Summa",
+      "durationRange": "Periood",
+
+      "products": {
+        "microcredit": {
+          "description": "Vaikeste kiireloomuliste vajaduste jaoks, 20-500 EUR"
+        },
+        "consumer": {
+          "description": "Isiklikud projektid: auto, remont, varustus"
+        },
+        "professional": {
+          "description": "Rahavoog ja investeering vabakutselistele ja vaikeettevotjatele"
+        },
+        "student": {
+          "description": "Rahastage oma opinguid ilma kohustusliku kaiendajata"
+        },
+        "salaryadvance": {
+          "description": "Teie jargmise palga ettemakse, odavam kui arvelduskrediit"
+        },
+        "leasing": {
+          "description": "Soidukid ja professionaalne varustus"
+        }
+      },
+
+      "step2Title": "Maarage oma projekt",
+      "step2Subtitle": "Kohandage summat ja perioodi vastavalt oma vajadustele",
+      "estimatedMonthly": "Hinnanguline kuumakse",
+      "rateIndicative": "Orienteeruv intressimaar",
+      "back": "Tagasi",
+      "continue": "Jatka",
+
+      "step3Title": "Raakige meile endast",
+      "step3Subtitle": "See teave aitab meil teie pakkumist isikupärastada",
+      "seeResults": "Vaata minu hinnangut",
+      "fillRequired": "Palun taida kohustuslikud valjad",
+
+      "yes": "Jah",
+      "no": "Ei",
+      "other": "Muu",
+
+      "questions": {
+        "age": "Kui vana te olete?",
+        "ageSubtitle": "Minimaalne vanus on 18 aastat",
+        "yearsOld": "aastat vana"
+      },
+
+      "employment": {
+        "title": "Milline on teie tööhõive staatus?",
+        "subtitle": "Valige see, mis kõige paremini sobib"
+      },
+
+      "employmentDuration": {
+        "title": "Kui kaua olete praegusel ametikohal olnud?",
+        "subtitle": "Aeg praegusel töökohal",
+        "moreThan2Years": "Rohkem kui 2 aastat",
+        "1to2Years": "1 kuni 2 aastat",
+        "6monthsTo1Year": "6 kuud kuni 1 aasta",
+        "lessThan6Months": "Vähem kui 6 kuud"
+      },
+
+      "income": {
+        "title": "Milline on teie igakuine netosissetulek?",
+        "subtitle": "Kaasa arvatud kõik regulaarsed sissetulekud (palk, toetused, pensionid...)"
+      },
+
+      "expenses": {
+        "title": "Millised on teie igakuised püsikulud?",
+        "subtitle": "Üür, olemasolevad laenud, kindlustus, tellimused..."
+      },
+
+      "existingLoans": {
+        "title": "Kui palju maksate olemasolevate laenude eest?",
+        "subtitle": "Teiste laenude igakuised maksed"
+      },
+
+      "dependents": {
+        "title": "Mitu ülalpeetavat teil on?",
+        "subtitle": "Lapsed või teised ülalpeetavad"
+      },
+
+      "housing": {
+        "title": "Milline on teie eluaseme olukord?",
+        "subtitle": "Elukoha stabiilsus on positiivne tegur",
+        "owner": "Omanik",
+        "tenant": "Üürnik",
+        "hosted": "Elan pere/sõprade juures",
+        "other": "Muu olukord"
+      },
+
+      "creditHistory": {
+        "title": "Kuidas kirjeldaksite oma krediidiajalugu?",
+        "subtitle": "Intsidendid = tagasilükatud maksed, lubamatu arvelduskrediit, maksehäired...",
+        "excellent": "Suurepärane (kunagi intsidente)",
+        "good": "Hea (hiljuti intsidente pole)",
+        "mixed": "Rahuldav (mõned varasemad intsidendid)",
+        "incidents": "Keeruline (praegused või hiljutised intsidendid)"
+      },
+
+      "consumer": {
+        "maritalStatus": {
+          "title": "Milline on teie perekonnaseis?",
+          "subtitle": "Teie perekondlik olukord",
+          "single": "Vallaline",
+          "married": "Abielus",
+          "pacs": "Vabaabielus",
+          "divorced": "Lahutatud",
+          "widowed": "Lesk"
+        },
+        "incomeType": {
+          "title": "Milline on teie peamine sissetuleku liik?",
+          "subtitle": "Valige peamine sissetulekuallikas",
+          "salary": "Palk",
+          "pension": "Pension",
+          "business": "Ärisissetulek",
+          "rental": "Üüritulu",
+          "benefits": "Sotsiaaltoetused",
+          "other": "Muu"
+        },
+        "spouseIncome": {
+          "title": "Abikaasa sissetulek",
+          "subtitle": "Abikaasa igakuine netosissetulek"
+        },
+        "otherIncome": {
+          "title": "Muud sissetulekud",
+          "subtitle": "Üür, toetused, muud regulaarsed sissetulekud"
+        },
+        "rentAmount": {
+          "title": "Kui palju maksate üüri?",
+          "subtitle": "Igakuine üür"
+        },
+        "overdrafts": {
+          "title": "Kas teil on olnud hiljuti arvelduskrediiti?",
+          "subtitle": "Viimase 3 kuu jooksul"
+        },
+        "savings": {
+          "title": "Kui palju teil on sääste?",
+          "subtitle": "Olemasolevad säästud"
+        },
+        "coBorrower": {
+          "title": "Kas teil on kaaslaenaja?",
+          "subtitle": "Kaaslaenaja parandab teie võimalusi",
+          "yes": "Jah, kaaslaenajaga",
+          "no": "Ei, ainult mina"
+        },
+        "coBorrowerIncome": {
+          "title": "Kaaslaenaja sissetulek",
+          "subtitle": "Igakuine netosissetulek"
+        },
+        "insurance": {
+          "title": "Kas soovite laenukindlustust?",
+          "subtitle": "Kaitseb teie laenu ettenägematute olukordade puhul",
+          "yes": "Jah, soovin kaitset",
+          "no": "Ei, tänan"
+        },
+        "purposeTitle": "Mis on selle laenu eesmärk?",
+        "incomeTitle": "Milline on teie igakuine netosissetulek?",
+        "incomeSubtitle": "Mida suurem teie sissetulek, seda parem intressimaar",
+        "purposes": {
+          "auto": "Sõiduk",
+          "homeImprovement": "Koduremont",
+          "equipment": "Varustus",
+          "event": "Sündmus",
+          "travel": "Reis"
+        }
+      },
+
+      "options": {
+        "employmentStatus": {
+          "tahtajatu": "Tähtajatu tööleping",
+          "tahtajaline": "Tähtajaline tööleping",
+          "fie": "FIE (Füüsilisest isikust ettevõtja)",
+          "student": "Üliõpilane",
+          "retired": "Pensionär",
+          "unemployed": "Töötu"
+        },
+        "contractType": {
+          "tahtajatu": "Tähtajatu",
+          "tahtajaline": "Tähtajaline",
+          "fie": "FIE"
+        },
+        "businessType": {
+          "fie": "FIE (Füüsilisest isikust ettevõtja)",
+          "oue": "OÜ (Osaühing)",
+          "as": "AS (Aktsiaselts)",
+          "startup": "Startup"
+        },
+        "institutionType": {
+          "university": "Ülikool",
+          "applied-university": "Rakenduskõrgkool",
+          "vocational-school": "Kutsekool",
+          "other": "Muu õppeasutus"
+        },
+        "studyLevel": {
+          "bachelor-1": "Bakalaureus 1. aasta",
+          "bachelor-2": "Bakalaureus 2. aasta",
+          "bachelor-3": "Bakalaureus 3. aasta",
+          "master-1": "Magister 1. aasta",
+          "master-2": "Magister 2. aasta",
+          "doctorate": "Doktorantuur"
+        },
+        "loanPurpose": {
+          "auto": "Sõiduk",
+          "homeImprovement": "Koduremont",
+          "equipment": "Varustus",
+          "event": "Sündmus",
+          "travel": "Reis",
+          "other": "Muu"
+        },
+        "assetType": {
+          "vehicle": "Sõiduk",
+          "professional-equipment": "Professionaalne varustus",
+          "it-equipment": "IT varustus",
+          "machinery": "Masinad / Tööriistad"
+        },
+        "clientType": {
+          "individual": "Eraisik",
+          "business": "Ettevõte"
+        },
+        "sector": {
+          "tech": "Tech / Digitaalne",
+          "commerce": "Kaubandus / Jaemüük",
+          "services": "Teenused",
+          "construction": "Ehitus",
+          "health": "Tervis / Heaolu",
+          "other": "Muu"
+        },
+        "businessNeed": {
+          "treasury": "Rahavoog",
+          "investment": "Investeering",
+          "equipment": "Varustus"
+        }
+      },
+
+      "student": {
+        "institutionTitle": "Millises asutuses te opite?",
+        "institutionSubtitle": "Valige oma kooli tuup",
+        "university": "Ulikool",
+        "businessSchool": "Arikool",
+        "engineeringSchool": "Insenerikool",
+        "artSchool": "Kunstikool / Disain",
+        "otherSchool": "Muu asutus",
+        "fieldTitle": "Milline on teie eriala?",
+        "fieldPlaceholder": "Nt: Arvutiteadus, Turundus, Oigus...",
+        "levelTitle": "Mitmendal aastal te olete?",
+        "doctorate": "Doktorantuur",
+        "jobTitle": "Kas teil on opilastoo?",
+        "jobSubtitle": "Regulaarne lisasissetulek",
+        "monthlyIncome": "Ligikaudne kuusissetulek",
+        "guarantorTitle": "Kas teil on kaiendaja olemas?",
+        "guarantorSubtitle": "Kaiendaja voib parandada teie intressimaara",
+        "guarantorYes": "Parandab teie voimalusi",
+        "guarantorNo": "Kaiendajata",
+        "institution": {
+          "title": "Millises asutuses te õpite?",
+          "subtitle": "Kooli tüüp mõjutab teie profiili",
+          "university": "Ülikool",
+          "businessSchool": "Ärikool",
+          "engineeringSchool": "Insenerikool",
+          "medicalSchool": "Arstiteadus / Farmaatsia",
+          "lawSchool": "Õigusteaduskond",
+          "artSchool": "Kunstikool / Disain",
+          "other": "Muu asutus"
+        },
+        "level": {
+          "title": "Mitmendal aastal te olete?",
+          "subtitle": "Teie praegune õppetase",
+          "l1": "1. aasta",
+          "l2": "2. aasta",
+          "l3": "3. aasta",
+          "m1": "Magister 1",
+          "m2": "Magister 2",
+          "doctorate": "Doktorantuur"
+        },
+        "remainingYears": {
+          "title": "Mitu aastat õpinguid teil jäänud on?",
+          "subtitle": "Aeg lõpetamiseni"
+        },
+        "job": {
+          "title": "Kas teil on üliõpilastöö?",
+          "subtitle": "Osalise tööajaga töö",
+          "income": "Igakuine sissetulek teie töölt",
+          "incomeSubtitle": "Keskmine igakuine netopalk"
+        },
+        "scholarship": {
+          "title": "Kas teil on stipendium?",
+          "subtitle": "Õppestipendium või rahaline toetus",
+          "amount": "Igakuine stipendiumi summa",
+          "amountSubtitle": "Summa, mida saate igal kuul"
+        },
+        "housing": {
+          "title": "Kus te õpingute ajal elate?",
+          "subtitle": "Teie praegune eluaseme olukord",
+          "withParents": "Vanematega",
+          "studentResidence": "Üliõpilaskodu / Ühiselamu",
+          "rental": "Üürin (korter/jagatud)",
+          "other": "Muu olukord"
+        },
+        "guarantor": {
+          "title": "Kas teil on käendaja?",
+          "subtitle": "Käendaja parandab oluliselt teie taotlust",
+          "yes": "Jah, mul on käendaja",
+          "no": "Ei, käendajata",
+          "relationship": "Milline on teie suhe käendajaga?",
+          "relationshipSubtitle": "Perekondlik või muu suhe",
+          "parent": "Vanem (isa/ema)",
+          "grandparent": "Vanavanem",
+          "sibling": "Vend / Õde",
+          "otherRelation": "Muu isik",
+          "income": "Käendaja igakuine sissetulek",
+          "incomeSubtitle": "Käendaja igakuine netopalk"
+        },
+        "loan": {
+          "purpose": "Mis on selle laenu eesmärk?",
+          "purposeSubtitle": "Milleks seda rahastamist kasutatakse",
+          "tuition": "Õppemaksud",
+          "living": "Elamiskulud (üür, toit...)",
+          "equipment": "Varustus (arvuti, raamatud...)",
+          "internship": "Praktika / Välisõpingud",
+          "other": "Muu vajadus"
+        },
+        "insurance": {
+          "wants": "Kas soovite laenukindlustust?",
+          "wantsSubtitle": "Kaitse ettenägematute olukordade puhul"
+        }
+      },
+
+      "pro": {
+        "typeTitle": "Milline on teie professionaalne staatus?",
+        "typeSubtitle": "Valige oma juriidiline vorm",
+        "freelance": "Vabakutseline",
+        "autoEntrepreneur": "Fuu-ettevotja",
+        "tpe": "Vaikeettevote (< 10 tootajat)",
+        "startup": "Startup",
+        "sectorTitle": "Millises sektoris te tootate?",
+        "sectorPlaceholder": "Valige sektor",
+        "sectors": {
+          "tech": "Tech / Digitaalne",
+          "commerce": "Kaubandus / Jaemüük",
+          "services": "Teenused",
+          "construction": "Ehitus",
+          "health": "Tervis / Heaolu",
+          "other": "Muu"
+        },
+        "yearsTitle": "Kui kaua olete tegutsenud?",
+        "years": {
+          "lessThan1": "< 1 aasta"
+        },
+        "revenueTitle": "Milline on teie aastane kaive?",
+        "revenueSubtitle": "Ligikaudne hinnang",
+        "year": "aasta",
+        "needTitle": "Mis on selle rahastamise eesmärk?",
+        "needs": {
+          "treasury": "Rahavoog",
+          "treasuryDesc": "Rahavoo lunga haldamine",
+          "investment": "Investeering",
+          "investmentDesc": "Oma tegevuse arendamine",
+          "equipment": "Varustus",
+          "equipmentDesc": "Varustuse ostmine"
+        }
+      },
+
+      "professional": {
+        "business": {
+          "type": "Milline on teie ettevõtte juriidiline vorm?",
+          "typeSubtitle": "Valige oma ettevõtte staatus",
+          "freelance": "Vabakutseline / FIE",
+          "autoEntrepreneur": "Üksikettevõtja",
+          "eirl": "EIRL",
+          "sarl": "OÜ (SARL)",
+          "sas": "SAS / SASU",
+          "sa": "AS (SA)",
+          "tpe": "Väikeettevõte (< 10 töötajat)",
+          "startup": "Startup",
+          "other": "Muu juriidiline vorm",
+          "sector": "Millises sektoris te tegutsete?",
+          "sectorSubtitle": "Sektor mõjutab riskihindamist",
+          "years": "Kui kaua olete tegutsenud?",
+          "yearsSubtitle": "Teie ettevõtte vanus",
+          "employees": "Mitu töötajat teil on?",
+          "employeesSubtitle": "Kaasake ennast arvestusse"
+        },
+        "sectors": {
+          "tech": "Tech / Digitaalne",
+          "health": "Tervis / Heaolu",
+          "services": "Teenused",
+          "commerce": "Kaubandus / Jaemüük",
+          "construction": "Ehitus",
+          "industry": "Tööstus / Tootmine",
+          "food": "Toitlustus / Hotellindus",
+          "transport": "Transport / Logistika",
+          "other": "Muu sektor"
+        },
+        "financials": {
+          "revenue": "Milline on teie aastane käive?",
+          "revenueSubtitle": "Viimased 12 kuud või prognoos",
+          "profit": "Milline on teie igakuine netokasum?",
+          "profitSubtitle": "Sissetulek pärast kulusid ja makse",
+          "existingLoans": "Praegused ärilaenu maksed",
+          "existingLoansSubtitle": "Ärilaenude igakuised maksed kokku"
+        },
+        "banking": {
+          "creditHistory": "Teie ettevõtte pangandusajalugu",
+          "creditHistorySubtitle": "Makseintsidendid, tagasipööratud tšekid, arvelduskrediit...",
+          "businessAccount": "Kas teil on ärikonto?",
+          "businessAccountSubtitle": "Teie ettevõttele pühendatud konto"
+        },
+        "loan": {
+          "purpose": "Mis on selle rahastamise eesmärk?",
+          "purposeSubtitle": "Kirjeldage oma vajadusi",
+          "treasury": "Rahavoog",
+          "treasuryDesc": "Rahavoo lünga haldamine",
+          "investment": "Investeering",
+          "investmentDesc": "Oma tegevuse arendamine",
+          "equipment": "Varustus",
+          "equipmentDesc": "Varustuse ostmine",
+          "stock": "Laoseis",
+          "stockDesc": "Lao täiendamine",
+          "expansion": "Laienemine",
+          "expansionDesc": "Uue asukoha avamine",
+          "other": "Muu vajadus"
+        },
+        "insurance": {
+          "wants": "Kas soovite laenukindlustust?",
+          "wantsSubtitle": "Kaitse puude või surma korral"
+        }
+      },
+
+      "salary": {
+        "contractTitle": "Milline on teie lepingu tüüp?",
+        "netTitle": "Milline on teie igakuine netopalk?",
+        "netSubtitle": "Summa pärast makse",
+        "paydayTitle": "Millal saate oma järgmise palga?"
+      },
+
+      "salaryAdvance": {
+        "employment": {
+          "contract": "Milline on teie lepingu tüüp?",
+          "contractSubtitle": "Ainult tähtajatud või tähtajalised lepingud",
+          "duration": "Kui kaua olete praegusel ametikohal olnud?",
+          "durationSubtitle": "Aeg praeguse tööandja juures"
+        },
+        "income": {
+          "salary": "Milline on teie igakuine netopalk?",
+          "salarySubtitle": "Summa pärast makse teie palgalehel",
+          "nextPayday": "Millal on teie järgmine palgapäev?",
+          "nextPaydaySubtitle": "Millal saate oma palga",
+          "frequency": "Kui tihti teile makstakse?",
+          "frequencySubtitle": "Palga maksmise sagedus",
+          "monthly": "Kord kuus",
+          "biweekly": "Kaks korda kuus",
+          "weekly": "Kord nädalas"
+        },
+        "banking": {
+          "directDeposit": "Kas teie palk makstakse otseülekandega?",
+          "directDepositSubtitle": "Automaatne pangaülekanne tööandjalt",
+          "overdrafts": "Kas teil on olnud hiljuti arvelduskrediiti?",
+          "overdraftsSubtitle": "Viimase 3 kuu jooksul"
+        },
+        "loan": {
+          "purpose": "Miks vajate seda ettemakset?",
+          "purposeSubtitle": "Aidake meil mõista teie olukorda",
+          "bills": "Arved / Regulariseerimine",
+          "emergency": "Ootamatu kulu",
+          "medical": "Meditsiinikulud",
+          "other": "Muu vajadus"
+        }
+      },
+
+      "common": {
+        "yes": "Jah",
+        "no": "Ei"
+      },
+
+      "microcredit": {
+        "identity": {
+          "maritalStatus": "Milline on teie perekondlik olukord?"
+        },
+        "employment": {
+          "title": "Milline on teie tööhõive olukord?",
+          "subtitle": "Teie professionaalne stabiilsus mõjutab teie taotlust"
+        },
+        "income": {
+          "type": "Milline on teie sissetuleku liik?",
+          "monthly": "Milline on teie igakuine netosissetulek?",
+          "monthlySubtitle": "Kõik sissetulekud kokku"
+        },
+        "housing": {
+          "title": "Milline on teie eluaseme olukord?",
+          "subtitle": "Teie elukoha stabiilsus on oluline",
+          "rent": "Teie igakuine üürisumma"
+        },
+        "expenses": {
+          "monthly": "Millised on teie igakuised kulud?",
+          "monthlySubtitle": "Ilma üürita, kaasa arvatud tellimused, kindlustus, toit...",
+          "existingLoans": "Olemasolevad laenud",
+          "existingLoansSubtitle": "Teie laenude igakuised maksed kokku",
+          "dependents": "Ülalpeetavad",
+          "dependentsSubtitle": "Lapsed või teised teie sissetulekust sõltuvad isikud"
+        },
+        "banking": {
+          "creditHistory": "Kuidas kirjeldaksite oma pangandusajalugu?",
+          "creditHistorySubtitle": "Tagasilükatud maksed, arvelduskrediit, maksmata võlad...",
+          "overdrafts": "Hiljutised pangaarvelduskrediidid?",
+          "overdraftsSubtitle": "Viimase 3 kuu jooksul"
+        },
+        "loan": {
+          "purpose": "Mis on selle mikrolaenu eesmärk?",
+          "purposeSubtitle": "Aidake meil mõista teie vajadusi",
+          "emergency": "Hädaolukorra kulu",
+          "bills": "Arved / Regulariseerimine",
+          "medical": "Meditsiinikulud",
+          "repair": "Remont (sõiduk, kodumasinad...)",
+          "other": "Muu vajadus"
+        },
+        "insurance": {
+          "wants": "Kas soovite kindlustust?",
+          "wantsSubtitle": "Kaitse ettenägematute olukordade puhul (surm, puue)"
+        }
+      },
+
+      "leasing": {
+        "assetTitle": "Millist vara soovite rahastada?",
+        "assetSubtitle": "Vara toimib tagatisena, mis parandab teie intressimaara",
+        "vehicle": "Soiduk",
+        "proEquipment": "Professionaalne varustus",
+        "itEquipment": "IT varustus",
+        "machinery": "Masinad / Tooriistad",
+        "statusTitle": "Kas olete eraisik voi ettevote?",
+        "individual": "Eraisik",
+        "individualDesc": "Isiklik kasutus",
+        "business": "Ettevote",
+        "businessDesc": "Ariline kasutus",
+        "asset": {
+          "type": "Millist vara soovite rahastada?",
+          "typeSubtitle": "Vara toimib tagatisena, mis parandab teie intressimaara",
+          "vehicle": "Sõiduk",
+          "proEquipment": "Professionaalne varustus",
+          "itEquipment": "IT varustus",
+          "machinery": "Masinad / Tööriistad",
+          "medicalEquipment": "Meditsiiniseadmed",
+          "industrial": "Tööstusseadmed",
+          "other": "Muu vara",
+          "condition": "Milline on vara seisukord?",
+          "conditionSubtitle": "Uut vara on lihtsam rahastada",
+          "new": "Uus",
+          "recent": "Hiljutine (alla 2 aasta)",
+          "used": "Kasutatud"
+        },
+        "client": {
+          "type": "Kas olete eraisik või ettevõte?",
+          "typeSubtitle": "Rahastamistingimused sõltuvad teie staatusest",
+          "individual": "Eraisik",
+          "individualDesc": "Isiklik kasutus",
+          "business": "Ettevõte",
+          "businessDesc": "Äriline kasutus"
+        },
+        "individual": {
+          "employment": "Milline on teie tööhõive staatus?",
+          "employmentSubtitle": "Teie staatus mõjutab tingimusi",
+          "duration": "Kui kaua olete praegusel ametikohal olnud?",
+          "durationSubtitle": "Tööstaaž on oluline näitaja",
+          "income": "Milline on teie igakuine netosissetulek?",
+          "incomeSubtitle": "Kõik sissetulekud pärast makse"
+        },
+        "business": {
+          "years": "Mitu aastat on teie ettevõte tegutsenud?",
+          "yearsSubtitle": "Ettevõtte vanus",
+          "revenue": "Milline on teie aastane käive?",
+          "revenueSubtitle": "Viimase majandusaasta käive"
+        },
+        "banking": {
+          "creditHistory": "Kuidas on teie makseajalugu?",
+          "creditHistorySubtitle": "Kas teil on olnud makseintsidente?"
+        },
+        "options": {
+          "buyOption": "Kas soovite lõpus ostuoptsiooni?",
+          "buyOptionSubtitle": "Võimalus vara lepingu lõpus omandada",
+          "buyYes": "Jah, ostuoptsiooniga",
+          "buyNo": "Ei, lihtne liising"
+        },
+        "insurance": {
+          "wants": "Kas soovite liisingu kindlustust?",
+          "wantsSubtitle": "Kaitseb teie makseid raskuste korral"
+        }
+      },
+
+      "rateInfo": {
+        "title": "Intressimärast arusaamine",
+        "description": "Naidatud intressimaar on hinnang teie profiili pohjal. Loplik intressimaar soltub teie taotluse taiuliku labvaatamisest.",
+        "rateRange": "Selle toote puhul voib intressimaar varieeruda vahemikus",
+        "and": "ja",
+        "yourRate": "Teie hinnanguline intressimaar",
+        "customRate": "Simuleerige teise intressimaaraga",
+        "applyCustom": "Rakenda see intressimaar",
+        "resetRate": "Lahtesta",
+        "close": "Sulge"
+      },
+
+      "results": {
+        "title": "Teie isikupärastatud hinnang",
+        "subtitle": "Pohineb teie esitatud teabel",
+        "perMonth": "kuus",
+        "summary": "Kokkuvote",
+        "amount": "Laenatud summa",
+        "duration": "Periood",
+        "type": "Laenu tuup",
+        "response": "Vastamise aeg",
+        "yourProfile": "Teie profiil",
+        "withGuarantor": "Kaiendajaga",
+        "withJob": "Sissetulekuga",
+        "established": "Kehtestatud tegevus",
+        "assessment": "Esialgne hinnang",
+        "riskCategory": "Riskikategooria",
+        "riskLow": "Madal risk",
+        "riskModerate": "Mooduka riskiga",
+        "riskMedium": "Keskmine risk",
+        "riskHigh": "Kõrge risk",
+        "approvalChance": "Heakskiitmise toenaosus",
+        "approvalHigh": "Kõrge",
+        "approvalMedium": "Keskmine",
+        "approvalLow": "Hindamisele",
+        "nextSteps": "Jargmised sammud",
+        "step1": "Täitke oma taotlus veebis (5 min)",
+        "step2": "Esitage oma dokumendid (isikutunnistus, sissetulekutoend)",
+        "step3": "Saate lopliku vastuse {time} jooksul",
+        "applyNow": "Esita minu taotlus",
+        "newSimulation": "Uus simulatsioon"
+      }
+    }
+  },
+
+  "application": {
+    "eyebrow": "Laenutoatlus",
+    "title": "Lõpeta oma taotlus",
+    "subtitle": "Täida allolev teave oma taotluse esitamiseks",
+
+    "steps": {
+      "info": "Teave",
+      "document": "Dokument"
+    },
+
+    "back": "Tagasi",
+    "continue": "Jatka",
+    "submit": "Esita",
+
+    "info": {
+      "title": "Sinu isikuandmed",
+      "subtitle": "See teave on vajalik sinu taotluse tootlemiseks",
+      "firstName": "Eesnimi",
+      "lastName": "Perekonnanimi",
+      "email": "E-posti aadress"
+    },
+
+    "document": {
+      "title": "Sinu isikut toendav dokument",
+      "subtitle": "Laadi üles foto oma isikut toendavast dokumendist",
+      "upload": "Kliki voi lohista fail siia",
+      "formats": "PDF, JPG, PNG (max 10 MB)"
+    },
+
+    "analyzing": {
+      "title": "Sinu dokumendi analyüsimine...",
+      "subtitle": "Palun oota, kuni kontrollime sinu andmeid",
+      "steps": {
+        "uploading": "Dokumendi üleslaadimine...",
+        "verifying": "Isiku tuvastamine...",
+        "scanning": "Dokumendi skaneerimine...",
+        "analyzing": "Andmete analyüsimine..."
+      }
+    },
+
+    "error": {
+      "title": "Sinu taotlust ei saanud töödelda",
+      "countryNotSupported": "Hetkel toetame ainult Eesti dokumente. Palun proovi uuesti kehtiva Eesti isikut toendava dokumendiga.",
+      "retry": "Proovi uuesti",
+      "backHome": "Tagasi avalehele",
+      "generic": "Sinu taotluse tootlemisel tekkis viga",
+      "network": "Vorguviga. Palun kontrolli oma ühendust ja proovi uuesti."
+    }
+  }
+}

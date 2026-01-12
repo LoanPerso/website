@@ -305,6 +305,36 @@ export function SpecificQuestionsStep({
     );
   }, [formData]);
 
+  // Get missing required fields
+  const missingFields = useMemo(() => {
+    return questions
+      .filter((q) => q.required)
+      .filter((q) => {
+        const value = (formData as unknown as Record<string, unknown>)[q.id];
+        return value === undefined || value === null || value === "";
+      })
+      .map((q) => ({
+        id: q.id,
+        label: t(q.labelKey),
+      }));
+  }, [questions, formData, t]);
+
+  // Scroll to first missing field
+  const scrollToMissingField = () => {
+    if (missingFields.length > 0) {
+      const firstMissing = missingFields[0];
+      const element = document.getElementById(`question-${firstMissing.id}`);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        // Add highlight effect
+        element.classList.add("ring-2", "ring-accent", "ring-offset-2");
+        setTimeout(() => {
+          element.classList.remove("ring-2", "ring-accent", "ring-offset-2");
+        }, 2000);
+      }
+    }
+  };
+
   // Animate on mount
   useEffect(() => {
     if (containerRef.current) {
@@ -344,14 +374,15 @@ export function SpecificQuestionsStep({
       {/* Dynamic Questions */}
       <div className="space-y-4">
         {questions.map((question) => (
-          <DynamicQuestion
-            key={question.id}
-            question={question}
-            value={getValue(question.id)}
-            onChange={(value) => handleChange(question.id, value)}
-            t={t}
-            formData={formData}
-          />
+          <div key={question.id} id={`question-${question.id}`} className="transition-all duration-300 rounded-2xl">
+            <DynamicQuestion
+              question={question}
+              value={getValue(question.id)}
+              onChange={(value) => handleChange(question.id, value)}
+              t={t}
+              formData={formData}
+            />
+          </div>
         ))}
       </div>
 
@@ -364,26 +395,43 @@ export function SpecificQuestionsStep({
           ← {t("simulator.advanced.back")}
         </button>
         <button
-          onClick={onNext}
-          disabled={!isValid}
+          onClick={isValid ? onNext : scrollToMissingField}
           className={`flex-1 py-5 font-serif text-lg rounded-2xl transition-all duration-300 ${
             isValid
               ? "bg-accent text-white hover:bg-dark-gold shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30"
-              : "bg-foreground/10 text-muted-foreground cursor-not-allowed"
+              : "bg-foreground/10 text-muted-foreground hover:bg-foreground/15 cursor-pointer"
           }`}
         >
           {t("simulator.advanced.seeResults")} →
         </button>
       </div>
 
-      {/* Validation hint */}
-      {!isValid && (
-        <p className="text-center text-sm text-muted-foreground mt-6 flex items-center justify-center gap-2">
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          {t("simulator.advanced.fillRequired")}
-        </p>
+      {/* Validation hint - clickable to scroll to missing fields */}
+      {!isValid && missingFields.length > 0 && (
+        <button
+          onClick={scrollToMissingField}
+          className="w-full mt-6 p-4 bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800/30 rounded-xl text-left hover:bg-orange-100 dark:hover:bg-orange-950/30 transition-colors group"
+        >
+          <div className="flex items-start gap-3">
+            <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <div className="flex-1">
+              <p className="text-sm font-medium text-orange-800 dark:text-orange-200">
+                {missingFields.length === 1
+                  ? t("simulator.advanced.missingFieldsOne")
+                  : t("simulator.advanced.missingFieldsMany").replace("{count}", String(missingFields.length))}
+              </p>
+              <p className="text-xs text-orange-600 dark:text-orange-400 mt-1">
+                {missingFields.slice(0, 3).map(f => f.label).join(", ")}
+                {missingFields.length > 3 && ` (+${missingFields.length - 3})`}
+              </p>
+              <p className="text-xs text-orange-500 dark:text-orange-500 mt-2 group-hover:underline">
+                {t("simulator.advanced.clickToSee")} →
+              </p>
+            </div>
+          </div>
+        </button>
       )}
     </div>
   );

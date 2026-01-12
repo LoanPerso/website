@@ -10,98 +10,169 @@
     },
     "businessType": {
       "scores": {
-        "freelance": 70,
-        "auto-entrepreneur": 65,
-        "tpe": 85,
+        "fie": 70,
+        "oue": 90,
+        "as": 85,
         "startup": 50
       }
     },
     "sector": {
       "scores": {
         "tech": 90,
-        "commerce": 75,
-        "services": 80,
-        "construction": 70,
         "health": 95,
+        "services": 80,
+        "commerce": 75,
+        "construction": 70,
+        "industry": 80,
+        "food": 65,
+        "transport": 70,
         "other": 60
       }
     },
     "yearsInBusiness": {
       "min": 0,
-      "max": 50
+      "max": 50,
+      "step": 1
+    },
+    "employees": {
+      "min": 0,
+      "max": 50,
+      "step": 1
     },
     "annualRevenue": {
       "min": 0,
       "max": 500000,
       "step": 5000
     },
+    "monthlyProfit": {
+      "min": 0,
+      "max": 50000,
+      "step": 500
+    },
+    "existingBusinessLoans": {
+      "min": 0,
+      "max": 10000,
+      "step": 100
+    },
+    "creditHistory": {
+      "scores": {
+        "excellent": 100,
+        "good": 75,
+        "mixed": 45,
+        "incidents": 20
+      }
+    },
+    "hasBusinessAccount": {
+      "scores": {
+        "yes": 100,
+        "no": 50
+      }
+    },
     "businessNeed": {
       "scores": {
         "treasury": 80,
         "investment": 90,
-        "equipment": 95
+        "equipment": 95,
+        "stock": 75,
+        "expansion": 85,
+        "other": 60
+      }
+    },
+    "wantsInsurance": {
+      "scores": {
+        "yes": 100,
+        "no": 70
       }
     }
   },
 
   "scoring": {
-    "baseScore": 40,
+    "baseScore": 0,
     "weights": {
-      "age": 10,
-      "businessType": 15,
-      "sector": 15,
-      "yearsInBusiness": 25,
-      "annualRevenue": 20,
-      "businessNeed": 10
+      "age": 5,
+      "businessType": 12,
+      "sector": 10,
+      "yearsInBusiness": 20,
+      "employees": 5,
+      "revenueRatio": 18,
+      "profitMargin": 10,
+      "creditHistory": 12,
+      "hasBusinessAccount": 3,
+      "businessNeed": 5
     },
     "thresholds": {
-      "A": 80,
-      "B": 60,
-      "C": 40
+      "A": 75,
+      "B": 55,
+      "C": 35
     },
     "ageRanges": {
       "optimal": { "min": 30, "max": 55, "score": 100 },
       "good": { "min": 25, "max": 60, "score": 80 },
-      "default": 60
+      "acceptable": { "min": 18, "max": 24, "score": 60 },
+      "default": 50
     },
     "yearsInBusinessRanges": {
       "excellent": { "min": 5, "score": 100 },
       "good": { "min": 3, "score": 85 },
       "acceptable": { "min": 2, "score": 70 },
       "new": { "min": 1, "score": 50 },
-      "default": 30
+      "default": 25
     },
-    "debtRatioRanges": {
-      "excellent": { "maxRatio": 0.1, "score": 100 },
-      "good": { "maxRatio": 0.2, "score": 85 },
-      "acceptable": { "maxRatio": 0.3, "score": 70 },
-      "risky": { "maxRatio": 0.5, "score": 50 },
-      "default": 30
+    "employeesRanges": {
+      "medium": { "min": 10, "score": 100 },
+      "small": { "min": 3, "score": 85 },
+      "micro": { "min": 1, "score": 70 },
+      "solo": { "min": 0, "score": 55 },
+      "default": 55
+    },
+    "revenueRatioRanges": {
+      "excellent": { "maxRatio": 0.15, "score": 100 },
+      "good": { "maxRatio": 0.30, "score": 85 },
+      "acceptable": { "maxRatio": 0.50, "score": 65 },
+      "risky": { "maxRatio": 0.75, "score": 40 },
+      "default": 20
+    },
+    "profitMarginRanges": {
+      "excellent": { "minMargin": 0.20, "score": 100 },
+      "good": { "minMargin": 0.10, "score": 80 },
+      "acceptable": { "minMargin": 0.05, "score": 55 },
+      "tight": { "minMargin": 0.02, "score": 30 },
+      "default": 15
     }
+  },
+
+  "limits": {
+    "maxDebtToRevenue": 0.50,
+    "minAnnualRevenue": 10000,
+    "maxAmountMultiplier": 0.30
   },
 
   "calculation": {
     "interestMethod": "compound",
     "baseRate": 11,
-    "minRate": 6,
+    "minRate": 5,
     "maxRate": 20,
     "rateAdjustments": {
       "A": -5,
       "B": -2,
       "C": 4,
-      "D": 7
+      "D": 8
     },
     "fees": {
       "applicationFee": 0,
       "applicationFeePercent": 1,
       "managementFee": 0
-    }
+    },
+    "insuranceRate": 0.25
   },
 
   "responseTime": {
-    "default": "48h",
+    "default": "48-72h",
     "fastTrack": "24h",
-    "fastTrackMinYears": 3
+    "fastTrackConditions": {
+      "minYears": 3,
+      "minCategory": "B"
+    }
   },
 
   "approvalProbability": {

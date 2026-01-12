@@ -5,12 +5,12 @@
   "locale": "es-ES",
 
   "options": {
-    "employmentStatus": ["indefinido", "temporal", "autonomo", "student", "retired", "unemployed"],
-    "contractType": ["indefinido", "temporal"],
-    "businessType": ["autonomo", "sl", "sa", "startup"],
+    "employmentStatus": ["cdi", "fonctionnaire", "cdd", "freelance", "auto-entrepreneur", "indefinido", "temporal", "autonomo", "student", "retired", "unemployed"],
+    "contractType": ["cdi", "fonctionnaire", "cdd", "indefinido", "temporal"],
+    "businessType": ["autonomo", "sl", "sa", "startup", "freelance", "auto-entrepreneur", "tpe"],
     "sector": ["tech", "commerce", "services", "construction", "health", "other"],
     "businessNeed": ["treasury", "investment", "equipment"],
-    "loanPurpose": ["auto", "homeImprovement", "equipment", "event", "travel"],
+    "loanPurpose": ["auto", "homeImprovement", "equipment", "event", "travel", "other"],
     "institutionType": ["university", "business-school", "fp-superior", "other"],
     "studyLevel": ["grado1", "grado2", "grado3", "grado4", "master", "doctorate"],
     "assetType": ["vehicle", "professional-equipment", "it-equipment", "machinery"],

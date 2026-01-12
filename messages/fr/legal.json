@@ -1,0 +1,373 @@
+{
+  "eyebrow": "Legal",
+  "lastUpdated": "Derniere mise a jour",
+  "questions": "Des questions ?",
+
+  "nav": {
+    "terms": "CGU",
+    "privacy": "Confidentialite",
+    "legalNotices": "Mentions legales",
+    "cookies": "Cookies"
+  },
+
+  "terms": {
+    "title": "Conditions Generales d'Utilisation",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Les presentes Conditions Generales d'Utilisation (ci-apres \"CGU\") regissent l'utilisation de la plateforme et des services Quickfund. En utilisant nos services, vous acceptez ces CGU dans leur integralite."
+      },
+      "definitions": {
+        "title": "Definitions",
+        "platform": "Plateforme",
+        "platformDef": "Le site web et l'application mobile Quickfund",
+        "user": "Utilisateur",
+        "userDef": "Toute personne accedant a la Plateforme",
+        "borrower": "Emprunteur",
+        "borrowerDef": "Un Utilisateur ayant conclu un contrat de credit avec Quickfund",
+        "credit": "Credit",
+        "creditDef": "Tout pret ou financement accorde par Quickfund",
+        "services": "Services",
+        "servicesDef": "L'ensemble des services proposes par Quickfund, incluant le credit, la simulation et le coaching financier"
+      },
+      "acceptance": {
+        "title": "Acceptation des CGU",
+        "content": "En accedant ou en utilisant notre Plateforme, vous reconnaissez avoir lu, compris et accepte d'etre lie par ces CGU. Si vous n'acceptez pas ces CGU, vous ne devez pas utiliser nos services."
+      },
+      "services": {
+        "title": "Services proposes",
+        "intro": "Quickfund propose les services de credit et financiers suivants :",
+        "microCredit": "Micro-credit : 20€ a 500€, reponse sous 24 heures",
+        "consumerCredit": "Credit a la consommation : 500€ a 5 000€, conditions flexibles",
+        "proCredit": "Credit professionnel : 1 000€ a 10 000€, pour freelances et TPE",
+        "studentLoan": "Pret etudiant : financement des etudes sans garantie bancaire traditionnelle",
+        "salaryAdvance": "Avance sur salaire : acces a une partie de votre salaire avant la paie",
+        "leasing": "Leasing : utiliser un equipement sans l'acheter",
+        "coaching": "Coaching financier : gestion de budget et conseils personnalises"
+      },
+      "eligibility": {
+        "title": "Eligibilite",
+        "intro": "Pour utiliser nos services de credit, vous devez :",
+        "age": "Etre age d'au moins 18 ans",
+        "residence": "Etre resident en Estonie ou dans l'Union europeenne",
+        "capacity": "Avoir la pleine capacite juridique",
+        "identity": "Fournir une piece d'identite valide"
+      },
+      "application": {
+        "title": "Processus de demande",
+        "content": "Les demandes de credit sont soumises en ligne via notre Plateforme. Vous devez fournir des informations exactes et completes. Quickfund se reserve le droit de demander des documents supplementaires. Chaque demande fait l'objet d'une evaluation de solvabilite. L'approbation n'est pas garantie et depend de notre analyse."
+      },
+      "creditTerms": {
+        "title": "Conditions du credit",
+        "content": "Les conditions specifiques de chaque credit sont detaillees dans le contrat de credit individuel, notamment :",
+        "amount": "Montant du capital emprunte",
+        "duration": "Duree de remboursement",
+        "rate": "Taux Annuel Effectif Global (TAEG)",
+        "repayment": "Montant et echeancier des mensualites"
+      },
+      "obligations": {
+        "title": "Vos obligations",
+        "intro": "En tant qu'Utilisateur et/ou Emprunteur, vous vous engagez a :",
+        "accurate": "Fournir des informations exactes et veridiques",
+        "update": "Mettre a jour vos informations en cas de changement",
+        "repay": "Effectuer les paiements a temps selon l'echeancier convenu",
+        "notify": "Nous informer de toute difficulte a effectuer les paiements"
+      },
+      "withdrawal": {
+        "title": "Droit de retractation",
+        "content": "Pour les credits a la consommation, vous disposez d'un droit de retractation de 14 jours calendaires a compter de la date de signature, sans avoir a fournir de motif. Pour exercer ce droit, vous devez nous notifier par ecrit et rembourser le capital et les interets courus."
+      },
+      "earlyRepayment": {
+        "title": "Remboursement anticipe",
+        "content": "Vous pouvez rembourser votre credit par anticipation, en totalite ou en partie, a tout moment. Aucune penalite de remboursement anticipe ne sera appliquee. Vous ne devrez que les interets courus jusqu'a la date de remboursement."
+      },
+      "latePayment": {
+        "title": "Retard de paiement",
+        "content": "En cas de retard de paiement, des interets de retard peuvent s'appliquer comme specifie dans votre contrat de credit. Nous vous contacterons pour trouver une solution. Un non-paiement persistant peut entrainer des procedures de recouvrement et un signalement aux bureaux de credit."
+      },
+      "liability": {
+        "title": "Limitation de responsabilite",
+        "content": "Quickfund ne saurait etre tenu responsable des dommages indirects, perte de profits, ou dommages resultant de circonstances echappant a notre controle. Notre responsabilite est limitee dans la mesure maximale permise par la loi."
+      },
+      "modifications": {
+        "title": "Modifications des CGU",
+        "content": "Nous nous reservons le droit de modifier ces CGU a tout moment. Les modifications seront communiquees via la Plateforme et/ou par email. L'utilisation continue de nos services apres modification vaut acceptation des nouvelles CGU."
+      },
+      "governingLaw": {
+        "title": "Loi applicable et juridiction",
+        "content": "Ces CGU sont regies par le droit estonien. Tout litige sera soumis aux tribunaux competents d'Estonie. Pour les consommateurs de l'UE, les lois imperatives de protection des consommateurs de votre pays de residence peuvent egalement s'appliquer."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Pour toute question concernant ces CGU :",
+        "address": "Adresse",
+        "regNumber": "Numero d'immatriculation"
+      }
+    }
+  },
+
+  "privacy": {
+    "title": "Politique de Confidentialite",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Chez Quickfund, nous nous engageons a proteger votre vie privee et vos donnees personnelles. Cette Politique de Confidentialite explique comment nous collectons, utilisons, stockons et protegeons vos informations conformement au Reglement General sur la Protection des Donnees (RGPD) et au droit estonien."
+      },
+      "controller": {
+        "title": "Responsable du traitement",
+        "content": "Le responsable du traitement de vos donnees personnelles est :",
+        "company": "Societe",
+        "regNumber": "Numero d'immatriculation",
+        "address": "Adresse",
+        "email": "Email",
+        "parent": "Societe mere"
+      },
+      "dataCollected": {
+        "title": "Donnees collectees",
+        "intro": "Nous collectons les categories de donnees personnelles suivantes :",
+        "identity": {
+          "title": "Donnees d'identite",
+          "name": "Nom complet",
+          "dob": "Date de naissance",
+          "nationality": "Nationalite",
+          "idDoc": "Document d'identite (passeport, carte d'identite)"
+        },
+        "contact": {
+          "title": "Coordonnees",
+          "email": "Adresse email",
+          "phone": "Numero de telephone",
+          "address": "Adresse postale"
+        },
+        "financial": {
+          "title": "Donnees financieres",
+          "income": "Informations sur les revenus et l'emploi",
+          "employment": "Situation et details professionnels",
+          "bank": "Coordonnees bancaires"
+        },
+        "technical": {
+          "title": "Donnees techniques",
+          "ip": "Adresse IP",
+          "device": "Informations sur l'appareil et le navigateur",
+          "cookies": "Donnees de cookies"
+        }
+      },
+      "legalBasis": {
+        "title": "Base juridique du traitement",
+        "intro": "Nous traitons vos donnees sur les bases juridiques suivantes :",
+        "contract": "Execution du contrat",
+        "contractDesc": "Pour fournir nos services de credit et remplir nos obligations contractuelles",
+        "legal": "Obligation legale",
+        "legalDesc": "Pour respecter les reglementations KYC/AML et les exigences de surveillance financiere",
+        "consent": "Consentement",
+        "consentDesc": "Pour les communications marketing et les services optionnels",
+        "legitimate": "Interet legitime",
+        "legitimateDesc": "Pour la prevention de la fraude, la securite et l'amelioration des services"
+      },
+      "purposes": {
+        "title": "Finalites du traitement",
+        "creditAssessment": "Evaluation de la solvabilite et decisions de pret",
+        "contractExecution": "Execution et gestion des contrats de credit",
+        "kyc": "Verification de votre identite (KYC) et prevention du blanchiment (AML)",
+        "fraud": "Detection et prevention de la fraude",
+        "communication": "Communication concernant votre compte et nos services",
+        "improvement": "Amelioration de nos services et de l'experience utilisateur",
+        "legal": "Respect des obligations legales et reglementaires"
+      },
+      "sharing": {
+        "title": "Partage des donnees",
+        "intro": "Nous pouvons partager vos donnees avec :",
+        "stripe": "Stripe",
+        "stripeDesc": "Pour le traitement des paiements et la verification d'identite (KYC)",
+        "cloud": "Fournisseurs cloud",
+        "cloudDesc": "Pour le stockage securise des donnees (Google Cloud Platform, serveurs europeens)",
+        "authorities": "Autorites reglementaires",
+        "authoritiesDesc": "Lorsque requis par la loi (FSA Estonie, autorites fiscales)"
+      },
+      "retention": {
+        "title": "Conservation des donnees",
+        "intro": "Nous conservons vos donnees pour les periodes suivantes :",
+        "contract": "Donnees contractuelles : Duree du credit + 5 ans",
+        "kyc": "Documents KYC : 5 ans apres fin de la relation",
+        "legal": "Documents comptables : 10 ans (exigences comptables)"
+      },
+      "security": {
+        "title": "Securite des donnees",
+        "content": "Nous mettons en oeuvre des mesures techniques et organisationnelles appropriees pour proteger vos donnees :",
+        "encryption": "Chiffrement en transit (HTTPS/TLS) et au repos",
+        "access": "Controles d'acces stricts et authentification",
+        "monitoring": "Surveillance securite 24/7 et alertes",
+        "storage": "Donnees stockees exclusivement dans l'Union europeenne"
+      },
+      "rights": {
+        "title": "Vos droits",
+        "intro": "En vertu du RGPD, vous disposez des droits suivants :",
+        "access": "Droit d'acces",
+        "accessDesc": "Demander une copie de vos donnees personnelles",
+        "rectification": "Droit de rectification",
+        "rectificationDesc": "Corriger des donnees inexactes ou incompletes",
+        "erasure": "Droit a l'effacement",
+        "erasureDesc": "Demander la suppression de vos donnees (sous reserve des obligations legales de conservation)",
+        "restriction": "Droit a la limitation",
+        "restrictionDesc": "Limiter l'utilisation de vos donnees",
+        "portability": "Droit a la portabilite",
+        "portabilityDesc": "Recevoir vos donnees dans un format structure et lisible par machine",
+        "objection": "Droit d'opposition",
+        "objectionDesc": "Vous opposer au traitement fonde sur l'interet legitime",
+        "exercise": "Pour exercer ces droits, contactez-nous a legal@quickfund.ee ou legal@quickfund.fr"
+      },
+      "transfers": {
+        "title": "Transferts internationaux de donnees",
+        "content": "Vos donnees sont stockees et traitees au sein de l'Espace economique europeen (EEE). Nous ne transferons pas vos donnees hors de l'EEE. Notre infrastructure cloud est situee dans des centres de donnees europeens."
+      },
+      "changes": {
+        "title": "Modifications de cette politique",
+        "content": "Nous pouvons mettre a jour cette Politique de Confidentialite de temps en temps. Nous vous informerons des modifications significatives par email ou via notre Plateforme. La date de la derniere mise a jour est indiquee en haut de cette page."
+      },
+      "contact": {
+        "title": "Nous contacter",
+        "content": "Pour toute question concernant cette Politique de Confidentialite ou pour exercer vos droits :",
+        "address": "Adresse",
+        "authority": "Vous avez egalement le droit de deposer une plainte aupres de l'Autorite estonienne de protection des donnees (Andmekaitse Inspektsioon) ou de votre autorite de controle locale."
+      }
+    }
+  },
+
+  "legalNotices": {
+    "title": "Mentions Legales",
+    "sections": {
+      "publisher": {
+        "title": "Editeur",
+        "company": "Raison sociale",
+        "legalForm": "Forme juridique",
+        "regNumber": "Numero d'immatriculation",
+        "address": "Siege social",
+        "email": "Email",
+        "director": "Directeur"
+      },
+      "parent": {
+        "title": "Societe mere",
+        "company": "Raison sociale",
+        "regNumber": "Numero d'immatriculation",
+        "address": "Adresse"
+      },
+      "regulatory": {
+        "title": "Informations reglementaires",
+        "authority": "Autorite de surveillance",
+        "license": "Licence",
+        "licenseType": "Licence d'etablissement de credit",
+        "euPassport": "Passeport europeen",
+        "euPassportDesc": "Autorise a operer dans l'Union europeenne",
+        "content": "Quickfund OU est un etablissement de credit agree sous la supervision de l'Autorite estonienne de surveillance financiere (Finantsinspektsioon). En vertu de la reglementation europeenne, nous sommes autorises a fournir des services de credit dans toute l'Union europeenne via le mecanisme du passeport europeen."
+      },
+      "hosting": {
+        "title": "Hebergement du site",
+        "provider": "Hebergeur",
+        "location": "Localisation des serveurs",
+        "address": "Adresse"
+      },
+      "ip": {
+        "title": "Propriete intellectuelle",
+        "content": "Tout le contenu de ce site web est protege par les droits de propriete intellectuelle. Les elements suivants sont la propriete exclusive de Quickfund OU :",
+        "trademark": "La marque et le logo Quickfund",
+        "content2": "Tous les textes, articles et contenus editoriaux",
+        "design": "Design graphique et identite visuelle",
+        "software": "Logiciels et code source"
+      },
+      "links": {
+        "title": "Liens externes",
+        "content": "Ce site web peut contenir des liens vers des sites externes. Quickfund n'est pas responsable du contenu ou des pratiques de confidentialite de ces sites tiers. L'acces a ces liens se fait a vos risques et perils."
+      },
+      "liability": {
+        "title": "Limitation de responsabilite",
+        "content": "Bien que nous nous efforcions d'assurer l'exactitude des informations sur ce site, Quickfund ne peut garantir que toutes les informations sont completes, exactes ou a jour. Nous ne sommes pas responsables des dommages directs ou indirects resultant de l'utilisation de ce site."
+      },
+      "accessibility": {
+        "title": "Accessibilite",
+        "content": "Nous nous engageons a rendre notre site web accessible a tous les utilisateurs. Si vous rencontrez des problemes d'accessibilite, veuillez nous contacter a legal@quickfund.ee afin que nous puissions les resoudre."
+      },
+      "credits": {
+        "title": "Credits du site",
+        "design": "Design",
+        "dev": "Developpement"
+      },
+      "applicableLaw": {
+        "title": "Droit applicable",
+        "content": "Ce site web et ces mentions legales sont regis par le droit estonien. Tout litige relatif a l'utilisation de ce site sera soumis a la competence exclusive des tribunaux estoniens."
+      }
+    }
+  },
+
+  "cookies": {
+    "title": "Politique de Cookies",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Cette Politique de Cookies explique comment Quickfund OU utilise les cookies et technologies similaires sur notre site web. En utilisant notre site, vous consentez a l'utilisation des cookies comme decrit dans cette politique."
+      },
+      "what": {
+        "title": "Qu'est-ce qu'un cookie ?",
+        "content": "Les cookies sont de petits fichiers texte places sur votre appareil lorsque vous visitez un site web. Ils sont largement utilises pour faire fonctionner les sites web plus efficacement, fournir des informations aux proprietaires de sites et ameliorer l'experience utilisateur."
+      },
+      "types": {
+        "title": "Types de cookies que nous utilisons",
+        "essential": {
+          "title": "Cookies essentiels",
+          "desc": "Ces cookies sont necessaires au bon fonctionnement du site. Ils ne peuvent pas etre desactives.",
+          "session": "Gestion de session et authentification",
+          "security": "Securite et prevention de la fraude",
+          "preferences": "Preferences essentielles de l'utilisateur (ex : consentement cookies)"
+        },
+        "functional": {
+          "title": "Cookies fonctionnels",
+          "desc": "Ces cookies permettent des fonctionnalites ameliorees et la personnalisation.",
+          "language": "Preferences de langue",
+          "settings": "Parametres d'affichage et d'interface"
+        },
+        "analytics": {
+          "title": "Cookies analytiques",
+          "desc": "Ces cookies nous aident a comprendre comment les visiteurs interagissent avec notre site.",
+          "usage": "Pages consultees et parcours de navigation",
+          "performance": "Surveillance des performances du site"
+        }
+      },
+      "list": {
+        "title": "Cookies utilises",
+        "name": "Nom du cookie",
+        "purpose": "Finalite",
+        "duration": "Duree",
+        "type": "Type",
+        "sessionPurpose": "Gestion de session utilisateur",
+        "sessionDuration": "Session",
+        "localePurpose": "Stockage de la preference de langue",
+        "consentPurpose": "Stockage du consentement cookies",
+        "year": "an"
+      },
+      "thirdParty": {
+        "title": "Cookies tiers",
+        "content": "Nous pouvons utiliser des services tiers qui deposent leurs propres cookies :",
+        "stripe": "Traitement des paiements et prevention de la fraude"
+      },
+      "manage": {
+        "title": "Gestion des cookies",
+        "content": "Vous pouvez controler et supprimer les cookies via les parametres de votre navigateur :",
+        "chrome": "Parametres > Confidentialite et securite > Cookies",
+        "firefox": "Options > Vie privee et securite > Cookies",
+        "safari": "Preferences > Confidentialite > Cookies",
+        "edge": "Parametres > Cookies et autorisations de site",
+        "warning": "Veuillez noter que la desactivation des cookies essentiels peut affecter le fonctionnement du site."
+      },
+      "consent": {
+        "title": "Consentement aux cookies",
+        "content": "Lors de votre premiere visite sur notre site, il vous sera demande d'accepter ou de configurer les cookies. Vous pouvez modifier vos preferences a tout moment via nos parametres de cookies ou en effacant les cookies de votre navigateur."
+      },
+      "changes": {
+        "title": "Modifications de cette politique",
+        "content": "Nous pouvons mettre a jour cette Politique de Cookies de temps en temps. Les modifications seront publiees sur cette page avec une date de revision mise a jour."
+      },
+      "contact": {
+        "title": "Nous contacter",
+        "content": "Si vous avez des questions concernant notre utilisation des cookies, veuillez nous contacter :"
+      }
+    }
+  }
+}

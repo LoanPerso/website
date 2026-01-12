@@ -30,12 +30,30 @@ export interface QuestionOption {
   score?: number;           // Score contribution for this option
 }
 
+// Section identifiers for grouping questions
+export type QuestionSection =
+  | "identity"      // Identity & family
+  | "employment"    // Employment status
+  | "income"        // Income details
+  | "housing"       // Housing situation
+  | "expenses"      // Household expenses
+  | "banking"       // Banking & credit history
+  | "coBorrower"    // Co-borrower info
+  | "loan"          // Loan details
+  | "insurance"     // Insurance options
+  | "business"      // Business info (for pro)
+  | "studies"       // Studies info (for student)
+  | "guarantor"     // Guarantor info
+  | "asset";        // Asset info (for leasing)
+
 export interface QuestionConfig {
   id: string;
   type: QuestionType;
   labelKey: string;           // Translation key for question
   subtitleKey?: string;       // Translation key for subtitle
   required: boolean;
+  // Section for grouping questions
+  section?: QuestionSection;
   // For number/slider type
   min?: number;
   max?: number;

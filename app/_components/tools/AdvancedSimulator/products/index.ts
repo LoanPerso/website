@@ -7,9 +7,15 @@
 
 export * from "./types";
 
-import { CreditType, SimulatorFormData, SimulationResult } from "../types";
+import { CreditType, SimulatorFormData, SimulationResult, ScoreFactor, FinancialAnalysis } from "../types";
 import { CountryCode, CountryOptions } from "../countries/types";
 import { getProductLimits, getCountryConfig } from "../countries";
+import {
+  calculateFinancialAnalysis,
+  calculateScoreFactors,
+  generateWarnings,
+  generateRecommendations,
+} from "../utils/scoring";
 import {
   ProductFullConfig,
   ProductRegistry,
@@ -253,6 +259,98 @@ export function calculateLoanResult(
     }
   }
 
+  // Calculate financial analysis (for products that support it)
+  const data = formData as unknown as Record<string, unknown>;
+  const monthlyIncome = (data.monthlyIncome as number) || 0;
+  const monthlyExpenses = (data.monthlyExpenses as number) || 0;
+  const existingLoans = (data.existingLoans as number) || 0;
+  const dependents = (data.dependents as number) || 0;
+  const householdSize = 1 + dependents;
+
+  const totalMonthlyCharges = monthlyExpenses + existingLoans;
+  const totalDebtAfterLoan = totalMonthlyCharges + monthlyPayment;
+  const remainingIncome = monthlyIncome - totalDebtAfterLoan;
+  const debtRatio = monthlyIncome > 0 ? totalDebtAfterLoan / monthlyIncome : 1;
+  const remainingIncomePerPerson = householdSize > 0 ? remainingIncome / householdSize : 0;
+
+  // Default limits (overridden by product-specific config if available)
+  const maxDebtRatio = 0.45;
+  const baseMinRemainingIncome = 400;
+  const perDependentAmount = 150;
+  const minRemainingIncome = baseMinRemainingIncome + (dependents * perDependentAmount);
+
+  const maxMonthlyPayment = Math.max(0, (monthlyIncome * maxDebtRatio) - totalMonthlyCharges);
+  const maxRecommendedAmount = Math.round(maxMonthlyPayment * formData.duration);
+
+  const isAmountTooHigh = formData.amount > maxRecommendedAmount * 1.2;
+  const isRemainingIncomeTooLow = remainingIncome < minRemainingIncome && monthlyIncome > 0;
+
+  const financialAnalysis: FinancialAnalysis = {
+    monthlyIncome,
+    totalMonthlyCharges,
+    proposedPayment: monthlyPayment,
+    totalDebtAfterLoan,
+    remainingIncome,
+    debtRatio,
+    remainingIncomePerPerson,
+    minRemainingIncome,
+    maxRecommendedAmount,
+    isAmountTooHigh,
+    isRemainingIncomeTooLow,
+  };
+
+  // Calculate score factors (with raw IDs as labels - translated in UI)
+  const scoreFactors: ScoreFactor[] = [];
+  for (const factor of config.scoring.factors) {
+    const fieldValue = (formData as unknown as Record<string, unknown>)[factor.fieldId];
+    if (fieldValue === undefined || fieldValue === null) continue;
+
+    let factorScore = 0;
+    if (factor.scoreFn) {
+      factorScore = factor.scoreFn(fieldValue, formData, countryCode);
+    } else if (factor.scoreMap) {
+      factorScore = factor.scoreMap[String(fieldValue)] || 0;
+    }
+
+    const contribution = (factorScore / 100) * factor.weight;
+    scoreFactors.push({
+      id: factor.fieldId,
+      label: factor.fieldId, // Will be translated in UI
+      impact: factorScore >= 80 ? "positive" : factorScore >= 50 ? "neutral" : "negative",
+      score: factorScore,
+      weight: factor.weight,
+      contribution,
+    });
+  }
+
+  // Generate warnings (as IDs to be translated in UI)
+  const warnings: string[] = [];
+  if (isAmountTooHigh && monthlyIncome > 0) {
+    warnings.push(`amountTooHigh:${maxRecommendedAmount}`);
+  }
+  if (isRemainingIncomeTooLow) {
+    warnings.push(`remainingIncomeLow:${Math.round(minRemainingIncome)}`);
+  }
+  if (debtRatio > maxDebtRatio && monthlyIncome > 0) {
+    warnings.push(`debtRatioHigh:${Math.round(debtRatio * 100)}:${Math.round(maxDebtRatio * 100)}`);
+  }
+
+  // Generate recommendations (as IDs)
+  const recommendations: string[] = [];
+  if (isAmountTooHigh && maxRecommendedAmount > 0) {
+    recommendations.push(`reduceAmount:${maxRecommendedAmount}`);
+  }
+  if (debtRatio > 0.4 && formData.duration < 24) {
+    recommendations.push("longerDuration");
+  }
+  const creditFactor = scoreFactors.find(f => f.id === "creditHistory");
+  if (creditFactor && creditFactor.score < 50) {
+    recommendations.push("improveCreditHistory");
+  }
+  if (remainingIncomePerPerson < 400 && remainingIncomePerPerson > 0) {
+    recommendations.push("reduceExpenses");
+  }
+
   return {
     monthlyPayment,
     totalCost,
@@ -261,6 +359,11 @@ export function calculateLoanResult(
     riskCategory: category,
     approvalProbability: config.approvalProbability[category],
     estimatedResponseTime,
+    rawScore: Math.round(score * 10) / 10,
+    scoreFactors,
+    financialAnalysis,
+    warnings: warnings.slice(0, 3),
+    recommendations: recommendations.slice(0, 3),
   };
 }
 

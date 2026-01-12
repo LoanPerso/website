@@ -13,6 +13,7 @@ import { FRANCE_CONFIG } from "./configs/france";
 import { BELGIUM_CONFIG } from "./configs/belgium";
 import { SWITZERLAND_CONFIG } from "./configs/switzerland";
 import { SPAIN_CONFIG } from "./configs/spain";
+import { ESTONIA_CONFIG } from "./configs/estonia";
 import { DEFAULT_CONFIG } from "./configs/default";
 import { CountryCode, ConfiguredCountryCode, CountryConfig, CountryRegistry } from "./types";
 import { CreditType } from "../types";
@@ -24,13 +25,14 @@ export const COUNTRIES: CountryRegistry = {
   BE: BELGIUM_CONFIG,
   CH: SWITZERLAND_CONFIG,
   ES: SPAIN_CONFIG,
+  EE: ESTONIA_CONFIG,
 };
 
 // List of configured country codes
-export const CONFIGURED_COUNTRY_CODES: ConfiguredCountryCode[] = ["FR", "BE", "CH", "ES"];
+export const CONFIGURED_COUNTRY_CODES: ConfiguredCountryCode[] = ["FR", "BE", "CH", "ES", "EE"];
 
-// Default country for fallback
-export const DEFAULT_COUNTRY: ConfiguredCountryCode = "FR";
+// Default country - Estonia only
+export const DEFAULT_COUNTRY: ConfiguredCountryCode = "EE";
 
 /**
  * Check if a country has specific configuration

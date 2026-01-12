@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import {
   CreditType,
   CountryCode,
@@ -11,6 +11,12 @@ import {
 } from "../types";
 import { getCountryConfig, getProductLimits, DEFAULT_COUNTRY } from "../countries";
 import { getProductConfig, calculateLoanResult, getProductQuestions } from "../products";
+import {
+  saveSimulationToCache,
+  getSimulationFromCache,
+  clearSimulationCache,
+  SimulationCache,
+} from "../utils/scoring";
 
 const getInitialFormData = (): BaseFormData => ({
   country: null,
@@ -110,7 +116,7 @@ export function useSimulatorState() {
       }
     }
 
-    setFormData(baseData as SimulatorFormData);
+    setFormData(baseData as unknown as SimulatorFormData);
   }, [formData.country]);
 
   // Navigate steps with transition - faster
@@ -150,17 +156,34 @@ export function useSimulatorState() {
     goToStep("country");
   }, [goToStep]);
 
-  // Calculate result using product config
+  // Calculate result using product config and cache it
   const calculateResult = useCallback((): SimulationResult | null => {
     if (!formData.creditType || !formData.country) return null;
 
-    return calculateLoanResult(
+    const result = calculateLoanResult(
       formData.creditType,
       formData,
       formData.country,
       customRate
     );
+
+    // Save to cache for later submission
+    if (result) {
+      saveSimulationToCache(formData, result);
+    }
+
+    return result;
   }, [formData, customRate]);
+
+  // Get cached simulation (for restoration)
+  const getCachedSimulation = useCallback((): SimulationCache | null => {
+    return getSimulationFromCache();
+  }, []);
+
+  // Clear cache
+  const clearCache = useCallback(() => {
+    clearSimulationCache();
+  }, []);
 
   // Handle custom rate change
   const handleCustomRateChange = useCallback((rate: number | null) => {
@@ -183,5 +206,7 @@ export function useSimulatorState() {
     reset,
     calculateResult,
     setCustomRate: handleCustomRateChange,
+    getCachedSimulation,
+    clearCache,
   };
 }
