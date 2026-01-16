@@ -8,248 +8,279 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function WhyUsHero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const eyebrowRef = useRef<HTMLSpanElement>(null);
+  const titleLine1Ref = useRef<HTMLSpanElement>(null);
+  const titleLine2Ref = useRef<HTMLSpanElement>(null);
+  const taglineRef = useRef<HTMLParagraphElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
-  const particlesRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const blackOverlayRef = useRef<HTMLDivElement>(null);
+  const transitionTextRef = useRef<HTMLDivElement>(null);
+  const problemTitleRef = useRef<HTMLDivElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
 
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  // Generate particles for background effect
-  const particles = Array.from({ length: 30 }, (_, i) => ({
-    id: i,
-    size: Math.random() * 4 + 2,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    delay: Math.random() * 2,
-  }));
-
-  // Initial animations on mount
+  // Preload video and ensure first frame is visible
   useEffect(() => {
-    if (hasAnimated) return;
-    setHasAnimated(true);
+    const video = videoRef.current;
+    if (!video) return;
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.3 });
+    const handleCanPlay = async () => {
+      video.currentTime = 0;
+      // Play then immediately pause to force first frame render
+      try {
+        await video.play();
+        video.pause();
+        video.currentTime = 0;
+      } catch {
+        // Autoplay blocked, but that's fine - we just need the frame
+      }
+      setVideoReady(true);
+    };
 
-      // Set initial states
-      gsap.set(overlayRef.current, { opacity: 1 });
-      gsap.set(titleRef.current, { opacity: 0, y: 100, filter: "blur(20px)" });
-      gsap.set(subtitleRef.current, { opacity: 0, y: 50, filter: "blur(10px)" });
-      gsap.set(scrollIndicatorRef.current, { opacity: 0, y: 20 });
+    // Force load
+    video.load();
 
-      // Overlay fade
-      tl.to(overlayRef.current, {
-        opacity: 0.6,
-        duration: 2,
-        ease: "power2.out",
-      });
-
-      // Title reveal with blur
-      tl.to(
-        titleRef.current,
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 1.5,
-          ease: "power3.out",
-        },
-        "-=1.5"
-      );
-
-      // Subtitle reveal
-      tl.to(
-        subtitleRef.current,
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 1.2,
-          ease: "power3.out",
-        },
-        "-=1"
-      );
-
-      // Scroll indicator
-      tl.to(
-        scrollIndicatorRef.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "-=0.5"
-      );
-    });
-
-    // GSAP for particles floating
-    if (particlesRef.current) {
-      const particleElements = particlesRef.current.querySelectorAll(".particle");
-      particleElements.forEach((particle) => {
-        gsap.to(particle, {
-          y: `random(-30, 30)`,
-          x: `random(-20, 20)`,
-          opacity: 0.8,
-          scale: 1.2,
-          duration: `random(3, 6)`,
-          delay: `random(0, 2)`,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      });
+    if (video.readyState >= 3) {
+      handleCanPlay();
+    } else {
+      video.addEventListener("canplay", handleCanPlay, { once: true });
     }
 
-    return () => ctx.revert();
-  }, [hasAnimated]);
+    return () => {
+      video.removeEventListener("canplay", handleCanPlay);
+    };
+  }, []);
 
-  // Scroll-based parallax
   useEffect(() => {
+    const video = videoRef.current;
+    const section = sectionRef.current;
+    const container = containerRef.current;
+    if (!video || !section || !container || !videoReady) return;
+
     const ctx = gsap.context(() => {
-      // Parallax on title
-      gsap.to(titleRef.current, {
-        y: -100,
+      // Set initial states
+      gsap.set([eyebrowRef.current, titleLine1Ref.current, titleLine2Ref.current, taglineRef.current, subtitleRef.current], {
         opacity: 0,
-        ease: "none",
+        y: 40,
+      });
+      gsap.set(overlayRef.current, { opacity: 0 });
+      gsap.set(blackOverlayRef.current, { opacity: 0 });
+      gsap.set(transitionTextRef.current, { opacity: 0, y: 30, scale: 1 });
+      gsap.set(problemTitleRef.current, { opacity: 0, y: 50 });
+
+      // Pin container for entire section
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: "bottom bottom",
+        pin: container,
+        pinSpacing: false,
+      });
+
+      // Video playback: 0% to 60% of scroll
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: "60% top",
+        scrub: 0.5,
+        onUpdate: (self) => {
+          if (video.duration) {
+            video.currentTime = self.progress * video.duration;
+          }
+        },
+      });
+
+      // Text appears: 0% to 40%
+      const textTimeline = gsap.timeline({
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: section,
           start: "top top",
-          end: "bottom top",
+          end: "40% top",
+          scrub: 0.3,
+        },
+      });
+
+      textTimeline.to(overlayRef.current, { opacity: 1, duration: 0.2 }, 0);
+      textTimeline.to(eyebrowRef.current, { opacity: 1, y: 0, duration: 0.15 }, 0.1);
+      textTimeline.to(titleLine1Ref.current, { opacity: 1, y: 0, duration: 0.2 }, 0.2);
+      textTimeline.to(titleLine2Ref.current, { opacity: 1, y: 0, duration: 0.2 }, 0.35);
+      textTimeline.to(taglineRef.current, { opacity: 1, y: 0, duration: 0.15 }, 0.5);
+      textTimeline.to(subtitleRef.current, { opacity: 1, y: 0, duration: 0.15 }, 0.65);
+
+      // Black overlay fades in OVER everything: 50% to 65%
+      gsap.to(blackOverlayRef.current, {
+        opacity: 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: section,
+          start: "50% top",
+          end: "65% top",
+          scrub: 0.5,
+        },
+      });
+
+      // Single timeline for all transition animations
+      // Starts at 65% when black overlay is fully opaque
+      const transitionTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "65% top",
+          end: "100% top",
           scrub: 1,
         },
       });
 
-      // Parallax on subtitle
-      gsap.to(subtitleRef.current, {
-        y: -50,
-        opacity: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "80% top",
-          scrub: 1,
-        },
+      // "Mais d'abord" appears
+      transitionTl.to(transitionTextRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.12,
       });
 
-      // Video zoom effect on scroll
-      gsap.to(videoRef.current, {
-        scale: 1.2,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
+      // Stay visible briefly
+      transitionTl.to(transitionTextRef.current, {
+        opacity: 1,
+        duration: 0.06,
+      });
+
+      // "Mais d'abord" disappears quickly (shrinks and goes up)
+      transitionTl.to(transitionTextRef.current, {
+        opacity: 0,
+        y: -150,
+        scale: 0.8,
+        duration: 0.12,
+        ease: "power2.in",
+      });
+
+      // Problem title appears
+      transitionTl.to(problemTitleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.15,
+      });
+
+      // Stay visible for a long time (stable at center)
+      transitionTl.to(problemTitleRef.current, {
+        opacity: 1,
+        duration: 0.55,
       });
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [videoReady]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center"
+      className="relative w-full"
+      style={{ height: "500vh" }}
     >
-      {/* Video Background with placeholder */}
-      <div className="absolute inset-0 z-0">
+      <div ref={containerRef} className="h-[100dvh] w-full overflow-hidden">
+        {/* Video background */}
         <video
           ref={videoRef}
-          autoPlay
-          loop
           muted
           playsInline
-          className="w-full h-full object-cover scale-100"
-          poster="/videos/why-us/hero-poster.jpg"
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ backgroundColor: "#0B0B0C" }}
         >
-          {/* Placeholder: Replace with actual video */}
-          <source src="/videos/why-us/hero-loop.mp4" type="video/mp4" />
-          <source src="/videos/why-us/hero-loop.webm" type="video/webm" />
+          <source src="/videos/hero-coin.mp4" type="video/mp4" />
         </video>
 
-        {/* Fallback gradient if video doesn't load */}
-        <div className="absolute inset-0 bg-gradient-to-br from-deep-black via-deep-black/95 to-anthracite" />
-      </div>
+        {/* Gradient overlay for text readability */}
+        <div
+          ref={overlayRef}
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "linear-gradient(to right, rgba(11,11,12,0.7) 0%, rgba(11,11,12,0.3) 50%, transparent 100%)",
+          }}
+        />
 
-      {/* Dark overlay for text readability */}
-      <div
-        ref={overlayRef}
-        className="absolute inset-0 z-[1] bg-deep-black/60"
-      />
+        {/* Black overlay - fades in OVER everything */}
+        <div
+          ref={blackOverlayRef}
+          className="absolute inset-0 z-30 pointer-events-none bg-[#0B0B0C]"
+        />
 
-      {/* Animated particles */}
-      <div ref={particlesRef} className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="particle absolute rounded-full bg-champagne/30"
-            style={{
-              width: particle.size,
-              height: particle.size,
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-            }}
-          />
-        ))}
-      </div>
+        {/* Hero text content */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="px-8 sm:px-12 lg:px-20 xl:px-28 max-w-xl lg:max-w-2xl">
+            <span
+              ref={eyebrowRef}
+              className="inline-flex items-center gap-3 text-xs sm:text-sm uppercase tracking-[0.25em] font-medium mb-6 text-[#C8A96A]"
+            >
+              <span className="w-8 h-[1px] bg-[#C8A96A]" />
+              Financement Premium
+            </span>
 
-      {/* Gradient vignette */}
-      <div className="absolute inset-0 z-[3] pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(11,11,12,0.4)_100%)]" />
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[0.95] tracking-tight mb-6">
+              <span ref={titleLine1Ref} className="block">
+                L'or se réinvente.
+              </span>
+              <span ref={titleLine2Ref} className="block mt-2">
+                <span className="text-[#C8A96A] italic">Votre crédit</span> aussi.
+              </span>
+            </h1>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 md:px-12 max-w-5xl mx-auto">
-        <h1
-          ref={titleRef}
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-white leading-[0.95] tracking-[-0.02em] mb-8"
+            <p
+              ref={taglineRef}
+              className="font-serif text-lg sm:text-xl md:text-2xl text-white/70 mb-6"
+            >
+              La noblesse du métal. La vitesse du digital.
+            </p>
+
+            <p
+              ref={subtitleRef}
+              className="text-sm sm:text-base text-white/60 max-w-md leading-relaxed"
+            >
+              De 500€ à 75 000€, obtenez une réponse de principe en 24h — sans engagement, 100% en ligne.
+            </p>
+          </div>
+        </div>
+
+        {/* Transition text - appears on black (above overlay) */}
+        <div
+          ref={transitionTextRef}
+          className="absolute inset-0 z-40 flex items-center justify-center"
         >
-          Le crédit qui vous{" "}
-          <span className="text-champagne italic">respecte</span>
-        </h1>
+          <div className="text-center px-8">
+            <p className="text-[#C8A96A] text-sm uppercase tracking-[0.3em] mb-4">
+              Mais d'abord
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-light">
+              Parlons de <span className="italic text-[#C8A96A]">ce qui ne va pas</span>
+            </h2>
+          </div>
+        </div>
 
-        <p
-          ref={subtitleRef}
-          className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light"
+        {/* Problem section title - appears after transition text disappears */}
+        <div
+          ref={problemTitleRef}
+          className="absolute inset-0 z-40 flex items-center justify-center"
         >
-          Découvrez pourquoi des milliers de personnes nous font confiance pour
-          leurs projets financiers
-        </p>
-      </div>
+          <div className="text-center px-8">
+            <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#C8A96A]/30 bg-[#C8A96A]/5 mb-6">
+              <span className="text-xs font-medium uppercase tracking-widest text-[#C8A96A]">
+                Le constat
+              </span>
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1]">
+              Le système bancaire
+              <br />
+              <span className="italic text-[#C8A96A]">vous a oublié</span>
+            </h2>
+          </div>
+        </div>
 
-      {/* Scroll indicator */}
-      <div
-        ref={scrollIndicatorRef}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
-      >
-        <span className="text-white/50 text-xs uppercase tracking-[0.3em]">
-          Découvrir
-        </span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-champagne/50 to-transparent relative overflow-hidden">
-          <div className="absolute inset-0 bg-champagne animate-scroll-line" />
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 z-10">
+          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-white/40 to-transparent" />
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-[5]" />
-
-      <style jsx>{`
-        @keyframes scroll-line {
-          0% {
-            transform: translateY(-100%);
-          }
-          100% {
-            transform: translateY(100%);
-          }
-        }
-        .animate-scroll-line {
-          animation: scroll-line 1.5s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 }

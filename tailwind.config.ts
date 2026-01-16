@@ -34,6 +34,8 @@ const config: Config = {
         border: "hsl(var(--border))",
         "deep-black": "hsl(var(--deep-black))",
         "dark-gold": "hsl(var(--dark-gold))",
+        champagne: "hsl(var(--accent))",
+        anthracite: "hsl(var(--primary))",
         success: "hsl(var(--success))",
         alert: "hsl(var(--alert))",
         error: "hsl(var(--error))",

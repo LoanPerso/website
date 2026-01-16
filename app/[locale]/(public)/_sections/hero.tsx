@@ -461,8 +461,6 @@ export function Hero({ brandOverlayRef }: HeroProps) {
         style={{ transform: "translateY(100%)" }}
       />
 
-
-
       {/* Mouse follower circle - hidden on mobile */}
       <div
         ref={cursorCircleRef}
