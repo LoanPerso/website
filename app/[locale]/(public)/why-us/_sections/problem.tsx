@@ -124,21 +124,20 @@ export function WhyUsProblem() {
         },
       });
 
-      // Title animation
-      gsap.fromTo(
-        titleRef.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 85%",
-          },
-        }
-      );
+      // Title animation - starts hidden below and fades in moving up
+      gsap.set(titleRef.current, { opacity: 0, y: 60 });
+
+      // Animate title when section is 60% visible
+      gsap.to(titleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 40%", // Trigger when top of section reaches 40% from top of viewport
+        },
+      });
 
       // Cards stagger animation
       const cards = cardsRef.current?.querySelectorAll(".pain-card");
@@ -199,17 +198,17 @@ export function WhyUsProblem() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-12">
-        {/* Title - hidden because it's shown in the hero transition */}
-        <div ref={titleRef} className="sr-only">
-          <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-red-500/20 bg-red-500/5 mb-6">
-            <span className="text-xs font-medium uppercase tracking-widest text-red-400">
+        {/* Title */}
+        <div ref={titleRef} className="text-center mb-16 md:mb-24 opacity-0">
+          <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#C8A96A]/30 bg-[#C8A96A]/5 mb-6">
+            <span className="text-xs font-medium uppercase tracking-widest text-[#C8A96A]">
               Le constat
             </span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1]">
             Le système bancaire
             <br />
-            <span className="text-zinc-500">vous a oublié</span>
+            <span className="italic text-[#C8A96A]">vous a oublié</span>
           </h2>
         </div>
 

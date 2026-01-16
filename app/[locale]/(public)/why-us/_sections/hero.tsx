@@ -18,7 +18,6 @@ export function WhyUsHero() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const blackOverlayRef = useRef<HTMLDivElement>(null);
   const transitionTextRef = useRef<HTMLDivElement>(null);
-  const problemTitleRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
 
   // Preload video and ensure first frame is visible
@@ -68,7 +67,6 @@ export function WhyUsHero() {
       gsap.set(overlayRef.current, { opacity: 0 });
       gsap.set(blackOverlayRef.current, { opacity: 0 });
       gsap.set(transitionTextRef.current, { opacity: 0, y: 30, scale: 1 });
-      gsap.set(problemTitleRef.current, { opacity: 0, y: 50 });
 
       // Pin container for entire section
       ScrollTrigger.create({
@@ -150,22 +148,12 @@ export function WhyUsHero() {
         opacity: 0,
         y: -150,
         scale: 0.8,
-        duration: 0.12,
+        duration: 0.3,
         ease: "power2.in",
       });
 
-      // Problem title appears
-      transitionTl.to(problemTitleRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.15,
-      });
-
-      // Stay visible for a long time (stable at center)
-      transitionTl.to(problemTitleRef.current, {
-        opacity: 1,
-        duration: 0.55,
-      });
+      // Hold black screen before transitioning to Problem section
+      transitionTl.to({}, { duration: 0.4 });
     });
 
     return () => ctx.revert();
@@ -175,7 +163,7 @@ export function WhyUsHero() {
     <section
       ref={sectionRef}
       className="relative w-full"
-      style={{ height: "500vh" }}
+      style={{ height: "350vh" }}
     >
       <div ref={containerRef} className="h-[100dvh] w-full overflow-hidden">
         {/* Video background */}
@@ -256,24 +244,6 @@ export function WhyUsHero() {
           </div>
         </div>
 
-        {/* Problem section title - appears after transition text disappears */}
-        <div
-          ref={problemTitleRef}
-          className="absolute inset-0 z-40 flex items-center justify-center"
-        >
-          <div className="text-center px-8">
-            <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#C8A96A]/30 bg-[#C8A96A]/5 mb-6">
-              <span className="text-xs font-medium uppercase tracking-widest text-[#C8A96A]">
-                Le constat
-              </span>
-            </div>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1]">
-              Le système bancaire
-              <br />
-              <span className="italic text-[#C8A96A]">vous a oublié</span>
-            </h2>
-          </div>
-        </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 z-10">
