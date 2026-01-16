@@ -10,6 +10,7 @@
 5. **Never touch visuals without consulting `/docs/CHARTE_GRAPHIQUE.md`.** Any new component or page must respect the design system.
 6. **Always speak French with the user.** Code, commits, docs, comments remain in clean English.
 7. **NE JAMAIS COMMIT ET PUSH SANS AUTORISATION EXPLICITE, ET TOUJOURS SANS MENTION DE CO-AUTHORED**
+8. **NE JAMAIS BUILD OU LANCER DE SERVEUR DEV SANS AUTORISATION OU AVANT DEPLOIEMENT**
 ---
 
 ## 1. Communication

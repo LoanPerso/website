@@ -11,97 +11,291 @@
   },
 
   "terms": {
-    "title": "Conditions Generales d'Utilisation",
+    "title": "Conditions Générales d'Utilisation",
     "sections": {
-      "intro": {
-        "title": "Introduction",
-        "content": "Les presentes Conditions Generales d'Utilisation (ci-apres \"CGU\") regissent l'utilisation de la plateforme et des services Quickfund. En utilisant nos services, vous acceptez ces CGU dans leur integralite."
+      "preamble": {
+        "title": "Article 1 – Préambule et identification du Prêteur",
+        "intro": "Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») régissent l'accès et l'utilisation de la plateforme Quickfund ainsi que la fourniture de services de crédit. Elles constituent un contrat entre vous et :",
+        "company": "Quickfund OÜ",
+        "legalForm": "Société à responsabilité limitée de droit estonien (Osaühing)",
+        "regNumber": "Numéro d'immatriculation : 31303066",
+        "address": "Siège social : Harju maakond, Tallinn, Kesklinna linnaosa, Tornimäe tn 5, 10145, Estonie",
+        "authority": "Autorité de surveillance : Finantsinspektsioon (Autorité de Surveillance Financière d'Estonie)",
+        "license": "Licence : Établissement de crédit agréé conformément à la loi estonienne sur les établissements de crédit (Krediidiasutuste seadus)",
+        "passport": "Passeport européen : Autorisé à fournir des services de crédit dans l'Espace Économique Européen en vertu de la Directive 2008/48/CE",
+        "email": "Email : contact@quickfund.ee",
+        "phone": "Téléphone : +372 XXX XXXX"
       },
       "definitions": {
-        "title": "Definitions",
-        "platform": "Plateforme",
-        "platformDef": "Le site web et l'application mobile Quickfund",
-        "user": "Utilisateur",
-        "userDef": "Toute personne accedant a la Plateforme",
-        "borrower": "Emprunteur",
-        "borrowerDef": "Un Utilisateur ayant conclu un contrat de credit avec Quickfund",
-        "credit": "Credit",
-        "creditDef": "Tout pret ou financement accorde par Quickfund",
-        "services": "Services",
-        "servicesDef": "L'ensemble des services proposes par Quickfund, incluant le credit, la simulation et le coaching financier"
+        "title": "Article 2 – Définitions",
+        "intro": "Dans les présentes CGU, les termes suivants ont la signification indiquée ci-dessous :",
+        "platform": "« Plateforme »",
+        "platformDef": "Le site internet quickfund.ee, quickfund.fr et l'application mobile Quickfund, permettant l'accès aux Services.",
+        "user": "« Utilisateur »",
+        "userDef": "Toute personne physique accédant à la Plateforme, qu'elle soit ou non titulaire d'un compte.",
+        "borrower": "« Emprunteur »",
+        "borrowerDef": "Tout Utilisateur ayant conclu un Contrat de crédit avec le Prêteur.",
+        "lender": "« Prêteur »",
+        "lenderDef": "Quickfund OÜ, société agréée accordant les crédits.",
+        "credit": "« Crédit » ou « Prêt »",
+        "creditDef": "Tout financement accordé par le Prêteur à l'Emprunteur, remboursable selon les modalités du Contrat de crédit.",
+        "contract": "« Contrat de crédit »",
+        "contractDef": "Le contrat individuel conclu entre le Prêteur et l'Emprunteur, définissant les conditions particulières du crédit (montant, durée, TAEG, échéancier).",
+        "fic": "« FIC » (Fiche d'Information Contractuelle)",
+        "ficDef": "Document d'information précontractuelle standardisé (SECCI – Standard European Consumer Credit Information) remis avant toute signature, conformément à l'article L.312-12 et suivants.",
+        "taeg": "« TAEG » (Taux Annuel Effectif Global)",
+        "taegDef": "Coût total du crédit exprimé en pourcentage annuel du montant emprunté. Il inclut les intérêts, frais de dossier et tout autre coût obligatoire lié au crédit.",
+        "debitRate": "« Taux débiteur »",
+        "debitRateDef": "Taux d'intérêt fixe ou variable appliqué au capital emprunté, exprimé en pourcentage annuel.",
+        "totalCost": "« Coût total du crédit »",
+        "totalCostDef": "Somme de tous les frais (intérêts, frais de dossier, assurances obligatoires le cas échéant) que l'Emprunteur doit payer pendant la durée du crédit.",
+        "totalAmount": "« Montant total dû »",
+        "totalAmountDef": "Capital emprunté augmenté du coût total du crédit.",
+        "installment": "« Échéance » ou « Mensualité »",
+        "installmentDef": "Montant périodique (généralement mensuel) que l'Emprunteur doit verser au Prêteur conformément à l'échéancier.",
+        "services": "« Services »",
+        "servicesDef": "L'ensemble des prestations proposées par Quickfund : octroi de crédits, simulation de prêt, espace client, et coaching financier."
       },
-      "acceptance": {
-        "title": "Acceptation des CGU",
-        "content": "En accedant ou en utilisant notre Plateforme, vous reconnaissez avoir lu, compris et accepte d'etre lie par ces CGU. Si vous n'acceptez pas ces CGU, vous ne devez pas utiliser nos services."
-      },
-      "services": {
-        "title": "Services proposes",
-        "intro": "Quickfund propose les services de credit et financiers suivants :",
-        "microCredit": "Micro-credit : 20€ a 500€, reponse sous 24 heures",
-        "consumerCredit": "Credit a la consommation : 500€ a 5 000€, conditions flexibles",
-        "proCredit": "Credit professionnel : 1 000€ a 10 000€, pour freelances et TPE",
-        "studentLoan": "Pret etudiant : financement des etudes sans garantie bancaire traditionnelle",
-        "salaryAdvance": "Avance sur salaire : acces a une partie de votre salaire avant la paie",
-        "leasing": "Leasing : utiliser un equipement sans l'acheter",
-        "coaching": "Coaching financier : gestion de budget et conseils personnalises"
+      "scope": {
+        "title": "Article 3 – Objet et champ d'application",
+        "content": "Les présentes CGU ont pour objet de définir les conditions d'accès et d'utilisation de la Plateforme, ainsi que les droits et obligations des parties dans le cadre des Services de crédit proposés par Quickfund OÜ.",
+        "acceptance": "En accédant à la Plateforme ou en utilisant les Services, vous reconnaissez avoir lu, compris et accepté sans réserve les présentes CGU. Si vous n'acceptez pas ces CGU, vous devez cesser toute utilisation de la Plateforme.",
+        "updates": "Les CGU applicables sont celles en vigueur à la date de votre utilisation de la Plateforme ou de la signature de votre Contrat de crédit."
       },
       "eligibility": {
-        "title": "Eligibilite",
-        "intro": "Pour utiliser nos services de credit, vous devez :",
-        "age": "Etre age d'au moins 18 ans",
-        "residence": "Etre resident en Estonie ou dans l'Union europeenne",
-        "capacity": "Avoir la pleine capacite juridique",
-        "identity": "Fournir une piece d'identite valide"
+        "title": "Article 4 – Conditions d'éligibilité",
+        "intro": "Pour solliciter un crédit auprès de Quickfund, vous devez remplir les conditions suivantes :",
+        "age": "Être âgé d'au moins 18 ans révolus",
+        "residence": "Être résident fiscal en Estonie (extension progressive aux autres pays de l'EEE)",
+        "capacity": "Disposer de la pleine capacité juridique (ne pas être sous tutelle, curatelle ou sauvegarde de justice)",
+        "identity": "Fournir un document d'identité en cours de validité (carte d'identité, passeport ou titre de séjour)",
+        "income": "Justifier de revenus réguliers permettant le remboursement du crédit",
+        "noDefault": "Ne pas être inscrit sur un fichier d'incidents de paiement (Krediidiinfo en Estonie) pour des incidents non régularisés",
+        "account": "Disposer d'un compte bancaire personnel à votre nom dans un établissement de l'EEE",
+        "note": "Quickfund se réserve le droit de refuser une demande de crédit si ces conditions ne sont pas remplies ou si l'évaluation de solvabilité est défavorable."
+      },
+      "services": {
+        "title": "Article 5 – Description des Services",
+        "intro": "Quickfund propose les produits de crédit et services suivants :",
+        "microCredit": {
+          "name": "Micro-crédit",
+          "desc": "Crédit de 50 € à 500 €, durée de 7 à 30 jours, réponse sous 24 heures. TAEG variable selon profil, à partir de 0% pour les nouveaux clients éligibles."
+        },
+        "consumerCredit": {
+          "name": "Crédit à la consommation",
+          "desc": "Crédit de 500 € à 5 000 €, durée de 3 à 36 mois, mensualités fixes. TAEG de 9,9% à 21,9% selon profil et durée."
+        },
+        "proCredit": {
+          "name": "Crédit professionnel",
+          "desc": "Crédit de 1 000 € à 10 000 € destiné aux auto-entrepreneurs, freelances et TPE. Durée de 6 à 48 mois."
+        },
+        "studentLoan": {
+          "name": "Prêt étudiant",
+          "desc": "Financement des études de 500 € à 3 000 €, sans garantie parentale obligatoire. Conditions préférentielles pour étudiants."
+        },
+        "salaryAdvance": {
+          "name": "Avance sur salaire",
+          "desc": "Accès anticipé à une partie de votre salaire (jusqu'à 50%), remboursement automatique à la date de paie."
+        },
+        "coaching": {
+          "name": "Coaching financier",
+          "desc": "Service gratuit d'accompagnement à la gestion de budget, disponible pour tous les Emprunteurs."
+        },
+        "example": {
+          "title": "Exemple représentatif",
+          "content": "Pour un crédit à la consommation de 1 000 € sur 12 mois au TAEG de 15%, vous remboursez 12 mensualités de 90,26 €. Montant total dû : 1 083,12 €. Coût total du crédit : 83,12 €."
+        }
+      },
+      "precontractual": {
+        "title": "Article 6 – Information précontractuelle",
+        "intro": "Conformément à la Directive 2008/48/CE et au droit estonien, Quickfund vous remet avant toute signature :",
+        "fic": "Une Fiche d'Information Contractuelle (FIC/SECCI) standardisée présentant de manière claire : l'identité du prêteur, le type de crédit, le montant, la durée, le TAEG, le montant des échéances, le coût total, les conditions de remboursement anticipé et de rétractation.",
+        "explanation": "Des explications adéquates vous permettant de comprendre les caractéristiques essentielles du crédit et d'évaluer s'il est adapté à votre situation financière.",
+        "reflection": "Un délai de réflexion raisonnable avant la signature. Aucun engagement ne peut être exigé avant que vous n'ayez disposé de ces informations.",
+        "responsibility": "Il vous appartient de lire attentivement ces documents. La signature du Contrat de crédit vaut reconnaissance d'avoir reçu et compris l'information précontractuelle."
       },
       "application": {
-        "title": "Processus de demande",
-        "content": "Les demandes de credit sont soumises en ligne via notre Plateforme. Vous devez fournir des informations exactes et completes. Quickfund se reserve le droit de demander des documents supplementaires. Chaque demande fait l'objet d'une evaluation de solvabilite. L'approbation n'est pas garantie et depend de notre analyse."
+        "title": "Article 7 – Processus de demande de crédit",
+        "steps": {
+          "simulation": "Simulation : Utilisez notre simulateur pour estimer le montant, la durée et les mensualités de votre crédit.",
+          "form": "Formulaire : Complétez le formulaire de demande en ligne avec vos informations personnelles, professionnelles et financières.",
+          "documents": "Justificatifs : Téléchargez les documents requis (identité, justificatif de domicile, bulletins de salaire ou avis d'imposition, RIB).",
+          "analysis": "Analyse : Quickfund procède à l'évaluation de votre solvabilité (voir Article 8).",
+          "decision": "Décision : Vous recevez une réponse sous 24 à 72 heures selon le type de crédit.",
+          "fic": "FIC : En cas d'accord de principe, vous recevez la Fiche d'Information Contractuelle.",
+          "signature": "Signature : Après le délai de réflexion, vous signez électroniquement le Contrat de crédit.",
+          "disbursement": "Déblocage : Les fonds sont virés sur votre compte dans un délai de 24 à 48 heures après signature."
+        },
+        "accuracy": "Vous vous engagez à fournir des informations exactes, complètes et sincères. Toute fausse déclaration peut entraîner le refus du crédit, la déchéance du terme ou des poursuites judiciaires."
       },
-      "creditTerms": {
-        "title": "Conditions du credit",
-        "content": "Les conditions specifiques de chaque credit sont detaillees dans le contrat de credit individuel, notamment :",
-        "amount": "Montant du capital emprunte",
-        "duration": "Duree de remboursement",
-        "rate": "Taux Annuel Effectif Global (TAEG)",
-        "repayment": "Montant et echeancier des mensualites"
+      "solvency": {
+        "title": "Article 8 – Évaluation de la solvabilité",
+        "obligation": "Conformément à l'article 8 de la Directive 2008/48/CE et à la loi estonienne, Quickfund est tenu d'évaluer votre solvabilité avant tout octroi de crédit.",
+        "method": "Cette évaluation s'effectue sur la base des informations que vous fournissez et de la consultation de bases de données autorisées (Krediidiinfo, registres publics).",
+        "criteria": "Critères pris en compte : revenus réguliers, charges fixes, crédits en cours, historique de paiement, stabilité professionnelle, ratio d'endettement.",
+        "refusal": "Droit de refus : Quickfund peut refuser une demande de crédit si l'évaluation révèle un risque de surendettement. Ce refus constitue une mesure de protection et ne donne lieu à aucune indemnité.",
+        "responsible": "Prêt responsable : Nous nous engageons à ne pas accorder de crédit manifestement inadapté à votre situation financière."
       },
-      "obligations": {
-        "title": "Vos obligations",
-        "intro": "En tant qu'Utilisateur et/ou Emprunteur, vous vous engagez a :",
-        "accurate": "Fournir des informations exactes et veridiques",
-        "update": "Mettre a jour vos informations en cas de changement",
-        "repay": "Effectuer les paiements a temps selon l'echeancier convenu",
-        "notify": "Nous informer de toute difficulte a effectuer les paiements"
+      "financialConditions": {
+        "title": "Article 9 – Conditions financières",
+        "rates": {
+          "title": "9.1 Taux d'intérêt",
+          "content": "Le TAEG applicable à votre crédit dépend du type de produit, du montant, de la durée et de votre profil de risque. Il est communiqué dans la FIC et le Contrat de crédit.",
+          "range": "Fourchette indicative : TAEG de 0% à 21,9% selon les produits."
+        },
+        "fees": {
+          "title": "9.2 Frais",
+          "setup": "Frais de dossier : 0 € à 50 € selon le type de crédit (précisé dans la FIC)",
+          "lateFee": "Intérêts de retard : Taux débiteur majoré de 3 points, dans la limite du taux d'usure estonien",
+          "reminder": "Frais de relance : 5 € par courrier de relance après mise en demeure",
+          "collection": "Frais de recouvrement : Frais réels et justifiés en cas de procédure, plafonnés conformément à la réglementation",
+          "earlyRepayment": "Remboursement anticipé : Aucune indemnité pour les crédits inférieurs à 10 000 €"
+        },
+        "usury": {
+          "title": "9.3 Taux d'usure",
+          "content": "Tous nos crédits respectent le taux d'usure applicable en Estonie, publié par Eesti Pank."
+        }
+      },
+      "borrowerObligations": {
+        "title": "Article 10 – Obligations de l'Emprunteur",
+        "intro": "En souscrivant un crédit, vous vous engagez à :",
+        "accurate": "Fournir des informations exactes et sincères lors de la demande et tout au long du crédit",
+        "update": "Informer Quickfund sans délai de tout changement de situation (adresse, emploi, coordonnées bancaires)",
+        "repay": "Rembourser les échéances aux dates prévues conformément au tableau d'amortissement",
+        "notify": "Signaler immédiatement toute difficulté de paiement prévisible afin de rechercher une solution amiable",
+        "maintain": "Maintenir le compte bancaire de prélèvement suffisamment approvisionné",
+        "noFraud": "Ne pas utiliser le crédit à des fins illicites ou contraires à l'ordre public"
+      },
+      "lenderObligations": {
+        "title": "Article 11 – Obligations du Prêteur",
+        "intro": "Quickfund s'engage à :",
+        "info": "Fournir une information claire, complète et non trompeuse sur ses produits",
+        "precontractual": "Remettre la FIC et les explications adéquates avant signature",
+        "solvency": "Évaluer votre solvabilité de manière responsable",
+        "disburse": "Verser les fonds dans les délais convenus après signature",
+        "statement": "Mettre à disposition un relevé annuel des opérations et le solde restant dû",
+        "support": "Proposer un accompagnement en cas de difficultés financières",
+        "data": "Protéger vos données personnelles conformément au RGPD"
       },
       "withdrawal": {
-        "title": "Droit de retractation",
-        "content": "Pour les credits a la consommation, vous disposez d'un droit de retractation de 14 jours calendaires a compter de la date de signature, sans avoir a fournir de motif. Pour exercer ce droit, vous devez nous notifier par ecrit et rembourser le capital et les interets courus."
+        "title": "Article 12 – Droit de rétractation",
+        "right": "Conformément à l'article 14 de la Directive 2008/48/CE, vous disposez d'un droit de rétractation de 14 jours calendaires à compter de la signature du Contrat de crédit, sans avoir à fournir de motif.",
+        "exercise": "Pour exercer ce droit, vous devez nous notifier votre décision par écrit (email à legal@quickfund.ee ou courrier recommandé) avant l'expiration du délai.",
+        "consequences": "En cas de rétractation, vous devez rembourser le capital versé et les intérêts courus depuis le déblocage des fonds, sans délai et au plus tard dans les 30 jours suivant l'envoi de votre notification.",
+        "calculation": "Les intérêts dus sont calculés sur la base du taux débiteur prévu au contrat, au prorata du nombre de jours entre le déblocage et le remboursement.",
+        "noFee": "Aucun autre frais ne peut vous être réclamé au titre de la rétractation."
       },
       "earlyRepayment": {
-        "title": "Remboursement anticipe",
-        "content": "Vous pouvez rembourser votre credit par anticipation, en totalite ou en partie, a tout moment. Aucune penalite de remboursement anticipe ne sera appliquee. Vous ne devrez que les interets courus jusqu'a la date de remboursement."
+        "title": "Article 13 – Remboursement anticipé",
+        "right": "Vous pouvez, à tout moment, rembourser par anticipation tout ou partie du capital restant dû.",
+        "noFee": "Aucune indemnité de remboursement anticipé n'est appliquée pour les crédits d'un montant inférieur ou égal à 10 000 €.",
+        "higherAmounts": "Pour les crédits supérieurs à 10 000 €, une indemnité peut être demandée, limitée à : 1% du montant remboursé si le délai restant est supérieur à 1 an, 0,5% si le délai est inférieur à 1 an.",
+        "interest": "Vous ne devez que les intérêts courus jusqu'à la date effective du remboursement.",
+        "procedure": "Contactez-nous par email (contact@quickfund.ee) ou via votre espace client pour procéder au remboursement anticipé."
       },
       "latePayment": {
-        "title": "Retard de paiement",
-        "content": "En cas de retard de paiement, des interets de retard peuvent s'appliquer comme specifie dans votre contrat de credit. Nous vous contacterons pour trouver une solution. Un non-paiement persistant peut entrainer des procedures de recouvrement et un signalement aux bureaux de credit."
+        "title": "Article 14 – Retard et défaut de paiement",
+        "reminder": {
+          "title": "14.1 Relances amiables",
+          "content": "En cas de retard de paiement, Quickfund vous contactera (email, SMS, téléphone) pour comprendre votre situation et rechercher une solution amiable."
+        },
+        "interest": {
+          "title": "14.2 Intérêts de retard",
+          "content": "Des intérêts de retard s'appliquent sur les sommes impayées, au taux prévu dans votre Contrat de crédit, dans la limite du taux d'usure."
+        },
+        "formalNotice": {
+          "title": "14.3 Mise en demeure",
+          "content": "Après deux échéances impayées ou un impayé de plus de 60 jours, une mise en demeure vous sera adressée par lettre recommandée ou email avec accusé de réception."
+        },
+        "acceleration": {
+          "title": "14.4 Déchéance du terme",
+          "content": "En cas de défaut persistant (3 échéances impayées consécutives ou équivalent), Quickfund peut prononcer la déchéance du terme, rendant immédiatement exigible la totalité des sommes dues."
+        },
+        "collection": {
+          "title": "14.5 Recouvrement",
+          "content": "En dernier recours, le recouvrement peut être confié à un prestataire spécialisé ou faire l'objet d'une procédure judiciaire. Les frais de recouvrement justifiés seront mis à votre charge dans les limites légales."
+        },
+        "reporting": {
+          "title": "14.6 Signalement",
+          "content": "Les incidents de paiement caractérisés peuvent être signalés aux fichiers de crédit (Krediidiinfo) conformément à la réglementation applicable."
+        }
+      },
+      "consumerProtection": {
+        "title": "Article 15 – Protection du consommateur",
+        "intro": "En tant qu'établissement de crédit agréé, Quickfund respecte les dispositions protectrices suivantes :",
+        "usury": "Respect du taux d'usure : Aucun crédit n'est accordé à un taux supérieur au seuil légal",
+        "abusive": "Interdiction des clauses abusives : Les CGU sont conformes à la Directive 93/13/CEE",
+        "advertising": "Publicité loyale : Toute communication commerciale mentionne le TAEG et un exemple représentatif",
+        "responsible": "Prêt responsable : Refus d'accorder un crédit en cas de risque manifeste de surendettement",
+        "assistance": "Accompagnement : Proposition de solutions en cas de difficultés (report d'échéances, rééchelonnement)"
+      },
+      "complaints": {
+        "title": "Article 16 – Réclamations et médiation",
+        "internal": {
+          "title": "16.1 Réclamation interne",
+          "content": "Toute réclamation doit d'abord être adressée à notre service client : contact@quickfund.ee. Nous nous engageons à accuser réception sous 5 jours ouvrés et à vous apporter une réponse sous 30 jours."
+        },
+        "mediation": {
+          "title": "16.2 Médiation",
+          "content": "En cas de désaccord persistant, vous pouvez saisir gratuitement le médiateur de la consommation compétent. Les coordonnées du médiateur vous seront communiquées sur simple demande et figurent sur notre site."
+        },
+        "authority": {
+          "title": "16.3 Autorité de surveillance",
+          "content": "Vous pouvez également signaler tout manquement à la Finantsinspektsioon (Autorité de Surveillance Financière d'Estonie) : info@fi.ee, Sakala 4, 15030 Tallinn, Estonie."
+        },
+        "odr": {
+          "title": "16.4 Plateforme européenne de règlement des litiges",
+          "content": "Conformément au règlement UE n°524/2013, vous pouvez recourir à la plateforme de règlement en ligne des litiges : https://ec.europa.eu/consumers/odr"
+        }
       },
       "liability": {
-        "title": "Limitation de responsabilite",
-        "content": "Quickfund ne saurait etre tenu responsable des dommages indirects, perte de profits, ou dommages resultant de circonstances echappant a notre controle. Notre responsabilite est limitee dans la mesure maximale permise par la loi."
+        "title": "Article 17 – Responsabilité",
+        "lenderLiability": {
+          "title": "17.1 Responsabilité du Prêteur",
+          "content": "Quickfund est responsable de la bonne exécution des Services. Notre responsabilité est engagée en cas de manquement prouvé à nos obligations. Elle est limitée au préjudice direct, prévisible et certain, à l'exclusion des dommages indirects."
+        },
+        "forceMajeure": {
+          "title": "17.2 Force majeure",
+          "content": "Quickfund ne saurait être tenu responsable en cas de force majeure (catastrophe naturelle, guerre, pandémie, panne généralisée des systèmes informatiques, décision des autorités publiques)."
+        },
+        "borrowerLiability": {
+          "title": "17.3 Responsabilité de l'Emprunteur",
+          "content": "Vous êtes responsable de l'exactitude des informations fournies, de la sécurité de vos identifiants de connexion et du bon usage du crédit."
+        }
       },
       "modifications": {
-        "title": "Modifications des CGU",
-        "content": "Nous nous reservons le droit de modifier ces CGU a tout moment. Les modifications seront communiquees via la Plateforme et/ou par email. L'utilisation continue de nos services apres modification vaut acceptation des nouvelles CGU."
+        "title": "Article 18 – Modification des CGU",
+        "notice": "Quickfund peut modifier les présentes CGU à tout moment. Les modifications seront notifiées par email et/ou par publication sur la Plateforme au moins 30 jours avant leur entrée en vigueur.",
+        "contracts": "Les Contrats de crédit en cours restent régis par les CGU acceptées lors de leur signature, sauf accord exprès de l'Emprunteur.",
+        "acceptance": "L'utilisation de la Plateforme après l'entrée en vigueur des modifications vaut acceptation des nouvelles CGU."
+      },
+      "intellectualProperty": {
+        "title": "Article 19 – Propriété intellectuelle",
+        "content": "L'ensemble des éléments de la Plateforme (textes, graphismes, logos, logiciels, base de données) est protégé par les droits de propriété intellectuelle. Toute reproduction, représentation ou exploitation non autorisée est interdite et constitue une contrefaçon."
+      },
+      "personalData": {
+        "title": "Article 20 – Données personnelles",
+        "content": "Le traitement de vos données personnelles est détaillé dans notre Politique de Confidentialité, accessible sur la Plateforme. En utilisant nos Services, vous reconnaissez avoir pris connaissance de cette politique."
       },
       "governingLaw": {
-        "title": "Loi applicable et juridiction",
-        "content": "Ces CGU sont regies par le droit estonien. Tout litige sera soumis aux tribunaux competents d'Estonie. Pour les consommateurs de l'UE, les lois imperatives de protection des consommateurs de votre pays de residence peuvent egalement s'appliquer."
+        "title": "Article 21 – Droit applicable et juridiction",
+        "law": "Les présentes CGU et les Contrats de crédit sont régis par le droit estonien.",
+        "directive": "Elles s'inscrivent dans le cadre de la Directive 2008/48/CE relative aux contrats de crédit aux consommateurs et des transpositions nationales applicables.",
+        "jurisdiction": "En cas de litige, les tribunaux de Tallinn (Estonie) sont compétents, sous réserve des règles protectrices permettant au consommateur de saisir les tribunaux de son lieu de résidence.",
+        "consumerRights": "Les dispositions impératives de protection des consommateurs de votre pays de résidence demeurent applicables."
+      },
+      "severability": {
+        "title": "Article 22 – Divisibilité",
+        "content": "Si une clause des présentes CGU était déclarée nulle ou inapplicable, les autres clauses demeureraient en vigueur. La clause nulle serait remplacée par une clause valide se rapprochant au mieux de l'intention initiale des parties."
       },
       "contact": {
-        "title": "Contact",
-        "content": "Pour toute question concernant ces CGU :",
-        "address": "Adresse",
-        "regNumber": "Numero d'immatriculation"
+        "title": "Article 23 – Contact",
+        "intro": "Pour toute question concernant les présentes CGU ou nos Services :",
+        "general": "Service client : contact@quickfund.ee",
+        "legal": "Questions juridiques : legal@quickfund.ee",
+        "address": "Adresse postale : Quickfund OÜ, Tornimäe tn 5, 10145 Tallinn, Estonie",
+        "regNumber": "Numéro d'immatriculation : 31303066",
+        "website": "Site web : www.quickfund.ee"
       }
     }
   },
@@ -292,7 +486,7 @@
       },
       "applicableLaw": {
         "title": "Droit applicable",
-        "content": "Ce site web et ces mentions legales sont regis par le droit estonien. Tout litige relatif a l'utilisation de ce site sera soumis a la competence exclusive des tribunaux estoniens."
+        "content": "Ce site web et ces mentions legales sont regis par le droit estonien. En cas de litige, les tribunaux de Tallinn (Estonie) sont competents. Toutefois, conformement au droit de l'Union europeenne, les consommateurs residant dans un Etat membre peuvent saisir les tribunaux de leur lieu de residence."
       }
     }
   },
@@ -302,7 +496,7 @@
     "sections": {
       "intro": {
         "title": "Introduction",
-        "content": "Cette Politique de Cookies explique comment Quickfund OU utilise les cookies et technologies similaires sur notre site web. En utilisant notre site, vous consentez a l'utilisation des cookies comme decrit dans cette politique."
+        "content": "Cette Politique de Cookies explique comment Quickfund OU utilise les cookies et technologies similaires sur notre site web. Lors de votre premiere visite, un bandeau vous permet d'accepter ou de refuser les cookies non essentiels. Seuls les cookies strictement necessaires au fonctionnement du site sont deposes sans votre consentement prealable."
       },
       "what": {
         "title": "Qu'est-ce qu'un cookie ?",

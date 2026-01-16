@@ -155,6 +155,26 @@ export function LegalPageLayout({ children, titleKey, lastUpdated }: LegalPageLa
           color: var(--foreground);
           font-weight: 600;
         }
+        .legal-content ol {
+          margin: 1rem 0;
+          padding-left: 1.5rem;
+          list-style: decimal;
+          counter-reset: item;
+        }
+        .legal-content ol li {
+          margin-bottom: 0.75rem;
+          color: var(--muted-foreground);
+          line-height: 1.6;
+          padding-left: 0.5rem;
+        }
+        .legal-content ol li::marker {
+          color: var(--accent);
+          font-weight: 600;
+        }
+        .legal-content em {
+          color: var(--muted-foreground);
+          font-style: italic;
+        }
         .legal-content table {
           width: 100%;
           border-collapse: collapse;
