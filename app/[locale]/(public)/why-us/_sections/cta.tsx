@@ -109,7 +109,8 @@ export function WhyUsCta() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-deep-black"
+      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-deep-black max-w-[100vw]"
+      style={{ overflowX: 'clip' }}
     >
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">

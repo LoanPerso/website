@@ -30,14 +30,16 @@ export default function WhyUsPage() {
   }, []);
 
   return (
-    <div ref={containerRef} className="bg-background text-foreground w-full overflow-x-hidden">
+    <div ref={containerRef} className="bg-background text-foreground w-full max-w-[100vw] overflow-x-hidden" style={{ overflowX: 'clip' }}>
       <CustomCursor />
 
       {/* Section 1: Hero - Cinematic entrance */}
-      <WhyUsHero />
+      <div className="bg-[#0B0B0C]">
+        <WhyUsHero />
 
-      {/* Section 2: The Problem - Pain points */}
-      <WhyUsProblem />
+        {/* Section 2: The Problem - Pain points */}
+        <WhyUsProblem />
+      </div>
 
       {/* Section 3: The Transition - Light reveal */}
       <WhyUsTransition />

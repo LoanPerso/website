@@ -134,26 +134,23 @@ export function WhyUsHero() {
       transitionTl.to(transitionTextRef.current, {
         opacity: 1,
         y: 0,
-        duration: 0.12,
+        duration: 0.3,
       });
 
-      // Stay visible briefly
+      // Stay visible
       transitionTl.to(transitionTextRef.current, {
         opacity: 1,
-        duration: 0.06,
+        duration: 0.2,
       });
 
-      // "Mais d'abord" disappears quickly (shrinks and goes up)
+      // "Mais d'abord" disappears completely (shrinks and goes up)
       transitionTl.to(transitionTextRef.current, {
         opacity: 0,
-        y: -150,
-        scale: 0.8,
-        duration: 0.3,
-        ease: "power2.in",
+        y: -200,
+        scale: 0.6,
+        duration: 0.5,
+        ease: "power3.in",
       });
-
-      // Hold black screen before transitioning to Problem section
-      transitionTl.to({}, { duration: 0.4 });
     });
 
     return () => ctx.revert();
@@ -163,7 +160,7 @@ export function WhyUsHero() {
     <section
       ref={sectionRef}
       className="relative w-full"
-      style={{ height: "350vh" }}
+      style={{ height: "320vh" }}
     >
       <div ref={containerRef} className="h-[100dvh] w-full overflow-hidden">
         {/* Video background */}

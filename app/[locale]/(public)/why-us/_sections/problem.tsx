@@ -127,7 +127,7 @@ export function WhyUsProblem() {
       // Title animation - starts hidden below and fades in moving up
       gsap.set(titleRef.current, { opacity: 0, y: 60 });
 
-      // Animate title when section is 60% visible
+      // Animate title when section is well into viewport
       gsap.to(titleRef.current, {
         opacity: 1,
         y: 0,
@@ -135,7 +135,8 @@ export function WhyUsProblem() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 40%", // Trigger when top of section reaches 40% from top of viewport
+          start: "top 25%",
+          toggleActions: "play none none none",
         },
       });
 
@@ -176,9 +177,6 @@ export function WhyUsProblem() {
       <div ref={bgRef} className="absolute inset-0 z-0 opacity-0">
         {/* Slightly lighter gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0C] via-zinc-900/50 to-[#0B0B0C]" />
-
-        {/* Subtle red tint at the bottom indicating 'pain' */}
-        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-red-950/30 to-transparent" />
       </div>
 
       {/* Grid Pattern - starts hidden */}

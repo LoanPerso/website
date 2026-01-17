@@ -154,7 +154,8 @@ export function WhyUsValues() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-background overflow-hidden"
+      className="relative min-h-screen bg-background overflow-hidden max-w-[100vw]"
+      style={{ overflowX: 'clip' }}
     >
       {/* Header - Fixed during scroll */}
       <div className="absolute top-0 left-0 right-0 z-20 pt-12 pb-8 px-6 md:px-12 bg-gradient-to-b from-background via-background/90 to-transparent backdrop-blur-[2px]">
