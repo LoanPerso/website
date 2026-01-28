@@ -61,13 +61,21 @@ export function RegulatoryDisclaimer() {
       // localStorage not available
     }
 
-    // Animate out
+    const closeModal = () => {
+      setIsVisible(false);
+      setRegulatoryAccepted();
+      document.body.style.overflow = "";
+    };
+
+    // Animate out with fallback
     if (containerRef.current && modalRef.current) {
+      // Safety timeout in case animation fails
+      const fallbackTimeout = setTimeout(closeModal, 600);
+
       const tl = gsap.timeline({
         onComplete: () => {
-          setIsVisible(false);
-          setRegulatoryAccepted();
-          document.body.style.overflow = "";
+          clearTimeout(fallbackTimeout);
+          closeModal();
         },
       });
 
@@ -84,9 +92,7 @@ export function RegulatoryDisclaimer() {
         "-=0.1"
       );
     } else {
-      setIsVisible(false);
-      setRegulatoryAccepted();
-      document.body.style.overflow = "";
+      closeModal();
     }
   };
 
