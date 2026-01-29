@@ -50,6 +50,7 @@ export function WhyUsPromise() {
   const guaranteeRef = useRef<HTMLDivElement>(null);
   const honestRef = useRef<HTMLDivElement>(null);
   const sealRef = useRef<HTMLDivElement>(null);
+  const strikethroughRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -68,6 +69,25 @@ export function WhyUsPromise() {
           },
         }
       );
+
+      // Strikethrough animation on "ce qu'on ne promet pas"
+      const strikethrough = strikethroughRef.current?.querySelector(".strikethrough-line");
+      if (strikethrough) {
+        gsap.fromTo(
+          strikethrough,
+          { scaleX: 0, transformOrigin: "left center" },
+          {
+            scaleX: 1,
+            duration: 0.8,
+            delay: 0.5,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: "top 70%",
+            },
+          }
+        );
+      }
 
       // Guarantee items
       const guaranteeItems = guaranteeRef.current?.querySelectorAll(".guarantee-item");
@@ -199,7 +219,17 @@ export function WhyUsPromise() {
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-tight">
             Ce qu'on promet,
             <br />
-            <span className="text-muted-foreground/50 italic">ce qu'on ne promet pas</span>
+            <span
+              ref={strikethroughRef}
+              className="relative inline-block text-muted-foreground/50 italic"
+            >
+              ce qu'on ne promet pas
+              {/* Animated strikethrough line */}
+              <span
+                className="strikethrough-line absolute left-0 right-0 top-1/2 h-[3px] md:h-[4px] bg-gradient-to-r from-champagne/80 via-champagne to-champagne/80 rounded-full"
+                style={{ transform: "scaleX(0)" }}
+              />
+            </span>
           </h2>
         </div>
 

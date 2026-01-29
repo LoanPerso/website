@@ -21,80 +21,97 @@ export function WhyUsTransition() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%", // Longer scroll for smoother transition
+          end: "+=250%",
           pin: true,
-          scrub: 1,
+          scrub: 0.5, // More responsive scrub
         },
       });
 
       // Initial state
-      gsap.set(lightBurstRef.current, { scale: 0.1, opacity: 0 });
-      gsap.set(textLine1Ref.current, { opacity: 0, y: 50 });
-      gsap.set(textLine2Ref.current, { opacity: 0, scale: 0.9, y: 30 });
-      gsap.set(logoRef.current, { opacity: 0, scale: 0.5, filter: "blur(20px)" });
+      gsap.set(lightBurstRef.current, { scale: 0.3, opacity: 0 });
+      gsap.set(textLine1Ref.current, { opacity: 0, y: 40 });
+      gsap.set(textLine2Ref.current, { opacity: 0, scale: 0.95, y: 20 });
+      gsap.set(logoRef.current, { opacity: 0, scale: 0.7 });
 
       // Phase 1: Question appears (Dark Mode)
       tl.to(textLine1Ref.current, {
         opacity: 1,
         y: 0,
-        duration: 0.5,
-        ease: "power2.out",
+        duration: 0.6,
+        ease: "power3.out",
       });
-      
-      tl.to({}, { duration: 0.2 }); // Pause
 
-      // Phase 2: Light burst begins
+      tl.to({}, { duration: 0.3 }); // Brief pause
+
+      // Phase 2: Light burst begins - smooth progressive growth
       tl.to(
         lightBurstRef.current,
         {
-          scale: 4,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power1.in",
+          scale: 2,
+          opacity: 0.6,
+          duration: 0.5,
+          ease: "sine.inOut",
         },
         "+=0.1"
       );
 
-      // Phase 3: Text 1 fades as light expands
+      // Phase 3: Light grows more, text starts fading
+      tl.to(
+        lightBurstRef.current,
+        {
+          scale: 6,
+          opacity: 0.9,
+          duration: 0.6,
+          ease: "sine.inOut",
+        }
+      );
+
       tl.to(
         textLine1Ref.current,
         {
           opacity: 0,
-          scale: 1.1,
-          filter: "blur(10px)",
-          duration: 0.4,
+          scale: 1.05,
+          duration: 0.5,
+          ease: "power2.in",
         },
         "<"
       );
 
-      // Phase 4: Light consumes everything (Whiteout)
+      // Phase 4: Light expands to fill screen - smooth continuous growth
       tl.to(lightBurstRef.current, {
-        scale: 30,
+        scale: 15,
         opacity: 1,
-        duration: 0.8,
-        ease: "power2.inOut",
+        duration: 0.7,
+        ease: "power1.inOut",
       });
 
-      // Phase 5: Background switch to Ivory
+      // Phase 5: Background transition to Ivory - smoother
       tl.to(
         containerRef.current,
         {
-          backgroundColor: "#f7f5f0", // Matches ivory/background
-          duration: 0.1,
+          backgroundColor: "#f7f5f0",
+          duration: 0.4,
+          ease: "power2.inOut",
         },
-        "-=0.4"
+        "-=0.5"
       );
 
-      // Phase 6: Logo reveal
+      // Phase 6: Final light expansion
+      tl.to(lightBurstRef.current, {
+        scale: 25,
+        duration: 0.5,
+        ease: "power1.out",
+      });
+
+      // Phase 7: Logo reveal - simpler, no blur animation
       tl.to(logoRef.current, {
         opacity: 1,
         scale: 1,
-        filter: "blur(0px)",
         duration: 0.6,
-        ease: "back.out(1.5)",
-      });
+        ease: "power2.out",
+      }, "-=0.3");
 
-      // Phase 7: Brand reveal
+      // Phase 8: Brand reveal
       tl.to(
         textLine2Ref.current,
         {
@@ -104,17 +121,18 @@ export function WhyUsTransition() {
           duration: 0.5,
           ease: "power2.out",
         },
-        "-=0.3"
+        "-=0.4"
       );
 
-      // Clean up light burst (fade out so it doesn't block clicks)
+      // Clean up light burst
       tl.to(
         lightBurstRef.current,
         {
           opacity: 0,
-          duration: 0.5,
+          duration: 0.6,
+          ease: "power2.out",
         },
-        "-=0.2"
+        "-=0.3"
       );
     });
 
@@ -134,10 +152,11 @@ export function WhyUsTransition() {
       {/* Light Burst Effect (CSS Gradient) */}
       <div
         ref={lightBurstRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] w-[20vw] h-[20vw] rounded-full pointer-events-none mix-blend-screen"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] w-[25vw] h-[25vw] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(255,248,220,1) 0%, rgba(255,215,0,0.4) 40%, rgba(255,165,0,0.1) 70%, transparent 100%)",
-          filter: "blur(40px)",
+          background: "radial-gradient(circle, rgba(255,250,230,1) 0%, rgba(255,235,180,0.8) 25%, rgba(255,215,0,0.4) 50%, rgba(255,200,100,0.15) 75%, transparent 100%)",
+          filter: "blur(20px)",
+          willChange: "transform, opacity",
         }}
       />
 

@@ -167,9 +167,19 @@ export function WhyUsStats() {
         />
       </div>
 
-      {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-[1]" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-[1]" />
+      {/* Top decorative separator */}
+      <div className="absolute top-0 left-0 right-0 z-[1] flex items-center justify-center -translate-y-1/2">
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent" />
+        <div className="mx-4 w-2 h-2 rotate-45 border border-champagne/40 bg-background" />
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent" />
+      </div>
+
+      {/* Bottom decorative separator */}
+      <div className="absolute bottom-0 left-0 right-0 z-[1] flex items-center justify-center translate-y-1/2">
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent" />
+        <div className="mx-4 w-2 h-2 rotate-45 border border-champagne/40 bg-background" />
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-12">
