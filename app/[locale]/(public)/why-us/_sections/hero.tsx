@@ -3,10 +3,12 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function WhyUsHero() {
+  const t = useTranslations("why-us.hero");
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -198,15 +200,15 @@ export function WhyUsHero() {
               className="inline-flex items-center gap-3 text-xs sm:text-sm uppercase tracking-[0.25em] font-medium mb-6 text-[#C8A96A]"
             >
               <span className="w-8 h-[1px] bg-[#C8A96A]" />
-              Financement Premium
+              {t("eyebrow")}
             </span>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[0.95] tracking-tight mb-6">
               <span ref={titleLine1Ref} className="block">
-                L'or se réinvente.
+                {t("titleLine1")}
               </span>
               <span ref={titleLine2Ref} className="block mt-2">
-                <span className="text-[#C8A96A] italic">Votre crédit</span> aussi.
+                <span className="text-[#C8A96A] italic">{t("titleLine2Prefix")}</span> {t("titleLine2Suffix")}
               </span>
             </h1>
 
@@ -214,14 +216,14 @@ export function WhyUsHero() {
               ref={taglineRef}
               className="font-serif text-lg sm:text-xl md:text-2xl text-white/70 mb-6"
             >
-              La noblesse du métal. La vitesse du digital.
+              {t("tagline")}
             </p>
 
             <p
               ref={subtitleRef}
               className="text-sm sm:text-base text-white/60 max-w-md leading-relaxed"
             >
-              De 500€ à 75 000€, obtenez une réponse de principe en 24h — sans engagement, 100% en ligne.
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -233,10 +235,10 @@ export function WhyUsHero() {
         >
           <div className="text-center px-8">
             <p className="text-[#C8A96A] text-sm uppercase tracking-[0.3em] mb-4">
-              Mais d'abord
+              {t("transition.eyebrow")}
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-light">
-              Parlons de <span className="italic text-[#C8A96A]">ce qui ne va pas</span>
+              {t("transition.title")} <span className="italic text-[#C8A96A]">{t("transition.titleAccent")}</span>
             </h2>
           </div>
         </div>
@@ -244,7 +246,7 @@ export function WhyUsHero() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 z-10">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <span className="text-xs uppercase tracking-widest">{t("scroll")}</span>
           <div className="w-[1px] h-8 bg-gradient-to-b from-white/40 to-transparent" />
         </div>
       </div>

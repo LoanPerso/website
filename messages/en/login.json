@@ -1,0 +1,23 @@
+{
+  "title": "Login",
+  "subtitle": "Access your personal space",
+  "email": {
+    "label": "Email",
+    "placeholder": "your@email.com"
+  },
+  "password": {
+    "label": "Password",
+    "placeholder": "Your password"
+  },
+  "submit": "Sign in",
+  "forgotPassword": "Forgot password?",
+  "noAccount": "Don't have an account?",
+  "createAccount": "Create account",
+  "or": "or",
+  "securityNote": "Secure connection 256-bit SSL",
+  "errors": {
+    "invalidEmail": "Invalid email address",
+    "invalidPassword": "Password must be at least 8 characters",
+    "invalidCredentials": "Invalid email or password"
+  }
+}

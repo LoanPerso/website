@@ -1,0 +1,212 @@
+{
+  "hero": {
+    "eyebrow": "Premium rahastamine",
+    "titleLine1": "Kuld uueneb.",
+    "titleLine2Prefix": "Teie laen",
+    "titleLine2Suffix": "samuti.",
+    "tagline": "Metalli üllus. Digitaalne kiirus.",
+    "subtitle": "500€ kuni 75 000€, saage põhimõtteline vastus 24h jooksul — kohustuseta, 100% veebis.",
+    "scroll": "Keri",
+    "transition": {
+      "eyebrow": "Aga esmalt",
+      "title": "Räägime sellest,",
+      "titleAccent": "mis on katki"
+    }
+  },
+  "problem": {
+    "eyebrow": "Tähelepanek",
+    "title": "Pangandussüsteem",
+    "titleAccent": "unustas teid ära",
+    "bottomQuote": "\"See on protseduur.\"",
+    "painPoints": {
+      "rejected": {
+        "title": "Keeldutud ilma selgituseta",
+        "description": "Pangad ütlevad ei, kuid mitte kunagi miks. Jääte pimedasse, teadmata kuidas oma taotlust parandada."
+      },
+      "waiting": {
+        "title": "3 nädalat ootamist",
+        "description": "Kohtumised, paberimajandus, edasi-tagasi. Samal ajal kui teie projekt ootab, lendab võimalus minema."
+      },
+      "number": {
+        "title": "Koheldud numbrina",
+        "description": "Tuge pole, inimlikkust pole. Lihtsalt toimik tuhandete seas, mida töötleb külm algoritm."
+      },
+      "atypical": {
+        "title": "Ebatüüpiline profiil = suletud uks",
+        "description": "Vabakutseline, tudeng, noor spetsialist? Pangandussüsteem pole teie jaoks loodud. Tere tulemast finantstõrjutusse."
+      }
+    }
+  },
+  "transition": {
+    "question": "Mis siis, kui keegi teeks",
+    "questionLine2": "asju",
+    "questionAccent": "teisiti",
+    "brandName": "Quickfund",
+    "tagline": "Laen uuesti leiutatud"
+  },
+  "values": {
+    "eyebrow": "Meie väärtused",
+    "title": "4 sammast, 0 kompromissi",
+    "transparency": {
+      "title": "Läbipaistvus",
+      "subtitle": "Räägime kõike, ka ebamugavat",
+      "description": "Kui keeldume, selgitame miks. Kui heaks kiidame, kirjeldame tingimusi. Varjatud tasusid pole, üllatusi pole. Teate täpselt, kus seisate.",
+      "example": "Süstemaatiline otsuste selgitamine"
+    },
+    "speed": {
+      "title": "Kiirus",
+      "subtitle": "24h tähendab 24h, või vähem",
+      "description": "Lubadusi peetakse. Vastus maksimaalselt 24-48h jooksul. Raha kantakse üle peaaegu kohe pärast heakskiitu. Teie aeg on väärtuslik, me austame seda.",
+      "example": "Kohene ülekanne pärast kinnitust"
+    },
+    "respect": {
+      "title": "Austus",
+      "subtitle": "Klientide, enda ja kohustuste vastu",
+      "description": "Toetame ka neid, kellele keeldume. Te pole toimiku number. Iga taotlus väärib tähelepanu ja kaalumist.",
+      "example": "Personaalne tugi"
+    },
+    "pragmatism": {
+      "title": "Pragmaatilisus",
+      "subtitle": "Äri ennekõike, ilma naiivluseta",
+      "description": "Oleme siin, et aidata, kuid jääme realistlikuks. Selged tingimused, peetud lubadused. Võit-võit partnerlus.",
+      "example": "Realistlikud ja jätkusuutlikud tingimused"
+    }
+  },
+  "stats": {
+    "eyebrow": "Tõestus",
+    "title": "Numbrid,",
+    "titleAccent": "mitte lubadused",
+    "items": {
+      "response": {
+        "label": "Vastusaeg",
+        "description": "Maksimaalne garanteeritud teie taotluse töötlemiseks"
+      },
+      "minimum": {
+        "label": "Minimaalne summa",
+        "description": "Alates 20€, toetame teid"
+      },
+      "transparency": {
+        "label": "Läbipaistvus",
+        "description": "Kõik otsused on selgitatud"
+      },
+      "hidden": {
+        "label": "Varjatud tasud",
+        "description": "Mis on öeldud, seda maksate"
+      }
+    },
+    "badges": {
+      "estonian": "Eesti luba",
+      "secure": "Turvalised andmed",
+      "euRegulated": "EL reguleeritud"
+    }
+  },
+  "story": {
+    "eyebrow": "Meie lugu",
+    "title": "Sündinud tähelepanekust,",
+    "titleAccent": "mitte võitlusest",
+    "paragraphs": {
+      "p1": "Quickfund ei sündinud isiklikust dramaatilisest loost. Panga keeldumist polnud, meeleheitlikku olukorda polnud. Lihtsalt",
+      "p1Highlight": "selge tähelepanek",
+      "p2Start": "Laenuandjad teevad asju poolikult. Ebainimlik äri, kliente koheldakse numbritena, lubadusi rikutakse.",
+      "p2Highlight": "Saime teha paremini.",
+      "p3Start": "Eestist, digitaalse pioneerina, ehitame laenu nii, nagu see peaks olema:",
+      "p3Highlight": "kasumlik JA austav"
+    },
+    "quote": {
+      "text": "\"Oleme heategevad, kui oleme kasumlikud. Seni ehitame.\"",
+      "author": "— Asutaja"
+    },
+    "badge": "Tallinn, Eesti",
+    "vision": {
+      "eyebrow": "Meie trajektoor",
+      "title": "Meie visioon",
+      "intro": "Selge tegevuskava, mõõdetud ambitsioonid, range täitmine.",
+      "steps": {
+        "today": {
+          "year": "Täna",
+          "title": "Alused",
+          "description": "Struktureeri, optimeeri, tõesta mudel Eestis."
+        },
+        "fiveYears": {
+          "year": "5 aastat",
+          "title": "Euroopa laienemine",
+          "description": "40%+ väljaspool Eestit, väljakujunenud orgaaniline kasv."
+        },
+        "tenYears": {
+          "year": "10 aastat",
+          "title": "Etalon",
+          "description": "Liider läbipaistvas laenamisel süsteemist väljajäetutele."
+        }
+      },
+      "endMarker": "ja edasi"
+    }
+  },
+  "promise": {
+    "eyebrow": "Meie kohustus",
+    "titlePromise": "Mida lubame,",
+    "titleNoPromise": "mida ei luba",
+    "weGuarantee": {
+      "title": "Garanteerime",
+      "items": {
+        "response": {
+          "title": "Vastus 24-48h",
+          "description": "Nädalaid ootamist pole. Lubame ja täidame."
+        },
+        "explanation": {
+          "title": "Süstemaatiline selgitus",
+          "description": "Heaks kiidetud või keeldutud, teate alati miks."
+        },
+        "instant": {
+          "title": "Kohene raha",
+          "description": "Heakskiidu korral kantakse raha kohe üle."
+        },
+        "support": {
+          "title": "Reaalne tugi",
+          "description": "Personaalne jälgimine, ka pärast otsust."
+        },
+        "noFees": {
+          "title": "Null varjatud tasu",
+          "description": "Mis on öeldud, seda maksate. Punkt."
+        }
+      }
+    },
+    "weDoNotPromise": {
+      "title": "Ei luba",
+      "items": {
+        "guaranteed": {
+          "title": "Garanteeritud heakskiitu",
+          "description": "Hindame iga juhtumit ausalt. Mõnikord on vastus ei."
+        },
+        "rates": {
+          "title": "Imelisi intresse",
+          "description": "Meie intressid on õiglased, mitte ebareaalsed. Riskil on hind."
+        },
+        "charity": {
+          "title": "Heategevust",
+          "description": "Oleme äri, mitte MTÜ. Aga eetiline äri."
+        }
+      }
+    },
+    "honestyQuote": "\"Usaldus ehitatakse aususele, mitte ilusatele lubadustele.\"",
+    "seal": {
+      "engagement": "Kohustus",
+      "initials": "QF",
+      "certified": "Sertifitseeritud 2024"
+    }
+  },
+  "cta": {
+    "eyebrow": "Valmis alustama?",
+    "title": "Proovige laenu",
+    "titleAccent": "teisiti",
+    "subtitle": "Tasuta simulatsioon, kohustuseta.",
+    "subtitleHighlight": "Kohene põhimõtteline otsus.",
+    "subtitleEnd": "Avastage, miks tuhanded kliendid meid usaldavad.",
+    "primaryButton": "Simuleeri oma laenu",
+    "secondaryButton": "Vaata meie tooteid",
+    "badges": {
+      "secure": "100% turvaline",
+      "response": "24h vastus",
+      "noCommitment": "Kohustuseta"
+    }
+  }
+}

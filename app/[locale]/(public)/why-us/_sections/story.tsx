@@ -3,26 +3,9 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const visionSteps = [
-  {
-    year: "Aujourd'hui",
-    title: "Les fondations",
-    description: "Structurer, optimiser, prouver le modèle en Estonie.",
-  },
-  {
-    year: "5 ans",
-    title: "Expansion européenne",
-    description: "40%+ hors Estonie, croissance organique établie.",
-  },
-  {
-    year: "10 ans",
-    title: "La référence",
-    description: "Leader du crédit transparent pour les exclus du système.",
-  },
-];
 
 export function WhyUsStory() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -32,6 +15,25 @@ export function WhyUsStory() {
   const timelineRef = useRef<HTMLDivElement>(null);
   const visionHeaderRef = useRef<HTMLDivElement>(null);
   const timelineProgressRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("why-us.story");
+
+  const visionSteps = [
+    {
+      year: t("vision.steps.today.year"),
+      title: t("vision.steps.today.title"),
+      description: t("vision.steps.today.description"),
+    },
+    {
+      year: t("vision.steps.fiveYears.year"),
+      title: t("vision.steps.fiveYears.title"),
+      description: t("vision.steps.fiveYears.description"),
+    },
+    {
+      year: t("vision.steps.tenYears.year"),
+      title: t("vision.steps.tenYears.title"),
+      description: t("vision.steps.tenYears.description"),
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -257,7 +259,7 @@ export function WhyUsStory() {
               />
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 px-5 py-3 bg-white/90 backdrop-blur-md rounded-full shadow-soft border border-foreground/5">
                 <div className="w-2 h-2 rounded-full bg-success" />
-                <span className="text-sm text-foreground font-medium tracking-wide">Tallinn, Estonie</span>
+                <span className="text-sm text-foreground font-medium tracking-wide">{t("badge")}</span>
               </div>
             </div>
           </div>
@@ -265,29 +267,26 @@ export function WhyUsStory() {
           {/* Right: Content */}
           <div ref={contentRef} className="order-1 lg:order-2">
             <span className="reveal-text inline-block text-xs uppercase tracking-[0.3em] text-champagne font-medium mb-6">
-              Notre histoire
+              {t("eyebrow")}
             </span>
 
             <h2 className="reveal-text font-serif text-4xl sm:text-5xl md:text-6xl font-light text-foreground leading-[1.1] mb-10">
-              Né d'un constat,
+              {t("title")}
               <br />
-              <span className="text-muted-foreground/60">pas d'une galère</span>
+              <span className="text-muted-foreground/60">{t("titleAccent")}</span>
             </h2>
 
             <div className="reveal-text space-y-8 text-lg text-muted-foreground leading-relaxed mb-12">
               <p>
-                Quickfund n'est pas né d'une histoire personnelle dramatique. Pas de refus bancaire,
-                pas de situation désespérée. Juste un <span className="text-foreground font-medium border-b border-champagne/30 pb-0.5">constat lucide</span>.
+                {t("paragraphs.p1")} <span className="text-foreground font-medium border-b border-champagne/30 pb-0.5">{t("paragraphs.p1Highlight")}</span>.
               </p>
               <p>
-                Les acteurs du crédit font les choses à moitié. Business déshumanisé,
-                clients traités comme des numéros, promesses non tenues.
-                <span className="text-foreground font-medium"> On pouvait faire mieux.</span>
+                {t("paragraphs.p2Start")}
+                <span className="text-foreground font-medium"> {t("paragraphs.p2Highlight")}</span>
               </p>
               <p>
-                Depuis l'Estonie, pionnière du numérique,
-                nous construisons le crédit tel qu'il devrait être :
-                <span className="text-champagne font-medium"> rentable ET respectueux</span>.
+                {t("paragraphs.p3Start")}
+                <span className="text-champagne font-medium"> {t("paragraphs.p3Highlight")}</span>.
               </p>
             </div>
 
@@ -297,10 +296,10 @@ export function WhyUsStory() {
               className="reveal-text relative pl-8 border-l-4 border-champagne/50 mb-12"
             >
               <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed">
-                "On sera charitable quand on sera rentable. En attendant, on construit."
+                {t("quote.text")}
               </p>
               <footer className="mt-4 text-sm text-muted-foreground uppercase tracking-widest font-medium">
-                — Le Fondateur
+                {t("quote.author")}
               </footer>
             </blockquote>
           </div>
@@ -311,14 +310,14 @@ export function WhyUsStory() {
           {/* Vision Header */}
           <div ref={visionHeaderRef} className="text-center mb-20 md:mb-28">
             <span className="inline-block text-xs uppercase tracking-[0.3em] text-champagne font-medium mb-5">
-              Notre trajectoire
+              {t("vision.eyebrow")}
             </span>
             <h3 className="font-serif text-4xl sm:text-5xl md:text-6xl text-foreground mb-8">
-              Notre vision
+              {t("vision.title")}
             </h3>
             <div className="vision-subline w-20 h-[2px] bg-gradient-to-r from-transparent via-champagne to-transparent mx-auto origin-center" />
             <p className="vision-intro text-base md:text-lg text-muted-foreground mt-8 max-w-lg mx-auto leading-relaxed px-4">
-              Une feuille de route claire, des ambitions mesurées, une exécution rigoureuse.
+              {t("vision.intro")}
             </p>
           </div>
 
@@ -376,7 +375,7 @@ export function WhyUsStory() {
             <div className="flex items-center gap-3 mt-16 ml-6 md:ml-0 md:justify-center">
               <div className="w-3 h-3 rounded-full bg-champagne/30 border border-champagne" />
               <span className="text-[10px] uppercase tracking-widest text-champagne/60 font-medium">
-                et au-delà
+                {t("vision.endMarker")}
               </span>
             </div>
           </div>

@@ -3,35 +3,15 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
-  {
-    value: 24,
-    suffix: "h",
-    label: "Délai de réponse",
-    description: "Maximum garanti pour traiter votre demande",
-  },
-  {
-    value: 20,
-    prefix: "",
-    suffix: "€",
-    label: "Montant minimum",
-    description: "Dès 20€, nous vous accompagnons",
-  },
-  {
-    value: 100,
-    suffix: "%",
-    label: "Transparence",
-    description: "Toutes les décisions sont expliquées",
-  },
-  {
-    value: 0,
-    suffix: "€",
-    label: "Frais cachés",
-    description: "Ce qui est annoncé est ce que vous payez",
-  },
+const statsData = [
+  { key: "response", value: 24, suffix: "h" },
+  { key: "minimum", value: 20, suffix: "€" },
+  { key: "transparency", value: 100, suffix: "%" },
+  { key: "hidden", value: 0, suffix: "€" },
 ];
 
 function AnimatedCounter({
@@ -81,6 +61,7 @@ export function WhyUsStats() {
   const headerRef = useRef<HTMLDivElement>(null);
   const statsGridRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations("why-us.stats");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -186,12 +167,12 @@ export function WhyUsStats() {
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16 md:mb-24">
           <span className="inline-block text-sm uppercase tracking-[0.3em] text-champagne mb-4">
-            Les preuves
+            {t("eyebrow")}
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight">
-            Des chiffres,
+            {t("title")}
             <br />
-            <span className="text-white/50">pas des promesses</span>
+            <span className="text-white/50">{t("titleAccent")}</span>
           </h2>
         </div>
 
@@ -200,7 +181,7 @@ export function WhyUsStats() {
           ref={statsGridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto"
         >
-          {stats.map((stat, index) => (
+          {statsData.map((stat, index) => (
             <div
               key={index}
               className="stat-card group relative p-8 md:p-10 text-center bg-white/[0.02] border border-white/5 rounded-sm hover:bg-white/[0.04] hover:border-champagne/20 transition-all duration-500"
@@ -246,12 +227,12 @@ export function WhyUsStats() {
 
               {/* Label */}
               <h3 className="text-lg md:text-xl text-champagne font-medium mb-2">
-                {stat.label}
+                {t(`items.${stat.key}.label`)}
               </h3>
 
               {/* Description */}
               <p className="text-sm text-white/50 leading-relaxed">
-                {stat.description}
+                {t(`items.${stat.key}.description`)}
               </p>
 
               {/* Bottom accent line */}
@@ -267,21 +248,21 @@ export function WhyUsStats() {
               <svg className="w-6 h-6 text-champagne" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="text-white">Agrément estonien</span>
+              <span className="text-white">{t("badges.estonian")}</span>
             </div>
             <div className="hidden sm:block w-[1px] h-6 bg-white/20" />
             <div className="flex items-center gap-3">
               <svg className="w-6 h-6 text-champagne" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="text-white">Données sécurisées</span>
+              <span className="text-white">{t("badges.secure")}</span>
             </div>
             <div className="hidden sm:block w-[1px] h-6 bg-white/20" />
             <div className="flex items-center gap-3">
               <svg className="w-6 h-6 text-champagne" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="text-white">Régulé UE</span>
+              <span className="text-white">{t("badges.euRegulated")}</span>
             </div>
           </div>
         </div>

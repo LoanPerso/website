@@ -3,31 +3,9 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const painPoints = [
-  {
-    icon: "stamp",
-    title: "Refusé sans explication",
-    description: "Les banques vous disent non, mais jamais pourquoi. Vous restez dans le flou, sans savoir comment améliorer votre dossier.",
-  },
-  {
-    icon: "clock",
-    title: "3 semaines d'attente",
-    description: "Des rendez-vous, de la paperasse, des allers-retours. Pendant que votre projet attend, l'opportunité s'envole.",
-  },
-  {
-    icon: "user",
-    title: "Traité comme un numéro",
-    description: "Aucun accompagnement, aucune humanité. Juste un dossier parmi des milliers, traité par un algorithme froid.",
-  },
-  {
-    icon: "door",
-    title: "Profil atypique = porte fermée",
-    description: "Freelance, étudiant, jeune actif ? Le système bancaire n'est pas fait pour vous. Bienvenue dans l'exclusion financière.",
-  },
-];
 
 // Icons
 function StampIcon({ className }: { className?: string }) {
@@ -83,6 +61,14 @@ export function WhyUsProblem() {
   const bgRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const grainRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("why-us.problem");
+
+  const painPoints = [
+    { icon: "stamp", key: "rejected" },
+    { icon: "clock", key: "waiting" },
+    { icon: "user", key: "number" },
+    { icon: "door", key: "atypical" },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -200,13 +186,13 @@ export function WhyUsProblem() {
         <div ref={titleRef} className="text-center mb-16 md:mb-24 opacity-0">
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#C8A96A]/30 bg-[#C8A96A]/5 mb-6">
             <span className="text-xs font-medium uppercase tracking-widest text-[#C8A96A]">
-              Le constat
+              {t("eyebrow")}
             </span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1]">
-            Le système bancaire
+            {t("title")}
             <br />
-            <span className="italic text-[#C8A96A]">vous a oublié</span>
+            <span className="italic text-[#C8A96A]">{t("titleAccent")}</span>
           </h2>
         </div>
 
@@ -235,10 +221,10 @@ export function WhyUsProblem() {
                 {/* Content */}
                 <div className="relative z-10">
                   <h3 className="text-2xl md:text-3xl font-serif text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">
-                    {point.title}
+                    {t(`painPoints.${point.key}.title`)}
                   </h3>
                   <p className="text-base md:text-lg text-zinc-500 leading-relaxed max-w-md group-hover:text-zinc-400 transition-colors duration-300">
-                    {point.description}
+                    {t(`painPoints.${point.key}.description`)}
                   </p>
                 </div>
                 
@@ -252,7 +238,7 @@ export function WhyUsProblem() {
         {/* Bottom statement */}
         <div className="mt-24 md:mt-32 text-center">
           <p className="text-xl text-zinc-600 italic font-light">
-            "C'est la procédure."
+            {t("bottomQuote")}
           </p>
           <div className="mt-8 flex justify-center">
             <div className="w-px h-24 bg-gradient-to-b from-zinc-800 to-transparent" />

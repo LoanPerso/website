@@ -3,46 +3,9 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const weGuarantee = [
-  {
-    title: "Réponse en 24-48h",
-    description: "Pas de semaines d'attente. On s'engage, on délivre.",
-  },
-  {
-    title: "Explication systématique",
-    description: "Accepté ou refusé, vous saurez toujours pourquoi.",
-  },
-  {
-    title: "Argent instantané",
-    description: "Dès l'acceptation, les fonds sont versés.",
-  },
-  {
-    title: "Accompagnement réel",
-    description: "Un suivi personnalisé, même après la décision.",
-  },
-  {
-    title: "Zéro frais cachés",
-    description: "Ce qui est annoncé est ce que vous payez. Point.",
-  },
-];
-
-const weDoNotPromise = [
-  {
-    title: "L'acceptation garantie",
-    description: "On évalue chaque dossier honnêtement. Parfois, la réponse est non.",
-  },
-  {
-    title: "Des taux miraculeux",
-    description: "Nos taux sont justes, pas irréalistes. Le risque a un prix.",
-  },
-  {
-    title: "De faire du social",
-    description: "On est un business, pas une ONG. Mais un business éthique.",
-  },
-];
 
 export function WhyUsPromise() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -51,6 +14,21 @@ export function WhyUsPromise() {
   const honestRef = useRef<HTMLDivElement>(null);
   const sealRef = useRef<HTMLDivElement>(null);
   const strikethroughRef = useRef<HTMLSpanElement>(null);
+  const t = useTranslations("why-us.promise");
+
+  const weGuarantee = [
+    { key: "response", title: t("weGuarantee.items.response.title"), description: t("weGuarantee.items.response.description") },
+    { key: "explanation", title: t("weGuarantee.items.explanation.title"), description: t("weGuarantee.items.explanation.description") },
+    { key: "instant", title: t("weGuarantee.items.instant.title"), description: t("weGuarantee.items.instant.description") },
+    { key: "support", title: t("weGuarantee.items.support.title"), description: t("weGuarantee.items.support.description") },
+    { key: "noFees", title: t("weGuarantee.items.noFees.title"), description: t("weGuarantee.items.noFees.description") },
+  ];
+
+  const weDoNotPromise = [
+    { key: "guaranteed", title: t("weDoNotPromise.items.guaranteed.title"), description: t("weDoNotPromise.items.guaranteed.description") },
+    { key: "rates", title: t("weDoNotPromise.items.rates.title"), description: t("weDoNotPromise.items.rates.description") },
+    { key: "charity", title: t("weDoNotPromise.items.charity.title"), description: t("weDoNotPromise.items.charity.description") },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -70,7 +48,7 @@ export function WhyUsPromise() {
         }
       );
 
-      // Strikethrough animation on "ce qu'on ne promet pas"
+      // Strikethrough animation
       const strikethrough = strikethroughRef.current?.querySelector(".strikethrough-line");
       if (strikethrough) {
         gsap.fromTo(
@@ -111,7 +89,6 @@ export function WhyUsPromise() {
             }
           );
 
-          // Checkmark animation
           ScrollTrigger.create({
             trigger: item,
             start: "top 75%",
@@ -120,12 +97,7 @@ export function WhyUsPromise() {
                 gsap.fromTo(
                   checkmark,
                   { strokeDashoffset: 20 },
-                  {
-                    strokeDashoffset: 0,
-                    duration: 0.4,
-                    delay: 0.2,
-                    ease: "power2.out",
-                  }
+                  { strokeDashoffset: 0, duration: 0.4, delay: 0.2, ease: "power2.out" }
                 );
               }
             },
@@ -162,27 +134,12 @@ export function WhyUsPromise() {
           gsap.fromTo(
             sealRef.current,
             { scale: 0.8, opacity: 0, rotation: -10 },
-            {
-              scale: 1,
-              opacity: 1,
-              rotation: 0,
-              duration: 0.8,
-              ease: "elastic.out(1, 0.6)",
-            }
+            { scale: 1, opacity: 1, rotation: 0, duration: 0.8, ease: "elastic.out(1, 0.6)" }
           );
 
-          // Seal stamp effect
           const sealStamp = sealRef.current?.querySelector(".seal-stamp");
           if (sealStamp) {
-             gsap.fromTo(
-               sealStamp,
-               { scale: 1.1 },
-               {
-                 scale: 1,
-                 duration: 0.3,
-                 ease: "back.out(2)",
-               }
-             );
+            gsap.fromTo(sealStamp, { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
           }
         },
         once: true,
@@ -204,27 +161,26 @@ export function WhyUsPromise() {
       </div>
 
       {/* Grid Pattern */}
-       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-            style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '30px 30px' }} 
-       />
-
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '30px 30px' }}
+      />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-12">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-20 md:mb-28">
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-champagne mb-4 font-medium">
-            Notre engagement
+            {t("eyebrow")}
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-tight">
-            Ce qu'on promet,
+            {t("titlePromise")}
             <br />
             <span
               ref={strikethroughRef}
               className="relative inline-block text-muted-foreground/50 italic"
             >
-              ce qu'on ne promet pas
-              {/* Animated strikethrough line */}
+              {t("titleNoPromise")}
               <span
                 className="strikethrough-line absolute left-0 right-0 top-1/2 h-[3px] md:h-[4px] bg-gradient-to-r from-champagne/80 via-champagne to-champagne/80 rounded-full"
                 style={{ transform: "scaleX(0)" }}
@@ -244,31 +200,30 @@ export function WhyUsPromise() {
                 </svg>
               </div>
               <h3 className="text-3xl font-serif text-foreground">
-                On garantit
+                {t("weGuarantee.title")}
               </h3>
             </div>
 
             <div className="space-y-4">
-              {weGuarantee.map((item, index) => (
+              {weGuarantee.map((item) => (
                 <div
-                  key={index}
+                  key={item.key}
                   className="guarantee-item group flex items-start gap-5 p-6 bg-white border border-foreground/5 rounded-lg hover:border-success/30 hover:shadow-lg hover:shadow-success/5 transition-all duration-300"
                 >
-                  {/* Animated checkmark */}
                   <div className="flex-shrink-0 mt-1">
-                      <svg className="w-6 h-6 text-success" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
-                        <path
-                          className="checkmark"
-                          d="M8 12l3 3 5-6"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeDasharray="20"
-                          strokeDashoffset="20"
-                        />
-                      </svg>
+                    <svg className="w-6 h-6 text-success" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
+                      <path
+                        className="checkmark"
+                        d="M8 12l3 3 5-6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeDasharray="20"
+                        strokeDashoffset="20"
+                      />
+                    </svg>
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-foreground mb-1 group-hover:text-success transition-colors">
@@ -281,9 +236,8 @@ export function WhyUsPromise() {
                 </div>
               ))}
             </div>
-            
-             {/* Decorative background element behind column */}
-             <div className="absolute top-10 -left-10 w-full h-full bg-success/5 rounded-3xl -z-10 blur-3xl opacity-50" />
+
+            <div className="absolute top-10 -left-10 w-full h-full bg-success/5 rounded-3xl -z-10 blur-3xl opacity-50" />
           </div>
 
           {/* We don't promise (Right) */}
@@ -295,14 +249,14 @@ export function WhyUsPromise() {
                 </svg>
               </div>
               <h3 className="text-3xl font-serif text-foreground">
-                On ne promet pas
+                {t("weDoNotPromise.title")}
               </h3>
             </div>
 
             <div className="space-y-4">
-              {weDoNotPromise.map((item, index) => (
+              {weDoNotPromise.map((item) => (
                 <div
-                  key={index}
+                  key={item.key}
                   className="honest-item group flex items-start gap-5 p-6 bg-foreground/[0.02] border border-foreground/5 rounded-lg hover:bg-foreground/[0.04] transition-all duration-300"
                 >
                   <div className="flex-shrink-0 mt-1.5">
@@ -322,9 +276,9 @@ export function WhyUsPromise() {
 
             {/* Honesty note */}
             <div className="mt-10 p-8 bg-champagne/5 border border-champagne/20 rounded-lg relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-16 h-16 bg-champagne/10 rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-16 h-16 bg-champagne/10 rounded-bl-full" />
               <p className="text-foreground/80 italic font-serif text-lg relative z-10">
-                "La confiance se construit sur l'honnêteté, pas sur les belles promesses."
+                {t("honestyQuote")}
               </p>
             </div>
           </div>
@@ -332,24 +286,19 @@ export function WhyUsPromise() {
 
         {/* Seal / Signature */}
         <div className="mt-28 flex justify-center">
-          <div
-            ref={sealRef}
-            className="relative"
-          >
+          <div ref={sealRef} className="relative">
             <div className="seal-stamp w-40 h-40 rounded-full border-[3px] border-champagne/40 flex flex-col items-center justify-center bg-background shadow-soft relative z-10 group cursor-default hover:border-champagne/60 transition-colors duration-500">
               <div className="absolute inset-2 border border-champagne/20 rounded-full" />
-              
               <span className="text-[10px] uppercase tracking-[0.3em] text-champagne font-bold mb-2">
-                Engagement
+                {t("seal.engagement")}
               </span>
               <span className="font-serif text-4xl text-foreground font-medium">
-                QF
+                {t("seal.initials")}
               </span>
               <span className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2 font-medium">
-                Certifié 2024
+                {t("seal.certified")}
               </span>
             </div>
-            {/* Glow effect */}
             <div className="absolute inset-0 rounded-full bg-champagne/30 blur-3xl -z-10 scale-125 opacity-40 animate-pulse-slow" />
           </div>
         </div>

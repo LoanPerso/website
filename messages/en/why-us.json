@@ -1,0 +1,212 @@
+{
+  "hero": {
+    "eyebrow": "Premium Financing",
+    "titleLine1": "Gold reinvented.",
+    "titleLine2Prefix": "Your credit",
+    "titleLine2Suffix": "too.",
+    "tagline": "The nobility of metal. The speed of digital.",
+    "subtitle": "From €500 to €75,000, get a decision in principle within 24h — no commitment, 100% online.",
+    "scroll": "Scroll",
+    "transition": {
+      "eyebrow": "But first",
+      "title": "Let's talk about",
+      "titleAccent": "what's broken"
+    }
+  },
+  "problem": {
+    "eyebrow": "The observation",
+    "title": "The banking system",
+    "titleAccent": "forgot about you",
+    "bottomQuote": "\"It's the procedure.\"",
+    "painPoints": {
+      "rejected": {
+        "title": "Rejected without explanation",
+        "description": "Banks say no, but never why. You're left in the dark, not knowing how to improve your application."
+      },
+      "waiting": {
+        "title": "3 weeks of waiting",
+        "description": "Appointments, paperwork, back and forth. While your project waits, the opportunity flies away."
+      },
+      "number": {
+        "title": "Treated like a number",
+        "description": "No support, no humanity. Just a file among thousands, processed by a cold algorithm."
+      },
+      "atypical": {
+        "title": "Atypical profile = closed door",
+        "description": "Freelancer, student, young professional? The banking system isn't made for you. Welcome to financial exclusion."
+      }
+    }
+  },
+  "transition": {
+    "question": "What if someone did",
+    "questionLine2": "things",
+    "questionAccent": "differently",
+    "brandName": "Quickfund",
+    "tagline": "Credit reinvented"
+  },
+  "values": {
+    "eyebrow": "Our values",
+    "title": "4 pillars, 0 compromises",
+    "transparency": {
+      "title": "Transparency",
+      "subtitle": "We tell you everything, even the uncomfortable parts",
+      "description": "If we decline, we explain why. If we approve, we detail the terms. No hidden fees, no surprises. You know exactly where you stand.",
+      "example": "Systematic explanation of decisions"
+    },
+    "speed": {
+      "title": "Speed",
+      "subtitle": "24h means 24h, or less",
+      "description": "Promises are kept. Response within 24-48h maximum. Funds transferred almost instantly after approval. Your time is valuable, we respect it.",
+      "example": "Immediate transfer after validation"
+    },
+    "respect": {
+      "title": "Respect",
+      "subtitle": "For clients, for ourselves, for our commitments",
+      "description": "We support even those we decline. You're not a file number. Every application deserves attention and consideration.",
+      "example": "Personalized support"
+    },
+    "pragmatism": {
+      "title": "Pragmatism",
+      "subtitle": "Business first, no naivety",
+      "description": "We're here to help, but we stay realistic. Clear terms, kept commitments. A win-win partnership.",
+      "example": "Realistic and sustainable terms"
+    }
+  },
+  "stats": {
+    "eyebrow": "The proof",
+    "title": "Numbers,",
+    "titleAccent": "not promises",
+    "items": {
+      "response": {
+        "label": "Response time",
+        "description": "Maximum guaranteed to process your request"
+      },
+      "minimum": {
+        "label": "Minimum amount",
+        "description": "From €20, we support you"
+      },
+      "transparency": {
+        "label": "Transparency",
+        "description": "All decisions are explained"
+      },
+      "hidden": {
+        "label": "Hidden fees",
+        "description": "What's announced is what you pay"
+      }
+    },
+    "badges": {
+      "estonian": "Estonian approval",
+      "secure": "Secure data",
+      "euRegulated": "EU regulated"
+    }
+  },
+  "story": {
+    "eyebrow": "Our story",
+    "title": "Born from observation,",
+    "titleAccent": "not from struggle",
+    "paragraphs": {
+      "p1": "Quickfund wasn't born from a personal dramatic story. No bank rejection, no desperate situation. Just a",
+      "p1Highlight": "clear-eyed observation",
+      "p2Start": "Credit players do things half-heartedly. Dehumanized business, clients treated as numbers, broken promises.",
+      "p2Highlight": "We could do better.",
+      "p3Start": "From Estonia, a digital pioneer, we're building credit as it should be:",
+      "p3Highlight": "profitable AND respectful"
+    },
+    "quote": {
+      "text": "\"We'll be charitable when we're profitable. Until then, we build.\"",
+      "author": "— The Founder"
+    },
+    "badge": "Tallinn, Estonia",
+    "vision": {
+      "eyebrow": "Our trajectory",
+      "title": "Our vision",
+      "intro": "A clear roadmap, measured ambitions, rigorous execution.",
+      "steps": {
+        "today": {
+          "year": "Today",
+          "title": "The foundations",
+          "description": "Structure, optimize, prove the model in Estonia."
+        },
+        "fiveYears": {
+          "year": "5 years",
+          "title": "European expansion",
+          "description": "40%+ outside Estonia, established organic growth."
+        },
+        "tenYears": {
+          "year": "10 years",
+          "title": "The reference",
+          "description": "Leader in transparent credit for the system's excluded."
+        }
+      },
+      "endMarker": "and beyond"
+    }
+  },
+  "promise": {
+    "eyebrow": "Our commitment",
+    "titlePromise": "What we promise,",
+    "titleNoPromise": "what we don't promise",
+    "weGuarantee": {
+      "title": "We guarantee",
+      "items": {
+        "response": {
+          "title": "Response in 24-48h",
+          "description": "No weeks of waiting. We commit, we deliver."
+        },
+        "explanation": {
+          "title": "Systematic explanation",
+          "description": "Approved or declined, you'll always know why."
+        },
+        "instant": {
+          "title": "Instant money",
+          "description": "Upon approval, funds are transferred."
+        },
+        "support": {
+          "title": "Real support",
+          "description": "Personalized follow-up, even after the decision."
+        },
+        "noFees": {
+          "title": "Zero hidden fees",
+          "description": "What's announced is what you pay. Period."
+        }
+      }
+    },
+    "weDoNotPromise": {
+      "title": "We don't promise",
+      "items": {
+        "guaranteed": {
+          "title": "Guaranteed approval",
+          "description": "We evaluate each case honestly. Sometimes, the answer is no."
+        },
+        "rates": {
+          "title": "Miraculous rates",
+          "description": "Our rates are fair, not unrealistic. Risk has a price."
+        },
+        "charity": {
+          "title": "To do charity",
+          "description": "We're a business, not an NGO. But an ethical business."
+        }
+      }
+    },
+    "honestyQuote": "\"Trust is built on honesty, not on beautiful promises.\"",
+    "seal": {
+      "engagement": "Commitment",
+      "initials": "QF",
+      "certified": "Certified 2024"
+    }
+  },
+  "cta": {
+    "eyebrow": "Ready to start?",
+    "title": "Try credit",
+    "titleAccent": "differently",
+    "subtitle": "Free simulation, no commitment.",
+    "subtitleHighlight": "Immediate decision in principle.",
+    "subtitleEnd": "Discover why thousands of clients trust us.",
+    "primaryButton": "Simulate my credit",
+    "secondaryButton": "View our products",
+    "badges": {
+      "secure": "100% secure",
+      "response": "24h response",
+      "noCommitment": "No commitment"
+    }
+  }
+}

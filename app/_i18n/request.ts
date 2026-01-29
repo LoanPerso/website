@@ -32,6 +32,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
       common: (await import(`../../messages/${locale}/common.json`)).default,
       home: (await import(`../../messages/${locale}/home.json`)).default,
       products: (await import(`../../messages/${locale}/products.json`)).default,
+      "why-us": await loadOptionalMessages("why-us"),
+      login: await loadOptionalMessages("login"),
       tools: await loadOptionalMessages("tools"),
       legal: await loadOptionalMessages("legal"),
       // Product pages

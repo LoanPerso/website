@@ -1,0 +1,23 @@
+{
+  "title": "Connexion",
+  "subtitle": "Accédez à votre espace personnel",
+  "email": {
+    "label": "Email",
+    "placeholder": "votre@email.com"
+  },
+  "password": {
+    "label": "Mot de passe",
+    "placeholder": "Votre mot de passe"
+  },
+  "submit": "Se connecter",
+  "forgotPassword": "Mot de passe oublié ?",
+  "noAccount": "Pas encore de compte ?",
+  "createAccount": "Créer un compte",
+  "or": "ou",
+  "securityNote": "Connexion sécurisée 256-bit SSL",
+  "errors": {
+    "invalidEmail": "Adresse email invalide",
+    "invalidPassword": "Le mot de passe doit contenir au moins 8 caractères",
+    "invalidCredentials": "Email ou mot de passe incorrect"
+  }
+}

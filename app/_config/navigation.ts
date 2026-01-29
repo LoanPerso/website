@@ -4,8 +4,7 @@
 export const marketingNav = [
   { href: "/", labelKey: "nav.home" },
   { href: "/products", labelKey: "nav.products" },
-  { href: "/features", labelKey: "nav.features" },
-  { href: "/pricing", labelKey: "nav.pricing" },
+  { href: "/why-us", labelKey: "nav.whyUs" },
 ];
 
 export const productLinks = [

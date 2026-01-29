@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Magnetic from "@/_components/ui/magnetic-button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,6 +25,7 @@ export function WhyUsCta() {
 
   const router = useRouter();
   const locale = useLocale();
+  const t = useTranslations("why-us.cta");
 
   const [particles, setParticles] = useState<Particle[]>([]);
 
@@ -157,26 +158,26 @@ export function WhyUsCta() {
         <div className="flex items-center justify-center gap-6 mb-10 opacity-80">
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-champagne/50 to-transparent" />
           <span className="text-xs uppercase tracking-[0.4em] text-champagne font-medium">
-            Prêt à commencer ?
+            {t("eyebrow")}
           </span>
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-champagne/50 to-transparent" />
         </div>
 
         {/* Title */}
         <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8 tracking-tight">
-          Essayez le crédit
+          {t("title")}
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-champagne via-yellow-200 to-champagne italic">
-            autrement
+            {t("titleAccent")}
           </span>
         </h2>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed mb-16 font-light">
-          Simulation gratuite, sans engagement.
-          <strong className="text-white font-medium"> Réponse de principe immédiate.</strong>
+          {t("subtitle")}
+          <strong className="text-white font-medium"> {t("subtitleHighlight")}</strong>
           <br />
-          Découvrez pourquoi des milliers de clients nous font confiance.
+          {t("subtitleEnd")}
         </p>
 
         {/* CTA Buttons */}
@@ -187,7 +188,7 @@ export function WhyUsCta() {
               className="group relative px-12 py-6 bg-champagne text-deep-black font-semibold text-lg rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(200,160,80,0.5)]"
             >
               <span className="relative z-10 flex items-center gap-3">
-                Simuler mon crédit
+                {t("primaryButton")}
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -207,7 +208,7 @@ export function WhyUsCta() {
               className="group relative px-12 py-6 bg-transparent border border-white/20 text-white font-medium text-lg rounded-sm overflow-hidden transition-all duration-300 hover:border-white/50 hover:bg-white/5"
             >
               <span className="relative z-10 flex items-center gap-3">
-                Voir nos produits
+                {t("secondaryButton")}
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -227,21 +228,21 @@ export function WhyUsCta() {
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="text-sm tracking-wide uppercase">100% sécurisé</span>
+            <span className="text-sm tracking-wide uppercase">{t("badges.secure")}</span>
           </div>
           <div className="w-1 h-1 rounded-full bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-3 text-white/40 hover:text-white/60 transition-colors cursor-default">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="text-sm tracking-wide uppercase">Réponse 24h</span>
+            <span className="text-sm tracking-wide uppercase">{t("badges.response")}</span>
           </div>
           <div className="w-1 h-1 rounded-full bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-3 text-white/40 hover:text-white/60 transition-colors cursor-default">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="text-sm tracking-wide uppercase">Sans engagement</span>
+            <span className="text-sm tracking-wide uppercase">{t("badges.noCommitment")}</span>
           </div>
         </div>
       </div>

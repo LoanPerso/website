@@ -1,0 +1,23 @@
+{
+  "title": "Iniciar sesión",
+  "subtitle": "Accede a tu espacio personal",
+  "email": {
+    "label": "Email",
+    "placeholder": "tu@email.com"
+  },
+  "password": {
+    "label": "Contraseña",
+    "placeholder": "Tu contraseña"
+  },
+  "submit": "Iniciar sesión",
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "noAccount": "¿No tienes cuenta?",
+  "createAccount": "Crear cuenta",
+  "or": "o",
+  "securityNote": "Conexión segura 256-bit SSL",
+  "errors": {
+    "invalidEmail": "Dirección de email inválida",
+    "invalidPassword": "La contraseña debe tener al menos 8 caracteres",
+    "invalidCredentials": "Email o contraseña incorrectos"
+  }
+}

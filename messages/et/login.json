@@ -1,0 +1,23 @@
+{
+  "title": "Sisselogimine",
+  "subtitle": "Ligipääs teie isiklikule alale",
+  "email": {
+    "label": "E-post",
+    "placeholder": "teie@email.com"
+  },
+  "password": {
+    "label": "Parool",
+    "placeholder": "Teie parool"
+  },
+  "submit": "Logi sisse",
+  "forgotPassword": "Unustasid parooli?",
+  "noAccount": "Pole veel kontot?",
+  "createAccount": "Loo konto",
+  "or": "või",
+  "securityNote": "Turvaline ühendus 256-bit SSL",
+  "errors": {
+    "invalidEmail": "Vigane e-posti aadress",
+    "invalidPassword": "Parool peab olema vähemalt 8 tähemärki",
+    "invalidCredentials": "Vale e-post või parool"
+  }
+}

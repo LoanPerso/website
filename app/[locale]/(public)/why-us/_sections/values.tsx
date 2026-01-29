@@ -3,43 +3,16 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const values = [
-  {
-    id: "transparency",
-    title: "Transparence",
-    subtitle: "On dit tout, même ce qui dérange",
-    description: "Si on refuse, on explique pourquoi. Si on accepte, on détaille les conditions. Pas de frais cachés, pas de surprises. Vous savez exactement où vous en êtes.",
-    example: "Explication systématique des décisions",
-    color: "59, 130, 246",
-  },
-  {
-    id: "speed",
-    title: "Rapidité",
-    subtitle: "24h = 24h, ou moins",
-    description: "Les promesses sont tenues. Réponse en 24-48h maximum. Argent versé quasi-instantanément après acceptation. Votre temps est précieux, on le respecte.",
-    example: "Versement immédiat après validation",
-    color: "245, 158, 11",
-  },
-  {
-    id: "respect",
-    title: "Respect",
-    subtitle: "Du client, de nous-mêmes, de nos engagements",
-    description: "On accompagne même ceux qu'on refuse. Vous n'êtes pas un numéro de dossier. Chaque demande mérite attention et considération.",
-    example: "Accompagnement personnalisé",
-    color: "16, 185, 129",
-  },
-  {
-    id: "pragmatism",
-    title: "Pragmatisme",
-    subtitle: "Business first, pas de naïveté",
-    description: "On est là pour vous aider, mais on reste réalistes. Des conditions claires, des engagements tenus. Un partenariat gagnant-gagnant.",
-    example: "Conditions réalistes et tenables",
-    color: "148, 163, 184",
-  },
-];
+const valueColors = {
+  transparency: "59, 130, 246",
+  speed: "245, 158, 11",
+  respect: "16, 185, 129",
+  pragmatism: "148, 163, 184",
+};
 
 export function WhyUsValues() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -48,6 +21,14 @@ export function WhyUsValues() {
   const valuesContainerRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const lastIndexRef = useRef(0);
+  const t = useTranslations("why-us.values");
+
+  const values = [
+    { id: "transparency", color: valueColors.transparency },
+    { id: "speed", color: valueColors.speed },
+    { id: "respect", color: valueColors.respect },
+    { id: "pragmatism", color: valueColors.pragmatism },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -185,10 +166,10 @@ export function WhyUsValues() {
       <div className="absolute top-0 left-0 right-0 z-20 pt-8 md:pt-12 pb-8 md:pb-10 px-4 md:px-12 bg-background">
         <div ref={headerRef} className="max-w-7xl mx-auto">
           <span className="text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-champagne mb-2 md:mb-4 block font-medium">
-            Nos valeurs
+            {t("eyebrow")}
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground">
-            4 piliers, 0 compromis
+            {t("title")}
           </h2>
         </div>
         {/* Subtle fade at bottom of header */}
@@ -248,13 +229,13 @@ export function WhyUsValues() {
                   </div>
 
                   <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-foreground mb-3 md:mb-4 lg:mb-6">
-                    {value.title}
+                    {t(`${value.id}.title`)}
                   </h3>
                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-champagne italic mb-4 md:mb-6 lg:mb-8 font-serif">
-                    {value.subtitle}
+                    {t(`${value.id}.subtitle`)}
                   </p>
                   <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8 lg:mb-10 max-w-lg mx-auto lg:mx-0">
-                    {value.description}
+                    {t(`${value.id}.description`)}
                   </p>
 
                   {/* Example badge */}
@@ -262,7 +243,7 @@ export function WhyUsValues() {
                     <svg className="w-4 h-4 md:w-5 md:h-5 text-champagne flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <span className="text-xs sm:text-sm font-medium text-foreground/80">{value.example}</span>
+                    <span className="text-xs sm:text-sm font-medium text-foreground/80">{t(`${value.id}.example`)}</span>
                   </div>
                 </div>
               </div>

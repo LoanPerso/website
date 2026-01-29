@@ -129,7 +129,7 @@ export function SiteHeader() {
           <div className="hidden md:flex items-center gap-4">
             <Magnetic>
               <Link
-                href="/dashboard"
+                href="/login"
                 className="px-6 py-3 border border-white/20 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
               >
                 {t("nav.clientArea")}
@@ -186,7 +186,7 @@ export function SiteHeader() {
             <div className="mt-8 pt-8 border-t border-background/10 w-full flex flex-col items-center gap-6">
               <LanguageSwitcher variant="mobile" />
               <Link
-                href="/dashboard"
+                href="/login"
                 onClick={() => setIsMenuOpen(false)}
                 className="px-8 py-4 bg-background text-foreground font-medium text-sm uppercase tracking-widest hover:bg-accent transition-colors"
               >

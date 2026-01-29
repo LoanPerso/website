@@ -3,10 +3,12 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function WhyUsTransition() {
+  const t = useTranslations("why-us.transition");
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const textLine1Ref = useRef<HTMLDivElement>(null);
@@ -169,9 +171,9 @@ export function WhyUsTransition() {
           className="absolute max-w-4xl mx-auto"
         >
           <p className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white/90 font-light italic leading-tight">
-            Et si quelqu'un faisait
+            {t("question")}
             <br />
-            les choses <span className="text-champagne">différemment</span> ?
+            {t("questionLine2")} <span className="text-champagne">{t("questionAccent")}</span> ?
           </p>
         </div>
 
@@ -189,7 +191,7 @@ export function WhyUsTransition() {
                  <path d="M16 16l2 2" />
                </svg>
             </div>
-            
+
             {/* Decorative elements around logo */}
             <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-champagne/30 blur-xl" />
             <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full bg-champagne/20 blur-xl" />
@@ -200,10 +202,10 @@ export function WhyUsTransition() {
             className="text-center"
           >
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-anthracite font-medium tracking-tight">
-              Quickfund
+              {t("brandName")}
             </h2>
             <p className="mt-4 text-lg md:text-xl text-anthracite/60 font-medium tracking-widest uppercase">
-              Le crédit réinventé
+              {t("tagline")}
             </p>
           </div>
         </div>
