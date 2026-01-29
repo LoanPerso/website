@@ -152,7 +152,7 @@ export function WhyUsCta() {
       <div className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.6)_100%)] pointer-events-none" />
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-10 text-center px-6 md:px-12 max-w-5xl mx-auto">
+      <div ref={contentRef} className="relative z-10 text-center px-6 md:px-12 py-20 md:py-28 max-w-5xl mx-auto">
         {/* Eyebrow */}
         <div className="flex items-center justify-center gap-6 mb-10 opacity-80">
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-champagne/50 to-transparent" />
