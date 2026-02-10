@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import { Section } from "@/_components/layout/section";
-import { Counter } from "@/_components/animations/counter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,13 +56,11 @@ export function Stats() {
             className="text-center"
           >
             <div className="font-serif text-6xl md:text-7xl lg:text-8xl text-foreground mb-2">
-              <Counter
-                value={stat.value}
-                prefix={stat.prefix}
-                suffix={stat.suffix}
-                duration={2}
-                delay={i * 0.1}
-              />
+              <span className="tabular-nums">
+                {stat.prefix}
+                {stat.value}
+                {stat.suffix}
+              </span>
             </div>
             <p className="text-sm md:text-base text-muted-foreground uppercase tracking-wider">
               {stat.label}
