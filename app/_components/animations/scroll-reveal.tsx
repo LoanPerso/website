@@ -25,6 +25,9 @@ type RevealAnimation =
 interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
+  // Back-compat sugar used across pages (e.g. direction="up").
+  // Prefer `animation` for more control.
+  direction?: "up" | "down" | "left" | "right";
   animation?: RevealAnimation;
   duration?: number;
   delay?: number;
@@ -40,7 +43,8 @@ interface ScrollRevealProps {
 export function ScrollReveal({
   children,
   className,
-  animation = "fade-up",
+  direction,
+  animation,
   duration = 1,
   delay = 0,
   ease = "power3.out",
@@ -57,8 +61,10 @@ export function ScrollReveal({
     if (!containerRef.current) return;
 
     const element = containerRef.current;
-    const fromVars = getFromVars(animation);
-    const toVars = getToVars(animation, duration, ease);
+    const resolvedAnimation =
+      animation ?? directionToAnimation(direction) ?? ("fade-up" as const);
+    const fromVars = getFromVars(resolvedAnimation);
+    const toVars = getToVars(resolvedAnimation, duration, ease);
 
     // Set initial state
     gsap.set(element, fromVars);
@@ -90,13 +96,30 @@ export function ScrollReveal({
         }
       });
     };
-  }, [animation, duration, delay, ease, start, end, scrub, once, stagger, markers]);
+  }, [animation, direction, duration, delay, ease, start, end, scrub, once, stagger, markers]);
 
   return (
     <div ref={containerRef} className={cn(className)}>
       {children}
     </div>
   );
+}
+
+function directionToAnimation(
+  direction: ScrollRevealProps["direction"],
+): RevealAnimation | undefined {
+  switch (direction) {
+    case "up":
+      return "fade-up";
+    case "down":
+      return "fade-down";
+    case "left":
+      return "fade-left";
+    case "right":
+      return "fade-right";
+    default:
+      return undefined;
+  }
 }
 
 // Staggered children reveal

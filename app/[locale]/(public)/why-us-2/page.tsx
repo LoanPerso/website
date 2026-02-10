@@ -227,7 +227,7 @@ export default function WhyUs2Page() {
                 <div className="text-gold/20 text-9xl font-bold absolute -top-10 left-1/2 -translate-x-1/2 select-none group-hover:text-gold/30 transition-colors duration-700">01</div>
                 <div className="relative">
                   <div className="text-6xl md:text-8xl font-serif font-bold text-white mb-2">
-                    <Counter end={99} suffix=".9%" />
+                    <Counter value={99.9} decimals={1} suffix="%" />
                   </div>
                   <p className="text-zinc-400 uppercase tracking-widest text-sm font-medium">Uptime Garanti</p>
                 </div>
@@ -239,7 +239,7 @@ export default function WhyUs2Page() {
                 <div className="text-gold/20 text-9xl font-bold absolute -top-10 left-1/2 -translate-x-1/2 select-none group-hover:text-gold/30 transition-colors duration-700">02</div>
                 <div className="relative">
                   <div className="text-6xl md:text-8xl font-serif font-bold text-white mb-2">
-                    <Counter end={250} suffix="M+" />
+                    <Counter value={250} suffix="M+" />
                   </div>
                   <p className="text-zinc-400 uppercase tracking-widest text-sm font-medium">Transactions / Sec</p>
                 </div>
@@ -251,7 +251,7 @@ export default function WhyUs2Page() {
                 <div className="text-gold/20 text-9xl font-bold absolute -top-10 left-1/2 -translate-x-1/2 select-none group-hover:text-gold/30 transition-colors duration-700">03</div>
                 <div className="relative">
                   <div className="text-6xl md:text-8xl font-serif font-bold text-white mb-2">
-                    <Counter end={120} suffix="+" />
+                    <Counter value={120} suffix="+" />
                   </div>
                   <p className="text-zinc-400 uppercase tracking-widest text-sm font-medium">Pays Connectés</p>
                 </div>
