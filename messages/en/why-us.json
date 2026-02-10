@@ -78,18 +78,26 @@
     "titleAccent": "not promises",
     "items": {
       "response": {
-        "label": "Response time",
+        "value": "24",
+        "suffix": "h",
+        "label": "Response within 24h",
         "description": "Maximum guaranteed to process your request"
       },
       "minimum": {
-        "label": "Minimum amount",
+        "value": "20",
+        "suffix": "€",
+        "label": "€20 minimum amount",
         "description": "From €20, we support you"
       },
       "transparency": {
-        "label": "Transparency",
+        "value": "100",
+        "suffix": "%",
+        "label": "100% transparency",
         "description": "All decisions are explained"
       },
       "hidden": {
+        "value": "0",
+        "suffix": "€",
         "label": "Hidden fees",
         "description": "What's announced is what you pay"
       }

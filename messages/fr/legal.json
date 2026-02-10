@@ -1,13 +1,20 @@
 {
-  "eyebrow": "Legal",
-  "lastUpdated": "Derniere mise a jour",
+  "eyebrow": "Légal",
+  "lastUpdated": "Dernière mise à jour",
   "questions": "Des questions ?",
 
   "nav": {
     "terms": "CGU",
-    "privacy": "Confidentialite",
-    "legalNotices": "Mentions legales",
-    "cookies": "Cookies"
+    "privacy": "Confidentialité",
+    "legalNotices": "Mentions légales",
+    "cookies": "Cookies",
+    "compliance": "Sécurité et conformité"
+  },
+  "tableOfContents": "Sommaire",
+  "contentUnavailable": {
+    "title": "Langue indisponible pour ce document",
+    "description": "Ce contenu n'est pas encore disponible dans votre langue. La version française est affichée temporairement.",
+    "empty": "Le contenu légal est temporairement indisponible."
   },
 
   "terms": {

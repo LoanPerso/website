@@ -78,18 +78,26 @@
     "titleAccent": "no promesas",
     "items": {
       "response": {
-        "label": "Tiempo de respuesta",
+        "value": "24",
+        "suffix": "h",
+        "label": "Respuesta en 24h",
         "description": "Máximo garantizado para procesar tu solicitud"
       },
       "minimum": {
-        "label": "Importe mínimo",
+        "value": "20",
+        "suffix": "€",
+        "label": "20 € de importe mínimo",
         "description": "Desde 20€, te acompañamos"
       },
       "transparency": {
-        "label": "Transparencia",
+        "value": "100",
+        "suffix": "%",
+        "label": "100 % de transparencia",
         "description": "Todas las decisiones se explican"
       },
       "hidden": {
+        "value": "0",
+        "suffix": "€",
         "label": "Comisiones ocultas",
         "description": "Lo anunciado es lo que pagas"
       }

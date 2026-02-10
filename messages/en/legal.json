@@ -7,7 +7,14 @@
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "legalNotices": "Legal Notices",
-    "cookies": "Cookie Policy"
+    "cookies": "Cookie Policy",
+    "compliance": "Security and Compliance"
+  },
+  "tableOfContents": "Table of contents",
+  "contentUnavailable": {
+    "title": "Language unavailable for this document",
+    "description": "This content is not yet available in your language. The French version is shown temporarily.",
+    "empty": "This legal content is temporarily unavailable."
   },
 
   "terms": {

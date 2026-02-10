@@ -78,18 +78,26 @@
     "titleAccent": "mitte lubadused",
     "items": {
       "response": {
-        "label": "Vastusaeg",
+        "value": "24",
+        "suffix": "h",
+        "label": "Vastus 24h jooksul",
         "description": "Maksimaalne garanteeritud teie taotluse töötlemiseks"
       },
       "minimum": {
-        "label": "Minimaalne summa",
+        "value": "20",
+        "suffix": "€",
+        "label": "20 € minimaalne summa",
         "description": "Alates 20€, toetame teid"
       },
       "transparency": {
-        "label": "Läbipaistvus",
+        "value": "100",
+        "suffix": "%",
+        "label": "100 % läbipaistvus",
         "description": "Kõik otsused on selgitatud"
       },
       "hidden": {
+        "value": "0",
+        "suffix": "€",
         "label": "Varjatud tasud",
         "description": "Mis on öeldud, seda maksate"
       }

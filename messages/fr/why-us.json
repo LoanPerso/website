@@ -78,18 +78,26 @@
     "titleAccent": "pas des promesses",
     "items": {
       "response": {
-        "label": "Délai de réponse",
+        "value": "24",
+        "suffix": "h",
+        "label": "Réponse sous 24h",
         "description": "Maximum garanti pour traiter votre demande"
       },
       "minimum": {
-        "label": "Montant minimum",
+        "value": "20",
+        "suffix": "€",
+        "label": "20 € de montant minimum",
         "description": "Dès 20€, nous vous accompagnons"
       },
       "transparency": {
-        "label": "Transparence",
+        "value": "100",
+        "suffix": "%",
+        "label": "100 % de transparence",
         "description": "Toutes les décisions sont expliquées"
       },
       "hidden": {
+        "value": "0",
+        "suffix": "€",
         "label": "Frais cachés",
         "description": "Ce qui est annoncé est ce que vous payez"
       }

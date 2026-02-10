@@ -55,6 +55,7 @@ export function RegulatoryDisclaimer() {
   }, [isPreloaderDone, needsAcceptance, isVisible]);
 
   const handleAccept = () => {
+    setNeedsAcceptance(false);
     try {
       localStorage.setItem(STORAGE_KEY, "true");
     } catch {

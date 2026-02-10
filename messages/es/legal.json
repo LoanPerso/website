@@ -7,7 +7,14 @@
     "terms": "Condiciones",
     "privacy": "Privacidad",
     "legalNotices": "Aviso legal",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "compliance": "Seguridad y cumplimiento"
+  },
+  "tableOfContents": "Indice",
+  "contentUnavailable": {
+    "title": "Idioma no disponible para este documento",
+    "description": "Este contenido aun no esta disponible en su idioma. Se muestra temporalmente la version francesa.",
+    "empty": "Este contenido legal no esta disponible temporalmente."
   },
 
   "terms": {

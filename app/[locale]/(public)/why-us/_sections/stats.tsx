@@ -1,67 +1,54 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const statsData = [
-  { key: "response", value: 24, suffix: "h" },
-  { key: "minimum", value: 20, suffix: "€" },
-  { key: "transparency", value: 100, suffix: "%" },
-  { key: "hidden", value: 0, suffix: "€" },
+type StatKey = "response" | "minimum" | "transparency" | "hidden";
+
+type StatConfig = {
+  key: StatKey;
+  defaultValue: number;
+  defaultPrefix?: string;
+  defaultSuffix?: string;
+};
+
+const statsConfig: StatConfig[] = [
+  { key: "response", defaultValue: 24, defaultSuffix: "h" },
+  { key: "minimum", defaultValue: 20, defaultSuffix: "€" },
+  { key: "transparency", defaultValue: 100, defaultSuffix: "%" },
+  { key: "hidden", defaultValue: 0, defaultSuffix: "€" },
 ];
-
-function AnimatedCounter({
-  value,
-  prefix = "",
-  suffix = "",
-  duration = 2,
-  delay = 0,
-  isVisible = false,
-}: {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-  duration?: number;
-  delay?: number;
-  isVisible?: boolean;
-}) {
-  const [displayValue, setDisplayValue] = useState(0);
-  const counterRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    const obj = { value: 0 };
-    gsap.to(obj, {
-      value: value,
-      duration: duration,
-      delay: delay,
-      ease: "expo.out",
-      onUpdate: () => {
-        setDisplayValue(Math.round(obj.value));
-      },
-    });
-  }, [isVisible, value, duration, delay]);
-
-  return (
-    <span ref={counterRef} className="tabular-nums">
-      {prefix}
-      {displayValue}
-      {suffix}
-    </span>
-  );
-}
 
 export function WhyUsStats() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const statsGridRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const t = useTranslations("why-us.stats");
+
+  const stats = statsConfig.map((config) => {
+    const valueTranslation = t(`items.${config.key}.value`);
+    const parsedValue = Number(valueTranslation);
+    const value = Number.isFinite(parsedValue) ? parsedValue : config.defaultValue;
+
+    const suffixTranslation = t(`items.${config.key}.suffix`);
+    const suffix = suffixTranslation.includes("items.") ? config.defaultSuffix ?? "" : suffixTranslation;
+
+    const prefixTranslation = t(`items.${config.key}.prefix`);
+    const prefix = prefixTranslation.includes("items.") ? config.defaultPrefix ?? "" : prefixTranslation;
+
+    return {
+      key: config.key,
+      value,
+      prefix,
+      suffix,
+      label: t(`items.${config.key}.label`),
+      description: t(`items.${config.key}.description`),
+    };
+  });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -101,7 +88,6 @@ export function WhyUsStats() {
             scrollTrigger: {
               trigger: statsGridRef.current,
               start: "top 75%",
-              onEnter: () => setIsVisible(true),
             },
           }
         );
@@ -181,7 +167,7 @@ export function WhyUsStats() {
           ref={statsGridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto"
         >
-          {statsData.map((stat, index) => (
+          {stats.map((stat, index) => (
             <div
               key={index}
               className="stat-card group relative p-8 md:p-10 text-center bg-white/[0.02] border border-white/5 rounded-sm hover:bg-white/[0.04] hover:border-champagne/20 transition-all duration-500"
@@ -215,14 +201,11 @@ export function WhyUsStats() {
 
               {/* Number */}
               <div className="font-serif text-6xl md:text-7xl lg:text-8xl text-white mb-4 leading-none">
-                <AnimatedCounter
-                  value={stat.value}
-                  prefix={stat.prefix}
-                  suffix={stat.suffix}
-                  duration={2000}
-                  delay={index * 150}
-                  isVisible={isVisible}
-                />
+                <span className="tabular-nums">
+                  {stat.prefix}
+                  {stat.value}
+                  {stat.suffix}
+                </span>
               </div>
 
               {/* Label */}

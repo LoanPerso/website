@@ -7,7 +7,14 @@
     "terms": "Tingimused",
     "privacy": "Privaatsus",
     "legalNotices": "Oigusteave",
-    "cookies": "Kupsised"
+    "cookies": "Kupsised",
+    "compliance": "Turvalisus ja vastavus"
+  },
+  "tableOfContents": "Sisukord",
+  "contentUnavailable": {
+    "title": "Dokumendi keel pole saadaval",
+    "description": "See sisu ei ole veel teie keeles saadaval. Ajutiselt kuvatakse prantsuskeelne versioon.",
+    "empty": "See oiguslik sisu on ajutiselt kättesaamatu."
   },
 
   "terms": {
