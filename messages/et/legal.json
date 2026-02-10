@@ -1,4 +1,11 @@
 {
+  "meta": {
+    "terms": { "title": "Tingimused | Quickfund", "description": "Quickfundi kasutustingimused." },
+    "privacy": { "title": "Privaatsus | Quickfund", "description": "Privaatsuspoliitika ja andmete tootlemine." },
+    "legalNotices": { "title": "Oigusteave | Quickfund", "description": "Oiguslik ja toimetuslik teave." },
+    "cookies": { "title": "Kupsised | Quickfund", "description": "Kupsiste poliitika ja jalgimistehnoloogiad." },
+    "compliance": { "title": "Turvalisus ja vastavus | Quickfund", "description": "Turvameetmed, vastavus ja head tavad." }
+  },
   "eyebrow": "Oiguslik",
   "lastUpdated": "Viimati uuendatud",
   "questions": "Kusimusi?",

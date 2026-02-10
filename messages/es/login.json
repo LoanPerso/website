@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Iniciar sesion | Quickfund",
+    "description": "Accede a tu espacio personal de Quickfund."
+  },
   "title": "Iniciar sesión",
   "subtitle": "Accede a tu espacio personal",
   "email": {

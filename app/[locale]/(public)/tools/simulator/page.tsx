@@ -1,174 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import SimulatorPageClient from "./page.client";
 
-import { useRef, useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Zap, ShieldCheck, BarChart3, MessageCircle } from "lucide-react";
-import { SimulatorWidget, AdvancedSimulator, SimulatorModeToggle } from "@/_components/tools";
+type Props = {
+  params: { locale: string };
+};
 
-gsap.registerPlugin(ScrollTrigger);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: "tools" });
+  const title = t("meta.simulator.title");
+  const description = t("meta.simulator.description");
+  const url = `/${params.locale}/tools/simulator`;
 
-type SimulatorMode = "simple" | "advanced";
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { title, description },
+  };
+}
 
 export default function SimulatorPage() {
-  const t = useTranslations("tools");
-  const [mode, setMode] = useState<SimulatorMode>("advanced");
-
-  const heroRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const simulatorRef = useRef<HTMLDivElement>(null);
-  const featuresRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.2 });
-
-      gsap.set([titleRef.current, subtitleRef.current], { opacity: 0, y: 30 });
-      gsap.set(simulatorRef.current, { opacity: 0, y: 40 });
-      gsap.set(featuresRef.current?.children || [], { opacity: 0, y: 20 });
-
-      tl.to(titleRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
-      tl.to(subtitleRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.5");
-      tl.to(simulatorRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.4");
-      tl.to(featuresRef.current?.children || [], {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power2.out"
-      }, "-=0.4");
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  // Animate mode switch
-  const handleModeChange = (newMode: SimulatorMode) => {
-    if (simulatorRef.current) {
-      gsap.to(simulatorRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.3,
-        ease: "power2.in",
-        onComplete: () => {
-          setMode(newMode);
-          gsap.to(simulatorRef.current, {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "power3.out"
-          });
-        }
-      });
-    } else {
-      setMode(newMode);
-    }
-  };
-
-  const features = [
-    { icon: Zap, title: t("simulator.features.instant.title"), description: t("simulator.features.instant.description") },
-    { icon: ShieldCheck, title: t("simulator.features.noCommitment.title"), description: t("simulator.features.noCommitment.description") },
-    { icon: BarChart3, title: t("simulator.features.transparent.title"), description: t("simulator.features.transparent.description") },
-    { icon: MessageCircle, title: t("simulator.features.explained.title"), description: t("simulator.features.explained.description") },
-  ];
-
-  return (
-    <main className="bg-background">
-      {/* Hero Section */}
-      <section ref={heroRef} className="pt-32 pb-20 lg:pt-40 lg:pb-32">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-            <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
-              {t("simulator.eyebrow")}
-            </p>
-            <h1 ref={titleRef} className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight mb-6">
-              {t("simulator.title")}
-            </h1>
-            <p ref={subtitleRef} className="text-lg sm:text-xl text-muted-foreground">
-              {t("simulator.subtitle")}
-            </p>
-          </div>
-
-          {/* Mode Toggle */}
-          <SimulatorModeToggle
-            mode={mode}
-            onModeChange={handleModeChange}
-            t={t}
-          />
-
-          {/* Simulator Widget */}
-          <div ref={simulatorRef} className="max-w-6xl mx-auto">
-            {mode === "simple" ? (
-              <SimulatorWidget />
-            ) : (
-              <AdvancedSimulator />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 lg:py-32 bg-secondary/30">
-        <div className="container">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="font-serif text-3xl sm:text-4xl text-center mb-12 lg:mb-16">
-              {t("simulator.whySimulate")}
-            </h2>
-            <div ref={featuresRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, i) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={i}
-                    className="p-6 rounded-2xl bg-background border border-border text-center"
-                  >
-                    <div className="flex justify-center mb-4">
-                      <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
-                        <Icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
-                      </div>
-                    </div>
-                    <h3 className="font-serif text-xl mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif text-3xl sm:text-4xl text-center mb-12">
-              {t("simulator.faq.title")}
-            </h2>
-            <div className="space-y-4">
-              {[1, 2, 3, 4].map((i) => (
-                <details
-                  key={i}
-                  className="group p-6 rounded-2xl bg-secondary/30 border border-border"
-                >
-                  <summary className="flex justify-between items-center cursor-pointer list-none">
-                    <span className="font-serif text-lg pr-4">
-                      {t(`simulator.faq.q${i}.question`)}
-                    </span>
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent transition-transform group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-4 text-muted-foreground">
-                    {t(`simulator.faq.q${i}.answer`)}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+  return <SimulatorPageClient />;
 }
+

@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Sisselogimine | Quickfund",
+    "description": "Ligipääs teie Quickfundi isiklikule alale."
+  },
   "title": "Sisselogimine",
   "subtitle": "Ligipääs teie isiklikule alale",
   "email": {

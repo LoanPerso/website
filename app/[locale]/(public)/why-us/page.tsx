@@ -1,63 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import WhyUsPageClient from "./page.client";
 
-import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CustomCursor from "@/_components/ui/custom-cursor";
-import {
-  WhyUsHero,
-  WhyUsProblem,
-  WhyUsTransition,
-  WhyUsValues,
-  WhyUsStats,
-  WhyUsStory,
-  WhyUsPromise,
-  WhyUsCta,
-} from "./_sections";
+type Props = {
+  params: { locale: string };
+};
 
-gsap.registerPlugin(ScrollTrigger);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: "why-us" });
+  const title = t("meta.title");
+  const description = t("meta.description");
+  const url = `/${params.locale}/why-us`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { title, description },
+  };
+}
 
 export default function WhyUsPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Refresh ScrollTrigger after mount
-    ScrollTrigger.refresh();
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
-  return (
-    <div ref={containerRef} className="bg-background text-foreground w-full max-w-[100vw] overflow-x-hidden" style={{ overflowX: 'clip' }}>
-      <CustomCursor />
-
-      {/* Section 1: Hero - Cinematic entrance */}
-      <div className="bg-[#0B0B0C]">
-        <WhyUsHero />
-
-        {/* Section 2: The Problem - Pain points */}
-        <WhyUsProblem />
-      </div>
-
-      {/* Section 3: The Transition - Light reveal */}
-      <WhyUsTransition />
-
-      {/* Section 4: Values - 4 pillars */}
-      <WhyUsValues />
-
-      {/* Section 5: Stats - Proof points */}
-      <WhyUsStats />
-
-      {/* Section 6: Story - Origin */}
-      <WhyUsStory />
-
-      {/* Section 7: Promise - What we guarantee */}
-      <WhyUsPromise />
-
-      {/* Section 8: CTA - Final call to action */}
-      <WhyUsCta />
-    </div>
-  );
+  return <WhyUsPageClient />;
 }
+

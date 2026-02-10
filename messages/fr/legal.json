@@ -1,4 +1,11 @@
 {
+  "meta": {
+    "terms": { "title": "CGU | Quickfund", "description": "Conditions générales d'utilisation de Quickfund." },
+    "privacy": { "title": "Confidentialité | Quickfund", "description": "Politique de confidentialité et traitement des données." },
+    "legalNotices": { "title": "Mentions légales | Quickfund", "description": "Informations légales et éditoriales." },
+    "cookies": { "title": "Cookies | Quickfund", "description": "Politique relative aux cookies et traceurs." },
+    "compliance": { "title": "Sécurité et conformité | Quickfund", "description": "Mesures de sécurité, conformité et bonnes pratiques." }
+  },
   "eyebrow": "Légal",
   "lastUpdated": "Dernière mise à jour",
   "questions": "Des questions ?",

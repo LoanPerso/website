@@ -1,4 +1,11 @@
 {
+  "meta": {
+    "terms": { "title": "Terms | Quickfund", "description": "Quickfund terms of service." },
+    "privacy": { "title": "Privacy | Quickfund", "description": "Privacy policy and data processing." },
+    "legalNotices": { "title": "Legal notices | Quickfund", "description": "Legal and editorial information." },
+    "cookies": { "title": "Cookies | Quickfund", "description": "Cookie policy and tracking technologies." },
+    "compliance": { "title": "Security & compliance | Quickfund", "description": "Security measures, compliance, and good practices." }
+  },
   "eyebrow": "Legal",
   "lastUpdated": "Last updated",
   "questions": "Questions?",

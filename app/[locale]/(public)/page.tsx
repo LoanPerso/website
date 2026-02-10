@@ -1,50 +1,35 @@
-"use client";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import PublicHomeClient from "./page.client";
 
-import { useRef } from "react";
-import CustomCursor from "@/_components/ui/custom-cursor";
-import Preloader from "@/_components/preloader";
-import {
-  Hero,
-  HorizontalProducts,
-  Stats,
-  Process,
-  FeaturesGrid,
-  Faq,
-  CtaFinal,
-} from "./_sections";
-import { BrandOverlay, type BrandOverlayRef } from "./_sections/hero/brand-overlay";
+type Props = {
+  params: { locale: string };
+};
 
-export default function PublicHome() {
-  const brandOverlayRef = useRef<BrandOverlayRef>(null);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: "home" });
+  const title = t("meta.title");
+  const description = t("meta.description");
 
-  return (
-    <div className="bg-background text-foreground w-full overflow-x-hidden">
-      <CustomCursor />
-      <Preloader />
-
-      {/* Brand overlay - fixed, z-index allows sections to pass over */}
-      <BrandOverlay ref={brandOverlayRef} />
-
-      {/* Section 1: Hero */}
-      <Hero brandOverlayRef={brandOverlayRef} />
-
-      {/* Section 2: Horizontal Scroll Products */}
-      <HorizontalProducts />
-
-      {/* Section 4: Stats */}
-      <Stats />
-
-      {/* Section 5: Process */}
-      <Process />
-
-      {/* Section 6: Features Grid */}
-      <FeaturesGrid />
-
-      {/* Section 7: FAQ */}
-      <Faq />
-
-      {/* Section 8: CTA Final */}
-      <CtaFinal />
-    </div>
-  );
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${params.locale}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/${params.locale}`,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
 }
+
+export default function PublicHomePage() {
+  return <PublicHomeClient />;
+}
+

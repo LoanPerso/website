@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "simulator": {
+      "title": "Loan simulator | Quickfund",
+      "description": "Simulate your loan in 30 seconds. Instant estimate, no commitment, then a decision within 24h."
+    }
+  },
   "simulator": {
     "eyebrow": "Credit Simulator",
     "title": "How much can you borrow?",

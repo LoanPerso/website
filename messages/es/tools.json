@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "simulator": {
+      "title": "Simulador de credito | Quickfund",
+      "description": "Simula tu credito en 30 segundos. Estimacion instantanea, sin compromiso, y respuesta despues en 24h."
+    }
+  },
   "simulator": {
     "eyebrow": "Simulador de Credito",
     "title": "Cuanto puedes pedir prestado?",

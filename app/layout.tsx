@@ -17,8 +17,12 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Quickfund",
-  description: "Premium financing for your projects",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://quickfund.fr"),
+  title: {
+    default: "Quickfund",
+    template: "%s | Quickfund",
+  },
+  description: "Credit transparent. Reponse garantie en 24h. Decisions expliquees.",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -28,6 +32,30 @@ export const metadata: Metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Quickfund",
+    title: "Quickfund",
+    description: "Credit transparent. Reponse garantie en 24h. Decisions expliquees.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Quickfund" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Quickfund",
+    description: "Credit transparent. Reponse garantie en 24h. Decisions expliquees.",
+    images: ["/twitter-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 

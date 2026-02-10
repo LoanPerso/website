@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "simulator": {
+      "title": "Laenukalkulaator | Quickfund",
+      "description": "Simuleerige oma laenu 30 sekundiga. Kiire hinnang, ilma kohustuseta, ja otsus hiljem 24h jooksul."
+    }
+  },
   "simulator": {
     "eyebrow": "Laenukalkulaator",
     "title": "Kui palju saate laenata?",
