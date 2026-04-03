@@ -36,6 +36,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       login: await loadOptionalMessages("login"),
       tools: await loadOptionalMessages("tools"),
       legal: await loadOptionalMessages("legal"),
+      contact: await loadOptionalMessages("contact"),
       // Product pages
       "product-micro-credit": await loadProductMessages("micro-credit"),
       "product-consumer": await loadProductMessages("consumer"),

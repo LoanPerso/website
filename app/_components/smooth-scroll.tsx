@@ -18,6 +18,9 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       touchMultiplier: 2,
     });
 
+    // Expose for click-to-scroll interactions (e.g. "Comment ca marche" CTA).
+    (window as any).__lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -26,6 +29,9 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     requestAnimationFrame(raf);
 
     return () => {
+      if ((window as any).__lenis === lenis) {
+        delete (window as any).__lenis;
+      }
       lenis.destroy();
     };
   }, []);

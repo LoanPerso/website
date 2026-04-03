@@ -284,7 +284,7 @@ export function HorizontalProducts() {
   }, []);
 
   return (
-    <div className="relative z-[70]">
+    <div id="products" className="relative z-[70] scroll-mt-24">
       {/* Horizontal scroll section - header integrated as first panel */}
       <HorizontalSection panels={products.length + 2} className="bg-background">
         {/* Intro Panel */}

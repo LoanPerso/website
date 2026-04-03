@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Contact | Quickfund",
+    "description": "Send us a message. We'll get back to you quickly."
+  },
+  "eyebrow": "Contact",
+  "title": "Send a message",
+  "subtitle": "Write to us here. The message is sent directly to Telegram.",
+  "backHome": "Back to home",
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "placeholder": "Describe your request in a few lines…",
+    "send": "Send",
+    "sending": "Sending…",
+    "success": "Message sent.",
+    "error": "Could not send message"
+  }
+}
+

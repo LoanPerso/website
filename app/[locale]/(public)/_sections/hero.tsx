@@ -49,6 +49,27 @@ export function Hero({ brandOverlayRef }: HeroProps) {
   const circleFillRef = useRef<SVGCircleElement>(null);
   const titleContainerRef = useRef<HTMLDivElement>(null);
 
+  const scrollToNextSection = () => {
+    const next =
+      (containerRef.current?.nextElementSibling as HTMLElement | null) ||
+      document.getElementById("products");
+    if (!next) return;
+
+    const top = next.getBoundingClientRect().top + window.scrollY;
+    const distance = Math.abs(top - window.scrollY);
+    const duration = Math.min(4, Math.max(1.8, distance / 700));
+    const lenis = (window as any).__lenis;
+    if (lenis?.scrollTo) {
+      lenis.scrollTo(top, {
+        duration,
+        easing: (t: number) => 1 - Math.pow(1 - t, 3),
+      });
+      return;
+    }
+
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
   // Detect mobile
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -543,10 +564,18 @@ export function Hero({ brandOverlayRef }: HeroProps) {
               </p>
 
               {/* CTA */}
-              <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-6">
+              <div
+                ref={ctaRef}
+                className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4 sm:gap-6"
+              >
                 <Magnetic>
-                  <button ref={ctaButtonRef} onClick={() => router.push(`/${locale}/tools/simulator`)} className="group relative px-10 py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl">
-                    <span ref={ctaButtonTextRef} className="relative z-10 flex items-center gap-3">
+                  <button
+                    ref={ctaButtonRef}
+                    onClick={() => router.push(`/${locale}/tools/simulator`)}
+                    type="button"
+                    className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl"
+                  >
+                    <span ref={ctaButtonTextRef} className="relative z-10 flex items-center justify-center gap-3">
                       {t("hero.cta.primary")}
                       <svg
                         className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -562,10 +591,14 @@ export function Hero({ brandOverlayRef }: HeroProps) {
                 </Magnetic>
 
                 <Magnetic>
-                  <button className="group flex items-center gap-4 text-base font-medium text-muted-foreground hover:text-foreground transition-colors duration-300">
+                  <button
+                    onClick={scrollToNextSection}
+                    type="button"
+                    className="group w-full sm:w-auto flex items-center justify-center gap-4 text-base font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  >
                     <svg
                       ref={playButtonRef}
-                      className="w-14 h-14 overflow-visible"
+                      className="w-12 h-12 sm:w-14 sm:h-14 overflow-visible"
                       viewBox="0 0 560 560"
                       fill="none"
                       shapeRendering="geometricPrecision"

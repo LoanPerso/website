@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Kontakt | Quickfund",
+    "description": "Saada meile sõnum. Vastame kiiresti."
+  },
+  "eyebrow": "Kontakt",
+  "title": "Saada sõnum",
+  "subtitle": "Kirjuta meile siit. Sõnum saadetakse otse Telegrami.",
+  "backHome": "Tagasi avalehele",
+  "form": {
+    "name": "Nimi",
+    "email": "Email",
+    "message": "Sõnum",
+    "placeholder": "Kirjelda oma soovi paari lausega…",
+    "send": "Saada",
+    "sending": "Saatmine…",
+    "success": "Sõnum saadetud.",
+    "error": "Sõnumi saatmine ebaõnnestus"
+  }
+}
+
