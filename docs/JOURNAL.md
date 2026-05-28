@@ -1,5 +1,40 @@
 # Journal
 
+## 2026-05-28 — Fiche détail Demande + correctif auth
+- **Fix (auth):** spinner infini du back office au retour d'onglet. Cause : `loadAdmin` (requête `admin_users`) était `await` **dans** le callback `onAuthStateChange` ; supabase-js tient un verrou interne pendant le callback, la requête attendait `getSession()` sur ce même verrou → deadlock, `loading` bloqué. Correctif `auth-provider.tsx` : appels Supabase différés hors du callback (`setTimeout(0)`), ré-émissions `SIGNED_IN` du même utilisateur ignorées (plus de flash/loader au retour d'onglet).
+- **Feature:** fiche détail d'une demande (`/admin/applications/[id]`) — le dossier complet manquait (on ne pouvait pas cliquer une demande).
+  - Affiche : crédit demandé (produit issu du catalogue), identité, contact, emploi & revenus, pièces justificatives (liens), et **scoring de pré-évaluation calculé en direct** (jauge + décomposition + reason codes, flag « incomplet » car logement/historique inconnus au stade demande).
+  - Workflow de statut + conversion en client depuis la fiche ; lignes de la liste rendues cliquables.
+  - Lib : `getApplicationFull`, `computeApplicationScore`, `recomputeApplicationScore` ; type `LoanApplicationFull`.
+  - Données : backfill des 6 demandes de démo qui étaient vides (identité, emploi, revenus, pièces) + nationalité/pièce sur toutes ; `seed.sql` (1er bloc) mis à jour pour des dossiers complets. Les 12 demandes ont désormais revenus/naissance/nationalité/pièce.
+
+## 2026-05-28 — CRM clients : scoring & suivi contractuel
+- **Feature:** Module CRM côté clients (scoring crédit complet + suivi contractuel) dans le back office `/admin`.
+  - **Sidebar groupée:** `nav.ts` passe d'une liste plate à des sections — Tableau de bord (épinglé), **CRM** (Demandes, Clients, Tâches), **Financement** (Crédits, Contrats, Paiements, Impayés), **Catalogue** (Produits), **Système** (Import, Paramètres). Rendu des libellés de section dans `admin-shell.tsx`.
+  - **Moteur de scoring (`app/_lib/admin/scoring.ts`):** score client 0-100, catégorie A-D (seuils 80/65/50), décomposition par facteur (historique 25 %, DTI 22 %, stabilité revenus 18 %, reste-à-vivre 12 %, ancienneté 8 %, logement 8 %, âge 7 %), reason codes, gestion des données manquantes (exclusion + renormalisation + flag « incomplet »), staleness (90 j), modèle versionné `v1`. Source de vérité unique, distincte du simulateur (loan-level).
+  - **Schéma DB:** `20260528130000_crm_scoring.sql` (colonnes scoring + consentement RGPD sur `clients`, table `client_scores` historisée), `20260528130100_crm_followup.sql` (`contracts`, `client_documents`, `interactions`, `tasks` + lien pipeline `loan_applications.converted_client_id`, étape `qualified`, score), `20260528130200_crm_rls_views.sql` (RLS admin-only + vues `v_client_overview`, `v_tasks_due`).
+  - **Couche données:** services `scores`, `documents`, `interactions`, `tasks`, `contracts` ; `clientsApi.listClientOverview` (vue enrichie + filtre catégorie) ; conversion demande→client enrichie (calcul du score, copie des pièces KYC, interaction et tâche de relance créées).
+  - **UI (`app/_components/admin/clients/`):** jauge de score, panneau scoring (recalcul + override justifié + historique), checklist KYC, timeline relationnelle, tâches, contrats. Liste clients (colonnes score/KYC/tâches + filtre catégorie), fiche client enrichie, nouvelles pages `tasks` et `contracts`, page `applications` (score + conversion réaliste).
+  - **Seed (`supabase/seed.sql`):** bloc CRM idempotent — scores + historique (64), 128 pièces KYC, 64 interactions, 37 tâches (relances/impayés), 48 contrats, 12 demandes couvrant tout le pipeline. Scores calculés en SQL en miroir du moteur TS.
+  - **Vérifié:** `tsc --noEmit` OK ; migrations + seed appliqués via la Management API ; distribution des scores cohérente (A 80-96, B 65-79, C 57-63, D 40).
+  - **Docs:** DATABASE, ARCHITECTURE, DATA_ARCHITECTURE, FEATURES, SECURITY, CHARTE_GRAPHIQUE, PROJECT_STATUS, features/DASHBOARD, PLAN mis à jour.
+
+## 2026-05-28
+- **Feature:** Back office d'administration complet (`/admin`) pour piloter l'activité de prêt.
+  - **Provisioning Supabase:** création du projet `quickfund` (région `eu-central-1`) via la Management API + token stocké dans `.env`. `.env` câblé (URL, anon, service_role). Politique secrets ajoutée dans `CLAUDE.md` §12.
+  - **Schéma DB (`supabase/migrations/`):**
+    - `20260528120000_core_schema.sql` — tables `admin_users`, `products`, `clients`, `loans`, `installments`, `payments`, `loan_applications`, `import_batches`, `activity_log` + triggers (`updated_at`, références `CLI-/LN-/PAY-`) + index. Helper `is_admin()` (security definer).
+    - `20260528120100_rls_policies.sql` — RLS : accès réservé aux admins actifs ; insertion publique pour `loan_applications` (funnel).
+    - `20260528120200_reporting_views.sql` — vues `v_portfolio_kpis`, `v_loan_balances`, `v_installments_status`, `v_monthly_disbursements`, `v_monthly_collections` (`security_invoker`).
+  - **Seed (`supabase/seed.sql`):** 8 produits réels (pricing PRICING.md) + jeu de données procédural (32 clients, 48 crédits, ~770 échéances, ~220 paiements, impayés + défauts, 14 mois d'historique).
+  - **Auth admin:** page `/admin/login` (Supabase password), `AdminAuthProvider` + `AdminGuard` (vérif `admin_users`), routage `/admin` exclu du middleware i18n. Ancien scaffold `(admin)` supprimé.
+  - **Couche données (`app/_lib/admin/`):** services typés clients, loans (génération d'échéancier annuité), installments, payments (ré-allocation + recompute statut prêt), products, dashboard (KPIs), applications, import CSV.
+  - **UI (`app/_components/admin/`):** shell/sidebar responsive, KPI card, data table, bar chart SVG, badges de statut, dialog (Radix), contrôles de formulaire, toasts.
+  - **Pages (`app/admin/(protected)/`):** dashboard P&L, clients (liste + fiche), crédits (liste + création avec aperçu d'échéancier + fiche), paiements, impayés (par mois), produits, demandes, import, paramètres.
+  - **Scripts:** `scripts/db-apply.mjs` (applique migrations+seed via Management API), `scripts/create-admin.mjs` (crée un admin Auth + ligne `admin_users`).
+  - **Compte admin:** `lynxerprv@gmail.com` (superadmin) créé pour la connexion.
+  - **Docs:** mise à jour DATABASE, SECURITY, ARCHITECTURE, FEATURES, DATA_ARCHITECTURE, CHARTE_GRAPHIQUE, PROJECT_STATUS, features/DASHBOARD, PLAN.
+
 ## 2026-01-02
 - **Enhancement:** Country-Specific Form Options System
   - **Problem:** Employment status options like "CDI/CDD" are France-specific and don't exist in other countries (e.g., Estonia uses "Permanent/Temporary")

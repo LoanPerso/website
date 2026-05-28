@@ -1,0 +1,18 @@
+export * from "./types";
+export * from "./format";
+export * from "./finance";
+export * from "./scoring";
+export * as clientsApi from "./clients";
+export * as productsApi from "./products";
+export * as loansApi from "./loans";
+export * as installmentsApi from "./installments";
+export * as paymentsApi from "./payments";
+export * as dashboardApi from "./dashboard";
+export * as applicationsApi from "./applications";
+export * as importApi from "./import";
+export * as adminUsersApi from "./admin-users";
+export * as scoresApi from "./scores";
+export * as documentsApi from "./documents";
+export * as interactionsApi from "./interactions";
+export * as tasksApi from "./tasks";
+export * as contractsApi from "./contracts";

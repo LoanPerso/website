@@ -166,3 +166,37 @@
 4. Assigner à quelqu'un
 5. Ajouter au projet "Dashboard features"
 6. Remplir tous les champs projet (Status, Module, Issue types, Priority)
+
+---
+
+## 12. Secrets & Environnement (.env) — RÈGLE ABSOLUE
+
+> **TOUS les secrets, clés et tokens vivent dans `.env` (à la racine, git-ignoré). On ne les écrit JAMAIS en clair dans le code, les commandes du terminal, les commits ou la documentation.**
+
+### 12.1 Principes non négociables
+1. **Toujours lire les clés depuis `.env`** (ou `process.env`), jamais de valeur en dur.
+2. **Ne jamais réafficher / réécrire un secret en clair** dans le terminal, un fichier suivi par git, ou un message. Seul `.env` contient les valeurs.
+3. Pour exécuter une action nécessitant un secret (provisionner la DB, appliquer une migration, appeler une API) :
+   ```bash
+   set -a; source .env; set +a   # charge les variables
+   curl -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" ...
+   ```
+   On référence `$VARIABLE`, jamais la valeur littérale.
+4. **`.env` ne doit JAMAIS être commité.** Vérifier qu'il est bien dans `.gitignore` (`.env`, `.env.local`, `.env.*.local`).
+5. Tout nouveau token/clé → l'ajouter dans `.env` **et** documenter son nom + usage dans cette section. Mettre à jour `.env.example` (clés vides, jamais de valeur réelle).
+
+### 12.2 Clés connues
+| Variable | Usage | Exposée client ? |
+|----------|-------|:----------------:|
+| `SUPABASE_ACCESS_TOKEN` | Token Management API / CLI Supabase (créer projet, appliquer migrations, lire les clés). `Authorization: Bearer $SUPABASE_ACCESS_TOKEN` | ❌ Jamais |
+| `SUPABASE_PROJECT_REF` | Référence du projet Supabase (ex: `vysqrahewfxamwxabhnh`) | ❌ |
+| `SUPABASE_DB_PASSWORD` | Mot de passe Postgres du projet (connexion directe / `db push`) | ❌ Jamais |
+| `NEXT_PUBLIC_SUPABASE_URL` | URL du projet, client navigateur | ✅ (public) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clé anon (RLS appliquée), client navigateur | ✅ (public) |
+| `SUPABASE_SERVICE_ROLE_KEY` | Clé privilégiée (bypass RLS) pour opérations serveur uniquement | ❌ Jamais côté client |
+| `NEXT_PUBLIC_FIREBASE_*` | Config Firebase (stockage long terme) | ✅ |
+| `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Formulaire de contact | ❌ |
+
+### 12.3 Appliquer des migrations / SQL
+- Endpoint Management API : `POST https://api.supabase.com/v1/projects/$SUPABASE_PROJECT_REF/database/query` avec `{"query": "..."}` et le header `Authorization: Bearer $SUPABASE_ACCESS_TOKEN`.
+- Les fichiers SQL sources vivent dans `supabase/migrations/` (ordre par préfixe) et `supabase/seed.sql`. On applique toujours depuis ces fichiers, jamais de SQL ad hoc non versionné pour le schéma.

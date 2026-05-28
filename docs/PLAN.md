@@ -1,5 +1,30 @@
 # Plan
 
+## Admin Back Office (Supabase) — livré 2026-05-28
+
+> Pilotage de l'activité de prêt : P&L, clients, crédits, échéanciers, paiements, impayés, import.
+> Cases à valider par l'utilisateur.
+
+- [ ] Schéma DB Supabase (migrations + RLS + vues) appliqué et validé
+- [ ] Seed de démo validé (à remplacer par les vraies données)
+- [ ] Auth admin (`/admin/login` + `admin_users`) validée
+- [ ] Dashboard P&L validé (KPIs, graphe, impayés)
+- [ ] Clients / Crédits / Paiements / Impayés / Produits / Demandes validés
+- [ ] Import CSV validé (clients / crédits / paiements)
+- [ ] Connexion env Netlify (URL + anon) en production
+- [ ] (Optionnel) Session SSR cookie + journalisation `activity_log`
+
+### CRM clients — scoring & suivi contractuel (à valider)
+- [ ] Sidebar groupée (CRM / Financement / Catalogue / Système) validée
+- [ ] Système de scoring crédit (moteur, décomposition, reason codes, override, historique) validé
+- [ ] Pièces & KYC (statuts, expiration) validés
+- [ ] Suivi relationnel (interactions) + Tâches/relances validés
+- [ ] Contrats (cycle offre → signé → actif → soldé) validés
+- [ ] Pipeline demande → client (qualification, conversion enrichie) validé
+- [ ] Smoke data CRM relue (à remplacer par les vraies données)
+
+---
+
 ## Landing Page - Refonte Complète (Style Awwwards Premium)
 
 > **Objectif :** Créer une expérience immersive, cinématique, digne des meilleurs sites Awwwards. Animations GSAP omniprésentes, éléments 3D, micro-interactions, easter eggs.

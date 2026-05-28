@@ -31,7 +31,26 @@
   - SVG flags for consistent cross-browser rendering
   - Interactive sliders, real-time results, FAQ
 
+## Admin Back Office ✅ (2026-05-28)
+- Supabase project provisioned; schema + RLS + reporting views applied; demo dataset seeded.
+- `/admin` back office: auth (Supabase + `admin_users`), dashboard P&L, clients, loans
+  (with amortization schedule), payments, overdue tracking, products, applications, CSV import, settings.
+- Typed data layer (`app/_lib/admin`), reusable admin UI components, French UI.
+- Typecheck passes (`tsc --noEmit`).
+
+## CRM clients — scoring & suivi contractuel ✅ (2026-05-28)
+- Grouped sidebar (CRM / Financement / Catalogue / Système).
+- Credit-scoring engine (`scoring.ts`): 0-100 score + A–D category, weighted factor
+  breakdown, reason codes, missing-data handling, staleness; persisted as immutable
+  `client_scores` snapshots with recompute and justified override.
+- Contractual follow-up: KYC documents (statuses + expiry), interactions timeline,
+  tasks/relances (per-client + global page), contracts lifecycle (+ Contrats page).
+- Realistic application → client pipeline (qualify, convert with scoring + KYC carry-over
+  + interaction + relance). CRM smoke data seeded (scores, docs, interactions, tasks, contracts).
+- New migrations applied; typecheck passes.
+
 ## Immediate Focus
-- Build eligibility test (`/tools/eligibility`)
-- Verify mobile responsiveness
-- Implement Auth flow
+- Wire env vars (anon/url) on Netlify and confirm `/admin` works in production.
+- Replace demo + CRM smoke data with real imported data.
+- Consider cookie-based SSR session (`@supabase/ssr`) and audit-log population.
+- Build eligibility test (`/tools/eligibility`); verify mobile responsiveness.

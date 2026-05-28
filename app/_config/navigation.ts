@@ -35,10 +35,3 @@ export const legalLinks = [
   { href: "/legal/privacy", labelKey: "legal.privacy" },
   { href: "/legal/terms", labelKey: "legal.terms" },
 ];
-
-// App navigation uses labels directly (not translated for now)
-export const appNav = [
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/settings", label: "Settings" },
-  { href: "/settings/profile", label: "Profile" },
-];

@@ -40,3 +40,31 @@ A mix of minimal luxury and cinematic moments. High contrast, precise typography
 - Radix UI primitives.
 - Next.js Font (Google Fonts).
 - GSAP / Three.js (optional for Hero).
+
+## Admin Back Office UI
+The `/admin` back office reuses the same tokens (Ivoire background, Anthracite text,
+Champagne accent, small radius, serif headings) in a denser, data-oriented layout.
+
+**Components (`app/_components/admin/`):**
+| Component | Role |
+|-----------|------|
+| `admin-shell` | Fixed sidebar with **grouped sections** (CRM / Financement / Catalogue / Système), Champagne active state + responsive mobile drawer. |
+| `page-header` | Serif title + description + actions. |
+| `kpi-card` | Metric card with optional tone accent bar (success/warning/error). |
+| `panel` / `EmptyState` | White rounded panel + empty placeholder. |
+| `data-table` | Generic table (aligned columns, hover, clickable rows). |
+| `bar-chart` | Two-series monthly bars (Champagne = disbursed, Anthracite = collected). |
+| `status-badge` | `Badge`, `StatusBadge` (loan/client/installment/payment/application), `RiskBadge`. |
+| `dialog` | `Modal` + `ConfirmDialog` (Radix dialog). |
+| `form` | `Field`, `TextInput`, `Textarea`, `Select`, `FieldGrid`. |
+| `toast` | `ToastProvider` / `useToast` (success/error/info). |
+| `clients/score-gauge` | Radial 0-100 score gauge; arc colour maps to category (A success, B gold, C alert, D error). |
+| `clients/*-panel` | CRM panels (scoring, KYC checklist, interaction timeline, tasks, contracts) — `Panel` + soft tinted badges, serif headings, 4px spacing. |
+
+**CRM conventions:** score chips & gauges use category tones (A `#1F6B4E`, B Champagne,
+C `#A36A2A`, D `#8F2E2E`); factor bars reuse the same scale; KYC/task/contract statuses use
+soft tinted `StatusBadge`s; the timeline uses a left rule with iconed nodes.
+
+**Conventions:** serif (`font-serif`) for titles & KPI values, sans for data; tones map to
+functional colors (Success `#1F6B4E`, Alert `#A36A2A`, Error `#8F2E2E`); statuses use
+soft tinted badges; currency in EUR via `formatCurrency` (FR locale).

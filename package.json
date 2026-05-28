@@ -2,7 +2,7 @@
   "name": "quickfund",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 7002",
+    "dev": "next dev -p 7002 -H 0.0.0.0",
     "build": "next build",
     "start": "next start -p 7002"
   },

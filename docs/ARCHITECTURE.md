@@ -134,3 +134,47 @@ messages/
 - Supabase for dynamic data.
 - Firebase for long-term data.
 - Optional Three.js for interactive visuals.
+
+## Admin Back Office (`/admin`)
+Non-localized, French back office, excluded from the i18n middleware and `noindex`.
+
+```
+app/admin/
+├── layout.tsx              # AdminAuthProvider + ToastProvider, noindex
+├── page.tsx                # redirect -> /admin/dashboard
+├── login/page.tsx          # Supabase password auth
+└── (protected)/
+    ├── layout.tsx          # AdminGuard + AdminShell
+    ├── dashboard/          # P&L overview
+    ├── clients/[id]        # list (score/KYC/tasks) + detail (scoring, KYC, timeline, tasks, contracts)
+    ├── loans/new, loans/[id]
+    ├── contracts/          # contract lifecycle (CRM)
+    ├── tasks/              # follow-ups / relances (CRM)
+    ├── payments/ overdue/ products/ applications/ import/ settings/
+
+app/_lib/admin/             # typed data layer over Supabase (+ RLS)
+│   types, format, finance (amortization), scoring (credit-score engine),
+│   clients, loans, installments, payments, products, dashboard, applications,
+│   import, admin-users, scores, documents, interactions, tasks, contracts
+app/_components/admin/      # shell, nav (grouped sections), auth-provider, guard,
+│   kpi-card, data-table, bar-chart, status-badge, dialog, form, toast, panel, page-header
+├── clients/                # score-gauge, score-panel, documents-panel,
+│                           #   interactions-panel, tasks-panel, contracts-panel
+└── forms/                  # client-form-dialog, payment-dialog
+```
+
+### Client credit scoring
+`app/_lib/admin/scoring.ts` is the single source of truth for client-level scoring
+(0-100, category A–D, weighted factor breakdown, reason codes, missing-data handling,
+staleness, model version). It is distinct from the public loan simulator (loan-level).
+`scores.ts` persists each computation as an immutable `client_scores` snapshot and syncs
+`clients.credit_score` / `risk_category`. Recompute, manual override (with justification)
+and conversion-time scoring all flow through it.
+
+**Data flow:** client components → `app/_lib/admin/*` services → Supabase JS (anon key,
+RLS enforced). Aggregates come from reporting views. No new REST routes — access is
+direct to Supabase with RLS as the trust boundary. Privileged provisioning is done
+server-side via `scripts/*.mjs` using the service role / management token from `.env`.
+
+**Loan creation:** `finance.buildSchedule()` computes the annuity schedule; `loans.createLoan()`
+inserts the loan then its installments (rolls back the loan if the schedule insert fails).

@@ -9,5 +9,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ['/', '/(et|fr|en|es)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'],
+  // Exclude /admin (non-localized back office) and /api from i18n routing.
+  matcher: ['/', '/(et|fr|en|es)/:path*', '/((?!api|admin|_next|_vercel|.*\\..*).*)'],
 };
