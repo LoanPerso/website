@@ -115,7 +115,7 @@ export default function ImportPage() {
               </p>
 
               <div className="flex items-center gap-3">
-                <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-border bg-white px-4 py-2 text-sm hover:bg-secondary/40">
+                <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-border bg-background px-4 py-2 text-sm hover:bg-secondary/40">
                   <Upload className="h-4 w-4" />
                   Choisir un fichier CSV
                   <input type="file" accept=".csv,text/csv" className="hidden" onChange={handleFile} />
@@ -131,7 +131,7 @@ export default function ImportPage() {
                     handleParse(e.target.value);
                   }}
                   placeholder={`${templates[entity]}\n…`}
-                  className="min-h-[140px] w-full rounded-md border border-input bg-white px-3 py-2 font-mono text-xs focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                  className="min-h-[140px] w-full rounded-md border border-input bg-background px-3 py-2 font-mono text-xs focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                 />
               </Field>
             </div>

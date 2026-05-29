@@ -1,9 +1,11 @@
 import { supabase } from "@/_lib/supabase";
-import type { Payment, PaymentMethod, Result } from "./types";
+import { logActivity } from "./audit";
+import type { Payment, PaymentMethod, PaymentStatus, Result } from "./types";
 
 export interface ListPaymentsParams {
   month?: string; // "YYYY-MM"
   method?: PaymentMethod | "all";
+  status?: PaymentStatus | "all";
   loanId?: string;
   clientId?: string;
   page?: number;
@@ -34,10 +36,11 @@ function monthRange(month: string): { start: string; end: string } {
 export async function listPayments(
   params: ListPaymentsParams = {}
 ): Promise<Result<{ rows: PaymentRow[]; count: number }>> {
-  const { month, method = "all", loanId, clientId, page = 1, pageSize = 25 } = params;
+  const { month, method = "all", status = "all", loanId, clientId, page = 1, pageSize = 25 } = params;
   let query = supabase.from("payments").select(PAYMENT_SELECT, { count: "exact" });
 
   if (method !== "all") query = query.eq("method", method);
+  if (status !== "all") query = query.eq("status", status);
   if (loanId) query = query.eq("loan_id", loanId);
   if (clientId) query = query.eq("client_id", clientId);
   if (month) {
@@ -133,6 +136,7 @@ export async function recordPayment(input: RecordPaymentInput): Promise<Result<P
     if (error) return { data: null, error: error.message };
     await recomputeInstallment(input.installment_id);
     await recomputeLoanStatus(input.loan_id);
+    await logActivity({ action: "payment.record", entity: "payments", entity_id: data.id, metadata: { amount: input.amount, loan_id: input.loan_id } });
     return { data: data as Payment, error: null };
   }
 
@@ -178,6 +182,7 @@ export async function recordPayment(input: RecordPaymentInput): Promise<Result<P
   }
 
   await recomputeLoanStatus(input.loan_id);
+  await logActivity({ action: "payment.record", entity: "payments", entity_id: last?.id ?? null, metadata: { amount: input.amount, loan_id: input.loan_id } });
   return { data: last, error: null };
 }
 
@@ -186,5 +191,36 @@ export async function deletePayment(payment: Payment): Promise<Result<null>> {
   if (error) return { data: null, error: error.message };
   if (payment.installment_id) await recomputeInstallment(payment.installment_id);
   await recomputeLoanStatus(payment.loan_id);
+  await logActivity({ action: "payment.delete", entity: "payments", entity_id: payment.id, metadata: { amount: payment.amount } });
   return { data: null, error: null };
+}
+
+// Move a payment along its status (refund / fail / re-complete). Because the
+// installment/loan recompute only counts completed payments, flipping the status
+// automatically reverses or re-applies the allocation on the schedule.
+export async function setPaymentStatus(payment: Payment, status: PaymentStatus): Promise<Result<Payment>> {
+  const { data, error } = await supabase
+    .from("payments")
+    .update({ status })
+    .eq("id", payment.id)
+    .select()
+    .single();
+  if (error) return { data: null, error: error.message };
+  if (payment.installment_id) await recomputeInstallment(payment.installment_id);
+  await recomputeLoanStatus(payment.loan_id);
+  await logActivity({
+    action: `payment.${status}`,
+    entity: "payments",
+    entity_id: payment.id,
+    metadata: { amount: payment.amount, loan_id: payment.loan_id },
+  });
+  return { data: data as Payment, error: null };
+}
+
+export async function refundPayment(payment: Payment): Promise<Result<Payment>> {
+  return setPaymentStatus(payment, "refunded");
+}
+
+export async function failPayment(payment: Payment): Promise<Result<Payment>> {
+  return setPaymentStatus(payment, "failed");
 }

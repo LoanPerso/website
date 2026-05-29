@@ -2,6 +2,7 @@ import { supabase } from "@/_lib/supabase";
 import { buildSchedule } from "./finance";
 import type {
   Installment,
+  Interaction,
   Loan,
   LoanStatus,
   LoanWithClient,
@@ -58,6 +59,16 @@ export async function getLoanInstallments(loanId: string): Promise<Result<Instal
   return { data: (data ?? []) as Installment[], error: null };
 }
 
+export async function listLoanInteractions(loanId: string): Promise<Result<Interaction[]>> {
+  const { data, error } = await supabase
+    .from("interactions")
+    .select("*")
+    .eq("loan_id", loanId)
+    .order("occurred_at", { ascending: false });
+  if (error) return { data: null, error: error.message };
+  return { data: (data ?? []) as Interaction[], error: null };
+}
+
 export interface CreateLoanInput {
   client_id: string;
   product_id: string | null;
@@ -81,6 +92,7 @@ export async function createLoan(input: CreateLoanInput): Promise<Result<Loan>> 
     input.start_date
   );
   const endDate = calc.schedule.at(-1)?.due_date ?? input.start_date;
+  const status = input.status ?? "active";
 
   const { data: loan, error: loanError } = await supabase
     .from("loans")
@@ -96,10 +108,11 @@ export async function createLoan(input: CreateLoanInput): Promise<Result<Loan>> 
       application_fee: input.application_fee ?? 0,
       purpose: input.purpose ?? null,
       risk_category: input.risk_category ?? null,
-      status: input.status ?? "active",
+      status,
       start_date: input.start_date,
       end_date: endDate,
-      disbursed_at: input.start_date,
+      // A draft loan is not disbursed yet — disbursement is an explicit servicing step.
+      disbursed_at: status === "draft" ? null : input.start_date,
     })
     .select()
     .single();

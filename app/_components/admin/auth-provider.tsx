@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { supabase } from "@/_lib/supabase";
+import { clearActorCache } from "@/_lib/admin/audit";
 import type { AdminUser } from "@/_lib/admin/types";
 
 type AdminAuthValue = {
@@ -56,6 +57,7 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
       if (event === "SIGNED_OUT") {
         setAdmin(null);
         resolvedUser.current = null;
+        clearActorCache();
         setLoading(false);
         return;
       }
@@ -83,6 +85,7 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut();
+    clearActorCache();
     setSession(null);
     setAdmin(null);
   }, []);

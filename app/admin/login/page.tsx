@@ -52,18 +52,18 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-dvh items-center justify-center bg-secondary/40 px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
           <Link href="/" className="font-serif text-2xl tracking-tight">
             <span className="font-medium">Quick</span>fund
           </Link>
-          <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-dark-gold">
+          <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">
             <ShieldCheck className="h-3.5 w-3.5" /> Espace administration
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-white p-8 shadow-soft">
+        <div className="rounded-lg border border-border bg-background p-8 shadow-overlay">
           <h1 className="font-serif text-2xl tracking-tight">Connexion</h1>
           <p className="mt-1 text-sm text-muted-foreground">Accès réservé à l&apos;équipe Quickfund.</p>
 
@@ -79,7 +79,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full rounded-md border border-input bg-white px-3 py-2.5 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                 placeholder="vous@quickfund.fr"
               />
             </div>
@@ -95,7 +95,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full rounded-md border border-input bg-white px-3 py-2.5 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                 placeholder="••••••••"
               />
             </div>

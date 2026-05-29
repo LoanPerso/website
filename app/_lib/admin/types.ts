@@ -109,6 +109,12 @@ export interface Loan {
   start_date: string;
   end_date: string | null;
   disbursed_at: string | null;
+  // Servicing & collections (migration 20260528150000)
+  closed_at: string | null;
+  closure_reason: "settled_early" | "paid_off" | "written_off" | "cancelled" | null;
+  write_off_amount: number;
+  dunning_level: number;
+  next_action_date: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -122,6 +128,7 @@ export interface Installment {
   principal_component: number;
   interest_component: number;
   amount_paid: number;
+  late_fee: number;
   status: InstallmentStatus;
   paid_at: string | null;
   created_at: string;
@@ -142,6 +149,8 @@ export interface Payment {
   created_at: string;
 }
 
+export type ApplicationPriority = "low" | "normal" | "high" | "urgent";
+
 export interface LoanApplication {
   id: string;
   status: ApplicationStatus;
@@ -161,11 +170,15 @@ export interface LoanApplication {
   source: string | null;
   score: number | null;
   score_category: RiskCategory | null;
+  priority: ApplicationPriority | null;
+  assigned_to: string | null;
+  tags: string[] | null;
+  last_contacted_at: string | null;
   created_at: string;
   updated_at: string;
 }
 
-// Full application row (all KYC/funnel columns) — used by the detail dossier.
+// Full application row (all KYC/funnel + workflow columns) — used by the dossier.
 export interface LoanApplicationFull extends LoanApplication {
   user_id: string | null;
   birth_date: string | null;
@@ -187,6 +200,58 @@ export interface LoanApplicationFull extends LoanApplication {
   document_income_url: string | null;
   document_address_url: string | null;
   document_bank_url: string | null;
+  // Workflow / analyst-decision (additive migration 20260528140000)
+  internal_notes: string | null;
+  stage_entered_at: string | null;
+  consent: ApplicationConsentRow | null;
+  decision: ApplicationDecisionRow | null;
+  risk_review: ApplicationRiskReviewRow | null;
+  pricing: ApplicationPricingRow | null;
+  analysis_overrides: Record<string, number | boolean> | null;
+}
+
+// Persisted JSON shapes (snapshots written by the dossier; engines stay derived).
+export interface ApplicationConsentRow {
+  marketing_opt_in?: boolean;
+  channels?: { call?: boolean; email?: boolean; sms?: boolean; whatsapp?: boolean };
+  preferred_channel?: string;
+  do_not_contact?: boolean;
+  quiet_start?: string;
+  quiet_end?: string;
+}
+
+export interface ApplicationDecisionRow {
+  outcome: "APPROVE" | "REFER" | "DECLINE";
+  status: ApplicationStatus;
+  confidence?: number;
+  reason_codes?: { code: string; label: string }[];
+  stipulations?: { code: string; label: string; required: boolean; satisfied?: boolean }[];
+  justification?: string | null;
+  decided_by?: string | null;
+  decided_at: string;
+}
+
+export interface ApplicationRiskReviewRow {
+  disposition: "clear" | "review" | "escalate" | "block";
+  composite?: number;
+  aml_rating?: string;
+  sar_filed?: boolean;
+  notes?: string | null;
+  reviewed_by?: string | null;
+  reviewed_at: string;
+}
+
+export interface ApplicationPricingRow {
+  amount: number;
+  duration_months: number;
+  applied_rate: number;
+  taeg: number;
+  monthly_payment: number;
+  monthly_with_insurance: number;
+  insurance: boolean;
+  guarantee: string;
+  total_cost: number;
+  locked_at: string;
 }
 
 export interface AdminUser {
@@ -260,6 +325,26 @@ export interface OverdueInstallment {
   email: string | null;
   is_overdue: boolean;
   days_late: number;
+}
+
+export interface LoanArrears {
+  loan_id: string;
+  loan_reference: string | null;
+  loan_status: LoanStatus;
+  client_id: string;
+  client_reference: string | null;
+  first_name: string;
+  last_name: string;
+  phone: string | null;
+  email: string | null;
+  dunning_level: number;
+  next_action_date: string | null;
+  overdue_count: number;
+  overdue_amount: number;
+  late_fees: number;
+  max_days_late: number;
+  oldest_due_date: string;
+  outstanding_total: number;
 }
 
 export type Result<T> = { data: T | null; error: string | null };
@@ -396,9 +481,33 @@ export interface Contract {
 
 export type ContractWithRefs = Contract & {
   client?: Pick<Client, "id" | "reference" | "first_name" | "last_name"> | null;
-  loan?: Pick<Loan, "id" | "reference"> | null;
+  loan?: Pick<Loan, "id" | "reference" | "status"> | null;
   product?: Pick<Product, "id" | "slug" | "name"> | null;
 };
+
+// Snapshot of the offer terms frozen into contracts.terms at origination, so the
+// signed agreement keeps an immutable record even if the product/pricing changes.
+export interface ContractTermsSnapshot {
+  amount: number;
+  duration_months: number;
+  annual_rate: number;
+  taeg: number | null;
+  monthly_payment: number;
+  monthly_with_insurance: number | null;
+  application_fee: number;
+  total_interest: number | null;
+  total_cost: number | null;
+  total_due: number | null;
+  insurance: boolean;
+  guarantee: string | null;
+  first_due_date: string | null;
+  cooling_off_days: number | null;
+  product_slug: string | null;
+  product_name: string | null;
+  source_application_id: string | null;
+  schedule_preview?: { sequence: number; due_date: string; amount_due: number }[];
+  generated_at: string;
+}
 
 // Row of v_client_overview (clients + latest score + KYC/tasks/loans aggregates).
 export type ClientOverview = Client & {
@@ -416,3 +525,125 @@ export type ClientOverview = Client & {
   total_borrowed: number;
   active_contracts: number;
 };
+
+// --- Mailbox: company inbox (accounts, folders, messages, diagnostics) --------
+// DB-backed mockup — no real SMTP/IMAP. The schema carries connection settings so
+// it can be wired to real servers later (see migration 20260528160000_mailbox).
+
+export type MailDirection = "in" | "out";
+export type MailFolderRole = "inbox" | "sent" | "drafts" | "trash" | "archive" | "spam" | "other";
+export type MailMessageStatus = "received" | "sent" | "draft" | "queued" | "failed";
+export type MailSecurity = "ssl" | "starttls" | "none";
+export type MailCheckStatus = "unknown" | "ok" | "error";
+export type MailDiagnosticKind = "smtp" | "imap";
+
+export interface MailAddress {
+  name?: string | null;
+  address: string;
+}
+
+// Account read shape — the *_password columns are write-only and never selected.
+export interface MailAccount {
+  id: string;
+  label: string;
+  email: string;
+  display_name: string | null;
+  signature: string | null;
+  imap_host: string | null;
+  imap_port: number | null;
+  imap_security: MailSecurity;
+  imap_username: string | null;
+  smtp_host: string | null;
+  smtp_port: number | null;
+  smtp_security: MailSecurity;
+  smtp_username: string | null;
+  is_active: boolean;
+  is_default: boolean;
+  last_synced_at: string | null;
+  last_smtp_status: MailCheckStatus;
+  last_smtp_checked_at: string | null;
+  last_smtp_detail: string | null;
+  last_imap_status: MailCheckStatus;
+  last_imap_checked_at: string | null;
+  last_imap_detail: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface MailFolder {
+  id: string;
+  account_id: string;
+  name: string;
+  path: string;
+  role: MailFolderRole;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface MailMessage {
+  id: string;
+  account_id: string;
+  folder_id: string | null;
+  direction: MailDirection;
+  message_uid: string | null;
+  message_id: string | null;
+  in_reply_to: string | null;
+  thread_key: string | null;
+  from_name: string | null;
+  from_address: string | null;
+  to_addresses: MailAddress[];
+  cc_addresses: MailAddress[];
+  subject: string | null;
+  snippet: string | null;
+  body_text: string | null;
+  body_html: string | null;
+  has_attachments: boolean;
+  size_bytes: number;
+  is_seen: boolean;
+  is_flagged: boolean;
+  is_answered: boolean;
+  is_draft: boolean;
+  status: MailMessageStatus;
+  client_id: string | null;
+  application_id: string | null;
+  sent_at: string | null;
+  received_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+// Light projection for the message list (no bodies).
+export type MailMessageListItem = Omit<MailMessage, "body_text" | "body_html">;
+
+export interface MailAttachment {
+  id: string;
+  message_id: string;
+  filename: string | null;
+  content_type: string | null;
+  size_bytes: number;
+  is_inline: boolean;
+  url: string | null;
+  created_at: string;
+}
+
+// Full message (reader): body + attachments + resolved CRM links.
+export type MailMessageFull = MailMessage & {
+  attachments: MailAttachment[];
+  client?: Pick<Client, "id" | "reference" | "first_name" | "last_name"> | null;
+  application?: Pick<LoanApplication, "id" | "first_name" | "last_name" | "status"> | null;
+};
+
+export interface MailDiagnostic {
+  id: string;
+  account_id: string;
+  kind: MailDiagnosticKind;
+  ok: boolean;
+  detail: string | null;
+  latency_ms: number | null;
+  ran_by: string | null;
+  ran_at: string;
+}
+
+// Folder enriched with message counters (for the account sidebar).
+export type MailFolderWithCount = MailFolder & { unread: number; total: number };

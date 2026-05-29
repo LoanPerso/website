@@ -37,6 +37,11 @@
 | `SUPABASE_SERVICE_ROLE_KEY` | server/CLI only | bypassed |
 | `SUPABASE_ACCESS_TOKEN` | Management API/CLI | n/a (project admin) |
 
+**Environments:** the same keys exist per project — **preprod** (`quickfundPreprod`) values are the
+local `.env` defaults; **prod** (`quickfundProd`) values live in `.env` as `SUPABASE_PROD_*` and are
+wired into the runtime vars only on the production host. `service_role` keys (both projects) are
+server/CLI only, never shipped to the browser. Prod enforces RLS on all base tables (19/19).
+
 ## Compliance (CRM)
 - Scoring is explainable: each computation is stored as an immutable `client_scores`
   snapshot (factors + reason codes + model version), and manual overrides require a
@@ -44,8 +49,19 @@
 - GDPR consent is captured on the client (`consent_given_at`, `marketing_opt_in`); KYC
   documents track expiry; contracts carry a cooling-off `withdrawal_deadline`.
 
+## Messagerie (maquette)
+- L'onglet `/admin/mail` est une **maquette adossée à la base** (cf. DECISIONS) : pas de SMTP/IMAP réel.
+- Les tables `mail_*` sont en **RLS admin-only** (`*_admin_all` via `is_admin()`), comme le reste du métier.
+- Les identifiants de boîte (`imap_password` / `smtp_password`) sont stockés **en clair** pour la
+  maquette et **jamais renvoyés au navigateur** : la couche données ne sélectionne pas ces colonnes
+  (champ write-only dans l'UI ; on saisit un nouveau mot de passe, on ne le relit jamais).
+- **Au branchement réel :** déplacer l'envoi/réception côté **serveur** (clé privilégiée hors
+  navigateur), **chiffrer** les identifiants au repos (coffre / at-rest encryption), et ne jamais
+  exposer les mots de passe via l'API.
+
 ## Follow-ups
 - Move the admin session to cookie-based SSR (`@supabase/ssr`) for server-side route
   protection (currently client-side guard + RLS).
 - Populate `activity_log` from admin mutations for a full audit trail.
 - Rotate the bootstrap admin password after first login.
+- Mailbox: encrypt box credentials and move SMTP/IMAP server-side when wiring real send/receive.

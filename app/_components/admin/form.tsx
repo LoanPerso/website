@@ -4,7 +4,7 @@ import { forwardRef, type ReactNode } from "react";
 import { cn } from "@/_lib/utils";
 
 const baseControl =
-  "w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:cursor-not-allowed disabled:opacity-60";
+  "w-full rounded-md border border-input bg-background px-2.5 py-1.5 text-[13px] text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 disabled:cursor-not-allowed disabled:opacity-60";
 
 export function Field({
   label,
@@ -51,7 +51,7 @@ Textarea.displayName = "Textarea";
 
 export const Select = forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<HTMLSelectElement>>(
   ({ className, children, ...props }, ref) => (
-    <select ref={ref} className={cn(baseControl, "appearance-none bg-white pr-8", className)} {...props}>
+    <select ref={ref} className={cn(baseControl, "appearance-none bg-background pr-8", className)} {...props}>
       {children}
     </select>
   )

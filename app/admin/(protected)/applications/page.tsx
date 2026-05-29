@@ -2,37 +2,15 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { cn } from "@/_lib/utils";
 import { PageHeader } from "@/_components/admin/page-header";
 import { Panel } from "@/_components/admin/panel";
 import { DataTable, type Column } from "@/_components/admin/data-table";
-import { StatusBadge } from "@/_components/admin/status-badge";
+import { StatusBadge, ScoreChip } from "@/_components/admin/status-badge";
 import { Select } from "@/_components/admin/form";
 import { listApplications } from "@/_lib/admin/applications";
 import { listProducts } from "@/_lib/admin/products";
-import type { ApplicationStatus, LoanApplication, Product, RiskCategory } from "@/_lib/admin/types";
+import type { ApplicationStatus, LoanApplication, Product } from "@/_lib/admin/types";
 import { applicationStatusLabels, formatCurrency, formatDate, fullName } from "@/_lib/admin/format";
-
-const SCORE_TONE: Record<RiskCategory, string> = {
-  A: "bg-success/12 text-success",
-  B: "bg-accent/15 text-dark-gold",
-  C: "bg-alert/12 text-alert",
-  D: "bg-error/12 text-error",
-};
-
-function ScoreChip({ score, category }: { score: number | null; category: RiskCategory | null }) {
-  if (score == null) return <span className="text-xs text-muted-foreground">—</span>;
-  return (
-    <span
-      className={cn(
-        "inline-flex min-w-[2.75rem] items-center justify-center rounded-md px-2 py-0.5 font-mono text-xs font-semibold",
-        category ? SCORE_TONE[category] : "bg-secondary text-muted-foreground"
-      )}
-    >
-      {score}
-    </span>
-  );
-}
 
 export default function ApplicationsPage() {
   const router = useRouter();

@@ -150,18 +150,27 @@ app/admin/
     ├── loans/new, loans/[id]
     ├── contracts/          # contract lifecycle (CRM)
     ├── tasks/              # follow-ups / relances (CRM)
+    ├── mail/               # company inbox (full-screen, no-modal); + mail/accounts (CRUD) + mail/simulate (sandbox)
     ├── payments/ overdue/ products/ applications/ import/ settings/
 
 app/_lib/admin/             # typed data layer over Supabase (+ RLS)
 │   types, format, finance (amortization), scoring (credit-score engine),
 │   clients, loans, installments, payments, products, dashboard, applications,
-│   import, admin-users, scores, documents, interactions, tasks, contracts
+│   import, admin-users, scores, documents, interactions, tasks, contracts,
+│   origination (app→contract→loan), servicing (disburse/settle/restructure/write-off),
+│   collections (dunning/late fee/promise), audit (actor + activity_log), mail/
 app/_components/admin/      # shell, nav (grouped sections), auth-provider, guard,
-│   kpi-card, data-table, bar-chart, status-badge, dialog, form, toast, panel, page-header
+│   kpi-card, data-table, bar-chart, status-badge, dialog, form, toast, panel, page-header,
+│   tabs, timeline (Timeline/StageStepper), detail, primitives, bits, drawer, charts
 ├── clients/                # score-gauge, score-panel, documents-panel,
 │                           #   interactions-panel, tasks-panel, contracts-panel
-└── forms/                  # client-form-dialog, payment-dialog
+├── applications/           # 8-tab dossier panels (contract-panel wires real origination)
+├── mail/                   # account-sidebar, message-list, message-view, message-crm (CRM link),
+│                           #   message-thread (conversation), message-simulate-reply, compose-pane, account-form
+└── forms/                  # client-form-dialog, payment-dialog, product-dialog
 ```
+Detail pages (tabbed dossiers): `contracts/[id]`, `loans/[id]`, `products/[id]`,
+`clients/[id]`, `applications/[id]` — all read/write the real Supabase layer.
 
 ### Client credit scoring
 `app/_lib/admin/scoring.ts` is the single source of truth for client-level scoring
@@ -177,4 +186,71 @@ direct to Supabase with RLS as the trust boundary. Privileged provisioning is do
 server-side via `scripts/*.mjs` using the service role / management token from `.env`.
 
 **Loan creation:** `finance.buildSchedule()` computes the annuity schedule; `loans.createLoan()`
-inserts the loan then its installments (rolls back the loan if the schedule insert fails).
+inserts the loan then its installments (rolls back the loan if the schedule insert fails). A
+`draft` loan is created **undisbursed**.
+
+### Origination, servicing & collections (real, persisted)
+The credit lifecycle is wired end-to-end across three cross-entity engines, all auditable via
+`audit.ts` (`currentActor` from `supabase.auth`, `logActivity` → `activity_log`):
+- **`origination.ts`** — `originateFromApplication` freezes a `ContractTermsSnapshot` and creates
+  a real `contracts` row (creating the client first via `convertApplicationToClient` when needed);
+  `activateContractAsLoan` turns a **signed** contract into a `draft` loan + amortization schedule
+  and links `contracts.loan_id`. The application dossier's Contract tab calls these (no more
+  simulation); `findContractByApplication` reconnects a dossier to its generated contract.
+- **`servicing.ts`** — `disburseLoan` (draft→active + `disbursed_at`), `payoffQuote`/`settleLoan`
+  (early settlement: outstanding principal + accrued interest + late fees + 1% indemnity; due
+  installments → `paid`, future → `waived`), `restructureLoan` (re-amortize the outstanding
+  balance, replacing the unpaid tail), `writeOffLoan`, `setLoanStatus`. Balances read from
+  `v_loan_balances`.
+- **`collections.ts`** — dunning ladder (`recordDunningStep` bumps `loans.dunning_level` +
+  schedules `next_action_date` and a collection task), `assessLateFee`/`assessLateFeeOnLoan`
+  (`installments.late_fee`), `recordPromiseToPay`, `markDefault`. The Recouvrement page reads
+  `v_loan_arrears`.
+
+### Application dossier — derived analytics engines
+`app/_lib/admin/application/` is a layer of **pure, deterministic** engines that power the
+banking-grade dossier (`/admin/applications/[id]`). They take a `LoanApplicationFull` (+ the
+product, + sibling applications for cross-checks) and return rich analytics **without any
+schema or network dependency** — every mock value is drawn from a PRNG seeded by the
+application id (`seed.ts`), so a dossier renders identically across reloads (the "smoke db").
+
+| Module | Output |
+| --- | --- |
+| `analysis.ts` | Affordability: DTI/DSTI, FOIR, residual income, budget reconstruction, commitments (+ consolidation), open-banking, income stability, stress test, flags, verdict. |
+| `pricing.ts` | Rate build-up, APR (TAEG via IRR), insurance, usury-cap check, counter-offer search; reuses `finance.ts`. |
+| `fraud.ts` | KYC/document/fraud/AML/SoF checks, PEP/sanctions screening, velocity & clusters, composite score + disposition. |
+| `decision.ts` | Knock-outs, auto-decision (APPROVE/REFER/DECLINE), conditions, delegated authority, SLA, reason codes; reuses `scoring.ts`. |
+| `comms.ts` | Next-best-action, contactability (consent + quiet hours), FR message templates, mock delivery, duplicates. |
+| `contract.ts` | FIPEN/SECCI merge context, document pack, offer blocks (country-adapted). |
+| `constants.ts` / `seed.ts` | Country legal (usury, cooling-off), region cost anchors, pricing/SLA constants; deterministic RNG + date helpers. |
+
+**Derive vs persist:** analytics are recomputed at read time (never stored). Only the analyst's
+choices persist, via additive `loan_applications` columns (`decision`, `risk_review`, `consent`,
+`pricing`, workflow fields — migration `20260528140000`) and the existing `interactions`/`tasks`
+tables (linked by `application_id`). Data layer: `app/_lib/admin/applications.ts`; UI:
+`app/_components/admin/applications/` (tabbed panels + workflow bar + edit dialog).
+
+### Mailbox — company inbox (DB-backed mockup)
+`app/_lib/admin/mail/` is the data layer for the Messagerie tab (`/admin/mail`), split by
+responsibility like `application/`: `accounts` (CRUD + default; selects exclude `*_password`),
+`folders` (list + per-folder unread counts), `messages` (filter/search list, full reader with
+attachments + CRM joins, seen/flag/move/delete), `compose` (`sendMessage` → outgoing row in Sent,
+marks the thread answered, journals a CRM `interaction` when linked; `saveDraft`), `diagnostics`
+(`runSmoke` **simulated** ~600 ms config check → writes `mail_diagnostics` + updates the account's
+`last_*_status`; `syncMailbox` stamps `last_synced_at`) and `simulate` (`simulateInboundMessage` injects
+a demo incoming message; `simulateReplyTo` injects the counterparty's reply into the **same thread**).
+`sendMessage` stamps a `message_id` + `thread_key` so conversations build. The hidden `/admin/mail/simulate`
+sandbox is a **conversation webmail** (mirror of the live smoke) using `listAccountMessages` +
+`simulateReplyTo`. Barrel re-exported as `mailApi`.
+
+**No network, no new routes:** like the rest of the admin, everything goes through the browser
+Supabase client under RLS (`mail_*` tables, admin-only). No SMTP/IMAP client, service-role or
+encryption is introduced — the schema already carries host/port/security/credentials so it can be
+wired to real servers later (see DECISIONS). Credentials are **write-only** (never selected back).
+UI: `app/_components/admin/mail/` (**full-screen, no-modal** 3-pane client: `account-sidebar`,
+`message-list`, `message-view` + inline `message-crm` link editor, inline `compose-pane`); account
+management on the dedicated full-screen page `/admin/mail/accounts` (`account-form`, master-detail with
+an independent-scroll list, inline delete confirm). `message-crm` links a message to a client/application
+(`setMessageCrmLinks`) and advances the application status (`transitionApplication`). Full-screen pages
+pin to the right of the **collapsible** admin sidebar via the `--sidebar-w` CSS var. Nav group
+**Communication → Messagerie** (no modals — Golden Rule 9).

@@ -26,14 +26,14 @@ export function DataTable<T>({ columns, rows, getKey, onRowClick, empty }: DataT
 
   return (
     <div className="overflow-x-auto rounded-lg border border-border">
-      <table className="w-full border-collapse text-sm">
+      <table className="w-full border-collapse text-[13px]">
         <thead>
-          <tr className="border-b border-border bg-secondary/40">
+          <tr className="border-b border-border bg-secondary/60">
             {columns.map((c, i) => (
               <th
                 key={i}
                 className={cn(
-                  "px-4 py-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground",
+                  "px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground",
                   alignClass[c.align ?? "left"],
                   c.className
                 )}
@@ -50,13 +50,13 @@ export function DataTable<T>({ columns, rows, getKey, onRowClick, empty }: DataT
               onClick={onRowClick ? () => onRowClick(row) : undefined}
               className={cn(
                 "border-b border-border last:border-0 transition-colors",
-                onRowClick ? "cursor-pointer hover:bg-secondary/30" : "hover:bg-secondary/20"
+                onRowClick ? "cursor-pointer hover:bg-secondary/50" : "hover:bg-secondary/30"
               )}
             >
               {columns.map((c, i) => (
                 <td
                   key={i}
-                  className={cn("px-4 py-3 text-foreground", alignClass[c.align ?? "left"], c.className)}
+                  className={cn("px-3 py-2 text-foreground", alignClass[c.align ?? "left"], c.className)}
                 >
                   {c.cell(row)}
                 </td>

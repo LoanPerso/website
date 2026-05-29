@@ -9,6 +9,7 @@ import { Modal } from "@/_components/admin/dialog";
 import { Field, TextInput, Textarea } from "@/_components/admin/form";
 import { useToast } from "@/_components/admin/toast";
 import { ScoreGauge } from "./score-gauge";
+import { Badge } from "@/_components/admin/status-badge";
 import { listClientScores, overrideClientScore, recomputeClientScore } from "@/_lib/admin/scores";
 import { isScoreStale } from "@/_lib/admin/scoring";
 import { formatDate, scoreSourceLabels } from "@/_lib/admin/format";
@@ -92,14 +93,10 @@ export function ScorePanel({ client, onUpdated }: { client: Client; onUpdated: (
             </p>
             <div className="flex flex-wrap justify-center gap-1">
               {stale ? (
-                <span className="rounded-full bg-alert/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-alert">
-                  À actualiser
-                </span>
+                <Badge tone="warning">À actualiser</Badge>
               ) : null}
               {latest && !latest.is_complete ? (
-                <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  Données incomplètes
-                </span>
+                <Badge tone="neutral">Données incomplètes</Badge>
               ) : null}
             </div>
           </div>
@@ -150,7 +147,7 @@ export function ScorePanel({ client, onUpdated }: { client: Client; onUpdated: (
                 ) : null}
 
                 {client.score_override != null ? (
-                  <div className="rounded-md border border-alert/30 bg-alert/5 px-3 py-2 text-xs text-foreground">
+                  <div className="rounded-md border border-border bg-secondary/40 px-3 py-2 text-xs text-foreground">
                     <span className="font-semibold">Override manuel :</span> {client.score_override_reason || "—"}
                   </div>
                 ) : null}

@@ -55,7 +55,7 @@ export function ScoreGauge({
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="font-serif text-3xl leading-none">{score ?? "—"}</span>
+          <span className="text-3xl font-semibold leading-none tracking-tight">{score ?? "—"}</span>
           <span className="text-[10px] uppercase tracking-wider text-muted-foreground">/ 100</span>
         </div>
       </div>

@@ -9,8 +9,10 @@ export const metadata: Metadata = {
 
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <AdminAuthProvider>
-      <ToastProvider>{children}</ToastProvider>
-    </AdminAuthProvider>
+    <div className="admin-theme min-h-dvh">
+      <AdminAuthProvider>
+        <ToastProvider>{children}</ToastProvider>
+      </AdminAuthProvider>
+    </div>
   );
 }

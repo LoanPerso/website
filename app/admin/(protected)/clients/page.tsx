@@ -8,7 +8,7 @@ import { Button } from "@/_components/ui/button";
 import { PageHeader } from "@/_components/admin/page-header";
 import { Panel } from "@/_components/admin/panel";
 import { DataTable, type Column } from "@/_components/admin/data-table";
-import { StatusBadge, RiskBadge } from "@/_components/admin/status-badge";
+import { StatusBadge, RiskBadge, ScoreChip } from "@/_components/admin/status-badge";
 import { Select } from "@/_components/admin/form";
 import { ClientFormDialog } from "@/_components/admin/forms/client-form-dialog";
 import { listClientOverview } from "@/_lib/admin/clients";
@@ -16,27 +16,6 @@ import type { ClientOverview, ClientStatus, RiskCategory } from "@/_lib/admin/ty
 import { formatDate, fullName } from "@/_lib/admin/format";
 
 const PAGE_SIZE = 25;
-
-const SCORE_TONE: Record<RiskCategory, string> = {
-  A: "bg-success/12 text-success",
-  B: "bg-accent/15 text-dark-gold",
-  C: "bg-alert/12 text-alert",
-  D: "bg-error/12 text-error",
-};
-
-function ScoreChip({ score, category }: { score: number | null; category: RiskCategory | null }) {
-  if (score == null) return <span className="text-xs text-muted-foreground">—</span>;
-  return (
-    <span
-      className={cn(
-        "inline-flex min-w-[2.75rem] items-center justify-center rounded-md px-2 py-0.5 font-mono text-xs font-semibold",
-        category ? SCORE_TONE[category] : "bg-secondary text-muted-foreground"
-      )}
-    >
-      {score}
-    </span>
-  );
-}
 
 export default function ClientsPage() {
   const router = useRouter();
@@ -128,7 +107,7 @@ export default function ClientsPage() {
                   setSearch(e.target.value);
                 }}
                 placeholder="Rechercher…"
-                className="h-9 w-44 rounded-md border border-input bg-white pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="h-9 w-44 rounded-md border border-input bg-background pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
               />
             </div>
             <Select

@@ -6,6 +6,7 @@ import {
   Inbox,
   LayoutDashboard,
   ListChecks,
+  Mail,
   Package,
   Settings,
   Upload,
@@ -36,6 +37,10 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/clients", label: "Clients", icon: Users },
       { href: "/admin/tasks", label: "Tâches", icon: ListChecks },
     ],
+  },
+  {
+    label: "Communication",
+    items: [{ href: "/admin/mail", label: "Messagerie", icon: Mail }],
   },
   {
     label: "Financement",

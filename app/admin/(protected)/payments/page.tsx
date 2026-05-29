@@ -1,18 +1,27 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { Plus } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Plus, RotateCcw, XCircle } from "lucide-react";
 import { Button } from "@/_components/ui/button";
 import { PageHeader } from "@/_components/admin/page-header";
 import { Panel } from "@/_components/admin/panel";
+import { KpiCard } from "@/_components/admin/kpi-card";
 import { DataTable, type Column } from "@/_components/admin/data-table";
+import { StatusBadge } from "@/_components/admin/status-badge";
+import { SoftBadge } from "@/_components/admin/primitives";
 import { Modal } from "@/_components/admin/dialog";
 import { Field, FieldGrid, Select, TextInput } from "@/_components/admin/form";
 import { useToast } from "@/_components/admin/toast";
-import { listPayments, recordPayment, type PaymentRow } from "@/_lib/admin/payments";
+import {
+  listPayments,
+  recordPayment,
+  refundPayment,
+  failPayment,
+  type PaymentRow,
+} from "@/_lib/admin/payments";
 import { listLoans } from "@/_lib/admin/loans";
-import type { LoanWithClient, PaymentMethod } from "@/_lib/admin/types";
-import { formatCurrency, formatDate, fullName, paymentMethodLabels } from "@/_lib/admin/format";
+import type { LoanWithClient, PaymentMethod, PaymentStatus } from "@/_lib/admin/types";
+import { formatCurrency, formatDate, fullName, paymentMethodLabels, paymentStatusLabels } from "@/_lib/admin/format";
 
 export default function PaymentsPage() {
   const toast = useToast();
@@ -20,36 +29,88 @@ export default function PaymentsPage() {
   const [count, setCount] = useState(0);
   const [month, setMonth] = useState("");
   const [method, setMethod] = useState<PaymentMethod | "all">("all");
+  const [status, setStatus] = useState<PaymentStatus | "all">("all");
   const [loading, setLoading] = useState(true);
+  const [busy, setBusy] = useState(false);
   const [open, setOpen] = useState(false);
 
   const load = useCallback(async () => {
     setLoading(true);
-    const res = await listPayments({ month: month || undefined, method, pageSize: 100 });
+    const res = await listPayments({ month: month || undefined, method, status, pageSize: 200 });
     setRows(res.data?.rows ?? []);
     setCount(res.data?.count ?? 0);
     setLoading(false);
-  }, [month, method]);
+  }, [month, method, status]);
 
   useEffect(() => {
     load();
   }, [load]);
 
-  const total = rows.reduce((s, p) => s + Number(p.amount), 0);
+  const kpis = useMemo(() => {
+    const completed = rows.filter((p) => p.status === "completed");
+    const collected = completed.reduce((s, p) => s + Number(p.amount), 0);
+    const unreconciled = completed.filter((p) => !p.installment_id).length;
+    const refunded = rows.filter((p) => p.status === "refunded").length;
+    return { collected, unreconciled, refunded };
+  }, [rows]);
+
+  async function act(fn: () => Promise<{ error: string | null }>, ok: string) {
+    setBusy(true);
+    const res = await fn();
+    setBusy(false);
+    if (res.error) return toast(res.error, "error");
+    toast(ok);
+    load();
+  }
 
   const columns: Column<PaymentRow>[] = [
     { header: "Date", cell: (p) => formatDate(p.payment_date) },
     { header: "Client", cell: (p) => fullName(p.client?.first_name, p.client?.last_name) },
     { header: "Crédit", cell: (p) => <span className="font-mono text-xs">{p.loan?.reference ?? "—"}</span> },
     { header: "Moyen", cell: (p) => paymentMethodLabels[p.method] ?? p.method },
-    { header: "Montant", align: "right", cell: (p) => <span className="font-medium">{formatCurrency(p.amount, 2)}</span> },
+    {
+      header: "Rapproché",
+      cell: (p) =>
+        p.installment_id ? (
+          <SoftBadge tone="success">Échéance</SoftBadge>
+        ) : (
+          <SoftBadge tone="warning">Non rapproché</SoftBadge>
+        ),
+    },
+    { header: "Statut", cell: (p) => <StatusBadge kind="payment" status={p.status} /> },
+    { header: "Montant", align: "right", cell: (p) => <span className="font-medium tabular-nums">{formatCurrency(p.amount, 2)}</span> },
+    {
+      header: "",
+      align: "right",
+      cell: (p) =>
+        p.status === "completed" ? (
+          <div className="flex items-center justify-end gap-2" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => act(() => refundPayment(p), "Paiement remboursé.")}
+              disabled={busy}
+              className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
+              title="Rembourser"
+            >
+              <RotateCcw className="h-3.5 w-3.5" /> Rembourser
+            </button>
+            <button
+              onClick={() => act(() => failPayment(p), "Paiement marqué rejeté.")}
+              disabled={busy}
+              className="inline-flex items-center gap-1 text-xs text-error hover:underline"
+              title="Marquer rejeté"
+            >
+              <XCircle className="h-3.5 w-3.5" /> Rejeter
+            </button>
+          </div>
+        ) : null,
+    },
   ];
 
   return (
     <div>
       <PageHeader
         title="Paiements"
-        description={`${count} paiement(s) · ${formatCurrency(total)} sur la période`}
+        description={`${count} paiement(s) sur la période`}
         actions={
           <Button onClick={() => setOpen(true)}>
             <Plus className="h-4 w-4" /> Nouveau paiement
@@ -57,19 +118,33 @@ export default function PaymentsPage() {
         }
       />
 
+      <div className="mb-6 grid gap-4 sm:grid-cols-3">
+        <KpiCard label="Encaissé (validé)" value={formatCurrency(kpis.collected)} tone="success" />
+        <KpiCard label="Non rapprochés" value={String(kpis.unreconciled)} tone={kpis.unreconciled ? "warning" : "default"} />
+        <KpiCard label="Remboursés" value={String(kpis.refunded)} />
+      </div>
+
       <Panel
         title="Historique"
         actions={
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <input
               type="month"
               value={month}
               onChange={(e) => setMonth(e.target.value)}
-              className="h-9 rounded-md border border-input bg-white px-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="h-9 rounded-md border border-input bg-background px-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
-            <Select value={method} onChange={(e) => setMethod(e.target.value as PaymentMethod | "all")} className="h-9 w-40">
+            <Select value={method} onChange={(e) => setMethod(e.target.value as PaymentMethod | "all")} className="h-9 w-36">
               <option value="all">Tous moyens</option>
               {Object.entries(paymentMethodLabels).map(([v, l]) => (
+                <option key={v} value={v}>
+                  {l}
+                </option>
+              ))}
+            </Select>
+            <Select value={status} onChange={(e) => setStatus(e.target.value as PaymentStatus | "all")} className="h-9 w-36">
+              <option value="all">Tous statuts</option>
+              {Object.entries(paymentStatusLabels).map(([v, l]) => (
                 <option key={v} value={v}>
                   {l}
                 </option>

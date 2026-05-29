@@ -91,7 +91,7 @@ export default function LoansPage() {
                   setSearch(e.target.value);
                 }}
                 placeholder="Réf. crédit…"
-                className="h-9 w-36 rounded-md border border-input bg-white pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="h-9 w-36 rounded-md border border-input bg-background pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
               />
             </div>
             <Select

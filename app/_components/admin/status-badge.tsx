@@ -12,12 +12,13 @@ import {
 
 type Tone = "success" | "warning" | "error" | "neutral" | "info";
 
-const toneClass: Record<Tone, string> = {
-  success: "bg-success/12 text-success border-success/25",
-  warning: "bg-alert/12 text-alert border-alert/25",
-  error: "bg-error/12 text-error border-error/25",
-  neutral: "bg-secondary text-muted-foreground border-border",
-  info: "bg-accent/15 text-dark-gold border-accent/30",
+// Neutral chip; the status colour lives only in the leading dot (grayscale-first).
+const toneDot: Record<Tone, string> = {
+  success: "bg-success",
+  warning: "bg-alert",
+  error: "bg-error",
+  neutral: "bg-muted-foreground/50",
+  info: "bg-foreground",
 };
 
 export type BadgeKind =
@@ -70,12 +71,8 @@ const labelMaps: Record<BadgeKind, Record<string, string>> = {
 
 export function Badge({ tone = "neutral", children }: { tone?: Tone; children: React.ReactNode }) {
   return (
-    <span
-      className={cn(
-        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium",
-        toneClass[tone]
-      )}
-    >
+    <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2 py-0.5 text-xs font-medium text-foreground">
+      <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", toneDot[tone])} />
       {children}
     </span>
   );
@@ -91,4 +88,24 @@ export function RiskBadge({ category }: { category: string | null }) {
   if (!category) return <span className="text-xs text-muted-foreground">—</span>;
   const tone: Tone = category === "A" ? "success" : category === "B" ? "info" : category === "C" ? "warning" : "error";
   return <Badge tone={tone}>Cat. {category}</Badge>;
+}
+
+// Numeric credit score in a neutral chip; the risk category shows only as a small dot.
+const scoreDot: Record<string, string> = {
+  A: "bg-success",
+  B: "bg-foreground",
+  C: "bg-alert",
+  D: "bg-error",
+};
+
+export function ScoreChip({ score, category }: { score: number | null; category: string | null }) {
+  if (score == null) return <span className="text-xs text-muted-foreground">—</span>;
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2 py-0.5 font-mono text-xs font-semibold tabular-nums text-foreground">
+      {category ? (
+        <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", scoreDot[category] ?? "bg-muted-foreground/50")} />
+      ) : null}
+      {score}
+    </span>
+  );
 }

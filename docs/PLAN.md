@@ -23,6 +23,14 @@
 - [ ] Pipeline demande → client (qualification, conversion enrichie) validé
 - [ ] Smoke data CRM relue (à remplacer par les vraies données)
 
+### Messagerie — boîte mail de la société (à valider)
+- [ ] Onglet `/admin/mail` (3 panneaux : comptes + dossiers / liste / lecteur) validé
+- [ ] Gestion multi-comptes (config IMAP/SMTP, défaut/actif, signature) validée
+- [ ] Composer / répondre / transférer (envoi simulé) validé
+- [ ] Tests de connexion **SMTP/IMAP** (smoke simulé) + diagnostics validés
+- [ ] Synchronisation (simulée) validée
+- [ ] Maquette DB relue ; **branchement SMTP/IMAP réel + chiffrement des identifiants** planifié
+
 ---
 
 ## Landing Page - Refonte Complète (Style Awwwards Premium)

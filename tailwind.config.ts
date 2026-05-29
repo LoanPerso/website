@@ -2,6 +2,10 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
+  // Touch ergonomics: `hover:` utilities only apply on devices that actually
+  // support hover, so a tap on mobile never leaves a button stuck in its hover
+  // state. Active/pressed feedback is handled by `active:` utilities instead.
+  future: { hoverOnlyWhenSupported: true },
   content: ["./app/**/*.{ts,tsx}", "./docs/**/*.{md,mdx}"],
   theme: {
     container: {
@@ -34,6 +38,7 @@ const config: Config = {
         border: "hsl(var(--border))",
         "deep-black": "hsl(var(--deep-black))",
         "dark-gold": "hsl(var(--dark-gold))",
+        "brand-gold": "hsl(var(--brand-gold))",
         champagne: "hsl(var(--accent))",
         anthracite: "hsl(var(--primary))",
         success: "hsl(var(--success))",
@@ -48,7 +53,8 @@ const config: Config = {
       },
       boxShadow: {
         soft: "0 12px 24px rgba(15, 23, 42, 0.08)",
-        crisp: "0 8px 16px rgba(15, 23, 42, 0.06)"
+        crisp: "0 8px 16px rgba(15, 23, 42, 0.06)",
+        overlay: "0 12px 32px -12px rgba(16, 24, 40, 0.22), 0 4px 10px -6px rgba(16, 24, 40, 0.12)"
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui"],

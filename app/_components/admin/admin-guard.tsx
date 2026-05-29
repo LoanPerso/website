@@ -7,7 +7,7 @@ import { useAdminAuth } from "./auth-provider";
 
 function FullScreen({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">{children}</div>
+    <div className="flex min-h-dvh items-center justify-center bg-background">{children}</div>
   );
 }
 
@@ -30,9 +30,9 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
   if (!admin || !admin.is_active) {
     return (
       <FullScreen>
-        <div className="max-w-sm rounded-lg border border-border bg-white p-8 text-center shadow-soft">
+        <div className="max-w-sm rounded-lg border border-border bg-background p-8 text-center shadow-overlay">
           <ShieldAlert className="mx-auto h-8 w-8 text-error" />
-          <h1 className="mt-4 font-serif text-xl">Accès refusé</h1>
+          <h1 className="mt-4 text-lg font-semibold tracking-tight">Accès refusé</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Ce compte n&apos;a pas accès à l&apos;espace d&apos;administration.
           </p>

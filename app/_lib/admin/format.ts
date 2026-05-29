@@ -178,3 +178,63 @@ export const scoreFactorLabels: Record<string, string> = {
   housing: "Logement",
   age: "Âge",
 };
+
+// Date + time (FR), e.g. "28/05/2026 14:32".
+export function formatDateTime(value: string | null | undefined): string {
+  if (!value) return "—";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "—";
+  return new Intl.DateTimeFormat(FR, {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(d);
+}
+
+// Relative time for recent events ("à l'instant", "il y a 5 min", "hier"),
+// falling back to a plain date once older than a week.
+export function formatRelativeDate(value: string | null | undefined): string {
+  if (!value) return "—";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "—";
+  const sec = Math.round((Date.now() - d.getTime()) / 1000);
+  if (sec < 0) return formatDateTime(value);
+  if (sec < 60) return "à l'instant";
+  const min = Math.round(sec / 60);
+  if (min < 60) return `il y a ${min} min`;
+  const hr = Math.round(min / 60);
+  if (hr < 24) return `il y a ${hr} h`;
+  const day = Math.round(hr / 24);
+  if (day === 1) return "hier";
+  if (day < 7) return `il y a ${day} j`;
+  return formatDate(value);
+}
+
+// Mailbox enum labels ----------------------------------------------------------
+export const mailFolderRoleLabels: Record<string, string> = {
+  inbox: "Réception",
+  sent: "Envoyés",
+  drafts: "Brouillons",
+  trash: "Corbeille",
+  archive: "Archives",
+  spam: "Indésirables",
+  other: "Autre",
+};
+
+export const mailDirectionLabels: Record<string, string> = {
+  in: "Entrant",
+  out: "Sortant",
+};
+
+export const mailDiagnosticKindLabels: Record<string, string> = {
+  smtp: "SMTP (envoi)",
+  imap: "IMAP (réception)",
+};
+
+export const mailSecurityLabels: Record<string, string> = {
+  ssl: "SSL/TLS",
+  starttls: "STARTTLS",
+  none: "Aucune",
+};

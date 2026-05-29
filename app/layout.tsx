@@ -1,6 +1,7 @@
 import "./globals.css";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans, Inter } from "next/font/google";
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/_components/theme-provider";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -13,6 +14,14 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+// Neutral UI typeface for the admin back office (Stripe/Linear/Notion feel).
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ui",
   display: "swap",
 });
 
@@ -64,10 +73,22 @@ type Props = {
   params: { locale: string };
 };
 
+// Applied before paint to avoid a flash of the wrong theme. Admin-only for now:
+// only sets the `dark` class on /admin routes (the public site has its own
+// `dark:` utilities and must stay light). Reads the stored preference or the OS.
+const themeScript = `(function(){try{if(location.pathname.indexOf('/admin')!==0)return;var t=localStorage.getItem('theme');var d=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`;
+
 export default function RootLayout({ children, params }: Props) {
   return (
-    <html lang={params.locale || 'et'} className={`${dmSans.variable} ${cormorant.variable}`}>
-      <body>{children}</body>
+    <html
+      lang={params.locale || 'et'}
+      className={`${dmSans.variable} ${cormorant.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

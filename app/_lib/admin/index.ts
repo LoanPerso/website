@@ -16,3 +16,8 @@ export * as documentsApi from "./documents";
 export * as interactionsApi from "./interactions";
 export * as tasksApi from "./tasks";
 export * as contractsApi from "./contracts";
+export * as originationApi from "./origination";
+export * as servicingApi from "./servicing";
+export * as collectionsApi from "./collections";
+export * as auditApi from "./audit";
+export * as mailApi from "./mail";

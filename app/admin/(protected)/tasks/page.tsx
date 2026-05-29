@@ -177,7 +177,7 @@ export default function TasksPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Rechercher…"
-                className="h-9 w-44 rounded-md border border-input bg-white pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="h-9 w-44 rounded-md border border-input bg-background pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
               />
             </div>
             <Select value={filter} onChange={(e) => setFilter(e.target.value as Filter)} className="h-9 w-40">

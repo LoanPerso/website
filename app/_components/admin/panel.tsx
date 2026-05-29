@@ -15,14 +15,14 @@ export function Panel({
   bodyClassName?: string;
 }) {
   return (
-    <section className={cn("rounded-xl border border-border bg-white shadow-soft", className)}>
+    <section className={cn("rounded-lg border border-border bg-background", className)}>
       {(title || actions) && (
-        <header className="flex items-center justify-between border-b border-border px-5 py-4">
-          {title ? <h2 className="text-sm font-semibold tracking-tight">{title}</h2> : <span />}
+        <header className="flex items-center justify-between gap-3 border-b border-border px-4 py-2.5">
+          {title ? <h2 className="text-[13px] font-semibold tracking-tight text-foreground">{title}</h2> : <span />}
           {actions}
         </header>
       )}
-      <div className={cn("p-5", bodyClassName)}>{children}</div>
+      <div className={cn("p-4", bodyClassName)}>{children}</div>
     </section>
   );
 }

@@ -30,7 +30,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
           <div
             key={t.id}
             className={cn(
-              "pointer-events-auto flex items-start gap-3 rounded-lg border bg-white px-4 py-3 text-sm shadow-soft",
+              "pointer-events-auto flex items-start gap-3 rounded-lg border bg-background px-4 py-3 text-sm shadow-overlay",
               t.tone === "success" && "border-success/30",
               t.tone === "error" && "border-error/30",
               t.tone === "info" && "border-border"

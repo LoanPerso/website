@@ -22,17 +22,17 @@ export function KpiCard({ label, value, sub, icon, tone = "default" }: KpiCardPr
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-xl border border-border bg-white p-5 shadow-soft",
+        "relative overflow-hidden rounded-lg border border-border bg-background p-3.5",
         "before:absolute before:inset-y-0 before:left-0 before:w-[3px] before:content-['']",
         tone === "default" ? "before:bg-transparent" : toneRing[tone]
       )}
     >
       <div className="flex items-start justify-between">
-        <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{label}</p>
+        <p className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">{label}</p>
         {icon ? <span className="text-muted-foreground/70">{icon}</span> : null}
       </div>
-      <p className="mt-3 font-serif text-3xl tracking-tight text-foreground">{value}</p>
-      {sub ? <p className="mt-1 text-xs text-muted-foreground">{sub}</p> : null}
+      <p className="mt-1.5 text-[22px] font-semibold leading-tight tracking-tight text-foreground">{value}</p>
+      {sub ? <p className="mt-0.5 text-xs text-muted-foreground">{sub}</p> : null}
     </div>
   );
 }

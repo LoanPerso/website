@@ -11,6 +11,7 @@
 6. **Always speak French with the user.** Code, commits, docs, comments remain in clean English.
 7. **NE JAMAIS COMMIT ET PUSH SANS AUTORISATION EXPLICITE, ET TOUJOURS SANS MENTION DE CO-AUTHORED**
 8. **NE JAMAIS BUILD OU LANCER DE SERVEUR DEV SANS AUTORISATION OU AVANT DEPLOIEMENT**
+9. **INTERDICTION DES MODALS.** Aucune fenêtre modale / dialog superposé pour une création, une édition, une gestion (comptes, paramètres) ou une composition. **Toujours une page dédiée** (route propre) ou, à défaut, un **panneau inline** dans la vue. Les confirmations (suppression, etc.) sont **inline**, jamais en pop-up. Les `Modal`/`ConfirmDialog` (`app/_components/admin/dialog.tsx`) encore présents sont du **legacy à migrer** : ne **jamais** en ajouter de nouveaux. Radix `popover`/`select`/`tabs` restent autorisés (affordances transitoires non-modales).
 ---
 
 ## 1. Communication
@@ -94,7 +95,8 @@
 
 ## 5. Design & Frontend
 - Tailwind CSS is the styling backbone; use tokens (colors, typography, radius, shadows, spacing density) and map them in `tailwind.config`.
-- Use Radix UI primitives for behavior (dialog, popover, select, tabs) without enforcing a visual style.
+- Use Radix UI primitives for behavior (popover, select, tabs) without enforcing a visual style.
+- **No modal overlays (see Golden Rule 9):** forms, management and composition flows live on a **dedicated page** or an **inline panel**; confirmations are inline. Do not add Radix `dialog`/`Modal`/`ConfirmDialog` for new features.
 - shadcn/ui is a starting kit: copy the code, adapt to the design system, and replace anything that does not match.
 - Three.js and Spline are allowed for 3D/interactive visuals when they match the design intent.
 
@@ -189,11 +191,16 @@
 | Variable | Usage | Exposée client ? |
 |----------|-------|:----------------:|
 | `SUPABASE_ACCESS_TOKEN` | Token Management API / CLI Supabase (créer projet, appliquer migrations, lire les clés). `Authorization: Bearer $SUPABASE_ACCESS_TOKEN` | ❌ Jamais |
-| `SUPABASE_PROJECT_REF` | Référence du projet Supabase (ex: `vysqrahewfxamwxabhnh`) | ❌ |
+| `SUPABASE_PROJECT_REF` | Référence du projet **préprod** Supabase (`quickfundPreprod` = `vysqrahewfxamwxabhnh`) | ❌ |
 | `SUPABASE_DB_PASSWORD` | Mot de passe Postgres du projet (connexion directe / `db push`) | ❌ Jamais |
 | `NEXT_PUBLIC_SUPABASE_URL` | URL du projet, client navigateur | ✅ (public) |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clé anon (RLS appliquée), client navigateur | ✅ (public) |
 | `SUPABASE_SERVICE_ROLE_KEY` | Clé privilégiée (bypass RLS) pour opérations serveur uniquement | ❌ Jamais côté client |
+| `SUPABASE_PROD_PROJECT_REF` | Référence du projet **prod** Supabase (`quickfundProd` = `aqwenqsxdubyhhjkfekh`) | ❌ |
+| `SUPABASE_PROD_DB_PASSWORD` | Mot de passe Postgres du projet **prod** | ❌ Jamais |
+| `SUPABASE_PROD_URL` | URL du projet prod (→ `NEXT_PUBLIC_SUPABASE_URL` sur l'hôte de prod) | ✅ (public) |
+| `SUPABASE_PROD_ANON_KEY` | Clé anon prod, RLS appliquée (→ `NEXT_PUBLIC_SUPABASE_ANON_KEY` sur l'hôte de prod) | ✅ (public) |
+| `SUPABASE_PROD_SERVICE_ROLE_KEY` | Clé service_role prod, bypass RLS (→ `SUPABASE_SERVICE_ROLE_KEY` sur l'hôte de prod) | ❌ Jamais côté client |
 | `NEXT_PUBLIC_FIREBASE_*` | Config Firebase (stockage long terme) | ✅ |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Formulaire de contact | ❌ |
 

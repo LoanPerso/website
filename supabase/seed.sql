@@ -450,3 +450,168 @@ begin
     (select count(*) from public.contracts);
 end;
 $$;
+
+-- Application dossier workflow demo data (see migration 20260528140000_application_workflow).
+-- Heavy analytics stay derived at read time; only these workflow fields are seeded.
+update public.loan_applications
+   set priority = case when amount >= 6000 then 'high' when amount >= 3000 then 'normal' else 'low' end
+ where priority is null or priority = 'normal';
+update public.loan_applications
+   set tags = array['montant-élevé']
+ where amount >= 6000 and (tags is null or tags = '{}');
+update public.loan_applications
+   set stage_entered_at = coalesce(stage_entered_at, updated_at, created_at)
+ where stage_entered_at is null;
+
+-- ----------------------------------------------------------------------------
+-- 4) Mailbox demo — company inbox (see migration 20260528160000_mailbox).
+--    One configured account, its folders, a realistic FR thread of incoming and
+--    outgoing mail (a couple linked to existing CRM records by email) and some
+--    smoke-test history. Mock data — no real SMTP/IMAP. Skipped once an account
+--    exists.
+-- ----------------------------------------------------------------------------
+do $$
+declare
+  acc_id  uuid;
+  f_inbox uuid; f_sent uuid; f_drafts uuid; f_trash uuid;
+  app_liis uuid; cli_liis uuid;
+  app_romain uuid; cli_romain uuid;
+  now_ts timestamptz := now();
+  acc_to jsonb := '[{"name":"Quickfund — Contact","address":"contact@quickfund.ee"}]'::jsonb;
+begin
+  if exists (select 1 from public.mail_accounts) then
+    raise notice 'Mailbox data already present — skipping mailbox seed.';
+    return;
+  end if;
+
+  insert into public.mail_accounts
+    (label, email, display_name, signature,
+     imap_host, imap_port, imap_security, imap_username, imap_password,
+     smtp_host, smtp_port, smtp_security, smtp_username, smtp_password,
+     is_active, is_default, last_synced_at,
+     last_smtp_status, last_smtp_checked_at, last_smtp_detail,
+     last_imap_status, last_imap_checked_at, last_imap_detail)
+  values
+    ('Contact', 'contact@quickfund.ee', 'Quickfund — Contact',
+     E'Cordialement,\nL''équipe Quickfund\ncontact@quickfund.ee · quickfund.ee',
+     'imap.quickfund.ee', 993, 'ssl', 'contact@quickfund.ee', 'app-password-demo',
+     'smtp.quickfund.ee', 587, 'starttls', 'contact@quickfund.ee', 'app-password-demo',
+     true, true, now_ts - interval '12 minutes',
+     'ok', now_ts - interval '12 minutes', 'Connexion SMTP réussie — 587/starttls.',
+     'ok', now_ts - interval '12 minutes', 'Connexion IMAP réussie — 993/ssl, INBOX accessible.')
+  returning id into acc_id;
+
+  insert into public.mail_folders (account_id, name, path, role, sort_order)
+  values
+    (acc_id, 'Réception', 'INBOX',        'inbox',  0),
+    (acc_id, 'Envoyés',   'INBOX.Sent',   'sent',   1),
+    (acc_id, 'Brouillons','INBOX.Drafts', 'drafts', 2),
+    (acc_id, 'Corbeille', 'INBOX.Trash',  'trash',  3);
+
+  select id into f_inbox  from public.mail_folders where account_id = acc_id and role = 'inbox';
+  select id into f_sent   from public.mail_folders where account_id = acc_id and role = 'sent';
+  select id into f_drafts from public.mail_folders where account_id = acc_id and role = 'drafts';
+  select id into f_trash  from public.mail_folders where account_id = acc_id and role = 'trash';
+
+  -- CRM links by email (applications carry the contact email; pull their client too).
+  select id, converted_client_id into app_liis, cli_liis
+    from public.loan_applications where email = 'liis.tamm@example.com' limit 1;
+  select id, converted_client_id into app_romain, cli_romain
+    from public.loan_applications where email = 'romain.faure@example.com' limit 1;
+
+  -- Incoming mail (Réception)
+  insert into public.mail_messages
+    (account_id, folder_id, direction, message_id, thread_key, from_name, from_address,
+     to_addresses, subject, snippet, body_text, has_attachments, size_bytes,
+     is_seen, is_flagged, status, client_id, application_id, received_at)
+  values
+    (acc_id, f_inbox, 'in', '<liis-001@mail.example.com>', 'thread-liis-docs',
+     'Liis Tamm', 'liis.tamm@example.com', acc_to,
+     'Pièces justificatives pour ma demande',
+     'Bonjour, vous trouverez ci-joint ma pièce d''identité et mon dernier bulletin de salaire…',
+     E'Bonjour,\n\nSuite à votre message, vous trouverez ci-joint ma pièce d''identité ainsi que mon dernier bulletin de salaire. N''hésitez pas si un autre document est nécessaire.\n\nBien à vous,\nLiis Tamm',
+     true, 184320, false, true, 'received', cli_liis, app_liis, now_ts - interval '38 minutes'),
+
+    (acc_id, f_inbox, 'in', '<romain-001@mail.example.com>', 'thread-romain-offer',
+     'Romain Faure', 'romain.faure@example.com', acc_to,
+     'Question sur mon offre de crédit pro',
+     'Bonjour, j''ai bien reçu l''offre. Une question sur le taux et la possibilité de remboursement anticipé…',
+     E'Bonjour,\n\nJ''ai bien reçu votre offre de crédit professionnel, merci. Avant de signer, je souhaiterais savoir si un remboursement anticipé est possible sans frais, et confirmer le TAEG appliqué.\n\nMerci d''avance,\nRomain Faure',
+     false, 12480, true, false, 'received', cli_romain, app_romain, now_ts - interval '3 hours'),
+
+    (acc_id, f_inbox, 'in', '<sophie-001@mail.example.com>', 'thread-sophie-info',
+     'Sophie Bernard', 'sophie.bernard@gmail.com', acc_to,
+     'Demande d''information — crédit conso',
+     'Bonjour, je souhaite financer des travaux (~4 000 €). Quelles sont vos conditions et la durée maximale ?',
+     E'Bonjour,\n\nJe souhaite financer des travaux pour environ 4 000 €. Pourriez-vous m''indiquer vos conditions (taux, durée maximale, frais de dossier) et la marche à suivre pour déposer une demande ?\n\nCordialement,\nSophie Bernard',
+     false, 9216, false, false, 'received', null, null, now_ts - interval '1 day 2 hours'),
+
+    (acc_id, f_inbox, 'in', '<sepa-8842@bank-partner.ee>', 'thread-sepa-8842',
+     'Banque partenaire', 'notifications@bank-partner.ee', acc_to,
+     'Confirmation de virement SEPA — réf. SEPA-8842',
+     'Le virement SEPA réf. SEPA-8842 d''un montant de 3 000,00 € a été exécuté avec succès.',
+     E'Bonjour,\n\nNous vous confirmons l''exécution du virement SEPA suivant :\n\nRéférence : SEPA-8842\nMontant : 3 000,00 €\nDate de valeur : ce jour\n\nLe détail figure dans la pièce jointe.\n\nCordialement,\nService virements',
+     true, 65536, true, false, 'received', null, null, now_ts - interval '1 day 6 hours'),
+
+    (acc_id, f_inbox, 'in', '<jean-001@mail.example.com>', 'thread-jean-early',
+     'Jean Mercier', 'jean.mercier@outlook.fr', acc_to,
+     'Remboursement anticipé possible ?',
+     'Bonjour, je rembourse actuellement un crédit chez vous. Est-il possible de solder par anticipation ?',
+     E'Bonjour,\n\nJe rembourse actuellement un crédit souscrit chez vous. Est-il possible de le solder par anticipation, et si oui, quels seraient les frais éventuels ?\n\nMerci pour votre retour,\nJean Mercier',
+     false, 7680, false, false, 'received', null, null, now_ts - interval '2 days'),
+
+    (acc_id, f_inbox, 'in', '<partner-001@apporteur.fr>', 'thread-partner',
+     'Réseau Apporteurs', 'partenariats@apporteur.fr', acc_to,
+     'Proposition de partenariat — apport d''affaires',
+     'Bonjour, nous accompagnons des TPE en recherche de financement et souhaiterions échanger…',
+     E'Bonjour,\n\nNous accompagnons des TPE en recherche de financement et serions intéressés par un partenariat d''apport d''affaires avec Quickfund. Seriez-vous disponible pour un échange cette semaine ?\n\nBien cordialement,\nRéseau Apporteurs',
+     false, 8704, true, false, 'received', null, null, now_ts - interval '4 days');
+
+  -- Outgoing mail (Envoyés)
+  insert into public.mail_messages
+    (account_id, folder_id, direction, message_id, in_reply_to, thread_key, from_name, from_address,
+     to_addresses, subject, snippet, body_text, size_bytes,
+     is_seen, is_answered, status, client_id, application_id, sent_at)
+  values
+    (acc_id, f_sent, 'out', '<qf-out-101@quickfund.ee>', '<liis-001@mail.example.com>', 'thread-liis-docs',
+     'Quickfund — Contact', 'contact@quickfund.ee',
+     '[{"name":"Liis Tamm","address":"liis.tamm@example.com"}]'::jsonb,
+     'Re: Pièces justificatives pour ma demande',
+     'Bonjour Liis, merci pour l''envoi. Vos documents sont bien reçus, il nous manque un justificatif de domicile…',
+     E'Bonjour Liis,\n\nMerci pour l''envoi de vos pièces, elles sont bien reçues. Pour finaliser l''étude de votre demande, il nous manque un justificatif de domicile de moins de trois mois.\n\nDès réception, nous reviendrons vers vous sous 48 h.\n\nCordialement,\nL''équipe Quickfund',
+     14336, true, false, 'sent', cli_liis, app_liis, now_ts - interval '20 minutes'),
+
+    (acc_id, f_sent, 'out', '<qf-out-102@quickfund.ee>', '<sophie-001@mail.example.com>', 'thread-sophie-info',
+     'Quickfund — Contact', 'contact@quickfund.ee',
+     '[{"name":"Sophie Bernard","address":"sophie.bernard@gmail.com"}]'::jsonb,
+     'Re: Demande d''information — crédit conso',
+     'Bonjour Sophie, pour un crédit conso de 4 000 € nos durées vont de 3 à 36 mois, taux à partir de 6 %…',
+     E'Bonjour Sophie,\n\nMerci de votre intérêt. Pour un crédit à la consommation de 4 000 €, nos durées s''échelonnent de 3 à 36 mois, avec un taux à partir de 6 % et des frais de dossier de 1 %.\n\nVous pouvez déposer votre demande en ligne sur quickfund.ee ; un conseiller l''étudie sous 48 h.\n\nCordialement,\nL''équipe Quickfund',
+     15360, true, false, 'sent', null, null, now_ts - interval '20 hours');
+
+  -- Attachments for the two messages flagged has_attachments (sizes match size_bytes).
+  insert into public.mail_attachments (message_id, filename, content_type, size_bytes, is_inline)
+  select id, 'carte-identite.pdf', 'application/pdf', 96000, false
+    from public.mail_messages where account_id = acc_id and message_id = '<liis-001@mail.example.com>'
+  union all
+  select id, 'bulletin-salaire.pdf', 'application/pdf', 88320, false
+    from public.mail_messages where account_id = acc_id and message_id = '<liis-001@mail.example.com>'
+  union all
+  select id, 'avis-virement-sepa-8842.pdf', 'application/pdf', 65536, false
+    from public.mail_messages where account_id = acc_id and message_id = '<sepa-8842@bank-partner.ee>';
+
+  -- Smoke-test history
+  insert into public.mail_diagnostics (account_id, kind, ok, detail, latency_ms, ran_at)
+  values
+    (acc_id, 'imap', true,  'Connexion IMAP réussie — 993/ssl, INBOX accessible.', 540, now_ts - interval '12 minutes'),
+    (acc_id, 'smtp', true,  'Connexion SMTP réussie — 587/starttls.',               612, now_ts - interval '12 minutes'),
+    (acc_id, 'smtp', false, 'Échec SMTP — délai d''attente dépassé sur le port 587.', 3010, now_ts - interval '3 days'),
+    (acc_id, 'smtp', true,  'Connexion SMTP réussie — 587/starttls.',               588, now_ts - interval '3 days' + interval '5 minutes');
+
+  raise notice 'Mailbox seed complete: % account(s), % folders, % messages, % diagnostics',
+    (select count(*) from public.mail_accounts),
+    (select count(*) from public.mail_folders),
+    (select count(*) from public.mail_messages),
+    (select count(*) from public.mail_diagnostics);
+end;
+$$;

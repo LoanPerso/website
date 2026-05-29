@@ -119,7 +119,7 @@ export default function ContractsPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Réf…"
-                className="h-9 w-40 rounded-md border border-input bg-white pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="h-9 w-40 rounded-md border border-input bg-background pl-8 pr-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
               />
             </div>
             <Select value={status} onChange={(e) => setStatus(e.target.value as ContractStatus | "all")} className="h-9 w-40">
@@ -140,8 +140,8 @@ export default function ContractsPage() {
             columns={columns}
             rows={filtered}
             getKey={(c) => c.id}
-            onRowClick={(c) => (c.client_id ? router.push(`/admin/clients/${c.client_id}`) : undefined)}
-            empty={{ title: "Aucun contrat", hint: "Les contrats se créent depuis une fiche client." }}
+            onRowClick={(c) => router.push(`/admin/contracts/${c.id}`)}
+            empty={{ title: "Aucun contrat", hint: "Les contrats se créent depuis le dossier d'une demande qualifiée." }}
           />
         )}
       </Panel>
