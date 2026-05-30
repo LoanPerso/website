@@ -1,5 +1,13 @@
 # Journal
 
+## 2026-05-30 — Prod : amorçage (admin + catalogue produits, sans données démo)
+- **Admin prod créé :** `fkvirtuel@gmail.com` (nom *Gaylor*, **superadmin**, actif) sur `quickfundProd` — utilisateur Auth confirmé + ligne `admin_users`, via `scripts/create-admin.mjs` ciblé prod (override `NEXT_PUBLIC_SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` / `SUPABASE_PROJECT_REF` = valeurs `SUPABASE_PROD_*`). Identifiants identiques à la préprod.
+- **Catalogue produits répliqué :** les **8 produits** de la préprod copiés à l'identique dans `public.products` (micro-crédit, conso, pro, étudiant, avance sur salaire, leasing, regroupement, coaching). Slugs **alignés 1:1** avec `productsConfig` de la landing (`app/[locale]/(public)/products/_config.ts`).
+- **Aucune donnée métier de démo** en prod (clients/crédits/paiements/mails = 0).
+- **Vérifié :** `admin_users` (1), `auth.users` (1, confirmé), `products` (8, actifs).
+- **Note sécurité :** mot de passe admin volontairement faible (parité préprod) — **à rotationner avant ouverture publique**.
+- **Docs :** DECISIONS, DATABASE, PROJECT_STATUS (corrigés : prod n'est plus « vierge » ; `service_role` non requis sur l'hôte runtime).
+
 ## 2026-05-29 — Supabase : projet prod vierge (`quickfundProd`) + préprod renommée
 - **Nouveau projet prod :** `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`, `eu-central-1`, org gratuite — le plan est désormais au niveau org) créé via l'API Management.
 - **Migrations (schéma only) :** les **9** fichiers `supabase/migrations/` appliqués dans l'ordre (`POST /v1/projects/{ref}/database/query`, User-Agent curl pour passer le WAF Cloudflare 1010). **Aucun `seed.sql`** → **vierge** : 27 objets / 19 tables de base, **0 ligne** (clients/loans/products/mail_messages = 0), **RLS 19/19**.

@@ -4,10 +4,10 @@ Record architectural and product decisions here.
 
 ## 2026-05-29 — Supabase : environnements préprod + prod séparés
 - **Décision :** deux projets Supabase distincts dans la même org — **préprod** (`quickfundPreprod`, ref `vysqrahewfxamwxabhnh`, l'historique) et **prod** (`quickfundProd`, ref `aqwenqsxdubyhhjkfekh`), tous deux `eu-central-1`, plan gratuit (le plan est au niveau org chez Supabase).
-- **Prod vierge :** seul le **schéma** y est appliqué (les 9 migrations `supabase/migrations/`), **sans `seed.sql`** — aucune donnée (ni démo, ni catalogue produits) ; RLS active (19/19 tables de base).
+- **Prod = schéma + données minimales réelles :** les 9 migrations `supabase/migrations/` (RLS 19/19), **sans le bloc démo de `seed.sql`**. Amorcée le 2026-05-30 avec le **compte admin** `fkvirtuel@gmail.com` (superadmin) et le **catalogue produits** (8 produits, identiques à la préprod / la landing). **Aucune donnée métier de démo** (clients/crédits/paiements/mails).
 - **Pourquoi :** isoler les vraies données de prod du bac de préprod ; promouvoir le schéma sans jamais copier les données de démo.
 - **Mise en œuvre :** création + migrations via l'API Management ; clés prod dans `.env` sous `SUPABASE_PROD_*` (jamais commitées). Renommage de la préprod purement cosmétique (ref/URL/clés inchangés) → l'app locale continue de pointer la préprod.
-- **Conséquence :** sur l'hôte de prod (Netlify), mapper `SUPABASE_PROD_URL/ANON_KEY/SERVICE_ROLE_KEY` dans `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` / `SUPABASE_SERVICE_ROLE_KEY`.
+- **Conséquence :** sur l'hôte de prod (Netlify), mapper `SUPABASE_PROD_URL` → `NEXT_PUBLIC_SUPABASE_URL` et `SUPABASE_PROD_ANON_KEY` → `NEXT_PUBLIC_SUPABASE_ANON_KEY` (+ `NEXT_PUBLIC_SITE_URL`). L'app **ne lit pas** `service_role` au runtime (auth admin = anon + RLS) — il reste **local** (CLI/admin, ex. `create-admin.mjs`).
 
 ## 2026-05-28 — Origination/servicing : persistance réelle, analytics dérivées
 - **Décision :** le **cycle de vie du crédit** (demande → contrat → crédit → déblocage →

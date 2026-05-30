@@ -97,9 +97,10 @@
   lib `listMessagesFullByIds`, responsive mono-panneau mobile. Typecheck vert.
 
 ## Immediate Focus
-- **Prod DB prête (2026-05-29) :** `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`, eu-central-1) provisionnée
-  **schéma-only (vierge)** ; préprod renommée `quickfundPreprod`. Reste : câbler `SUPABASE_PROD_*` dans
-  l'env runtime de Netlify (`NEXT_PUBLIC_SUPABASE_URL`/`ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`) et confirmer `/admin` en prod.
+- **Prod DB prête (2026-05-30) :** `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`, eu-central-1) — schéma +
+  **admin `fkvirtuel@gmail.com`** + **8 produits** (pas de données démo) ; préprod renommée `quickfundPreprod`.
+  Reste : sur Netlify, mapper `SUPABASE_PROD_URL`→`NEXT_PUBLIC_SUPABASE_URL` et `SUPABASE_PROD_ANON_KEY`→`NEXT_PUBLIC_SUPABASE_ANON_KEY`
+  (+ `NEXT_PUBLIC_SITE_URL`), redéployer et confirmer `/admin` en prod. (L'app ne lit pas `service_role` au runtime.)
 - Replace demo + CRM smoke data with real imported data.
 - Consider cookie-based SSR session (`@supabase/ssr`) and audit-log population.
 - Build eligibility test (`/tools/eligibility`); verify mobile responsiveness.

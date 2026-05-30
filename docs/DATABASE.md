@@ -8,9 +8,12 @@ Apply with `node scripts/db-apply.mjs` (reads secrets from `.env`, see CLAUDE.md
 Two Supabase projects in the same org (both `eu-central-1`):
 - **Preprod** — `quickfundPreprod` (ref `vysqrahewfxamwxabhnh`): the working DB; local dev and the
   `NEXT_PUBLIC_SUPABASE_*` runtime vars point here. Schema **+ `seed.sql`** (demo data).
-- **Prod** — `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`): **schema only, no seed** (vierge — 0 row,
-  RLS on all 19 base tables). Keys live in `.env` as `SUPABASE_PROD_*`; wire them into the runtime
-  vars on the prod host. Promote schema by applying `supabase/migrations/` here — never copy data.
+- **Prod** — `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`): schema (9 migrations, RLS on all 19 base
+  tables) **without the `seed.sql` demo block**. Bootstrapped 2026-05-30 with the **admin**
+  `fkvirtuel@gmail.com` (superadmin) and the **product catalogue** (8 rows, same as preprod) — **no
+  demo business data**. Keys live in `.env` as `SUPABASE_PROD_*`; wire `URL`/`ANON` into the runtime
+  vars on the prod host (the app reads anon + RLS; service_role stays local). Promote schema via
+  `supabase/migrations/`; never copy demo data.
 
 ## Tables
 
