@@ -347,7 +347,250 @@ export interface LoanArrears {
   outstanding_total: number;
 }
 
+// Finance / P&L (migration 20260530170000) ---------------------------------
+export type LedgerKind = "revenue" | "expense";
+export type LedgerRevenueCategory = "coaching" | "other";
+export type LedgerExpenseCategory = "server_fees" | "management_loans" | "rebranding" | "other";
+export type LedgerCategory = LedgerRevenueCategory | LedgerExpenseCategory;
+
+export interface LedgerEntry {
+  id: string;
+  kind: LedgerKind;
+  category: string;
+  label: string | null;
+  amount: number;
+  currency: string;
+  period_month: string; // ISO date, first day of the month
+  notes: string | null;
+  created_by: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+// Consolidated P&L per month (v_pnl_monthly): loan-derived revenue + ledger.
+export interface PnlMonthly {
+  month: string; // "YYYY-MM"
+  interest: number;
+  application_fees: number;
+  penalties: number;
+  coaching: number;
+  other_revenue: number;
+  total_revenue: number;
+  expenses: number;
+  displayed_profit: number;
+  bad_debts: number;
+  economic_profit: number;
+}
+
+// Single-row P&L totals (v_pnl_summary).
+export interface PnlSummary {
+  interest: number;
+  application_fees: number;
+  penalties: number;
+  coaching: number;
+  other_revenue: number;
+  total_revenue: number;
+  expenses: number;
+  displayed_profit: number;
+  bad_debts: number;
+  economic_profit: number;
+  displayed_margin_pct: number;
+  economic_margin_pct: number;
+}
+
+// Analytics — Statistiques workspace (migration 20260530180000) -------------
+export interface StatPortfolioOverview {
+  active_loans: number; outstanding: number; avg_balance: number;
+  median_balance: number; p90_balance: number; avg_rate: number; avg_term: number;
+}
+export interface StatBucket { bucket: string; label: string; loans: number; principal: number; outstanding: number; }
+export interface StatDurationBucket { bucket: string; label: string; loans: number; principal: number; }
+export interface StatProduct {
+  slug: string; name: string; loans: number; active_loans: number; disbursed: number;
+  outstanding: number; defaulted: number; written_off: number; avg_rate: number; interest_earned: number;
+}
+export interface StatCountry { country: string; clients: number; active_loans: number; outstanding: number; }
+export interface StatRiskCategory {
+  category: string; loans: number; exposure: number; defaulted: number;
+  written_off: number; avg_rate: number; default_rate_pct: number;
+}
+export interface StatScoreBand { band: string; label: string; clients: number; avg_score: number; }
+export interface StatDpdBucket { bucket: string; label: string; installments: number; loans: number; amount: number; late_fees: number; }
+export interface StatDunning { dunning_level: number; loans: number; arrears: number; late_fees: number; }
+export interface StatCashflowMonth {
+  month: string; realized: number; projected_due: number; projected_principal: number; projected_interest: number;
+}
+export interface StatVintage {
+  cohort: string; loans: number; disbursed: number; repaid_principal: number; outstanding: number;
+  written_off: number; defaulted: number; repaid_pct: number; default_pct: number;
+}
+export interface StatClientsOverview {
+  total_clients: number; active_clients: number; borrowers: number; multi_loan_clients: number; avg_income: number;
+}
+export interface StatClientStatus { status: string; clients: number; }
+export interface StatIncomeBand { band: string; label: string; clients: number; }
+export interface StatClientExposure {
+  client_id: string; reference: string | null; first_name: string; last_name: string;
+  risk_category: RiskCategory | null; active_loans: number; exposure: number;
+}
+export interface StatFunnel { status: string; apps: number; amount: number; avg_score: number; }
+export interface StatFunnelOverview {
+  total: number; converted: number; approved: number; rejected: number;
+  conversion_rate: number; avg_score: number; total_amount: number;
+}
+export interface StatSource { source: string; apps: number; converted: number; }
+
 export type Result<T> = { data: T | null; error: string | null };
+
+// ===========================================================================
+// Analytics RPC payloads (migration 20260530190000_analytics_rpc)
+// One json payload per "Statistiques" page; every sub-aggregation shares the
+// same server-side filter (date window + dimensions). See rpc_stats_*().
+// ===========================================================================
+
+// Shared filter surface driven by the FilterBar. `from`/`to` are ISO yyyy-mm-dd
+// (null = unbounded); each dimension is null when "all".
+export interface StatsFilters {
+  from: string | null;
+  to: string | null;
+  product?: string | null;
+  country?: string | null;
+  risk?: string | null;
+  status?: string | null;
+  source?: string | null;
+}
+
+// Portfolio --------------------------------------------------------------------
+export interface PortfolioOverview {
+  loans: number; active_loans: number; disbursed: number; outstanding: number;
+  avg_balance: number; median_balance: number; p90_balance: number;
+  avg_rate: number; avg_term: number; written_off: number; defaulted: number;
+  default_rate_pct: number; interest_earned: number;
+}
+export interface AmountBucket { bucket: string; label: string; loans: number; principal: number; outstanding: number; }
+export interface DurationBucket { bucket: string; label: string; loans: number; principal: number; outstanding: number; }
+export interface PortfolioProduct {
+  slug: string; name: string; loans: number; active_loans: number;
+  disbursed: number; outstanding: number; avg_rate: number; default_rate_pct: number;
+}
+export interface PortfolioCountry { country: string; loans: number; active_loans: number; outstanding: number; }
+export interface PortfolioStatusRow { status: string; loans: number; principal: number; outstanding: number; }
+export interface OriginationMonth { month: string; loans: number; disbursed: number; }
+export interface PortfolioStats {
+  overview: PortfolioOverview;
+  amount_buckets: AmountBucket[];
+  duration_buckets: DurationBucket[];
+  by_product: PortfolioProduct[];
+  by_country: PortfolioCountry[];
+  by_status: PortfolioStatusRow[];
+  origination_monthly: OriginationMonth[];
+}
+
+// Products ---------------------------------------------------------------------
+export interface ProductsTotals {
+  products: number; loans: number; active_loans: number; disbursed: number;
+  outstanding: number; interest_earned: number; written_off: number;
+}
+export interface ProductRow {
+  slug: string; name: string; loans: number; active_loans: number; disbursed: number;
+  outstanding: number; defaulted: number; written_off: number; avg_rate: number; avg_term: number;
+  default_rate_pct: number; interest_earned: number; yield_pct: number; avg_ticket: number;
+}
+export interface ProductsStats { totals: ProductsTotals; products: ProductRow[]; }
+
+// Risk & scoring ---------------------------------------------------------------
+export interface RiskOverview {
+  exposure: number; loans: number; defaulted: number; written_off: number;
+  avg_rate: number; default_rate_pct: number;
+}
+export interface RiskCategoryRow {
+  category: string; loans: number; exposure: number; disbursed: number; defaulted: number;
+  written_off: number; avg_rate: number; default_rate_pct: number; share_pct: number;
+}
+export interface ScoreBandRow { band: string; label: string; clients: number; avg_score: number; exposure: number; }
+export interface DefaultByAmountRow { bucket: string; label: string; loans: number; defaulted: number; default_rate_pct: number; }
+export interface ExposureByProductRow { slug: string; name: string; exposure: number; }
+export interface RiskStats {
+  overview: RiskOverview; by_category: RiskCategoryRow[]; score_bands: ScoreBandRow[];
+  default_by_amount: DefaultByAmountRow[]; exposure_by_product: ExposureByProductRow[];
+}
+
+// Vintages / cohorts -----------------------------------------------------------
+export interface VintageOverview {
+  cohorts: number; disbursed: number; repaid_principal: number; outstanding: number;
+  written_off: number; loans: number; avg_repaid_pct: number; avg_default_pct: number; weighted_loss_pct: number;
+}
+export interface CohortRow {
+  cohort: string; loans: number; disbursed: number; repaid_principal: number; outstanding: number;
+  written_off: number; defaulted: number; avg_rate: number; avg_term: number;
+  repaid_pct: number; default_pct: number; loss_pct: number;
+}
+export interface VintagesStats { overview: VintageOverview; cohorts: CohortRow[]; }
+
+// Collections ------------------------------------------------------------------
+export interface CollectionsSummary {
+  total_overdue_amount: number; total_late_fees: number; arrears_loans: number;
+  affected_clients: number; overdue_count: number; outstanding_at_risk: number; avg_days_late: number;
+}
+export interface DpdBucketRow { bucket: string; label: string; installments: number; loans: number; amount: number; late_fees: number; }
+export interface DunningRow { dunning_level: number; loans: number; arrears: number; late_fees: number; }
+export interface CollectionsProductRow { slug: string; name: string; arrears_loans: number; overdue_amount: number; late_fees: number; }
+export interface CollectionsRiskRow { category: string; arrears_loans: number; overdue_amount: number; }
+export interface TopArrearRow {
+  loan_id: string; loan_reference: string | null; first_name: string; last_name: string;
+  overdue_amount: number; late_fees: number; max_days_late: number; dunning_level: number; overdue_count: number;
+}
+export interface CollectionsStats {
+  summary: CollectionsSummary; dpd_buckets: DpdBucketRow[]; dunning: DunningRow[];
+  by_product: CollectionsProductRow[]; by_risk: CollectionsRiskRow[]; top_arrears: TopArrearRow[];
+}
+
+// Cashflow ---------------------------------------------------------------------
+export interface CashflowSummary {
+  realized_total: number; realized_count: number; projected_total: number;
+  projected_principal: number; projected_interest: number; months: number; future_months: number;
+}
+export interface CashflowMonthRow {
+  month: string; realized: number; realized_count: number;
+  projected_due: number; projected_principal: number; projected_interest: number;
+}
+export interface CashflowMethodRow { method: string; amount: number; count: number; }
+export interface CashflowStats { summary: CashflowSummary; monthly: CashflowMonthRow[]; by_method: CashflowMethodRow[]; }
+
+// Clients ----------------------------------------------------------------------
+export interface ClientsOverview {
+  total_clients: number; active_clients: number; blacklisted: number; borrowers: number;
+  multi_loan_clients: number; avg_income: number; avg_score: number; total_exposure: number;
+}
+export interface ClientStatusRow { status: string; clients: number; }
+export interface IncomeBandRow { band: string; label: string; clients: number; }
+export interface ClientScoreBandRow { band: string; label: string; clients: number; avg_score: number; }
+export interface ClientsCountryRow { country: string; clients: number; borrowers: number; exposure: number; }
+export interface ClientsRiskRow { category: string; clients: number; exposure: number; }
+export interface ClientExposureRow {
+  client_id: string; reference: string | null; first_name: string; last_name: string;
+  risk_category: RiskCategory | null; active_loans: number; exposure: number;
+}
+export interface NewClientsMonthRow { month: string; clients: number; }
+export interface ClientsStats {
+  overview: ClientsOverview; by_status: ClientStatusRow[]; by_income: IncomeBandRow[];
+  by_score_band: ClientScoreBandRow[]; by_country: ClientsCountryRow[]; by_risk: ClientsRiskRow[];
+  top_exposure: ClientExposureRow[]; new_clients_monthly: NewClientsMonthRow[];
+}
+
+// Funnel / origination ---------------------------------------------------------
+export interface FunnelOverview {
+  total: number; converted: number; approved: number; rejected: number; under_review: number;
+  conversion_rate: number; approval_rate: number; avg_score: number; total_amount: number; avg_amount: number;
+}
+export interface FunnelStatusRow { status: string; apps: number; amount: number; avg_score: number; }
+export interface FunnelSourceRow { source: string; apps: number; converted: number; conversion_rate: number; amount: number; }
+export interface FunnelScoreBandRow { band: string; label: string; apps: number; converted: number; }
+export interface FunnelAmountBandRow { band: string; label: string; apps: number; amount: number; }
+export interface FunnelStats {
+  overview: FunnelOverview; by_status: FunnelStatusRow[]; by_source: FunnelSourceRow[];
+  by_score_band: FunnelScoreBandRow[]; by_amount_band: FunnelAmountBandRow[];
+}
 
 // Joined shapes used by the UI
 export type LoanWithClient = Loan & {

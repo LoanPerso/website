@@ -6,6 +6,8 @@ export interface ListOverdueParams {
   month?: string; // "YYYY-MM" — installments whose due_date falls in this month
   minDaysLate?: number;
   clientId?: string;
+  page?: number;
+  pageSize?: number;
 }
 
 function monthRange(month: string): { start: string; end: string } {
@@ -17,12 +19,15 @@ function monthRange(month: string): { start: string; end: string } {
   return { start, end };
 }
 
-// Overdue installments (unpaid and past due) from the reporting view.
-export async function listOverdue(params: ListOverdueParams = {}): Promise<Result<OverdueInstallment[]>> {
-  const { month, minDaysLate, clientId } = params;
+// Overdue installments (unpaid and past due) from the reporting view. Paginated
+// so the collections desk never pulls the whole arrears book into the browser.
+export async function listOverdue(
+  params: ListOverdueParams = {}
+): Promise<Result<{ rows: OverdueInstallment[]; count: number }>> {
+  const { month, minDaysLate, clientId, page = 1, pageSize = 25 } = params;
   let query = supabase
     .from("v_installments_status")
-    .select("*")
+    .select("*", { count: "exact" })
     .eq("is_overdue", true);
 
   if (clientId) query = query.eq("client_id", clientId);
@@ -32,11 +37,12 @@ export async function listOverdue(params: ListOverdueParams = {}): Promise<Resul
   }
   if (minDaysLate && minDaysLate > 0) query = query.gte("days_late", minDaysLate);
 
-  query = query.order("days_late", { ascending: false });
+  const from = (page - 1) * pageSize;
+  query = query.order("days_late", { ascending: false }).range(from, from + pageSize - 1);
 
-  const { data, error } = await query;
+  const { data, error, count } = await query;
   if (error) return { data: null, error: error.message };
-  return { data: (data ?? []) as OverdueInstallment[], error: null };
+  return { data: { rows: (data ?? []) as OverdueInstallment[], count: count ?? 0 }, error: null };
 }
 
 // Marks an installment fully paid by recording a payment for the remaining amount.

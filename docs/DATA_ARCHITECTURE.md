@@ -15,8 +15,18 @@ Lending domain lives in Supabase Postgres (see DATABASE.md):
 `payments`, `loan_applications` (funnel leads), `import_batches`, `activity_log`.
 CRM domain: `client_scores` (score history), `client_documents` (KYC),
 `contracts` (lifecycle), `interactions` (timeline), `tasks` (relances).
-Reporting views power the dashboard P&L, overdue tracking, the enriched client list
-(`v_client_overview`) and the tasks page (`v_tasks_due`).
+Finance domain: `ledger_entries` (manual revenue/expenses — coaching, server fees,
+management, rebranding) feeding the consolidated P&L; `kpis_cache` (dashboard KPI
+snapshot). Reporting views power the dashboard P&L, overdue tracking, the enriched
+client list (`v_client_overview`), the tasks page (`v_tasks_due`), the Finance
+P&L page (`v_pnl_monthly`/`v_pnl_summary`, `v_arrears_summary`) and the
+**Statistiques** workspace (18 `v_stats_*` aggregate views: portfolio, risk,
+DPD/collections, cashflow, vintages, products, client segmentation, funnel).
+
+**Loan revenue is derived, accounting is dual-source:** interest/fees/penalties are
+computed from `loans`+`installments`+`payments` (never hand-entered); only non-loan
+revenue (coaching) and operating expenses live in `ledger_entries`. The P&L views
+union the two; bad debts come from `loans.write_off_amount`.
 
 Relationships: `clients 1—* loans 1—* installments`; `loans 1—* payments`;
 `payments *—1 installments` (optional allocation); `loans *—1 products`.

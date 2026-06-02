@@ -1,19 +1,26 @@
 # Database
 
 Primary store: **Supabase (Postgres)**. Currency EUR, base country EE.
-Schema source of truth: `supabase/migrations/` (+ `supabase/seed.sql`).
+Schema source of truth: `supabase/migrations/`. Data seeds: `supabase/seed.sql` (full demo set)
+and `supabase/seed_mailbox.sql` (mailbox smoke — business accounts/folders/conversations, idempotent).
 Apply with `node scripts/db-apply.mjs` (reads secrets from `.env`, see CLAUDE.md §12).
 
 ## Environments
 Two Supabase projects in the same org (both `eu-central-1`):
 - **Preprod** — `quickfundPreprod` (ref `vysqrahewfxamwxabhnh`): the working DB; local dev and the
   `NEXT_PUBLIC_SUPABASE_*` runtime vars point here. Schema **+ `seed.sql`** (demo data).
-- **Prod** — `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`): schema (9 migrations, RLS on all 19 base
-  tables) **without the `seed.sql` demo block**. Bootstrapped 2026-05-30 with the **admin**
-  `fkvirtuel@gmail.com` (superadmin) and the **product catalogue** (8 rows, same as preprod) — **no
-  demo business data**. Keys live in `.env` as `SUPABASE_PROD_*`; wire `URL`/`ANON` into the runtime
-  vars on the prod host (the app reads anon + RLS; service_role stays local). Promote schema via
-  `supabase/migrations/`; never copy demo data.
+- **Prod** — `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`): full schema (**14 migrations**, RLS on
+  all 19 base tables). Bootstrapped 2026-05-30 with the **admin** `fkvirtuel@gmail.com` (superadmin)
+  and the **product catalogue** (8 rows, **identical UUIDs to preprod**). The **mailbox mockup is
+  populated** (`seed_mailbox.sql`): 7 business accounts (.ee/.fr/.eu) + 27 smoke conversations.
+  **Business data migrated from preprod 2026-05-30** via `scripts/migrate-preprod-to-prod.mjs`:
+  clients (1 367), loan_applications (220), loans (1 987), installments (47 688), payments (23 779),
+  ledger_entries (38) — copied with **preserved UUIDs/references** (FK-safe); `admin_users` and
+  `mail_*` were **excluded** by design, `kpis_cache` rebuilt via `refresh_portfolio_kpis()`, ref
+  sequences realigned. This book is the **calibrated smoke dataset** (fictional, generated), **not
+  real customer data** — wipe it before any real production use. Keys live in `.env` as
+  `SUPABASE_PROD_*`; wire `URL`/`ANON` into the runtime vars on the prod host (the app reads anon +
+  RLS; service_role stays local). Promote schema via `supabase/migrations/`.
 
 ## Tables
 
@@ -129,10 +136,30 @@ never selects them back to the browser.
 - **mail_diagnostics** — smoke-test history. `account_id` FK, `kind` (`smtp`/`imap`), `ok`,
   `detail`, `latency_ms`, `ran_by`, `ran_at`.
 
+### ledger_entries (Finance / P&L, migration `20260530170000`)
+Manual financial entries the loan portfolio cannot derive on its own. `kind`
+(`revenue`/`expense`), `category` (free text; known: revenue `coaching`/`other`,
+expense `server_fees`/`management_loans`/`rebranding`/`other`), `label`, `amount`
+(≥ 0), `currency`, `period_month` (normalized to the 1st of the month by trigger),
+`notes`, `created_by`. Admin-only RLS. Loan revenue (interest, fees, penalties) is
+**never** entered here — it stays derived from the portfolio; the ledger only holds
+what the portfolio has no way to know (coaching revenue, operating expenses).
+
+### kpis_cache (Performance, migration `20260530171000`)
+Materialized snapshot of `v_portfolio_kpis` (`key`, `data` jsonb, `computed_at`).
+Read via `get_portfolio_kpis(max_age_seconds)`; recomputed by `refresh_portfolio_kpis()`.
+Avoids re-running the 13 scalar subqueries of `v_portfolio_kpis` on every dashboard
+load (measured ~1.7 s → ~90 ms at ~1.4k clients / ~48k installments). Admin-only read;
+writes only via the security-definer functions.
+
 ## Reporting views (security_invoker)
 | View | Purpose |
 |------|---------|
 | `v_portfolio_kpis` | Single-row KPIs: clients, active loans, total disbursed, collected, outstanding principal, interest earned, overdue amount/count, default rate. |
+| `v_pnl_monthly` | Consolidated P&L per month: loan-derived revenue (interest/fees/penalties) + ledger revenue (coaching/other) + expenses + bad debts (write-offs) → total revenue, displayed profit, economic profit (migration `20260530170000`). |
+| `v_pnl_summary` | Single-row P&L totals + displayed/economic margin % (drives the `/admin/finance` KPIs). |
+| `v_arrears_summary` | Single-row collections totals (total overdue, late fees, arrears loans, affected clients) so the overdue page paginates yet keeps correct KPIs (migration `20260530171000`). |
+| `v_stats_*` (18) | Parameter-less analytics aggregates (migration `20260530180000`): `portfolio_overview`, `amount_buckets`, `duration_buckets`, `by_product`, `by_country`, `risk_by_category`, `score_bands`, `dpd_buckets`, `dunning`, `cashflow_monthly` (realized+projected), `vintages`, `clients_overview`, `clients_by_status`, `clients_by_income`, `client_exposure`, `funnel`, `funnel_overview`, `by_source`. All admin-only GROUP BYs. **Superseded for the live Statistiques pages by the parameterised `rpc_stats_*` functions** (kept for reference / ad-hoc queries). |
 | `v_loan_balances` | Per-loan collected vs outstanding (total + principal). |
 | `v_installments_status` | Installments enriched with `is_overdue`, `days_late`, `amount_remaining` + client/loan fields. |
 | `v_monthly_disbursements` | Volume lent per month (P&L chart). |
@@ -144,8 +171,21 @@ never selects them back to the browser.
 ## Triggers & helpers
 - `set_updated_at()` — maintains `updated_at`.
 - `set_reference(prefix, sequence)` — generates human references on insert
-  (`CLI-`, `LN-`, `PAY-`, `CTR-`).
+  (`CLI-`, `LN-`, `PAY-`, `CTR-`). Pads to **≥ 4 digits without truncating**
+  (migration `20260530172000` fixed a `lpad(_,4)` truncation bug that collided
+  references past 9999 rows — e.g. `PAY-10000` → `'1000'`).
+- `normalize_ledger_period()` — pins `ledger_entries.period_month` to the 1st of the month.
 - `is_admin()` — `security definer`, used by every RLS policy.
+- `refresh_portfolio_kpis()` / `get_portfolio_kpis(max_age_seconds)` — `security definer`
+  KPI cache (`kpis_cache`); `get_*` is admin-gated and refreshes when stale.
+- `rpc_stats_<page>(p_from, p_to, …)` — **8 parameterised analytics functions** (migration
+  `20260530190000`, `security invoker`, `grant execute` to `authenticated`) powering the live
+  **Statistiques** pages: `rpc_stats_portfolio` / `_products` / `_risk` / `_vintages` /
+  `_collections` / `_cashflow` / `_clients` / `_funnel`. Each returns **one json payload**
+  covering every chart on its page, aggregated server-side under a shared filter — a date
+  window (origination / period / creation / application) + dimensions (`p_product`,
+  `p_country`, `p_risk`, `p_status`, `p_source`, each `null` = all). Server-side aggregation
+  is required: the book (~2k loans, ~48k installments) exceeds the PostgREST 1000-row cap.
 
 ## Firebase (long-term)
 Reserved for durable/archival data. Not used by the admin back office.
@@ -160,6 +200,21 @@ Reserved for durable/archival data. Not used by the admin back office.
 - `20260528140000_application_workflow.sql` (workflow/décision sur `loan_applications`)
 - `20260528150000_servicing_collections.sql` (`installments.late_fee` ; `loans` clôture/perte/dunning ; vue `v_loan_arrears`)
 - `20260528160000_mailbox.sql` (`mail_accounts`, `mail_folders`, `mail_messages`, `mail_attachments`, `mail_diagnostics` + RLS admin-only)
+- `20260530170000_finance_pnl.sql` (`ledger_entries` + `v_pnl_monthly`/`v_pnl_summary`)
+- `20260530171000_perf_scale.sql` (composite indexes + `kpis_cache` + `refresh/get_portfolio_kpis()` + `v_arrears_summary`)
+- `20260530172000_fix_reference_seq.sql` (`set_reference()` no-truncate fix — references safe past 9999 rows)
+- `20260530180000_analytics_views.sql` (18 `v_stats_*` aggregate views for the Statistiques workspace)
+- `20260530190000_analytics_rpc.sql` (8 parameterised `rpc_stats_*` json functions — filterable Statistiques pages)
+
+## Smoke dataset (préprod)
+Regenerated by `scripts/generate-smoke.mjs --wipe` (preprod only; refuses the prod
+ref). Calibrated on the consolidated 2024-2025 brief: **1 367 active clients**,
+1 987 loans (incl. 620 historical paid-off + 48 written-off defaults), **47 688
+installments**, 23 717 payments, 38 ledger entries. Live aggregates: outstanding
+≈ 591 204 € (target 591 529), total disbursed ≈ 1 068 234 €, interest earned
+≈ 82 918 €; P&L: revenue ≈ 109 655 € / displayed profit ≈ 71 042 € (64.8 %) /
+bad debts ≈ 40 001 € / economic profit ≈ 31 040 € (28.3 %). Keeps `admin_users`
++ `products`; resets reference sequences.
 
 ## `loan_applications` — colonnes workflow / décision (migration `20260528140000`)
 Additives et idempotentes. Couvertes par la RLS existante (`loan_applications_admin_all`).

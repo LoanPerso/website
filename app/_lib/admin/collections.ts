@@ -21,17 +21,41 @@ function addDaysIso(n: number): string {
 export interface ListArrearsParams {
   minDaysLate?: number;
   clientId?: string;
+  page?: number;
+  pageSize?: number;
 }
 
-// Loans currently carrying overdue installments, worst first.
-export async function listArrears(params: ListArrearsParams = {}): Promise<Result<LoanArrears[]>> {
-  let query = supabase.from("v_loan_arrears").select("*");
-  if (params.clientId) query = query.eq("client_id", params.clientId);
-  if (params.minDaysLate && params.minDaysLate > 0) query = query.gte("max_days_late", params.minDaysLate);
-  query = query.order("max_days_late", { ascending: false });
-  const { data, error } = await query;
+// Loans currently carrying overdue installments, worst first. Paginated so the
+// collections desk stays responsive on a large book.
+export async function listArrears(
+  params: ListArrearsParams = {}
+): Promise<Result<{ rows: LoanArrears[]; count: number }>> {
+  const { minDaysLate, clientId, page = 1, pageSize = 25 } = params;
+  let query = supabase.from("v_loan_arrears").select("*", { count: "exact" });
+  if (clientId) query = query.eq("client_id", clientId);
+  if (minDaysLate && minDaysLate > 0) query = query.gte("max_days_late", minDaysLate);
+
+  const from = (page - 1) * pageSize;
+  query = query.order("max_days_late", { ascending: false }).range(from, from + pageSize - 1);
+
+  const { data, error, count } = await query;
   if (error) return { data: null, error: error.message };
-  return { data: (data ?? []) as LoanArrears[], error: null };
+  return { data: { rows: (data ?? []) as LoanArrears[], count: count ?? 0 }, error: null };
+}
+
+export interface ArrearsSummary {
+  total_overdue_amount: number;
+  total_late_fees: number;
+  arrears_loans: number;
+  affected_clients: number;
+}
+
+// Book-wide collections totals (independent of pagination/filters), so the
+// overdue page can show correct KPIs without scanning every arrears row client-side.
+export async function arrearsSummary(): Promise<Result<ArrearsSummary>> {
+  const { data, error } = await supabase.from("v_arrears_summary").select("*").single();
+  if (error) return { data: null, error: error.message };
+  return { data: data as ArrearsSummary, error: null };
 }
 
 // Reminder ladder: each step maps a dunning level to a channel + tone + delay

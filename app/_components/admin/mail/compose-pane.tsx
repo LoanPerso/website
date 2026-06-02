@@ -161,12 +161,12 @@ export function ComposePane({
     <section className="flex min-h-0 flex-col bg-background">
       <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-3">
         <h2 className="text-base font-semibold tracking-tight text-foreground">{title}</h2>
-        <Button variant="ghost" size="sm" onClick={onCancel} className="h-8 w-8 p-0" title="Annuler" aria-label="Annuler">
+        <Button variant="ghost" size="sm" onClick={onCancel} className="h-11 w-11 sm:h-8 sm:w-8 p-0" title="Annuler" aria-label="Annuler">
           <X className="h-4 w-4" />
         </Button>
       </div>
 
-      <div className="flex-1 space-y-4 overflow-y-auto p-4">
+      <div className="flex-1 space-y-4 overflow-y-auto overscroll-contain admin-scroll p-4">
         <Field label="De">
           <Select value={accountId} onChange={(e) => setAccountId(e.target.value)}>
             {accounts.map((a) => (
@@ -191,10 +191,10 @@ export function ComposePane({
       </div>
 
       <div className="flex justify-end gap-2 border-t border-border px-4 py-3">
-        <Button variant="outline" onClick={handleDraft} disabled={busy}>
+        <Button variant="outline" onClick={handleDraft} disabled={busy} className="flex-1 sm:flex-initial">
           <Save className="h-4 w-4" /> Brouillon
         </Button>
-        <Button onClick={handleSend} disabled={busy}>
+        <Button onClick={handleSend} disabled={busy} className="flex-1 sm:flex-initial">
           <Send className="h-4 w-4" /> {busy ? "Envoi…" : "Envoyer"}
         </Button>
       </div>

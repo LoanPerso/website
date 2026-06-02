@@ -63,7 +63,7 @@ export function MessageList({
         <SegmentedTabs tabs={FILTERS} active={filter} onChange={onFilter} />
       </div>
 
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto overscroll-contain admin-scroll">
         {loading ? (
           <div className="p-3">
             <PanelLoading rows={6} />
@@ -83,8 +83,8 @@ export function MessageList({
                     type="button"
                     onClick={() => onSelect(m.id)}
                     className={cn(
-                      "flex w-full flex-col gap-0.5 border-b border-border px-3 py-2.5 text-left transition-colors",
-                      active ? "bg-secondary" : "hover:bg-secondary/50"
+                      "flex w-full select-none flex-col gap-0.5 border-b border-border px-3 py-3 text-left transition-colors sm:py-2.5",
+                      active ? "bg-secondary" : "hover:bg-secondary/50 active:bg-secondary/70"
                     )}
                   >
                     <div className="flex items-center gap-2">

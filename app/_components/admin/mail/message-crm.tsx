@@ -54,7 +54,7 @@ export function MessageCrm({
   }
 
   const chip =
-    "inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs text-foreground transition-colors hover:bg-secondary disabled:opacity-60";
+    "inline-flex select-none items-center gap-1 rounded-md border border-border bg-background px-2.5 py-1.5 text-xs text-foreground transition-colors hover:bg-secondary active:bg-secondary disabled:opacity-60 sm:px-2 sm:py-1";
 
   return (
     <div className="mb-4 space-y-2.5 rounded-md border border-border bg-secondary/30 p-3">
@@ -86,7 +86,7 @@ export function MessageCrm({
               value={message.client_id ?? ""}
               onChange={(e) => link({ client_id: e.target.value || null })}
               disabled={busy}
-              className="h-8 text-xs"
+              className="h-9 text-xs sm:h-8"
             >
               <option value="">— Aucun —</option>
               {clients.map((c) => (
@@ -112,7 +112,7 @@ export function MessageCrm({
               value={message.application_id ?? ""}
               onChange={(e) => link({ application_id: e.target.value || null })}
               disabled={busy}
-              className="h-8 text-xs"
+              className="h-9 text-xs sm:h-8"
             >
               <option value="">— Aucune —</option>
               {applications.map((a) => (
@@ -142,7 +142,7 @@ export function MessageCrm({
               value={message.application.status}
               onChange={(e) => changeStatus(e.target.value as ApplicationStatus)}
               disabled={busy}
-              className="h-8 w-44 text-xs"
+              className="h-9 w-44 text-xs sm:h-8"
             >
               {Object.entries(applicationStatusLabels).map(([v, l]) => (
                 <option key={v} value={v}>

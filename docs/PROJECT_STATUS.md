@@ -38,7 +38,26 @@
 - `/admin` back office: auth (Supabase + `admin_users`), dashboard P&L, clients, loans
   (with amortization schedule), payments, overdue tracking, products, applications, CSV import, settings.
 - Typed data layer (`app/_lib/admin`), reusable admin UI components, French UI.
+- **Statistiques workspace redesign (2026-05-30):** the 8 stats pages dropped the page header + KPI cards for a shared **`FilterBar`** (date-window presets/custom range + product/country/risk/status/source) driving **8 parameterised `rpc_stats_*` RPCs** (one json payload per page, server-side aggregation under a common filter — required as the book exceeds the PostgREST 1000-row cap). Richer per-tab analytics (origination time series, montant/durée distributions, segment splits, cohort loss, arrears by product/risk, collections by payment method, new-clients trend, conversion by score/amount band). New shared components: `filter-bar`, `stats-kit`.
 - Typecheck passes (`tsc --noEmit`).
+
+## Prod : données business migrées depuis la préprod ✅ (2026-05-30)
+- **Schéma prod aligné (14 migrations) :** les 5 migrations 2026-05-30 manquantes (`finance_pnl`, `perf_scale`, `fix_reference_seq`, `analytics_views`, `analytics_rpc`) appliquées en prod → `ledger_entries`, `kpis_cache`, vues P&L/`v_stats_*`/`v_arrears_summary`, fonctions `rpc_stats_*` + cache KPI, `set_reference` no-truncate.
+- **Données métier copiées (hors users & mails) :** `scripts/migrate-preprod-to-prod.mjs` (service role, ordre FK, UUID/références préservés) → clients 1 367, loan_applications 220, loans 1 987, installments 47 688, payments 23 779, ledger_entries 38. Produits aux **UUID identiques** (pas de remapping), FK `auth.users` toutes nulles (aucun user requis), tables CRM annexes vides. `kpis_cache` recalculé, séquences réalignées (1367/1987/23779).
+- **Vérifié :** `src=dst` sur les 6 tables, **0 orphelin FK**, **KPIs/P&L prod = préprod** (encours 591 372 €, CA 109 238 €, bénéfice affiché 70 624 €/64,7 %, bad debts 40 174 €), exclusions intactes (`admin_users` 1, `products` 8, mailbox 7 comptes/44 messages).
+- **⚠ Données = smoke fictif** (généré), pas de vrais clients → à wiper avant toute exploitation réelle. **Non commité.**
+
+## Centre de Statistiques ✅ (2026-05-30, préprod)
+- **Groupe sidebar « Statistiques »** (8 pages, sous-onglets) : Portfolio, Risque & scoring, Recouvrement (DPD/dunning), Cashflow (réalisé + projeté), Cohortes (vintages), Produits, Clients (segmentation), Origination (funnel).
+- **18 vues `v_stats_*`** (agrégations server-side, admin-only) + couche `app/_lib/admin/analytics.ts`. Graphes via le kit existant (`LineChart`/`DonutChart`/`GroupedBars`/`StackedBar`/`Bar`), aucun modal, aucune dépendance ajoutée.
+- Générateur enrichi (product_id, credit_score, 220 demandes funnel). `tsc --noEmit` vert. Non commité.
+
+## Finances/P&L + smoke à l'échelle + correctifs de perf ✅ (2026-05-30, préprod)
+- **Module Finances (`/admin/finance`) :** compte de résultat consolidé — revenus de prêt **dérivés** (intérêts/frais/pénalités) + écritures manuelles `ledger_entries` (coaching, dépenses) + bad debts. Vues `v_pnl_monthly`/`v_pnl_summary`. Gestion des écritures en **panneau inline** (pas de modal). Entrée nav « Finances (P&L) ».
+- **Smoke régénérée (préprod uniquement) :** `scripts/generate-smoke.mjs --wipe` → **1 367 clients**, 1 987 prêts, **47 688 échéances**, 23 717 paiements, calibrés sur le brief 2024-2025 (encours 591 204 € ; P&L : CA 109 655 € / bénéfice affiché 71 042 € à 64,8 % / bad debts 40 001 € / bénéfice éco. 31 040 € à 28,3 %). Garde `admin_users`+`products`.
+- **Tenue à l'échelle :** cache KPI (`kpis_cache`) → dashboard 1,7 s → ~90 ms ; pagination recouvrement/impayés ; index composites ; `count:estimated` clients. Toutes les vues lourdes ≤ ~150 ms à ce volume. **L'outil tient à 1 367 clients.**
+- **Bug latent corrigé :** `set_reference()` tronquait les références au-delà de 9 999 lignes (aurait cassé la prod) — corrigé.
+- Migrations `20260530170000/171000/172000` appliquées à la préprod. `tsc --noEmit` vert. **Non commité** (attente d'autorisation).
 
 ## Origination de bout en bout, servicing & recouvrement ✅ (2026-05-28)
 - **Funnel connecté :** demande qualifiée → contrat réel → signature → crédit + échéancier →
@@ -97,10 +116,12 @@
   lib `listMessagesFullByIds`, responsive mono-panneau mobile. Typecheck vert.
 
 ## Immediate Focus
-- **Prod DB prête (2026-05-30) :** `quickfundProd` (ref `aqwenqsxdubyhhjkfekh`, eu-central-1) — schéma +
-  **admin `fkvirtuel@gmail.com`** + **8 produits** (pas de données démo) ; préprod renommée `quickfundPreprod`.
-  Reste : sur Netlify, mapper `SUPABASE_PROD_URL`→`NEXT_PUBLIC_SUPABASE_URL` et `SUPABASE_PROD_ANON_KEY`→`NEXT_PUBLIC_SUPABASE_ANON_KEY`
-  (+ `NEXT_PUBLIC_SITE_URL`), redéployer et confirmer `/admin` en prod. (L'app ne lit pas `service_role` au runtime.)
+- **Prod en ligne (2026-05-30) :** `quickfund.fr` sert désormais le dernier build, pointant sur `quickfundProd`
+  (ref `aqwenqsxdubyhhjkfekh`) — `NEXT_PUBLIC_SUPABASE_URL`/`ANON_KEY` côté Netlify = prod (vérifié) ; `/admin/login` répond 200.
+  Le **CI Netlify était cassé depuis ~2 mois** (token `NETLIFY_AUTH_TOKEN` invalide) — secret régénéré, déploiement vert (`deploy-production`, 8m50s).
+  Reste : **se connecter à `/admin` en prod** (`fkvirtuel@gmail.com`) pour valider de bout en bout, et **rotationner le token Netlify** (transité en clair).
+- **Messagerie prod peuplée (2026-05-30) :** 7 comptes business (.ee/.fr/.eu) + 27 conversations smoke
+  (`supabase/seed_mailbox.sql`, prod uniquement) — back-office live crédible ; vrais enregistrements métier toujours vides.
 - Replace demo + CRM smoke data with real imported data.
 - Consider cookie-based SSR session (`@supabase/ssr`) and audit-log population.
 - Build eligibility test (`/tools/eligibility`); verify mobile responsiveness.

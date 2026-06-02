@@ -91,7 +91,7 @@ function SidebarContent({
         ) : null}
       </div>
 
-      <div className="mt-8 flex-1 overflow-y-auto overscroll-contain">
+      <div className="admin-scroll mt-8 flex-1 overflow-y-auto overscroll-contain">
         <NavList collapsed={collapsed} onNavigate={onNavigate} />
       </div>
 

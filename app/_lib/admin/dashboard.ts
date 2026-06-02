@@ -8,10 +8,15 @@ import type {
   Result,
 } from "./types";
 
+// Reads the cached portfolio KPIs (refreshed at most every 5 min by the RPC),
+// falling back to the live view if the cache function is unavailable.
 export async function getKpis(): Promise<Result<PortfolioKpis>> {
-  const { data, error } = await supabase.from("v_portfolio_kpis").select("*").single();
-  if (error) return { data: null, error: error.message };
-  return { data: data as PortfolioKpis, error: null };
+  const rpc = await supabase.rpc("get_portfolio_kpis", { max_age_seconds: 300 });
+  if (!rpc.error && rpc.data) return { data: rpc.data as PortfolioKpis, error: null };
+
+  const view = await supabase.from("v_portfolio_kpis").select("*").single();
+  if (view.error) return { data: null, error: (rpc.error ?? view.error).message };
+  return { data: view.data as PortfolioKpis, error: null };
 }
 
 export interface MonthlyPoint {

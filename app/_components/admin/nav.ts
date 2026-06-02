@@ -1,14 +1,23 @@
 import type { LucideIcon } from "lucide-react";
 import {
   AlertTriangle,
+  ArrowDownUp,
+  BarChart3,
+  Boxes,
+  Contact,
   CreditCard,
   FileSignature,
+  Filter,
   Inbox,
+  Layers,
   LayoutDashboard,
   ListChecks,
   Mail,
   Package,
+  PieChart,
   Settings,
+  ShieldAlert,
+  Siren,
   Upload,
   Users,
   Wallet,
@@ -31,6 +40,19 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [{ href: "/admin/dashboard", label: "Tableau de bord", icon: LayoutDashboard }],
   },
   {
+    label: "Statistiques",
+    items: [
+      { href: "/admin/stats/portfolio", label: "Portfolio", icon: PieChart },
+      { href: "/admin/stats/risk", label: "Risque & scoring", icon: ShieldAlert },
+      { href: "/admin/stats/collections", label: "Recouvrement", icon: Siren },
+      { href: "/admin/stats/cashflow", label: "Cashflow", icon: ArrowDownUp },
+      { href: "/admin/stats/vintages", label: "Cohortes", icon: Layers },
+      { href: "/admin/stats/products", label: "Produits", icon: Boxes },
+      { href: "/admin/stats/clients", label: "Clients", icon: Contact },
+      { href: "/admin/stats/funnel", label: "Origination", icon: Filter },
+    ],
+  },
+  {
     label: "CRM",
     items: [
       { href: "/admin/applications", label: "Demandes", icon: Inbox },
@@ -49,6 +71,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/contracts", label: "Contrats", icon: FileSignature },
       { href: "/admin/payments", label: "Paiements", icon: Wallet },
       { href: "/admin/overdue", label: "Impayés", icon: AlertTriangle },
+      { href: "/admin/finance", label: "Finances (P&L)", icon: BarChart3 },
     ],
   },
   {

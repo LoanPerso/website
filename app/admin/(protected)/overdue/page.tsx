@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AlertTriangle, Bell, CalendarClock, Coins, Gavel } from "lucide-react";
 import { Button } from "@/_components/ui/button";
@@ -18,13 +18,17 @@ import { useToast } from "@/_components/admin/toast";
 import { listOverdue } from "@/_lib/admin/installments";
 import {
   listArrears,
+  arrearsSummary,
   recordDunningStep,
   assessLateFeeOnLoan,
   recordPromiseToPay,
   markDefault,
   nextDunningStep,
 } from "@/_lib/admin/collections";
+import type { ArrearsSummary } from "@/_lib/admin/collections";
 import type { LoanArrears, OverdueInstallment } from "@/_lib/admin/types";
+
+const PAGE_SIZE = 25;
 import { formatCurrency, formatDate, fullName } from "@/_lib/admin/format";
 
 type View = "loans" | "installments";
@@ -34,9 +38,13 @@ export default function OverduePage() {
   const toast = useToast();
   const [view, setView] = useState<View>("loans");
   const [arrears, setArrears] = useState<LoanArrears[]>([]);
+  const [arrearsCount, setArrearsCount] = useState(0);
   const [rows, setRows] = useState<OverdueInstallment[]>([]);
+  const [rowsCount, setRowsCount] = useState(0);
+  const [summary, setSummary] = useState<ArrearsSummary | null>(null);
   const [month, setMonth] = useState("");
   const [minDays, setMinDays] = useState(0);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState<OverdueInstallment | null>(null);
   const [payOpen, setPayOpen] = useState(false);
@@ -44,29 +52,36 @@ export default function OverduePage() {
 
   const load = useCallback(async () => {
     setLoading(true);
-    const [a, o] = await Promise.all([
-      listArrears({ minDaysLate: minDays || undefined }),
-      listOverdue({ month: month || undefined, minDaysLate: minDays || undefined }),
+    const [a, o, s] = await Promise.all([
+      listArrears({ minDaysLate: minDays || undefined, page, pageSize: PAGE_SIZE }),
+      listOverdue({ month: month || undefined, minDaysLate: minDays || undefined, page, pageSize: PAGE_SIZE }),
+      arrearsSummary(),
     ]);
-    setArrears(a.data ?? []);
-    setRows(o.data ?? []);
+    setArrears(a.data?.rows ?? []);
+    setArrearsCount(a.data?.count ?? 0);
+    setRows(o.data?.rows ?? []);
+    setRowsCount(o.data?.count ?? 0);
+    setSummary(s.data ?? null);
     setLoading(false);
-  }, [month, minDays]);
+  }, [month, minDays, page]);
 
   useEffect(() => {
     load();
   }, [load]);
 
-  const kpis = useMemo(() => {
-    const totalAmount = arrears.reduce((s, r) => s + Number(r.overdue_amount), 0);
-    const lateFees = arrears.reduce((s, r) => s + Number(r.late_fees), 0);
-    const clients = new Set(arrears.map((r) => r.client_id)).size;
-    return { totalAmount, lateFees, clients };
-  }, [arrears]);
+  // Book-wide collections totals (independent of the current page/filter).
+  const kpis = {
+    totalAmount: summary?.total_overdue_amount ?? 0,
+    lateFees: summary?.total_late_fees ?? 0,
+    clients: summary?.affected_clients ?? 0,
+  };
+
+  const count = view === "loans" ? arrearsCount : rowsCount;
+  const totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));
 
   const tabs: TabDef<View>[] = [
-    { key: "loans", label: "Dossiers", count: arrears.length || null },
-    { key: "installments", label: "Échéances", count: rows.length || null },
+    { key: "loans", label: "Dossiers", count: arrearsCount || null },
+    { key: "installments", label: "Échéances", count: rowsCount || null },
   ];
 
   const arrearsCols: Column<LoanArrears>[] = [
@@ -182,17 +197,17 @@ export default function OverduePage() {
         title={view === "loans" ? "Dossiers en recouvrement" : "Échéances impayées"}
         actions={
           <div className="flex flex-wrap items-center gap-2">
-            <SegmentedTabs tabs={tabs} active={view} onChange={setView} />
+            <SegmentedTabs tabs={tabs} active={view} onChange={(v) => { setView(v); setPage(1); }} />
             {view === "installments" ? (
               <input
                 type="month"
                 value={month}
-                onChange={(e) => setMonth(e.target.value)}
+                onChange={(e) => { setPage(1); setMonth(e.target.value); }}
                 className="h-9 rounded-md border border-input bg-background px-3 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                 title="Mois de l'échéance"
               />
             ) : null}
-            <Select value={minDays} onChange={(e) => setMinDays(Number(e.target.value))} className="h-9 w-36">
+            <Select value={minDays} onChange={(e) => { setPage(1); setMinDays(Number(e.target.value)); }} className="h-9 w-36">
               <option value={0}>Tout retard</option>
               <option value={10}>+ de 10 j</option>
               <option value={30}>+ de 30 j</option>
@@ -203,20 +218,39 @@ export default function OverduePage() {
       >
         {loading ? (
           <p className="text-sm text-muted-foreground">Chargement…</p>
-        ) : view === "loans" ? (
-          <DataTable
-            columns={arrearsCols}
-            rows={arrears}
-            getKey={(r) => r.loan_id}
-            empty={{ title: "Aucun dossier en arriéré 🎉", hint: "Tous les crédits sont à jour." }}
-          />
         ) : (
-          <DataTable
-            columns={installmentCols}
-            rows={rows}
-            getKey={(r) => r.id}
-            empty={{ title: "Aucun impayé sur la période 🎉", hint: "Les remboursements sont à jour." }}
-          />
+          <>
+            {view === "loans" ? (
+              <DataTable
+                columns={arrearsCols}
+                rows={arrears}
+                getKey={(r) => r.loan_id}
+                empty={{ title: "Aucun dossier en arriéré 🎉", hint: "Tous les crédits sont à jour." }}
+              />
+            ) : (
+              <DataTable
+                columns={installmentCols}
+                rows={rows}
+                getKey={(r) => r.id}
+                empty={{ title: "Aucun impayé sur la période 🎉", hint: "Les remboursements sont à jour." }}
+              />
+            )}
+            {totalPages > 1 && (
+              <div className="mt-4 flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">
+                  {count} résultat{count > 1 ? "s" : ""} · page {page} / {totalPages}
+                </span>
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" disabled={page <= 1} onClick={() => setPage((p) => p - 1)}>
+                    Précédent
+                  </Button>
+                  <Button variant="outline" size="sm" disabled={page >= totalPages} onClick={() => setPage((p) => p + 1)}>
+                    Suivant
+                  </Button>
+                </div>
+              </div>
+            )}
+          </>
         )}
       </Panel>
 

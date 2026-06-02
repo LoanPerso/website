@@ -201,6 +201,8 @@
 | `SUPABASE_PROD_URL` | URL du projet prod (→ `NEXT_PUBLIC_SUPABASE_URL` sur l'hôte de prod) | ✅ (public) |
 | `SUPABASE_PROD_ANON_KEY` | Clé anon prod, RLS appliquée (→ `NEXT_PUBLIC_SUPABASE_ANON_KEY` sur l'hôte de prod) | ✅ (public) |
 | `SUPABASE_PROD_SERVICE_ROLE_KEY` | Clé service_role prod, bypass RLS (→ `SUPABASE_SERVICE_ROLE_KEY` sur l'hôte de prod) | ❌ Jamais côté client |
+| `NETLIFY_AUTH_TOKEN` | Personal access token Netlify pour le déploiement CI (`npx netlify deploy`, workflow `.github/workflows/netlify-deploy.yml`). Aussi stocké en **secret GitHub** du repo `LoanPerso/website`. | ❌ Jamais |
+| `NETLIFY_SITE_ID` | ID du site Netlify de prod (`candid-starship-f7ee02` → `quickfund.fr` = `9cd6597f-5cbb-4d37-883e-eaea821a1afb`). Aussi **secret GitHub**. | ❌ (non secret, mais hors client) |
 | `NEXT_PUBLIC_FIREBASE_*` | Config Firebase (stockage long terme) | ✅ |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Formulaire de contact | ❌ |
 

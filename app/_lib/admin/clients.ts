@@ -43,7 +43,9 @@ export async function listClientOverview(
   params: ListClientsParams = {}
 ): Promise<Result<{ rows: ClientOverview[]; count: number }>> {
   const { search, status = "all", category = "all", page = 1, pageSize = 25 } = params;
-  let query = supabase.from("v_client_overview").select("*", { count: "exact" });
+  // Estimated count: the lateral-join view is too expensive to count exactly on
+  // every page load at scale; an approximate total is enough to drive paging.
+  let query = supabase.from("v_client_overview").select("*", { count: "estimated" });
 
   if (status !== "all") query = query.eq("status", status);
   if (category !== "all") query = query.eq("risk_category", category);

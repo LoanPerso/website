@@ -311,24 +311,24 @@ export default function MailPage() {
     <div className="-mx-4 -my-8 flex h-[calc(100dvh_-_3.5rem)] flex-col bg-background transition-[left] lg:fixed lg:inset-y-0 lg:left-[var(--sidebar-w,15rem)] lg:right-0 lg:m-0 lg:h-auto">
       {/* Mobile navigation bar (list / message views) */}
       {!composing && mobileView !== "folders" ? (
-        <div className="flex items-center gap-1.5 border-b border-border px-2 py-2 lg:hidden">
+        <div className="flex items-center gap-1 border-b border-border px-1.5 py-1.5 lg:hidden">
           <button
             type="button"
             onClick={() => setMobileView(mobileView === "message" ? "list" : "folders")}
-            className="flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+            className="flex h-11 w-11 shrink-0 select-none items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground active:bg-secondary"
             aria-label="Retour"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
-          <span className="flex-1 truncate text-sm font-medium text-foreground">{mobileTitle}</span>
+          <span className="flex-1 truncate text-[15px] font-semibold text-foreground">{mobileTitle}</span>
           {mobileView === "list" ? (
             <button
               type="button"
               onClick={() => openCompose("new")}
-              className="flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="flex h-11 w-11 shrink-0 select-none items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground active:bg-secondary"
               aria-label="Composer"
             >
-              <PenSquare className="h-4 w-4" />
+              <PenSquare className="h-5 w-5" />
             </button>
           ) : null}
         </div>

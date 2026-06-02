@@ -41,8 +41,8 @@ export function MessageThread({
                 onClick={() => !isCurrent && onOpen(m.id)}
                 disabled={isCurrent}
                 className={cn(
-                  "flex w-full items-center gap-2 px-3 py-1.5 text-left text-xs transition-colors",
-                  isCurrent ? "bg-secondary/60" : "hover:bg-secondary/40"
+                  "flex w-full select-none items-center gap-2 px-3 py-2.5 text-left text-xs transition-colors sm:py-1.5",
+                  isCurrent ? "bg-secondary/60" : "hover:bg-secondary/40 active:bg-secondary/50"
                 )}
               >
                 <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />

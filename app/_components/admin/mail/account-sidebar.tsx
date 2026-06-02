@@ -82,7 +82,7 @@ export function AccountSidebar({
         </Button>
       </div>
 
-      <nav className="flex-1 overflow-y-auto p-2">
+      <nav className="flex-1 overflow-y-auto overscroll-contain admin-scroll p-2">
         {folders.map((f) => {
           const Icon = FOLDER_ICON[f.role] ?? Mail;
           const active = f.id === folderId;
@@ -92,10 +92,10 @@ export function AccountSidebar({
               type="button"
               onClick={() => onSelectFolder(f.id)}
               className={cn(
-                "flex w-full items-center gap-2.5 rounded-md px-2.5 py-1.5 text-[13px] transition-colors",
+                "flex w-full select-none items-center gap-2.5 rounded-md px-2.5 py-2.5 text-[13px] transition-colors sm:py-1.5",
                 active
                   ? "bg-background font-medium text-foreground shadow-sm"
-                  : "text-muted-foreground hover:bg-background/60 hover:text-foreground"
+                  : "text-muted-foreground hover:bg-background/60 hover:text-foreground active:bg-background/80"
               )}
             >
               <Icon className={cn("h-4 w-4 shrink-0", active ? "text-foreground" : "text-muted-foreground")} />
@@ -128,7 +128,7 @@ export function AccountSidebar({
           type="button"
           onClick={onSync}
           disabled={syncing}
-          className="flex w-full items-center gap-2.5 rounded-md px-2.5 py-1.5 text-[13px] text-muted-foreground transition-colors hover:bg-background/60 hover:text-foreground disabled:opacity-60"
+          className="flex w-full select-none items-center gap-2.5 rounded-md px-2.5 py-2.5 text-[13px] text-muted-foreground transition-colors hover:bg-background/60 hover:text-foreground active:bg-background/80 disabled:opacity-60 sm:py-1.5"
         >
           <RefreshCw className={cn("h-4 w-4", syncing && "animate-spin")} />
           <span className="flex-1 text-left">Synchroniser</span>
@@ -138,7 +138,7 @@ export function AccountSidebar({
         </button>
         <Link
           href="/admin/mail/accounts"
-          className="flex w-full items-center gap-2.5 rounded-md px-2.5 py-1.5 text-[13px] text-muted-foreground transition-colors hover:bg-background/60 hover:text-foreground"
+          className="flex w-full select-none items-center gap-2.5 rounded-md px-2.5 py-2.5 text-[13px] text-muted-foreground transition-colors hover:bg-background/60 hover:text-foreground active:bg-background/80 sm:py-1.5"
         >
           <Settings2 className="h-4 w-4" /> Gérer les comptes
         </Link>

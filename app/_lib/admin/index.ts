@@ -19,5 +19,7 @@ export * as contractsApi from "./contracts";
 export * as originationApi from "./origination";
 export * as servicingApi from "./servicing";
 export * as collectionsApi from "./collections";
+export * as financeApi from "./finance-pnl";
+export * as analyticsApi from "./analytics";
 export * as auditApi from "./audit";
 export * as mailApi from "./mail";

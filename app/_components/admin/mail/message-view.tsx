@@ -120,14 +120,14 @@ export function MessageView({
               onClick={() => setShowCrm((v) => !v)}
               title="Lien CRM"
               aria-label="Afficher/masquer le lien CRM"
-              className={cn("h-8 w-8 p-0", showCrm && "bg-secondary")}
+              className={cn("h-11 w-11 sm:h-8 sm:w-8 p-0", showCrm && "bg-secondary")}
             >
               <Link2 className={cn("h-4 w-4", showCrm ? "text-foreground" : "text-muted-foreground")} />
             </Button>
-            <Button variant="ghost" size="sm" onClick={() => onToggleFlag(!message.is_flagged)} title="Marquer comme suivi" aria-label="Drapeau" className="h-8 w-8 p-0">
+            <Button variant="ghost" size="sm" onClick={() => onToggleFlag(!message.is_flagged)} title="Marquer comme suivi" aria-label="Drapeau" className="h-11 w-11 sm:h-8 sm:w-8 p-0">
               <Star className={cn("h-4 w-4", message.is_flagged ? "fill-alert text-alert" : "text-muted-foreground")} />
             </Button>
-            <Button variant="ghost" size="sm" onClick={onDelete} disabled={busy} title="Supprimer" aria-label="Supprimer" className="h-8 w-8 p-0">
+            <Button variant="ghost" size="sm" onClick={onDelete} disabled={busy} title="Supprimer" aria-label="Supprimer" className="h-11 w-11 sm:h-8 sm:w-8 p-0">
               <Trash2 className="h-4 w-4 text-muted-foreground" />
             </Button>
           </div>
@@ -136,16 +136,16 @@ export function MessageView({
         <div className="space-y-1 text-[13px]">
           <div className="flex gap-2">
             <span className="w-12 shrink-0 text-muted-foreground">De</span>
-            <span className="text-foreground">{addressLine(message.from_address ? [{ name: message.from_name, address: message.from_address }] : [])}</span>
+            <span className="min-w-0 break-words text-foreground">{addressLine(message.from_address ? [{ name: message.from_name, address: message.from_address }] : [])}</span>
           </div>
           <div className="flex gap-2">
             <span className="w-12 shrink-0 text-muted-foreground">À</span>
-            <span className="text-foreground">{addressLine(message.to_addresses)}</span>
+            <span className="min-w-0 break-words text-foreground">{addressLine(message.to_addresses)}</span>
           </div>
           {message.cc_addresses?.length ? (
             <div className="flex gap-2">
               <span className="w-12 shrink-0 text-muted-foreground">Cc</span>
-              <span className="text-foreground">{addressLine(message.cc_addresses)}</span>
+              <span className="min-w-0 break-words text-foreground">{addressLine(message.cc_addresses)}</span>
             </div>
           ) : null}
         </div>
@@ -157,19 +157,19 @@ export function MessageView({
         </div>
 
         <div className="flex flex-wrap items-center gap-2 pt-1">
-          <Button variant="outline" size="sm" onClick={onReply}>
+          <Button variant="outline" size="sm" onClick={onReply} className="h-10 sm:h-9">
             <Reply className="h-4 w-4" /> Répondre
           </Button>
           {recipientCount > 1 ? (
-            <Button variant="outline" size="sm" onClick={onReplyAll}>
+            <Button variant="outline" size="sm" onClick={onReplyAll} className="h-10 sm:h-9">
               <ReplyAll className="h-4 w-4" /> Répondre à tous
             </Button>
           ) : null}
-          <Button variant="outline" size="sm" onClick={onForward}>
+          <Button variant="outline" size="sm" onClick={onForward} className="h-10 sm:h-9">
             <Forward className="h-4 w-4" /> Transférer
           </Button>
           {message.direction === "in" ? (
-            <Button variant="ghost" size="sm" onClick={onMarkUnread}>
+            <Button variant="ghost" size="sm" onClick={onMarkUnread} className="h-10 sm:h-9">
               <MailOpen className="h-4 w-4" /> Marquer non lu
             </Button>
           ) : null}
@@ -178,7 +178,7 @@ export function MessageView({
               aria-label="Déplacer vers"
               value=""
               onChange={(e) => e.target.value && onMove(e.target.value)}
-              className="h-9 w-auto text-xs"
+              className="h-10 sm:h-9 w-auto text-xs"
             >
               <option value="">Déplacer vers…</option>
               {moveTargets.map((f) => (
@@ -191,14 +191,14 @@ export function MessageView({
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto overscroll-contain admin-scroll p-4">
         <MessageThread thread={thread} currentId={message.id} onOpen={onOpenThreadMessage} />
         {showCrm ? (
           <MessageCrm message={message} clients={clients} applications={applications} onChanged={onCrmChanged} />
         ) : null}
 
         {body ? (
-          <div className="whitespace-pre-line text-[13px] leading-relaxed text-foreground/90">{body}</div>
+          <div className="whitespace-pre-line break-words text-[13px] leading-relaxed text-foreground/90">{body}</div>
         ) : (
           <p className="text-sm text-muted-foreground">(message sans contenu)</p>
         )}
