@@ -57,6 +57,8 @@ export function ComposePane({
   const [cc, setCc] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
+  const [quoted, setQuoted] = useState(""); // original message, shown as a separate quoted block
+  const [includeQuote, setIncludeQuote] = useState(false);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -88,17 +90,23 @@ export function ComposePane({
       setTo(fmt(toList));
       setCc(fmt(ccList));
       setSubject(withPrefix("Re: ", src.subject));
-      setBody(`${signature}${quote(src)}`);
+      setBody(signature);
+      setQuoted(quote(src).trimStart());
+      setIncludeQuote(true);
     } else if (context.mode === "forward" && src) {
       setTo("");
       setCc("");
       setSubject(withPrefix("Fwd: ", src.subject));
-      setBody(`${signature}${quote(src)}`);
+      setBody(signature);
+      setQuoted(quote(src).trimStart());
+      setIncludeQuote(true);
     } else {
       setTo("");
       setCc("");
       setSubject("");
       setBody(signature);
+      setQuoted("");
+      setIncludeQuote(false);
     }
   }, [context, defaultAccountId, accounts]);
 
@@ -119,7 +127,7 @@ export function ComposePane({
       to: recipients,
       cc: parseRecipients(cc),
       subject: subject.trim() || "(sans objet)",
-      body_text: body,
+      body_text: includeQuote && quoted ? `${body}\n\n${quoted}` : body,
       in_reply_to:
         context.mode === "reply" || context.mode === "replyAll" ? context.message?.message_id ?? null : null,
       thread_key: context.message?.thread_key ?? null,
@@ -139,7 +147,7 @@ export function ComposePane({
       to: parseRecipients(to),
       cc: parseRecipients(cc),
       subject: subject.trim() || "(sans objet)",
-      body_text: body,
+      body_text: includeQuote && quoted ? `${body}\n\n${quoted}` : body,
       thread_key: context.message?.thread_key ?? null,
     });
     setBusy(false);
@@ -186,8 +194,27 @@ export function ComposePane({
           <TextInput value={subject} onChange={(e) => setSubject(e.target.value)} />
         </Field>
         <Field label="Message">
-          <Textarea value={body} onChange={(e) => setBody(e.target.value)} className="min-h-[220px]" />
+          <Textarea value={body} onChange={(e) => setBody(e.target.value)} className="min-h-[200px]" />
         </Field>
+
+        {quoted ? (
+          <div className="space-y-2">
+            <label className="flex w-fit select-none items-center gap-2 text-xs text-muted-foreground">
+              <input
+                type="checkbox"
+                checked={includeQuote}
+                onChange={(e) => setIncludeQuote(e.target.checked)}
+                className="h-4 w-4 rounded border-input accent-foreground"
+              />
+              Inclure le message d&apos;origine
+            </label>
+            {includeQuote ? (
+              <div className="admin-scroll max-h-48 overflow-y-auto overscroll-contain whitespace-pre-line break-words rounded-md border border-border border-l-2 border-l-muted-foreground/40 bg-secondary/30 px-3 py-2 text-xs text-muted-foreground">
+                {quoted}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
       </div>
 
       <div className="flex justify-end gap-2 border-t border-border px-4 py-3">

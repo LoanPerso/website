@@ -1,5 +1,13 @@
 # Journal
 
+## 2026-06-04 — Messagerie : lecteur « façon vraies apps » (bandeau repliable, mise en page, traduction)
+- **Bandeau repliable au scroll (mobile) :** dans `message-view`, objet + De/À/Cc + badge + barre d'actions se replient dès qu'on scrolle le corps (hystérésis 40/8 px anti-oscillation) → fini la zone de lecture étouffée. Un **Répondre compact** apparaît dans l'en-tête réduit. Desktop (`lg`) inchangé (tout reste visible).
+- **Mise en page lecture :** **carte expéditeur** (avatar monogramme + nom/e-mail + date relative) persistante en tête du corps ; typographie `text-sm leading-7`, largeur de lecture `max-w-2xl`.
+- **Traduction à la demande :** bandeau **« Traduire en français »** (façon Gmail) → nouvelle lib `translateText` (API **MyMemory** sans clé, **auto-détection** de la source, **chunking ≤480 c.**, quota relevé via `de=`, erreurs gérées) + bascule **« Afficher l'original »**. **Affiché seulement pour un message étranger** (heuristique FR locale : accents + stopwords) → **caché sur tout le smoke français**. Endpoint Google `gtx` écarté (302 CAPTCHA sur IP datacenter + pas de CORS fiable).
+- **Mise en page réponse (composer) :** sur répondre/transférer, le **message d'origine** devient un **bloc cité lecture seule** séparé (bascule « Inclure le message d'origine »), au lieu d'être déversé brut dans la zone de saisie ; recombiné à l'envoi.
+- **Sûr & vérifié :** aucune route touchée ; `tsc --noEmit` **vert** ; endpoint MyMemory + parsing **testés en réel** (EN→FR ok, autodetect ok, 403 au-delà de 500 c.) ; heuristique FR validée (smoke FR caché / EN affiché). `de=contact@quickfund.ee` non secret (MyMemory keyless).
+- **Docs :** CHARTE_GRAPHIQUE (`mail/*`), FEATURES, DECISIONS.
+
 ## 2026-05-30 — Messagerie : passe mobile « app native » (webmail tactile)
 - **Demande :** rendre la webmail `/admin/mail` « vraiment pro/mobile friendly » — finit le « chantier en cours » des cibles tactiles posé par la charte (Ergonomie tactile).
 - **Cibles tactiles ~44px :** boutons icône du lecteur (CRM/drapeau/supprimer), barre nav mobile (retour/composer) et bouton fermer du composer → `h-11 w-11` mobile (`sm:h-8 sm:w-8` desktop) ; actions Répondre/Transférer/Marquer non lu/Déplacer `h-10 sm:h-9` ; lignes denses (dossiers, Synchroniser/Gérer, fil de discussion, sélecteurs CRM) `py-2.5 sm:py-1.5`, lignes de liste `py-3 sm:py-2.5`.

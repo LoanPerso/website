@@ -2,6 +2,12 @@
 
 Record architectural and product decisions here.
 
+## 2026-06-04 — Messagerie : traduction via service externe sans clé (MyMemory)
+- **Décision :** la fonction « Traduire » du lecteur appelle l'API publique **MyMemory** (`api.mymemory.translated.net`), **sans clé**, **directement depuis le navigateur** (CORS `*`), **auto-détection** de la source → français. Chunking ≤480 c. (plafond 500), quota relevé via `&de=contact@quickfund.ee`.
+- **Pourquoi pas Google `gtx` :** renvoie une page CAPTCHA (302 « /sorry ») depuis les IP datacenter et n'expose pas de CORS fiable. MyMemory fonctionne depuis n'importe quelle IP **et** le navigateur, sans clé ni backend à maintenir.
+- **Confidentialité (assumée) :** taper « Traduire » **envoie le contenu du message à un tiers**. Acceptable ici — outil interne, mailbox = **mockup à données fictives**. Pour de vrais e-mails clients, prévoir un service avec engagement de confidentialité (ou auto-hébergé type LibreTranslate) **avant ouverture publique**.
+- **Garde-fous UX :** le bouton n'apparaît **que pour un message non-français** (heuristique locale accents + stopwords) ; en cas d'échec/quota, erreur **inline** et le message d'origine reste affiché.
+
 ## 2026-05-30 — Prod : données business smoke migrées depuis la préprod (hors users & mails)
 - **Décision :** copier en **prod** l'intégralité des données métier de la préprod — `clients` (1 367), `loan_applications` (220), `loans` (1 987), `installments` (47 688), `payments` (23 779), `ledger_entries` (38) — en **excluant** les users (`admin_users`) et la messagerie (`mail_*`). **Inverse sciemment** la clause « aucune donnée métier de démo en prod » / « ne jamais copier les données de démo » des décisions du 2026-05-29 et du 2026-05-30 (smoke).
 - **Pourquoi :** demande explicite de l'utilisateur — disposer d'une prod **peuplée et crédible** (dashboard, finance, statistiques, recouvrement) sans relancer une génération côté prod. Même esprit que l'exception « messagerie smoke en prod ».

@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Forward, Link2, MailOpen, Paperclip, Reply, ReplyAll, Star, Trash2 } from "lucide-react";
+import { Forward, Languages, Link2, MailOpen, Paperclip, Reply, ReplyAll, Star, Trash2 } from "lucide-react";
 import { cn } from "@/_lib/utils";
 import { Button } from "@/_components/ui/button";
 import { Select } from "@/_components/admin/form";
 import { Badge } from "@/_components/admin/status-badge";
-import { formatDateTime, mailDirectionLabels } from "@/_lib/admin/format";
+import { translateText } from "@/_lib/admin/mail";
+import { formatDateTime, formatRelativeDate, mailDirectionLabels } from "@/_lib/admin/format";
 import type {
   Client,
   LoanApplication,
@@ -28,6 +29,42 @@ function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} o`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} Ko`;
   return `${(bytes / (1024 * 1024)).toFixed(1)} Mo`;
+}
+
+// Source-language label for the translation banner ("Traduit depuis …").
+const LANG_FR: Record<string, string> = {
+  en: "l'anglais",
+  de: "l'allemand",
+  es: "l'espagnol",
+  it: "l'italien",
+  et: "l'estonien",
+  nl: "le néerlandais",
+  pt: "le portugais",
+  ru: "le russe",
+  ar: "l'arabe",
+};
+
+// Two-letter monogram for the sender avatar (initials of the display name, or
+// the first letters of the address as a fallback).
+function senderInitials(name: string | null, address: string | null): string {
+  const base = (name && name.trim()) || address || "";
+  const parts = base.replace(/[<>]/g, " ").trim().split(/[\s.@_-]+/).filter(Boolean);
+  if (!parts.length) return "?";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
+// Heuristic: does the body already read as French? (Accents + common stopwords.)
+// When it does we don't surface the translate prompt — like real mail clients
+// that only offer translation for a foreign-language message.
+function isLikelyFrench(text: string): boolean {
+  const sample = ` ${text.slice(0, 1500).toLowerCase()} `;
+  const accents = (sample.match(/[éèêàâîïôûùçœ]/g) || []).length;
+  const FR = [" le ", " la ", " les ", " des ", " une ", " est ", " vous ", " nous ", " votre ", " bonjour ", " cordialement ", " merci ", " pour ", " avec ", " dans ", " au ", " du "];
+  const EN = [" the ", " and ", " you ", " your ", " is ", " are ", " please ", " regards ", " hello ", " thank ", " with ", " for ", " best ", " we ", " our ", " this ", " have "];
+  const fr = accents * 2 + FR.reduce((n, w) => n + (sample.includes(w) ? 1 : 0), 0);
+  const en = EN.reduce((n, w) => n + (sample.includes(w) ? 1 : 0), 0);
+  return fr > 0 && fr >= en;
 }
 
 // Prudent HTML→text fallback (no dangerouslySetInnerHTML): strip tags/scripts.
@@ -78,9 +115,22 @@ export function MessageView({
   onOpenThreadMessage: (id: string) => void;
 }) {
   const [showCrm, setShowCrm] = useState(false);
-  // Default the CRM panel open when the message is already linked; reset on switch.
+  const [scrolled, setScrolled] = useState(false);
+  const [translated, setTranslated] = useState<string | null>(null);
+  const [detected, setDetected] = useState<string | null>(null);
+  const [translating, setTranslating] = useState(false);
+  const [transError, setTransError] = useState<string | null>(null);
+  const [showOriginal, setShowOriginal] = useState(false);
+  // Reset per-message view state when the open message changes (CRM panel opens
+  // when already linked; collapse + translation state start fresh).
   useEffect(() => {
     setShowCrm(!!(message?.client_id || message?.application_id));
+    setScrolled(false);
+    setTranslated(null);
+    setDetected(null);
+    setTranslating(false);
+    setTransError(null);
+    setShowOriginal(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [message?.id]);
 
@@ -107,13 +157,43 @@ export function MessageView({
     : "";
   const recipientCount = (message.to_addresses?.length ?? 0) + (message.cc_addresses?.length ?? 0);
   const moveTargets = folders.filter((f) => f.id !== message.folder_id);
+  const canTranslate = !!body && !isLikelyFrench(body);
+
+  async function handleTranslate() {
+    setTranslating(true);
+    setTransError(null);
+    const res = await translateText(body, "fr");
+    setTranslating(false);
+    if (res.error || !res.data) return setTransError(res.error ?? "Échec de la traduction.");
+    setTranslated(res.data.text);
+    setDetected(res.data.detected);
+    setShowOriginal(false);
+  }
 
   return (
     <section className="flex min-h-0 flex-col overflow-hidden bg-background">
-      <div className="space-y-3 border-b border-border p-4">
+      <div className={cn("space-y-3 border-b border-border px-4 transition-[padding]", scrolled ? "py-2.5 lg:py-4" : "py-4")}>
         <div className="flex items-start justify-between gap-3">
-          <h2 className="text-base font-semibold tracking-tight text-foreground">{message.subject || "(sans objet)"}</h2>
+          <h2
+            className={cn(
+              "min-w-0 text-base font-semibold tracking-tight text-foreground",
+              scrolled && "truncate lg:overflow-visible lg:whitespace-normal"
+            )}
+          >
+            {message.subject || "(sans objet)"}
+          </h2>
           <div className="flex shrink-0 items-center gap-1">
+            {/* Compact reply, shown on mobile only once the header has collapsed. */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={onReply}
+              title="Répondre"
+              aria-label="Répondre"
+              className={cn("h-11 w-11 p-0 lg:hidden", !scrolled && "hidden")}
+            >
+              <Reply className="h-4 w-4 text-muted-foreground" />
+            </Button>
             <Button
               variant="ghost"
               size="sm"
@@ -133,7 +213,7 @@ export function MessageView({
           </div>
         </div>
 
-        <div className="space-y-1 text-[13px]">
+        <div className={cn("space-y-1 text-[13px]", scrolled && "hidden lg:block")}>
           <div className="flex gap-2">
             <span className="w-12 shrink-0 text-muted-foreground">De</span>
             <span className="min-w-0 break-words text-foreground">{addressLine(message.from_address ? [{ name: message.from_name, address: message.from_address }] : [])}</span>
@@ -150,13 +230,13 @@ export function MessageView({
           ) : null}
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+        <div className={cn("flex flex-wrap items-center gap-2 text-xs text-muted-foreground", scrolled && "hidden lg:flex")}>
           <Badge tone={message.direction === "in" ? "info" : "neutral"}>{mailDirectionLabels[message.direction]}</Badge>
           <span>{formatDateTime(message.received_at ?? message.sent_at ?? message.created_at)}</span>
           {message.is_answered ? <span className="text-success">Répondu</span> : null}
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 pt-1">
+        <div className={cn("flex flex-wrap items-center gap-2 pt-1", scrolled && "hidden lg:flex")}>
           <Button variant="outline" size="sm" onClick={onReply} className="h-10 sm:h-9">
             <Reply className="h-4 w-4" /> Répondre
           </Button>
@@ -191,14 +271,77 @@ export function MessageView({
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto overscroll-contain admin-scroll p-4">
+      <div
+        className="flex-1 overflow-y-auto overscroll-contain admin-scroll p-4"
+        onScroll={(e) => {
+          // Hysteresis (collapse > 40px, expand < 8px) so a borderline-height
+          // message never oscillates as the header grows/shrinks.
+          const top = e.currentTarget.scrollTop;
+          setScrolled((prev) => (prev ? top > 8 : top > 40));
+        }}
+      >
+        {/* Sender identity card — persistent while the header collapses on scroll. */}
+        <div className="mb-4 flex items-center gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-semibold text-foreground">
+            {senderInitials(message.from_name, message.from_address)}
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-sm font-medium text-foreground">
+              {message.from_name || message.from_address || "—"}
+            </p>
+            {message.from_name && message.from_address ? (
+              <p className="truncate text-xs text-muted-foreground">{message.from_address}</p>
+            ) : null}
+          </div>
+          <span className="shrink-0 whitespace-nowrap text-xs text-muted-foreground">
+            {formatRelativeDate(message.received_at ?? message.sent_at ?? message.created_at)}
+          </span>
+        </div>
         <MessageThread thread={thread} currentId={message.id} onOpen={onOpenThreadMessage} />
         {showCrm ? (
           <MessageCrm message={message} clients={clients} applications={applications} onChanged={onCrmChanged} />
         ) : null}
 
         {body ? (
-          <div className="whitespace-pre-line break-words text-[13px] leading-relaxed text-foreground/90">{body}</div>
+          <>
+            {/* Translate banner — Gmail-style; only offered for a foreign-language
+                message (hidden when the body already reads as French). */}
+            {(canTranslate || translated) && (
+              <div className="mb-2.5 flex flex-wrap items-center gap-2 text-xs">
+              {translated ? (
+                <>
+                  <span className="inline-flex items-center gap-1.5 text-muted-foreground">
+                    <Languages className="h-3.5 w-3.5" />
+                    {showOriginal
+                      ? "Message original"
+                      : `Traduit${detected && LANG_FR[detected] ? ` depuis ${LANG_FR[detected]}` : " en français"}`}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setShowOriginal((v) => !v)}
+                    className="select-none font-medium text-foreground underline-offset-2 hover:underline"
+                  >
+                    {showOriginal ? "Voir la traduction" : "Afficher l'original"}
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleTranslate}
+                  disabled={translating}
+                  className="inline-flex select-none items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1.5 font-medium text-foreground transition-colors hover:bg-secondary active:bg-secondary disabled:opacity-60"
+                >
+                  <Languages className="h-3.5 w-3.5 text-muted-foreground" />
+                  {translating ? "Traduction…" : "Traduire en français"}
+                </button>
+              )}
+              {transError ? <span className="text-error">{transError}</span> : null}
+              </div>
+            )}
+            <div className="max-w-2xl whitespace-pre-line break-words text-sm leading-7 text-foreground/90">
+              {translated && !showOriginal ? translated : body}
+            </div>
+          </>
         ) : (
           <p className="text-sm text-muted-foreground">(message sans contenu)</p>
         )}

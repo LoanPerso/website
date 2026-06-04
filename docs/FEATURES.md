@@ -102,8 +102,11 @@ Internal tool to run the lending activity (French UI, Supabase-backed, RLS-prote
 - **Messagerie:** company inbox (`/admin/mail`) — a **full-screen** 3-pane mail client (accounts +
   folders · message list · reader/compose), no page header. Multiple boxes/addresses, incoming/outgoing
   mail, **compose / reply / reply-all / forward** (direction-aware recipients) as an **inline pane** (no
-  modal), a **conversation thread** in the reader (all messages of a thread, across folders),
-  **move-to-folder** & **mark-unread**, attachments, simulated sync.
+  modal; the quoted original sits in a **separate block** with an include toggle), a **conversation thread**
+  in the reader (all messages of a thread, across folders), **move-to-folder** & **mark-unread**, attachments,
+  simulated sync. The reader has a **sender card**, a **header that collapses on scroll** (mobile, to free
+  reading space) and an on-demand **"Traduire en français"** banner for foreign-language mail (keyless
+  auto-detect translation, hidden when the message is already French).
   **CRM linking:** from the reader, associate a message to a **client** and/or **application** and change
   the application's **status** (with same-email suggestions). Account management is a dedicated
   **full-screen** page **`/admin/mail/accounts`** (master-detail: narrow sticky account list + scrolling

@@ -7,3 +7,4 @@ export * from "./messages";
 export * from "./compose";
 export * from "./diagnostics";
 export * from "./simulate";
+export * from "./translate";
