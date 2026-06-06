@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Forward, Languages, Link2, MailOpen, Paperclip, Reply, ReplyAll, Star, Trash2 } from "lucide-react";
+import { FolderInput, Forward, Languages, Link2, MailOpen, Paperclip, Reply, ReplyAll, Star, Trash2 } from "lucide-react";
 import { cn } from "@/_lib/utils";
 import { Button } from "@/_components/ui/button";
-import { Select } from "@/_components/admin/form";
-import { Badge } from "@/_components/admin/status-badge";
 import { translateText } from "@/_lib/admin/mail";
-import { formatDateTime, formatRelativeDate, mailDirectionLabels } from "@/_lib/admin/format";
+import { formatRelativeDate } from "@/_lib/admin/format";
 import type {
   Client,
   LoanApplication,
@@ -115,17 +113,15 @@ export function MessageView({
   onOpenThreadMessage: (id: string) => void;
 }) {
   const [showCrm, setShowCrm] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [translated, setTranslated] = useState<string | null>(null);
   const [detected, setDetected] = useState<string | null>(null);
   const [translating, setTranslating] = useState(false);
   const [transError, setTransError] = useState<string | null>(null);
   const [showOriginal, setShowOriginal] = useState(false);
   // Reset per-message view state when the open message changes (CRM panel opens
-  // when already linked; collapse + translation state start fresh).
+  // when already linked; translation state starts fresh).
   useEffect(() => {
     setShowCrm(!!(message?.client_id || message?.application_id));
-    setScrolled(false);
     setTranslated(null);
     setDetected(null);
     setTranslating(false);
@@ -172,116 +168,67 @@ export function MessageView({
 
   return (
     <section className="flex min-h-0 flex-col overflow-hidden bg-background">
-      <div className={cn("space-y-3 border-b border-border px-4 transition-[padding]", scrolled ? "py-2.5 lg:py-4" : "py-4")}>
-        <div className="flex items-start justify-between gap-3">
-          <h2
-            className={cn(
-              "min-w-0 text-base font-semibold tracking-tight text-foreground",
-              scrolled && "truncate lg:overflow-visible lg:whitespace-normal"
-            )}
-          >
-            {message.subject || "(sans objet)"}
-          </h2>
-          <div className="flex shrink-0 items-center gap-1">
-            {/* Compact reply, shown on mobile only once the header has collapsed. */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onReply}
-              title="Répondre"
-              aria-label="Répondre"
-              className={cn("h-11 w-11 p-0 lg:hidden", !scrolled && "hidden")}
-            >
-              <Reply className="h-4 w-4 text-muted-foreground" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setShowCrm((v) => !v)}
-              title="Lien CRM"
-              aria-label="Afficher/masquer le lien CRM"
-              className={cn("h-11 w-11 sm:h-8 sm:w-8 p-0", showCrm && "bg-secondary")}
-            >
-              <Link2 className={cn("h-4 w-4", showCrm ? "text-foreground" : "text-muted-foreground")} />
-            </Button>
-            <Button variant="ghost" size="sm" onClick={() => onToggleFlag(!message.is_flagged)} title="Marquer comme suivi" aria-label="Drapeau" className="h-11 w-11 sm:h-8 sm:w-8 p-0">
-              <Star className={cn("h-4 w-4", message.is_flagged ? "fill-alert text-alert" : "text-muted-foreground")} />
-            </Button>
-            <Button variant="ghost" size="sm" onClick={onDelete} disabled={busy} title="Supprimer" aria-label="Supprimer" className="h-11 w-11 sm:h-8 sm:w-8 p-0">
-              <Trash2 className="h-4 w-4 text-muted-foreground" />
-            </Button>
-          </div>
-        </div>
-
-        <div className={cn("space-y-1 text-[13px]", scrolled && "hidden lg:block")}>
-          <div className="flex gap-2">
-            <span className="w-12 shrink-0 text-muted-foreground">De</span>
-            <span className="min-w-0 break-words text-foreground">{addressLine(message.from_address ? [{ name: message.from_name, address: message.from_address }] : [])}</span>
-          </div>
-          <div className="flex gap-2">
-            <span className="w-12 shrink-0 text-muted-foreground">À</span>
-            <span className="min-w-0 break-words text-foreground">{addressLine(message.to_addresses)}</span>
-          </div>
-          {message.cc_addresses?.length ? (
-            <div className="flex gap-2">
-              <span className="w-12 shrink-0 text-muted-foreground">Cc</span>
-              <span className="min-w-0 break-words text-foreground">{addressLine(message.cc_addresses)}</span>
-            </div>
-          ) : null}
-        </div>
-
-        <div className={cn("flex flex-wrap items-center gap-2 text-xs text-muted-foreground", scrolled && "hidden lg:flex")}>
-          <Badge tone={message.direction === "in" ? "info" : "neutral"}>{mailDirectionLabels[message.direction]}</Badge>
-          <span>{formatDateTime(message.received_at ?? message.sent_at ?? message.created_at)}</span>
-          {message.is_answered ? <span className="text-success">Répondu</span> : null}
-        </div>
-
-        <div className={cn("flex flex-wrap items-center gap-2 pt-1", scrolled && "hidden lg:flex")}>
-          <Button variant="outline" size="sm" onClick={onReply} className="h-10 sm:h-9">
-            <Reply className="h-4 w-4" /> Répondre
+      {/* Slim action toolbar — one line, always visible, icon-only. The heavy meta
+          (subject, sender, recipients) lives in the scroll area below and scrolls
+          away naturally, so there is no jumpy collapse-on-scroll. */}
+      <div className="flex shrink-0 items-center gap-0.5 overflow-x-auto border-b border-border px-1.5 py-1.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <Button variant="ghost" size="sm" onClick={onReply} title="Répondre" aria-label="Répondre" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
+          <Reply className="h-[18px] w-[18px] text-muted-foreground" />
+        </Button>
+        {recipientCount > 1 ? (
+          <Button variant="ghost" size="sm" onClick={onReplyAll} title="Répondre à tous" aria-label="Répondre à tous" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
+            <ReplyAll className="h-[18px] w-[18px] text-muted-foreground" />
           </Button>
-          {recipientCount > 1 ? (
-            <Button variant="outline" size="sm" onClick={onReplyAll} className="h-10 sm:h-9">
-              <ReplyAll className="h-4 w-4" /> Répondre à tous
-            </Button>
-          ) : null}
-          <Button variant="outline" size="sm" onClick={onForward} className="h-10 sm:h-9">
-            <Forward className="h-4 w-4" /> Transférer
+        ) : null}
+        <Button variant="ghost" size="sm" onClick={onForward} title="Transférer" aria-label="Transférer" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
+          <Forward className="h-[18px] w-[18px] text-muted-foreground" />
+        </Button>
+        {message.direction === "in" ? (
+          <Button variant="ghost" size="sm" onClick={onMarkUnread} title="Marquer non lu" aria-label="Marquer non lu" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
+            <MailOpen className="h-[18px] w-[18px] text-muted-foreground" />
           </Button>
-          {message.direction === "in" ? (
-            <Button variant="ghost" size="sm" onClick={onMarkUnread} className="h-10 sm:h-9">
-              <MailOpen className="h-4 w-4" /> Marquer non lu
-            </Button>
-          ) : null}
-          {moveTargets.length ? (
-            <Select
+        ) : null}
+        {moveTargets.length ? (
+          <div className="relative h-10 w-10 shrink-0 sm:h-9 sm:w-9" title="Déplacer vers">
+            <FolderInput className="pointer-events-none absolute inset-0 m-auto h-[18px] w-[18px] text-muted-foreground" />
+            <select
               aria-label="Déplacer vers"
               value=""
               onChange={(e) => e.target.value && onMove(e.target.value)}
-              className="h-10 sm:h-9 w-auto text-xs"
+              className="h-full w-full cursor-pointer appearance-none rounded-md bg-transparent text-transparent outline-none transition-colors hover:bg-secondary"
             >
-              <option value="">Déplacer vers…</option>
+              <option value="" disabled>
+                Déplacer vers…
+              </option>
               {moveTargets.map((f) => (
-                <option key={f.id} value={f.id}>
+                <option key={f.id} value={f.id} className="text-foreground">
                   {f.name}
                 </option>
               ))}
-            </Select>
-          ) : null}
-        </div>
+            </select>
+          </div>
+        ) : null}
+
+        <span className="mx-1 h-5 w-px shrink-0 bg-border" aria-hidden />
+
+        <Button variant="ghost" size="sm" onClick={() => onToggleFlag(!message.is_flagged)} title="Marquer comme suivi" aria-label="Drapeau" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
+          <Star className={cn("h-[18px] w-[18px]", message.is_flagged ? "fill-alert text-alert" : "text-muted-foreground")} />
+        </Button>
+        <Button variant="ghost" size="sm" onClick={onDelete} disabled={busy} title="Supprimer" aria-label="Supprimer" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
+          <Trash2 className="h-[18px] w-[18px] text-muted-foreground" />
+        </Button>
+        <Button variant="ghost" size="sm" onClick={() => setShowCrm((v) => !v)} title="Lien CRM" aria-label="Afficher/masquer le lien CRM" className={cn("h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9", showCrm && "bg-secondary")}>
+          <Link2 className={cn("h-[18px] w-[18px]", showCrm ? "text-foreground" : "text-muted-foreground")} />
+        </Button>
       </div>
 
-      <div
-        className="flex-1 overflow-y-auto overscroll-contain admin-scroll p-4"
-        onScroll={(e) => {
-          // Hysteresis (collapse > 40px, expand < 8px) so a borderline-height
-          // message never oscillates as the header grows/shrinks.
-          const top = e.currentTarget.scrollTop;
-          setScrolled((prev) => (prev ? top > 8 : top > 40));
-        }}
-      >
-        {/* Sender identity card — persistent while the header collapses on scroll. */}
-        <div className="mb-4 flex items-center gap-3">
+      <div className="flex-1 overflow-y-auto overscroll-contain admin-scroll p-4">
+        {/* Subject + sender + recipients live here so they scroll away as you read
+            — no fixed mega-header, no jumpy collapse. */}
+        <h2 className="mb-3 break-words text-[17px] font-semibold leading-snug tracking-tight text-foreground">
+          {message.subject || "(sans objet)"}
+        </h2>
+        <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-semibold text-foreground">
             {senderInitials(message.from_name, message.from_address)}
           </div>
@@ -297,6 +244,11 @@ export function MessageView({
             {formatRelativeDate(message.received_at ?? message.sent_at ?? message.created_at)}
           </span>
         </div>
+        <p className="mb-4 mt-1.5 break-words pl-12 text-xs text-muted-foreground">
+          À {addressLine(message.to_addresses)}
+          {message.cc_addresses?.length ? `  ·  Cc ${addressLine(message.cc_addresses)}` : ""}
+          {message.is_answered ? "  ·  Répondu" : ""}
+        </p>
         <MessageThread thread={thread} currentId={message.id} onOpen={onOpenThreadMessage} />
         {showCrm ? (
           <MessageCrm message={message} clients={clients} applications={applications} onChanged={onCrmChanged} />

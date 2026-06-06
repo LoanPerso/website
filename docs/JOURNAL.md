@@ -1,5 +1,12 @@
 # Journal
 
+## 2026-06-06 — Messagerie : lecteur — repli au scroll remplacé par une barre d'icônes (anti-jank)
+- **Retour utilisateur :** le repli du bandeau au scroll (cf. entrée 2026-06-04) **saccadait sur mobile** (le masquage JS instantané rendait ça brutal) et l'en-tête restait trop gros.
+- **Refonte :** suppression **totale** du JS de scroll (`scrolled` / `onScroll` / hystérésis). Le lecteur a désormais **une fine barre d'actions fixe sur une seule ligne, en icônes** (répondre / répondre-à-tous / transférer / non-lu / déplacer / suivi / supprimer / CRM ; **Déplacer** = `<select>` natif transparent sous une icône `FolderInput` ; barre `overflow-x-auto` à scrollbar masquée → reste toujours une ligne). **Objet + expéditeur + destinataires déplacés dans la zone scrollable** → ils défilent naturellement (fluide natif, zéro animation, plus aucun jank).
+- **Nettoyage :** imports `Select` / `Badge` / `formatDateTime` / `mailDirectionLabels` retirés (devenus inutiles) ; carte expéditeur conservée, objet en `text-[17px]`.
+- **Vérif :** `tsc --noEmit` **vert** ; aucune logique métier touchée (uniquement `message-view`).
+- **Docs :** CHARTE_GRAPHIQUE (`mail/*`).
+
 ## 2026-06-04 — Messagerie : lecteur « façon vraies apps » (bandeau repliable, mise en page, traduction)
 - **Bandeau repliable au scroll (mobile) :** dans `message-view`, objet + De/À/Cc + badge + barre d'actions se replient dès qu'on scrolle le corps (hystérésis 40/8 px anti-oscillation) → fini la zone de lecture étouffée. Un **Répondre compact** apparaît dans l'en-tête réduit. Desktop (`lg`) inchangé (tout reste visible).
 - **Mise en page lecture :** **carte expéditeur** (avatar monogramme + nom/e-mail + date relative) persistante en tête du corps ; typographie `text-sm leading-7`, largeur de lecture `max-w-2xl`.
