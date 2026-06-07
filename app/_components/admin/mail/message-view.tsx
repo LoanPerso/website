@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FolderInput, Forward, Languages, Link2, MailOpen, Paperclip, Reply, ReplyAll, Star, Trash2 } from "lucide-react";
+import { Check, Copy, FolderInput, Forward, Languages, Link2, MailOpen, Paperclip, Reply, ReplyAll, Star, Trash2 } from "lucide-react";
 import { cn } from "@/_lib/utils";
 import { Button } from "@/_components/ui/button";
 import { translateText } from "@/_lib/admin/mail";
-import { formatRelativeDate } from "@/_lib/admin/format";
+import { formatDateTime, formatRelativeDate } from "@/_lib/admin/format";
 import type {
   Client,
   LoanApplication,
@@ -113,15 +113,17 @@ export function MessageView({
   onOpenThreadMessage: (id: string) => void;
 }) {
   const [showCrm, setShowCrm] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [translated, setTranslated] = useState<string | null>(null);
   const [detected, setDetected] = useState<string | null>(null);
   const [translating, setTranslating] = useState(false);
   const [transError, setTransError] = useState<string | null>(null);
   const [showOriginal, setShowOriginal] = useState(false);
   // Reset per-message view state when the open message changes (CRM panel opens
-  // when already linked; translation state starts fresh).
+  // when already linked; translation/copy state starts fresh).
   useEffect(() => {
     setShowCrm(!!(message?.client_id || message?.application_id));
+    setCopied(false);
     setTranslated(null);
     setDetected(null);
     setTranslating(false);
@@ -164,6 +166,29 @@ export function MessageView({
     setTranslated(res.data.text);
     setDetected(res.data.detected);
     setShowOriginal(false);
+  }
+
+  // Copy the whole mail (headers + the body as currently shown — translated or
+  // original) to the clipboard.
+  async function handleCopy() {
+    const shown = translated && !showOriginal ? translated : body;
+    const header = [
+      message!.subject ? `Objet : ${message!.subject}` : null,
+      `De : ${addressLine(message!.from_address ? [{ name: message!.from_name, address: message!.from_address }] : [])}`,
+      message!.to_addresses?.length ? `À : ${addressLine(message!.to_addresses)}` : null,
+      message!.cc_addresses?.length ? `Cc : ${addressLine(message!.cc_addresses)}` : null,
+      `Date : ${formatDateTime(message!.received_at ?? message!.sent_at ?? message!.created_at)}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const text = `${header}\n\n${shown}`.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      setCopied(false);
+    }
   }
 
   return (
@@ -213,6 +238,9 @@ export function MessageView({
 
         <Button variant="ghost" size="sm" onClick={() => onToggleFlag(!message.is_flagged)} title="Marquer comme suivi" aria-label="Drapeau" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
           <Star className={cn("h-[18px] w-[18px]", message.is_flagged ? "fill-alert text-alert" : "text-muted-foreground")} />
+        </Button>
+        <Button variant="ghost" size="sm" onClick={handleCopy} title={copied ? "Copié !" : "Copier le message"} aria-label="Copier le message" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
+          {copied ? <Check className="h-[18px] w-[18px] text-success" /> : <Copy className="h-[18px] w-[18px] text-muted-foreground" />}
         </Button>
         <Button variant="ghost" size="sm" onClick={onDelete} disabled={busy} title="Supprimer" aria-label="Supprimer" className="h-10 w-10 shrink-0 p-0 sm:h-9 sm:w-9">
           <Trash2 className="h-[18px] w-[18px] text-muted-foreground" />

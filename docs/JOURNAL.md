@@ -1,5 +1,10 @@
 # Journal
 
+## 2026-06-07 — Messagerie : bouton « Copier le message » dans le lecteur
+- **Ajout :** un bouton **Copier** dans la barre d'actions du lecteur (à côté du drapeau) copie **tout le mail** — objet + De/À/Cc + date + corps **tel qu'affiché** (traduit ou original) — dans le presse-papier via `navigator.clipboard.writeText`. L'icône passe en **✓ vert** 1,5 s après la copie.
+- **Vérif :** `tsc --noEmit` vert ; `message-view` uniquement (état `copied` + `handleCopy`).
+- **Docs :** CHARTE_GRAPHIQUE.
+
 ## 2026-06-06 — Messagerie : lecteur — repli au scroll remplacé par une barre d'icônes (anti-jank)
 - **Retour utilisateur :** le repli du bandeau au scroll (cf. entrée 2026-06-04) **saccadait sur mobile** (le masquage JS instantané rendait ça brutal) et l'en-tête restait trop gros.
 - **Refonte :** suppression **totale** du JS de scroll (`scrolled` / `onScroll` / hystérésis). Le lecteur a désormais **une fine barre d'actions fixe sur une seule ligne, en icônes** (répondre / répondre-à-tous / transférer / non-lu / déplacer / suivi / supprimer / CRM ; **Déplacer** = `<select>` natif transparent sous une icône `FolderInput` ; barre `overflow-x-auto` à scrollbar masquée → reste toujours une ligne). **Objet + expéditeur + destinataires déplacés dans la zone scrollable** → ils défilent naturellement (fluide natif, zéro animation, plus aucun jank).
