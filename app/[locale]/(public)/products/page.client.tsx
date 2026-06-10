@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 import { ProductCard } from "./_components/product-card";
 import {
   MicroCreditIcon,
@@ -34,7 +35,15 @@ const allProducts = [
 
 export default function ProductsPage() {
   const t = useTranslations("products");
+  const tCommon = useTranslations("common");
   const locale = useLocale();
+  // Wind-down: the simulate CTAs lead to /contact while acquisition is closed.
+  const ctaHref = NEW_CREDIT_CLOSED
+    ? `/${locale}/contact`
+    : `/${locale}/tools/simulator`;
+  const ctaLabel = NEW_CREDIT_CLOSED
+    ? tCommon("winddown.contactCta")
+    : t("cta.simulate");
 
   // Hero refs
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
@@ -117,10 +126,10 @@ export default function ProductsPage() {
 
           <div ref={ctaRef}>
             <Link
-              href={`/${locale}/tools/simulator`}
+              href={ctaHref}
               className="inline-flex items-center gap-3 px-8 py-4 bg-foreground text-background rounded-full text-base font-medium hover:bg-accent hover:text-white transition-colors duration-200"
             >
-              {t("cta.simulate")}
+              {ctaLabel}
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -215,10 +224,10 @@ export default function ProductsPage() {
             </p>
 
             <Link
-              href={`/${locale}/tools/simulator`}
+              href={ctaHref}
               className="inline-flex items-center gap-3 px-12 py-5 bg-white text-deep-black rounded-full text-lg font-medium hover:bg-accent hover:text-white transition-colors duration-200"
             >
-              {t("cta.simulate")}
+              {ctaLabel}
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

@@ -1,9 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 
 // Simulated processing delay (in ms)
 const PROCESSING_DELAY = 2000;
 
 export async function POST(request: NextRequest) {
+  // Acquisition funnel closed: lock the endpoint server-side (defends against
+  // direct posts while the form is unmounted). Re-enabled by flipping the flag.
+  if (NEW_CREDIT_CLOSED) {
+    return NextResponse.json({ closed: true }, { status: 410 });
+  }
+
   try {
     // Parse form data
     const formData = await request.formData();

@@ -4,6 +4,17 @@
 - **Public Frontend:** "Awwards-style" landing page implemented with GSAP, Three.js, and smooth scrolling.
 - **Design:** "Minimal Luxury" charter fully applied to public pages.
 - **Product Pages:** Modular template system with dynamic routing and centralized configuration.
+- **Wind-down (rachat, 2026-06-09):** acquisition funnel closed via a central flag — voir la section dédiée ci-dessous.
+
+## Mise en sommeil du site public — page d'attente ✅ (2026-06-09)
+- **Contexte rachat :** Quickfund n'accorde plus de nouveaux crédits. Le site public est réduit à une **page d'attente** : seules la **landing** et `/login` restent en avant ; un email de contact est affiché ; `/admin` conservé.
+- **Flag central `app/_config/site-mode.ts`** (`NEW_CREDIT_CLOSED`, `WIND_DOWN_CONTACT_EMAIL = contact@quickfund.ee`) — source de vérité unique, **tout réversible** d'un seul interrupteur.
+- **Leviers :** (1) **bandeau global** wind-down (`wind-down-banner.tsx` : slim, haut de page, email + lien Espace client, fermeture par session, monté via `[locale]/layout.tsx`) ; (2) **header dépouillé** (`wind-down-header.tsx` : logo + Espace Client, sans menu/switcher/burger) ; (3) **hard stop** sur `POST /api/application/analyze` → **410**, CTA d'acquisition redirigés vers `/contact` (label `common.winddown.contactCta`).
+- **Landing minimale** (`wind-down-landing.tsx`) : `/` réduit à **un écran sans scroll** (message + email + Espace client + liens légaux) ; le **gros footer marketing est masqué** quand le flag est on (la home marketing est conservée, réversible).
+- **Pages bloquées → `ServiceClosedNotice`** (fichiers conservés, `robots:noindex`) : `application`, `tools/simulator`, `products` (+ `[slug]`), `why-us`, `why-us-2`, `pricing`, `about`, `features`. **Accessibles :** landing minimale, `/login`, `/contact`, `/legal/*` (gardé **public** pour conformité RGPD/cookies/régulateur ; les contrats personnels restent derrière `/login`).
+- **i18n :** section `winddown` en 4 langues (et/fr/en/es) ; correctif de la clé `regulatory.passport` manquante en estonien.
+- **SEO :** sitemap réduit à home + login + contact + légal (le reste réapparaît si le flag repasse à `false`).
+- `tsc --noEmit` vert. Non commité.
 
 ## Stack
 - Next.js App Router

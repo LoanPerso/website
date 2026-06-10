@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/_i18n/config";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 import { getProductSlugs } from "app/[locale]/(public)/products/_config";
 
 function getBaseUrl() {
@@ -15,18 +16,26 @@ const LEGAL_ROUTES = [
   "/legal/compliance",
 ] as const;
 
-const PUBLIC_ROUTES = [
-  "",
+// Pages always present in the sitemap (kept online during the wind-down).
+const CORE_ROUTES = ["", "/login", "/contact", ...LEGAL_ROUTES];
+
+// Marketing / acquisition pages — only listed while the site is fully open
+// (NEW_CREDIT_CLOSED === false). While closed they render the service-closed
+// notice and are dropped here. Restored automatically when the flag flips back.
+const OPEN_ROUTES = [
   "/products",
   "/why-us",
-  "/tools/simulator",
-  "/login",
   "/pricing",
   "/about",
   "/features",
+  "/tools/simulator",
   "/application",
-  ...LEGAL_ROUTES,
-] as const;
+];
+
+const PUBLIC_ROUTES: string[] = [
+  ...CORE_ROUTES,
+  ...(NEW_CREDIT_CLOSED ? [] : OPEN_ROUTES),
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
@@ -44,13 +53,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    for (const slug of getProductSlugs()) {
-      urls.push({
-        url: `${baseUrl}/${locale}/products/${slug}`,
-        lastModified,
-        changeFrequency: "monthly",
-        priority: 0.8,
-      });
+    if (!NEW_CREDIT_CLOSED) {
+      for (const slug of getProductSlugs()) {
+        urls.push({
+          url: `${baseUrl}/${locale}/products/${slug}`,
+          lastModified,
+          changeFrequency: "monthly",
+          priority: 0.8,
+        });
+      }
     }
   }
 

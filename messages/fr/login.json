@@ -22,6 +22,9 @@
   "errors": {
     "invalidEmail": "Adresse email invalide",
     "invalidPassword": "Le mot de passe doit contenir au moins 8 caractères",
-    "invalidCredentials": "Email ou mot de passe incorrect"
+    "invalidCredentials": "Email ou mot de passe incorrect",
+    "accountNotFound": "Compte introuvable",
+    "required": "Veuillez renseigner votre email et votre mot de passe.",
+    "network": "Une erreur est survenue. Veuillez réessayer."
   }
 }

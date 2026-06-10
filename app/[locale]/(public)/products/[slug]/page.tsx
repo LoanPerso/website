@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
+import { ServiceClosedNotice } from "@/_components/service-closed-notice";
 import { getProductConfig, productExists } from "../_config";
 import ProductPageClient from "./page.client";
 
@@ -30,6 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: metaTitle,
     description: metaDescription,
+    // Wind-down: page closed, keep it out of the index (restored with the flag).
+    ...(NEW_CREDIT_CLOSED ? { robots: { index: false, follow: false } } : {}),
     alternates: { canonical: url },
     openGraph: { title: metaTitle, description: metaDescription, url },
     twitter: { title: metaTitle, description: metaDescription },
@@ -37,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ProductPage(props: Props) {
+  if (NEW_CREDIT_CLOSED) return <ServiceClosedNotice />;
   return <ProductPageClient {...props} />;
 }
 

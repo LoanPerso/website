@@ -1,5 +1,40 @@
 # Journal
 
+## 2026-06-09 — Connexion : smoke « vraie requête → compte introuvable » + retrait inscription
+- **Inscription retirée :** suppression du bloc « Pas encore de compte ? Créer un compte » sur `/login` (le lien pointait vers `/register`, **inexistant** ; pas de nouveaux comptes en contexte rachat).
+- **Smoke de connexion réparé :** `handleSubmit` ne faisait qu'un `setTimeout` sans retour. Désormais le formulaire **POST réellement** vers la nouvelle route `app/api/auth/login/route.ts` (visible dans le réseau) ; elle valide les champs, simule une latence d'auth (~1,2 s) et renvoie **toujours `401 ACCOUNT_NOT_FOUND`** (`{ error, code }`) — pas de portail client public pour l'instant.
+- **Retour UI :** message d'erreur **localisé** sous le formulaire (« Compte introuvable » / champs requis / réseau), états `error` + `isLoading`.
+- **i18n :** `login.errors.accountNotFound|required|network` ajoutés aux 4 langues (et/fr/en/es).
+- **Note (signalé) :** « Mot de passe oublié ? » pointe vers `/forgot-password`, **aussi inexistant** — laissé tel quel (non demandé).
+- **Vérif :** `tsc --noEmit` **vert** ; JSON i18n valides. **Non commité.**
+- **Docs :** API_ROUTES, FEATURES.
+
+## 2026-06-09 — Site vitrine : durcissement → page d'attente (landing + login uniquement)
+- **Décision utilisateur :** aller plus loin que la coupure du funnel — réduire le site public à une **coquille minimale** : seules la **landing** et `/login` restent en avant ; tout le reste est **bloqué** (sans suppression de fichiers).
+- **Header dépouillé :** nouveau composant `app/_components/wind-down-header.tsx` (logo « Quickfund » + bouton « Espace Client » **uniquement** — plus de menu nav, plus de language switcher, plus de burger mobile). `(public)/layout.tsx` bascule `NEW_CREDIT_CLOSED ? <WindDownHeader/> : <SiteHeader/>`. `site-header.tsx` **remis à l'identique** (l'offset du bandeau vit désormais sur le header dédié via `--winddown-offset`).
+- **Pages bloquées → `ServiceClosedNotice` (fichiers conservés, réversible) :** `products` (+ `[slug]`), `why-us`, `why-us-2`, `pricing`, `about`, `features` — en plus de `tools/simulator` + `application` (déjà fait). `robots:noindex` conditionnel ajouté à chacune. `why-us-2` (client) scindé en `page.tsx` (serveur, garde) + `page.client.tsx` (inchangé) pour ne pas violer les règles de hooks.
+- **Landing minimale :** `/` est rendu par un nouveau `wind-down-landing.tsx` — **un seul écran, sans scroll** : message de fermeture + email (mailto) + bouton « Espace client » + fins liens légaux en bas. Le `PublicHomeClient` marketing est **conservé** (réversible). Le **gros footer marketing est masqué** quand le flag est on (`{!NEW_CREDIT_CLOSED && <SiteFooter/>}`).
+- **Restent accessibles :** `/` (landing minimale), `/login`, `/contact`, `/legal/*`.
+- **Légal gardé PUBLIC (recommandation conformité) :** privacy (RGPD), cookies (lié par le bandeau de consentement), mentions légales / infos régulateur **doivent** rester publiquement accessibles pour un prêteur agréé → **non** mis derrière login. Les **contrats personnels** des clients sont déjà derrière `/login` (espace client/admin), distincts de ces pages légales génériques.
+- **SEO :** sitemap réduit à home + login + contact + légal (le reste réapparaît si le flag repasse à `false`).
+- **Note :** `pricing`/`about`/`features` étaient en réalité des **pages de dev** (Free/Pro/Enterprise, Auth/Billing/Profile), sans vraie donnée.
+- **Vérif :** `tsc --noEmit` **vert**. Tout réversible par le seul flag `NEW_CREDIT_CLOSED`. **Non commité.**
+- **À confirmer (signalé) :** (1) `/contact` page vs email seul ; (2) libellé exact « Se connecter » vs « Espace Client ».
+- **Docs :** PROJECT_STATUS, FEATURES, CHARTE_GRAPHIQUE.
+
+## 2026-06-09 — Site vitrine : mise en sommeil du funnel d'acquisition (rachat)
+- **Contexte :** Quickfund est en cours de rachat et **n'accorde plus de nouveaux crédits**. Le site public doit le communiquer, **garder son contenu informatif**, afficher un email de contact et conserver `/admin` (back-office) + `/login` (espace client).
+- **Flag central (`app/_config/site-mode.ts`) :** `NEW_CREDIT_CLOSED = true`, `WIND_DOWN_CONTACT_EMAIL = "contact@quickfund.ee"` — **source de vérité unique** ; tout redevient actif en repassant le flag à `false`.
+- **Bandeau global (`app/_components/wind-down-banner.tsx`) :** slim, pleine largeur, en haut (`bg-foreground text-background`, hairline, `z-[60]`) ; message + email (mailto) + lien « Espace client » → `/login`. Pattern copié de `cookie-consent` (client, GSAP, fermeture **par session** `quickfund_winddown_dismissed`). Monté dans `[locale]/layout.tsx` (dynamic `ssr:false`), **uniquement si le flag est on**. Décalage du `SiteHeader` fixe géré par la CSS var `--winddown-offset` (fallback `0px` → neutre quand absent ; compatible avec le hide/show GSAP `yPercent` du header).
+- **Hard stop (2 pages) :** `application` et `tools/simulator` rendent `<ServiceClosedNotice />` (page d'info dédiée **non-modale**, Golden Rule 9) au lieu du formulaire/simulateur **conservés intacts** (réversible) ; `robots: { index:false }` ajouté à leur `generateMetadata`. La page `application` (client unique sans metadata) a été scindée en `page.tsx` (serveur, metadata + notice) + `page.client.tsx` (formulaire **inchangé**) — `generateMetadata` étant un export serveur ; structure identique au simulateur.
+- **Verrou serveur :** `POST /api/application/analyze` répond **410 Gone** (`{ closed:true }`) sans traiter quand le flag est on (défense contre un post direct, simulateur démonté).
+- **CTA d'acquisition neutralisés (6 fichiers) :** `_sections/hero.tsx`, `_sections/cta-final.tsx`, `products/page.client.tsx` (×2), `products/sections/ProductHero.tsx` (×2), `products/sections/ProductCTA.tsx`, `why-us/_sections/cta.tsx` → pointent vers `/contact` avec le label partagé `common.winddown.contactCta` (« Nous contacter ») au lieu de « Simuler mon crédit ». Les boutons **internes** au simulateur vers `/application` ne sont plus montés (page fermée) → aucune modif. Vérifié : `marketingNav`/footer ne lient pas le simulateur (`toolLinks` = config morte, inutilisée).
+- **i18n (4 langues) :** section `winddown` (`banner.message/loginLabel`, `contactCta`, `notice.title/body/contactIntro/home/login`) ajoutée à `messages/{et,fr,en,es}/common.json`. **Bonus :** clé manquante `regulatory.passport` ajoutée à `et/common.json` (utilisée par `regulatory-disclaimer.tsx`, absente en estonien).
+- **SEO :** `app/sitemap.ts` retire `/application` + `/tools/simulator` quand le flag est on (réversible via le même flag).
+- **Hors périmètre (inchangé) :** `/admin/*`, `/login`, pages produits/légal/about/contact, header nav + footer, `RegulatoryDisclaimer`. Aucune copie marketing réécrite.
+- **Vérif :** `tsc --noEmit` **vert** ; JSON i18n valides (4 langues) ; aucune route/logique business touchée. **Non commité** (attente d'autorisation).
+- **Docs :** PROJECT_STATUS, FEATURES, CHARTE_GRAPHIQUE, API_ROUTES.
+
 ## 2026-06-07 — Messagerie : bouton « Copier le message » dans le lecteur
 - **Ajout :** un bouton **Copier** dans la barre d'actions du lecteur (à côté du drapeau) copie **tout le mail** — objet + De/À/Cc + date + corps **tel qu'affiché** (traduit ou original) — dans le presse-papier via `navigator.clipboard.writeText`. L'icône passe en **✓ vert** 1,5 s après la copie.
 - **Vérif :** `tsc --noEmit` vert ; `message-view` uniquement (état `copied` + `handleCopy`).

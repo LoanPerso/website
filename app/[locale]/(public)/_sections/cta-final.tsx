@@ -6,13 +6,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import Magnetic from "@/_components/ui/magnetic-button";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function CtaFinal() {
   const t = useTranslations("home");
+  const tCommon = useTranslations("common");
   const locale = useLocale();
   const router = useRouter();
+  // Wind-down: route the final CTA to /contact while acquisition is closed.
+  const ctaHref = NEW_CREDIT_CLOSED
+    ? `/${locale}/contact`
+    : `/${locale}/tools/simulator`;
+  const ctaLabel = NEW_CREDIT_CLOSED ? tCommon("winddown.contactCta") : t("cta.button");
   const containerRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -94,9 +101,9 @@ export function CtaFinal() {
 
         <div ref={ctaRef}>
           <Magnetic>
-            <button onClick={() => router.push(`/${locale}/tools/simulator`)} className="group relative px-12 py-5 bg-accent text-deep-black rounded-full font-medium text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-accent/30">
+            <button onClick={() => router.push(ctaHref)} className="group relative px-12 py-5 bg-accent text-deep-black rounded-full font-medium text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-accent/30">
               <span className="relative z-10 flex items-center gap-3">
-                {t("cta.button")}
+                {ctaLabel}
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
                   fill="none"

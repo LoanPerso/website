@@ -1,6 +1,8 @@
 import { SiteFooter } from "@/_components/site-footer";
 import { SiteHeader } from "@/_components/site-header";
+import { WindDownHeader } from "@/_components/wind-down-header";
 import SmoothScroll from "@/_components/smooth-scroll";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 
 type MarketingLayoutProps = {
   children: React.ReactNode;
@@ -40,9 +42,9 @@ export default function MarketingLayout({ children, params }: MarketingLayoutPro
   return (
     <SmoothScroll>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <SiteHeader />
+        {NEW_CREDIT_CLOSED ? <WindDownHeader /> : <SiteHeader />}
         <main className="flex-1">{children}</main>
-        <SiteFooter />
+        {!NEW_CREDIT_CLOSED && <SiteFooter />}
       </div>
       <script
         type="application/ld+json"

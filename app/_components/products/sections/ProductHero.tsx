@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 import { HeroVariant } from "../types";
 
 interface ProductHeroProps {
@@ -19,7 +20,13 @@ export function ProductHero({
   showStats = true,
 }: ProductHeroProps) {
   const t = useTranslations(translationKey);
+  const tCommon = useTranslations("common");
   const locale = useLocale();
+  // Wind-down: product CTAs lead to /contact while acquisition is closed.
+  const ctaHref = NEW_CREDIT_CLOSED
+    ? `/${locale}/contact`
+    : `/${locale}/tools/simulator`;
+  const ctaLabel = NEW_CREDIT_CLOSED ? tCommon("winddown.contactCta") : t("hero.cta");
 
   const heroRef = useRef<HTMLElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
@@ -109,10 +116,10 @@ export function ProductHero({
 
             <Link
               ref={ctaRef}
-              href={`/${locale}/tools/simulator`}
+              href={ctaHref}
               className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-foreground text-background rounded-full text-sm sm:text-base font-medium hover:bg-accent hover:text-white transition-colors duration-300"
             >
-              {t("hero.cta")}
+              {ctaLabel}
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -167,10 +174,10 @@ export function ProductHero({
 
             <Link
               ref={ctaRef}
-              href={`/${locale}/tools/simulator`}
+              href={ctaHref}
               className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-foreground text-background rounded-full text-sm sm:text-base font-medium hover:bg-accent hover:text-white transition-colors duration-300"
             >
-              {t("hero.cta")}
+              {ctaLabel}
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

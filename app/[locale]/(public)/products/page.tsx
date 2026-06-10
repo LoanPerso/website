@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
+import { ServiceClosedNotice } from "@/_components/service-closed-notice";
 import ProductsPageClient from "./page.client";
 
 type Props = {
@@ -14,6 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    // Wind-down: page closed, keep it out of the index (restored with the flag).
+    ...(NEW_CREDIT_CLOSED ? { robots: { index: false, follow: false } } : {}),
     alternates: {
       canonical: `/${params.locale}/products`,
     },
@@ -30,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ProductsPage() {
+  if (NEW_CREDIT_CLOSED) return <ServiceClosedNotice />;
   return <ProductsPageClient />;
 }
 

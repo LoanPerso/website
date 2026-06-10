@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import Magnetic from "@/_components/ui/magnetic-button";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,14 @@ export function WhyUsCta() {
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations("why-us.cta");
+  const tCommon = useTranslations("common");
+  // Wind-down: the primary CTA leads to /contact while acquisition is closed.
+  const ctaHref = NEW_CREDIT_CLOSED
+    ? `/${locale}/contact`
+    : `/${locale}/tools/simulator`;
+  const ctaLabel = NEW_CREDIT_CLOSED
+    ? tCommon("winddown.contactCta")
+    : t("primaryButton");
 
   const [particles, setParticles] = useState<Particle[]>([]);
 
@@ -184,11 +193,11 @@ export function WhyUsCta() {
         <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Magnetic strength={0.2}>
             <button
-              onClick={() => router.push(`/${locale}/tools/simulator`)}
+              onClick={() => router.push(ctaHref)}
               className="group relative px-12 py-6 bg-champagne text-deep-black font-semibold text-lg rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(200,160,80,0.5)]"
             >
               <span className="relative z-10 flex items-center gap-3">
-                {t("primaryButton")}
+                {ctaLabel}
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"

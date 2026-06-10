@@ -7,6 +7,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import Magnetic from "@/_components/ui/magnetic-button";
 import { useSiteReady } from "@/_components/site-ready-provider";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 import { type BrandOverlayRef } from "./hero/brand-overlay";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,8 +18,17 @@ interface HeroProps {
 
 export function Hero({ brandOverlayRef }: HeroProps) {
   const t = useTranslations("home");
+  const tCommon = useTranslations("common");
   const locale = useLocale();
   const router = useRouter();
+  // Wind-down: the acquisition funnel is closed, so the primary CTA points to
+  // /contact instead of the (now closed) simulator.
+  const ctaHref = NEW_CREDIT_CLOSED
+    ? `/${locale}/contact`
+    : `/${locale}/tools/simulator`;
+  const ctaLabel = NEW_CREDIT_CLOSED
+    ? tCommon("winddown.contactCta")
+    : t("hero.cta.primary");
   const { isSiteReady } = useSiteReady();
   const containerRef = useRef<HTMLElement>(null);
   const cursorCircleRef = useRef<HTMLDivElement>(null);
@@ -571,12 +581,12 @@ export function Hero({ brandOverlayRef }: HeroProps) {
                 <Magnetic>
                   <button
                     ref={ctaButtonRef}
-                    onClick={() => router.push(`/${locale}/tools/simulator`)}
+                    onClick={() => router.push(ctaHref)}
                     type="button"
                     className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-foreground text-background font-medium text-base overflow-hidden transition-all duration-500 hover:shadow-xl"
                   >
                     <span ref={ctaButtonTextRef} className="relative z-10 flex items-center justify-center gap-3">
-                      {t("hero.cta.primary")}
+                      {ctaLabel}
                       <svg
                         className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                         fill="none"

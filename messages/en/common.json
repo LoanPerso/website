@@ -53,6 +53,20 @@
     "decline": "Decline",
     "moreInfo": "Learn more"
   },
+  "winddown": {
+    "banner": {
+      "message": "Quickfund no longer offers new credit.",
+      "loginLabel": "Client area"
+    },
+    "contactCta": "Contact us",
+    "notice": {
+      "title": "We no longer offer new credit",
+      "body": "As part of a transition, Quickfund has stopped accepting new credit applications and simulations. Our information pages remain available and our existing clients continue to be supported.",
+      "contactIntro": "A question? Write to us at",
+      "home": "Home",
+      "login": "Client area"
+    }
+  },
   "languageNotice": {
     "detected": "Service available in Estonia",
     "terms": "Displayed terms and rates apply to residents of Estonia."

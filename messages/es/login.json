@@ -22,6 +22,9 @@
   "errors": {
     "invalidEmail": "Dirección de email inválida",
     "invalidPassword": "La contraseña debe tener al menos 8 caracteres",
-    "invalidCredentials": "Email o contraseña incorrectos"
+    "invalidCredentials": "Email o contraseña incorrectos",
+    "accountNotFound": "Cuenta no encontrada",
+    "required": "Introduzca su email y su contraseña.",
+    "network": "Algo salió mal. Vuelva a intentarlo."
   }
 }

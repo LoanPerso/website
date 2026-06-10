@@ -53,6 +53,20 @@
     "decline": "Refuser",
     "moreInfo": "En savoir plus"
   },
+  "winddown": {
+    "banner": {
+      "message": "Quickfund ne propose plus de nouveaux crédits.",
+      "loginLabel": "Espace client"
+    },
+    "contactCta": "Nous contacter",
+    "notice": {
+      "title": "Nous ne proposons plus de nouveaux crédits",
+      "body": "Dans le cadre d'une transition, Quickfund a cessé d'accepter de nouvelles demandes de crédit ainsi que les simulations. Nos pages d'information restent accessibles et nos clients actuels continuent d'être accompagnés.",
+      "contactIntro": "Une question ? Écrivez-nous à",
+      "home": "Accueil",
+      "login": "Espace client"
+    }
+  },
   "languageNotice": {
     "detected": "Service disponible en Estonie",
     "terms": "Les conditions et tarifs affichés s'appliquent aux résidents d'Estonie."

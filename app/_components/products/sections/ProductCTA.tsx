@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import Link from "next/link";
+import { NEW_CREDIT_CLOSED } from "@/_config/site-mode";
 
 interface ProductCTAProps {
   translationKey: string;
@@ -14,7 +15,13 @@ export function ProductCTA({
   darkBackground = true,
 }: ProductCTAProps) {
   const t = useTranslations(translationKey);
+  const tCommon = useTranslations("common");
   const locale = useLocale();
+  // Wind-down: the final product CTA leads to /contact while acquisition is closed.
+  const ctaHref = NEW_CREDIT_CLOSED
+    ? `/${locale}/contact`
+    : `/${locale}/tools/simulator`;
+  const ctaLabel = NEW_CREDIT_CLOSED ? tCommon("winddown.contactCta") : t("finalCta.cta");
 
   const bgClass = darkBackground
     ? "bg-foreground text-background"
@@ -47,10 +54,10 @@ export function ProductCTA({
           </p>
 
           <Link
-            href={`/${locale}/tools/simulator`}
+            href={ctaHref}
             className="inline-flex items-center gap-3 px-12 py-5 bg-accent text-white rounded-full text-lg font-medium hover:bg-dark-gold transition-colors duration-300"
           >
-            {t("finalCta.cta")}
+            {ctaLabel}
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

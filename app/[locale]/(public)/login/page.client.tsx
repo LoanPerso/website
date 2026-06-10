@@ -13,6 +13,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -88,6 +89,7 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     setIsLoading(true);
 
     // Button animation
@@ -98,9 +100,25 @@ export default function LoginPage() {
       repeat: 1,
     });
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsLoading(false);
+    // Real request against the (smoke) client-auth endpoint: it always resolves
+    // to "account not found" — there is no public client portal yet.
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json().catch(() => null);
+      setError(
+        data?.code === "MISSING_FIELDS"
+          ? t("errors.required")
+          : t("errors.accountNotFound")
+      );
+    } catch {
+      setError(t("errors.network"));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -264,6 +282,16 @@ export default function LoginPage() {
               </Link>
             </div>
 
+            {/* Error message */}
+            {error && (
+              <div
+                role="alert"
+                className="rounded-sm border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200"
+              >
+                {error}
+              </div>
+            )}
+
             {/* Submit button */}
             <div className="form-element">
               <button
@@ -325,19 +353,6 @@ export default function LoginPage() {
 
           {/* Bottom decorative line */}
           <div className="login-line absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-champagne/50 to-transparent origin-center" />
-        </div>
-
-        {/* Create account link */}
-        <div className="mt-8 text-center">
-          <p className="text-white/50 text-sm">
-            {t("noAccount")}{" "}
-            <Link
-              href="/register"
-              className="text-champagne hover:text-champagne/80 transition-colors"
-            >
-              {t("createAccount")}
-            </Link>
-          </p>
         </div>
 
         {/* Back to home */}

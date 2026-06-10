@@ -22,6 +22,9 @@
   "errors": {
     "invalidEmail": "Invalid email address",
     "invalidPassword": "Password must be at least 8 characters",
-    "invalidCredentials": "Invalid email or password"
+    "invalidCredentials": "Invalid email or password",
+    "accountNotFound": "Account not found",
+    "required": "Please enter your email and password.",
+    "network": "Something went wrong. Please try again."
   }
 }

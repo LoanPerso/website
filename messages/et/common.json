@@ -39,6 +39,7 @@
   "regulatory": {
     "title": "Regulatiivne teave",
     "company": "Quickfund OÜ on Eestis registreeritud krediidiettevõte, millel on Finantsinspektsioonilt laenuandja tegevusluba.",
+    "passport": "Euroopa pass: õigus pakkuda krediiditeenuseid Euroopa Majanduspiirkonnas vastavalt direktiivile 2008/48/EÜ.",
     "availability": "Meie teenused on saadaval ainult Eesti residentidele.",
     "refusal": "Taotlus võidakse tagasi lükata, kui see ei vasta õiguslikele nõuetele — see keeldumine peegeldab lihtsalt tarbijakaitse standarditele mittevastavust.",
     "compliance": "Järgime täielikult Eesti tarbijakaitseseadusi, Euroopa direktiive (direktiiv 2008/48/EÜ) ja isikuandmete kaitse üldmäärust (GDPR).",
@@ -51,6 +52,20 @@
     "accept": "Nõustu",
     "decline": "Keeldu",
     "moreInfo": "Lisateave"
+  },
+  "winddown": {
+    "banner": {
+      "message": "Quickfund ei paku enam uusi laene.",
+      "loginLabel": "Kliendi ala"
+    },
+    "contactCta": "Võtke ühendust",
+    "notice": {
+      "title": "Me ei paku enam uusi laene",
+      "body": "Ülemineku raames on Quickfund lõpetanud uute laenutaotluste ja -arvutuste vastuvõtmise. Meie teabelehed jäävad kättesaadavaks ning meie praeguseid kliente teenindatakse edasi.",
+      "contactIntro": "Küsimus? Kirjutage meile aadressil",
+      "home": "Avaleht",
+      "login": "Kliendi ala"
+    }
   },
   "languageNotice": {
     "detected": "Teenus saadaval Eestis",

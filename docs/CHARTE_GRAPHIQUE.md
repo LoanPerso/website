@@ -41,6 +41,32 @@ A mix of minimal luxury and cinematic moments. High contrast, precise typography
 - Next.js Font (Google Fonts).
 - GSAP / Three.js (optional for Hero).
 
+## Wind-down — bandeau & notice (site public)
+État « mise en sommeil » du funnel d'acquisition (contexte rachat, cf. `app/_config/site-mode.ts`).
+Sobre, dans la charte Minimal Luxury :
+- **Bandeau global (`app/_components/wind-down-banner.tsx`) :** barre **slim, pleine largeur, en haut**,
+  `bg-foreground text-background`, hairline `border-b border-background/10`, `z-[60]` (au-dessus du
+  `SiteHeader` `z-50`, sous cookie `z-90` / regulatory `z-100`), sans radius (pleine largeur). Texte
+  `text-xs sm:text-sm` centré ; liens **soulignés** (email `mailto:` + « Espace client » → `/login`),
+  hover par opacité — **pas de couleur fonctionnelle**. Fermeture (icône `X`) mémorisée **par session**.
+  Décale le `SiteHeader` fixe via la CSS var `--winddown-offset` (fallback `0px` → neutre quand absent).
+- **Notice de fermeture (`app/_components/service-closed-notice.tsx`) :** page d'info **dédiée,
+  non-modale** (Golden Rule 9) rendue à la place du formulaire / simulateur. Centrée, badge icône
+  `rounded-full` neutre (`bg-foreground/5`), titre serif, corps `muted-foreground`, email `mailto:`,
+  boutons **« Accueil »** (outline `rounded`) + **« Espace client »** (`bg-foreground` → hover `accent`).
+  Radius 4px (`rounded`), conforme à la charte (small radius "tailored").
+- **Header dépouillé (`app/_components/wind-down-header.tsx`) :** en mode page d'attente, le `SiteHeader`
+  complet est remplacé (via `(public)/layout.tsx`) par un header minimal — **logo « Quickfund » + bouton
+  « Espace Client »** uniquement (pas de menu nav, pas de language switcher, pas de burger mobile). Même
+  base visuelle que le header normal (`fixed`, `z-50`, `mix-blend-difference`, `py-6`) ; suit le bandeau
+  via `top: var(--winddown-offset)`.
+- **Landing minimale (`app/_components/wind-down-landing.tsx`) :** page d'accueil réduite à **un seul
+  écran, sans scroll** — fine ligne d'accent champagne, titre serif, message `muted-foreground`, email
+  `mailto:`, bouton « Espace client » (`bg-foreground` → hover `accent`, radius 4px) et, en bas, de fins
+  liens légaux + « © Quickfund OÜ ». Le **footer marketing complet est masqué** en mode wind-down (pour
+  rester sur un écran unique). La home marketing (`page.client.tsx`) est conservée et réaffichée si le
+  flag repasse à `false`.
+
 ## Admin Back Office UI (V2 — neutral "tool" aesthetic)
 The `/admin` back office is a dense, data-oriented product tool styled after **Stripe / Linear**:
 grayscale-first, hairline borders, flat surfaces, one radius scale. It is **scoped to `.admin-theme`**

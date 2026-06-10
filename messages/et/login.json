@@ -22,6 +22,9 @@
   "errors": {
     "invalidEmail": "Vigane e-posti aadress",
     "invalidPassword": "Parool peab olema vähemalt 8 tähemärki",
-    "invalidCredentials": "Vale e-post või parool"
+    "invalidCredentials": "Vale e-post või parool",
+    "accountNotFound": "Kontot ei leitud",
+    "required": "Palun sisestage oma e-post ja parool.",
+    "network": "Midagi läks valesti. Palun proovige uuesti."
   }
 }

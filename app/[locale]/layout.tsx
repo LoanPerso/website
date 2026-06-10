@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { locales, type Locale } from '@/_i18n/config';
 import { SiteReadyProvider } from '@/_components/site-ready-provider';
+import { NEW_CREDIT_CLOSED } from '@/_config/site-mode';
 
 const RegulatoryDisclaimer = dynamic(
   () => import('@/_components/regulatory-disclaimer').then(mod => mod.RegulatoryDisclaimer),
@@ -12,6 +13,11 @@ const RegulatoryDisclaimer = dynamic(
 
 const CookieConsent = dynamic(
   () => import('@/_components/cookie-consent').then(mod => mod.CookieConsent),
+  { ssr: false }
+);
+
+const WindDownBanner = dynamic(
+  () => import('@/_components/wind-down-banner').then(mod => mod.WindDownBanner),
   { ssr: false }
 );
 
@@ -34,6 +40,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
   return (
     <NextIntlClientProvider messages={messages}>
       <SiteReadyProvider>
+        {NEW_CREDIT_CLOSED && <WindDownBanner />}
         {children}
         <RegulatoryDisclaimer />
         <CookieConsent />

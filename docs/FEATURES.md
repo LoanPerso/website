@@ -35,6 +35,14 @@
     | Process | stepped, timeline, cards |
     | CTA | dark/light background |
   - Custom page override: create `products/[slug]/page.tsx` folder
+- **Wind-down — public site reduced to a holding page** ✅ — buyout context, driven by a single flag (`app/_config/site-mode.ts`, `NEW_CREDIT_CLOSED`):
+  - **Global banner** (`wind-down-banner.tsx`): slim full-width top bar — "no new credit" message + contact email (`contact@quickfund.ee`) + "Client area" link to `/login`; dismissed per session, shown on every public page (4 languages). Offsets the header via the `--winddown-offset` CSS var.
+  - **Stripped header** (`wind-down-header.tsx`): brand wordmark + "Client area" only — no marketing nav, no language switcher, no mobile menu. The full `SiteHeader` is swapped out via `(public)/layout.tsx`.
+  - **Pages blocked → `ServiceClosedNotice`** (dedicated non-modal page, files kept intact, `robots: noindex`): `application`, `tools/simulator`, `products` (+ `[slug]`), `why-us`, `why-us-2`, `pricing`, `about`, `features`. `POST /api/application/analyze` returns **410 Gone**.
+  - **Minimal landing:** `/` is a single-screen holding page (`wind-down-landing.tsx`) — no scroll, no marketing: closure message + contact email + "Client area" button + small legal links. The marketing home is kept (reversible); the big marketing footer is hidden while closed.
+  - **Still accessible:** the landing (`/`), `/login`, `/contact`, and `/legal/*` (kept **public** for GDPR / cookie-policy / regulator compliance; clients' personal contracts remain behind `/login`).
+  - Fully **reversible**: flip `NEW_CREDIT_CLOSED` to `false` to restore the full site (landing, pages, header, footer, sitemap, banner).
+- **Client login** (`/login`): smoke flow — the form posts for real to `/api/auth/login` and always returns "account not found" (no public client portal yet). Sign-up link removed.
 
 ## Admin Back Office (`/admin`) ✅
 Internal tool to run the lending activity (French UI, Supabase-backed, RLS-protected).
