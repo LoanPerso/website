@@ -1,0 +1,1674 @@
+id,account_id,folder_id,direction,message_uid,message_id,in_reply_to,thread_key,from_name,from_address,to_addresses,cc_addresses,subject,snippet,body_text,body_html,has_attachments,size_bytes,is_seen,is_flagged,is_answered,is_draft,status,client_id,application_id,sent_at,received_at,created_at,updated_at
+0f42341b-4f1d-4856-969f-aea7a71716a8,60e60a1d-1e89-4205-8724-f3a971724253,bcf5e946-81bf-40c7-bef0-4e2c7bad72a3,out,,<smk-login-2@quickfund.fr>,<smk-login-1@orange.fr>,smk-login,Quickfund — Support,support@quickfund.fr,"[{""name"":""Thomas Leroy"",""address"":""thomas.leroy@orange.fr""}]",[],Re: Impossible de me connecter à mon espace client,"Bonjour Thomas, nous avons renvoyé un lien de réinitialisation. Pensez à vérifier vos courriers indésirables…","Bonjour Thomas,
+
+Nous venons de renvoyer un lien de réinitialisation à cette adresse. Merci de vérifier votre dossier de courriers indésirables. Le lien est valable 1 heure.
+
+Tenez-nous au courant si le souci persiste.
+
+Cordialement,
+Le support Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-30 09:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+1a04b96b-e25f-4ee5-a37d-a6663f0d550d,60e60a1d-1e89-4205-8724-f3a971724253,44645350-a5ef-44f3-8481-f02542dd8e07,in,,<smk-appmobile-1@hotmail.com>,,smk-appmobile,Lucas Blanc,lucas.blanc@hotmail.com,"[{""name"":""Quickfund — Support"",""address"":""support@quickfund.fr""}]",[],Bug sur l'application mobile,"L'appli plante à l'ouverture depuis la dernière mise à jour (iPhone 13, iOS 18). Écran blanc.","Bonjour,
+
+Depuis la dernière mise à jour, l'application plante à l'ouverture : écran blanc puis fermeture. Je suis sur iPhone 13 sous iOS 18.
+
+Merci de regarder,
+Lucas Blanc",,false,8192,false,true,false,false,received,,,,2026-05-30 07:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+1d08c8b5-fb10-4885-961d-c337437a1503,8d4c1dc1-9620-4aeb-954e-7ef4cadd6ae5,2124d60e-f16f-4311-9efd-6231b8095e7c,in,,<smk-litige-1@gmail.com>,,smk-litige,Sandra Lopez,sandra.lopez@gmail.com,"[{""name"":""Quickfund — Recouvrement"",""address"":""recouvrement@quickfund.fr""}]",[],Contestation de frais de retard,"Bonjour, je conteste les 25 € de frais : le prélèvement a échoué à cause d'une erreur de votre côté…","Bonjour,
+
+Je conteste les 25 € de frais de rejet appliqués ce mois-ci. Le prélèvement a échoué en raison d'une erreur de référence de votre côté, ma provision étant suffisante. Je demande l'annulation de ces frais.
+
+Dans l'attente,
+Sandra Lopez",,false,8192,false,true,false,false,received,,,,2026-05-29 08:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+1dcb2606-7a0c-4525-b053-5d81d71ddeae,60e60a1d-1e89-4205-8724-f3a971724253,44645350-a5ef-44f3-8481-f02542dd8e07,in,,<smk-echeancier-1@gmail.com>,,smk-echeancier,Nadia Khelifi,nadia.khelifi@gmail.com,"[{""name"":""Quickfund — Support"",""address"":""support@quickfund.fr""}]",[],Téléchargement de mon échéancier,"Bonjour, où puis-je télécharger l'échéancier complet de mon crédit ? Merci.","Bonjour,
+
+Je ne retrouve pas l'échéancier complet de mon crédit dans mon espace. Pourriez-vous me l'envoyer ou m'indiquer où le télécharger ?
+
+Merci d'avance,
+Nadia Khelifi",,false,8192,true,false,true,false,received,,,,2026-05-29 10:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+1f8e17ad-6b07-47c2-95e3-f4718b3fc820,6021ea72-229e-4e6d-b401-24a3b8b82a97,42f4b8f8-e7ec-44ac-8bdb-ba4a1a1c0a91,in,,<smk-microcredit-1@gmail.com>,,smk-microcredit,Aïcha Diallo,aicha.diallo@gmail.com,"[{""name"":""Quickfund — Commercial"",""address"":""commercial@quickfund.eu""}]",[],Micro-crédit création d'activité,"Bonjour, je lance une activité de couture et cherche un micro-crédit de 3 000 € pour le matériel…","Bonjour,
+
+Je lance une activité de couture à mon compte et recherche un micro-crédit de 3 000 € pour l'achat de machines. Je n'ai pas encore de bilan. Quelles sont les conditions d'éligibilité ?
+
+Merci,
+Aïcha Diallo",,false,8192,true,false,true,false,received,,,,2026-05-26 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+2318fe90-5246-4466-87e7-49a4d805e26b,60e60a1d-1e89-4205-8724-f3a971724253,44645350-a5ef-44f3-8481-f02542dd8e07,in,,<smk-coords-1@yahoo.fr>,,smk-coords,Émilie Moreau,emilie.moreau@yahoo.fr,"[{""name"":""Quickfund — Support"",""address"":""support@quickfund.fr""}]",[],Changement de coordonnées bancaires,"Bonjour, j'ai changé de banque. Comment mettre à jour mon RIB pour les prélèvements ?","Bonjour,
+
+J'ai récemment changé de banque et je souhaite mettre à jour le RIB utilisé pour les prélèvements de mon crédit. Quelle est la procédure et le délai de prise en compte ?
+
+Cordialement,
+Émilie Moreau",,false,8192,true,false,true,false,received,,,,2026-05-27 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+28d1103c-8d3d-4da9-a799-26e03749b8b2,60e60a1d-1e89-4205-8724-f3a971724253,44645350-a5ef-44f3-8481-f02542dd8e07,in,,<smk-login-1@orange.fr>,,smk-login,Thomas Leroy,thomas.leroy@orange.fr,"[{""name"":""Quickfund — Support"",""address"":""support@quickfund.fr""}]",[],Impossible de me connecter à mon espace client,"Bonjour, depuis ce matin je n'arrive plus à accéder à mon espace, mot de passe refusé…","Bonjour,
+
+Depuis ce matin, je n'arrive plus à me connecter à mon espace client : mon mot de passe est systématiquement refusé, et la réinitialisation ne m'envoie aucun e-mail.
+
+Pouvez-vous m'aider ?
+
+Merci,
+Thomas Leroy",,false,8192,false,false,true,false,received,,,,2026-05-30 08:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+2d12450d-709c-458b-b2c1-246da6cd8774,ed81259c-d521-46bc-8f2e-4401620fcb5e,43a433c2-1397-4222-94a8-0e6b1dc2c7ee,in,,<smk-phishing-1@paypa1-secure.com>,,smk-phishing,Service Sécurité,security@paypa1-secure.com,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],URGENT : votre compte sera suspendu,"Cher client, nous avons détecté une activité suspecte. Cliquez ici pour vérifier votre compte sous 24 h…","Cher client,
+
+Nous avons détecté une activité suspecte sur votre compte. Pour éviter sa suspension, veuillez confirmer vos informations en cliquant sur le lien ci-dessous dans les 24 heures.
+
+http://paypa1-secure.com/verify
+
+Le service sécurité",,false,8192,false,false,false,false,received,,,,2026-05-29 09:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+456eb43f-86a9-45e7-ab72-83a10f24c3ca,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<smk-rgpd-1@free.fr>,,smk-rgpd,Marc Petit,marc.petit@free.fr,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Demande d'accès à mes données personnelles (RGPD),"Bonjour, conformément au RGPD je souhaite obtenir une copie des données me concernant…","Bonjour,
+
+Conformément au Règlement général sur la protection des données (article 15), je souhaite obtenir une copie de l'ensemble des données personnelles que vous détenez me concernant.
+
+Merci de me confirmer la bonne réception de ma demande.
+
+Cordialement,
+Marc Petit",,false,8192,true,true,false,false,received,,,,2026-05-28 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 13:20:41.864372+00
+4dd0269e-dca0-4714-ab1f-3da85f4305d7,8d4c1dc1-9620-4aeb-954e-7ef4cadd6ae5,2124d60e-f16f-4311-9efd-6231b8095e7c,in,,<smk-delai-1@outlook.fr>,,smk-delai,Fatima Benali,fatima.benali@outlook.fr,"[{""name"":""Quickfund — Recouvrement"",""address"":""recouvrement@quickfund.fr""}]",[],Demande de délai de paiement,"Bonjour, suite à une baisse de revenus, puis-je reporter mes deux prochaines mensualités ?","Bonjour,
+
+Suite à une baisse temporaire de mes revenus, je rencontre des difficultés. Serait-il possible de reporter mes deux prochaines mensualités en fin de prêt, ou de mettre en place un échéancier adapté ?
+
+Merci de votre aide,
+Fatima Benali",,false,8192,false,true,true,false,received,,,,2026-05-28 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+50c33007-de6c-4600-b078-fc5209645791,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<sim-1780148494288-iv4fh7re@quickfund.ee>,<qf-1780148145541-tx2xuta4@quickfund.ee>,thread-1780148145541-tx2xuta4,,contact@etsoas.ee,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Re: Strategic Acquisition Opportunity – Estonian Consumer Credit Portfolio and Servicing Platform,"Dear Mr. Loche, Thank you for your email and for sharing the preliminary overview of the proposed QuickFund portfolio and operational platfo","Dear Mr. Loche,
+
+Thank you for your email and for sharing the preliminary overview of the proposed QuickFund portfolio and operational platform transaction.
+
+We have reviewed the materials at a preliminary level. Based on the information provided, the opportunity may be of interest to ESTO, particularly given the granular nature of the consumer credit portfolio, the existing borrower base, and the potential operational continuity offered through the customer-facing interface and servicing infrastructure.
+
+At this stage, however, our interest should be understood as preliminary, non-binding, and subject to further review. Before we are able to form a view on transaction perimeter, structure, valuation, timing, or internal approval process, we would need to complete a detailed due diligence review covering the portfolio, legal enforceability, consumer credit compliance, data protection, servicing arrangements, payment flows, technology, financial performance, and the practical migration requirements.
+
+We also note your indicative valuation expectations. For clarity, ESTO would need to assess the opportunity independently based on verified loan-level cash flows, actual historical repayment performance, expected losses, servicing costs, transferability, regulatory treatment, operational risk, and the extent to which the technology and infrastructure are transferable and useful in practice. We would therefore not be in a position to comment on, endorse, or negotiate around any valuation range before reviewing the underlying data.
+
+Subject to execution of an NDA, we would be prepared to review an initial due diligence package. In order to proceed efficiently, we would ask that the data room include, at minimum, the materials set out below.
+
+First, on the portfolio side, we would need a complete loan-level data tape, initially anonymised if required, including for each loan and borrower relationship:
+
+* unique loan ID and borrower ID;
+* origination date;
+* original loan amount;
+* outstanding principal;
+* accrued interest;
+* accrued fees, penalties or other charges;
+* total balance outstanding;
+* contractual maturity date;
+* repayment schedule;
+* amount paid to date;
+* last payment date;
+* next payment date;
+* current status;
+* days past due;
+* historical delinquency status;
+* restructuring, rollover or extension history;
+* write-off status, if applicable;
+* recovery history, if applicable;
+* borrower segment or risk category, if available;
+* source of origination;
+* applicable interest rate, APR and fee structure;
+* contract version used;
+* payment method used by the borrower;
+* whether the borrower has multiple active or historical loans.
+
+We would also need a portfolio summary split by relevant ageing buckets, including current, 1–30 days past due, 31–60 days past due, 61–90 days past due, 90+ days past due, restructured, doubtful, written off, and legally disputed exposures. It would also be helpful to receive a vintage analysis by origination month or quarter, showing repayment performance, default development, recoveries, and outstanding balance evolution over time.
+
+Second, we would need to understand the methodology behind the figures mentioned in your email. In particular, please provide a reconciliation of:
+
+* the approximately EUR 591,529 outstanding loan capital;
+* the approximately EUR 667,203 estimated future contractual repayment stream;
+* the approximately EUR 75,674 estimated future interest component;
+* the year-end bad / doubtful amount of approximately EUR 2,425;
+* the internally tracked 2025 bad debt amount of approximately EUR 25,641;
+* the difference between doubtful balances, late balances, defaulted balances, written-off balances and bad debt expense;
+* the assumptions used for the indicative 24-month maturity and repayment model.
+
+We would also need to understand whether the EUR 667,203 figure represents purely contractual cash flows, management-expected cash flows, or cash flows adjusted for expected defaults, prepayments, collection delays, servicing costs or write-offs.
+
+Third, on financial performance, please provide the underlying financial materials supporting the 2024 and 2025 figures, including:
+
+* management accounts or statutory accounts, if available;
+* revenue breakdown by interest income, application fees, penalty income, refund-related income, coaching income and any other income source;
+* monthly revenue development;
+* monthly origination volume;
+* monthly repayment collections;
+* monthly outstanding balance development;
+* monthly bad debt, write-off and recovery data;
+* expense breakdown;
+* customer acquisition costs, if applicable;
+* servicing and collection costs;
+* payment processing costs;
+* hosting, technology and infrastructure costs;
+* bank and payment provider reconciliation materials, where available;
+* explanation of any non-recurring, related-party, intra-group or exceptional items.
+
+We would pay particular attention to the transferability and sustainability of the revenue streams. For example, any income described as coaching, additional services, penalties, fees or refund-related income would need to be reviewed separately from contractual interest income and assessed from a legal, regulatory and economic perspective.
+
+Fourth, on legal and regulatory matters, we would need to review the legal framework under which the loans were originated and are currently serviced. Please provide:
+
+* current and historical corporate details of the lending entity;
+* confirmation of the regulatory status under which QuickFund has operated;
+* copies of any licences, registrations or regulatory filings relevant to the activity;
+* standard consumer credit agreement templates used during the relevant period;
+* all applicable general terms and conditions;
+* pre-contractual information templates;
+* APR calculation methodology;
+* fee and penalty disclosure methodology;
+* borrower communication templates;
+* assignment and transfer provisions in the loan agreements;
+* policies and evidence relating to creditworthiness assessment;
+* KYC and identity verification process description;
+* sanctions, AML and fraud screening process description, where applicable;
+* responsible lending policy;
+* complaint handling history;
+* customer disputes or pending claims;
+* any regulatory correspondence, warnings, inspections, findings or sanctions;
+* description of collection practices;
+* description of late payment, reminder, restructuring, default and write-off procedures;
+* details of any third-party service providers involved in origination, servicing, payment processing, collection, hosting or customer communication.
+
+For the avoidance of doubt, regulatory and consumer protection compliance would be a core due diligence workstream for ESTO. The enforceability of the receivables, the validity of customer communications, the quality of the creditworthiness assessment, and the treatment of fees, penalties and ancillary services would be key factors in any further assessment.
+
+Fifth, on data protection and transferability, we would need to review the basis on which borrower data may be disclosed, transferred, migrated or otherwise processed in connection with a potential transaction. Please provide:
+
+* privacy policies used during the relevant period;
+* borrower consent language, where applicable;
+* data processing records;
+* data retention policy;
+* data protection impact assessments, if any;
+* list of categories of personal data held;
+* description of data processors and sub-processors;
+* data processing agreements with relevant providers;
+* history of any data incidents or breaches;
+* proposed legal basis for sharing loan-level data during due diligence;
+* proposed legal basis for transferring borrower data upon completion;
+* borrower notification process for any assignment, servicing transfer or platform migration.
+
+Sixth, on the technology and infrastructure side, we would need to understand precisely what is included in the proposed transaction and what would remain with QuickFund or related entities. Please provide:
+
+* high-level platform architecture;
+* frontend description;
+* backend description;
+* database schema;
+* hosting architecture;
+* infrastructure diagram;
+* source code ownership confirmation;
+* repository structure;
+* list of third-party libraries, frameworks and dependencies;
+* licence terms for third-party components;
+* API documentation;
+* admin panel description;
+* user roles and access rights;
+* authentication and security model;
+* audit logs and logging structure;
+* backup and disaster recovery process;
+* incident history;
+* current deployment process;
+* staging and production environment description;
+* environment variable map;
+* monitoring and alerting setup;
+* data export process;
+* data migration process;
+* known bugs, limitations or technical debt;
+* roadmap or pending technical tasks, if any.
+
+Please also confirm whether the transaction perimeter would include full source code ownership, a licence to use the software, operational access only, technical documentation only, or another structure. This distinction is important for our internal assessment.
+
+Seventh, on hosting and related-party infrastructure, your email mentions VM Cloud as the group’s own cloud provider. Please clarify:
+
+* the legal relationship between QuickFund and VM Cloud;
+* whether hosting services are provided under a written agreement;
+* whether the hosting environment can be transferred to a buyer;
+* whether the buyer can migrate the platform to its own infrastructure;
+* expected migration timeline;
+* ongoing hosting cost;
+* access control arrangements;
+* whether any QuickFund or group personnel would retain access after completion;
+* proposed transition and separation plan.
+
+Eighth, on payments and repayment flows, please provide a detailed map of the current payment architecture, including:
+
+* Stripe account structure;
+* payment methods currently used;
+* bank accounts currently receiving repayments;
+* bank references and beneficiary details used by borrowers;
+* webhook configuration;
+* payment reconciliation logic;
+* manual reconciliation process;
+* failed payment handling;
+* refund process;
+* chargeback or dispute process;
+* historical payment failure rates;
+* process for changing repayment instructions;
+* borrower communication process for payment migration;
+* expected limitations or approvals required from Stripe, banks or other providers;
+* proposed cut-over plan to avoid repayment disruption.
+
+Ninth, on operational continuity, please provide more detail on the transition support that QuickFund would be prepared to offer. In particular, please specify:
+
+* proposed duration of transition support;
+* scope of support;
+* availability of technical personnel;
+* availability of servicing personnel;
+* response times during transition;
+* training materials;
+* operating manuals;
+* borrower communication templates;
+* collection workflow documentation;
+* escalation procedures;
+* handover milestones;
+* post-completion support terms;
+* whether support would be included in the transaction price or charged separately.
+
+Tenth, on transaction structure, we would be open to discussing the most appropriate structure after reviewing the initial materials. At this stage, we would ask you to clarify which structures QuickFund would be prepared to consider, including:
+
+* receivables-only sale;
+* portfolio plus servicing platform transfer;
+* asset sale including software, domain, brand and operational documentation;
+* share sale or broader corporate transaction;
+* transitional servicing arrangement;
+* staged transfer with completion subject to regulatory, payment provider and data protection conditions.
+
+We would also ask you to identify any contractual, regulatory, tax or operational constraints that may affect the proposed structure.
+
+As a next step, we suggest the following process:
+
+1. execution of an NDA;
+2. delivery of an initial data room index;
+3. provision of an anonymised loan tape and portfolio summary;
+4. provision of key legal, compliance, financial and technical materials;
+5. introductory management call to discuss the operating model and transaction perimeter;
+6. technical walkthrough of the platform and payment flows;
+7. preliminary internal review by ESTO;
+8. follow-up Q&A;
+9. discussion of whether it is appropriate to proceed to a more detailed due diligence phase.
+
+Please note that any further review by ESTO would remain subject to internal approvals, satisfactory due diligence, legal and regulatory review, transaction documentation, and agreement on a commercially acceptable structure. Nothing in this email should be understood as an offer, commitment, acceptance of valuation, or agreement to proceed with a transaction.
+
+That said, we appreciate the clarity of your initial presentation and are willing to explore the opportunity further under the right process. If you are aligned with the approach above, please send us your proposed NDA, or alternatively let us know if you would prefer ESTO to provide its standard form.
+
+Kind regards,",,false,13099,true,false,true,false,received,,,,2026-05-30 13:41:34.288+00,2026-05-30 13:41:34.353129+00,2026-05-30 13:53:19.370865+00
+51f28f96-699c-4c85-9c70-f44e5601bb09,6021ea72-229e-4e6d-b401-24a3b8b82a97,7ea628e1-4e51-473a-a74c-f27e7bfbb733,out,,<smk-microcredit-2@quickfund.eu>,<smk-microcredit-1@gmail.com>,smk-microcredit,Quickfund — Commercial,commercial@quickfund.eu,"[{""name"":""Aïcha Diallo"",""address"":""aicha.diallo@gmail.com""}]",[],Re: Micro-crédit création d'activité,"Bonjour Aïcha, le micro-crédit création est accessible sans bilan. Il faut un business plan simple et un garant…","Bonjour Aïcha,
+
+Le micro-crédit création est accessible sans bilan. Nous demandons un business plan simplifié, un justificatif d'identité et, selon le montant, un garant. Le taux est à partir de 4 % sur 12 à 36 mois.
+
+Souhaitez-vous que l'on planifie un rendez-vous ?
+
+Cordialement,
+Le service commercial Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-26 18:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+58adf6f1-1e08-45d5-a6b3-6b326641fb5a,6021ea72-229e-4e6d-b401-24a3b8b82a97,7ea628e1-4e51-473a-a74c-f27e7bfbb733,out,,<smk-leasing-2@quickfund.eu>,<smk-leasing-1@garagestella.eu>,smk-leasing,Quickfund — Commercial,commercial@quickfund.eu,"[{""name"":""Garage Stella"",""address"":""info@garagestella.eu""}]",[],Re: Leasing véhicule utilitaire,"Bonjour, avec plaisir. Pour une LOA sur 48 mois, indiquez-nous le modèle et le prix HT des véhicules…","Bonjour,
+
+Avec plaisir. Pour établir une simulation de LOA sur 48 mois, merci de nous communiquer le modèle exact, le prix HT et l'apport éventuel pour chaque véhicule. Nous revenons vers vous sous 24 h avec une offre chiffrée.
+
+Cordialement,
+Le service commercial Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-29 10:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+5f66d71e-ac1c-4830-8ad3-c9c60d2ebcce,8d4c1dc1-9620-4aeb-954e-7ef4cadd6ae5,2124d60e-f16f-4311-9efd-6231b8095e7c,in,,<smk-relance-2@gmail.com>,<smk-relance-1@quickfund.fr>,smk-relance,Antoine Dubois,antoine.dubois@gmail.com,"[{""name"":""Quickfund — Recouvrement"",""address"":""recouvrement@quickfund.fr""}]",[],Re: Relance — échéance impayée du 5,"Bonjour, désolé pour ce retard, un imprévu. Je régularise vendredi à réception de mon salaire.","Bonjour,
+
+Je suis désolé pour ce retard, dû à un imprévu. Je régularise l'échéance vendredi dès réception de mon salaire. Merci de votre compréhension.
+
+Cordialement,
+Antoine Dubois",,false,8192,true,false,false,false,received,,,,2026-05-26 16:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+6257db90-472e-4399-bae2-905b48f300f3,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<smk-docs-kyc-1@gmail.com>,,smk-docs-kyc,Liis Tamm,liis.tamm@gmail.com,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Pièces justificatives pour ma demande,"Bonjour, vous trouverez ci-joint ma pièce d'identité et mon dernier bulletin de salaire…","Bonjour,
+
+Suite à votre message, vous trouverez ci-joint ma pièce d'identité ainsi que mon dernier bulletin de salaire. N'hésitez pas si un autre document est nécessaire.
+
+Bien à vous,
+Liis Tamm",,true,104192,true,true,true,false,received,,,,2026-05-30 06:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 14:30:23.794758+00
+6775a345-cc30-4161-b55b-376bd4d7e0ec,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<smk-rdv-1@icloud.com>,,smk-rdv,Camille Roux,camille.roux@icloud.com,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Confirmation de rendez-vous conseiller,"Bonjour, je confirme notre rendez-vous téléphonique de jeudi à 14 h. Bonne journée.","Bonjour,
+
+Je vous confirme notre rendez-vous téléphonique prévu jeudi à 14 h pour faire le point sur mon dossier de financement.
+
+Bonne journée,
+Camille Roux",,false,8192,true,false,true,false,received,,,,2026-05-27 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+6966b3ad-1c71-4dd2-9c61-cafd7e52ca19,ed81259c-d521-46bc-8f2e-4401620fcb5e,01287885-996c-4e17-9830-eea7dfcaedfd,in,,<smk-merci-1@orange.fr>,,smk-merci,Patrick Noël,patrick.noel@orange.fr,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Remerciements — dossier financé,"Un grand merci à toute l'équipe, les fonds ont bien été débloqués hier. Service au top !","Bonjour,
+
+Un grand merci à toute l'équipe : les fonds ont bien été débloqués hier. Le suivi a été parfait du début à la fin, je recommanderai Quickfund autour de moi.
+
+Bien cordialement,
+Patrick Noël",,false,8192,true,false,false,false,received,,,,2026-05-22 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+73754514-2f43-4e7e-b1ee-b87e733d4fbf,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<smk-sepa-1@bank-partner.ee>,,smk-sepa,Banque partenaire,notifications@bank-partner.ee,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Confirmation de virement SEPA — réf. SEPA-8842,"Le virement SEPA réf. SEPA-8842 d'un montant de 3 000,00 € a été exécuté avec succès.","Bonjour,
+
+Nous vous confirmons l'exécution du virement SEPA suivant :
+
+Référence : SEPA-8842
+Montant : 3 000,00 €
+Date de valeur : ce jour
+
+Le détail figure dans la pièce jointe.
+
+Cordialement,
+Service virements",,true,73728,true,false,false,false,received,,,,2026-05-29 06:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+7400b01d-6079-4a1d-b21b-4a8f889e91d9,a184b820-1e57-47be-997e-184a4709bd4b,282c64df-65c7-45b7-aaf2-90791968222f,in,,<smk-courtier-1@creditplus.fr>,,smk-courtier,Cabinet Crédit Plus,contact@creditplus.fr,"[{""name"":""Quickfund — Partenariats"",""address"":""partenariats@quickfund.eu""}]",[],Convention de courtage,"Bonjour, courtiers en crédit, nous souhaitons signer une convention d'apporteur avec vos équipes…","Bonjour,
+
+Nous sommes un cabinet de courtage en crédit et souhaitons établir une convention d'apporteur avec Quickfund. Pourriez-vous nous communiquer votre grille de commissionnement et les modalités de transmission des dossiers ?
+
+Cordialement,
+Cabinet Crédit Plus",,false,8192,true,false,false,false,received,,,,2026-05-25 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+77c8a9e2-438a-49ba-97e7-95e340da095c,71f0b851-1a9d-4fe6-9105-f209064c06e1,8c9dab20-d8c5-4ee9-8563-49634eea33be,in,,<smk-relance-fourn-1@papeteriepro.fr>,,smk-relance-fourn,Papeterie Pro,compta@papeteriepro.fr,"[{""name"":""Quickfund — Comptabilité"",""address"":""comptabilite@quickfund.fr""}]",[],Relance — facture n° 2026-114 impayée,"Bonjour, sauf erreur, notre facture n° 2026-114 (320,00 €) reste impayée à ce jour…","Bonjour,
+
+Sauf erreur de notre part, notre facture n° 2026-114 d'un montant de 320,00 € TTC reste impayée à ce jour. Merci de bien vouloir procéder au règlement ou de nous indiquer la date prévue.
+
+Cordialement,
+Papeterie Pro",,false,8192,false,false,false,false,received,,,,2026-05-29 03:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+79ffa0be-7241-4181-a6e8-cf5efa0c7155,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<smk-rdv-2@quickfund.ee>,<smk-rdv-1@icloud.com>,smk-rdv,Quickfund — Contact,contact@quickfund.ee,"[{""name"":""Camille Roux"",""address"":""camille.roux@icloud.com""}]",[],Re: Confirmation de rendez-vous conseiller,"Bonjour Camille, c'est noté pour jeudi 14 h. Un conseiller vous appellera sur votre numéro habituel…","Bonjour Camille,
+
+C'est bien noté pour jeudi à 14 h. Un conseiller vous appellera sur votre numéro habituel. Pensez à avoir vos derniers justificatifs de revenus à portée de main.
+
+À jeudi,
+L'équipe Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-27 12:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+7a1386a4-6ee3-41a6-a78f-05eb9afa426b,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<qf-1780148227990-a9wintnd@quickfund.ee>,,thread-1780148227990-a9wintnd,Quickfund — Contact,contact@quickfund.ee,"[{""address"":""loan@creditstars.ee""}]",[],Strategic Acquisition Opportunity – Estonian Consumer Credit Portfolio and Servicing Platform,"Dear, I hope you are well. I am contacting you on behalf of QuickFund regarding a potential strategic acquisition opportunity in the Estonia","Dear,
+
+I hope you are well.
+
+I am contacting you on behalf of QuickFund regarding a potential strategic acquisition opportunity in the Estonian consumer credit market. QuickFund is considering a full divestment of its active consumer micro-credit portfolio, together with the proprietary operational infrastructure currently used to originate, monitor, service and collect the portfolio.
+
+This is not a distressed debt sale and not a piecemeal receivables disposal. Our preferred approach is a single transaction covering the full operating package: the receivables portfolio, the customer-facing interface, the internal servicing tools, the repayment tracking system, historical performance data, technical infrastructure, and transition support.
+
+The opportunity may be relevant to a licensed creditor, consumer finance platform, digital lender, credit servicing company, or portfolio purchaser seeking immediate exposure to an existing granular consumer credit portfolio with operational continuity.
+
+Executive summary
+
+QuickFund has built and operated a consumer micro-credit activity in Estonia with a lean internal infrastructure and proprietary servicing technology.
+
+The proposed transaction may include the active consumer credit receivables portfolio, approximately EUR 591,529 of outstanding loan capital, approximately 1,367 borrower relationships, an average exposure of approximately EUR 432.72 per borrower, and an estimated contractual future repayment stream of approximately EUR 667,203 over 24 months.
+
+It may also include the QuickFund customer-facing website and borrower interface, the internal credit servicing and repayment monitoring system, historical repayment and portfolio performance data, operational workflows, collection process documentation, technical infrastructure documentation, and transition support to preserve repayment continuity.
+
+The key value proposition is operational continuity. The buyer would not only acquire a receivables portfolio, but also the system currently used to manage, monitor and collect it.
+
+In practical terms, the platform can be transferred or reconfigured so that existing borrower access remains stable while payment flows, account references, payment provider settings, bank references, webhook endpoints and environment variables are migrated to the acquiring structure, subject to legal, regulatory, payment service provider and data protection requirements.
+
+Strategic rationale
+
+The asset is best understood as a functioning consumer credit servicing platform with an embedded portfolio.
+
+A purely financial buyer may value the portfolio primarily on discounted cash flows. However, a strategic buyer may extract additional value from the existing borrower relationships, customer interface continuity, proprietary internal servicing tools, structured loan and repayment data, reduced integration time, reduced migration friction, immediate repayment monitoring capability, and the potential reuse of the platform for future lending or servicing activity.
+
+Additional value may also come from historical credit performance data and potential integration into an existing consumer finance, debt purchase or credit servicing operation.
+
+This is why we are not positioning the opportunity as a standard distressed receivables sale. We are offering an operating credit asset with its servicing layer.
+
+Portfolio overview
+
+Preliminary internal portfolio data indicates outstanding loan capital of approximately EUR 591,529, with approximately 1,367 borrowers or clients. The average borrower exposure is approximately EUR 432.72.
+
+The indicative average maturity assumption used for modelling is approximately 24 months. Estimated contractual future cash flows over 24 months amount to approximately EUR 667,203, including an estimated future interest component of approximately EUR 75,674.
+
+The portfolio is highly granular. The average borrower exposure is low, reducing single-client concentration risk. This may be attractive for buyers looking for a diversified consumer credit pool rather than a small number of large exposures.
+
+Based on preliminary internal reporting, the year-end identified bad or doubtful amount was approximately EUR 2,425, representing approximately 0.4% of the outstanding loan capital at year-end.
+
+On a full-year basis, internally tracked 2025 bad debt amounted to approximately EUR 25,641, representing approximately 4.3% of year-end outstanding loan capital and approximately 4.9% of average 2025 outstanding capital.
+
+These figures are preliminary and subject to buyer due diligence, loan-level verification and agreed classification methodology.
+
+Financial performance
+
+QuickFund has operated with a lean cost base. The core technology and servicing tools were developed internally by the group, without external software development expenditure.
+
+For financial year 2024, total revenue amounted to EUR 36,630.43. This included EUR 29,629.00 of interest income, EUR 3,521.00 of application fee income, and EUR 3,480.43 of penalty or refund-related income.
+
+Total expenses for 2024 amounted to EUR 7,200.00, resulting in a reported operating profit of EUR 29,430.43 and a reported operating margin of approximately 80.3%.
+
+For financial year 2025, total revenue amounted to EUR 73,184.65. This included EUR 51,725.68 of interest income, EUR 3,521.00 of application fee income, EUR 1,882.97 of penalty or refund-related income, and EUR 16,055.00 of coaching or additional service income.
+
+Total expenses for 2025 amounted to EUR 31,413.68, resulting in a reported operating profit of EUR 41,770.97 and a reported operating margin of approximately 57.1%.
+
+Combined revenue for 2024 and 2025 amounted to EUR 109,815.08. Combined reported operating profit amounted to EUR 71,201.40, with an average reported operating margin of approximately 64.8%.
+
+The historical financials show that the activity has been profitable on an operating basis, while the infrastructure has been built internally and operated with limited external dependency.
+
+Technology and infrastructure
+
+The platform is built around an internally developed operating environment used to manage the credit portfolio and borrower repayment lifecycle. The technical stack can be transferred or documented as part of the transaction.
+
+For the purposes of the initial discussion, the platform should be understood as including a borrower-facing website, a customer interface for repayment visibility, a borrower account area, loan status visibility, a payment and repayment communication layer, and a responsive web interface suitable for consumer use.
+
+On the backend side, the platform includes an internal loan management system, borrower and contract management logic, repayment schedule handling, payment status tracking, portfolio monitoring tools, internal dashboard and reporting logic, borrower-level repayment history, bad debt and late status tracking, and administrative tools for servicing and follow-up.
+
+The database includes borrower-level data structures, loan-level data, repayment schedules, payment history, current balances, contract status, borrower repayment performance, internal status tags, and exportable data for loan tape and due diligence purposes.
+
+The hosting and infrastructure are provided through VM Cloud, the group’s own cloud provider. The infrastructure is controlled internally by the group, with no dependency on a third-party outsourced development agency. The deployment environment is configurable and environment-variable driven, with the capacity to transfer, migrate or document hosting settings depending on the buyer’s preference.
+
+Payments
+
+QuickFund currently uses a combination of payment methods, including Stripe, bank transfers and bank-based repayment flows. The existing infrastructure is designed to track and reconcile payments from several sources.
+
+As part of the transfer, payment routing could be migrated through Stripe configuration transfer or reconfiguration, subject to Stripe approval and compliance checks, as well as through bank account reference updates, beneficiary account changes, repayment instruction updates, payment webhook reconfiguration, internal reconciliation rule updates, borrower communication processes, and transition monitoring to avoid payment disruption.
+
+The technical objective is to make the transfer operationally simple: preserve the customer interface while changing the underlying payment destination and ownership structure in a controlled and compliant manner.
+
+Operational continuity
+
+One of the strongest features of the proposed transaction is continuity.
+
+A buyer may avoid the typical friction of a loan portfolio acquisition where borrowers are suddenly redirected to a new platform, a new interface, a new payment process or a new servicer.
+
+Under the preferred structure, borrowers can continue using the existing customer interface, the website and interface can remain operational, repayment schedules can remain visible, internal tracking can continue, payment references can be migrated, the acquiring entity can gradually take control of servicing, and the seller can provide transition support for a defined period.
+
+This is intended to protect repayment performance and reduce migration risk.
+
+A full transition package could include technical handover, environment documentation, source code or software access depending on the transaction perimeter, database schema and export documentation, deployment procedure, payment flow documentation, Stripe and bank flow transition support, servicing workflow documentation, borrower communication templates, and 30 to 90 days of operational support.
+
+Regulatory and legal positioning
+
+QuickFund currently operates as a credit or micro-credit company engaged in consumer credit origination and servicing. The exact transaction structure can be adapted depending on the buyer’s regulatory status and strategic objective.
+
+One possible structure is a receivables portfolio sale, where the buyer acquires the loan receivables, loan tape, repayment schedules, contract documentation and relevant transferable borrower information.
+
+Another possible structure is a portfolio and platform acquisition, where the buyer acquires the receivables together with the website, customer interface, internal servicing software, technical documentation and transition support.
+
+A third option is a full operating asset transfer, where the buyer acquires the portfolio, servicing platform, software, data structure, operational documentation, brand assets, domain names and transition package.
+
+A corporate transaction may also be discussed if operational continuity, licence treatment, contractual continuity or borrower management is better handled through a share sale or broader corporate acquisition structure.
+
+The exact legal structure would be subject to regulatory, contractual, data protection and tax review. We are prepared to work with the buyer’s legal and compliance teams to identify the most efficient structure.
+
+Data and due diligence materials
+
+Following execution of an NDA, QuickFund can provide a structured due diligence package.
+
+The portfolio data may include a loan-level data tape, borrower-level balances, outstanding capital, accrued or expected interest, repayment schedules, maturity profile, payment history, last payment date, current loan status, borrower segmentation, performing, late and doubtful breakdown, bad debt classification, and cohort-level analysis.
+
+The financial data may include the 2024 P&L summary, the 2025 P&L summary, revenue breakdown, expense breakdown, interest income analysis, application fee income, bad debt data, and bank and payment reconciliation materials where available.
+
+The legal and operational data may include contract templates, borrower communication templates, KYC availability overview, servicing processes, collection workflow, late payment handling, data retention overview, and transfer process considerations.
+
+The technical data may include a platform overview, frontend overview, backend overview, database schema, infrastructure documentation, VM Cloud hosting overview, environment variable structure, payment provider configuration map, Stripe payment flow documentation, bank transfer reconciliation logic, and deployment and migration plan.
+
+Indicative valuation expectation
+
+Given that the opportunity includes both the financial portfolio and the operational servicing infrastructure, QuickFund is not seeking a distressed-debt valuation.
+
+The indicative internal valuation logic is based on outstanding loan capital of approximately EUR 591,529, estimated contractual cash flows over 24 months of approximately EUR 667,203, historical 2024–2025 reported operating profit of approximately EUR 71,201, internally developed servicing technology with no external development cost base, and the inclusion of the existing borrower interface and operational continuity in a full package scenario.
+
+For a portfolio-only transaction, the valuation would be lower and mainly driven by discounted cash-flow analysis, expected losses, servicing costs and buyer target return.
+
+For a full portfolio, platform and operational continuity package, our indicative valuation expectation is in the EUR 650,000 to EUR 700,000 range, depending on the transaction perimeter, level of transition support, treatment of software and IP, data transfer scope, regulatory structure and final due diligence.
+
+For a full operating package including the portfolio, customer-facing interface, internal software, repayment tracking system, technical documentation, data room and transition support, our indicative anchor valuation is approximately EUR 700,000.
+
+This valuation is indicative and subject to due diligence, but it reflects the fact that the buyer is not merely acquiring receivables. The buyer would be acquiring an operating credit servicing environment with an active borrower base and repayment infrastructure already in place.
+
+Why this may be relevant to your organization
+
+We believe this opportunity may be attractive to a buyer that wants to acquire a granular consumer credit portfolio in one transaction, avoid building a servicing platform from scratch, preserve borrower repayment continuity, integrate an existing borrower base, acquire historical repayment data, apply its own funding, collection or credit infrastructure, reduce operational friction compared with a standard portfolio migration, and potentially reuse the technology layer for future credit operations.
+
+For an existing Estonian or Baltic consumer finance operator, the transaction may represent an efficient way to acquire both receivables and operational infrastructure.
+
+Proposed process
+
+We would propose beginning with an introductory discussion to assess strategic fit, followed by execution of an NDA.
+
+After that, QuickFund would provide an initial portfolio summary and technical overview. A management call could then be organized to review the operating model and platform, followed by access to a structured data room.
+
+The buyer would then conduct due diligence and, if interested, submit an indicative non-binding offer. The parties would then discuss the transaction perimeter and legal structure before moving to final due diligence and transaction documentation.
+
+We are seeking a buyer capable of acquiring the full portfolio and operational package in one transaction. We are not looking to sell the portfolio gradually or in small batches.
+
+Please let us know whether this opportunity may be of interest, and who would be the appropriate person within your organization to discuss portfolio acquisitions, consumer credit assets, platform acquisitions or credit servicing opportunities.
+
+Kind regards,
+
+Gaylor Loche
+CEO
+QuickFund
+[gaylor@quickfund.fr](mailto:gaylor@quickfund.fr)
+0632190365
+quickfund.fr
+",,false,15896,true,false,false,false,sent,,,2026-05-30 13:37:07.99+00,,2026-05-30 13:37:08.057984+00,2026-05-30 13:37:08.057984+00
+856a672c-adce-42c5-8994-93724b160d08,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<smk-info-conso-2@quickfund.ee>,<smk-info-conso-1@gmail.com>,smk-info-conso,Quickfund — Contact,contact@quickfund.ee,"[{""name"":""Sophie Bernard"",""address"":""sophie.bernard@gmail.com""}]",[],Re: Demande d'information — crédit conso,"Bonjour Sophie, pour un crédit conso de 4 000 € nos durées vont de 3 à 36 mois, taux à partir de 6 %…","Bonjour Sophie,
+
+Merci de votre intérêt. Pour un crédit à la consommation de 4 000 €, nos durées s'échelonnent de 3 à 36 mois, avec un taux à partir de 6 % et des frais de dossier de 1 %.
+
+Vous pouvez déposer votre demande en ligne sur quickfund.eu ; un conseiller l'étudie sous 48 h.
+
+Cordialement,
+L'équipe Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-30 11:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+861d4a46-d6c4-4a00-962e-e62b04fc9c8d,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<smk-info-conso-1@gmail.com>,,smk-info-conso,Sophie Bernard,sophie.bernard@gmail.com,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Demande d'information — crédit conso,"Bonjour, je souhaite financer des travaux (~4 000 €). Quelles sont vos conditions et la durée maximale ?","Bonjour,
+
+Je souhaite financer des travaux pour environ 4 000 €. Pourriez-vous m'indiquer vos conditions (taux, durée maximale, frais de dossier) et la marche à suivre pour déposer une demande ?
+
+Cordialement,
+Sophie Bernard",,false,8192,true,false,true,false,received,,,,2026-05-30 10:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 13:20:32.452344+00
+88c89ac5-1d83-4a57-9073-6004cf2f4e0a,6021ea72-229e-4e6d-b401-24a3b8b82a97,42f4b8f8-e7ec-44ac-8bdb-ba4a1a1c0a91,in,,<smk-leasing-1@garagestella.eu>,,smk-leasing,Garage Stella,info@garagestella.eu,"[{""name"":""Quickfund — Commercial"",""address"":""commercial@quickfund.eu""}]",[],Leasing véhicule utilitaire,"Bonjour, nous cherchons une LOA pour deux utilitaires. Pouvez-vous nous faire une simulation ?","Bonjour,
+
+Nous cherchons une solution de location avec option d'achat pour deux véhicules utilitaires neufs. Pourriez-vous nous adresser une simulation sur 48 mois ?
+
+Merci,
+Garage Stella",,false,8192,true,false,true,false,received,,,,2026-05-29 05:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+8a0cd4ee-a7fc-45e6-9967-802a82e9c2a3,a184b820-1e57-47be-997e-184a4709bd4b,f074e9ef-b782-4e70-979b-e66300ecda6b,out,,<smk-fintech-2@quickfund.eu>,<smk-fintech-1@fintechconnect.eu>,smk-fintech,Quickfund — Partenariats,partenariats@quickfund.eu,"[{""name"":""FinTech Connect"",""address"":""hello@fintechconnect.eu""}]",[],Re: Intégration API partenaire,"Bonjour, merci pour votre message. Une démonstration nous intéresse — proposez-nous deux créneaux la semaine prochaine…","Bonjour,
+
+Merci pour votre message. Une démonstration nous intéresse en effet. Pourriez-vous nous proposer deux créneaux la semaine prochaine ? Merci également de joindre votre documentation technique (formats d'API, latence, RGPD).
+
+Cordialement,
+Le service partenariats Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-29 12:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+8f98d23a-66d6-4a9b-95c5-55092bf37eec,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<smk-docs-kyc-2@quickfund.ee>,<smk-docs-kyc-1@gmail.com>,smk-docs-kyc,Quickfund — Contact,contact@quickfund.ee,"[{""name"":""Liis Tamm"",""address"":""liis.tamm@gmail.com""}]",[],Re: Pièces justificatives pour ma demande,"Bonjour Liis, merci pour l'envoi. Vos documents sont bien reçus, il nous manque un justificatif de domicile…","Bonjour Liis,
+
+Merci pour l'envoi de vos pièces, elles sont bien reçues. Pour finaliser l'étude de votre demande, il nous manque un justificatif de domicile de moins de trois mois.
+
+Dès réception, nous reviendrons vers vous sous 48 h.
+
+Cordialement,
+L'équipe Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-30 07:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+92d5b7f6-4d3d-4951-91f9-7ee0f6cf95b5,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<qf-1780149199180-d5xnicjl@quickfund.ee>,<sim-1780148494288-iv4fh7re@quickfund.ee>,thread-1780148145541-tx2xuta4,Quickfund — Contact,contact@quickfund.ee,"[{""address"":""contact@etsoas.ee""}]",[],Re: Strategic Acquisition Opportunity – Estonian Consumer Credit Portfolio and Servicing Platform,"Dear [Name], Thank you for your detailed response and for the clarity of your proposed review process. We appreciate ESTO’s preliminary inte","Dear [Name],
+
+Thank you for your detailed response and for the clarity of your proposed review process.
+
+We appreciate ESTO’s preliminary interest in the QuickFund portfolio and operational platform opportunity. We also fully understand that any assessment of transaction perimeter, structure, valuation and timing would need to be based on a detailed due diligence review and internal approval process.
+
+We are aligned with the staged approach you have proposed.
+
+As a first step, we would be prepared to proceed under NDA and provide an initial due diligence package covering the main portfolio, financial, legal, operational and technical workstreams. We agree that the initial loan-level information can be provided in anonymised form, with borrower-identifying information disclosed only at a later stage and only to the extent legally appropriate and necessary for the transaction process.
+
+For clarity, our preferred approach would be to structure the review in phases:
+
+1. NDA execution;
+2. delivery of an initial data room index;
+3. provision of an anonymised loan tape and portfolio summary;
+4. provision of preliminary financial, legal, compliance and technical materials;
+5. introductory management call;
+6. technical walkthrough of the platform, payment flows and servicing process;
+7. follow-up Q&A;
+8. discussion of transaction perimeter and whether it is appropriate to proceed to a deeper due diligence phase.
+
+We believe this phased approach protects both parties: it allows ESTO to assess the opportunity efficiently while ensuring that sensitive borrower data, source code, payment infrastructure and operational access are disclosed only under the appropriate legal and procedural safeguards.
+
+Initial due diligence package
+
+Subject to NDA, we can prepare an initial data room covering the following areas.
+
+Portfolio materials:
+
+* anonymised loan-level data tape;
+* borrower-level but anonymised outstanding balance overview;
+* current outstanding principal;
+* accrued / expected interest;
+* repayment schedules;
+* amount paid to date;
+* last payment date;
+* next payment date;
+* current status;
+* days past due;
+* historical delinquency status where available;
+* multiple-loan flag where applicable;
+* payment method;
+* contract version;
+* origination period;
+* borrower segment or risk category where available.
+
+Portfolio summary:
+
+* total outstanding capital;
+* total expected contractual repayment stream;
+* expected interest component;
+* current / late / doubtful / written-off segmentation;
+* ageing buckets;
+* repayment performance summary;
+* vintage view by origination month or quarter, where available;
+* reconciliation of key figures previously shared.
+
+Financial materials:
+
+* 2024 and 2025 management P&L summaries;
+* monthly revenue development;
+* interest income breakdown;
+* application fee income;
+* penalty / refund-related income;
+* coaching and ancillary service income separated from contractual interest income;
+* expense breakdown;
+* bad debt and doubtful balance methodology;
+* payment and bank reconciliation materials where available;
+* explanation of exceptional, related-party or intra-group items.
+
+Legal and regulatory materials:
+
+* corporate details of the lending entity;
+* description of QuickFund’s regulatory positioning and activity;
+* standard consumer credit agreement templates;
+* general terms and conditions;
+* borrower communication templates;
+* assignment / transfer provisions;
+* creditworthiness assessment process description;
+* KYC and identity verification process description;
+* late payment and collection procedure;
+* complaint / dispute overview;
+* regulatory correspondence overview, if applicable.
+
+Data protection materials:
+
+* privacy policy;
+* categories of borrower data held;
+* data retention approach;
+* data processors and sub-processors overview;
+* proposed approach for anonymised due diligence;
+* proposed borrower notification process in the event of assignment, servicing transfer or platform migration.
+
+Technology and infrastructure materials:
+
+* high-level platform architecture;
+* frontend and borrower interface overview;
+* backend servicing system overview;
+* database structure overview;
+* admin panel overview;
+* payment flow overview;
+* Stripe and bank transfer flow description;
+* hosting architecture through VM Cloud;
+* deployment and environment structure;
+* access control principles;
+* backup and monitoring overview;
+* migration and transition considerations;
+* known technical limitations or pending tasks.
+
+Payment and repayment flows:
+
+* Stripe payment flow summary;
+* bank transfer repayment flow summary;
+* reconciliation logic;
+* failed payment handling;
+* refund / dispute process;
+* borrower communication process for payment migration;
+* proposed cut-over approach to avoid repayment disruption.
+
+Transition support
+
+We are prepared to discuss a structured transition support package. Depending on the transaction perimeter, this may include:
+
+* technical handover;
+* platform walkthrough;
+* payment flow walkthrough;
+* servicing workflow documentation;
+* borrower communication templates;
+* training materials;
+* deployment documentation;
+* operational support during a defined transition period;
+* assistance with payment flow migration;
+* assistance with data export and migration.
+
+Our expectation is that the level of transition support would be reflected in the final transaction perimeter and valuation.
+
+Transaction structure
+
+We remain open to discussing several structures, including:
+
+* receivables-only sale;
+* portfolio plus servicing platform transfer;
+* asset sale including software, domain, brand and operational documentation;
+* broader operating asset transfer;
+* share sale or corporate transaction, if this proves more efficient for continuity, legal or regulatory reasons;
+* transitional servicing arrangement;
+* staged transfer subject to legal, payment provider, regulatory and data protection conditions.
+
+At this stage, our preference remains a single transaction covering the full portfolio and operational package, rather than a gradual or fragmented sale.
+
+Valuation
+
+We understand ESTO’s position that valuation can only be assessed after reviewing the underlying data. Our indicative valuation expectation was provided to frame the opportunity and reflects the fact that the proposed perimeter may include not only the receivables, but also the servicing infrastructure, borrower interface, technical environment, payment continuity layer, data history and transition support.
+
+We therefore suggest that valuation discussions take place after ESTO has reviewed the initial portfolio data, financial reconciliation, compliance framework and technical transfer perimeter.
+
+Next step
+
+We are ready to proceed with NDA execution. Please feel free to send ESTO’s standard NDA form. Alternatively, we can provide our proposed NDA for your review.
+
+Once the NDA is in place, we can provide the initial data room index and begin with the anonymised portfolio materials and management overview.
+
+Kind regards,
+
+Gaylor Loche
+CEO
+QuickFund
+
+[gaylor@quickfund.fr](mailto:gaylor@quickfund.fr)
+0632190365
+quickfund.fr
+
+
+Cordialement,
+L'équipe Quickfund — Contact
+contact@quickfund.ee · quickfund.ee
+
+Le 30/05/2026 à 15:41, contact@etsoas.ee a écrit :
+> Dear Mr. Loche,
+> 
+> Thank you for your email and for sharing the preliminary overview of the proposed QuickFund portfolio and operational platform transaction.
+> 
+> We have reviewed the materials at a preliminary level. Based on the information provided, the opportunity may be of interest to ESTO, particularly given the granular nature of the consumer credit portfolio, the existing borrower base, and the potential operational continuity offered through the customer-facing interface and servicing infrastructure.
+> 
+> At this stage, however, our interest should be understood as preliminary, non-binding, and subject to further review. Before we are able to form a view on transaction perimeter, structure, valuation, timing, or internal approval process, we would need to complete a detailed due diligence review covering the portfolio, legal enforceability, consumer credit compliance, data protection, servicing arrangements, payment flows, technology, financial performance, and the practical migration requirements.
+> 
+> We also note your indicative valuation expectations. For clarity, ESTO would need to assess the opportunity independently based on verified loan-level cash flows, actual historical repayment performance, expected losses, servicing costs, transferability, regulatory treatment, operational risk, and the extent to which the technology and infrastructure are transferable and useful in practice. We would therefore not be in a position to comment on, endorse, or negotiate around any valuation range before reviewing the underlying data.
+> 
+> Subject to execution of an NDA, we would be prepared to review an initial due diligence package. In order to proceed efficiently, we would ask that the data room include, at minimum, the materials set out below.
+> 
+> First, on the portfolio side, we would need a complete loan-level data tape, initially anonymised if required, including for each loan and borrower relationship:
+> 
+> * unique loan ID and borrower ID;
+> * origination date;
+> * original loan amount;
+> * outstanding principal;
+> * accrued interest;
+> * accrued fees, penalties or other charges;
+> * total balance outstanding;
+> * contractual maturity date;
+> * repayment schedule;
+> * amount paid to date;
+> * last payment date;
+> * next payment date;
+> * current status;
+> * days past due;
+> * historical delinquency status;
+> * restructuring, rollover or extension history;
+> * write-off status, if applicable;
+> * recovery history, if applicable;
+> * borrower segment or risk category, if available;
+> * source of origination;
+> * applicable interest rate, APR and fee structure;
+> * contract version used;
+> * payment method used by the borrower;
+> * whether the borrower has multiple active or historical loans.
+> 
+> We would also need a portfolio summary split by relevant ageing buckets, including current, 1–30 days past due, 31–60 days past due, 61–90 days past due, 90+ days past due, restructured, doubtful, written off, and legally disputed exposures. It would also be helpful to receive a vintage analysis by origination month or quarter, showing repayment performance, default development, recoveries, and outstanding balance evolution over time.
+> 
+> Second, we would need to understand the methodology behind the figures mentioned in your email. In particular, please provide a reconciliation of:
+> 
+> * the approximately EUR 591,529 outstanding loan capital;
+> * the approximately EUR 667,203 estimated future contractual repayment stream;
+> * the approximately EUR 75,674 estimated future interest component;
+> * the year-end bad / doubtful amount of approximately EUR 2,425;
+> * the internally tracked 2025 bad debt amount of approximately EUR 25,641;
+> * the difference between doubtful balances, late balances, defaulted balances, written-off balances and bad debt expense;
+> * the assumptions used for the indicative 24-month maturity and repayment model.
+> 
+> We would also need to understand whether the EUR 667,203 figure represents purely contractual cash flows, management-expected cash flows, or cash flows adjusted for expected defaults, prepayments, collection delays, servicing costs or write-offs.
+> 
+> Third, on financial performance, please provide the underlying financial materials supporting the 2024 and 2025 figures, including:
+> 
+> * management accounts or statutory accounts, if available;
+> * revenue breakdown by interest income, application fees, penalty income, refund-related income, coaching income and any other income source;
+> * monthly revenue development;
+> * monthly origination volume;
+> * monthly repayment collections;
+> * monthly outstanding balance development;
+> * monthly bad debt, write-off and recovery data;
+> * expense breakdown;
+> * customer acquisition costs, if applicable;
+> * servicing and collection costs;
+> * payment processing costs;
+> * hosting, technology and infrastructure costs;
+> * bank and payment provider reconciliation materials, where available;
+> * explanation of any non-recurring, related-party, intra-group or exceptional items.
+> 
+> We would pay particular attention to the transferability and sustainability of the revenue streams. For example, any income described as coaching, additional services, penalties, fees or refund-related income would need to be reviewed separately from contractual interest income and assessed from a legal, regulatory and economic perspective.
+> 
+> Fourth, on legal and regulatory matters, we would need to review the legal framework under which the loans were originated and are currently serviced. Please provide:
+> 
+> * current and historical corporate details of the lending entity;
+> * confirmation of the regulatory status under which QuickFund has operated;
+> * copies of any licences, registrations or regulatory filings relevant to the activity;
+> * standard consumer credit agreement templates used during the relevant period;
+> * all applicable general terms and conditions;
+> * pre-contractual information templates;
+> * APR calculation methodology;
+> * fee and penalty disclosure methodology;
+> * borrower communication templates;
+> * assignment and transfer provisions in the loan agreements;
+> * policies and evidence relating to creditworthiness assessment;
+> * KYC and identity verification process description;
+> * sanctions, AML and fraud screening process description, where applicable;
+> * responsible lending policy;
+> * complaint handling history;
+> * customer disputes or pending claims;
+> * any regulatory correspondence, warnings, inspections, findings or sanctions;
+> * description of collection practices;
+> * description of late payment, reminder, restructuring, default and write-off procedures;
+> * details of any third-party service providers involved in origination, servicing, payment processing, collection, hosting or customer communication.
+> 
+> For the avoidance of doubt, regulatory and consumer protection compliance would be a core due diligence workstream for ESTO. The enforceability of the receivables, the validity of customer communications, the quality of the creditworthiness assessment, and the treatment of fees, penalties and ancillary services would be key factors in any further assessment.
+> 
+> Fifth, on data protection and transferability, we would need to review the basis on which borrower data may be disclosed, transferred, migrated or otherwise processed in connection with a potential transaction. Please provide:
+> 
+> * privacy policies used during the relevant period;
+> * borrower consent language, where applicable;
+> * data processing records;
+> * data retention policy;
+> * data protection impact assessments, if any;
+> * list of categories of personal data held;
+> * description of data processors and sub-processors;
+> * data processing agreements with relevant providers;
+> * history of any data incidents or breaches;
+> * proposed legal basis for sharing loan-level data during due diligence;
+> * proposed legal basis for transferring borrower data upon completion;
+> * borrower notification process for any assignment, servicing transfer or platform migration.
+> 
+> Sixth, on the technology and infrastructure side, we would need to understand precisely what is included in the proposed transaction and what would remain with QuickFund or related entities. Please provide:
+> 
+> * high-level platform architecture;
+> * frontend description;
+> * backend description;
+> * database schema;
+> * hosting architecture;
+> * infrastructure diagram;
+> * source code ownership confirmation;
+> * repository structure;
+> * list of third-party libraries, frameworks and dependencies;
+> * licence terms for third-party components;
+> * API documentation;
+> * admin panel description;
+> * user roles and access rights;
+> * authentication and security model;
+> * audit logs and logging structure;
+> * backup and disaster recovery process;
+> * incident history;
+> * current deployment process;
+> * staging and production environment description;
+> * environment variable map;
+> * monitoring and alerting setup;
+> * data export process;
+> * data migration process;
+> * known bugs, limitations or technical debt;
+> * roadmap or pending technical tasks, if any.
+> 
+> Please also confirm whether the transaction perimeter would include full source code ownership, a licence to use the software, operational access only, technical documentation only, or another structure. This distinction is important for our internal assessment.
+> 
+> Seventh, on hosting and related-party infrastructure, your email mentions VM Cloud as the group’s own cloud provider. Please clarify:
+> 
+> * the legal relationship between QuickFund and VM Cloud;
+> * whether hosting services are provided under a written agreement;
+> * whether the hosting environment can be transferred to a buyer;
+> * whether the buyer can migrate the platform to its own infrastructure;
+> * expected migration timeline;
+> * ongoing hosting cost;
+> * access control arrangements;
+> * whether any QuickFund or group personnel would retain access after completion;
+> * proposed transition and separation plan.
+> 
+> Eighth, on payments and repayment flows, please provide a detailed map of the current payment architecture, including:
+> 
+> * Stripe account structure;
+> * payment methods currently used;
+> * bank accounts currently receiving repayments;
+> * bank references and beneficiary details used by borrowers;
+> * webhook configuration;
+> * payment reconciliation logic;
+> * manual reconciliation process;
+> * failed payment handling;
+> * refund process;
+> * chargeback or dispute process;
+> * historical payment failure rates;
+> * process for changing repayment instructions;
+> * borrower communication process for payment migration;
+> * expected limitations or approvals required from Stripe, banks or other providers;
+> * proposed cut-over plan to avoid repayment disruption.
+> 
+> Ninth, on operational continuity, please provide more detail on the transition support that QuickFund would be prepared to offer. In particular, please specify:
+> 
+> * proposed duration of transition support;
+> * scope of support;
+> * availability of technical personnel;
+> * availability of servicing personnel;
+> * response times during transition;
+> * training materials;
+> * operating manuals;
+> * borrower communication templates;
+> * collection workflow documentation;
+> * escalation procedures;
+> * handover milestones;
+> * post-completion support terms;
+> * whether support would be included in the transaction price or charged separately.
+> 
+> Tenth, on transaction structure, we would be open to discussing the most appropriate structure after reviewing the initial materials. At this stage, we would ask you to clarify which structures QuickFund would be prepared to consider, including:
+> 
+> * receivables-only sale;
+> * portfolio plus servicing platform transfer;
+> * asset sale including software, domain, brand and operational documentation;
+> * share sale or broader corporate transaction;
+> * transitional servicing arrangement;
+> * staged transfer with completion subject to regulatory, payment provider and data protection conditions.
+> 
+> We would also ask you to identify any contractual, regulatory, tax or operational constraints that may affect the proposed structure.
+> 
+> As a next step, we suggest the following process:
+> 
+> 1. execution of an NDA;
+> 2. delivery of an initial data room index;
+> 3. provision of an anonymised loan tape and portfolio summary;
+> 4. provision of key legal, compliance, financial and technical materials;
+> 5. introductory management call to discuss the operating model and transaction perimeter;
+> 6. technical walkthrough of the platform and payment flows;
+> 7. preliminary internal review by ESTO;
+> 8. follow-up Q&A;
+> 9. discussion of whether it is appropriate to proceed to a more detailed due diligence phase.
+> 
+> Please note that any further review by ESTO would remain subject to internal approvals, satisfactory due diligence, legal and regulatory review, transaction documentation, and agreement on a commercially acceptable structure. Nothing in this email should be understood as an offer, commitment, acceptance of valuation, or agreement to proceed with a transaction.
+> 
+> That said, we appreciate the clarity of your initial presentation and are willing to explore the opportunity further under the right process. If you are aligned with the approach above, please send us your proposed NDA, or alternatively let us know if you would prefer ESTO to provide its standard form.
+> 
+> Kind regards,",,false,20827,true,false,false,false,sent,,,2026-05-30 13:53:19.18+00,,2026-05-30 13:53:19.269447+00,2026-05-30 13:53:19.269447+00
+955ab755-2fc8-457f-9bf4-b3092545c1f7,a184b820-1e57-47be-997e-184a4709bd4b,282c64df-65c7-45b7-aaf2-90791968222f,in,,<smk-fintech-1@fintechconnect.eu>,,smk-fintech,FinTech Connect,hello@fintechconnect.eu,"[{""name"":""Quickfund — Partenariats"",""address"":""partenariats@quickfund.eu""}]",[],Intégration API partenaire,"Bonjour, nous proposons une brique de scoring temps réel. Une intégration via API vous intéresserait-elle ?","Bonjour,
+
+Nous éditons une brique de scoring crédit en temps réel et proposons une intégration via API à nos partenaires prêteurs. Cela pourrait-il enrichir votre processus d'octroi ? Nous pouvons organiser une démonstration.
+
+Cordialement,
+FinTech Connect",,false,8192,false,false,true,false,received,,,,2026-05-29 07:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+98ab204b-fe36-4917-8462-467abddc2156,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<sim-1780164551090-x4fme494@quickfund.ee>,<qf-1780149199180-d5xnicjl@quickfund.ee>,thread-1780148145541-tx2xuta4,,contact@etsoas.ee,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Re: Strategic Acquisition Opportunity – Estonian Consumer Credit Portfolio and Servicing Platform,Thank you for the materials provided under NDA and for the detailed cooperation from your side during the initial due diligence phase. Follo,"Thank you for the materials provided under NDA and for the detailed cooperation from your side during the initial due diligence phase.
+
+Following our review of the documentation made available to date, we are pleased to confirm that the information received broadly supports the main points set out in your initial presentation regarding the QuickFund portfolio, borrower base, servicing environment, repayment infrastructure, financial history, operational processes and technical setup.
+
+On that basis, ESTO remains interested in exploring a transaction and we believe it is appropriate to move from the preliminary review phase to a more transaction-focused discussion.
+
+At this stage, our internal assessment is that the most efficient structure may be an acquisition of the portfolio together with the operational assets required to preserve continuity. This would include, subject to final agreement, the receivables portfolio, relevant borrower and loan data, repayment schedules, customer-facing interface for existing borrowers, administration panel, servicing workflows, payment and reconciliation logic, technical documentation, migration support and an API-based integration layer allowing the QuickFund environment to connect with ESTO’s internal systems.
+
+Our preference would be to structure the transaction in a way that allows ESTO to capture the economic and operational value of the QuickFund activity while avoiding unnecessary complexity where possible. In practical terms, this could mean acquiring the full operating package necessary for continuity, without necessarily acquiring the corporate entity itself, unless a share acquisition proves to be more efficient from a legal, regulatory, contractual or operational perspective.
+
+We therefore suggest keeping both routes open at this stage:
+
+1. an asset transaction covering the receivables portfolio and the full operational package required for borrower continuity; and
+2. a corporate transaction / share acquisition, if legal and regulatory analysis confirms that this route would materially improve continuity or reduce transfer complexity.
+
+For clarity, we do not currently view the legal form of the transaction as the main value driver. The key points for ESTO are the enforceability and collectability of the receivables, continuity for existing borrowers, data and payment migration, compliance comfort, access to the servicing environment, and the ability to integrate the QuickFund workflow into ESTO’s internal operating model.
+
+In this context, we would like to discuss a transaction perimeter based on the following principles:
+
+* acquisition of the active consumer credit receivables portfolio;
+* transfer of all loan-level data, repayment schedules, payment history and borrower records necessary for servicing and collection;
+* maintenance of the existing borrower interface for current QuickFund customers during a defined transition or run-off period;
+* discontinuation of new QuickFund origination after completion, unless otherwise agreed;
+* redirection or repositioning of the public-facing QuickFund landing pages toward ESTO, while preserving access for existing borrowers;
+* transfer or licence of the administration panel, servicing tools and technical components required to manage the portfolio;
+* API integration between the QuickFund environment and ESTO’s internal systems;
+* delivery of technical documentation, database schema, deployment documentation, payment flow documentation and reconciliation logic;
+* transition support from QuickFund for a defined period;
+* controlled migration of payment flows, borrower communications and operational responsibilities;
+* appropriate representations, warranties and indemnities covering the portfolio, legal enforceability, consumer credit compliance, data protection, intellectual property, financial information and absence of undisclosed liabilities.
+
+The proposed API integration is particularly important for us. Based on the discussions to date, we understand that QuickFund would be prepared to provide an integration layer allowing ESTO to access and synchronise relevant data and workflows from the QuickFund system. We would like this to be documented in more detail, including the expected endpoints, authentication method, data fields, event triggers, documentation, testing environment, delivery timeline, acceptance criteria and post-delivery support.
+
+From an operational perspective, our preferred model would be to avoid any disruption for existing borrowers. Existing customers should continue to have access to their repayment information, contracts, messages and payment instructions through a stable interface, while ESTO gradually assumes operational control and integrates the relevant data into its own environment. We believe this approach is likely to protect repayment performance and reduce migration risk.
+
+Regarding the QuickFund brand and public interface, we would expect that, following completion, QuickFund would no longer be marketed as a separate active origination platform. The public website could either be redirected to ESTO or repositioned in a way to be agreed between the parties, while the borrower login area remains available to existing customers during the transition or run-off period.
+
+We would also like to discuss the appropriate legal treatment of the QuickFund entity itself. If the transaction is structured as an asset transaction, we understand that the seller may subsequently wind down or liquidate the entity at its discretion, subject to applicable legal, regulatory and customer protection requirements. If the transaction is structured as a share acquisition, ESTO would expect the company to be operated only for controlled servicing / run-off purposes unless otherwise agreed, with no new origination activity and with a clear post-closing simplification plan.
+
+At this stage, we would propose the following next steps:
+
+1. organise a management call to discuss transaction structure and preferred perimeter;
+2. organise a technical call focused specifically on the API integration, admin panel, borrower portal, payment flows and migration roadmap;
+3. request a short legal memo or joint counsel discussion comparing an asset transaction and a share acquisition from the perspective of continuity, regulatory treatment, data protection, borrower notification and execution complexity;
+4. agree the preferred transaction path;
+5. prepare a non-binding letter of intent setting out transaction perimeter, commercial principles, exclusivity, conditions, due diligence confirmatory items and expected timetable;
+6. proceed to confirmatory due diligence and transaction documentation.
+
+For the avoidance of doubt, any further step remains subject to internal approvals, satisfactory confirmatory due diligence, final legal and regulatory review, agreement on transaction documentation, and agreement on commercially acceptable terms. Nothing in this email should be interpreted as a binding offer or commitment to proceed with a transaction.
+
+That said, the materials reviewed to date are sufficiently encouraging for ESTO to continue discussions and work towards a structured proposal. We believe the opportunity may be attractive if the transaction is designed around operational continuity, disciplined integration and appropriate legal protections for both parties.
+
+Please let us know your availability for a management call this week or early next week. We would suggest that the first call focus on transaction structure and integration perimeter, followed by a separate technical session with the relevant product, engineering and operations contacts.
+
+Kind regards,",,false,7695,true,false,true,false,received,,,,2026-05-30 18:09:11.09+00,2026-05-30 18:09:11.207914+00,2026-06-15 09:59:16.112381+00
+9d7586ed-a966-4885-88ec-5d779ac36d27,60e60a1d-1e89-4205-8724-f3a971724253,bcf5e946-81bf-40c7-bef0-4e2c7bad72a3,out,,<smk-coords-2@quickfund.fr>,<smk-coords-1@yahoo.fr>,smk-coords,Quickfund — Support,support@quickfund.fr,"[{""name"":""Émilie Moreau"",""address"":""emilie.moreau@yahoo.fr""}]",[],Re: Changement de coordonnées bancaires,"Bonjour Émilie, transmettez-nous votre nouveau RIB depuis Mon espace > Coordonnées. La prise en compte est sous 5 jours…","Bonjour Émilie,
+
+Pour mettre à jour votre RIB, rendez-vous dans Mon espace > Coordonnées bancaires et téléversez votre nouveau RIB. La prise en compte intervient sous 5 jours ouvrés ; le prélèvement en cours reste sur l'ancien compte s'il est à moins de 8 jours.
+
+Cordialement,
+Le support Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-27 16:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+ad911b29-b098-4766-b768-9103691855cb,71f0b851-1a9d-4fe6-9105-f209064c06e1,8c9dab20-d8c5-4ee9-8563-49634eea33be,in,,<smk-facture-ovh-1@ovh.com>,,smk-facture-ovh,OVHcloud,facturation@ovh.com,"[{""name"":""Quickfund — Comptabilité"",""address"":""comptabilite@quickfund.fr""}]",[],Votre facture OVHcloud — mars 2026,"Votre facture n° FR-2026-0398421 d'un montant de 142,80 € TTC est disponible.","Bonjour,
+
+Votre facture OVHcloud n° FR-2026-0398421 d'un montant de 142,80 € TTC est disponible dans votre espace client. Le prélèvement interviendra sous 10 jours.
+
+Cordialement,
+Le service facturation OVHcloud",,true,62402,true,false,false,false,received,,,,2026-05-28 04:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+b1c01d11-fc21-4abe-b397-55d41eb30619,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<qf-1780148145541-tx2xuta4@quickfund.ee>,,thread-1780148145541-tx2xuta4,Quickfund — Contact,contact@quickfund.ee,"[{""address"":""contact@etsoas.ee""}]",[],Strategic Acquisition Opportunity – Estonian Consumer Credit Portfolio and Servicing Platform,"Dear, I hope you are well. I am contacting you on behalf of QuickFund regarding a potential strategic acquisition opportunity in the Estonia","Dear,
+
+I hope you are well.
+
+I am contacting you on behalf of QuickFund regarding a potential strategic acquisition opportunity in the Estonian consumer credit market. QuickFund is considering a full divestment of its active consumer micro-credit portfolio, together with the proprietary operational infrastructure currently used to originate, monitor, service and collect the portfolio.
+
+This is not a distressed debt sale and not a piecemeal receivables disposal. Our preferred approach is a single transaction covering the full operating package: the receivables portfolio, the customer-facing interface, the internal servicing tools, the repayment tracking system, historical performance data, technical infrastructure, and transition support.
+
+The opportunity may be relevant to a licensed creditor, consumer finance platform, digital lender, credit servicing company, or portfolio purchaser seeking immediate exposure to an existing granular consumer credit portfolio with operational continuity.
+
+Executive summary
+
+QuickFund has built and operated a consumer micro-credit activity in Estonia with a lean internal infrastructure and proprietary servicing technology.
+
+The proposed transaction may include the active consumer credit receivables portfolio, approximately EUR 591,529 of outstanding loan capital, approximately 1,367 borrower relationships, an average exposure of approximately EUR 432.72 per borrower, and an estimated contractual future repayment stream of approximately EUR 667,203 over 24 months.
+
+It may also include the QuickFund customer-facing website and borrower interface, the internal credit servicing and repayment monitoring system, historical repayment and portfolio performance data, operational workflows, collection process documentation, technical infrastructure documentation, and transition support to preserve repayment continuity.
+
+The key value proposition is operational continuity. The buyer would not only acquire a receivables portfolio, but also the system currently used to manage, monitor and collect it.
+
+In practical terms, the platform can be transferred or reconfigured so that existing borrower access remains stable while payment flows, account references, payment provider settings, bank references, webhook endpoints and environment variables are migrated to the acquiring structure, subject to legal, regulatory, payment service provider and data protection requirements.
+
+Strategic rationale
+
+The asset is best understood as a functioning consumer credit servicing platform with an embedded portfolio.
+
+A purely financial buyer may value the portfolio primarily on discounted cash flows. However, a strategic buyer may extract additional value from the existing borrower relationships, customer interface continuity, proprietary internal servicing tools, structured loan and repayment data, reduced integration time, reduced migration friction, immediate repayment monitoring capability, and the potential reuse of the platform for future lending or servicing activity.
+
+Additional value may also come from historical credit performance data and potential integration into an existing consumer finance, debt purchase or credit servicing operation.
+
+This is why we are not positioning the opportunity as a standard distressed receivables sale. We are offering an operating credit asset with its servicing layer.
+
+Portfolio overview
+
+Preliminary internal portfolio data indicates outstanding loan capital of approximately EUR 591,529, with approximately 1,367 borrowers or clients. The average borrower exposure is approximately EUR 432.72.
+
+The indicative average maturity assumption used for modelling is approximately 24 months. Estimated contractual future cash flows over 24 months amount to approximately EUR 667,203, including an estimated future interest component of approximately EUR 75,674.
+
+The portfolio is highly granular. The average borrower exposure is low, reducing single-client concentration risk. This may be attractive for buyers looking for a diversified consumer credit pool rather than a small number of large exposures.
+
+Based on preliminary internal reporting, the year-end identified bad or doubtful amount was approximately EUR 2,425, representing approximately 0.4% of the outstanding loan capital at year-end.
+
+On a full-year basis, internally tracked 2025 bad debt amounted to approximately EUR 25,641, representing approximately 4.3% of year-end outstanding loan capital and approximately 4.9% of average 2025 outstanding capital.
+
+These figures are preliminary and subject to buyer due diligence, loan-level verification and agreed classification methodology.
+
+Financial performance
+
+QuickFund has operated with a lean cost base. The core technology and servicing tools were developed internally by the group, without external software development expenditure.
+
+For financial year 2024, total revenue amounted to EUR 36,630.43. This included EUR 29,629.00 of interest income, EUR 3,521.00 of application fee income, and EUR 3,480.43 of penalty or refund-related income.
+
+Total expenses for 2024 amounted to EUR 7,200.00, resulting in a reported operating profit of EUR 29,430.43 and a reported operating margin of approximately 80.3%.
+
+For financial year 2025, total revenue amounted to EUR 73,184.65. This included EUR 51,725.68 of interest income, EUR 3,521.00 of application fee income, EUR 1,882.97 of penalty or refund-related income, and EUR 16,055.00 of coaching or additional service income.
+
+Total expenses for 2025 amounted to EUR 31,413.68, resulting in a reported operating profit of EUR 41,770.97 and a reported operating margin of approximately 57.1%.
+
+Combined revenue for 2024 and 2025 amounted to EUR 109,815.08. Combined reported operating profit amounted to EUR 71,201.40, with an average reported operating margin of approximately 64.8%.
+
+The historical financials show that the activity has been profitable on an operating basis, while the infrastructure has been built internally and operated with limited external dependency.
+
+Technology and infrastructure
+
+The platform is built around an internally developed operating environment used to manage the credit portfolio and borrower repayment lifecycle. The technical stack can be transferred or documented as part of the transaction.
+
+For the purposes of the initial discussion, the platform should be understood as including a borrower-facing website, a customer interface for repayment visibility, a borrower account area, loan status visibility, a payment and repayment communication layer, and a responsive web interface suitable for consumer use.
+
+On the backend side, the platform includes an internal loan management system, borrower and contract management logic, repayment schedule handling, payment status tracking, portfolio monitoring tools, internal dashboard and reporting logic, borrower-level repayment history, bad debt and late status tracking, and administrative tools for servicing and follow-up.
+
+The database includes borrower-level data structures, loan-level data, repayment schedules, payment history, current balances, contract status, borrower repayment performance, internal status tags, and exportable data for loan tape and due diligence purposes.
+
+The hosting and infrastructure are provided through VM Cloud, the group’s own cloud provider. The infrastructure is controlled internally by the group, with no dependency on a third-party outsourced development agency. The deployment environment is configurable and environment-variable driven, with the capacity to transfer, migrate or document hosting settings depending on the buyer’s preference.
+
+Payments
+
+QuickFund currently uses a combination of payment methods, including Stripe, bank transfers and bank-based repayment flows. The existing infrastructure is designed to track and reconcile payments from several sources.
+
+As part of the transfer, payment routing could be migrated through Stripe configuration transfer or reconfiguration, subject to Stripe approval and compliance checks, as well as through bank account reference updates, beneficiary account changes, repayment instruction updates, payment webhook reconfiguration, internal reconciliation rule updates, borrower communication processes, and transition monitoring to avoid payment disruption.
+
+The technical objective is to make the transfer operationally simple: preserve the customer interface while changing the underlying payment destination and ownership structure in a controlled and compliant manner.
+
+Operational continuity
+
+One of the strongest features of the proposed transaction is continuity.
+
+A buyer may avoid the typical friction of a loan portfolio acquisition where borrowers are suddenly redirected to a new platform, a new interface, a new payment process or a new servicer.
+
+Under the preferred structure, borrowers can continue using the existing customer interface, the website and interface can remain operational, repayment schedules can remain visible, internal tracking can continue, payment references can be migrated, the acquiring entity can gradually take control of servicing, and the seller can provide transition support for a defined period.
+
+This is intended to protect repayment performance and reduce migration risk.
+
+A full transition package could include technical handover, environment documentation, source code or software access depending on the transaction perimeter, database schema and export documentation, deployment procedure, payment flow documentation, Stripe and bank flow transition support, servicing workflow documentation, borrower communication templates, and 30 to 90 days of operational support.
+
+Regulatory and legal positioning
+
+QuickFund currently operates as a credit or micro-credit company engaged in consumer credit origination and servicing. The exact transaction structure can be adapted depending on the buyer’s regulatory status and strategic objective.
+
+One possible structure is a receivables portfolio sale, where the buyer acquires the loan receivables, loan tape, repayment schedules, contract documentation and relevant transferable borrower information.
+
+Another possible structure is a portfolio and platform acquisition, where the buyer acquires the receivables together with the website, customer interface, internal servicing software, technical documentation and transition support.
+
+A third option is a full operating asset transfer, where the buyer acquires the portfolio, servicing platform, software, data structure, operational documentation, brand assets, domain names and transition package.
+
+A corporate transaction may also be discussed if operational continuity, licence treatment, contractual continuity or borrower management is better handled through a share sale or broader corporate acquisition structure.
+
+The exact legal structure would be subject to regulatory, contractual, data protection and tax review. We are prepared to work with the buyer’s legal and compliance teams to identify the most efficient structure.
+
+Data and due diligence materials
+
+Following execution of an NDA, QuickFund can provide a structured due diligence package.
+
+The portfolio data may include a loan-level data tape, borrower-level balances, outstanding capital, accrued or expected interest, repayment schedules, maturity profile, payment history, last payment date, current loan status, borrower segmentation, performing, late and doubtful breakdown, bad debt classification, and cohort-level analysis.
+
+The financial data may include the 2024 P&L summary, the 2025 P&L summary, revenue breakdown, expense breakdown, interest income analysis, application fee income, bad debt data, and bank and payment reconciliation materials where available.
+
+The legal and operational data may include contract templates, borrower communication templates, KYC availability overview, servicing processes, collection workflow, late payment handling, data retention overview, and transfer process considerations.
+
+The technical data may include a platform overview, frontend overview, backend overview, database schema, infrastructure documentation, VM Cloud hosting overview, environment variable structure, payment provider configuration map, Stripe payment flow documentation, bank transfer reconciliation logic, and deployment and migration plan.
+
+Indicative valuation expectation
+
+Given that the opportunity includes both the financial portfolio and the operational servicing infrastructure, QuickFund is not seeking a distressed-debt valuation.
+
+The indicative internal valuation logic is based on outstanding loan capital of approximately EUR 591,529, estimated contractual cash flows over 24 months of approximately EUR 667,203, historical 2024–2025 reported operating profit of approximately EUR 71,201, internally developed servicing technology with no external development cost base, and the inclusion of the existing borrower interface and operational continuity in a full package scenario.
+
+For a portfolio-only transaction, the valuation would be lower and mainly driven by discounted cash-flow analysis, expected losses, servicing costs and buyer target return.
+
+For a full portfolio, platform and operational continuity package, our indicative valuation expectation is in the EUR 650,000 to EUR 700,000 range, depending on the transaction perimeter, level of transition support, treatment of software and IP, data transfer scope, regulatory structure and final due diligence.
+
+For a full operating package including the portfolio, customer-facing interface, internal software, repayment tracking system, technical documentation, data room and transition support, our indicative anchor valuation is approximately EUR 700,000.
+
+This valuation is indicative and subject to due diligence, but it reflects the fact that the buyer is not merely acquiring receivables. The buyer would be acquiring an operating credit servicing environment with an active borrower base and repayment infrastructure already in place.
+
+Why this may be relevant to your organization
+
+We believe this opportunity may be attractive to a buyer that wants to acquire a granular consumer credit portfolio in one transaction, avoid building a servicing platform from scratch, preserve borrower repayment continuity, integrate an existing borrower base, acquire historical repayment data, apply its own funding, collection or credit infrastructure, reduce operational friction compared with a standard portfolio migration, and potentially reuse the technology layer for future credit operations.
+
+For an existing Estonian or Baltic consumer finance operator, the transaction may represent an efficient way to acquire both receivables and operational infrastructure.
+
+Proposed process
+
+We would propose beginning with an introductory discussion to assess strategic fit, followed by execution of an NDA.
+
+After that, QuickFund would provide an initial portfolio summary and technical overview. A management call could then be organized to review the operating model and platform, followed by access to a structured data room.
+
+The buyer would then conduct due diligence and, if interested, submit an indicative non-binding offer. The parties would then discuss the transaction perimeter and legal structure before moving to final due diligence and transaction documentation.
+
+We are seeking a buyer capable of acquiring the full portfolio and operational package in one transaction. We are not looking to sell the portfolio gradually or in small batches.
+
+Please let us know whether this opportunity may be of interest, and who would be the appropriate person within your organization to discuss portfolio acquisitions, consumer credit assets, platform acquisitions or credit servicing opportunities.
+
+Kind regards,
+
+Gaylor Loche
+CEO
+QuickFund
+[gaylor@quickfund.fr](mailto:gaylor@quickfund.fr)
+0632190365
+quickfund.fr
+",,false,15896,true,false,false,false,sent,,,2026-05-30 13:35:45.541+00,,2026-05-30 13:35:45.637143+00,2026-05-30 13:35:45.637143+00
+ba2b7557-8cba-4ee9-b065-0dd577cbb6ab,60e60a1d-1e89-4205-8724-f3a971724253,44645350-a5ef-44f3-8481-f02542dd8e07,in,,<smk-assurance-1@sfr.fr>,,smk-assurance,Paul Girard,paul.girard@sfr.fr,"[{""name"":""Quickfund — Support"",""address"":""support@quickfund.fr""}]",[],Question sur l'assurance emprunteur,"Bonjour, l'assurance emprunteur est-elle obligatoire pour mon crédit conso ? Puis-je la résilier ?","Bonjour,
+
+L'assurance emprunteur est-elle obligatoire pour mon crédit à la consommation ? Si je l'ai souscrite, puis-je la résilier en cours de contrat ?
+
+Merci pour vos précisions,
+Paul Girard",,false,8192,false,false,false,false,received,,,,2026-05-28 07:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+bdf56c33-9710-403a-965d-c9d9ba7f96c4,f906addf-f92a-40f3-b7ff-ba1823ab5911,74232b25-9019-4380-bee6-ecdb017cc629,in,,<smk-board-1@nordic-capital.ee>,,smk-board,Margus Kask,m.kask@nordic-capital.ee,"[{""name"":""Quickfund — Direction"",""address"":""direction@quickfund.ee""}]",[],Réunion conseil — résultats Q2,"Bonjour, pouvons-nous caler la réunion du conseil pour la revue des résultats du Q2 ?","Bonjour,
+
+En vue de la revue des résultats du deuxième trimestre, pourrions-nous caler la prochaine réunion du conseil ? Je vous propose la semaine du 16. Merci de préparer le tableau de bord (encours, taux de défaut, acquisition).
+
+Cordialement,
+Margus Kask
+Nordic Capital",,false,8192,true,true,true,false,received,,,,2026-05-28 10:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+c515902b-a999-4652-8262-862a644ff82a,60e60a1d-1e89-4205-8724-f3a971724253,bcf5e946-81bf-40c7-bef0-4e2c7bad72a3,out,,<smk-echeancier-2@quickfund.fr>,<smk-echeancier-1@gmail.com>,smk-echeancier,Quickfund — Support,support@quickfund.fr,"[{""name"":""Nadia Khelifi"",""address"":""nadia.khelifi@gmail.com""}]",[],Re: Téléchargement de mon échéancier,"Bonjour Nadia, vous trouverez votre échéancier en pièce jointe. Il est aussi disponible dans Mon espace > Documents…","Bonjour Nadia,
+
+Vous trouverez votre échéancier complet en pièce jointe. Il reste également disponible à tout moment dans Mon espace > Documents.
+
+Bonne réception,
+Le support Quickfund",,true,86016,true,false,false,false,sent,,,2026-05-29 12:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+c5a966c3-5795-4a2a-8c0f-c8038150a32f,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<qf-1781517555517-nyufhjzn@quickfund.ee>,<sim-1780164551090-x4fme494@quickfund.ee>,thread-1780148145541-tx2xuta4,Quickfund — Contact,contact@quickfund.ee,"[{""address"":""contact@etsoas.ee""}]",[],Re: Strategic Acquisition Opportunity – Estonian Consumer Credit Portfolio and Servicing Platform,"Dear, Thank you for your detailed message and for the constructive feedback following ESTO’s initial due diligence review. We are pleased to","Dear,
+
+Thank you for your detailed message and for the constructive feedback following ESTO’s initial due diligence review.
+
+We are pleased to hear that the documentation provided to date broadly supports the main points set out in our initial presentation regarding the QuickFund portfolio, borrower base, servicing environment, repayment infrastructure, financial history, operational processes and technical setup.
+
+We also appreciate ESTO’s continued interest in moving towards a more transaction-focused discussion.
+
+From QuickFund’s perspective, we are aligned with the general direction outlined in your email. We agree that the most efficient structure may be an acquisition of the active consumer credit receivables portfolio together with the operational assets required to preserve borrower continuity, servicing continuity and repayment performance.
+
+We also agree that both potential structures should remain open at this stage:
+
+1. an asset transaction covering the receivables portfolio and the full operational package required for continuity; and
+2. a corporate transaction / share acquisition, if legal and regulatory analysis confirms that this route materially improves continuity, transferability, data migration, borrower notification, regulatory treatment or execution certainty.
+
+Our current preference would be to avoid unnecessary complexity where possible. However, we remain open to the structure that best preserves value, execution certainty and operational continuity for both parties.
+
+Transaction perimeter
+
+The transaction perimeter currently being discussed should, in our view, be assessed as a full operating package rather than as a receivables-only sale.
+
+The package would include:
+
+* the active consumer credit receivables portfolio;
+* borrower and loan-level data necessary for servicing and collection;
+* repayment schedules;
+* historical payment records;
+* borrower records required for continuity;
+* existing borrower interface during a defined transition or run-off period;
+* administration panel;
+* servicing workflows;
+* payment tracking and reconciliation logic;
+* Stripe and bank transfer payment flow documentation;
+* technical documentation;
+* database schema;
+* deployment documentation;
+* migration support;
+* borrower communication support;
+* source code transfer, subject to final transaction documentation and completion;
+* defined API / integration layer;
+* and transition support from QuickFund and the group’s technical resources, including VM Cloud where relevant.
+
+The key value proposition is that ESTO would not be acquiring only receivables. ESTO would be acquiring an operating credit servicing environment with existing borrower continuity, repayment infrastructure, servicing tools, data history and technical assets required to manage the portfolio without unnecessary disruption.
+
+Commercial basis
+
+Given the full perimeter now being discussed, QuickFund’s commercial position is that the transaction should be discussed on the basis of a EUR 700,000 valuation for the full operating package.
+
+This valuation reflects the proposed transfer of the portfolio together with the borrower continuity layer, administration tools, servicing environment, payment logic, data structure, technical documentation, source code, migration support and a reasonable integration layer.
+
+If ESTO wishes to discuss a materially different valuation, the transaction perimeter would need to be adjusted accordingly. In particular, any lower valuation would need to be reflected in the scope of:
+
+* source code transfer;
+* software rights;
+* API / integration work;
+* duration and scope of transition support;
+* post-completion technical assistance;
+* public website and borrower portal treatment;
+* domain and brand usage during run-off;
+* and the level of involvement expected from QuickFund and VM Cloud.
+
+API and integration layer
+
+We understand that the API integration layer is particularly important for ESTO.
+
+QuickFund is prepared to support a structured integration process. The current system already includes the core elements required for integration, including borrower and loan data structures, repayment tracking, payment status logic, exports, webhook-based event handling and token-based access logic.
+
+The remaining work would mainly consist of documenting and packaging a clean integration layer tailored to ESTO’s internal requirements, subject to a clearly agreed scope.
+
+We suggest that the technical session covers:
+
+* expected endpoints;
+* authentication method;
+* access control model;
+* borrower and loan data fields;
+* repayment schedule data;
+* payment status synchronisation;
+* event triggers;
+* webhook logic;
+* CSV / JSON export requirements;
+* testing environment;
+* documentation format;
+* delivery timeline;
+* acceptance criteria;
+* support period;
+* and the distinction between existing platform capabilities and any custom development required specifically for ESTO.
+
+A dedicated testing environment can be provisioned through VM Cloud as part of the integration workstream, using anonymised or synthetic data where appropriate.
+
+Existing platform transfer, documentation, standard data exports, reasonable integration support and reasonable transition support can be included in the EUR 700,000 full operating package. Any material custom development beyond the existing QuickFund environment should be scoped separately and reflected in the final commercial terms.
+
+Source code, software and technical assets
+
+QuickFund is prepared to include source code transfer in the full operating package, subject to final documentation and completion.
+
+Pre-completion technical review can be organised under controlled conditions after agreement on the commercial framework and LOI. Full source code delivery would occur at completion, together with the agreed technical documentation, deployment materials, database schema and migration support.
+
+The transaction documentation should clearly define:
+
+* ownership or licence treatment of the software;
+* scope of source code transfer;
+* treatment of third-party dependencies;
+* permitted use of the software after completion;
+* support obligations;
+* warranty perimeter;
+* and any restrictions linked to the QuickFund brand, public website or borrower portal.
+
+QuickFund brand, domains and borrower interface
+
+We understand ESTO’s objective of avoiding disruption for existing borrowers.
+
+QuickFund is prepared to discuss a structure where existing borrowers continue to access their repayment information, contracts, messages and payment instructions through a stable interface during an agreed transition or run-off period.
+
+Following completion, QuickFund would no longer be marketed as a separate active origination platform, unless expressly agreed otherwise. The public-facing website could be redirected, repositioned or limited to borrower continuity, while the borrower login area remains available for existing customers during the agreed transition or run-off period.
+
+The treatment of the QuickFund brand, domains and public interface should be documented carefully.
+
+Our current position is that any use of the QuickFund brand after completion should be limited to borrower continuity and servicing of the existing portfolio during the agreed run-off period. No new origination under the QuickFund brand would be permitted after completion, unless expressly agreed between the parties.
+
+Depending on the final structure, domains and technical access can either be transferred, licensed, delegated or configured to support the agreed borrower continuity model.
+
+Operational continuity
+
+We agree with ESTO’s preferred model of avoiding disruption for existing borrowers.
+
+QuickFund would be prepared to support a transition model where:
+
+* existing borrowers continue to access their repayment information through a stable interface;
+* repayment schedules remain visible;
+* payment instructions are migrated in a controlled manner;
+* borrower communications are coordinated;
+* ESTO gradually assumes operational control;
+* QuickFund’s public-facing origination activity is discontinued after completion;
+* the borrower portal remains available during the agreed run-off period;
+* and payment flows are migrated without unnecessary interruption.
+
+This model should protect repayment performance and reduce operational migration risk.
+
+Exclusivity and pre-closing technical work
+
+We are open to discussing exclusivity as part of a non-binding letter of intent, provided that the LOI includes a clear transaction perimeter, valuation basis, legal structure, integration perimeter, transition support scope, confirmatory due diligence scope, key conditions and timetable.
+
+If ESTO requires exclusivity and/or significant pre-closing technical work, including API or integration development before completion, QuickFund would expect an upfront transaction or integration deposit, creditable against the purchase price.
+
+This would allow both parties to align resources, avoid an open-ended process and ensure that technical work is undertaken within a serious transaction framework.
+
+Transaction structure
+
+We agree that the legal form should not be the main value driver by itself. The key value drivers are enforceability, collectability, borrower continuity, compliance comfort, data migration, payment flow migration, operational control and integration practicality.
+
+We therefore support the proposed analysis of:
+
+* asset transaction;
+* full operating asset transfer;
+* corporate transaction / share acquisition;
+* transitional servicing arrangement;
+* staged migration subject to legal, regulatory, payment provider and data protection conditions.
+
+If a share acquisition materially simplifies continuity or reduces transfer complexity, we are open to reviewing it. However, if such structure creates additional legal, regulatory, tax, advisory or post-closing complexity for QuickFund, this would need to be reflected in the commercial terms and documentation.
+
+Proposed next steps
+
+We are available to proceed with the next phase and organise the two calls suggested.
+
+For the management call, we suggest focusing on:
+
+* transaction structure;
+* asset deal vs share acquisition;
+* full operating package perimeter;
+* EUR 700,000 valuation basis;
+* QuickFund public website and borrower portal treatment;
+* no-new-origination / run-off model;
+* LOI content;
+* exclusivity;
+* payment mechanics;
+* integration deposit if pre-closing work is required;
+* confirmatory due diligence scope;
+* and expected transaction timetable.
+
+For the technical call, we suggest focusing on:
+
+* borrower portal;
+* administration panel;
+* database structure;
+* source code and deployment structure;
+* payment and reconciliation logic;
+* Stripe and bank transfer flows;
+* VM Cloud hosting environment;
+* webhook logic;
+* CSV / JSON exports;
+* API integration expectations;
+* testing environment;
+* migration roadmap;
+* acceptance criteria;
+* support and handover process.
+
+We are also open to a joint legal counsel discussion or short legal memo comparing an asset transaction and a share acquisition from the perspective of continuity, regulatory treatment, data protection, borrower notification and execution complexity.
+
+Please send us your proposed availability for the management call this week or early next week. We will coordinate internally to ensure that the relevant business, technical and operational contacts are available for the follow-up technical session.
+
+Kind regards,
+
+Gaylor Loche
+CEO
+QuickFund
+
+[gaylor@quickfund.fr](mailto:gaylor@quickfund.fr)
+0632190365
+quickfund.fr
+
+
+Le 30/05/2026 à 20:09, contact@etsoas.ee a écrit :
+> Thank you for the materials provided under NDA and for the detailed cooperation from your side during the initial due diligence phase.
+> 
+> Following our review of the documentation made available to date, we are pleased to confirm that the information received broadly supports the main points set out in your initial presentation regarding the QuickFund portfolio, borrower base, servicing environment, repayment infrastructure, financial history, operational processes and technical setup.
+> 
+> On that basis, ESTO remains interested in exploring a transaction and we believe it is appropriate to move from the preliminary review phase to a more transaction-focused discussion.
+> 
+> At this stage, our internal assessment is that the most efficient structure may be an acquisition of the portfolio together with the operational assets required to preserve continuity. This would include, subject to final agreement, the receivables portfolio, relevant borrower and loan data, repayment schedules, customer-facing interface for existing borrowers, administration panel, servicing workflows, payment and reconciliation logic, technical documentation, migration support and an API-based integration layer allowing the QuickFund environment to connect with ESTO’s internal systems.
+> 
+> Our preference would be to structure the transaction in a way that allows ESTO to capture the economic and operational value of the QuickFund activity while avoiding unnecessary complexity where possible. In practical terms, this could mean acquiring the full operating package necessary for continuity, without necessarily acquiring the corporate entity itself, unless a share acquisition proves to be more efficient from a legal, regulatory, contractual or operational perspective.
+> 
+> We therefore suggest keeping both routes open at this stage:
+> 
+> 1. an asset transaction covering the receivables portfolio and the full operational package required for borrower continuity; and
+> 2. a corporate transaction / share acquisition, if legal and regulatory analysis confirms that this route would materially improve continuity or reduce transfer complexity.
+> 
+> For clarity, we do not currently view the legal form of the transaction as the main value driver. The key points for ESTO are the enforceability and collectability of the receivables, continuity for existing borrowers, data and payment migration, compliance comfort, access to the servicing environment, and the ability to integrate the QuickFund workflow into ESTO’s internal operating model.
+> 
+> In this context, we would like to discuss a transaction perimeter based on the following principles:
+> 
+> * acquisition of the active consumer credit receivables portfolio;
+> * transfer of all loan-level data, repayment schedules, payment history and borrower records necessary for servicing and collection;
+> * maintenance of the existing borrower interface for current QuickFund customers during a defined transition or run-off period;
+> * discontinuation of new QuickFund origination after completion, unless otherwise agreed;
+> * redirection or repositioning of the public-facing QuickFund landing pages toward ESTO, while preserving access for existing borrowers;
+> * transfer or licence of the administration panel, servicing tools and technical components required to manage the portfolio;
+> * API integration between the QuickFund environment and ESTO’s internal systems;
+> * delivery of technical documentation, database schema, deployment documentation, payment flow documentation and reconciliation logic;
+> * transition support from QuickFund for a defined period;
+> * controlled migration of payment flows, borrower communications and operational responsibilities;
+> * appropriate representations, warranties and indemnities covering the portfolio, legal enforceability, consumer credit compliance, data protection, intellectual property, financial information and absence of undisclosed liabilities.
+> 
+> The proposed API integration is particularly important for us. Based on the discussions to date, we understand that QuickFund would be prepared to provide an integration layer allowing ESTO to access and synchronise relevant data and workflows from the QuickFund system. We would like this to be documented in more detail, including the expected endpoints, authentication method, data fields, event triggers, documentation, testing environment, delivery timeline, acceptance criteria and post-delivery support.
+> 
+> From an operational perspective, our preferred model would be to avoid any disruption for existing borrowers. Existing customers should continue to have access to their repayment information, contracts, messages and payment instructions through a stable interface, while ESTO gradually assumes operational control and integrates the relevant data into its own environment. We believe this approach is likely to protect repayment performance and reduce migration risk.
+> 
+> Regarding the QuickFund brand and public interface, we would expect that, following completion, QuickFund would no longer be marketed as a separate active origination platform. The public website could either be redirected to ESTO or repositioned in a way to be agreed between the parties, while the borrower login area remains available to existing customers during the transition or run-off period.
+> 
+> We would also like to discuss the appropriate legal treatment of the QuickFund entity itself. If the transaction is structured as an asset transaction, we understand that the seller may subsequently wind down or liquidate the entity at its discretion, subject to applicable legal, regulatory and customer protection requirements. If the transaction is structured as a share acquisition, ESTO would expect the company to be operated only for controlled servicing / run-off purposes unless otherwise agreed, with no new origination activity and with a clear post-closing simplification plan.
+> 
+> At this stage, we would propose the following next steps:
+> 
+> 1. organise a management call to discuss transaction structure and preferred perimeter;
+> 2. organise a technical call focused specifically on the API integration, admin panel, borrower portal, payment flows and migration roadmap;
+> 3. request a short legal memo or joint counsel discussion comparing an asset transaction and a share acquisition from the perspective of continuity, regulatory treatment, data protection, borrower notification and execution complexity;
+> 4. agree the preferred transaction path;
+> 5. prepare a non-binding letter of intent setting out transaction perimeter, commercial principles, exclusivity, conditions, due diligence confirmatory items and expected timetable;
+> 6. proceed to confirmatory due diligence and transaction documentation.
+> 
+> For the avoidance of doubt, any further step remains subject to internal approvals, satisfactory confirmatory due diligence, final legal and regulatory review, agreement on transaction documentation, and agreement on commercially acceptable terms. Nothing in this email should be interpreted as a binding offer or commitment to proceed with a transaction.
+> 
+> That said, the materials reviewed to date are sufficiently encouraging for ESTO to continue discussions and work towards a structured proposal. We believe the opportunity may be attractive if the transaction is designed around operational continuity, disciplined integration and appropriate legal protections for both parties.
+> 
+> Please let us know your availability for a management call this week or early next week. We would suggest that the first call focus on transaction structure and integration perimeter, followed by a separate technical session with the relevant product, engineering and operations contacts.
+> 
+> Kind regards,",,false,19492,true,false,false,false,sent,,,2026-06-15 09:59:15.517+00,,2026-06-15 09:59:15.891446+00,2026-06-15 09:59:15.891446+00
+c62c8902-46d3-433a-a143-290d11c554be,71f0b851-1a9d-4fe6-9105-f209064c06e1,8c9dab20-d8c5-4ee9-8563-49634eea33be,in,,<smk-urssaf-1@urssaf.fr>,,smk-urssaf,URSSAF,noreply@urssaf.fr,"[{""name"":""Quickfund — Comptabilité"",""address"":""comptabilite@quickfund.fr""}]",[],Avis d'échéance — cotisations 1er trimestre,Votre avis d'échéance de cotisations sociales est disponible. Date limite de paiement : le 15.,"Bonjour,
+
+Votre avis d'échéance de cotisations sociales pour le 1er trimestre est disponible dans votre espace. La date limite de paiement est fixée au 15 du mois.
+
+Cordialement,
+L'URSSAF",,false,8192,false,false,false,false,received,,,,2026-05-27 06:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+cfeb2eee-11aa-464e-9722-b619711ef96a,f906addf-f92a-40f3-b7ff-ba1823ab5911,1033a205-2c07-4d71-90c5-f7d8143487ab,out,,<smk-board-2@quickfund.ee>,<smk-board-1@nordic-capital.ee>,smk-board,Quickfund — Direction,direction@quickfund.ee,"[{""name"":""Margus Kask"",""address"":""m.kask@nordic-capital.ee""}]",[],Re: Réunion conseil — résultats Q2,"Bonjour Margus, la semaine du 16 nous convient. Je propose le mardi 17 à 10 h, support transmis en amont…","Bonjour Margus,
+
+La semaine du 16 nous convient. Je propose le mardi 17 à 10 h (visioconférence). Le tableau de bord et le support seront transmis 48 h en amont.
+
+Bien cordialement,
+La direction Quickfund",,false,12288,true,false,false,false,sent,,,2026-05-28 14:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+d034a4c3-d7a7-46eb-988f-8e691ba887c3,ed81259c-d521-46bc-8f2e-4401620fcb5e,f5a1a3e3-f6d9-4d6f-8e4c-438e1f52c91e,in,,<smk-anticipe-1@outlook.fr>,,smk-anticipe,Jean Mercier,jean.mercier@outlook.fr,"[{""name"":""Quickfund — Contact"",""address"":""contact@quickfund.ee""}]",[],Remboursement anticipé possible ?,"Bonjour, je rembourse actuellement un crédit chez vous. Est-il possible de solder par anticipation ?","Bonjour,
+
+Je rembourse actuellement un crédit souscrit chez vous. Est-il possible de le solder par anticipation, et si oui, quels seraient les frais éventuels ?
+
+Merci pour votre retour,
+Jean Mercier",,false,8192,true,false,false,false,received,,,,2026-05-29 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 13:20:40.761615+00
+d0c0700d-0642-4e9a-a76d-0e1a442a67df,6021ea72-229e-4e6d-b401-24a3b8b82a97,42f4b8f8-e7ec-44ac-8bdb-ba4a1a1c0a91,in,,<smk-pro-devis-1@baticoncept.fr>,,smk-pro-devis,SARL Bâti-Concept,contact@baticoncept.fr,"[{""name"":""Quickfund — Commercial"",""address"":""commercial@quickfund.eu""}]",[],Demande de financement pro — devis matériel,"Bonjour, nous souhaitons financer l'achat de matériel BTP (~28 000 €). Devis joint…","Bonjour,
+
+Nous sommes une entreprise du BTP et souhaitons financer l'achat de matériel pour environ 28 000 €. Vous trouverez le devis du fournisseur en pièce jointe. Quelles solutions proposez-vous (crédit pro, leasing) ?
+
+Cordialement,
+SARL Bâti-Concept",,true,126592,false,false,false,false,received,,,,2026-05-30 06:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+df967c7a-3142-4b63-82c7-11a9c6a3991b,8d4c1dc1-9620-4aeb-954e-7ef4cadd6ae5,62112be4-464c-47f5-bbf2-c74869e71921,out,,<smk-delai-2@quickfund.fr>,<smk-delai-1@outlook.fr>,smk-delai,Quickfund — Recouvrement,recouvrement@quickfund.fr,"[{""name"":""Fatima Benali"",""address"":""fatima.benali@outlook.fr""}]",[],Re: Demande de délai de paiement,"Bonjour Madame Benali, nous pouvons proposer un report de 2 mensualités. Un avenant vous sera adressé…","Bonjour Madame Benali,
+
+Nous comprenons votre situation. Nous pouvons proposer un report de vos 2 prochaines mensualités en fin de prêt, sans frais. Un avenant vous sera adressé pour signature électronique.
+
+N'hésitez pas à nous appeler pour en discuter.
+
+Cordialement,
+Le service recouvrement",,false,12288,true,false,false,false,sent,,,2026-05-28 18:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+e3e674b2-a574-435e-946d-a7492617acfa,ed81259c-d521-46bc-8f2e-4401620fcb5e,758732a2-ad65-4561-8af8-4b7c8030ede0,out,,<qf-1780148391738-v5xh3dej@quickfund.ee>,,thread-1780148391738-v5xh3dej,Quickfund — Contact,contact@quickfund.ee,"[{""address"":""contact@modena.ee""}]",[],Strategic Acquisition Opportunity – Estonian Consumer Credit Portfolio and Servicing Platform,"Dear, I hope you are well. I am contacting you on behalf of QuickFund regarding a potential strategic acquisition opportunity in the Estonia","Dear,
+
+I hope you are well.
+
+I am contacting you on behalf of QuickFund regarding a potential strategic acquisition opportunity in the Estonian consumer credit market. QuickFund is considering a full divestment of its active consumer micro-credit portfolio, together with the proprietary operational infrastructure currently used to originate, monitor, service and collect the portfolio.
+
+This is not a distressed debt sale and not a piecemeal receivables disposal. Our preferred approach is a single transaction covering the full operating package: the receivables portfolio, the customer-facing interface, the internal servicing tools, the repayment tracking system, historical performance data, technical infrastructure, and transition support.
+
+The opportunity may be relevant to a licensed creditor, consumer finance platform, digital lender, credit servicing company, or portfolio purchaser seeking immediate exposure to an existing granular consumer credit portfolio with operational continuity.
+
+Executive summary
+
+QuickFund has built and operated a consumer micro-credit activity in Estonia with a lean internal infrastructure and proprietary servicing technology.
+
+The proposed transaction may include the active consumer credit receivables portfolio, approximately EUR 591,529 of outstanding loan capital, approximately 1,367 borrower relationships, an average exposure of approximately EUR 432.72 per borrower, and an estimated contractual future repayment stream of approximately EUR 667,203 over 24 months.
+
+It may also include the QuickFund customer-facing website and borrower interface, the internal credit servicing and repayment monitoring system, historical repayment and portfolio performance data, operational workflows, collection process documentation, technical infrastructure documentation, and transition support to preserve repayment continuity.
+
+The key value proposition is operational continuity. The buyer would not only acquire a receivables portfolio, but also the system currently used to manage, monitor and collect it.
+
+In practical terms, the platform can be transferred or reconfigured so that existing borrower access remains stable while payment flows, account references, payment provider settings, bank references, webhook endpoints and environment variables are migrated to the acquiring structure, subject to legal, regulatory, payment service provider and data protection requirements.
+
+Strategic rationale
+
+The asset is best understood as a functioning consumer credit servicing platform with an embedded portfolio.
+
+A purely financial buyer may value the portfolio primarily on discounted cash flows. However, a strategic buyer may extract additional value from the existing borrower relationships, customer interface continuity, proprietary internal servicing tools, structured loan and repayment data, reduced integration time, reduced migration friction, immediate repayment monitoring capability, and the potential reuse of the platform for future lending or servicing activity.
+
+Additional value may also come from historical credit performance data and potential integration into an existing consumer finance, debt purchase or credit servicing operation.
+
+This is why we are not positioning the opportunity as a standard distressed receivables sale. We are offering an operating credit asset with its servicing layer.
+
+Portfolio overview
+
+Preliminary internal portfolio data indicates outstanding loan capital of approximately EUR 591,529, with approximately 1,367 borrowers or clients. The average borrower exposure is approximately EUR 432.72.
+
+The indicative average maturity assumption used for modelling is approximately 24 months. Estimated contractual future cash flows over 24 months amount to approximately EUR 667,203, including an estimated future interest component of approximately EUR 75,674.
+
+The portfolio is highly granular. The average borrower exposure is low, reducing single-client concentration risk. This may be attractive for buyers looking for a diversified consumer credit pool rather than a small number of large exposures.
+
+Based on preliminary internal reporting, the year-end identified bad or doubtful amount was approximately EUR 2,425, representing approximately 0.4% of the outstanding loan capital at year-end.
+
+On a full-year basis, internally tracked 2025 bad debt amounted to approximately EUR 25,641, representing approximately 4.3% of year-end outstanding loan capital and approximately 4.9% of average 2025 outstanding capital.
+
+These figures are preliminary and subject to buyer due diligence, loan-level verification and agreed classification methodology.
+
+Financial performance
+
+QuickFund has operated with a lean cost base. The core technology and servicing tools were developed internally by the group, without external software development expenditure.
+
+For financial year 2024, total revenue amounted to EUR 36,630.43. This included EUR 29,629.00 of interest income, EUR 3,521.00 of application fee income, and EUR 3,480.43 of penalty or refund-related income.
+
+Total expenses for 2024 amounted to EUR 7,200.00, resulting in a reported operating profit of EUR 29,430.43 and a reported operating margin of approximately 80.3%.
+
+For financial year 2025, total revenue amounted to EUR 73,184.65. This included EUR 51,725.68 of interest income, EUR 3,521.00 of application fee income, EUR 1,882.97 of penalty or refund-related income, and EUR 16,055.00 of coaching or additional service income.
+
+Total expenses for 2025 amounted to EUR 31,413.68, resulting in a reported operating profit of EUR 41,770.97 and a reported operating margin of approximately 57.1%.
+
+Combined revenue for 2024 and 2025 amounted to EUR 109,815.08. Combined reported operating profit amounted to EUR 71,201.40, with an average reported operating margin of approximately 64.8%.
+
+The historical financials show that the activity has been profitable on an operating basis, while the infrastructure has been built internally and operated with limited external dependency.
+
+Technology and infrastructure
+
+The platform is built around an internally developed operating environment used to manage the credit portfolio and borrower repayment lifecycle. The technical stack can be transferred or documented as part of the transaction.
+
+For the purposes of the initial discussion, the platform should be understood as including a borrower-facing website, a customer interface for repayment visibility, a borrower account area, loan status visibility, a payment and repayment communication layer, and a responsive web interface suitable for consumer use.
+
+On the backend side, the platform includes an internal loan management system, borrower and contract management logic, repayment schedule handling, payment status tracking, portfolio monitoring tools, internal dashboard and reporting logic, borrower-level repayment history, bad debt and late status tracking, and administrative tools for servicing and follow-up.
+
+The database includes borrower-level data structures, loan-level data, repayment schedules, payment history, current balances, contract status, borrower repayment performance, internal status tags, and exportable data for loan tape and due diligence purposes.
+
+The hosting and infrastructure are provided through VM Cloud, the group’s own cloud provider. The infrastructure is controlled internally by the group, with no dependency on a third-party outsourced development agency. The deployment environment is configurable and environment-variable driven, with the capacity to transfer, migrate or document hosting settings depending on the buyer’s preference.
+
+Payments
+
+QuickFund currently uses a combination of payment methods, including Stripe, bank transfers and bank-based repayment flows. The existing infrastructure is designed to track and reconcile payments from several sources.
+
+As part of the transfer, payment routing could be migrated through Stripe configuration transfer or reconfiguration, subject to Stripe approval and compliance checks, as well as through bank account reference updates, beneficiary account changes, repayment instruction updates, payment webhook reconfiguration, internal reconciliation rule updates, borrower communication processes, and transition monitoring to avoid payment disruption.
+
+The technical objective is to make the transfer operationally simple: preserve the customer interface while changing the underlying payment destination and ownership structure in a controlled and compliant manner.
+
+Operational continuity
+
+One of the strongest features of the proposed transaction is continuity.
+
+A buyer may avoid the typical friction of a loan portfolio acquisition where borrowers are suddenly redirected to a new platform, a new interface, a new payment process or a new servicer.
+
+Under the preferred structure, borrowers can continue using the existing customer interface, the website and interface can remain operational, repayment schedules can remain visible, internal tracking can continue, payment references can be migrated, the acquiring entity can gradually take control of servicing, and the seller can provide transition support for a defined period.
+
+This is intended to protect repayment performance and reduce migration risk.
+
+A full transition package could include technical handover, environment documentation, source code or software access depending on the transaction perimeter, database schema and export documentation, deployment procedure, payment flow documentation, Stripe and bank flow transition support, servicing workflow documentation, borrower communication templates, and 30 to 90 days of operational support.
+
+Regulatory and legal positioning
+
+QuickFund currently operates as a credit or micro-credit company engaged in consumer credit origination and servicing. The exact transaction structure can be adapted depending on the buyer’s regulatory status and strategic objective.
+
+One possible structure is a receivables portfolio sale, where the buyer acquires the loan receivables, loan tape, repayment schedules, contract documentation and relevant transferable borrower information.
+
+Another possible structure is a portfolio and platform acquisition, where the buyer acquires the receivables together with the website, customer interface, internal servicing software, technical documentation and transition support.
+
+A third option is a full operating asset transfer, where the buyer acquires the portfolio, servicing platform, software, data structure, operational documentation, brand assets, domain names and transition package.
+
+A corporate transaction may also be discussed if operational continuity, licence treatment, contractual continuity or borrower management is better handled through a share sale or broader corporate acquisition structure.
+
+The exact legal structure would be subject to regulatory, contractual, data protection and tax review. We are prepared to work with the buyer’s legal and compliance teams to identify the most efficient structure.
+
+Data and due diligence materials
+
+Following execution of an NDA, QuickFund can provide a structured due diligence package.
+
+The portfolio data may include a loan-level data tape, borrower-level balances, outstanding capital, accrued or expected interest, repayment schedules, maturity profile, payment history, last payment date, current loan status, borrower segmentation, performing, late and doubtful breakdown, bad debt classification, and cohort-level analysis.
+
+The financial data may include the 2024 P&L summary, the 2025 P&L summary, revenue breakdown, expense breakdown, interest income analysis, application fee income, bad debt data, and bank and payment reconciliation materials where available.
+
+The legal and operational data may include contract templates, borrower communication templates, KYC availability overview, servicing processes, collection workflow, late payment handling, data retention overview, and transfer process considerations.
+
+The technical data may include a platform overview, frontend overview, backend overview, database schema, infrastructure documentation, VM Cloud hosting overview, environment variable structure, payment provider configuration map, Stripe payment flow documentation, bank transfer reconciliation logic, and deployment and migration plan.
+
+Indicative valuation expectation
+
+Given that the opportunity includes both the financial portfolio and the operational servicing infrastructure, QuickFund is not seeking a distressed-debt valuation.
+
+The indicative internal valuation logic is based on outstanding loan capital of approximately EUR 591,529, estimated contractual cash flows over 24 months of approximately EUR 667,203, historical 2024–2025 reported operating profit of approximately EUR 71,201, internally developed servicing technology with no external development cost base, and the inclusion of the existing borrower interface and operational continuity in a full package scenario.
+
+For a portfolio-only transaction, the valuation would be lower and mainly driven by discounted cash-flow analysis, expected losses, servicing costs and buyer target return.
+
+For a full portfolio, platform and operational continuity package, our indicative valuation expectation is in the EUR 650,000 to EUR 700,000 range, depending on the transaction perimeter, level of transition support, treatment of software and IP, data transfer scope, regulatory structure and final due diligence.
+
+For a full operating package including the portfolio, customer-facing interface, internal software, repayment tracking system, technical documentation, data room and transition support, our indicative anchor valuation is approximately EUR 700,000.
+
+This valuation is indicative and subject to due diligence, but it reflects the fact that the buyer is not merely acquiring receivables. The buyer would be acquiring an operating credit servicing environment with an active borrower base and repayment infrastructure already in place.
+
+Why this may be relevant to your organization
+
+We believe this opportunity may be attractive to a buyer that wants to acquire a granular consumer credit portfolio in one transaction, avoid building a servicing platform from scratch, preserve borrower repayment continuity, integrate an existing borrower base, acquire historical repayment data, apply its own funding, collection or credit infrastructure, reduce operational friction compared with a standard portfolio migration, and potentially reuse the technology layer for future credit operations.
+
+For an existing Estonian or Baltic consumer finance operator, the transaction may represent an efficient way to acquire both receivables and operational infrastructure.
+
+Proposed process
+
+We would propose beginning with an introductory discussion to assess strategic fit, followed by execution of an NDA.
+
+After that, QuickFund would provide an initial portfolio summary and technical overview. A management call could then be organized to review the operating model and platform, followed by access to a structured data room.
+
+The buyer would then conduct due diligence and, if interested, submit an indicative non-binding offer. The parties would then discuss the transaction perimeter and legal structure before moving to final due diligence and transaction documentation.
+
+We are seeking a buyer capable of acquiring the full portfolio and operational package in one transaction. We are not looking to sell the portfolio gradually or in small batches.
+
+Please let us know whether this opportunity may be of interest, and who would be the appropriate person within your organization to discuss portfolio acquisitions, consumer credit assets, platform acquisitions or credit servicing opportunities.
+
+Kind regards,
+
+Gaylor Loche
+CEO
+QuickFund
+[gaylor@quickfund.fr](mailto:gaylor@quickfund.fr)
+0632190365
+quickfund.fr
+",,false,15896,true,false,false,false,sent,,,2026-05-30 13:39:51.738+00,,2026-05-30 13:39:51.816705+00,2026-05-30 13:39:51.816705+00
+ea35284f-c474-44e5-972d-6eaf0dba1fef,a184b820-1e57-47be-997e-184a4709bd4b,282c64df-65c7-45b7-aaf2-90791968222f,in,,<smk-apport-1@apporteur.fr>,,smk-apport,Réseau Apporteurs,partenariats@apporteur.fr,"[{""name"":""Quickfund — Partenariats"",""address"":""partenariats@quickfund.eu""}]",[],Proposition d'apport d'affaires,"Bonjour, nous accompagnons des TPE en recherche de financement et souhaiterions échanger…","Bonjour,
+
+Nous accompagnons des TPE en recherche de financement et serions intéressés par un partenariat d'apport d'affaires avec Quickfund. Seriez-vous disponible pour un échange cette semaine ?
+
+Bien cordialement,
+Réseau Apporteurs",,false,8192,true,false,false,false,received,,,,2026-05-27 12:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+f1fce8a2-fcee-4424-8d8c-05fe433eab0d,6021ea72-229e-4e6d-b401-24a3b8b82a97,42f4b8f8-e7ec-44ac-8bdb-ba4a1a1c0a91,in,,<smk-regroupement-1@gmail.com>,,smk-regroupement,Olivier Faure,olivier.faure@gmail.com,"[{""name"":""Quickfund — Commercial"",""address"":""commercial@quickfund.eu""}]",[],Regroupement de crédits,"Bonjour, j'ai 3 crédits en cours (~22 000 €). Est-il possible de les regrouper en une mensualité ?","Bonjour,
+
+J'ai actuellement trois crédits en cours pour un total d'environ 22 000 €. Serait-il possible de les regrouper en une seule mensualité afin d'alléger mon budget mensuel ? Quelles pièces dois-je fournir ?
+
+Cordialement,
+Olivier Faure",,false,8192,false,false,false,false,received,,,,2026-05-28 09:43:30.905966+00,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+f4d1c611-0925-44f1-9ce2-c6b5220f7252,8d4c1dc1-9620-4aeb-954e-7ef4cadd6ae5,62112be4-464c-47f5-bbf2-c74869e71921,out,,<smk-relance-1@quickfund.fr>,,smk-relance,Quickfund — Recouvrement,recouvrement@quickfund.fr,"[{""name"":""Antoine Dubois"",""address"":""antoine.dubois@gmail.com""}]",[],Relance — échéance impayée du 5,"Bonjour, l'échéance du 5 de votre crédit n'a pas pu être prélevée. Merci de régulariser sous 8 jours…","Bonjour Monsieur Dubois,
+
+Nous constatons que l'échéance du 5 de votre crédit (mensualité de 187,40 €) n'a pas pu être prélevée. Nous vous invitons à régulariser la situation sous 8 jours pour éviter des frais de rejet.
+
+Vous pouvez payer en ligne ou nous contacter pour convenir d'une solution.
+
+Cordialement,
+Le service recouvrement",,false,12288,true,false,false,false,sent,,,2026-05-26 12:43:30.905966+00,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00

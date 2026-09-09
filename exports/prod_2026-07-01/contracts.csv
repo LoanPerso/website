@@ -1,0 +1,1 @@
+id,reference,client_id,loan_id,product_id,status,principal_amount,annual_rate,duration_months,monthly_payment,terms,offer_sent_at,offer_expires_on,signed_at,signature_method,withdrawal_deadline,document_url,start_date,end_date,notes,created_at,updated_at

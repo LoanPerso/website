@@ -1,0 +1,4 @@
+id,actor_id,actor_email,action,entity,entity_id,metadata,created_at
+6c0b4c4e-4c08-440f-913f-3e0d5807acb6,2e5c5018-3bef-4847-ba8f-39dcc90b6bda,fkvirtuel@gmail.com,payment.refunded,payments,4b9ecd40-d4a0-41a3-a7d0-edbc703bf54b,"{""amount"":29.26,""loan_id"":""2141c882-10ef-4de5-ac4c-c7d4082d1f26""}",2026-06-15 09:59:52.61817+00
+cd4ecd9f-ea7a-40f1-aa67-53e8b4f10f73,2e5c5018-3bef-4847-ba8f-39dcc90b6bda,fkvirtuel@gmail.com,payment.record,payments,e5751665-7b4d-4d82-a4b9-a2482cd4c7a9,"{""amount"":29.14,""loan_id"":""2141c882-10ef-4de5-ac4c-c7d4082d1f26""}",2026-06-15 15:49:49.316711+00
+d704a960-b7dc-4bb6-8730-87dc5dbf06ab,2e5c5018-3bef-4847-ba8f-39dcc90b6bda,fkvirtuel@gmail.com,payment.record,payments,367c3909-4116-4050-8c51-d115a8cfd2df,"{""amount"":0.12,""loan_id"":""2141c882-10ef-4de5-ac4c-c7d4082d1f26""}",2026-06-15 15:50:02.128548+00

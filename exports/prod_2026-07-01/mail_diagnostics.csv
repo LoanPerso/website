@@ -1,0 +1,14 @@
+id,account_id,kind,ok,detail,latency_ms,ran_by,ran_at
+0187bf32-7178-401e-a82b-45050c0dd72a,71f0b851-1a9d-4fe6-9105-f209064c06e1,imap,true,Connexion IMAP réussie — imap.quickfund.fr:993 (ssl).,748,2e5c5018-3bef-4847-ba8f-39dcc90b6bda,2026-05-30 13:41:02.191057+00
+1d987fdc-4f02-42e4-9aba-c82018e47c46,71f0b851-1a9d-4fe6-9105-f209064c06e1,smtp,true,Connexion SMTP réussie — smtp.quickfund.fr:587 (starttls).,523,2e5c5018-3bef-4847-ba8f-39dcc90b6bda,2026-05-30 13:41:03.445012+00
+3e6eae74-09eb-406f-972e-d49d2659b087,f906addf-f92a-40f3-b7ff-ba1823ab5911,imap,true,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",470,,2026-05-30 12:28:30.905966+00
+3fcd5784-2664-43f6-bd72-4e5ff8409f13,ed81259c-d521-46bc-8f2e-4401620fcb5e,imap,true,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",540,,2026-05-30 12:34:30.905966+00
+438e46d9-b674-442b-bef3-8c92463662ed,a184b820-1e57-47be-997e-184a4709bd4b,smtp,true,Connexion SMTP réussie — 587/starttls.,588,,2026-05-30 12:28:30.905966+00
+43e0c2c8-f459-4bc0-bee3-68419ff232e6,6021ea72-229e-4e6d-b401-24a3b8b82a97,imap,true,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",533,,2026-05-30 12:28:30.905966+00
+46963b80-7adb-427a-8004-de5e33a403ce,ed81259c-d521-46bc-8f2e-4401620fcb5e,smtp,true,Connexion SMTP réussie — 587/starttls.,612,,2026-05-30 12:34:30.905966+00
+4bc810fb-4a2c-4525-8afe-fa730b9febd8,ed81259c-d521-46bc-8f2e-4401620fcb5e,smtp,false,Échec SMTP — délai d'attente dépassé sur le port 587.,3010,,2026-05-27 12:43:30.905966+00
+74729de9-5f96-4e22-a8c0-c0e0958c0500,71f0b851-1a9d-4fe6-9105-f209064c06e1,smtp,false,Échec SMTP — authentification refusée (535).,420,,2026-05-30 12:28:30.905966+00
+8b3f1a25-9e2c-4dee-8ace-349bc65df292,8d4c1dc1-9620-4aeb-954e-7ef4cadd6ae5,smtp,true,Connexion SMTP réussie — 587/starttls.,560,,2026-05-30 12:28:30.905966+00
+a4a8bb78-da9f-4068-98a4-7c09b400f44b,60e60a1d-1e89-4205-8724-f3a971724253,imap,true,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",498,,2026-05-30 12:28:30.905966+00
+ba5e0fd5-5e53-49cf-a777-c9ad43bebf53,60e60a1d-1e89-4205-8724-f3a971724253,smtp,true,Connexion SMTP réussie — 587/starttls.,605,,2026-05-30 12:28:30.905966+00
+fcdcc066-c5b6-46d5-a0f9-2bf2d0ccbc2d,71f0b851-1a9d-4fe6-9105-f209064c06e1,imap,true,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",512,,2026-05-30 12:28:30.905966+00

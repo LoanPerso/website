@@ -1,0 +1,7 @@
+id,message_id,filename,content_type,size_bytes,is_inline,url,created_at
+25acba95-8e43-494c-8ab4-b6332887d921,6257db90-472e-4399-bae2-905b48f300f3,bulletin-salaire.pdf,application/pdf,88320,false,,2026-05-30 12:43:30.905966+00
+55a72888-9d6b-442f-9ca5-d23fbcf8bd7c,ad911b29-b098-4766-b768-9103691855cb,facture-FR-2026-0398421.pdf,application/pdf,54210,false,,2026-05-30 12:43:30.905966+00
+8a83580a-7d71-46b5-b624-e8a409f0ffef,73754514-2f43-4e7e-b1ee-b87e733d4fbf,avis-virement-sepa-8842.pdf,application/pdf,65536,false,,2026-05-30 12:43:30.905966+00
+aad4fc43-2b7e-4513-86f8-03f5ccaef099,c515902b-a999-4652-8262-862a644ff82a,echeancier-credit.pdf,application/pdf,73728,false,,2026-05-30 12:43:30.905966+00
+c6486b1c-f858-40c8-94cc-2a03aba418fd,6257db90-472e-4399-bae2-905b48f300f3,carte-identite.pdf,application/pdf,96000,false,,2026-05-30 12:43:30.905966+00
+fb9374af-492e-4e66-8090-607fb1d338a7,d0c0700d-0642-4e9a-a76d-0e1a442a67df,devis-materiel-btp.pdf,application/pdf,118400,false,,2026-05-30 12:43:30.905966+00

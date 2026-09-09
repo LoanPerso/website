@@ -1,0 +1,22 @@
+id,label,email,display_name,signature,imap_host,imap_port,imap_security,imap_username,imap_password,smtp_host,smtp_port,smtp_security,smtp_username,smtp_password,is_active,is_default,last_synced_at,last_smtp_status,last_smtp_checked_at,last_smtp_detail,last_imap_status,last_imap_checked_at,last_imap_detail,created_at,updated_at
+6021ea72-229e-4e6d-b401-24a3b8b82a97,Commercial,commercial@quickfund.eu,Quickfund — Commercial,"Cordialement,
+L'équipe Quickfund — Commercial
+commercial@quickfund.eu · quickfund.eu",imap.quickfund.eu,993,ssl,commercial@quickfund.eu,app-password-demo,smtp.quickfund.eu,587,starttls,commercial@quickfund.eu,app-password-demo,true,false,2026-05-30 12:28:30.905966+00,ok,2026-05-30 12:28:30.905966+00,Connexion SMTP réussie — 587/starttls.,ok,2026-05-30 12:28:30.905966+00,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+60e60a1d-1e89-4205-8724-f3a971724253,Support,support@quickfund.fr,Quickfund — Support,"Cordialement,
+L'équipe Quickfund — Support client
+support@quickfund.fr · quickfund.fr",imap.quickfund.fr,993,ssl,support@quickfund.fr,app-password-demo,smtp.quickfund.fr,587,starttls,support@quickfund.fr,app-password-demo,true,false,2026-05-30 12:28:30.905966+00,ok,2026-05-30 12:28:30.905966+00,Connexion SMTP réussie — 587/starttls.,ok,2026-05-30 12:28:30.905966+00,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+71f0b851-1a9d-4fe6-9105-f209064c06e1,Comptabilité,comptabilite@quickfund.fr,Quickfund — Comptabilité,"Cordialement,
+L'équipe Quickfund — Comptabilité
+comptabilite@quickfund.fr · quickfund.fr",imap.quickfund.fr,993,ssl,comptabilite@quickfund.fr,app-password-demo,smtp.quickfund.fr,587,starttls,comptabilite@quickfund.fr,app-password-demo,true,false,2026-05-30 12:28:30.905966+00,ok,2026-05-30 13:41:03.452+00,Connexion SMTP réussie — smtp.quickfund.fr:587 (starttls).,ok,2026-05-30 13:41:02.207+00,Connexion IMAP réussie — imap.quickfund.fr:993 (ssl).,2026-05-30 12:43:30.905966+00,2026-05-30 13:41:03.486962+00
+8d4c1dc1-9620-4aeb-954e-7ef4cadd6ae5,Recouvrement,recouvrement@quickfund.fr,Quickfund — Recouvrement,"Cordialement,
+L'équipe Quickfund — Recouvrement
+recouvrement@quickfund.fr · quickfund.fr",imap.quickfund.fr,993,ssl,recouvrement@quickfund.fr,app-password-demo,smtp.quickfund.fr,587,starttls,recouvrement@quickfund.fr,app-password-demo,true,false,2026-05-30 12:28:30.905966+00,ok,2026-05-30 12:28:30.905966+00,Connexion SMTP réussie — 587/starttls.,ok,2026-05-30 12:28:30.905966+00,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+a184b820-1e57-47be-997e-184a4709bd4b,Partenariats,partenariats@quickfund.eu,Quickfund — Partenariats,"Cordialement,
+L'équipe Quickfund — Partenariats
+partenariats@quickfund.eu · quickfund.eu",imap.quickfund.eu,993,ssl,partenariats@quickfund.eu,app-password-demo,smtp.quickfund.eu,587,starttls,partenariats@quickfund.eu,app-password-demo,true,false,2026-05-30 12:28:30.905966+00,ok,2026-05-30 12:28:30.905966+00,Connexion SMTP réussie — 587/starttls.,unknown,,,2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
+ed81259c-d521-46bc-8f2e-4401620fcb5e,Contact,contact@quickfund.ee,Quickfund — Contact,"Cordialement,
+L'équipe Quickfund — Contact
+contact@quickfund.ee · quickfund.ee",imap.quickfund.ee,993,ssl,contact@quickfund.ee,app-password-demo,smtp.quickfund.ee,587,starttls,contact@quickfund.ee,app-password-demo,true,true,2026-05-30 12:34:30.905966+00,ok,2026-05-30 12:34:30.905966+00,Connexion SMTP réussie — 587/starttls.,ok,2026-05-30 12:34:30.905966+00,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",2026-05-30 12:26:10.7667+00,2026-05-30 12:43:30.905966+00
+f906addf-f92a-40f3-b7ff-ba1823ab5911,Direction,direction@quickfund.ee,Quickfund — Direction,"Cordialement,
+L'équipe Quickfund — Direction
+direction@quickfund.ee · quickfund.ee",imap.quickfund.ee,993,ssl,direction@quickfund.ee,app-password-demo,smtp.quickfund.ee,587,starttls,direction@quickfund.ee,app-password-demo,true,false,2026-05-30 12:28:30.905966+00,ok,2026-05-30 12:28:30.905966+00,Connexion SMTP réussie — 587/starttls.,ok,2026-05-30 12:28:30.905966+00,"Connexion IMAP réussie — 993/ssl, INBOX accessible.",2026-05-30 12:43:30.905966+00,2026-05-30 12:43:30.905966+00
